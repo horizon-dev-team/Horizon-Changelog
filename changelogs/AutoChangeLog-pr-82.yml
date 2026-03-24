@@ -1,0 +1,75 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/82
+delete-after: True
+/TG/Station:
+  95487:
+    title: "Adds a boolean type to circuits"
+    changes:
+      Y0SH1M4S73R:
+        - qol: "Many circuit components have had ports that effectively act as boolean inputs or outputs converted into a new boolean datatype."
+  95485:
+    title: "Boxcutting wrapped packages returns less wrap"
+    changes:
+      cebutris:
+        - bugfix: "Fixed an oversight with package wrapping"
+  95481:
+    title: "Gorillas can pick up kittens"
+    changes:
+      Jacquerel:
+        - rscadd: "Nonhuman mobs with hands can now pick up other mobs that are smaller than them and can usually be picked up"
+  95494:
+    title: "Fix soup bowl looping not working"
+    changes:
+      MrMelbert:
+        - bugfix: "Drinking soup will loop until it's empty or you cancel it (as it used to)"
+  95455:
+    title: "Apply height filters to electrocution animation"
+    changes:
+      MrMelbert:
+        - bugfix: "The skeleton from being shocked matches your height"
+  95478:
+    title: "[NO GBP] Corrects two issues with goodies and the ordering console."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Cargo goodies are now visible in the ordering and request consoles."
+  95427:
+    title: "Fixes vitals display not respecting power upon being placed"
+    changes:
+      Iajret:
+        - bugfix: "fixed vitals display not respecting APCs power when you attach it to a wall"
+  95454:
+    title: "Adds support for gags underclothing / Uses it to make them look less jank on lizards"
+    changes:
+      MrMelbert:
+        - rscadd: "Some undergarmants will now use a generic replacement on lizard body shapes that fit more appropriately"
+        - refactor: "Refactored how undergarmants generate their icons, report any oddities with that"
+  95372:
+    title: "RTG code refresh"
+    changes:
+      MrMelbert:
+        - code_imp: "Cleaned up RTG code. Admins can now VV them easier. If you come across a ruin on Lavaland or in space that uses them and see any odd behavior, report it as an issue."
+  95466:
+    title: "Vended glasses in the Beach Bar virtual domain count towards domain completion when drank"
+    changes:
+      lelandkemble:
+        - bugfix: "Glasses that were in the vending machine now still count for the completion of the Beach Bar virtual domain"
+  95407:
+    title: "Fixes friendly wisps, wizard orbiting gravity anomalies & tesla periphery balls being disabled on shuttle transit"
+    changes:
+      lelandkemble:
+        - bugfix: "Friendly wisps, wizard gravity balls, & tesla periphery balls are no longer disabled due to shuttle transit"
+  95431:
+    title: "Barcode scanner now lets you check books out"
+    changes:
+      JohnFulpWillard:
+        - qol: "The Curator's barcode scanner now lets you check books out."
+        - bugfix: "The library console can no longer borrow books for an infinite amount of time."
+  95428:
+    title: "Makes vitals display available in ancient lathes"
+    changes:
+      Iajret:
+        - rscadd: "Vitals display can be printed in ancient lathes"
+  95498:
+    title: "carbon_stripping.dm uses defines instead of magic numbers"
+    changes:
+      SunriseOverYourHead:
+        - code_imp: "Uses defines instead of magic numbers on carbon_stripping.dm"
