@@ -68,3 +68,97 @@
         - spellcheck: removed extra space on spraying an atmos machine with spray
             can
       title: Removes a double space on to_chat for spray can
+'2026-03-24':
+  /TG/Station:
+    95372:
+      changes:
+        MrMelbert:
+        - code_imp: Cleaned up RTG code. Admins can now VV them easier. If you come
+            across a ruin on Lavaland or in space that uses them and see any odd behavior,
+            report it as an issue.
+      title: RTG code refresh
+    95407:
+      changes:
+        lelandkemble:
+        - bugfix: Friendly wisps, wizard gravity balls, & tesla periphery balls are
+            no longer disabled due to shuttle transit
+      title: Fixes friendly wisps, wizard orbiting gravity anomalies & tesla periphery
+        balls being disabled on shuttle transit
+    95427:
+      changes:
+        Iajret:
+        - bugfix: fixed vitals display not respecting APCs power when you attach it
+            to a wall
+      title: Fixes vitals display not respecting power upon being placed
+    95428:
+      changes:
+        Iajret:
+        - rscadd: Vitals display can be printed in ancient lathes
+      title: Makes vitals display available in ancient lathes
+    95431:
+      changes:
+        JohnFulpWillard:
+        - qol: The Curator's barcode scanner now lets you check books out.
+        - bugfix: The library console can no longer borrow books for an infinite amount
+            of time.
+      title: Barcode scanner now lets you check books out
+    95454:
+      changes:
+        MrMelbert:
+        - rscadd: Some undergarmants will now use a generic replacement on lizard
+            body shapes that fit more appropriately
+        - refactor: Refactored how undergarmants generate their icons, report any
+            oddities with that
+      title: Adds support for gags underclothing / Uses it to make them look less
+        jank on lizards
+    95455:
+      changes:
+        MrMelbert:
+        - bugfix: The skeleton from being shocked matches your height
+      title: Apply height filters to electrocution animation
+    95466:
+      changes:
+        lelandkemble:
+        - bugfix: Glasses that were in the vending machine now still count for the
+            completion of the Beach Bar virtual domain
+      title: Vended glasses in the Beach Bar virtual domain count towards domain completion
+        when drank
+    95478:
+      changes:
+        ArcaneMusic:
+        - bugfix: Cargo goodies are now visible in the ordering and request consoles.
+      title: '[NO GBP] Corrects two issues with goodies and the ordering console.'
+    95481:
+      changes:
+        Jacquerel:
+        - rscadd: Nonhuman mobs with hands can now pick up other mobs that are smaller
+            than them and can usually be picked up
+      title: Gorillas can pick up kittens
+    95485:
+      changes:
+        cebutris:
+        - bugfix: Fixed an oversight with package wrapping
+      title: Boxcutting wrapped packages returns less wrap
+    95487:
+      changes:
+        Y0SH1M4S73R:
+        - qol: Many circuit components have had ports that effectively act as boolean
+            inputs or outputs converted into a new boolean datatype.
+      title: Adds a boolean type to circuits
+    95494:
+      changes:
+        MrMelbert:
+        - bugfix: Drinking soup will loop until it's empty or you cancel it (as it
+            used to)
+      title: Fix soup bowl looping not working
+    95498:
+      changes:
+        SunriseOverYourHead:
+        - code_imp: Uses defines instead of magic numbers on carbon_stripping.dm
+      title: carbon_stripping.dm uses defines instead of magic numbers
+  Horizon =][=:
+    81:
+      changes:
+        KOCMODECAHTHUK:
+        - code_imp: Изменены пути внутри гитхаба к инструментам
+      title: Legacy changes
