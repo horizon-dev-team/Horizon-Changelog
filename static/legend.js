@@ -3,21 +3,20 @@ const legendText = document.getElementById('legend-text');
 const closeLegendBtn = document.getElementById('close-legend-button');
 
 if (legendBtn && legendText && closeLegendBtn) {
-  // Открытие легенды
   legendBtn.addEventListener('click', () => {
-    legendText.classList.remove('hide');
+    legendText.style.display = 'block';
+    void legendText.offsetHeight;
     legendText.classList.add('show');
+    legendText.classList.remove('hide');
     legendBtn.style.display = 'none';
   });
 
-  // Закрытие легенды
   closeLegendBtn.addEventListener('click', () => {
     legendText.classList.remove('show');
     legendText.classList.add('hide');
     
     setTimeout(() => {
       legendText.style.display = 'none';
-      legendText.classList.remove('hide');
       legendBtn.style.display = 'flex';
     }, 300);
   });

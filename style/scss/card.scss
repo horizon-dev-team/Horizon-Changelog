@@ -7,7 +7,6 @@ $bg-card-hover: rgba(0, 0, 0, 0.5);
   display: flex;
   background: $bg-card;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: $border-radius;
   margin-bottom: 1rem;
   overflow: hidden;
   transition: transform $transition-fast, box-shadow $transition-fast;
@@ -84,6 +83,54 @@ $bg-card-hover: rgba(0, 0, 0, 0.5);
   }
 }
 
+$pr-color: #ab7df8;
+
+.card-sidebar {
+  width: $sidebar-width;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  
+  .pr-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ccc;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    &::before {
+      font-family: "Font Awesome 6 Free";
+      content: "\f126";
+      font-weight: 900;
+      font-size: 0.65rem;
+    }
+    
+    &:hover {
+      background: rgba($pr-color, 0.15);
+      border-color: $pr-color;
+      color: $pr-color;
+      text-decoration: none;
+      
+      &::before {
+        color: $pr-color;
+      }
+    }
+  }
+}
+
 .card-meta {
   font-size: 0.8rem;
   color: #aaa;
@@ -120,35 +167,6 @@ $bg-card-hover: rgba(0, 0, 0, 0.5);
   gap: 0.75rem;
 }
 
-.change-type {
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 0.35rem 0.5rem;
-  border-radius: $border-radius-sm;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  border-left: 3px solid;
-  
-  // Цвета через переменные
-  &.qol { border-left-color: $qol-color; color: $qol-color; }
-  &.balance { border-left-color: $balance-color; color: $balance-color; }
-  &.admin { border-left-color: $admin-color; color: $admin-color; }
-  &.spellcheck { border-left-color: $spellcheck-color; color: $spellcheck-color; }
-  &.bugfix { border-left-color: $bugfix-color; color: $bugfix-color; }
-  &.rscadd { border-left-color: $rscadd-color; color: $rscadd-color; }
-  &.refactor { border-left-color: $refactor-color; color: $refactor-color; }
-  &.image { border-left-color: $image-color; color: $image-color; }
-  &.map { border-left-color: $map-color; color: $map-color; }
-  &.ship { border-left-color: $ship-color; color: $ship-color; }
-  &.sound { border-left-color: $sound-color; color: $sound-color; }
-  &.tweak { border-left-color: $tweak-color; color: $tweak-color; }
-  &.code_imp { border-left-color: $code_imp-color; color: $code_imp-color; }
-  &.performance { border-left-color: $performance-color; color: $performance-color; }
-  &.experiment { border-left-color: $experiment-color; color: $experiment-color; }
-  &.server { border-left-color: $server-color; color: $server-color; }
-  &.localization { border-left-color: $localization-color; color: $localization-color; }
-}
 
 .sidebar-info {
   font-size: 0.75rem;

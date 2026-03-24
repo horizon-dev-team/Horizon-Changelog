@@ -230,10 +230,6 @@ $sidebar-offset: 20px;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba($primary, 0.4);
   }
-  
-  &:active {
-    transform: translateY(0);
-  }
 }
 
 .legend-content {
@@ -338,24 +334,16 @@ $sidebar-offset: 20px;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background: $danger;
+  background: #dc3545;
   color: #fff;
   border: none;
   width: 24px;
   height: 24px;
   border-radius: 6px;
   cursor: pointer;
-  transition: all $transition-normal;
+  transition: all 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  i {
-    font-size: 0.7rem;
-  }
-  
-  &:hover {
-    background: $danger-dark;
-    transform: rotate(90deg);
-  }
+  padding: 0;
 }

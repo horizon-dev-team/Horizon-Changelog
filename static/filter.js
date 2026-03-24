@@ -1,7 +1,4 @@
-// sidebar-filter.js
-
 document.addEventListener('DOMContentLoaded', function() {
-  // Получаем все даты из чейнджлогов
   const dateSections = document.querySelectorAll('.changelog-date-section');
   const allDates = Array.from(dateSections).map(section => ({
     date: section.getAttribute('data-date'),
@@ -11,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     day: parseInt(section.getAttribute('data-date').split('.')[0])
   }));
   
-  // Группируем даты по месяцам
   const monthsMap = new Map();
   
   allDates.forEach(item => {
@@ -27,23 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
     monthsMap.get(monthKey).dates.push(item);
   });
   
-  // Получаем список месяцев и сортируем по убыванию (новые сверху)
   const monthsList = Array.from(monthsMap.values()).sort((a, b) => {
     if (a.year !== b.year) return b.year - a.year;
     return b.month - a.month;
   });
   
-  // Настройки пагинации
   const ITEMS_PER_PAGE = 1;
   let currentPage = 0;
   let totalPages = Math.ceil(monthsList.length / ITEMS_PER_PAGE);
   
-  // Элементы DOM
   const monthsListContainer = document.getElementById('months-list-container');
   const paginationPrev = document.getElementById('pagination-prev');
   const paginationNext = document.getElementById('pagination-next');
   
-  // Рендер списка месяцев
   function renderMonthsList() {
     if (!monthsListContainer) return;
     
@@ -69,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     updatePaginationButtons();
     
-    // Активируем первый месяц
     const hasActive = document.querySelector('.dates-list li.active');
     if (!hasActive && pageMonths.length > 0) {
       const firstMonth = pageMonths[0];
@@ -81,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Фильтрация по месяцу
   function filterByMonth(year, month) {
     allDates.forEach(item => {
       if (item.year === year && item.month === month) {

@@ -228,24 +228,20 @@ body {
   padding: 0.2rem 0.6rem;
 }
 
-// Changelog Sections
-.changelog-date-section {
-  margin-bottom: 3rem;
-}
 
 .date-header {
   font-size: 1.8rem;
   font-weight: 700;
   border-bottom: 3px solid $primary;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  width: auto;
 }
 
+// Changelog Sections
 .changelog-date-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
   
   .date-header {
