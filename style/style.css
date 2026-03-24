@@ -176,7 +176,6 @@ body {
 .info-card {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
 }
@@ -658,6 +657,16 @@ body {
   border-left-color: #fff !important;
 }
 
+.fas,
+.far,
+.fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+}
+
 .sidebar-filter {
   position: absolute;
   left: 20px;
@@ -849,13 +858,20 @@ body {
   gap: 0.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-.btn-legend i {
+.btn-legend::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f059";
+  font-weight: 900;
   font-size: 0.7rem;
 }
 .btn-legend:hover {
   background: #286090;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(51, 122, 183, 0.4);
+  transform: translateY(-1px);
+}
+.btn-legend.active {
+  background: rgb(34.3269230769, 82.1153846154, 123.1730769231);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
 }
 
 .legend-content {
@@ -872,6 +888,9 @@ body {
   padding: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 @media (max-width: 768px) {
   .legend-content {
@@ -882,33 +901,18 @@ body {
   }
 }
 .legend-content.show {
-  display: block;
-  animation: fadeInUp 0.3s ease-out;
+  opacity: 1;
+  transform: translateY(0);
 }
 .legend-content.hide {
-  animation: fadeOutDown 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-close-legend {
+  display: none;
 }
-@keyframes fadeOutDown {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-}
+
 .legend-grid {
   display: flex;
   flex-direction: column;
