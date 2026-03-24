@@ -1,16 +1,3 @@
-// sidebar-filter.scss - Боковой фильтр
-
-.container {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
-}
-
 .sidebar-filter {
   position: fixed;
   left: 20px;
@@ -174,16 +161,6 @@
       opacity: 0.3;
       cursor: not-allowed;
     }
-  }
-}
-
-// Основной контент
-.main-content {
-  max-width: 800px;
-  margin: 0 auto;
-  
-  @media (max-width: 992px) {
-    max-width: 100%;
   }
 }
 

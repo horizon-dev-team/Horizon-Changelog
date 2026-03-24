@@ -140,9 +140,18 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  position: relative;
+  padding: 2rem 0;
   flex: 1;
+}
+@media (max-width: 1240px) {
+  .container {
+    max-width: 95%;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    padding: 2rem 0;
+  }
 }
 
 .bgimage {
@@ -430,6 +439,9 @@ body {
   .changelog-card {
     flex-direction: column;
   }
+  .card-main {
+    padding: 0.75rem;
+  }
   .card-sidebar {
     width: 100%;
     border-left: none;
@@ -437,18 +449,44 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0.75rem;
+  }
+  .card-sidebar .pr-number {
+    width: auto;
+    min-width: 70px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    margin: 0;
   }
   .card-sidebar .sidebar-info {
     flex-direction: row;
-    gap: 1rem;
-  }
-  .card-sidebar .change-type {
+    gap: 0.75rem;
     width: auto;
-    min-width: 80px;
   }
-  .pr-number {
+  .card-sidebar .sidebar-info div {
+    font-size: 0.7rem;
+  }
+  .card-sidebar .sidebar-info div i {
     font-size: 0.65rem;
-    padding: 0.15rem 0.5rem;
+  }
+  .card-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+  .card-meta {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  .changelog li {
+    font-size: 0.75rem;
+    padding: 2px 6px 2px 5px;
+    margin-bottom: 3px;
+  }
+  .date-header {
+    font-size: 1rem;
+    border-bottom-width: 2px;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 }
 .fix, .admin, .bugfix, .add, .rscadd, .del, .rscdel,
@@ -620,18 +658,6 @@ body {
   border-left-color: #fff !important;
 }
 
-.container {
-  position: relative;
-  padding-left: calc(240px + 20px + 20px);
-  padding-right: 20px;
-}
-@media (max-width: 992px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
 .sidebar-filter {
   position: absolute;
   left: 20px;
@@ -787,7 +813,7 @@ body {
 }
 
 .main-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 @media (max-width: 992px) {
@@ -1049,18 +1075,6 @@ body {
   }
 }
 
-.container {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-}
-
 .sidebar-filter {
   position: fixed;
   left: 20px;
@@ -1207,16 +1221,6 @@ body {
 .month-navigation button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
-}
-
-.main-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-@media (max-width: 992px) {
-  .main-content {
-    max-width: 100%;
-  }
 }
 
 .changelog {

@@ -3,17 +3,6 @@
 $sidebar-width: 240px;
 $sidebar-offset: 20px;
 
-// Контейнер с отступом под боковую панель
-.container {
-  position: relative;
-  padding-left: calc(#{$sidebar-width} + #{$sidebar-offset} + 20px);
-  padding-right: 20px;
-  
-  @media (max-width: 992px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
 
 // Боковая панель (только фильтр)
 .sidebar-filter {
@@ -186,7 +175,7 @@ $sidebar-offset: 20px;
 
 // Основной контент
 .main-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   
   @media (max-width: 992px) {

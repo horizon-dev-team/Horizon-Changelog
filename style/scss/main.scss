@@ -146,12 +146,18 @@ body {
 .container {
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: 2rem;
-  position: relative;
+  padding: 2rem 0;
   flex: 1;
+  
+  @media (max-width: 1240px) {
+    max-width: 95%;
+  }
+
+  @media (max-width: 992px) {
+    padding: 2rem 0;
+  }
 }
 
-// BG Image
 // BG Image
 .bgimage {
   position: fixed;
