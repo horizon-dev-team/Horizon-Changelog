@@ -22,3 +22,9 @@ if (legendBtn && legendText) {
     }
   });
 }
+
+const startTime = performance.now();
+window.addEventListener('load', () => {
+  const loadTime = (performance.now() - startTime) / 1000;
+  document.getElementById('load-time').textContent = loadTime.toFixed(2);
+});
