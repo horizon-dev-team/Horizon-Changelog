@@ -38,60 +38,53 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="container">
-      <!-- Decorative background -->
-      <div class="bgimage" aria-hidden="true">
-        <img src="static/bg-logo.svg" alt="">
-      </div>
+<main class="container">
+  <!-- Декоративный фон -->
+  <div class="bgimage" aria-hidden="true">
+    <img src="static/bg-logo.svg" alt="">
+  </div>
 
-      <!-- Info Cards -->
-      <div class="info-section">
-        <div class="info-card">
-          <p><strong>Контрибьютеры билда:</strong> 
-            <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/graphs/contributors" class="btn btn-success btn-sm">открыть список</a>
-          </p>
-          <p><strong>Отдельное спасибо:</strong> /tg/station, /vg/station, WhiteDream, TauCeti, BandaStation, GoonStation devs и оригинальным разработчикам SpaceStation.</p>
-          <div class="alert alert-danger">
-            <strong>Нашли баг?</strong> Пожалуйста, сообщите о нём на нашем 
-            <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/issues"><strong>трекере</strong></a>.
-          </div>
-        </div>
-      </div>
+ <!-- Боковой фильтр (нависает слева) -->
+<!-- Боковой фильтр (нависает слева) -->
+<aside class="sidebar-filter">
+  <div class="sidebar-filter-content">
+    <div class="dates-list">
+      <h3 class="sidebar-title">Месяцы</h3>
+      <ul id="months-list-container">
+        <!-- Месяцы будут добавлены через JS --></ul>
 
-      <!-- Legend Accordion -->
-      <div class="legend-container">
-        <button id="open-legend-button" class="btn-legend">
-          <i class="fas fa-info-circle"></i> Показать Легенду
+      <!-- Пагинация по месяцам (стрелки снизу) -->
+      <div class="dates-pagination">
+        <button class="pagination-prev" id="pagination-prev" disabled>
+          &lt;
         </button>
-        <div id="legend-text" class="legend-content">
-          <div class="legend-columns">
-            <div class="legend-column">
-              <div class="legend-item bugfix">Исправлена ошибка</div>
-              <div class="legend-item rscadd">Новый контент, фичи</div>
-              <div class="legend-item rscdel">Удаление контента, откаты фич</div>
-              <div class="legend-item balance">Правки баланса</div>
-              <div class="legend-item map">Карты, Руины и их изменение</div>
-              <div class="legend-item ship">Корабли и их изменения</div>
-              <div class="legend-item image">Респрайты, новые спрайты</div>
-              <div class="legend-item sound">Звуки и всё, что с ними связано</div>
-            </div>
-            <div class="legend-column">
-              <div class="legend-item tweak">Небольшие правки и изменения</div>
-              <div class="legend-item qol">Упрощено использование механики</div>
-              <div class="legend-item code_imp">Технические правки кода</div>
-              <div class="legend-item refactor">Переработка кода</div>
-              <div class="legend-item spellcheck">Исправление текста</div>
-              <div class="legend-item localization">Перевод с Английского на Русский</div>
-              <div class="legend-item admin">Изменения в кнопках администрации</div>
-              <div class="legend-item server">Настройки конфигурации сервера</div>
-            </div>
-          </div>
-          <button id="close-legend-button" class="btn-close-legend"><i class="fas fa-times"></i></button>
+        <button class="pagination-next" id="pagination-next">
+          &gt;
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <!-- Основной контент (по центру) -->
+  <div class="main-content">
+    <!-- Info Cards -->
+    <div class="info-section">
+      <div class="info-card">
+        <p><strong>Контрибьютеры билда:</strong> 
+          <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/graphs/contributors" class="btn btn-success btn-sm">открыть список</a>
+        </p>
+        <p><strong>Отдельное спасибо:</strong> /tg/station, /vg/station, WhiteDream, TauCeti, BandaStation, GoonStation devs и оригинальным разработчикам SpaceStation.</p>
+        <div class="alert alert-danger">
+          <strong>Нашли баг?</strong> Пожалуйста, сообщите о нём на нашем 
+          <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/issues"><strong>трекере</strong></a>.
         </div>
       </div>
+    </div>
 
-      <!-- CHANGELOGS -->
-      <div id="changelogs">
+    <!-- CHANGELOGS -->
+    <div id="changelogs">
+      <!-- Чейнджлоги остаются здесь -->
   <!-- Date: 23.03.2026 -->
   <div class="changelog-date-section" data-date="23.03.2026">
     <h2 class="date-header">23.03.2026</h2>
@@ -305,7 +298,7 @@
   </div>
 
   <!-- Date: 22.03.2026 -->
-  <div class="changelog-date-section" data-date="22.03.2026">
+  <div class="changelog-date-section" data-date="22.02.2026">
     <h2 class="date-header">22.03.2026</h2>
     
     <div class="source-group" data-author="/TG/Station">
@@ -363,8 +356,206 @@
       </div>
     </div>
   </div>
-      </div>
 
+  <div class="changelog-date-section" data-date="22.05.2026">
+    <h2 class="date-header">22.05.2026</h2>
+    
+    <div class="source-group" data-author="/TG/Station">
+      <h3 class="source-header">/TG/Station:</h3>
+      
+      <!-- Change 1 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Fixes DNA vault being constructable half-in a wall.
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95346" class="pr-number">#95346</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">ArcaneMusic</a>
+            </div>
+            <ul class="changelog">
+              <li class="bugfix">the BSA cannot be built half-into a wall.</li>
+              <li class="qol">building the DNA vault and BSA points to the tiles blocking it's construction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type bugfix">Bugfix</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 22.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="changelog-date-section" data-date="22.06.2026">
+    <h2 class="date-header">22.04.2026</h2>
+    
+    <div class="source-group" data-author="/TG/Station">
+      <h3 class="source-header">/TG/Station:</h3>
+      
+      <!-- Change 1 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Fixes DNA vault being constructable half-in a wall.
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95346" class="pr-number">#95346</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">ArcaneMusic</a>
+            </div>
+            <ul class="changelog">
+              <li class="bugfix">the BSA cannot be built half-into a wall.</li>
+              <li class="qol">building the DNA vault and BSA points to the tiles blocking it's construction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type bugfix">Bugfix</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 22.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="changelog-date-section" data-date="22.07.2026">
+    <h2 class="date-header">22.07.2026</h2>
+    
+    <div class="source-group" data-author="/TG/Station">
+      <h3 class="source-header">/TG/Station:</h3>
+      
+      <!-- Change 1 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Fixes DNA vault being constructable half-in a wall.
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95346" class="pr-number">#95346</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">ArcaneMusic</a>
+            </div>
+            <ul class="changelog">
+              <li class="bugfix">the BSA cannot be built half-into a wall.</li>
+              <li class="qol">building the DNA vault and BSA points to the tiles blocking it's construction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type bugfix">Bugfix</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 22.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="changelog-date-section" data-date="22.01.2026">
+    <h2 class="date-header">22.05.2026</h2>
+    
+    <div class="source-group" data-author="/TG/Station">
+      <h3 class="source-header">/TG/Station:</h3>
+      
+      <!-- Change 1 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Fixes DNA vault being constructable half-in a wall.
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95346" class="pr-number">#95346</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">ArcaneMusic</a>
+            </div>
+            <ul class="changelog">
+              <li class="bugfix">the BSA cannot be built half-into a wall.</li>
+              <li class="qol">building the DNA vault and BSA points to the tiles blocking it's construction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type bugfix">Bugfix</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 22.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="changelog-date-section" data-date="22.09.2026">
+    <h2 class="date-header">22.05.2026</h2>
+    
+    <div class="source-group" data-author="/TG/Station">
+      <h3 class="source-header">/TG/Station:</h3>
+      
+      <!-- Change 1 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Fixes DNA vault being constructable half-in a wall.
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95346" class="pr-number">#95346</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">ArcaneMusic</a>
+            </div>
+            <ul class="changelog">
+              <li class="bugfix">the BSA cannot be built half-into a wall.</li>
+              <li class="qol">building the DNA vault and BSA points to the tiles blocking it's construction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type bugfix">Bugfix</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 22.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+<!-- Легенда (справа, с возможностью открытия/закрытия) -->
+  <div class="legend-container">
+    <button id="open-legend-button" class="btn-legend">
+      Легенда
+    </button>
+    <div id="legend-text" class="legend-content">
+      <div class="legend-grid">
+        <div class="legend-item bugfix">Исправлена ошибка</div>
+        <div class="legend-item rscadd">Новый контент, фичи</div>
+        <div class="legend-item rscdel">Удаление контента, откаты фич</div>
+        <div class="legend-item map">Карты, Руины и их изменение</div>
+        <div class="legend-item ship">Корабли и их изменения</div>
+        <div class="legend-item image">Респрайты, новые спрайты</div>
+        <div class="legend-item sound">Звуки и всё, что с ними связано</div>
+        <div class="legend-item balance">Правки баланса</div>
+        <div class="legend-item tweak">Небольшие правки и изменения</div>
+        <div class="legend-item qol">Упрощено использование механики</div>
+        <div class="legend-item code_imp">Технические правки кода</div>
+        <div class="legend-item refactor">Переработка кода</div>
+        <div class="legend-item experiment">Экспериментальные фичи</div>
+        <div class="legend-item performance">Производительность</div>
+        <div class="legend-item spellcheck">Исправление текста</div>
+        <div class="legend-item localization">Перевод с Английского на Русский</div>
+        <div class="legend-item admin">Изменения в кнопках администрации</div>
+        <div class="legend-item server">Настройки конфигурации сервера</div>
+      </div>
+      <button id="close-legend-button" class="btn-close-legend">✕</button>
+    </div>
+  </div>
     <!-- FOOTER -->
     <footer>
       <div class="footer-content">
@@ -377,37 +568,8 @@
       </div>
     </footer>
   </div>
-
-<script>
-  // Legend toggle functionality с анимацией
-  const legendBtn = document.getElementById('open-legend-button');
-  const legendText = document.getElementById('legend-text');
-  const closeLegendBtn = document.getElementById('close-legend-button');
-
-  if (legendBtn && legendText && closeLegendBtn) {
-    // Открытие легенды
-    legendBtn.addEventListener('click', () => {
-      legendText.style.display = 'block';
-      // Небольшая задержка для запуска анимации
-      setTimeout(() => {
-        legendText.classList.add('show');
-      }, 10);
-      legendBtn.style.display = 'none';
-    });
-
-    // Закрытие легенды
-    closeLegendBtn.addEventListener('click', () => {
-      legendText.classList.remove('show');
-      legendText.classList.add('hide');
-      
-      // Ждем окончания анимации
-      setTimeout(() => {
-        legendText.style.display = 'none';
-        legendText.classList.remove('hide');
-        legendBtn.style.display = 'block';
-      }, 300);
-    });
-  }
-</script>
+</main>
+<script defer src="static/legen.js"></script>
+<script defer src="static/script.js"></script>
 </body>
 </html>

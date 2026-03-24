@@ -240,6 +240,23 @@ body {
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
   display: inline-block;
+  text-align: center;
+  width: auto;
+}
+
+.changelog-date-section {
+  margin-bottom: 3rem;
+  text-align: center;
+  
+  .date-header {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  // Остальное содержимое выравниваем по левому краю
+  .source-group {
+    text-align: left;
+  }
 }
 
 .source-group {
