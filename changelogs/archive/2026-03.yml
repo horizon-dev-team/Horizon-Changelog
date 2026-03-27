@@ -162,3 +162,68 @@
         KOCMODECAHTHUK:
         - code_imp: Изменены пути внутри гитхаба к инструментам
       title: Legacy changes
+'2026-03-27':
+  /TG/Station:
+    95392:
+      changes:
+        RusselNotSCP:
+        - rscadd: Added three new liqueurs, with bottles available in the booze-o-mat.
+        - rscadd: Added 15 new cocktails that use the aforementioned liqueurs.
+      title: 'Classic Cocktails 2: The liqueurening'
+    95416:
+      changes:
+        ArcaneMusic:
+        - code_imp: supply packs can now be spawned using containers different than
+            a crate.
+        - bugfix: The Random Supply Drop event can now spawn their items as opposed
+            to runtiming.
+      title: The random supply drop event can now contain goodies and will not runtime.
+    95442:
+      changes:
+        vinylspiders:
+        - bugfix: fixes an issue where casting spells after your mob gets deleted
+            can leave you in a permanently bugged state.
+      title: Guards against shapechanging while being deleted
+    95443:
+      changes:
+        Absolucy:
+        - qol: Slime Link messages now notify listeners with a balloon alert.
+      title: Adds a balloon alert to Slime Link messages
+    95445:
+      changes:
+        SyncIt21:
+        - bugfix: tearing a poster while placing it only creates a shred poster on
+            the wall but won't place a new one in hand
+      title: Fixes posters rolling up when deleted
+    95450:
+      changes:
+        lelandkemble:
+        - spellcheck: Immobile mobile defibrillator mounts are no longer called mobile
+      title: Immobile mobile defibrillator mounts are no longer called mobile
+    95475:
+      changes:
+        lelandkemble:
+        - bugfix: Tape can now secure prosthetic limbs again
+      title: Fixes being unable to use tape to secure limbs
+    95482:
+      changes:
+        Rhials:
+        - bugfix: The medisim shuttle docking port now aligns properly with most evac
+            terminals.
+      title: Aligns medisim docking doors with evac doors
+    95490:
+      changes:
+        lelandkemble:
+        - map: Snow Cabin fake healing wand now holds on to its sprite
+      title: Snow cabin fake holy wand keeps its sprite
+    95492:
+      changes:
+        LemonInTheDark:
+        - bugfix: the darken screen shake preference will no longer shake your screen
+            underneath the fullscreen overlay
+      title: Fixes screen_shake_darken still shaking the screen
+    95506:
+      changes:
+        lelandkemble:
+        - bugfix: You can put a horn in a clown car
+      title: Fixes being unable to put a horn in a clown car
