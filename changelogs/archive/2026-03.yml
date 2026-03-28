@@ -227,3 +227,35 @@
         lelandkemble:
         - bugfix: You can put a horn in a clown car
       title: Fixes being unable to put a horn in a clown car
+'2026-03-28':
+  /TG/Station:
+    95393:
+      changes:
+        ArcaneMusic:
+        - rscadd: Centcom is now offering the ability to purchase airflow blocking
+            plastic flaps, and the ability to refill the cargo shuttle with air for
+            the low, low installation fee of 8,000 credits. Inquire today under the
+            "Imports" category!
+      title: Adds a cargo shuttle upgrade for plastic flaps and air refills.
+    95496:
+      changes:
+        MrMelbert:
+        - bugfix: Hallucinating yourself as another mob will no longer disable all
+            of your light sources
+      title: Hallucination delusions copy lighting underlays
+    95509:
+      changes:
+        MrMelbert:
+        - qol: Health analyzer lung reports are appended by the lung organs rather
+            than at the bottom of the readout
+      title: Moves lung scanning code out of `healthscan`
+    95510:
+      changes:
+        TealSeer:
+        - bugfix: fixed a few bugs related to arm implant surgery
+      title: Fix some signal registration issues with arm implants
+    95512:
+      changes:
+        TealSeer:
+        - code_imp: added missing bitflags to bitfield defines
+      title: Adds missing bitflags to bitfield defines
