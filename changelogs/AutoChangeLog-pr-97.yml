@@ -1,0 +1,89 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/97
+delete-after: True
+/TG/Station:
+  95496:
+    title: "Hallucination delusions copy lighting underlays"
+    changes:
+      MrMelbert:
+        - bugfix: "Hallucinating yourself as another mob will no longer disable all of your light sources"
+  95509:
+    title: "Moves lung scanning code out of `healthscan`"
+    changes:
+      MrMelbert:
+        - qol: "Health analyzer lung reports are appended by the lung organs rather than at the bottom of the readout"
+  95512:
+    title: "Adds missing bitflags to bitfield defines"
+    changes:
+      TealSeer:
+        - code_imp: "added missing bitflags to bitfield defines"
+  95393:
+    title: "Adds a cargo shuttle upgrade for plastic flaps and air refills."
+    changes:
+      ArcaneMusic:
+        - rscadd: "Centcom is now offering the ability to purchase airflow blocking plastic flaps, and the ability to refill the cargo shuttle with air for the low, low installation fee of 8,000 credits. Inquire today under the \"Imports\" category!"
+  95510:
+    title: "Fix some signal registration issues with arm implants"
+    changes:
+      TealSeer:
+        - bugfix: "fixed a few bugs related to arm implant surgery"
+  95339:
+    title: "General maintenance for random chemical reactions"
+    changes:
+      SyncIt21:
+        - refactor: "random recipes like metalgen & secret sause have been refactored. Please report bugs on github"
+  95321:
+    title: "Fixes 2 sink frame bugs"
+    changes:
+      SyncIt21:
+        - bugfix: "you cannot install infinite water recyclers in the sink frame"
+        - bugfix: "you can attach sink frames to walls in most cases regardless of what's on the wall(except when there is already a light fixture, camera or another sink)"
+  95460:
+    title: "Replaces Changeling's stat panel entry"
+    changes:
+      JohnFulpWillard:
+        - qol: "Changeling's stat panel entry has been moved to the HUD & Antag panel. Also added some extra explanations on how Changelings work in there."
+  95463:
+    title: "Replaces the Space Suit stat panel entry"
+    changes:
+      JohnFulpWillard:
+        - qol: "The stat panel entry for space suits has been replaced with the HUD element. You can now hover over it to see exact cell percentage, and click it to turn the regulator on, while it'll also display when it's off."
+  95486:
+    title: "Embed removal during surgery fix"
+    changes:
+      MrMelbert:
+        - bugfix: "You can remove embeds during surgery"
+  95488:
+    title: "Ensures heads update sprite on organ movement"
+    changes:
+      MrMelbert:
+        - bugfix: "Gibbed heads don't look debrained despite having a brain"
+  95500:
+    title: "Removes cloning (lab)"
+    changes:
+      MrMelbert:
+        - rscdel: "\"Cloning Lab\" is no longer a traitor codeword."
+  95495:
+    title: "Fixes a race condition with the slow shuttle station trait"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes an issue where the 'slow shuttle' station trait can sometimes not be applied properly"
+  95524:
+    title: "Prevents infinite plasteel from girders"
+    changes:
+      lelandkemble:
+        - bugfix: "You can no longer create infinite plasteel with girders"
+  95502:
+    title: "Adds a space and changes punctuation in the thanatorenasia ghost offer dialog"
+    changes:
+      lelandkemble:
+        - spellcheck: "Changed spacing an punctuation in thanatorenasia offer to ghosts"
+  95515:
+    title: "When forcing an earthquake, admins can now choose its location"
+    changes:
+      DATA-xPUNGED:
+        - admin: "When forcing an earthquake, admins can now pick their precise position on the station."
+  95518:
+    title: "Installing/moving windoor electronics only happens after the do-after"
+    changes:
+      Hatterhat:
+        - qol: "Installing electronics into windoors/interior doors only moves the electronics out of your hand on a successful installation."
