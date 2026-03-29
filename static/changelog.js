@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadMoreButton.style.margin = '20px auto';
   loadMoreButton.style.display = 'block';
 
-  const DATA_URL = 'static/changelogs.json';
+  const DATA_URL = './changelogs/changelogs.json';
   const INITIAL_DAYS = 5;
   const BATCH_DAYS = 5;
 
