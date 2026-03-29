@@ -271,11 +271,11 @@ $sidebar-offset: 20px;
 .legend-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .legend-item {
-  padding: 6px 8px;
+  padding: 4px 6px;
   border-left: 3px solid;
   font-size: 0.75rem;
   transition: all $transition-fast;

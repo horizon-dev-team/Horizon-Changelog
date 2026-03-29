@@ -144,6 +144,8 @@ body {
 
 // Main Container
 .container {
+  width: 100%;
+  max-width: 1200px;
   max-width: $container-max-width;
   margin: 0 auto;
   padding: 2rem 0;
@@ -175,11 +177,6 @@ body {
   }
 }
 
-
-// Info Section
-.info-section {
-  margin-bottom: 1rem;
-}
 
 .info-card {
   background: $bg-overlay;

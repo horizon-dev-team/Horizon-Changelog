@@ -18,6 +18,7 @@
 
 <body>
   <div class="app">
+    <div class="bgimage" aria-hidden="true"><img src="static/bg-logo.svg" alt=""></div>
     <header class="header">
       <div class="header-bg">
         <div class="layer1"></div>
@@ -29,51 +30,34 @@
         <p class="lead">Changelogs</p>
         <nav class="header-nav">
           <a href="https://horizon-dev-team.github.io/handbook/" class="btn btn-outline" role="button">Wiki</a>
-          <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype" class="btn btn-outline"
-            role="button">GitHub</a>
+          <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype" class="btn btn-outline" role="button">GitHub</a>
           <a href="https://discord.gg/" class="btn btn-outline" role="button">Discord</a>
         </nav>
       </div>
     </header>
     <main class="container">
-      <div class="bgimage" aria-hidden="true">
-        <img src="static/bg-logo.svg" alt="">
+
+      <div class="info-card">
+        <p><strong>Контрибьютеры билда:</strong><a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/graphs/contributors" class="btn btn-success btn-sm">открыть список</a></p>
+        <p><strong>Отдельное спасибо:</strong> /tg/station, /vg/station, WhiteDream, TauCeti, BandaStation, GoonStation devs и оригинальным разработчикам SpaceStation.</p>
+        <div class="alert alert-danger"><strong>Нашли баг?</strong> Пожалуйста, сообщите о нём на нашем <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/issues"><strong>трекере</strong></a>. </div>
       </div>
+
       <aside class="sidebar-filter">
         <div class="sidebar-filter-content">
           <div class="dates-list">
-            <h3 class="sidebar-title">Месяцы</h3>
-            <ul id="months-list-container">
-            </ul>
+            <h3 class="sidebar-title">Месяцы</h3><ul id="months-list-container"></ul>
             <div class="dates-pagination">
-              <button class="pagination-prev" id="pagination-prev" disabled>
-                &lt;
-              </button>
-              <button class="pagination-next" id="pagination-next">
-                &gt;
-              </button>
+              <button class="pagination-prev" id="pagination-prev" disabled>&lt;</button>
+              <button class="pagination-next" id="pagination-next">&gt;</button>
             </div>
           </div>
         </div>
       </aside>
-      <div class="main-content">
-        <div class="info-section">
-          <div class="info-card">
-            <p><strong>Контрибьютеры билда:</strong>
-              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/graphs/contributors"
-                class="btn btn-success btn-sm">открыть список</a>
-            </p>
-            <p><strong>Отдельное спасибо:</strong> /tg/station, /vg/station, WhiteDream, TauCeti, BandaStation,
-              GoonStation devs и оригинальным разработчикам SpaceStation.</p>
-            <div class="alert alert-danger">
-              <strong>Нашли баг?</strong> Пожалуйста, сообщите о нём на нашем
-              <a
-                href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/issues"><strong>трекере</strong></a>.
-            </div>
-          </div>
-        </div>
-        <div id="changelogs"></div>
+
+      <div id="changelogs"></div>
     </main>
+
     <div class="legend-container">
       <button id="open-legend-button" class="btn-legend">Легенда</button>
       <div id="legend-text" class="legend-content">
@@ -97,7 +81,7 @@
         </div>
       </div>
     </div>
-    <!-- FOOTER -->
+
     <div class="footer">
       <div class="footer-content">
         <div class="footer-left">Дизайн Horizon-Dev-Team</div>
@@ -105,6 +89,7 @@
         <div class="footer-load-time">Генерация страницы: <span id="load-time">...</span> сек</div>
       </div>
     </div>
+
     <script defer src="static/legend.js"></script>
     <script defer src="static/filter.js"></script>
     <script defer src="static/changelog.js"></script>

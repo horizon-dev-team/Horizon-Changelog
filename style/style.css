@@ -138,6 +138,8 @@ body {
 }
 
 .container {
+  width: 100%;
+  max-width: 1200px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 0;
@@ -167,10 +169,6 @@ body {
 }
 .bgimage img {
   width: 60vmin;
-}
-
-.info-section {
-  margin-bottom: 1rem;
 }
 
 .info-card {
@@ -916,11 +914,11 @@ body {
 .legend-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .legend-item {
-  padding: 6px 8px;
+  padding: 4px 6px;
   border-left: 3px solid;
   font-size: 0.75rem;
   transition: all 0.2s;
