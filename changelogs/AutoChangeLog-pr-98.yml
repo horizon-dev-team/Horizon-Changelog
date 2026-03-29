@@ -1,0 +1,28 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/98
+delete-after: True
+/TG/Station:
+  95537:
+    title: "Nugget Box Resprite + Nuggets/Wings/Fries Containers"
+    changes:
+      Twaticus:
+        - image: "resprites chicken nugget box and adds 3 new food related containers, new nugget box, a wing bucket, and a fry sleeve."
+  95523:
+    title: "integrated circuit shells are no longer doomed to explode"
+    changes:
+      Hatterhat:
+        - bugfix: "Integrated circuit shells now only explode if they draw too much power in a minute, rather than being doomed to explode if it uses too much power over its entire lifetime, following complaints from at least one guy. Nanotrasen representatives claim that this is entirely unrelated to missing shipments of explosive alloys."
+  95514:
+    title: "Fixes stack items not being refunded by failed heretic summon rituals"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed stack items not being refunded by failed heretic summon rituals"
+  95516:
+    title: "Fixes parallax runtiming horribly whenever parallax SS doesnt pick a random layer to display"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed parallax runtiming horribly whenever parallax SS doesnt pick a random layer to display"
+  95298:
+    title: "Academy redone"
+    changes:
+      Yobrocharlie:
+        - rscadd: "Added the academy back, its now a fetch quest."
