@@ -259,3 +259,106 @@
         TealSeer:
         - code_imp: added missing bitflags to bitfield defines
       title: Adds missing bitflags to bitfield defines
+'2026-03-29':
+  /TG/Station:
+    95321:
+      changes:
+        SyncIt21:
+        - bugfix: you cannot install infinite water recyclers in the sink frame
+        - bugfix: you can attach sink frames to walls in most cases regardless of
+            what's on the wall(except when there is already a light fixture, camera
+            or another sink)
+      title: Fixes 2 sink frame bugs
+    95339:
+      changes:
+        SyncIt21:
+        - refactor: random recipes like metalgen & secret sause have been refactored.
+            Please report bugs on github
+      title: General maintenance for random chemical reactions
+    95393:
+      changes:
+        ArcaneMusic:
+        - rscadd: Centcom is now offering the ability to purchase airflow blocking
+            plastic flaps, and the ability to refill the cargo shuttle with air for
+            the low, low installation fee of 8,000 credits. Inquire today under the
+            "Imports" category!
+      title: Adds a cargo shuttle upgrade for plastic flaps and air refills.
+    95460:
+      changes:
+        JohnFulpWillard:
+        - qol: Changeling's stat panel entry has been moved to the HUD & Antag panel.
+            Also added some extra explanations on how Changelings work in there.
+      title: Replaces Changeling's stat panel entry
+    95463:
+      changes:
+        JohnFulpWillard:
+        - qol: The stat panel entry for space suits has been replaced with the HUD
+            element. You can now hover over it to see exact cell percentage, and click
+            it to turn the regulator on, while it'll also display when it's off.
+      title: Replaces the Space Suit stat panel entry
+    95486:
+      changes:
+        MrMelbert:
+        - bugfix: You can remove embeds during surgery
+      title: Embed removal during surgery fix
+    95488:
+      changes:
+        MrMelbert:
+        - bugfix: Gibbed heads don't look debrained despite having a brain
+      title: Ensures heads update sprite on organ movement
+    95495:
+      changes:
+        vinylspiders:
+        - bugfix: fixes an issue where the 'slow shuttle' station trait can sometimes
+            not be applied properly
+      title: Fixes a race condition with the slow shuttle station trait
+    95496:
+      changes:
+        MrMelbert:
+        - bugfix: Hallucinating yourself as another mob will no longer disable all
+            of your light sources
+      title: Hallucination delusions copy lighting underlays
+    95500:
+      changes:
+        MrMelbert:
+        - rscdel: '"Cloning Lab" is no longer a traitor codeword.'
+      title: Removes cloning (lab)
+    95502:
+      changes:
+        lelandkemble:
+        - spellcheck: Changed spacing an punctuation in thanatorenasia offer to ghosts
+      title: Adds a space and changes punctuation in the thanatorenasia ghost offer
+        dialog
+    95509:
+      changes:
+        MrMelbert:
+        - qol: Health analyzer lung reports are appended by the lung organs rather
+            than at the bottom of the readout
+      title: Moves lung scanning code out of `healthscan`
+    95510:
+      changes:
+        TealSeer:
+        - bugfix: fixed a few bugs related to arm implant surgery
+      title: Fix some signal registration issues with arm implants
+    95512:
+      changes:
+        TealSeer:
+        - code_imp: added missing bitflags to bitfield defines
+      title: Adds missing bitflags to bitfield defines
+    95515:
+      changes:
+        DATA-xPUNGED:
+        - admin: When forcing an earthquake, admins can now pick their precise position
+            on the station.
+      title: When forcing an earthquake, admins can now choose its location
+    95518:
+      changes:
+        Hatterhat:
+        - qol: Installing electronics into windoors/interior doors only moves the
+            electronics out of your hand on a successful installation.
+      title: Installing/moving windoor electronics only happens after the do-after
+    95524:
+      changes:
+        lelandkemble:
+        - bugfix: You can no longer create infinite plasteel with girders
+      title: Prevents infinite plasteel from girders
