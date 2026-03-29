@@ -5,6 +5,7 @@ import yaml
 import os
 import sys
 import glob
+import json
 from datetime import datetime
 from collections import defaultdict
 
@@ -183,14 +184,69 @@ def generate_changelog_html(entries):
     
     return '\n'.join(html_parts)
 
+
+def generate_changelog_json(entries):
+    result = []
+    sorted_dates = sorted(entries.keys(), reverse=True)
+
+    for date_key in sorted_dates:
+        for source in sorted(entries[date_key].keys()):
+            source_data = entries[date_key][source]
+            sorted_prs = sorted(source_data.keys(), key=lambda x: int(str(x).split('/')[-1]))
+
+            for pr_number in sorted_prs:
+                pr_data = source_data[pr_number]
+                title = pr_data.get('title', '')
+                for author in sorted(pr_data.get('changes', {}).keys()):
+                    changes = pr_data['changes'][author]
+                    parsed_changes = []
+
+                    for change in changes:
+                        if isinstance(change, dict):
+                            change_type, description = list(change.items())[0]
+                        else:
+                            parts = str(change).split(': ', 1)
+                            if len(parts) == 2:
+                                change_type, description = parts
+                            else:
+                                change_type = 'tweak'
+                                description = str(change)
+
+                        css_class = CHANGELOG_TYPE_MAPPING.get(change_type.lower(), 'tweak')
+                        parsed_changes.append({
+                            'type': change_type,
+                            'class': css_class,
+                            'text': description,
+                        })
+
+                    result.append({
+                        'date': date_key,
+                        'source': source,
+                        'pr': str(pr_number),
+                        'title': title,
+                        'author': author,
+                        'changes': parsed_changes,
+                    })
+
+    return result
+
+
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: python generate_changelog_html.py <changelogs_dir> <output_html>")
+    if len(sys.argv) not in (3, 5):
+        print("Usage: python generate_changelog_html.py <changelogs_dir> <output_html> [--json <output_json>]")
         sys.exit(1)
 
     changelogs_dir = sys.argv[1]
     output_html = sys.argv[2]
-    
+    json_output = None
+
+    if len(sys.argv) == 5:
+        if sys.argv[3] == '--json':
+            json_output = sys.argv[4]
+        else:
+            print("Unknown option", sys.argv[3])
+            sys.exit(1)
+
     archive_dir = os.path.join(changelogs_dir, 'archive')
     if not os.path.exists(archive_dir):
         print(f"Error: Archive directory not found: {archive_dir}", file=sys.stderr)
@@ -198,14 +254,22 @@ def main():
 
     # Загружаем записи
     entries = load_changelog_entries(archive_dir)
-    
+
     if not entries:
         print("No entries found")
         sys.exit(0)
-    
+
     # Генерируем HTML для changelog'ов
     changelog_html = generate_changelog_html(entries)
-    
+
+    if json_output is None:
+        json_output = os.path.join(os.path.dirname(output_html), 'static', 'changelogs.json')
+
+    changelog_json = generate_changelog_json(entries)
+    with open(json_output, 'w', encoding='utf-8') as f:
+        json.dump(changelog_json, f, ensure_ascii=False, indent=2)
+    print(f"Successfully generated JSON {json_output}")
+
     # Читаем шаблон
     template_file = os.path.join(os.path.dirname(output_html), 'index_template.html')
     if not os.path.exists(template_file):
@@ -214,7 +278,7 @@ def main():
         else:
             print(f"Error: Template file not found: {template_file}", file=sys.stderr)
             sys.exit(1)
-    
+
     with open(template_file, 'r', encoding='utf-8') as f:
         template = f.read()
     
