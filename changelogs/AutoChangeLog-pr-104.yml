@@ -1,0 +1,24 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/104
+delete-after: True
+/TG/Station:
+  95553:
+    title: "Fixes multiple objects calling examine() instead of examinate()"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixes press badges and other miscellaneous objects failing to make the user examine them."
+  95549:
+    title: "Fixes firebreath obj effects 3 years later"
+    changes:
+      Tsar-Salat:
+        - bugfix: "firebreath will light objects on fire more consistently"
+  95552:
+    title: "fixes cyborg emagging not making them unconscious"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - bugfix: "cyborgs are made properly unconscious when emagged"
+  95480:
+    title: "TGUIfies some VV actions, replaces the actions dropdown with a searchable one"
+    changes:
+      SmArtKar:
+        - admin: "Some non-critical VV actions such as mutation/organ/quirk modification have been converted to TGUI"
+        - admin: "VV dropdown has gotten a refresh and now boasts a brand-new searchbar"
