@@ -1,0 +1,201 @@
+// card.scss - Стили карточек changelog
+
+$bg-card: rgba(0, 0, 0, 0.4);
+$bg-card-hover: rgba(0, 0, 0, 0.5);
+
+.changelog-card {
+  display: flex;
+  background: $bg-card;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: $border-radius;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  backdrop-filter: blur(5px);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: $bg-card-hover;
+  }
+}
+
+.card-main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $info;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Стиль для PR номера как кнопка
+.pr-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: darken(#ab7df8, 10%);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all $transition-fast;
+  
+  &::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f126";
+    font-weight: 900;
+    font-size: 0.65rem;
+  }
+  
+  &:hover {
+    background: darken(#ab7df8, 5%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  &:hover {
+    background: #ab7df8;
+    box-shadow: 0 0 8px rgba(#ab7df8, 0.6);
+    color: #fff;
+  }
+}
+
+.card-meta {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.author {
+  color: #f39c12;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  
+  &::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f007";
+    font-weight: 900;
+    font-size: 0.7rem;
+  }
+}
+
+// Card Sidebar
+.card-sidebar {
+  width: $sidebar-width;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.change-type {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.35rem 0.5rem;
+  border-radius: $border-radius-sm;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 3px solid;
+  
+  // Цвета через переменные
+  &.qol { border-left-color: $qol-color; color: $qol-color; }
+  &.balance { border-left-color: $balance-color; color: $balance-color; }
+  &.admin { border-left-color: $admin-color; color: $admin-color; }
+  &.spellcheck { border-left-color: $spellcheck-color; color: $spellcheck-color; }
+  &.bugfix { border-left-color: $bugfix-color; color: $bugfix-color; }
+  &.rscadd { border-left-color: $rscadd-color; color: $rscadd-color; }
+  &.refactor { border-left-color: $refactor-color; color: $refactor-color; }
+  &.image { border-left-color: $image-color; color: $image-color; }
+  &.map { border-left-color: $map-color; color: $map-color; }
+  &.ship { border-left-color: $ship-color; color: $ship-color; }
+  &.sound { border-left-color: $sound-color; color: $sound-color; }
+  &.tweak { border-left-color: $tweak-color; color: $tweak-color; }
+  &.code_imp { border-left-color: $code_imp-color; color: $code_imp-color; }
+  &.performance { border-left-color: $performance-color; color: $performance-color; }
+  &.experiment { border-left-color: $experiment-color; color: $experiment-color; }
+  &.server { border-left-color: $server-color; color: $server-color; }
+  &.localization { border-left-color: $localization-color; color: $localization-color; }
+}
+
+.sidebar-info {
+  font-size: 0.75rem;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  i {
+    width: 16px;
+    color: #777;
+  }
+}
+
+// Responsive для карточек
+@media (max-width: $mobile) {
+  .changelog-card {
+    flex-direction: column;
+  }
+  
+  .card-sidebar {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    .sidebar-info {
+      flex-direction: row;
+      gap: 1rem;
+    }
+    
+    .change-type {
+      width: auto;
+      min-width: 80px;
+    }
+  }
+  
+  .pr-number {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+  }
+}

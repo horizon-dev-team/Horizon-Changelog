@@ -1,0 +1,51 @@
+// footer.scss - Стили футера
+
+@import "variables";
+
+footer {
+  background: $bg-overlay-dark;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  font-size: 0.9rem;
+  color: #aaa;
+  
+  a {
+    color: $success;
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: $border-radius-sm;
+    transition: all $transition-normal;
+    
+    &:hover {
+      background: rgba($success, 0.2);
+      color: lighten($success, 10%);
+    }
+  }
+}
+
+.footer-right {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+@media (max-width: $mobile) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}

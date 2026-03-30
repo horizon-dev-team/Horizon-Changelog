@@ -1,0 +1,70 @@
+'2026-03-22':
+  /TG/Station:
+    95346:
+      changes:
+        ArcaneMusic:
+        - bugfix: the BSA cannot be built half-into a wall.
+        - qol: building the DNA vault and BSA points to the tiles blocking it's construction.
+      title: Fixes DNA vault being constructable half-in a wall.
+    95470:
+      changes:
+        MrMelbert:
+        - image: Generic surgical operations now have unique surgery radial icons
+      title: Generic surgical operations now have unique radial icons
+'2026-03-23':
+  /TG/Station:
+    95389:
+      changes:
+        MrMelbert:
+        - qol: Audit log formats vendors without "the"
+      title: Vendors in audit log are no longer prefixed with "the"
+    95414:
+      changes:
+        SmArtKar:
+        - balance: Blue raptors had their HP increased from 220 to 300
+        - balance: Purple raptors now automatically start flying if the owner is about
+            to fall into a chasm.
+        - bugfix: Fixed 2 exploits which would render you immune to falling down a
+            specific chasm.
+      title: Buffs blue and purple raptors a bit, and fixes chasm immunity bugs
+    95439:
+      changes:
+        LemonInTheDark:
+        - admin: Subsystem flags are now displayed as flags instead of raw numbers
+            in vv
+      title: Gives subsystem controllers a bitfield def to make vv easier, renames
+        their flags var
+    95446:
+      changes:
+        lelandkemble:
+        - spellcheck: Shoving someone into another person no longer sends the "you
+            shoved" message to the person who was shoved into
+      title: Corrects shoving someone into another person sending the "you shoved"
+        message to the person who was shoved into
+    95457:
+      changes:
+        MrMelbert:
+        - qol: More places causes the "splattered with blood" mood event
+      title: Add blood splatter events to a few places
+    95464:
+      changes:
+        lelandkemble:
+        - bugfix: Monkey dust now properly removes anti-stun properties when its imbiber
+            is no longer a monkey
+      title: Monkey Dust no longer can provide permanent stun immunity
+    95469:
+      changes:
+        MrMelbert:
+        - rscadd: Adds Thanatorenasia, a 0 point neutral quirk that turns your body
+            into a "recovered crewmember" if you choose to DNR - meaning if revived,
+            any ghost could take control of it
+        - refactor: Refactored "ghostrol on revive" behavior a fair bit, report any
+            oddities with it / the spawners menu
+      title: Adds a 0 point quirk that turns your body into a recovered crewmember
+        (effectively) on DNRing
+    95476:
+      changes:
+        FalloutFalcon:
+        - spellcheck: removed extra space on spraying an atmos machine with spray
+            can
+      title: Removes a double space on to_chat for spray can

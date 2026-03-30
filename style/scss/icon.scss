@@ -1,0 +1,137 @@
+// icon.scss - Иконки для типов изменений
+
+@import "variables";
+
+// Общие стили для всех типов
+.fix, .admin, .bugfix, .add, .rscadd, .del, .rscdel,
+.refactor, .code_imp, .image, .qol, .sound, .spellcheck,
+.ru, .localization, .tweak, .performance, .experiment,
+.balance, .map, .ship, .server, .label-changelog {
+  background-color: rgba(51.25, 51.25, 51.25, 0.5);
+  
+  &::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+    display: inline-block;
+  }
+}
+
+// Индивидуальные иконки
+.bugfix::before {
+  content: "\f188";
+  color: $bugfix-color;
+}
+
+.rscadd::before {
+  content: "\f058";
+  color: $rscadd-color;
+}
+
+.rscdel::before {
+  content: "\f057";
+  color: $rscdel-color;
+}
+
+.image::before {
+  content: "\f03e";
+  color: $image-color;
+}
+
+.map::before {
+  content: "\f279";
+  color: $map-color;
+}
+
+.ship::before {
+  content: "\f197";
+  color: $ship-color;
+}
+
+.sound::before {
+  content: "\f025";
+  color: $sound-color;
+}
+
+.spellcheck::before {
+  content: "\f891";
+  color: $spellcheck-color;
+}
+
+.ru::before, .localization::before {
+  content: "\f1ab";
+  color: $localization-color;
+}
+
+.tweak::before {
+  content: "\f0ad";
+  color: $tweak-color;
+}
+
+.qol::before {
+  content: "\f4be";
+  color: $qol-color;
+}
+
+.performance::before {
+  content: "\f0e4";
+  color: $performance-color;
+}
+
+.experiment::before {
+  content: "\f0c3";
+  color: $experiment-color;
+}
+
+.balance::before {
+  content: "\f516";
+  color: $balance-color;
+}
+
+.refactor::before {
+  content: "\f1c0";
+  color: $refactor-color;
+}
+
+.code_imp::before {
+  content: "\f121";
+  color: $code_imp-color;
+}
+
+.admin::before {
+  content: "\f505";
+  color: $admin-color;
+}
+
+.server::before {
+  content: "\f233";
+  color: $server-color;
+}
+
+.label-changelog::before {
+  content: "\f02e";
+  color: rgb(51.25, 51.25, 51.25);
+}
+
+// Цвета бордеров для типов в списке изменений
+.changelog li {
+  &.bugfix { border-left-color: $bugfix-color !important; }
+  &.rscadd { border-left-color: $rscadd-color !important; }
+  &.rscdel { border-left-color: $rscdel-color !important; }
+  &.balance { border-left-color: $balance-color !important; }
+  &.qol { border-left-color: $qol-color !important; }
+  &.spellcheck { border-left-color: $spellcheck-color !important; }
+  &.admin { border-left-color: $admin-color !important; }
+  &.refactor { border-left-color: $refactor-color !important; }
+  &.image { border-left-color: $image-color !important; }
+  &.map { border-left-color: $map-color !important; }
+  &.ship { border-left-color: $ship-color !important; }
+  &.sound { border-left-color: $sound-color !important; }
+  &.tweak { border-left-color: $tweak-color !important; }
+  &.code_imp { border-left-color: $code_imp-color !important; }
+  &.performance { border-left-color: $performance-color !important; }
+  &.experiment { border-left-color: $experiment-color !important; }
+  &.server { border-left-color: $server-color !important; }
+  &.localization { border-left-color: $localization-color !important; }
+  &.ru { border-left-color: $localization-color !important; }
+}

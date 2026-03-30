@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <title>Horizon "=][=" Changelogs</title>
+  <base target="_blank">
+  <meta charset="UTF-8">
+  <meta name="description" content="Чейнджлоги Horizon =][=">
+  <meta name="theme-color" content="#141c26">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-title" content="Horizon changelogs">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="icon" href="static/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script defer src="static/script.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-bg">
+        <div class="layer1"></div>
+        <div class="layer2"></div>
+        <div class="layer3"></div>
+      </div>
+      <div class="header-content">
+        <h1>Horizon =][=</h1>
+        <p class="lead">Changelogs</p>
+        <nav class="header-nav">
+          <a href="https://horizon-dev-team.github.io/handbook/" class="btn btn-outline" role="button">Wiki</a> 
+          <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype" class="btn btn-outline" role="button">GitHub</a>
+          <a href="https://discord.gg/" class="btn btn-outline" role="button">Discord</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+      <!-- Decorative background -->
+      <div class="bgimage" aria-hidden="true">
+        <img src="static/bg-logo.svg" alt="">
+      </div>
+
+      <!-- Info Cards -->
+      <div class="info-section">
+        <div class="info-card">
+          <p><strong>Контрибьютеры билда:</strong> 
+            <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/graphs/contributors" class="btn btn-success btn-sm">открыть список</a>
+          </p>
+          <p><strong>Отдельное спасибо:</strong> /tg/station, /vg/station, WhiteDream, TauCeti, BandaStation, GoonStation devs и оригинальным разработчикам SpaceStation.</p>
+          <div class="alert alert-danger">
+            <strong>Нашли баг?</strong> Пожалуйста, сообщите о нём на нашем 
+            <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/issues"><strong>трекере</strong></a>.
+          </div>
+        </div>
+      </div>
+
+      <!-- Legend Accordion -->
+      <div class="legend-container">
+        <button id="open-legend-button" class="btn-legend">
+          <i class="fas fa-info-circle"></i> Показать Легенду
+        </button>
+        <div id="legend-text" class="legend-content">
+          <div class="legend-columns">
+            <div class="legend-column">
+              <div class="legend-item bugfix">Исправлена ошибка</div>
+              <div class="legend-item rscadd">Новый контент, фичи</div>
+              <div class="legend-item rscdel">Удаление контента, откаты фич</div>
+              <div class="legend-item balance">Правки баланса</div>
+              <div class="legend-item map">Карты, Руины и их изменение</div>
+              <div class="legend-item ship">Корабли и их изменения</div>
+              <div class="legend-item image">Респрайты, новые спрайты</div>
+              <div class="legend-item sound">Звуки и всё, что с ними связано</div>
+            </div>
+            <div class="legend-column">
+              <div class="legend-item tweak">Небольшие правки и изменения</div>
+              <div class="legend-item qol">Упрощено использование механики</div>
+              <div class="legend-item code_imp">Технические правки кода</div>
+              <div class="legend-item refactor">Переработка кода</div>
+              <div class="legend-item spellcheck">Исправление текста</div>
+              <div class="legend-item localization">Перевод с Английского на Русский</div>
+              <div class="legend-item admin">Изменения в кнопках администрации</div>
+              <div class="legend-item server">Настройки конфигурации сервера</div>
+            </div>
+          </div>
+          <button id="close-legend-button" class="btn-close-legend"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+
+      <!-- CHANGELOGS -->
+      <div id="changelogs">
+  <!-- Date: 23.03.2026 -->
+  <div class="changelog-date-section" data-date="23.03.2026">
+    <h2 class="date-header">23.03.2026</h2>
+    
+    <div class="source-group" data-author="/TG/Station">
+      <h3 class="source-header">/TG/Station:</h3>
+      
+      <!-- Change 1 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Vendors in audit log are no longer prefixed with "the"
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95389" class="pr-number">#95389</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">MrMelbert</a>
+            </div>
+            <ul class="changelog">
+              <li class="qol">Audit log formats vendors without "the"</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type qol">QOL</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 2 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Buffs blue and purple raptors a bit, and fixes chasm immunity bugs
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95414" class="pr-number">#95414</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">SmArtKar</a>
+            </div>
+            <ul class="changelog">
+              <li class="balance">Blue raptors had their HP increased from 220 to 300</li>
+              <li class="balance">Purple raptors now automatically start flying if the owner is about to fall into a chasm.</li>
+              <li class="bugfix">Fixed 2 exploits which would render you immune to falling down a specific chasm.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type balance">Balance</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 3 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Gives subsystem controllers a bitfield def to make vv easier, renames their flags var
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95439" class="pr-number">#95439</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">LemonInTheDark</a>
+            </div>
+            <ul class="changelog">
+              <li class="admin">Subsystem flags are now displayed as flags instead of raw numbers in vv</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type admin">Admin</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 4 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Corrects shoving someone into another person sending the "you shoved" message to the person who was shoved into
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95446" class="pr-number">#95446</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">lelandkemble</a>
+            </div>
+            <ul class="changelog">
+              <li class="spellcheck">Shoving someone into another person no longer sends the "you shoved" message to the person who was shoved into</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type spellcheck">Spellcheck</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 5 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Add blood splatter events to a few places
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95457" class="pr-number">#95457</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">MrMelbert</a>
+            </div>
+            <ul class="changelog">
+              <li class="qol">More places causes the "splattered with blood" mood event</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type qol">QOL</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 6 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Monkey Dust no longer can provide permanent stun immunity
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95464" class="pr-number">#95464</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">lelandkemble</a>
+            </div>
+            <ul class="changelog">
+              <li class="bugfix">Monkey dust now properly removes anti-stun properties when its imbiber is no longer a monkey</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type bugfix">Bugfix</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 7 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Adds a 0 point quirk that turns your body into a recovered crewmember (effectively) on DNRing
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95469" class="pr-number">#95469</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">MrMelbert</a>
+            </div>
+            <ul class="changelog">
+              <li class="rscadd">Adds Thanatorenasia, a 0 point neutral quirk that turns your body into a "recovered crewmember" if you choose to DNR - meaning if revived, any ghost could take control of it</li>
+              <li class="refactor">Refactored "ghostrol on revive" behavior a fair bit, report any oddities with it / the spawners menu</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type rscadd">Rscadd</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 8 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Removes a double space on to_chat for spray can
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95476" class="pr-number">#95476</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">FalloutFalcon</a>
+            </div>
+            <ul class="changelog">
+              <li class="spellcheck">removed extra space on spraying an atmos machine with spray can</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type spellcheck">Spellcheck</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 23.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Date: 22.03.2026 -->
+  <div class="changelog-date-section" data-date="22.03.2026">
+    <h2 class="date-header">22.03.2026</h2>
+    
+    <div class="source-group" data-author="/TG/Station">
+      <h3 class="source-header">/TG/Station:</h3>
+      
+      <!-- Change 1 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Fixes DNA vault being constructable half-in a wall.
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95346" class="pr-number">#95346</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">ArcaneMusic</a>
+            </div>
+            <ul class="changelog">
+              <li class="bugfix">the BSA cannot be built half-into a wall.</li>
+              <li class="qol">building the DNA vault and BSA points to the tiles blocking it's construction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type bugfix">Bugfix</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 22.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Change 2 -->
+      <div class="changelog-card">
+        <div class="card-main">
+          <div class="card-content">
+            <h4 class="card-title">
+              Generic surgical operations now have unique radial icons
+              <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/95470" class="pr-number">#95470</a>
+            </h4>
+            <div class="card-meta">
+              by <a class="author">MrMelbert</a>
+            </div>
+            <ul class="changelog">
+              <li class="image">Generic surgical operations now have unique surgery radial icons</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-sidebar">
+          <div class="change-type image">Image</div>
+          <div class="sidebar-info">
+            <div><i class="fas fa-calendar"></i> 22.03.2026</div>
+            <div><i class="fas fa-code"></i> /TG/Station</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          Дизайн Horizon-Dev-Team</a>
+        </div>
+        <div class="footer-right">
+         Copyright © 2026 Horizon =][=  - Все права защищены.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+<script>
+  // Legend toggle functionality с анимацией
+  const legendBtn = document.getElementById('open-legend-button');
+  const legendText = document.getElementById('legend-text');
+  const closeLegendBtn = document.getElementById('close-legend-button');
+
+  if (legendBtn && legendText && closeLegendBtn) {
+    // Открытие легенды
+    legendBtn.addEventListener('click', () => {
+      legendText.style.display = 'block';
+      // Небольшая задержка для запуска анимации
+      setTimeout(() => {
+        legendText.classList.add('show');
+      }, 10);
+      legendBtn.style.display = 'none';
+    });
+
+    // Закрытие легенды
+    closeLegendBtn.addEventListener('click', () => {
+      legendText.classList.remove('show');
+      legendText.classList.add('hide');
+      
+      // Ждем окончания анимации
+      setTimeout(() => {
+        legendText.style.display = 'none';
+        legendText.classList.remove('hide');
+        legendBtn.style.display = 'block';
+      }, 300);
+    });
+  }
+</script>
+</body>
+</html>

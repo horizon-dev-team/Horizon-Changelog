@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+ <head>
+  <title>Horizon "=][=" Changelogs</title>
+  <base target="_blank">
+  <meta charset="UTF-8">
+  <meta name="description" content="Чейнджлоги Horizon =][=">
+  <meta name="theme-color" content="#141c26">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-title" content="Horizon changelogs">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="icon" href="static/favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <script defer src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+  <script defer src="static/script.js"></script>
+ </head>
+ <body>
+  <div class="app">
+  <div class="header jumbotron text-center">
+   <div class="header-bg">
+    <div class="layer1"></div>
+    <div class="layer2"></div>
+    <div class="layer3"></div>
+   </div>
+   <h1>Horizon =][=</h1>
+   <p>Changelogs</p>
+   <p>
+    <a href="https://horizon-dev-team.github.io/handbook/" class="btn btn-primary btn-sm" role="button">Wiki</a> 
+    <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype" class="btn btn-primary btn-sm" role="button">GitHub</a>
+    <a href="https://discord.gg/" class="btn btn-primary btn-sm" role="button">Discord</a>
+   </p>
+  </div>
+  <div class="container">
+   <div class="bgimage">
+     <img src="static/bg-logo.svg">
+   </div>
+   <div class="row">
+    <div class="col-lg-12">
+     <p><b>Контрибьютеры билда: </b><a class="btn btn-xs btn-success link-btn" href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/graphs/contributors">открыть список</a></p>
+     <p><b>Отдельное спасибо: </b>/tg/station, /vg/station, WhiteDream, TauCeti, BandaStation, GoonStation devs и оригинальным разработчикам SpaceStation.</p>
+     <div class="bg-danger"><b>Нашли баг?</b> Пожалуйста, сообщите о нём на нашем <a href="https://github.com/horizon-dev-team/HORIZON-Project-Prototype/issues"><b>трекере</b></a>.</div>
+    </div>
+   </div>
+   <hr>
+   <button id="open-legend-button" type="button" class="btn btn-info btn-xs">Показать Легенду</button>
+   <div id="legend-text">
+    <ul>
+     <li class="bugfix">- Исправлена ошибка</li>
+     <li class="rscadd">- Новый контент, фичи</li>
+     <li class="rscdel">- Удаление контента, откаты фич</li>
+     <li class="map">- Карты, Руины и их изменение</li>
+     <li class="ship">- Корабли и их изменения</li>
+     <li class="image">- Респрайты, новые спрайты и прочие изменения с изображениями</li>
+     <li class="sound">- Звуки и всё, что с ними связано</li>
+     <li class="balance">- Правки баланса</li>
+     <li class="tweak">- Небольшие правки и изменения</li>
+     <li class="qol">- Упрощено использование механики</li>
+     <li class="code_imp">- Технические правки кода</li>
+     <li class="refactor">- Переработка кода с сохранением функциональности</li>
+     <li class="experiment">- Экспериментальные фичи/твики, которые могут быть отменены</li>
+     <li class="performance">- Вопросы, касающиеся производительности</li>
+     <li class="spellcheck">- Исправление ошибок в текстовой части игры</li>
+     <li class="localization">- Перевод с Английского на Русский</li>
+     <li class="admin">- Изменения в кнопках администрации</li>
+     <li class="server">- Изменены настройки конфигурации сервера</li>
+    </ul>
+    <button id="close-legend-button" type="button" class="btn btn-danger btn-xs">X</button>
+    <hr>
+   </div>
+   <!-- НЕ ИЗМЕНЯТЬ текст в этом элементе. Чейнджлоги генерируются АВТОМАТИЧЕСКИ! -->
+   <div id="changelogs">
+    <!-- Сюда будут вставлены сгенерированные чейнджлоги -->
+   </div>
+   <hr>
+   <div class="row">
+    <div class="col-lg-12">
+     <p>Чейнджлоги до 2026 <a class="btn btn-xs btn-success link-btn" href="archive.html">тут</a>.</p>
+    </div>
+   </div>
+  </div>
+  </div>
+ </body>
+</html>

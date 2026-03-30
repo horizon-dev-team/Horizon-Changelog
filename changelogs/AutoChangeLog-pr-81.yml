@@ -1,0 +1,8 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/81
+delete-after: True
+KOCMODECAHTHUK:
+  legacy_1774273236367:
+    title: "Legacy changes"
+    changes:
+      KOCMODECAHTHUK:
+        - code_imp: "Изменены пути внутри гитхаба к инструментам"

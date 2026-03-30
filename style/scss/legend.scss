@@ -1,0 +1,163 @@
+// legend.scss - Стили легенды с двумя колонками
+
+@import "variables";
+
+.legend-container {
+  margin: 1rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-legend {
+  background: $primary;
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: all $transition-normal ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  
+  i {
+    font-size: 0.7rem;
+  }
+  
+  &:hover {
+    background: $primary-dark;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba($primary, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.pulse {
+    animation: pulse 0.5s ease-out;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba($primary, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 6px rgba($primary, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba($primary, 0);
+  }
+}
+
+.legend-content {
+  display: none;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: $border-radius;
+  padding: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity $transition-normal ease, transform $transition-normal ease;
+  width: 100%;
+  
+  &.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &.hide {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  &.showing {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+// Две колонки для легенды
+.legend-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.legend-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.legend-item {
+  padding: 0.2rem;
+  border-left: 3px solid;
+  padding-left: 1rem;
+  font-size: 0.85rem;
+  transition: transform $transition-fast, background $transition-fast;
+  border-radius: 0 $border-radius-sm $border-radius-sm 0;
+
+  i {
+    margin-right: 0.5rem;
+    width: 20px;
+  }
+  
+  // Цвета через переменные
+  &.bugfix { border-left-color: $bugfix-color; }
+  &.rscadd { border-left-color: $rscadd-color; }
+  &.rscdel { border-left-color: $rscdel-color; }
+  &.map { border-left-color: $map-color; }
+  &.ship { border-left-color: $ship-color; }
+  &.image { border-left-color: $image-color; }
+  &.sound { border-left-color: $sound-color; }
+  &.balance { border-left-color: $balance-color; }
+  &.tweak { border-left-color: $tweak-color; }
+  &.qol { border-left-color: $qol-color; }
+  &.code_imp { border-left-color: $code_imp-color; }
+  &.refactor { border-left-color: $refactor-color; }
+  &.experiment { border-left-color: $experiment-color; }
+  &.performance { border-left-color: $performance-color; }
+  &.spellcheck { border-left-color: $spellcheck-color; }
+  &.localization { border-left-color: $localization-color; }
+  &.admin { border-left-color: $admin-color; }
+  &.server { border-left-color: $server-color; }
+}
+
+.btn-close-legend {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: $danger;
+  color: #fff;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: all $transition-normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  
+  i {
+    font-size: 0.7rem;
+  }
+}
