@@ -1,18 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const changelogContainer = document.getElementById('changelogs');
   const loadMoreButton = document.createElement('button');
-  loadMoreButton.textContent = 'Загрузить больше старых записей';
+  loadMoreButton.textContent = 'Загрузить старые записи';
   loadMoreButton.className = 'btn btn-outline';
   loadMoreButton.style.margin = '20px auto';
   loadMoreButton.style.display = 'block';
 
-  const DATA_URL = './changelogs/changelogs.json';
-  const INITIAL_DAYS = 5;
-  const BATCH_DAYS = 5;
+  const MONTHS_URL = './changelogs/months.json';
+  const ARCHIVE_URL = './changelogs/archive/';
 
-  let changelogData = [];
-  let dates = [];
-  let visibleCount = 0;
+  let months = [];          // список месяцев (YYYY-MM) от новых к старым
+  let loadedMonths = 0;     // количество загруженных месяцев
+  let isLoading = false;
 
   function formatDate(dateString) {
     const [year, month, day] = dateString.split('-');
@@ -28,14 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return Array.from(map.entries()).sort((a, b) => (a[0] < b[0] ? 1 : -1));
   }
 
-  function renderDateBlocks(count) {
-    const newVisible = Math.min(count, dates.length);
-    if (newVisible <= visibleCount) return;
-
-    const visibleDates = dates.slice(0, newVisible);
-    changelogContainer.innerHTML = '';
-
-    for (const [date, entries] of visibleDates) {
+  function renderMonth(monthData) {
+    const grouped = groupByDate(monthData);
+    for (const [date, entries] of grouped) {
       const formatted = formatDate(date);
       const dateSection = document.createElement('div');
       dateSection.className = 'changelog-date-section';
@@ -122,38 +116,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
       changelogContainer.appendChild(dateSection);
     }
+  }
 
-    visibleCount = newVisible;
-    const hasMore = visibleCount < dates.length;
-    loadMoreButton.style.display = hasMore ? 'block' : 'none';
+  async function loadMonth(monthKey) {
+    if (isLoading) return;
+    isLoading = true;
+    loadMoreButton.disabled = true;
+    try {
+      const url = `${ARCHIVE_URL}${monthKey}.json`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Failed to load ${monthKey}`);
+      const data = await response.json();
 
-    document.dispatchEvent(new CustomEvent('changelog:updated'));
+      // Добавляем ссылку на PR
+      data.forEach(item => {
+        const parts = item.pr.split('/');
+        const prId = parts.pop();
+        const repo = parts.join('/') || 'horizon-dev-team/HORIZON-Project-Prototype';
+        item.url = `https://github.com/${repo}/pull/${prId}`;
+      });
+
+      renderMonth(data);
+      loadedMonths++;
+    } catch (error) {
+      console.error(error);
+      changelogContainer.innerHTML += `<div class="alert alert-danger">Ошибка загрузки ${monthKey}: ${error.message}</div>`;
+    } finally {
+      isLoading = false;
+      loadMoreButton.disabled = false;
+      updateLoadMoreButton();
+    }
+  }
+
+  function updateLoadMoreButton() {
+    if (loadedMonths < months.length) {
+      loadMoreButton.style.display = 'block';
+    } else {
+      loadMoreButton.style.display = 'none';
+    }
   }
 
   loadMoreButton.addEventListener('click', () => {
-    renderDateBlocks(visibleCount + BATCH_DAYS);
+    if (loadedMonths < months.length) {
+      loadMonth(months[loadedMonths]);
+    }
   });
 
   changelogContainer.appendChild(loadMoreButton);
 
-  fetch(DATA_URL)
-    .then((res) => {
-      if (!res.ok) throw new Error('Failed to load changelog data');
+  fetch(MONTHS_URL)
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to load months list');
       return res.json();
     })
-    .then((data) => {
-      changelogData = data;
-      changelogData.forEach((item) => {
-        item.url = `https://github.com/horizon-dev-team/HORIZON-Project-Prototype/pull/${item.pr.split('/').pop()}`;
-      });
-
-      const grouped = groupByDate(changelogData);
-      dates = grouped;
-
-      renderDateBlocks(INITIAL_DAYS);
+    .then(data => {
+      months = data;
+      if (months.length === 0) {
+        changelogContainer.innerHTML = '<div class="alert alert-info">Нет записей</div>';
+        loadMoreButton.style.display = 'none';
+        return;
+      }
+      loadMonth(months[0]);
     })
-    .catch((error) => {
-      changelogContainer.innerHTML = '<div class="alert alert-danger">Ошибка загрузки чеклинга: ' + error.message + '</div>';
+    .catch(error => {
+      changelogContainer.innerHTML = '<div class="alert alert-danger">Ошибка загрузки списка месяцев: ' + error.message + '</div>';
       loadMoreButton.style.display = 'none';
       console.error(error);
     });

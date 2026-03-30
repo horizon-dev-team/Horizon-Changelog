@@ -24,14 +24,10 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v6
-          
+
       - name: Compile changelogs
         run: |
-          python tools/ss13_genchangelog.py changelogs
-
-      - name: Generate JSON
-        run: |
-          python tools/generate_changelog_json.py changelogs
+          python tools/compile_changelogs.py changelogs
 
       - name: Generate App Token
         id: app-token-generation
@@ -51,7 +47,6 @@ jobs:
             exit 0
           fi
           git commit -m "Automatic changelog compile ($(date -d 'yesterday' +'%d.%m.%Y'))"
-
           git push origin changelog
         env:
           GITHUB_TOKEN: ${{ steps.app-token-generation.outputs.token }}
