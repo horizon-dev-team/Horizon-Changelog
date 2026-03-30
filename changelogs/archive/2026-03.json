@@ -1,0 +1,63 @@
+[
+  {
+    "date": "2026-03-30",
+    "source": "/TG/Station",
+    "pr": "95553",
+    "title": "Fixes multiple objects calling examine() instead of examinate()",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes press badges and other miscellaneous objects failing to make the user examine them."
+      }
+    ]
+  },
+  {
+    "date": "2026-03-30",
+    "source": "/TG/Station",
+    "pr": "95549",
+    "title": "Fixes firebreath obj effects 3 years later",
+    "author": "Tsar-Salat",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "firebreath will light objects on fire more consistently"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-30",
+    "source": "/TG/Station",
+    "pr": "95552",
+    "title": "fixes cyborg emagging not making them unconscious",
+    "author": "TheRyeGuyWhoWillNowDie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "cyborgs are made properly unconscious when emagged"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-30",
+    "source": "/TG/Station",
+    "pr": "95480",
+    "title": "TGUIfies some VV actions, replaces the actions dropdown with a searchable one",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Some non-critical VV actions such as mutation/organ/quirk modification have been converted to TGUI"
+      },
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "VV dropdown has gotten a refresh and now boasts a brand-new searchbar"
+      }
+    ]
+  }
+]
