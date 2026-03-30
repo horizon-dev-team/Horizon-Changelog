@@ -362,3 +362,100 @@
         lelandkemble:
         - bugfix: You can no longer create infinite plasteel with girders
       title: Prevents infinite plasteel from girders
+'2026-03-30':
+  /TG/Station:
+    95298:
+      changes:
+        Yobrocharlie:
+        - rscadd: Added the academy back, its now a fetch quest.
+      title: Academy redone
+    95467:
+      changes:
+        MrMelbert:
+        - balance: The Psyker hunter ship now has a bandolier and two holsters for
+            their shotgun and revolvers, as well as some backup knives.
+        - balance: The Psyker hunter ship now has a box of bandages and an emergency
+            medkit.
+        - balance: All Psyker hunters now spawn with a headset set to a shared frequency.
+        - balance: Psyker headsets now prevent their echolocation from being disabled
+            due to deafness.
+        - balance: Psyker hunters now spawn with flavorful eyewear. The Psyker Seer
+            now spawns with the thermal monocle (which was previously on the ship).
+        - balance: Gore will now heal Psykers.
+      title: We made psyker hunters playable but now we need to make psyker hunters
+        playable
+    95511:
+      changes:
+        MrMelbert:
+        - qol: Height is now an element of DNA, meaning it can be changed via genetics
+            or radstorms and is carried between genetic copies (Changlings, etc)
+      title: Mob height is stored in DNA
+    95514:
+      changes:
+        SmArtKar:
+        - bugfix: Fixed stack items not being refunded by failed heretic summon rituals
+      title: Fixes stack items not being refunded by failed heretic summon rituals
+    95516:
+      changes:
+        SmArtKar:
+        - bugfix: Fixed parallax runtiming horribly whenever parallax SS doesnt pick
+            a random layer to display
+      title: Fixes parallax runtiming horribly whenever parallax SS doesnt pick a
+        random layer to display
+    95522:
+      changes:
+        MrMelbert:
+        - admin: Admins can ban from "recovered crew", "blood worm", "fugitive" /
+            "fugitive hunter", "glitch", and "paradox clone"
+        - admin: Mind Magnification Monkeys are now affected by a sentience ban (previously
+            unbannable)
+      title: Admins can actually ban from recovered crew, blood worm, fugitive(/hunter),
+        paradox clone, monkey helmet, glitch
+    95523:
+      changes:
+        Hatterhat:
+        - bugfix: Integrated circuit shells now only explode if they draw too much
+            power in a minute, rather than being doomed to explode if it uses too
+            much power over its entire lifetime, following complaints from at least
+            one guy. Nanotrasen representatives claim that this is entirely unrelated
+            to missing shipments of explosive alloys.
+      title: integrated circuit shells are no longer doomed to explode
+    95528:
+      changes:
+        Jacquerel:
+        - qol: Blood worms can drag themselves onto corpses to infest them as an alternative
+            to pressing the action button.
+      title: Blood Worms can drag themselves onto corpses to infest them
+    95531:
+      changes:
+        Hatterhat:
+        - balance: Upgraded exoscanners no longer have skyrocketing power draw when
+            upgraded, following an incident where a station's chief engineer declared
+            vendetta upon their Cargo department for drawing an excessive amount of
+            power, resulting in massive casualties.
+      title: Dramatically reduces upgraded exoscanner power draw
+    95534:
+      changes:
+        SyncIt21:
+        - bugfix: Any effect that changes the theme of the environment no longer break
+            turf mounted objects
+        - bugfix: destroying plating with lava/water etc will destroy any object mounted
+            to it
+      title: Fixes 2 instances of turf changing not affecting mounted objects correctly
+    95537:
+      changes:
+        Twaticus:
+        - image: resprites chicken nugget box and adds 3 new food related containers,
+            new nugget box, a wing bucket, and a fry sleeve.
+      title: Nugget Box Resprite + Nuggets/Wings/Fries Containers
+    95546:
+      changes:
+        Time-Green:
+        - bugfix: Ethereal crystal revive no longer breaks if you change species midway
+            through
+      title: Fixes ethereal revive and species change
+    95550:
+      changes:
+        MrMelbert:
+        - bugfix: Fix stray 0 in heretic UI
+      title: Fix stray 0 in heretic UI
