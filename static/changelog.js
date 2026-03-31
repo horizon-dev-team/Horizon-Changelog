@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const meta = document.createElement('div');
           meta.className = 'card-meta';
-          meta.textContent = `by ${item.author}`;
+          meta.innerHTML = `by<a class="author">${item.author}</a>`;
 
           const ul = document.createElement('ul');
           ul.className = 'changelog';
