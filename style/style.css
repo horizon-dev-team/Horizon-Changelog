@@ -275,11 +275,6 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
   backdrop-filter: blur(5px);
 }
-.changelog-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  background: rgba(0, 0, 0, 0.5);
-}
 
 .card-main {
   flex: 1;
