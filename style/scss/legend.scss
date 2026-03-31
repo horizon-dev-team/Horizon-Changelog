@@ -1,187 +1,4 @@
-// sidebar-filter.scss - Боковая панель только с фильтром
-
-$sidebar-width: 240px;
-$sidebar-offset: 20px;
-
-
-// Боковая панель (только фильтр)
-.sidebar-filter {
-  position: absolute;
-  left: $sidebar-offset;
-  top: 0;
-  width: $sidebar-width;
-  z-index: 100;
-  
-  @media (max-width: 992px) {
-    position: static;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-}
-
-.sidebar-filter-content {
-  position: sticky;
-  top: 20px;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  
-  @media (max-width: 992px) {
-    position: static;
-    backdrop-filter: blur(5px);
-  }
-}
-
-.sidebar-title {
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid $primary;
-  color: $primary;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-// Даты (десктоп)
-.dates-desktop {
-  @media (max-width: 992px) {
-    display: none;
-  }
-}
-
-.dates-mobile {
-  display: none;
-  
-  @media (max-width: 992px) {
-    display: block;
-  }
-}
-
-.dates-list ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  
-  li {
-    cursor: pointer;
-    padding: 8px 12px;
-    margin: 4px 0;
-    border-radius: 6px;
-    transition: all $transition-fast;
-    text-align: center;
-    
-    b {
-      color: #aaa;
-      font-weight: 500;
-      font-size: 0.85rem;
-      transition: color $transition-fast;
-    }
-    
-    &:hover {
-      background: rgba($primary, 0.2);
-      transform: translateX(3px);
-      
-      b {
-        color: lighten($primary, 20%);
-      }
-    }
-    
-    &.active {
-      background: $primary;
-      
-      b {
-        color: #fff;
-        font-weight: 600;
-      }
-      
-      &:hover {
-        background: $primary-dark;
-        transform: translateX(0);
-      }
-    }
-  }
-}
-
-// Пагинация
-.dates-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  
-  button {
-    background: rgba($primary, 0.3);
-    border: none;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    cursor: pointer;
-    color: #fff;
-    transition: all $transition-fast;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    i {
-      font-size: 0.7rem;
-    }
-    
-    &:hover:not(:disabled) {
-      background: $primary;
-      transform: scale(1.05);
-    }
-    
-    &:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
-  }
-  
-  .pagination-info {
-    font-size: 0.7rem;
-    color: #aaa;
-  }
-}
-
-// Мобильный селектор
-.dates-mobile select {
-  width: 100%;
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  color: #fff;
-  font-size: 0.85rem;
-  cursor: pointer;
-  
-  &:hover {
-    background: rgba($primary, 0.2);
-    border-color: $primary;
-  }
-  
-  &:focus {
-    outline: none;
-    border-color: $primary;
-  }
-}
-
-// Основной контент
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  
-  @media (max-width: 992px) {
-    max-width: 100%;
-  }
-}
+// legend.scss - Стили для легенды типов изменений
 
 .legend-container {
   position: fixed;
@@ -262,10 +79,6 @@ $sidebar-offset: 20px;
   }
 }
 
-.btn-close-legend {
-  display: none;
-}
-
 .legend-grid {
   display: flex;
   flex-direction: column;
@@ -278,11 +91,6 @@ $sidebar-offset: 20px;
   font-size: 0.75rem;
   transition: all $transition-fast;
   border-radius: 0 6px 6px 0;
-  
-  i {
-    margin-right: 8px;
-    width: 20px;
-  }
   
   &:hover {
     transform: translateX(4px);
@@ -302,22 +110,4 @@ $sidebar-offset: 20px;
   &.spellcheck { border-left-color: $spellcheck-color; }
   &.admin { border-left-color: $admin-color; }
   &.server { border-left-color: $server-color; }
-}
-
-.btn-close-legend {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: #dc3545;
-  color: #fff;
-  border: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
 }
