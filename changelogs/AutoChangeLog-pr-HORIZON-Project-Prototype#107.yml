@@ -1,0 +1,18 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/107
+delete-after: True
+/TG/Station:
+  95556:
+    title: "Fix jammer bricking headsets"
+    changes:
+      MrMelbert:
+        - bugfix: "Radio jammers no longer brick headsets forever"
+  95558:
+    title: "Fixes incorrect usage of world.view or viewers() in some places"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed z-transition mirages not mirroring all objects on the other z level"
+  95540:
+    title: "Fixes mech energy guns draining 100x less than intended."
+    changes:
+      KingkumaArt:
+        - bugfix: "Fixes mech energy guns draining 100x less than intended."
