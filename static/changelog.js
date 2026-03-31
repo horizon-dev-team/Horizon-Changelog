@@ -130,9 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Добавляем ссылку на PR
       data.forEach(item => {
-        const parts = item.pr.split('/');
-        const prId = parts.pop();
-        const repo = parts.join('/') || 'horizon-dev-team/HORIZON-Project-Prototype';
+        const prId = item.pr.split('/').pop();
+        const repo = item.source === '/TG/Station' ? 'tgstation/tgstation' : 'horizon-dev-team/HORIZON-Project-Prototype';
         item.url = `https://github.com/${repo}/pull/${prId}`;
       });
 
