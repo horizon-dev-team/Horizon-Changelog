@@ -59,5 +59,61 @@
         "text": "VV dropdown has gotten a refresh and now boasts a brand-new searchbar"
       }
     ]
+  },
+  {
+    "date": "2026-03-31",
+    "source": "/TG/Station",
+    "pr": "95556",
+    "title": "Fix jammer bricking headsets",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Radio jammers no longer brick headsets forever"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-31",
+    "source": "/TG/Station",
+    "pr": "95558",
+    "title": "Fixes incorrect usage of world.view or viewers() in some places",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed z-transition mirages not mirroring all objects on the other z level"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-31",
+    "source": "/TG/Station",
+    "pr": "95540",
+    "title": "Fixes mech energy guns draining 100x less than intended.",
+    "author": "KingkumaArt",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes mech energy guns draining 100x less than intended."
+      }
+    ]
+  },
+  {
+    "date": "2026-03-31",
+    "source": "/TG/Station",
+    "pr": "95545",
+    "title": "Cytology organs can mutate again",
+    "author": "Time-Green",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Coroner cytology grown organs can mutate again"
+      }
+    ]
   }
 ]
