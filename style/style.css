@@ -140,7 +140,6 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 0;
   flex: 1;
@@ -260,7 +259,10 @@ body {
     padding: 1rem;
   }
   .date-header {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    border-bottom-width: 2px;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
   .source-header {
     font-size: 1.1rem;
@@ -321,12 +323,6 @@ body {
   content: "\f126";
   font-weight: 900;
   font-size: 0.65rem;
-}
-.pr-number:hover {
-  background: rgb(155.3649635036, 100.802919708, 246.697080292);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  text-decoration: none;
 }
 .pr-number:hover {
   background: #ab7df8;
@@ -400,16 +396,6 @@ body {
   font-size: 0.7rem;
 }
 
-.card-sidebar {
-  width: 180px;
-  background: rgba(0, 0, 0, 0.3);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
 .sidebar-info {
   font-size: 0.75rem;
   color: #aaa;
@@ -473,12 +459,6 @@ body {
     font-size: 0.75rem;
     padding: 2px 6px 2px 5px;
     margin-bottom: 3px;
-  }
-  .date-header {
-    font-size: 1rem;
-    border-bottom-width: 2px;
-    padding-bottom: 0.25rem;
-    margin-bottom: 0.5rem;
   }
 }
 .fix, .admin, .bugfix, .add, .rscadd, .del, .rscdel,

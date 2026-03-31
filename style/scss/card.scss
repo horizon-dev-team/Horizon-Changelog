@@ -2,6 +2,7 @@
 
 $bg-card: rgba(0, 0, 0, 0.4);
 $bg-card-hover: rgba(0, 0, 0, 0.5);
+$pr-color: #ab7df8;
 
 .changelog-card {
   display: flex;
@@ -47,7 +48,7 @@ $bg-card-hover: rgba(0, 0, 0, 0.5);
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: darken(#ab7df8, 10%);
+  background: darken($pr-color, 10%);
   color: #fff;
   padding: 0.2rem 0.6rem;
   border-radius: 20px;
@@ -64,15 +65,8 @@ $bg-card-hover: rgba(0, 0, 0, 0.5);
   }
   
   &:hover {
-    background: darken(#ab7df8, 5%);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  &:hover {
-    background: #ab7df8;
-    box-shadow: 0 0 8px rgba(#ab7df8, 0.6);
+    background: $pr-color;
+    box-shadow: 0 0 8px rgba($pr-color, 0.6);
     color: #fff;
   }
 }
@@ -150,17 +144,6 @@ $pr-color: #ab7df8;
   }
 }
 
-// Card Sidebar
-.card-sidebar {
-  width: $sidebar-width;
-  background: rgba(0, 0, 0, 0.3);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
 .sidebar-info {
   font-size: 0.75rem;
   color: #aaa;
@@ -236,12 +219,5 @@ $pr-color: #ab7df8;
     font-size: 0.75rem;
     padding: 2px 6px 2px 5px;
     margin-bottom: 3px;
-  }
-
-  .date-header {
-    font-size: 1rem;
-    border-bottom-width: 2px;
-    padding-bottom: 0.25rem;
-    margin-bottom: 0.5rem;
   }
 }
