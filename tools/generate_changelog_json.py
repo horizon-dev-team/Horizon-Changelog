@@ -21,8 +21,7 @@ CHANGELOG_TYPE_MAPPING = {
     'code_imp': 'code_imp', 'refactor': 'code_imp',
     'config': 'server', 'server': 'server,
     'sound': 'sound', 'image': 'image',
-    'map': 'map', 'ship': 'ship'
-    'admin': 'admin'
+    'map': 'map', 'admin': 'admin'
 }
 
 def get_years_to_show():

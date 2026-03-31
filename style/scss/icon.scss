@@ -5,7 +5,7 @@
 // Общие стили для всех типов
 .fix, .admin, .bugfix, .add, .rscadd, .del, .rscdel,
 .code_imp, .image, .sound, .spellcheck,
-.tweak, .balance, .map, .ship, .server, .label-changelog {
+.tweak, .balance, .map, .server, .label-changelog {
   background-color: rgba(51.25, 51.25, 51.25, 0.5);
   
   &::before {
@@ -40,11 +40,6 @@
 .map::before {
   content: "\f279";
   color: $map-color;
-}
-
-.ship::before {
-  content: "\f197";
-  color: $ship-color;
 }
 
 .sound::before {
@@ -97,7 +92,6 @@
   &.admin { border-left-color: $admin-color !important; }
   &.image { border-left-color: $image-color !important; }
   &.map { border-left-color: $map-color !important; }
-  &.ship { border-left-color: $ship-color !important; }
   &.sound { border-left-color: $sound-color !important; }
   &.tweak { border-left-color: $tweak-color !important; }
   &.code_imp { border-left-color: $code_imp-color !important; }

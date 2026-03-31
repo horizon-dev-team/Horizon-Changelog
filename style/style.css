@@ -488,12 +488,12 @@ body {
 }
 .fix, .admin, .bugfix, .add, .rscadd, .del, .rscdel,
 .code_imp, .image, .sound, .spellcheck,
-.tweak, .balance, .map, .ship, .server, .label-changelog {
+.tweak, .balance, .map, .server, .label-changelog {
   background-color: rgba(51.25, 51.25, 51.25, 0.5);
 }
 .fix::before, .admin::before, .bugfix::before, .add::before, .rscadd::before, .del::before, .rscdel::before,
 .code_imp::before, .image::before, .sound::before, .spellcheck::before,
-.tweak::before, .balance::before, .map::before, .ship::before, .server::before, .label-changelog::before {
+.tweak::before, .balance::before, .map::before, .server::before, .label-changelog::before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   margin-right: 8px;
@@ -522,11 +522,6 @@ body {
 
 .map::before {
   content: "\f279";
-  color: #54e0e0;
-}
-
-.ship::before {
-  content: "\f197";
   color: #54e0e0;
 }
 
@@ -592,9 +587,6 @@ body {
   border-left-color: #54e0e0 !important;
 }
 .changelog li.map {
-  border-left-color: #54e0e0 !important;
-}
-.changelog li.ship {
   border-left-color: #54e0e0 !important;
 }
 .changelog li.sound {
@@ -895,9 +887,6 @@ body {
   border-left-color: #dd3c3c;
 }
 .legend-item.map {
-  border-left-color: #54e0e0;
-}
-.legend-item.ship {
   border-left-color: #54e0e0;
 }
 .legend-item.image {
