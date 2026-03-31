@@ -13,7 +13,7 @@
       },
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "building the DNA vault and BSA points to the tiles blocking it's construction."
       }
     ]
@@ -41,7 +41,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Audit log formats vendors without \"the\""
       }
     ]
@@ -107,7 +107,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "More places causes the \"splattered with blood\" mood event"
       }
     ]
@@ -140,7 +140,7 @@
       },
       {
         "type": "refactor",
-        "class": "refactor",
+        "class": "code_imp",
         "text": "Refactored \"ghostrol on revive\" behavior a fair bit, report any oddities with it / the spawners menu"
       }
     ]
@@ -224,7 +224,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "The Curator's barcode scanner now lets you check books out."
       },
       {
@@ -248,7 +248,7 @@
       },
       {
         "type": "refactor",
-        "class": "refactor",
+        "class": "code_imp",
         "text": "Refactored how undergarmants generate their icons, report any oddities with that"
       }
     ]
@@ -332,7 +332,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Many circuit components have had ports that effectively act as boolean inputs or outputs converted into a new boolean datatype."
       }
     ]
@@ -440,7 +440,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Slime Link messages now notify listeners with a balloon alert."
       }
     ]
@@ -580,7 +580,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Health analyzer lung reports are appended by the lung organs rather than at the bottom of the readout"
       }
     ]
@@ -641,7 +641,7 @@
     "changes": [
       {
         "type": "refactor",
-        "class": "refactor",
+        "class": "code_imp",
         "text": "random recipes like metalgen & secret sause have been refactored. Please report bugs on github"
       }
     ]
@@ -655,7 +655,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Changeling's stat panel entry has been moved to the HUD & Antag panel. Also added some extra explanations on how Changelings work in there."
       }
     ]
@@ -669,7 +669,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "The stat panel entry for space suits has been replaced with the HUD element. You can now hover over it to see exact cell percentage, and click it to turn the regulator on, while it'll also display when it's off."
       }
     ]
@@ -781,7 +781,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Installing electronics into windoors/interior doors only moves the electronics out of your hand on a successful installation."
       }
     ]
@@ -862,7 +862,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Height is now an element of DNA, meaning it can be changed via genetics or radstorms and is carried between genetic copies (Changlings, etc)"
       }
     ]
@@ -937,7 +937,7 @@
     "changes": [
       {
         "type": "qol",
-        "class": "qol",
+        "class": "tweak",
         "text": "Blood worms can drag themselves onto corpses to infest them as an alternative to pressing the action button."
       }
     ]

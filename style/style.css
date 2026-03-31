@@ -487,15 +487,13 @@ body {
   }
 }
 .fix, .admin, .bugfix, .add, .rscadd, .del, .rscdel,
-.refactor, .code_imp, .image, .qol, .sound, .spellcheck,
-.ru, .localization, .tweak, .performance, .experiment,
-.balance, .map, .ship, .server, .label-changelog {
+.code_imp, .image, .sound, .spellcheck,
+.tweak, .balance, .map, .ship, .server, .label-changelog {
   background-color: rgba(51.25, 51.25, 51.25, 0.5);
 }
 .fix::before, .admin::before, .bugfix::before, .add::before, .rscadd::before, .del::before, .rscdel::before,
-.refactor::before, .code_imp::before, .image::before, .qol::before, .sound::before, .spellcheck::before,
-.ru::before, .localization::before, .tweak::before, .performance::before, .experiment::before,
-.balance::before, .map::before, .ship::before, .server::before, .label-changelog::before {
+.code_imp::before, .image::before, .sound::before, .spellcheck::before,
+.tweak::before, .balance::before, .map::before, .ship::before, .server::before, .label-changelog::before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   margin-right: 8px;
@@ -542,39 +540,14 @@ body {
   color: #fff;
 }
 
-.ru::before, .localization::before {
-  content: "\f1ab";
-  color: #fff;
-}
-
 .tweak::before {
-  content: "\f0ad";
-  color: #23c358;
-}
-
-.qol::before {
   content: "\f4be";
   color: #23c358;
-}
-
-.performance::before {
-  content: "\f0e4";
-  color: #f2a60d;
-}
-
-.experiment::before {
-  content: "\f0c3";
-  color: #f2a60d;
 }
 
 .balance::before {
   content: "\f516";
   color: #fcd203;
-}
-
-.refactor::before {
-  content: "\f1c0";
-  color: #888;
 }
 
 .code_imp::before {
@@ -609,17 +582,11 @@ body {
 .changelog li.balance {
   border-left-color: #fcd203 !important;
 }
-.changelog li.qol {
-  border-left-color: #23c358 !important;
-}
 .changelog li.spellcheck {
   border-left-color: #fff !important;
 }
 .changelog li.admin {
   border-left-color: #bb47d1 !important;
-}
-.changelog li.refactor {
-  border-left-color: #888 !important;
 }
 .changelog li.image {
   border-left-color: #54e0e0 !important;
@@ -639,20 +606,8 @@ body {
 .changelog li.code_imp {
   border-left-color: #708090 !important;
 }
-.changelog li.performance {
-  border-left-color: #f2a60d !important;
-}
-.changelog li.experiment {
-  border-left-color: #f2a60d !important;
-}
 .changelog li.server {
   border-left-color: #bb47d1 !important;
-}
-.changelog li.localization {
-  border-left-color: #fff !important;
-}
-.changelog li.ru {
-  border-left-color: #fff !important;
 }
 
 .fas,
@@ -900,11 +855,9 @@ body {
 }
 .legend-content.show {
   opacity: 1;
-  transform: translateY(0);
 }
 .legend-content.hide {
   opacity: 0;
-  transform: translateY(20px);
 }
 
 .btn-close-legend {
@@ -959,25 +912,10 @@ body {
 .legend-item.tweak {
   border-left-color: #23c358;
 }
-.legend-item.qol {
-  border-left-color: #23c358;
-}
 .legend-item.code_imp {
   border-left-color: #708090;
 }
-.legend-item.refactor {
-  border-left-color: #888;
-}
-.legend-item.experiment {
-  border-left-color: #f2a60d;
-}
-.legend-item.performance {
-  border-left-color: #f2a60d;
-}
 .legend-item.spellcheck {
-  border-left-color: #fff;
-}
-.legend-item.localization {
   border-left-color: #fff;
 }
 .legend-item.admin {

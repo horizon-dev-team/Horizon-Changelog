@@ -255,12 +255,10 @@ $sidebar-offset: 20px;
   
   &.show {
     opacity: 1;
-    transform: translateY(0);
   }
   
   &.hide {
     opacity: 0;
-    transform: translateY(20px);
   }
 }
 
@@ -301,13 +299,8 @@ $sidebar-offset: 20px;
   &.sound { border-left-color: $sound-color; }
   &.balance { border-left-color: $balance-color; }
   &.tweak { border-left-color: $tweak-color; }
-  &.qol { border-left-color: $qol-color; }
   &.code_imp { border-left-color: $code_imp-color; }
-  &.refactor { border-left-color: $refactor-color; }
-  &.experiment { border-left-color: $experiment-color; }
-  &.performance { border-left-color: $performance-color; }
   &.spellcheck { border-left-color: $spellcheck-color; }
-  &.localization { border-left-color: $localization-color; }
   &.admin { border-left-color: $admin-color; }
   &.server { border-left-color: $server-color; }
 }

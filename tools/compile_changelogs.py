@@ -10,20 +10,18 @@ import shutil
 from datetime import date
 
 CHANGELOG_TYPE_MAPPING = {
-    'bugfix': 'bugfix', 'fix': 'bugfix',
-    'wip': 'wip', 'qol': 'qol',
+    'bugfix': 'bugfix', 'fix': 'bugfix'
+    'tweak': 'tweak', 'qol': 'tweak',
     'soundadd': 'sound', 'sounddel': 'sound',
     'rscadd': 'rscadd', 'add': 'rscadd',
     'rscdel': 'rscdel', 'del': 'rscdel',
     'imageadd': 'image', 'imagedel': 'image',
-    'spellcheck': 'spellcheck', 'experiment': 'experiment',
-    'balance': 'balance', 'code_imp': 'code_imp',
-    'refactor': 'refactor', 'config': 'server',
-    'admin': 'admin', 'server': 'server',
+    'spellcheck': 'spellcheck', 'balance': 'balance',
+    'code_imp': 'code_imp', 'refactor': 'code_imp',
+    'config': 'server', 'server': 'server,
     'sound': 'sound', 'image': 'image',
-    'map': 'map', 'ship': 'ship',
-    'tweak': 'tweak', 'performance': 'performance',
-    'localization': 'localization'
+    'map': 'map', 'ship': 'ship'
+    'admin': 'admin'
 }
 
 today = date.today()
