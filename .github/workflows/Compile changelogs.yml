@@ -27,7 +27,7 @@ jobs:
 
       - name: Compile changelogs
         run: |
-          python tools/compile_changelogs.py changelogs
+          python changelogs/compile_changelogs.py changelogs
 
       - name: Generate App Token
         id: app-token-generation
