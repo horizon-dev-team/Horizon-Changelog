@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2026-04-01",
+    "source": "/TG/Station",
+    "pr": "95561",
+    "title": "Fixes unpowered field generators yeeting people",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed unpowered field generators yeeting people"
+      }
+    ]
+  }
+]
