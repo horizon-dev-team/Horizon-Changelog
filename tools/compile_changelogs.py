@@ -10,7 +10,7 @@ import shutil
 from datetime import date
 
 CHANGELOG_TYPE_MAPPING = {
-    'bugfix': 'bugfix', 'fix': 'bugfix'
+    'bugfix': 'bugfix', 'fix': 'bugfix',
     'tweak': 'tweak', 'qol': 'tweak',
     'soundadd': 'sound', 'sounddel': 'sound',
     'rscadd': 'rscadd', 'add': 'rscadd',
@@ -18,7 +18,7 @@ CHANGELOG_TYPE_MAPPING = {
     'imageadd': 'image', 'imagedel': 'image',
     'spellcheck': 'spellcheck', 'balance': 'balance',
     'code_imp': 'code_imp', 'refactor': 'code_imp',
-    'config': 'server', 'server': 'server,
+    'config': 'server', 'server': 'server',
     'sound': 'sound', 'image': 'image',
     'map': 'map', 'admin': 'admin'
 }
