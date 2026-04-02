@@ -1,0 +1,14 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/110
+delete-after: True
+/TG/Station:
+  95566:
+    title: "spawn panel fixes"
+    changes:
+      Kashargul:
+        - bugfix: "admin spawn panel persistent paths, panel offsets, panel diagonal dirs"
+        - bugfix: "admin spawn atom verb, crash on early enter, arrow key scroll focus"
+  95578:
+    title: "Fix putting anything in a fish gene gun"
+    changes:
+      lelandkemble:
+        - bugfix: "You can no longer put everything other than a fish gene into a fish gene gun"
