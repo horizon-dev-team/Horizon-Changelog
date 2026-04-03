@@ -1,0 +1,24 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/113
+delete-after: True
+/TG/Station:
+  95119:
+    title: "Completely refactors HUD element management and datumizes inventory HUDs"
+    changes:
+      SmArtKar:
+        - tweak: "Non-aliens with an implanted plasma vessel now see their plasma level in their HUD instead of just the stat panel"
+        - code_imp: "Refactored the entirety of HUD management code, report if anything breaks!"
+  95521:
+    title: "Hydroponics tray autogrow power use becomes more efficient with parts"
+    changes:
+      Hatterhat:
+        - balance: "Upgraded hydroponics trays now have reduced power draw with improved parts, in the wake of complaints from both engineering and botanical staff regarding exponentially increased short circuit frequency (and associated energy waste) in affected tray basins."
+  95609:
+    title: "Fixes wizard, cult, nukies, revs, and malf from unable to be be rolled roundstart"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes wizard, cult, nukies, revs, and malf being unable to be selected for roundstart antag (yes, you read that right)"
+  95611:
+    title: "[NO GBP] Fixes FOV blocker harddels"
+    changes:
+      SmArtKar:
+        - bugfix: "FOV blockers no longer harddel"
