@@ -12,5 +12,38 @@
         "text": "Fixed unpowered field generators yeeting people"
       }
     ]
+  },
+  {
+    "date": "2026-04-03",
+    "source": "/TG/Station",
+    "pr": "95566",
+    "title": "spawn panel fixes",
+    "author": "Kashargul",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "admin spawn panel persistent paths, panel offsets, panel diagonal dirs"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "admin spawn atom verb, crash on early enter, arrow key scroll focus"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-03",
+    "source": "/TG/Station",
+    "pr": "95578",
+    "title": "Fix putting anything in a fish gene gun",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can no longer put everything other than a fish gene into a fish gene gun"
+      }
+    ]
   }
 ]
