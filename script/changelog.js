@@ -1,70 +1,76 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('changelogs');
-  const btn = Object.assign(document.createElement('button'), {
-    textContent: 'Загрузить старые записи',
-    className: 'btn btn-outline',
-    style: 'margin:20px auto;display:block'
-  });
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const monthSelect = document.getElementById('monthSelect');
   
-  let months = [], loaded = 0;
-  const format = d => d.split('-').reverse().join('.');
-  const groupByDate = items => Object.entries(items.reduce((acc, i) => (acc[i.date] = [...(acc[i.date]||[]), i], acc), {}))
-    .sort((a,b) => a[0] < b[0] ? 1 : -1);
+  const fmtDate = d => d.split('-').reverse().join('.');
+  const fmtMonth = m => new Date(m.split('-')[0], m.split('-')[1]-1).toLocaleString('ru', { month: 'long', year: 'numeric' });
+  
+  let months = [], idx = 0, cache = {};
+  
   const render = data => {
-    for (let [date, entries] of groupByDate(data)) {
-      const section = document.createElement('div');
-      section.className = 'changelog-date-section';
-      section.innerHTML = `<h2 class="date-header">${format(date)}</h2>`;
-      const bySource = entries.reduce((acc, i) => (acc[i.source] = [...(acc[i.source]||[]), i], acc), {});
-      for (let [source, items] of Object.entries(bySource)) {
-        const group = document.createElement('div');
-        group.className = 'source-group';
-        group.innerHTML = `<h3 class="source-header">${source}:</h3>`;
-        
-        items.forEach(item => {
-          group.innerHTML += `
-            <div class="changelog-card">
-              <div class="card-main">
-                <div class="card-content">
-                  <h4 class="card-title">${item.title || `PR #${item.pr}`}</h4>
-                  <div class="card-meta">by<a class="author">${item.author}</a></div>
-                  <ul class="changelog">${item.changes.map(ch => `<li class="${ch.class || 'tweak'}">${ch.text}</li>`).join('')}</ul>
-                </div>
-              </div>
-              <div class="card-sidebar">
-                <a class="pr-number" href="${item.url || '#'}" target="_blank">#${item.pr}</a>
-                <div class="sidebar-info">
-                  <div><i class="fas fa-calendar"></i> ${format(date)}</div>
-                  <div><i class="fas fa-code"></i> ${source}</div>
-                </div>
+    container.innerHTML = '';
+    const byDate = data.reduce((acc, i) => (acc[i.date] = [...(acc[i.date]||[]), i], acc), {});
+    
+    for (const [date, items] of Object.entries(byDate).sort((a,b) => a[0] < b[0] ? 1 : -1)) {
+      const bySource = items.reduce((acc, i) => (acc[i.source] = [...(acc[i.source]||[]), i], acc), {});
+      
+      let html = `<div class="changelog-date-section"><h2 class="date-header">${fmtDate(date)}</h2>`;
+      for (const [src, list] of Object.entries(bySource)) {
+        html += `<div class="source-group"><h3 class="source-header">${src}:</h3>`;
+        list.forEach(item => {
+          html += `<div class="changelog-card">
+            <div class="card-main">
+              <div class="card-content">
+                <h4 class="card-title">${item.title || `PR #${item.pr}`}</h4>
+                <div class="card-meta">by <span class="author">${item.author}</span></div>
+                <ul class="changelog">${item.changes.map(ch => `<li class="${ch.class}">${ch.text}</li>`).join('')}</ul>
               </div>
             </div>
-          `;
+            <div class="card-sidebar">
+              <a class="pr-number" href="https://github.com/tgstation/tgstation/pull/${item.pr}" target="_blank">#${item.pr}</a>
+              <div class="sidebar-info">
+                <div><i class="fas fa-calendar"></i> ${fmtDate(date)}</div>
+                <div><i class="fas fa-code"></i> ${src}</div>
+              </div>
+            </div>
+          </div>`;
         });
-        section.appendChild(group);
+        html += `</div>`;
       }
-      container.appendChild(section);
+      html += `</div>`;
+      container.innerHTML += html;
     }
-    container.appendChild(btn);
   };
-  const load = async m => {
-    btn.disabled = true;
-    try {
-      const res = await fetch(`./changelogs/archive/${m}.json`);
-      const data = await res.json();
-      data.forEach(i => i.url = `https://github.com/${i.source === '/TG/Station' ? 'tgstation/tgstation' : 'horizon-dev-team/HORIZON-Project-Prototype'}/pull/${i.pr.split('/').pop()}`);
-      render(data);
-      loaded++;
-    } catch(e) { container.innerHTML += `<div class="alert alert-danger">Ошибка: ${e.message}</div>`; }
-    finally { btn.disabled = false; btn.style.display = loaded < months.length ? 'block' : 'none'; }
+  
+  const load = async i => {
+    const month = months[i];
+    if (!cache[month]) {
+      const res = await fetch(`./changelogs/archive/${month}.json`);
+      cache[month] = await res.json();
+    }
+    render(cache[month]);
+    idx = i;
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === months.length - 1;
+    monthSelect.value = month;
   };
-  btn.onclick = () => loaded < months.length && load(months[loaded]);
-  container.appendChild(btn);
-  try {
-    months = await (await fetch('./changelogs/months.json')).json();
-    months.length ? load(months[0]) : (container.innerHTML = '<div class="alert alert-info">Нет записей</div>', btn.style.display = 'none');
-  } catch(e) { container.innerHTML = `<div class="alert alert-danger">Ошибка: ${e.message}</div>`; btn.style.display = 'none'; }
+  
+  // Инициализация
+  months = await (await fetch('./changelogs/months.json')).json();
+  months.forEach(m => monthSelect.add(new Option(fmtMonth(m), m)));
+  
+  prevBtn.onclick = () => load(idx - 1);
+  nextBtn.onclick = () => load(idx + 1);
+  monthSelect.onchange = () => load(months.indexOf(monthSelect.value));
+  
+  if (months.length) load(0);
 });
 
+// Тайминг
 const start = performance.now();
-window.addEventListener('load', () => document.getElementById('load-time') && (document.getElementById('load-time').textContent = ((performance.now() - start)/1000).toFixed(2)));
+window.addEventListener('load', () => {
+  const el = document.getElementById('load-time');
+  if (el) el.textContent = ((performance.now() - start)/1000).toFixed(2);
+});
