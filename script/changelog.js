@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
       container.appendChild(section);
     }
+    container.appendChild(btn);
   };
   const load = async m => {
     btn.disabled = true;
