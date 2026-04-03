@@ -45,5 +45,66 @@
         "text": "You can no longer put everything other than a fish gene into a fish gene gun"
       }
     ]
+  },
+  {
+    "date": "2026-04-03",
+    "source": "/TG/Station",
+    "pr": "95119",
+    "title": "Completely refactors HUD element management and datumizes inventory HUDs",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Non-aliens with an implanted plasma vessel now see their plasma level in their HUD instead of just the stat panel"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored the entirety of HUD management code, report if anything breaks!"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-03",
+    "source": "/TG/Station",
+    "pr": "95521",
+    "title": "Hydroponics tray autogrow power use becomes more efficient with parts",
+    "author": "Hatterhat",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Upgraded hydroponics trays now have reduced power draw with improved parts, in the wake of complaints from both engineering and botanical staff regarding exponentially increased short circuit frequency (and associated energy waste) in affected tray basins."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-03",
+    "source": "/TG/Station",
+    "pr": "95609",
+    "title": "Fixes wizard, cult, nukies, revs, and malf from unable to be be rolled roundstart",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes wizard, cult, nukies, revs, and malf being unable to be selected for roundstart antag (yes, you read that right)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-03",
+    "source": "/TG/Station",
+    "pr": "95611",
+    "title": "[NO GBP] Fixes FOV blocker harddels",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "FOV blockers no longer harddel"
+      }
+    ]
   }
 ]
