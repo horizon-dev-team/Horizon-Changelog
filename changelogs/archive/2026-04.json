@@ -106,5 +106,270 @@
         "text": "FOV blockers no longer harddel"
       }
     ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95567",
+    "title": "fix ascended void heretic deflection sounds",
+    "author": "Absolucy",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ascended Void heretics now properly play the deflect sound when deflecting projectiles."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95535",
+    "title": "Fixes combat indicator disappearing",
+    "author": "JohnFulpWillard",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Combat indicator will now properly move back to its original location when using F12."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Sleep icon now appears again & rest icon now respects \"Toggle Hotkeys button\" mode."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95526",
+    "title": "Disjointed eyes such as AI eyes, advanced camera consoles, & looking up properly show HUDs",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "HUDs are now visible when looking up a floor, as well as by AIS and camera consoles on lower floors."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95513",
+    "title": "Slot Machine DLC - Diversified Debt for Every Department",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "To help cover budget expenses, NT has redesigned and installed new slot machines that are themed by department. Slot machines can also be linked to bank accounts via ID cards or department budget cards. NT takes a 40% cut of profit to payout major jackpots and bonus spins. Please gamble responsibly."
+      },
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Replaced all slot machines with slot machine random spawners. Added syndicate slot machines to Syndicate bases and nuke outposts."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95501",
+    "title": "read-only alist support for VV",
+    "author": "Absolucy",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "View Variables can now properly view alists, altho it cannot edit them."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95569",
+    "title": "Walking in snow leaves snowprints, snowstorms clear them",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Walking in snow or sand leaves behind prints. You can examine the turf to see what left the prints, like with bloodprints."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Snowstorms or sandstorms clear away any footprints left behind in the snow or sand."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Some equipment or effects, like skis or snowshoes, prevent you from leaving prints in the snow."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can fill in snowprints with snow."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95571",
+    "title": "Pneumatic Cannons can now be placed on tables and some cleanup/QOL.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The pneumatic cannon's examine will now show the contents of the cannon loaded."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You may now place a pneumatic cannon (and the clown's pie cannon!) onto tables."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95583",
+    "title": "Fixes three cult runtimes",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Three cult abilities no longer runtime"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95596",
+    "title": "Wheelys dont turn you when you kick them out",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Wheelys dont turn you when you kick them out"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95602",
+    "title": "Recovered crew/Thanatorenasia bodies are shown as \"revivable\" when orbited in a morgue tray (+makes it shake)",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Recovered crew/Thanatorenasia bodies in morgue trays change the indicator to green when a ghost is orbiting them (to allow ghosts to signal they want it to be revived)"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Recovered crew/Thanatorenasia bodies now cause morgue trays / bodybags to shake when orbited, much like how the body itself shakes when orbited (to allow ghosts to signal they want it to be revived)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95604",
+    "title": "fixes cyborg defib refunding",
+    "author": "TheRyeGuyWhoWillNowDie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "using a dedicated cyborg defib upgrade on a mediborg with a backpack defib installed will properly eject it"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95529",
+    "title": "Revamps food menu sorting",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "\"Egg\" foodtype now exists for better food sorting, though no species in particular likes or dislikes it at the moment."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Food crafting recipes now have three sub categories - Cuisine type, Dish type, and Meal type. You can now filter between \"Moth Pizzas\" or \"Lizard Soups\" rather than needing to guess if the recipe is in \"Pizza\" or \"Mothic\"."
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "de-capitalized several foods"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95520",
+    "title": "Chemical implants can be synced with a remote signalling device(and also work at all)",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Remote chemical implants can be synced with a remote signalling device to activate without a Prisoner Management Console."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95272",
+    "title": "Randomize tts voice more appropriately",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "TTS voice is more appropriately randomized to gender"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Getting randomized through means such as mulligan toxin randomizes TTS voices"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "source": "/TG/Station",
+    "pr": "95295",
+    "title": "General maintenance for hand held camera",
+    "author": "SyncIt21",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "camera devices work again, camera flash turns on in most instances"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "camera code has been refactored. Report bugs on github"
+      }
+    ]
   }
 ]
