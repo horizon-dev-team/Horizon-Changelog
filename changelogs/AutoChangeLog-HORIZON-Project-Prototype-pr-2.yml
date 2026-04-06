@@ -1,0 +1,59 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/2
+delete-after: True
+tgstation:
+  95483:
+    title: "Refactors `handle_reactions()` to be lean & mean"
+    changes:
+      SyncIt21:
+        - code_imp: "reagent reaction code has been refactored for better cpu & memory performance. Report broken reactions on github"
+  95625:
+    title: "Red and black raptors no longer retaliate against their tamer's accidental attacks"
+    changes:
+      SmArtKar:
+        - balance: "Red and black raptors no longer retaliate against their tamer's accidental attacks"
+  95628:
+    title: "Increases raptor growth speed across the board by around 50%"
+    changes:
+      SmArtKar:
+        - balance: "Raptors and raptor chicks/eggs have had their growth speed increased by 50/33% respectively."
+  95630:
+    title: "Fixes raptor shift-hover menu being offset, and other visual offset issues"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed raptor shift-hover menu being offset, and other visual offset issues"
+  95618:
+    title: "Adds an admin secret that fixes gravity"
+    changes:
+      ArcaneMusic:
+        - admin: "Adds a secret to restart the gravity generator."
+  95613:
+    title: "Fix reset dislocation not ignoring clothing"
+    changes:
+      MrMelbert:
+        - bugfix: "Reset Dislocation operation ignores clothing"
+  95615:
+    title: "Shuttle loans now properly clear themselves if not accepted in time"
+    changes:
+      Rhials:
+        - bugfix: "The shuttle loan event will now properly clear itself if not accepted within the time limit, allowing for different loan opportunities to roll."
+  95635:
+    title: "replaces cafe disposal bins in cargo"
+    changes:
+      rageguy505:
+        - bugfix: "Metastations mining and QM disposal bins are no longer Jim Norton branded."
+  95620:
+    title: "Implements configurable policy.json paths, so admins can better implement per server policy"
+    changes:
+      LemonInTheDark:
+        - config: "Added a config option for the path to policy.json"
+  95292:
+    title: "Removes Object & Server tab"
+    changes:
+      JohnFulpWillard:
+        - rscdel: "Deleted Object tab, and Server tab for players. Activate Held Object verb is now in the IC tab. Examine and Point To was removed from the stat panel."
+        - admin: "Object possession verbs have been moved to Admin Fun."
+  95461:
+    title: "Replaces the health assembly stat panel entry"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Health assemblies now show their health in maptext rather than a stat panel entry."
