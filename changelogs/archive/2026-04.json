@@ -385,5 +385,19 @@
         "text": "Тест\n```"
       }
     ]
+  },
+  {
+    "date": "2026-04-06",
+    "source": "Horizon",
+    "pr": "124",
+    "title": "TRY №2 - CLEAR-TEST NEW PHOENIX",
+    "author": "KOCMODECAHTHUK",
+    "changes": [
+      {
+        "type": "config",
+        "class": "server",
+        "text": "Чистый лист после тестов"
+      }
+    ]
   }
 ]
