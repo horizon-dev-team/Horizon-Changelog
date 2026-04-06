@@ -12,14 +12,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   const render = data => {
     container.innerHTML = '';
     const byDate = data.reduce((acc, i) => (acc[i.date] = [...(acc[i.date]||[]), i], acc), {});
-    
     for (const [date, items] of Object.entries(byDate).sort((a,b) => a[0] < b[0] ? 1 : -1)) {
       const bySource = items.reduce((acc, i) => (acc[i.source] = [...(acc[i.source]||[]), i], acc), {});
-      
       let html = `<div class="changelog-date-section"><h2 class="date-header">${fmtDate(date)}</h2>`;
       for (const [src, list] of Object.entries(bySource)) {
         html += `<div class="source-group"><h3 class="source-header">${src}:</h3>`;
         list.forEach(item => {
+          const prNumber = item.pr.split('/').pop();
+          const repo = REPO_MAP[src];
+          const hasLink = !!repo;
+          const prUrl = hasLink ? `https://github.com/${repo}/pull/${prNumber}` : '#';
           html += `<div class="changelog-card">
             <div class="card-main">
               <div class="card-content">
@@ -29,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               </div>
             </div>
             <div class="card-sidebar">
-              <a class="pr-number" href="https://github.com/tgstation/tgstation/pull/${item.pr}" target="_blank">#${item.pr}</a>
+              <a class="pr-number" href="${prUrl}" ${!hasLink ? 'disabled' : ''} target="_blank">#${prNumber}</a>
               <div class="sidebar-info">
                 <div><i class="fas fa-calendar"></i> ${fmtDate(date)}</div>
                 <div><i class="fas fa-code"></i> ${src}</div>
@@ -43,7 +45,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       container.innerHTML += html;
     }
   };
-  
+
+  const REPO_MAP = {
+    '/TG/Station': 'tgstation/tgstation',
+    'Horizon': 'horizon-dev-team/HORIZON-Project-Prototype',
+  };
+
   const load = async i => {
     const month = months[i];
     if (!cache[month]) {
@@ -57,7 +64,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     monthSelect.value = month;
   };
   
-  // Инициализация
   months = await (await fetch('./changelogs/months.json')).json();
   months.forEach(m => monthSelect.add(new Option(fmtMonth(m), m)));
   
@@ -66,11 +72,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   monthSelect.onchange = () => load(months.indexOf(monthSelect.value));
   
   if (months.length) load(0);
-});
-
-// Тайминг
-const start = performance.now();
-window.addEventListener('load', () => {
-  const el = document.getElementById('load-time');
-  if (el) el.textContent = ((performance.now() - start)/1000).toFixed(2);
 });

@@ -1,3 +1,4 @@
+// Legend context menu
 const legendBtn = document.getElementById('open-legend-button');
 const legendText = document.getElementById('legend-text');
 
@@ -27,4 +28,11 @@ const startTime = performance.now();
 window.addEventListener('load', () => {
   const loadTime = (performance.now() - startTime) / 1000;
   document.getElementById('load-time').textContent = loadTime.toFixed(2);
+});
+
+// Time to rdy
+const start = performance.now();
+window.addEventListener('load', () => {
+  const el = document.getElementById('load-time');
+  if (el) el.textContent = ((performance.now() - start)/1000).toFixed(2);
 });

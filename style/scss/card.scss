@@ -69,6 +69,12 @@ $pr-color: #ab7df8;
     box-shadow: 0 0 8px rgba($pr-color, 0.6);
     color: #fff;
   }
+
+  &[disabled],
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 $pr-color: #ab7df8;

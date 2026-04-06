@@ -1,8 +1,8 @@
-# PR: horizon-dev-team/HORIZON-Project-Prototype/124
+# PR: horizon-dev-team/HORIZON-Project-Prototype/1
 delete-after: True
 Horizon:
-  124:
-    title: TRY №2 - CLEAR-TEST NEW PHOENIX
+  1:
+    title: [GLOBAL-REBASE] No truth, no consequence
     changes:
       KOCMODECAHTHUK:
         - config: "Чистый лист после тестов"
