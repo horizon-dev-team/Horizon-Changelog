@@ -402,7 +402,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95483",
     "title": "Refactors `handle_reactions()` to be lean & mean",
     "author": "SyncIt21",
@@ -416,7 +416,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95625",
     "title": "Red and black raptors no longer retaliate against their tamer's accidental attacks",
     "author": "SmArtKar",
@@ -430,7 +430,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95628",
     "title": "Increases raptor growth speed across the board by around 50%",
     "author": "SmArtKar",
@@ -444,7 +444,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95630",
     "title": "Fixes raptor shift-hover menu being offset, and other visual offset issues",
     "author": "SmArtKar",
@@ -458,7 +458,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95618",
     "title": "Adds an admin secret that fixes gravity",
     "author": "ArcaneMusic",
@@ -472,7 +472,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95613",
     "title": "Fix reset dislocation not ignoring clothing",
     "author": "MrMelbert",
@@ -486,7 +486,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95615",
     "title": "Shuttle loans now properly clear themselves if not accepted in time",
     "author": "Rhials",
@@ -500,7 +500,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95635",
     "title": "replaces cafe disposal bins in cargo",
     "author": "rageguy505",
@@ -514,7 +514,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95620",
     "title": "Implements configurable policy.json paths, so admins can better implement per server policy",
     "author": "LemonInTheDark",
@@ -528,7 +528,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95292",
     "title": "Removes Object & Server tab",
     "author": "JohnFulpWillard",
@@ -547,7 +547,7 @@
   },
   {
     "date": "2026-04-06",
-    "source": "tgstation",
+    "source": "/TG/Station",
     "pr": "95461",
     "title": "Replaces the health assembly stat panel entry",
     "author": "JohnFulpWillard",

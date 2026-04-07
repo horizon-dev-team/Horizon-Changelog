@@ -1,6 +1,6 @@
 # PR: horizon-dev-team/HORIZON-Project-Prototype/2
 delete-after: True
-tgstation:
+/TG/Station:
   95483:
     title: "Refactors `handle_reactions()` to be lean & mean"
     changes:
