@@ -558,5 +558,392 @@
         "text": "Health assemblies now show their health in maptext rather than a stat panel entry."
       }
     ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95653",
+    "title": "Fixes empty message when ejecting an ID card from PDA.",
+    "author": "Aliceee2ch",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed empty message when ejecting an ID card from PDA."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95659",
+    "title": "Fix cyborgs being unable to do surgeries that sleep in preop",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix cyborgs being unable to do surgeries that ask for user input before it begins"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95465",
+    "title": "[MDB Ignore] Medical larp: Adds the IDC-27 as an analog to the SDSM-35 for viruses",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored the SDSM-35 to allow for new books of similar styles, report any oddities with it."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes the broken image(s) in the SDSM-35."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds the IDC-27 in Medbay, the CMO's office, Virology, and possibly the Library. It's a reference book to all viruses you may experience, similar to the SDSM-35."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Several diseases/viruses received minor flavor adjustments, primarily to cure text, agent, description, and form."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Getting cured of the Flu provides immunity to Spanish Flu (and visa versa) as implied in cure text."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Getting cured of a Cold provides immunity to Cold-9 (and visa versa) as implied in cure text."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95548",
+    "title": "Audits and cleans up Trigger() parent calls",
+    "author": "Tsar-Salat",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "audits action button triggers, more action buttons ingame should respect if the player can use the action button or not."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95655",
+    "title": "Medical LARP: Cause of Death field",
+    "author": "JohnFulpWillard",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Medbay/Detectives can now add a Cause of Death to people's medical records when set as deceased."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95649",
+    "title": "Minor cleanups for wrenching screentips",
+    "author": "Aliceee2ch",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Most of wrenching screentips should be properly capitalized now."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95647",
+    "title": "Prevents people crashing into their own mounts if they're thrown together",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed people crashing into their own mounts if they're thrown together"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95645",
+    "title": "Fixes boxing or successful blocking not preventing grabs",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed boxing or successful blocking not preventing grabs"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95614",
+    "title": "Small surgery qol",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Surgical states applied by wounds don't appear in examine unless the mob is prepared for surgery"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Surgical state examine text is now slightly smaller"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "\"Fix bones\" surgery operation no longer appears if the patient is suffering a bone fracture - you will need to \"repair fracture\" instead."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95541",
+    "title": "Holy water helps countract heretic painting curses",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Holy water temporarily pauses some effects of, and helps reverse, cursed painting effects"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95676",
+    "title": "New \".policy\" css style class",
+    "author": "emicchinya",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "New css style class for use in config. Now you can notice policy text easier"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95664",
+    "title": "Fixes runtime with RPED beam on machine frame",
+    "author": "SyncIt21",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "rped beam on machine frame renders correctly"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95617",
+    "title": "Block edits on cached movespeed modifiers",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Admins can no longer edit global movespeed modifier datums"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95576",
+    "title": "Reduction in GPU usage from atmos pipes",
+    "author": "loganuk",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Atmos pipes GPU performance - Station areas with pipes will be less taxing on the client."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95667",
+    "title": "Fixes tape instantly falling off bleeding wounds & cleanmedical gauze",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Gauze will stay on bleeding wounds it is applied to(but still not stop bloodflow)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95666",
+    "title": "Charlie Station can't print shuttle boards",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Charlie station can no longer print custom shuttle boards"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95644",
+    "title": "Fixes brimdust rendering on wide mobs (like raptors)",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed brimdust rendering on wide mobs (like raptors)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95672",
+    "title": "Fix silicons being unable to use operating computer from afar",
+    "author": "TealSeer",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed silicons being unable to use operating computer from afar"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95573",
+    "title": "some chat highlight qol stuff",
+    "author": "Absolucy",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Added an indicator to chat highlight settings if you've input an invalid regex (a red border around the textbox)."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "You can now enable/disable individual chat highlights."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95660",
+    "title": "[NO GBP] Some more reaction patches",
+    "author": "SyncIt21",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "reactions no longer consume catalysts"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "improved reaction code in other places"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95683",
+    "title": "Pepperspray / Mask dirt tweaks",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "A dirty mask that CAN be pushed out of the way no longer obscures vision if it IS pushed out of the way."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "If your mask is dirty from pepper spray, you get some passive chat messages indicating that it can be cleaned off."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Pepper spray clothing dirt is applied piecemeal - smaller dosages, rather than doing nothing, now build up with repeat applications."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Pepper spray clothing dirt now has a tier between \"very obscured vision\" and \"no obscured vision\", giving the wearer more of a warning before being thrust into darkness."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Pepper spray can no longer stack blindness infinitely - it is now capped to 6 seconds. This brings it in line with its other effects (confusion capped at 5 seconds, blur capped at 10 seconds, knockdown capped at 3 seconds)."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95675",
+    "title": "Adds an admin verb/hotkey to jump to the position of your aghost",
+    "author": "siliconOpossum",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Adds the jump-to-ghost verb, which brings your body to your aghost, it has a hotkey which defaults to F4."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-13",
+    "source": "/TG/Station",
+    "pr": "95686",
+    "title": "Zombie powder fix",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix zombie powder perma-coma on injection"
+      }
+    ]
   }
 ]
