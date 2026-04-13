@@ -1,0 +1,131 @@
+# PR: horizon-dev-team/HORIZON-Project-Prototype/3
+delete-after: True
+/TG/Station:
+  95653:
+    title: "Fixes empty message when ejecting an ID card from PDA."
+    changes:
+      Aliceee2ch:
+        - bugfix: "Fixed empty message when ejecting an ID card from PDA."
+  95659:
+    title: "Fix cyborgs being unable to do surgeries that sleep in preop"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix cyborgs being unable to do surgeries that ask for user input before it begins"
+  95465:
+    title: "[MDB Ignore] Medical larp: Adds the IDC-27 as an analog to the SDSM-35 for viruses"
+    changes:
+      MrMelbert:
+        - code_imp: "Refactored the SDSM-35 to allow for new books of similar styles, report any oddities with it."
+        - bugfix: "Fixes the broken image(s) in the SDSM-35."
+        - rscadd: "Adds the IDC-27 in Medbay, the CMO's office, Virology, and possibly the Library. It's a reference book to all viruses you may experience, similar to the SDSM-35."
+        - rscadd: "Several diseases/viruses received minor flavor adjustments, primarily to cure text, agent, description, and form."
+        - rscadd: "Getting cured of the Flu provides immunity to Spanish Flu (and visa versa) as implied in cure text."
+        - rscadd: "Getting cured of a Cold provides immunity to Cold-9 (and visa versa) as implied in cure text."
+  95548:
+    title: "Audits and cleans up Trigger() parent calls"
+    changes:
+      Tsar-Salat:
+        - bugfix: "audits action button triggers, more action buttons ingame should respect if the player can use the action button or not."
+  95655:
+    title: "Medical LARP: Cause of Death field"
+    changes:
+      JohnFulpWillard:
+        - rscadd: "Medbay/Detectives can now add a Cause of Death to people's medical records when set as deceased."
+  95649:
+    title: "Minor cleanups for wrenching screentips"
+    changes:
+      Aliceee2ch:
+        - spellcheck: "Most of wrenching screentips should be properly capitalized now."
+  95647:
+    title: "Prevents people crashing into their own mounts if they're thrown together"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed people crashing into their own mounts if they're thrown together"
+  95645:
+    title: "Fixes boxing or successful blocking not preventing grabs"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed boxing or successful blocking not preventing grabs"
+  95614:
+    title: "Small surgery qol"
+    changes:
+      MrMelbert:
+        - tweak: "Surgical states applied by wounds don't appear in examine unless the mob is prepared for surgery"
+        - tweak: "Surgical state examine text is now slightly smaller"
+        - tweak: "\"Fix bones\" surgery operation no longer appears if the patient is suffering a bone fracture - you will need to \"repair fracture\" instead."
+  95541:
+    title: "Holy water helps countract heretic painting curses"
+    changes:
+      MrMelbert:
+        - balance: "Holy water temporarily pauses some effects of, and helps reverse, cursed painting effects"
+  95676:
+    title: "New \".policy\" css style class"
+    changes:
+      emicchinya:
+        - rscadd: "New css style class for use in config. Now you can notice policy text easier"
+  95664:
+    title: "Fixes runtime with RPED beam on machine frame"
+    changes:
+      SyncIt21:
+        - bugfix: "rped beam on machine frame renders correctly"
+  95617:
+    title: "Block edits on cached movespeed modifiers"
+    changes:
+      MrMelbert:
+        - admin: "Admins can no longer edit global movespeed modifier datums"
+  95576:
+    title: "Reduction in GPU usage from atmos pipes"
+    changes:
+      loganuk:
+        - code_imp: "Atmos pipes GPU performance - Station areas with pipes will be less taxing on the client."
+  95667:
+    title: "Fixes tape instantly falling off bleeding wounds & cleanmedical gauze"
+    changes:
+      lelandkemble:
+        - bugfix: "Gauze will stay on bleeding wounds it is applied to(but still not stop bloodflow)"
+  95666:
+    title: "Charlie Station can't print shuttle boards"
+    changes:
+      lelandkemble:
+        - rscdel: "Charlie station can no longer print custom shuttle boards"
+  95644:
+    title: "Fixes brimdust rendering on wide mobs (like raptors)"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed brimdust rendering on wide mobs (like raptors)"
+  95672:
+    title: "Fix silicons being unable to use operating computer from afar"
+    changes:
+      TealSeer:
+        - bugfix: "fixed silicons being unable to use operating computer from afar"
+  95573:
+    title: "some chat highlight qol stuff"
+    changes:
+      Absolucy:
+        - tweak: "Added an indicator to chat highlight settings if you've input an invalid regex (a red border around the textbox)."
+        - tweak: "You can now enable/disable individual chat highlights."
+  95660:
+    title: "[NO GBP] Some more reaction patches"
+    changes:
+      SyncIt21:
+        - bugfix: "reactions no longer consume catalysts"
+        - code_imp: "improved reaction code in other places"
+  95683:
+    title: "Pepperspray / Mask dirt tweaks"
+    changes:
+      MrMelbert:
+        - bugfix: "A dirty mask that CAN be pushed out of the way no longer obscures vision if it IS pushed out of the way."
+        - tweak: "If your mask is dirty from pepper spray, you get some passive chat messages indicating that it can be cleaned off."
+        - balance: "Pepper spray clothing dirt is applied piecemeal - smaller dosages, rather than doing nothing, now build up with repeat applications."
+        - balance: "Pepper spray clothing dirt now has a tier between \"very obscured vision\" and \"no obscured vision\", giving the wearer more of a warning before being thrust into darkness."
+        - balance: "Pepper spray can no longer stack blindness infinitely - it is now capped to 6 seconds. This brings it in line with its other effects (confusion capped at 5 seconds, blur capped at 10 seconds, knockdown capped at 3 seconds)."
+  95675:
+    title: "Adds an admin verb/hotkey to jump to the position of your aghost"
+    changes:
+      siliconOpossum:
+        - admin: "Adds the jump-to-ghost verb, which brings your body to your aghost, it has a hotkey which defaults to F4."
+  95686:
+    title: "Zombie powder fix"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix zombie powder perma-coma on injection"
