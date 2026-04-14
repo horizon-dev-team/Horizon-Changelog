@@ -1,16 +1,18 @@
 name: Changelog - Compile changelogs
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  push:
+    branches:
+      - changelog
   workflow_dispatch:
 
 jobs:
   compile:
     name: Compile changelogs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.committer.name == '${{ secrets.APP_PUBLIC_NAME }}[bot]' }}
     steps:
       - name: Setup python
         uses: actions/setup-python@v6
@@ -46,7 +48,7 @@ jobs:
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Automatic changelog compile ($(date -d 'yesterday' +'%d.%m.%Y'))"
+          git commit -m "Automatic changelog compile ($(date +'%d.%m.%Y'))"
           git push origin changelog
         env:
           GITHUB_TOKEN: ${{ steps.app-token-generation.outputs.token }}
