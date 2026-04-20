@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const monthSelect = document.getElementById('monthSelect');
-  
+
   const fmtDate = d => d.split('-').reverse().join('.');
   const fmtMonth = m => new Date(m.split('-')[0], m.split('-')[1]-1).toLocaleString('ru', { month: 'long', year: 'numeric' });
-  
+
   let months = [], idx = 0, cache = {};
-  
+
   const render = data => {
     container.innerHTML = '';
     const byDate = data.reduce((acc, i) => (acc[i.date] = [...(acc[i.date]||[]), i], acc), {});
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const REPO_MAP = {
     '/TG/Station': 'tgstation/tgstation',
-    'Horizon': 'horizon-dev-team/HORIZON-Project-Prototype',
+    'Horizon': 'horizon-dev-team/Horizon-Dream',
   };
 
   const load = async i => {
@@ -63,13 +63,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     nextBtn.disabled = i === months.length - 1;
     monthSelect.value = month;
   };
-  
+
   months = await (await fetch('./changelogs/months.json')).json();
   months.forEach(m => monthSelect.add(new Option(fmtMonth(m), m)));
-  
+
   prevBtn.onclick = () => load(idx - 1);
   nextBtn.onclick = () => load(idx + 1);
   monthSelect.onchange = () => load(months.indexOf(monthSelect.value));
-  
+
   if (months.length) load(0);
 });
