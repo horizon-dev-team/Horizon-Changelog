@@ -945,5 +945,1337 @@
         "text": "Fix zombie powder perma-coma on injection"
       }
     ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95751",
+    "title": "fixes second-choice headrevs having their preferences ignored",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Roundstart revs will no longer choose people who do not want to be headrevs as headrevs"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95733",
+    "title": "Fix admin shuttle recall revealing admin location",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix admin shuttle recall revealing admin location"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95726",
+    "title": "Takes the donk-co cameras off of the main station network",
+    "author": "Rhials",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Donk Trading Post cameras no longer show up on the station cameranet"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95698",
+    "title": "Restores keybindings to their original defaults, moves the new per-hand bind options to Unbound by default.",
+    "author": "Iamgoofball",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Restores keybindings to their original pre-August 2025 defaults, moves the new per-hand bind options to Unbound by default."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95679",
+    "title": "Fix toiletbong",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "toiletbong works"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95673",
+    "title": "Remove the ability to handcuff shields",
+    "author": "Layzu666",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Now you can't handcuff shields"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95580",
+    "title": "Partially moves the iconoclast's repeater behind a knowledge book",
+    "author": "TheRyeGuyWhoWillNowDie",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "making the handheld iconoclast's repeater now requires learning its recipe, the book for which can spawn in maintenance."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95599",
+    "title": "Liberator pistol applies damage multipliers in process_fire() rather than fire_gun()",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Liberator pistol applies point-blank damage modifier no matter how it is fired"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95572",
+    "title": "heretic fixes + makes aura emissive",
+    "author": "Arturlang",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "rust heretic robes now become buffed if the tile under you becomes rusted"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "void ascension and the void chill status effect now respect antimagic"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "heretic aura is now emissive."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "a exploit where you could exit space phase anywhere by loosing your heretic focus"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "moon ascension aura not affecting anyone else if one of the targets has more than 10 sanity"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95579",
+    "title": "Smoke applies to people once per tick",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Smoke no longer exposes mobs to reagents multiple times per tick, significantly lowering the duration of effects applied by chemical smoke"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95646",
+    "title": "Ore vents now turn transparent and clickthrough when there's a mob behind them",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Ore vents now turn transparent and clickthrough when a mob enters the tile above them. The bottom half of the vent is still clickable."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up ore vent code"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95697",
+    "title": "Keen Nose Quirk - The Smell of Discovery",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added a new positive quirk \"Keen Nose\". Characters with this quirk can smell chemical contents in open beakers and bottles simply by examining them while held. The smell description is identical to the taste description of the reagents."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Getting pepper-sprayed now causes a mob to lose their sense of smell for half a minute."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95724",
+    "title": "Logs explosive holoparasite boobytraps being set and exploding",
+    "author": "00-Steven",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Holoparasite boobytraps now log when they're set and when they explode."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95412",
+    "title": "Re-Implements the Bounty List for cargo, and various bounty improvements.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The Civilian bounty pad now has a new tab, where players can collaborate and work together to complete additional, station wide bounties. Reward is split based on the amount contributed. (Between 5-10 based on population to start)"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The civilian bounty pad can now print out sheets of paper displaying all available bounties, like old times."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The ninja holding facility is no longer loaded when civilian bounties are sent."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95703",
+    "title": "Remove tramstation inner supermatter APC",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Tramstation inner supermatter chamber no longer has a connected APC"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95737",
+    "title": "Fix fishing random portals not working correctly",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix fishing random portals not working correctly"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95543",
+    "title": "Basic mob stat panel gutting",
+    "author": "JohnFulpWillard",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Holoparasites' abilities are now action buttons, so you can rebind or move them."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Holoparasites now have floor change buttons."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Holoparasites and Soulscythes now have a combat mode indicator."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Dextrous holoparasites now have their inventory slot again while non-dextrous had it taken away (not that they could use it)."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95547",
+    "title": "Adds a Tactical IFF Visor and slightly refactors eye rendering",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added a new Tactical IFF Visor, available after combat implants have been researched."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored eye rendering slightly."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95750",
+    "title": "fixes bot huds randomly dissappearing",
+    "author": "Ben10Omintrix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes bot huds randomly dissappearing"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95722",
+    "title": "Updates the ayylien dissection guide",
+    "author": "Rhials",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "The alien dissection guide steps have been updated to reflect changes to surgical processes."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95681",
+    "title": "Sweater Vest",
+    "author": "MacaroniCritter",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added the sweater vest"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95629",
+    "title": "Fixes weather forcasts randomly backtracking on themselves, and falsely announcing safety right before a storm hits",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed weather forcasts randomly backtracking on themselves, and falsely announcing safety right before a storm hits"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95623",
+    "title": "Removes butterflies from the plasma flower MOD core, reduces the amount of particles spawned",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Plasma flower MOD core no longer spawns butterflies around the user"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Plasma flower MOD core's pollen visual now spawns less particles"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95707",
+    "title": "Changes lamarr s desc from \"xenomorph facehugger\" to \"alien\"",
+    "author": "ElGitificador",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "due to conflicts with the hive empress, lamarr has lost it s diplomatic facehugger title"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95641",
+    "title": "Fixes and improvements to weakpoints.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Weakpoints have more safeguards to prevent them from spawning onto space."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Weakpoints now have an animation to spawn in with."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95582",
+    "title": "Hoodies",
+    "author": "Twaticus",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Hoodies! Both pullover and zip-up hoodies are available in the clothesmate and in loadouts!"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95708",
+    "title": "Deletes the misleading key request for the dragon lavaboat",
+    "author": "ElGitificador",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Deleted the misleading key request for the dragon lavaboat"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95716",
+    "title": "Dont show swap hand tutorial if you only have 1 hand",
+    "author": "FalloutFalcon",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The swap hand tutorial wont be shown to someone missing a hand"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95719",
+    "title": "backticks some usages of `rank` in querys",
+    "author": "FalloutFalcon",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "A handful of permissions panel querys now work again"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95732",
+    "title": "DNA mob height doesn't instantly fall back to `HUMAN_HEIGHT_MEDIUM`",
+    "author": "Neocloudy",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "DNA mob height doesn't instantly fall back to the base height for all mobs."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95597",
+    "title": "fixes cyborg omnitool upgrade doing nothing",
+    "author": "TheRyeGuyWhoWillNowDie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "the cyborg omnitool upgrades properly increase tool speed"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "the cyborg omnitool engineer upgrade properly increases the welder speed as well"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95341",
+    "title": "Datumizes material effects, slots, and material spears",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Custom material spears can now be crafted using shards or (any) crystal sheets on a wireprod"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added 3 new material effects: Vampire's Bane (Silver), Teleporting (BS/Telecrystals) and Penetrating (Telecrystals)"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Spears had their material stat calculations adjusted a bit to account for the new slot system."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Implemented datum-based material effects and slots"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95709",
+    "title": "Fixes hardcoded pod storage safe security level lock & its initial icon setup",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Escape pod storage wall safes will now be unlocked when they're unlocked and appear locked when they're locked"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95608",
+    "title": "Roundstart xeno egg alert is included in the roundstart report",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Roundstart xeno egg is now mentioned in the roundstart report as an addendum, rather than as a second report (usually) following the roundstart report."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95695",
+    "title": "Fixes me destroying the IDC in the last commit",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes the IDC"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95690",
+    "title": "Fixes neurine not working in the dead",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Neurine works in the dead again"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95692",
+    "title": "Carp mask can be used for internals again",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Carp mask can be used for internals again"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95678",
+    "title": "Transparence trauma is permanent",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Wizard Transparence perk's curse is permanent"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95624",
+    "title": "Fixes conditionally added actions not appearing on player HUDs",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed conditionally added actions not appearing on player HUDs"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95622",
+    "title": "Renamed golden data disk to syndicate data disk",
+    "author": "Aliceee2ch",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Renamed golden data disk to syndicate data disk."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95725",
+    "title": "Gives Space Dragons a locator for the areas they need to go to",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Space Dragons have a new ability to locate the areas they need to create rifts in."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95754",
+    "title": "Replaces uses of welder sounds when using razors with hair cutting noises",
+    "author": "theselfish",
+    "changes": [
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Shaving Ian will no longer sound like you're using a Welder."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95734",
+    "title": "Allows admins to set individual players a specific OOC colour",
+    "author": "JoshAdamPowell",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "admins can more freely mess with ooc colours"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95769",
+    "title": "[fix] Deletes old unused maps removing bloat.",
+    "author": "Yobrocharlie",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Removed the snowdin and caves maps"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95408",
+    "title": "The big tooltype_act de-cargo-cult-ing",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "A majority of machines had their screwdriver/crowbar/wrench interactions rewritten, report any oddities like being unable to open a machine's panel or deconstruct a machine"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95616",
+    "title": "You can lose it all",
+    "author": "JohnFulpWillard",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Winning the slot machine jackpot now gives a memory."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Winning the slot machine jackpot is a +4 moodlet instead of +6, but it is now a permanent moodlet."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Losing large amounts of money from the CRAB-17 will give you a negative moodlet, which overwrites jackpot winnings."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95758",
+    "title": "Optimize Github Actions CI workflow for Map Linter",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "config",
+        "class": "server",
+        "text": "Optimized CI workflow to skip map-specific linters when no maps are modified."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95544",
+    "title": "DNR'd / playerless bodies risen as zombies are ghost controllable (though mindless bodies are weaker)",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "If a playerless body (DNR'd or otherwise) is raised as a zombie, ghosts are given the ability to take control of it"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "If a body that never had a player control it is risen as a zombie, they are risen as a weaker \"mindless zombie\" (moves and heals slower, deals less damage, infection is not guaranteed on hit)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95631",
+    "title": "Visual and balance changes to style meters",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Style meters now award you for clearing vents based on vent richness and difficulty"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Megafauna kills and vent taps grant a permanent 10% / 5/10/15% (based on difficulty) permanent style boost respectively"
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Style meters no longer grant points for mining empty rocks"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Style meter actions now list top-to-bottom rather than bottom-to-top"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95607",
+    "title": "Adds Lawyer/HoP/QM/Spy unique traitor item, the briefcase firearm mechanism",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Traitor Lawyers, Quartermasters, and Heads of Personnels can now purchase a \"Briefcase Embedded Firearm Trigger\" from the uplink for 4tc - a briefcase that allows any weapon stored within to be fired by \"firing\" the briefcase itself. Weapon sizes are restricted to whatever fits in a briefcase, meaning it practically only works with pistols and some laser weapons.  It has a subtle examine tell that only appears while being held."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Also available for 8tc is a combo deal that comes pre-loaded with a Makarov. This can also appear as a medium Spy reward."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The Spy item \"boot dagger\"'s examine tell now only appears if you're examining them WHILE holding them."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95788",
+    "title": "[NO GBP] Kitsune Mask no longer hides the user's identity while flipped",
+    "author": "Hardly3D",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Kitsune mask no longer keeps the user's identity hidden while it's flipped"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95780",
+    "title": "Sovl Removal from academy",
+    "author": "Yobrocharlie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Removes inert wands of fireball and healing from the academy, apparently inert doesnt mean not working but just fewer charges."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95773",
+    "title": "Fix window spawners not being dense",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix window spawners not being dense, which affected random spawners LOS boundaries."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95704",
+    "title": "Fixes two books creation bugs: trimming and newlines.",
+    "author": "00-Steven",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Books no longer get trimmed below the paper length limit."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Books made using paperwork created with multiple inputs no longer put all that text on the same line."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95712",
+    "title": "Changes Pousse Cafe and Improved Whiskey Cocktail recipes",
+    "author": "RusselNotSCP",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The Pousse-Cafe's recipe has been changed to require more exotic liqueurs"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The Improved Whiskey Cocktail's recipe has been changed to make it easier to handcraft"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95764",
+    "title": "Fixes stimulants not regenerating stamina in otherwise healthy people",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "stimulants properly regenerate stamina in otherwise healthy people"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95736",
+    "title": "Removes the minimum APC requirement for robofactories",
+    "author": "combustor",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Removes the minimum APC requirement for robofactories"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95793",
+    "title": "Stops they/them it/its gender choice from locking you into the \"Female\" physique",
+    "author": "vinylspiders",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "changing your gender choice in character prefs no longer modifies your physique preference"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95782",
+    "title": "Removing brain updates med hud",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Removing brain updates the med hud"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95563",
+    "title": "Wizard Wand blind box & wand bandolier",
+    "author": "Jacquerel",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds 16 more wizard wands to the game, which wizards can buy cheaply but randomly, or are available via Summon Magic."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "If a wizard buys more than one set of wands they will receive a \"Wand Bandolier\" holster which fits in the backpack or, if worn in the suit slot, will automatically exchange an expended wand for a full one."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Staffs (and wands) of animation that are animated will try to animate other objects instead of firing at living mobs, which are already animated."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Animating a wand of nothing will turn it into a wand of animation (and animate it)."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The staff of chaos can now do more things."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Magicarp now additionally come in Babbling, Frigid, Quantum, and Weightless varieties. Collect them all!"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95517",
+    "title": "Dismounting someone from a Pony (or Leapers) requires shoving and is not guaranteed",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "You can no longer dismount riders from ponies with a single click. Instead, there is a chance to dismount the rider on shoving the pony OR the rider, based on multiple factors (such as stamina + physical damage and stagger)"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The Leaper mount also has this \"disarm to dismount\" mechanic, though it is significantly more difficult as they are much sturdier beasts"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95802",
+    "title": "Janiborg cleans its own brushes when auto washing",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Janiborgs will no longer track blood while autowashing"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95790",
+    "title": "Fix heretic research objective",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Heretic \"research knowledge\" objective no longer undershoots the target value by ~8-10"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95789",
+    "title": "fixes welding goggles covering your eyes when up",
+    "author": "TheRyeGuyWhoWillNowDie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "welding goggles now only cover your eyes when covering your eyes"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95748",
+    "title": "Makes ship in a bottle smaller and allows it to be bottled back up",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Ship from a bottle can now be bottled back up by alt-clicking it"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Ship in a bottle can now be deployed by throwing it, and are a small item instead of normal-sized"
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Boats no longer refer to oars as keys"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95739",
+    "title": "Fixes transforming items getting their force incorrectly modified when metalgenned multiple times",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Transforming items like eswords should no longer get absurd stats when metalgenned multiple times in a row"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95741",
+    "title": "[NO GBP] Fixes AI Camera mode being limited by range",
+    "author": "SyncIt21",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "AI camera mode works from any distances"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95745",
+    "title": "Adds a naval cannon to a naval ship.",
+    "author": "Yobrocharlie",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The heretic gateway now has a 40mm cannon in it."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95743",
+    "title": "Corrects instances of \"mana\" to \"plasma\" within TGC.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "corrected some instances within TGC cards to say \"plasma\" instead of \"mana\" when referring to card costs."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95806",
+    "title": "Makes the black fedora in the detdrobe a subtype of the detective fedora",
+    "author": "necromanceranne",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The detective's noir fedora is actually a detective fedora, and gets all the unique qualities expected of one."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95595",
+    "title": "Omega Soap changes",
+    "author": "TheRealSpriteMan1337",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Omega soap texture has been updated."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95784",
+    "title": "Getting sacrificed removes you from all heretic's sacrifice list",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Upon being successfully sacrificed by a heretic all other heretics lose you as a target, and you can no longer be (re)rolled as a target by other heretics."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95682",
+    "title": "[MDB IGNORE] Lavaland Mineral Rework: Yapmining 2026",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Lavaland has received 2 new rock types: Siderite, rich in iron and titanium, and Shale, full of plasma, gold and uranium."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "A guaranteed river spawn and a fishing pond have been added to the lavaland outpost raptor area."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Ores now tend to spawn in veins or clusters, and are much more likely to spawn near exposed rock."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Natural ore spawns are much more abundant than before, closer to pre-arcmining levels. Vent output has been halved"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "PKA AOE mining module has been reverted to 3x3 and incurs a cooldown penalty"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Plasma cutters eat more plasma when recharging and have slightly shorter range."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Mining MOD sphere mode no longer instamines, and now just has an extremely high mining speed."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Goldgrubs can now tunnel extremely fast and spawn much more frequently than before. Goldgrub burrowing can be interrupted by dealing damage to them."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Goldgrubs no longer reflect non-bomb/energy shots."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "AOE mining methods now have a 10/25% chance to not mine siderite/shale unless it has ore inside of it."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Lavaland generation has been rewritten. The caves should be much more wilder."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95677",
+    "title": "[I **NOT** ded] Heart Eater only works with sentient beings' hearts (+heart ripping).",
+    "author": "Y0SH1M4S73R",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Wizards with the Heart Eater perk are only invigorated by the hearts of sentient beings."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "To facilitate the taking of hearts from sentient beings, the Heart Eater perk lets you tear the heart out of the chest of an incapacitated or dead being by targeting their chest with an empty hand in combat mode."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95702",
+    "title": "Fixes fulton pack making you stuck infinitely due to the beacon being destroyed",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes one way to get stuck in place forever while using a fulton extraction kit"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95771",
+    "title": "Changes the antag gear spawner",
+    "author": "Yobrocharlie",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "added more things to the antag gear spawner"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95813",
+    "title": "Fixes materials market delivery crate",
+    "author": "lessthnthree",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed loss of credits for correctly denied minerals market cargo manifest"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cargo budget materials market orders arrive in crates as expected"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-21",
+    "source": "/TG/Station",
+    "pr": "95727",
+    "title": "Modernizes Central Command's ERT Wing [READY]",
+    "author": "Pumpkinoe",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Centcom's ERT wing has been updated, including a new door that leads directly to the pod bay and buttons to control the doors!"
+      }
+    ]
   }
 ]
