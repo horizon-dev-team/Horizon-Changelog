@@ -2277,5 +2277,729 @@
         "text": "Centcom's ERT wing has been updated, including a new door that leads directly to the pod bay and buttons to control the doors!"
       }
     ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95815",
+    "title": "halves the price of grapple guns",
+    "author": "Ben10Omintrix",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "the grapple gun's price has been reduced to 1500 points"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95327",
+    "title": "Refactor gasmix mole change into a proc",
+    "author": "TheBoondock",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "refactored majority of gas_mix mole change into adjust_gas() proc"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95822",
+    "title": "Fixes crafting runtime",
+    "author": "vinylspiders",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes an issue where raptor chicks and other non-items appearing in item contents would prevent any personal crafting in the vicinity"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95818",
+    "title": "Spacers get pos mood for achieving nograv on planets",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Spacers who manage to get nograv while on a planet are given a positive moodlet, and are considered in space for the purpose of their buffs/debuffs"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95619",
+    "title": "Fixes for black market creation verb.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "More safeguards were added to the admin \"Create Black Market Item\" verb."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95828",
+    "title": "Butchering no longer moves organs to nullspace",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Butchering heads no longer moves their organs to nullspace, and probably the same with any other method of mass removing organs."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95811",
+    "title": "Adds a search input to the planemaster debugger; bumps tgui-core",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Planemaster Debugger now has a text search input to locate and jump to planes"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95810",
+    "title": "Adds toggle for meteor mode in secrets",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Adds toggle for meteor mode in secrets"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95801",
+    "title": "makeHologram() accepts optional color override + returns glow appearance",
+    "author": "Happyowl93",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "makeHologram now allows a color override."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95797",
+    "title": "Plasma works in IEDs again",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Plasma works in IEDs again"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95564",
+    "title": "Stock Market UI Tweaks and improvements",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The GMM Ui can now tell you the minimum and maximum price ranges that a material will sell for."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "You can now sell materials on the edge of their buying and selling thresholds. (This really only effects iron and glass, practically)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95753",
+    "title": "Tweaks (Fixes) formula for \"internal bleeding\" volume",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The amount of blood loss from an attack to an already bleeding wound has been tweaked. As an example, a 20 force attack used to range 0.1% to 4% blood loss, and now ranges 1% to 3%."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95774",
+    "title": "Add Shoe Factory Ruin",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Add Shoe Factory to lava/ice ruins."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95332",
+    "title": "Makes lighting objects objects again",
+    "author": "Absolucy",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can no longer see lights through walls when using mesons or when ventcrawling."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95551",
+    "title": "Heretic starting knowledge tweaks",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Codex Cicatrix is now a tier 1 heretic knowledge, and can not be drafted."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Warren King's Welcome is now a tier 1 heretic knowledge, but can be drafted."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Warren King's Welcome soft reworked. Now needs 10 cable, 1 paper, 1 multitool. Now adds access to all IDs present, including worn IDs. Now adds \"heretic\" access to the ID card. Now changes all nearby airlocks to require \"heretic\" access, and cuts the AI wire."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Eldritch ID card starts with \"heretic\" access."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95687",
+    "title": "EVA helmets have retractable visors",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Some EVA helmets now have retractable visors, which you can pull up or down at will, to reveal your face."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95835",
+    "title": "Fix randomized reaction persistence",
+    "author": "levels0",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "metalgen and secret sauce recipes are now loaded properly"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95838",
+    "title": "Fixes mushroom bowl reagent overlay",
+    "author": "1393F",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The mushroom bowl no longer turns invisible when filled with a reagent."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95817",
+    "title": "Express consoles have crab rockets once again...",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Packs exclusive to the express console (crab rockets for example) can now be ordered from express consoles."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95717",
+    "title": "Makes easy_random_mutate mutated genes researchable",
+    "author": "ElGitificador",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "mutations coming from most random mutation sources can now be saved in dna consoles"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95530",
+    "title": "Arcmining: Chemical Boosting",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The boulder smelter and refinery may now take a plumbing input (Closely examine to see the full list) to boost the mineral output of processed boulders."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Boulder refinery machines will produce a new chemical, industrial waste, which must be managed, dispersed, or it will eventually overflow if too much exists in the same container."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The smelter and refinery now produce less mining points per unit than before, but the quantity of points are now better scaled to the quantity processed. 50% more ores means 50% more points."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The amount of points generated per ore within boulders is now a separate variable, not a percentage of the base value. This means some ores are better/worse for generating mining points as a result."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Completing wave defense will award 200 more points across all ore vent tiers, 700/1200/1700 for small/medium/large vents."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95656",
+    "title": "Camera update: Monochrome photo-taking",
+    "author": "JohnFulpWillard",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can Ctrl Click a camera to set it to print monochrome photos. The detective's camera is on this mode by default."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Photos without a scribble written on them won't have empty white space at the bottom."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95841",
+    "title": "Remove unsupported CSS from `client.script`",
+    "author": "TealSeer",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed CSS-related errors in BYOND 516.1681+"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95848",
+    "title": "Fixes looming",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Looming works again"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95849",
+    "title": "Fixes stamina bar shown value inversion",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Stamina bars no longer invert the value they show you"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95854",
+    "title": "Nonbinary people can respawn",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Nonbinary people can respawn"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95783",
+    "title": "Basic beepskies and some ED209 additions",
+    "author": "Ben10Omintrix",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "beepskies, and ed209s have been refactored. please report any bugs"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "ed209s can now wear hats! some hats give them new dialogue"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "emagged ed209s are now rideable!"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "added evil versions of the ed209s to the syndie uplink"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95705",
+    "title": "Cleans up Fire Alarm sounds",
+    "author": "Capsandi",
+    "changes": [
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "fire alarms are no longer stereo files condensed to mono at runtime"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95772",
+    "title": "Adds the savior of the universe paper hat from Project Hail Merry.",
+    "author": "forgman6",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Saviors paper hat."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added worn and normal icon states for it in costume.dmi"
+      },
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Modified bus.dmm to include the paper hat behind the main bus."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95840",
+    "title": "change shutter and high security syndicate door sprites",
+    "author": "Arturlang",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "changes shutter and high security door sprites on the infiltrator battlecruiser and the syndicate nuclear operative base"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95871",
+    "title": "Fixes + optimizes biome gen code",
+    "author": "vinylspiders",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "mobs and features should not be spawning in walls anymore in certain biomes"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95867",
+    "title": "Fix alien plasma display",
+    "author": "Ruslanllll",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Alien plasma display works again"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95477",
+    "title": "Say verb & skin shenanigans (Pray is a hotkey, Whisper is in commandbar)",
+    "author": "JohnFulpWillard",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Pray verb is now a hotkey, Whisper is now a command bar button, and all say verbs have been removed from the stat panel."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Admin button on the escape menu is now its own section for praying, as well as seeing your latest ticket & admin notes."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Resizing the stat panel will no longer change the size of the command bar."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95868",
+    "title": "Map fixes for Yapmining 2026",
+    "author": "Aliceee2ch",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "LIttle map fixes for lavaland."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95858",
+    "title": "Ninjas cannot place the spider bomb in places where it will not detonate",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ninja spider bomb can no longer be placed in certain situations it would be unable to detonate"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95842",
+    "title": "Un-curses the bear mask in the pizzeria virtual domain",
+    "author": "Rhials",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The bear mask in the pizzeria virtual domain is now a regular, non-cursed mask."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95895",
+    "title": "[No GBP] Actually fix random recipes for real",
+    "author": "levels0",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "metalgen and secret sauce should now generate properly"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95902",
+    "title": "Geysers now provide some audio feedback when scanned.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Added a sound effect when a geyser is properly scanned."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95901",
+    "title": "Mice now have a corrected movement state.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Mice now have a movement sprite going both east and west."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95905",
+    "title": "Fixes blue/green cat ears being switched",
+    "author": "vinylspiders",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes blue and green cybernetic cat ears being switched"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95885",
+    "title": "[NO GBP] Fixes plasma cutter recharging",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed plasma cutter recharging"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95883",
+    "title": "Prevent Molt'Obeso sauce from being added to random recipes",
+    "author": "levels0",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "molt'obeso sauce will no longer appear as an ingredient in random recipes"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95853",
+    "title": "fixes the Heretic gate med cam appearing on ss13 cams",
+    "author": "ElGitificador",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed heretic gate cam appearing in on station ss13 network"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95643",
+    "title": "Sect of the Dream God",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds the Sect of the Dream God, a new option for chaplains."
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95913",
+    "title": "Soup doesn't yell at you when you drink it",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Drinking soup from a bowl no longer yells at you in big text"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-29",
+    "source": "/TG/Station",
+    "pr": "95882",
+    "title": "Fixes Icebox boulder processing room being exposed to ice wastes",
+    "author": "Dmeto",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "IceBox station boulder processing no longer exposed to outside."
+      }
+    ]
   }
 ]
