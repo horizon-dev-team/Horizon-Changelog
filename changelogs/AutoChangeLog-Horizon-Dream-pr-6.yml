@@ -1,0 +1,249 @@
+# PR: horizon-dev-team/Horizon-Dream/6
+delete-after: True
+/TG/Station:
+  95815:
+    title: "halves the price of grapple guns"
+    changes:
+      Ben10Omintrix:
+        - balance: "the grapple gun's price has been reduced to 1500 points"
+  95327:
+    title: "Refactor gasmix mole change into a proc"
+    changes:
+      TheBoondock:
+        - code_imp: "refactored majority of gas_mix mole change into adjust_gas() proc"
+  95822:
+    title: "Fixes crafting runtime"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes an issue where raptor chicks and other non-items appearing in item contents would prevent any personal crafting in the vicinity"
+  95818:
+    title: "Spacers get pos mood for achieving nograv on planets"
+    changes:
+      MrMelbert:
+        - rscadd: "Spacers who manage to get nograv while on a planet are given a positive moodlet, and are considered in space for the purpose of their buffs/debuffs"
+  95619:
+    title: "Fixes for black market creation verb."
+    changes:
+      ArcaneMusic:
+        - bugfix: "More safeguards were added to the admin \"Create Black Market Item\" verb."
+  95828:
+    title: "Butchering no longer moves organs to nullspace"
+    changes:
+      lelandkemble:
+        - bugfix: "Butchering heads no longer moves their organs to nullspace, and probably the same with any other method of mass removing organs."
+  95811:
+    title: "Adds a search input to the planemaster debugger; bumps tgui-core"
+    changes:
+      SmArtKar:
+        - admin: "Planemaster Debugger now has a text search input to locate and jump to planes"
+  95810:
+    title: "Adds toggle for meteor mode in secrets"
+    changes:
+      MrMelbert:
+        - admin: "Adds toggle for meteor mode in secrets"
+  95801:
+    title: "makeHologram() accepts optional color override + returns glow appearance"
+    changes:
+      Happyowl93:
+        - code_imp: "makeHologram now allows a color override."
+  95797:
+    title: "Plasma works in IEDs again"
+    changes:
+      MrMelbert:
+        - bugfix: "Plasma works in IEDs again"
+  95564:
+    title: "Stock Market UI Tweaks and improvements"
+    changes:
+      ArcaneMusic:
+        - tweak: "The GMM Ui can now tell you the minimum and maximum price ranges that a material will sell for."
+        - tweak: "You can now sell materials on the edge of their buying and selling thresholds. (This really only effects iron and glass, practically)"
+  95753:
+    title: "Tweaks (Fixes) formula for \"internal bleeding\" volume"
+    changes:
+      MrMelbert:
+        - balance: "The amount of blood loss from an attack to an already bleeding wound has been tweaked. As an example, a 20 force attack used to range 0.1% to 4% blood loss, and now ranges 1% to 3%."
+  95774:
+    title: "Add Shoe Factory Ruin"
+    changes:
+      timothymtorres:
+        - map: "Add Shoe Factory to lava/ice ruins."
+  95332:
+    title: "Makes lighting objects objects again"
+    changes:
+      Absolucy:
+        - bugfix: "You can no longer see lights through walls when using mesons or when ventcrawling."
+  95551:
+    title: "Heretic starting knowledge tweaks"
+    changes:
+      MrMelbert:
+        - balance: "Codex Cicatrix is now a tier 1 heretic knowledge, and can not be drafted."
+        - balance: "Warren King's Welcome is now a tier 1 heretic knowledge, but can be drafted."
+        - balance: "Warren King's Welcome soft reworked. Now needs 10 cable, 1 paper, 1 multitool. Now adds access to all IDs present, including worn IDs. Now adds \"heretic\" access to the ID card. Now changes all nearby airlocks to require \"heretic\" access, and cuts the AI wire."
+        - balance: "Eldritch ID card starts with \"heretic\" access."
+  95687:
+    title: "EVA helmets have retractable visors"
+    changes:
+      MrMelbert:
+        - rscadd: "Some EVA helmets now have retractable visors, which you can pull up or down at will, to reveal your face."
+  95835:
+    title: "Fix randomized reaction persistence"
+    changes:
+      levels0:
+        - bugfix: "metalgen and secret sauce recipes are now loaded properly"
+  95838:
+    title: "Fixes mushroom bowl reagent overlay"
+    changes:
+      1393F:
+        - bugfix: "The mushroom bowl no longer turns invisible when filled with a reagent."
+  95817:
+    title: "Express consoles have crab rockets once again..."
+    changes:
+      Ghommie:
+        - bugfix: "Packs exclusive to the express console (crab rockets for example) can now be ordered from express consoles."
+  95717:
+    title: "Makes easy_random_mutate mutated genes researchable"
+    changes:
+      ElGitificador:
+        - balance: "mutations coming from most random mutation sources can now be saved in dna consoles"
+  95530:
+    title: "Arcmining: Chemical Boosting"
+    changes:
+      ArcaneMusic:
+        - rscadd: "The boulder smelter and refinery may now take a plumbing input (Closely examine to see the full list) to boost the mineral output of processed boulders."
+        - rscadd: "Boulder refinery machines will produce a new chemical, industrial waste, which must be managed, dispersed, or it will eventually overflow if too much exists in the same container."
+        - balance: "The smelter and refinery now produce less mining points per unit than before, but the quantity of points are now better scaled to the quantity processed. 50% more ores means 50% more points."
+        - balance: "The amount of points generated per ore within boulders is now a separate variable, not a percentage of the base value. This means some ores are better/worse for generating mining points as a result."
+        - balance: "Completing wave defense will award 200 more points across all ore vent tiers, 700/1200/1700 for small/medium/large vents."
+  95656:
+    title: "Camera update: Monochrome photo-taking"
+    changes:
+      JohnFulpWillard:
+        - rscadd: "You can Ctrl Click a camera to set it to print monochrome photos. The detective's camera is on this mode by default."
+        - tweak: "Photos without a scribble written on them won't have empty white space at the bottom."
+  95841:
+    title: "Remove unsupported CSS from `client.script`"
+    changes:
+      TealSeer:
+        - bugfix: "fixed CSS-related errors in BYOND 516.1681+"
+  95848:
+    title: "Fixes looming"
+    changes:
+      lelandkemble:
+        - bugfix: "Looming works again"
+  95849:
+    title: "Fixes stamina bar shown value inversion"
+    changes:
+      lelandkemble:
+        - bugfix: "Stamina bars no longer invert the value they show you"
+  95854:
+    title: "Nonbinary people can respawn"
+    changes:
+      lelandkemble:
+        - bugfix: "Nonbinary people can respawn"
+  95783:
+    title: "Basic beepskies and some ED209 additions"
+    changes:
+      Ben10Omintrix:
+        - code_imp: "beepskies, and ed209s have been refactored. please report any bugs"
+        - rscadd: "ed209s can now wear hats! some hats give them new dialogue"
+        - rscadd: "emagged ed209s are now rideable!"
+        - rscadd: "added evil versions of the ed209s to the syndie uplink"
+  95705:
+    title: "Cleans up Fire Alarm sounds"
+    changes:
+      Capsandi:
+        - sound: "fire alarms are no longer stereo files condensed to mono at runtime"
+  95772:
+    title: "Adds the savior of the universe paper hat from Project Hail Merry."
+    changes:
+      forgman6:
+        - rscadd: "Saviors paper hat."
+        - rscadd: "Added worn and normal icon states for it in costume.dmi"
+        - map: "Modified bus.dmm to include the paper hat behind the main bus."
+  95840:
+    title: "change shutter and high security syndicate door sprites"
+    changes:
+      Arturlang:
+        - rscadd: "changes shutter and high security door sprites on the infiltrator battlecruiser and the syndicate nuclear operative base"
+  95871:
+    title: "Fixes + optimizes biome gen code"
+    changes:
+      vinylspiders:
+        - bugfix: "mobs and features should not be spawning in walls anymore in certain biomes"
+  95867:
+    title: "Fix alien plasma display"
+    changes:
+      Ruslanllll:
+        - bugfix: "Alien plasma display works again"
+  95477:
+    title: "Say verb & skin shenanigans (Pray is a hotkey, Whisper is in commandbar)"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Pray verb is now a hotkey, Whisper is now a command bar button, and all say verbs have been removed from the stat panel."
+        - tweak: "Admin button on the escape menu is now its own section for praying, as well as seeing your latest ticket & admin notes."
+        - bugfix: "Resizing the stat panel will no longer change the size of the command bar."
+  95868:
+    title: "Map fixes for Yapmining 2026"
+    changes:
+      Aliceee2ch:
+        - bugfix: "LIttle map fixes for lavaland."
+  95858:
+    title: "Ninjas cannot place the spider bomb in places where it will not detonate"
+    changes:
+      lelandkemble:
+        - bugfix: "Ninja spider bomb can no longer be placed in certain situations it would be unable to detonate"
+  95842:
+    title: "Un-curses the bear mask in the pizzeria virtual domain"
+    changes:
+      Rhials:
+        - bugfix: "The bear mask in the pizzeria virtual domain is now a regular, non-cursed mask."
+  95895:
+    title: "[No GBP] Actually fix random recipes for real"
+    changes:
+      levels0:
+        - bugfix: "metalgen and secret sauce should now generate properly"
+  95902:
+    title: "Geysers now provide some audio feedback when scanned."
+    changes:
+      ArcaneMusic:
+        - tweak: "Added a sound effect when a geyser is properly scanned."
+  95901:
+    title: "Mice now have a corrected movement state."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Mice now have a movement sprite going both east and west."
+  95905:
+    title: "Fixes blue/green cat ears being switched"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes blue and green cybernetic cat ears being switched"
+  95885:
+    title: "[NO GBP] Fixes plasma cutter recharging"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed plasma cutter recharging"
+  95883:
+    title: "Prevent Molt'Obeso sauce from being added to random recipes"
+    changes:
+      levels0:
+        - bugfix: "molt'obeso sauce will no longer appear as an ingredient in random recipes"
+  95853:
+    title: "fixes the Heretic gate med cam appearing on ss13 cams"
+    changes:
+      ElGitificador:
+        - bugfix: "fixed heretic gate cam appearing in on station ss13 network"
+  95643:
+    title: "Sect of the Dream God"
+    changes:
+      MrMelbert:
+        - rscadd: "Adds the Sect of the Dream God, a new option for chaplains."
+  95913:
+    title: "Soup doesn't yell at you when you drink it"
+    changes:
+      MrMelbert:
+        - tweak: "Drinking soup from a bowl no longer yells at you in big text"
+  95882:
+    title: "Fixes Icebox boulder processing room being exposed to ice wastes"
+    changes:
+      Dmeto:
+        - map: "IceBox station boulder processing no longer exposed to outside."
