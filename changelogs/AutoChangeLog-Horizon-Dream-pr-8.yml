@@ -1,0 +1,585 @@
+# PR: horizon-dev-team/Horizon-Dream/8
+delete-after: True
+/TG/Station:
+  95881:
+    title: "Changes megafauna kill achievement max range of acquisition to 12"
+    changes:
+      ElGitificador:
+        - bugfix: "hierophant achievement can now be obtained from 1 tile away of it s final blast"
+  95497:
+    title: "Add USB ports to emitters/temperature pumps/temperature machines"
+    changes:
+      tmyqlfpir:
+        - rscadd: "Added USB interface to emitters, temperature pumps and temperature control unit machines"
+  95814:
+    title: "Big tooltype decargo-culting (continued)"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes a few instances of crowbar deconstruction not working for certain items"
+        - code_imp: "extends the tool_blocker element to support secondary tool_acts"
+  95906:
+    title: "Fix basic mobs triggering click cooldown erroneously."
+    changes:
+      CabinetOnFire:
+        - bugfix: "Fixes a bug where player-controlled basic mobs would get a cooldown when their attacks miss"
+        - code_imp: "basic mob attack chain can now decided whether an attack resulted in a cooldown or not."
+  95898:
+    title: "Fix large bulky toys from being stored in suit storage"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix large bulky toys from being stored in suit storage"
+  95908:
+    title: "Cables without power do not produce sparks when placed"
+    changes:
+      lelandkemble:
+        - bugfix: "Cables without power no longer produce sparks when placed"
+  95910:
+    title: "Fixes pet commands that required pointing (by fixing pointing) and fixes pets being unable to attack"
+    changes:
+      CabinetOnFire:
+        - bugfix: "You can now sic pets onto targets again"
+        - bugfix: "Pointing at things no longer sometimes points at the wrong thing"
+  95924:
+    title: "Update hierophant club sprite"
+    changes:
+      Jacquerel:
+        - bugfix: "The Hierophant Club will stop glowing when you can't use it to teleport"
+        - image: "Updated the Hierophant Club so that it looks like the Hierophant"
+  95918:
+    title: "Adds a more fitting Cybersun reinforcement outfit. And ABSOLUTELY NO ITEMS TO THE BLACK MARKET."
+    changes:
+      necromanceranne:
+        - rscadd: "Gives the Cybersun reinforcement a new outfit."
+        - rscadd: "No new items were added to the black market. None. Honest."
+  95946:
+    title: "Fixes circuits bluescreening whenever you try to put text or numbers into a STRING or ANY type field"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed circuits bluescreening whenever you try to put text or numbers into a STRING or ANY type field"
+  95863:
+    title: "hyposprays can draw from containers"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - tweak: "hyposprays can now draw from other reagent containers"
+  95921:
+    title: "Mjolnir successfully attacks only if it successfully attacks"
+    changes:
+      lelandkemble:
+        - bugfix: "Mjolnir only successfully attacks if it successfully attacks"
+  95804:
+    title: "Void cloaks do not block surgery while invisibile"
+    changes:
+      necromanceranne:
+        - bugfix: "Void cloaks no longer obstruct surgery while invisible."
+  95864:
+    title: "Style Meter: Smaller Item, Stored Multiplier"
+    changes:
+      Hatterhat:
+        - tweak: "The style meter for miners now stores its permanent multiplier on the meter in case you're switching eyewear. The style meter item is now small, allowing for easier storage."
+  95958:
+    title: "Remove asanythings from portent checks"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix some erroneous dream portents from showing up"
+  95827:
+    title: "Storage opening being interrupted in on_found() now works without runtiming"
+    changes:
+      lelandkemble:
+        - code_imp: "Things that interrupted the opening of storages are no longer reliant on a runtime, meaning they interrupt regardless of whether you had another open storage open at the time"
+  95919:
+    title: "Fixed color matrix not applying in reskinnable item preview"
+    changes:
+      Aliceee2ch:
+        - bugfix: "Fixed color matrix not applying in reskinnable item preview."
+  95920:
+    title: "Blood bags are fully synthetic"
+    changes:
+      lelandkemble:
+        - balance: "Blood from blood bags is fully synthetic"
+  95941:
+    title: "Makes quirk points configs get loaded into vars on the subsystem, + a small biome fix"
+    changes:
+      vinylspiders:
+        - code_imp: "fixes mining mobs being able to spawn too close to one another under certain circumstances"
+  95852:
+    title: "Implements OverFlayer, VV dev tool for debugging appearances and images"
+    changes:
+      SmArtKar:
+        - admin: "Added a new debug tool which displays a detailed breakdown of in-game visuals"
+  95832:
+    title: "Cargo manifest stamp payment consistency"
+    changes:
+      lessthnthree:
+        - balance: "Cargo manifest stamp payments/penalties are now consistently applied as a percentage of the order value"
+        - balance: "Maximum payment for an approved cargo manifest raised to 120cr"
+        - balance: "Cargo orders that arrive empty and stamped denied receive a full refund regardless of crate return"
+  95779:
+    title: "Reverts \"Merges ghosts into spirits & a rework\", but removes ghosts from Pride's mirror."
+    changes:
+      Y0SH1M4S73R:
+        - rscadd: "Ghosts and spirits have once again been split into two species. Becoming a ghost is only possible through a lucky polymorph, or the \"Forsake Body\" spell, available for two points in a wizard's spellbook."
+        - rscdel: "Spirits no longer have the passthrough ability."
+        - balance: "Ghost's passthrough ability has unlimited range and no longer leaves behind a grave. It is affected by holy water, and makes you drop all your equipment, along with any bodyparts and organs that are not ghostly in nature."
+  95781:
+    title: "Moves hair and eyes into standing overlays"
+    changes:
+      MrMelbert:
+        - code_imp: "Refactored hair and eye rendering a bit, they're now rendered separately to the head - report any oddities with either. Lips too but to a lesser degree."
+  95932:
+    title: "makes chat highlights look WAY better"
+    changes:
+      Absolucy:
+        - tweak: "Changed how chat highlights are styled - any color should look good now, regardless of light or dark mode."
+  95856:
+    title: "Makes invisimins actually invisible to regular ghosts, plus qol improvements"
+    changes:
+      vinylspiders:
+        - admin: "invisimin now makes the admin invisible to ghosts/observers, as well as pierce-immune and able to phase through walls"
+        - tweak: "aghosting while invisimin'd or stealthmin'd will carry over your invisibility to the aghost so you no longer have to trigger it again"
+        - admin: "added a new admin verb, 'Toggle Admin ESP', which lets you see ghosts and invisimins while active"
+  95952:
+    title: "Adds more SeCrEt ChEmS"
+    changes:
+      Time-Green:
+        - rscadd: "Adds three new maintpill-only chems! Go eat more maintpills, and maybe you'll find out what they are :)"
+        - rscadd: "Adds a new secret chem, which can rarely be found on a petrified piece of paper somewhere in maintenance..."
+        - bugfix: "Fixes miscellaneous sources of petrification lasting 10x as long as intended"
+  95947:
+    title: "Fixes clicking on compact defib"
+    changes:
+      lelandkemble:
+        - bugfix: "You can now get the paddles from a compact defib by clicking on it"
+  95929:
+    title: "Fix pda messenger splitting all words instead of putting them on new lines"
+    changes:
+      strandsofivy:
+        - bugfix: "The PDA direct messenger will no longer overzealously break words, resulting in cleaner chat message formatting overall."
+  95923:
+    title: "Adds some tier zero (penguin, plant) and a tier one (stoat) gene infusion"
+    changes:
+      MrMelbert:
+        - rscadd: "Adds Penguin tier zero gene infusion (gives you penguin ears, which make you waddle)"
+        - rscadd: "Adds Plant tier zero gene infusion (gives you plant hair / organs, which do nothing)"
+        - rscadd: "Adds Stoat tier one gene infusion (makes you tall, snouted, gives you finer instincts, allows you to dodge large foes)"
+  95900:
+    title: "Adds an ingame holiday for Chernobyl Disaster Remembrance Day"
+    changes:
+      MrMelbert:
+        - rscadd: "April 26th is Chernobyl Disaster Remembrance Day."
+  95843:
+    title: "Ghosts now have (better) runechat"
+    changes:
+      vinylspiders:
+        - code_imp: "speeds ghost runechat up a bit, and makes it show as italic"
+        - admin: "adds a 'toggle dead runechat' admin verb in case you need to disable it midround for an event or something"
+  95878:
+    title: "Admins can now varedit blobs to not instantly end the round on victory"
+    changes:
+      Hatterhat:
+        - admin: "Admins can now varedit blob overminds (the eye mob) to not kill everyone on the station if they hit critical mass. (Admins will still have to remove the blob from the shuttle subsystem's \"hostile environments\" tracker, though.)"
+  95824:
+    title: "Adds signboards"
+    changes:
+      vinylspiders:
+        - rscadd: "Added a pair of signboards that can be crafted in the crafting menu, a wooden one, and a holographic one. Perfect for advertising or otherwise getting your VERY important message across to passersby."
+  95982:
+    title: "Animated wand of animation works and animated wand of animation animating a wand of animation works"
+    changes:
+      lelandkemble:
+        - bugfix: "animating a wand of animation works, and that animated wand of animation animating a wand of animation does not runtime"
+  95888:
+    title: "Fixes maximum time of syndicate bombs and refactors slightly"
+    changes:
+      Shroopy:
+        - bugfix: "Fixed syndicate bombs having a maximum timer of 1000 minutes instead of 100 minutes."
+  95954:
+    title: "[NO GBP] Fixes passive positive virus healing."
+    changes:
+      Higgin:
+        - bugfix: "positive viruses no longer self-cure when not having spaceacillin or meeting the nutrition/satiety requirements."
+  95731:
+    title: "Adds the E-2 Earthcracker, a traitor tool for premeditated sabotage."
+    changes:
+      ArcaneMusic:
+        - rscadd: "Adds the E-2 Earthcracker device as a purchasable traitor item for 2 TC. Use it to create potentially devastating weakpoints onto the station!"
+  95955:
+    title: "[MDB IGNORE] Adds new features and tiles for lavaland biomes"
+    changes:
+      SmArtKar:
+        - rscadd: "Siderite and Shale lavaland biomes now have unique floors, as well as flora, features and fauna!"
+        - bugfix: "Fixed some ruins generating with default basalt walls instead of their biome's walls"
+  95985:
+    title: "Always update hair and eyes on coverage change, use facial hair color"
+    changes:
+      MrMelbert:
+        - bugfix: "Facial hair color can be separate from hair color again"
+        - bugfix: "Hair covering things update when they need up"
+  95850:
+    title: "modernizes granibitaluri"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - balance: "Granibitaluri heals 1.5 brute and burn at best now, and scales down to 0.5 at worst."
+  96012:
+    title: "[I ded] Xenomicrobes and Nanomachines are maintenance pill only"
+    changes:
+      Y0SH1M4S73R:
+        - balance: "You can no longer get Xenomicrobes and Nanomachines from botany mutations."
+  95720:
+    title: "Adds a priority targeting framework, and priority targeting to mining mobs"
+    changes:
+      SmArtKar:
+        - rscadd: "Mining mobs now use priority when choosing their target, prioritizing NODE drones over miners who haven't attacked them or their allies"
+  95956:
+    title: "Spacers are slightly taller again (Reverts \"Reverts Makes Spacers Taller\")"
+    changes:
+      MrMelbert:
+        - rscadd: "Spacers are now \"very tall\" again, rather than just \"decently tall\"."
+  96007:
+    title: "SyndEye PDA app tracking successfully tracks"
+    changes:
+      lelandkemble:
+        - bugfix: "SyndEye PDA app tracking tracks successfully"
+  95999:
+    title: "Removes a rogue syndiedome ruin decal"
+    changes:
+      SmArtKar:
+        - bugfix: "Removed a rogue syndiedome ruin decal"
+  95997:
+    title: "Drying rack wont process or accept dried items"
+    changes:
+      FalloutFalcon:
+        - bugfix: "Drying rack no longer accepts or processes dried items"
+  95988:
+    title: "Fixes rotating the crystallizer"
+    changes:
+      1393F:
+        - bugfix: "The crystallizer can be rotated once again, on left click"
+  95862:
+    title: "Ghostrole on revive death examine tweak"
+    changes:
+      MrMelbert:
+        - tweak: "Tweaks message displayed when examining recovered crew / thanatorenaisa bodies"
+  95922:
+    title: "Restores fire alarm sound quality, still keeps them on 1 channel"
+    changes:
+      Neocloudy:
+        - sound: "Restored fire alarm sound quality"
+  95953:
+    title: "Decouples syndicate monkey from traitor pref, also makes rolebanning work"
+    changes:
+      lelandkemble:
+        - bugfix: "You no longer need traitor on to get syndicate monkey or contractor ghost polls, & banning from these roles bans from the polls as well"
+  95986:
+    title: "Lizard frills are hidden by `HIDEHAIR` rather than `HIDEEARS` / Lizard frills are masked like hair by hats"
+    changes:
+      MrMelbert:
+        - bugfix: "Some masks no longer hide lizard frills."
+        - rscadd: "Hats that flatten hair now also flatten lizard frills a bit."
+  95383:
+    title: "Reorganizing the non-game UI"
+    changes:
+      JohnFulpWillard:
+        - rscadd: "Reorganized the UI around the game; the title bar has been removed in favor of the old info buttons (top right of the screen), which now has some new buttons for you."
+        - rscadd: "The Status Panel is now able to be retracted with one of the infobuttons."
+        - tweak: "You can now go directly to your hotkey settings from your hotkeys help page."
+  96013:
+    title: "Gives a new small area for the extinguisher so it aint blocking trashcan"
+    changes:
+      Boopideedoo:
+        - bugfix: "fixes a blocked trashcan from being blocked and moving the item that blocked it to a new area inside the ruin"
+  95991:
+    title: "Cuffing items to you now chains you to the item rather than give you nodrop (shields can be cuffed again)"
+    changes:
+      MrMelbert:
+        - balance: "Cuffing items to yourself no longer prevents you from dropping or being disarmed of the item- instead, the item becomes \"chained\" to you, forcing it to stay within one tile's reach under all circumstances."
+        - balance: "You can cuff shields to yourself again. Unless we figure out it's still oppressive in which case it'll probably be removed (again)"
+        - bugfix: "IV drops should break your character's offsets less often"
+  96019:
+    title: "Stoat tongue has `TRAIT_SPEAKS_CLEARLY` (fell for it again award)"
+    changes:
+      MrMelbert:
+        - bugfix: "You can speak with a stoat tongue"
+        - bugfix: "Stoat infusion is slightly taller"
+  96015:
+    title: "You can't dynamite fish from chest cavities"
+    changes:
+      MrMelbert:
+        - bugfix: "Explosions won't remove organs from skeletons/plasmamen"
+  95945:
+    title: "Fix for RND server being invisible"
+    changes:
+      Aliceee2ch:
+        - bugfix: "RND servers are visible once again."
+  95976:
+    title: "Makes disable dead keyloop lagswitch measure smarter"
+    changes:
+      vinylspiders:
+        - bugfix: "disable dead keyloop lagswitch measure now properly affects new ghosts, and fixes an issue where people can revive and still be frozen"
+  96031:
+    title: "Fixes spawn panel incorrectly spawning turfs"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Fixes the spawn panel being unable to spawn turfs"
+  96010:
+    title: "Solar arrays don't check for the pressence of space vines every process tick"
+    changes:
+      MrMelbert:
+        - code_imp: "Solar arrays don't check for the pressence of space vines every process tick"
+  96029:
+    title: "Stumps inherit (most) biostates"
+    changes:
+      MrMelbert:
+        - bugfix: "Re-adding limbs surgically requires you do surgery again (ie, incise -> retract -> clamp)."
+  96024:
+    title: "Fixes voidwalker vomit jump breaking if someone vomits far away"
+    changes:
+      Time-Green:
+        - bugfix: "Fixes voidwalker being unable to vomit jump if anyone vomits on a non-station z-level"
+  96017:
+    title: "You can be wabbajacked into a (sterile) blood worm"
+    changes:
+      Y0SH1M4S73R:
+        - rscadd: "Random polymorphs can turn you into hatchling blood worms that can mature, but not reproduce."
+  96027:
+    title: "Changes how tongues apply `TRAIT_SPEAKS_CLEARLY`"
+    changes:
+      MrMelbert:
+        - code_imp: "Changes the way tongues allow you to speak correctly to make them less prone to fault"
+  95820:
+    title: "More accurate feedback for action button consciousness check failure"
+    changes:
+      Y0SH1M4S73R:
+        - spellcheck: "You are told you are downed instead of unconscious if you attempt to use an action that requires you to be conscious while in softcrit."
+  96050:
+    title: "Block two people cuffing to one item"
+    changes:
+      MrMelbert:
+        - bugfix: "Blocks two people cuffing to one item"
+  96000:
+    title: "Raptors are now immune to ice, buffs mining MOD digging and changes bombs to missiles"
+    changes:
+      SmArtKar:
+        - rscadd: "Mining MOD sphere mode now fires a barrage of micromissiles instead of a singular delayed explosive"
+        - balance: "Raptor are now immune to ice slippage"
+        - balance: "Mining MOD has had its ore digging speed increased"
+        - bugfix: "Buckled mobs can no longer \"slip\" (get stunned) on wet/icy tiles."
+  96040:
+    title: "Slight tweaks to flesh spider numbers"
+    changes:
+      kuricityy:
+        - balance: "Flesh spiders are now slightly slower than your average spessmen. (10%)"
+        - balance: "Flesh spiders now regenerate after 3 seconds of not taking damage, compared to 4."
+  95980:
+    title: "Sinks(And other things) clean out petri dishes"
+    changes:
+      lelandkemble:
+        - bugfix: "sinks(and other methods of washing) clean out petri dishes"
+  96038:
+    title: "Fix shock immunity flag not working"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix shock immunity flag not working when electrocution occurs"
+  96028:
+    title: "Reworks goliaths, slightly changes watchers/legions/brimdemons/lobstrocities"
+    changes:
+      SmArtKar:
+        - balance: "Goliaths no longer hardstun, but instead bind and drag their targets in with their tentacles. They are, however, much faster now."
+        - balance: "Brimdemon beams can no longer wound, but deal a bit more DOT damage. Their beams can also be interrupted by hitting them from the side or back in melee."
+        - balance: "Watchers and legions now try to maintain a few tiles of distance from their targets instead of retreating."
+        - bugfix: "Lobstrocity AI should no longer sometimes flee out of their aggro range when retreating."
+  95915:
+    title: "Carnivorous Blood : A new DNA-targeting traitor chemical that eats away at your bloodstream"
+    changes:
+      lelandkemble:
+        - rscadd: "Added a new traitor item, Carnivorous Blood. It is purchasable in uplinks. Carnivorous Blood is a reagent that eats away at a victim's blood once in their bloodstream, doing so significantly faster if it has been mixed with the victim's blood beforehand."
+  96014:
+    title: "Surviving heart attacks is not based on whether you recently exercised, but how fit you are."
+    changes:
+      necromanceranne:
+        - tweak: "Your overall athletics level is what protects you from a random heart attack. If you achieve peak fitness, you are immune to random heart attacks."
+  96001:
+    title: "makes pyrite/rainbow extract coloring look better (+ minor crossbreed code improvements)"
+    changes:
+      Absolucy:
+        - tweak: "The color changing from regenerative rainbow, adamantine, and stabilized pyrite extracts now looks far better."
+        - tweak: "The protection effect from regenerative rainbow extracts now actually makes you all rainbowy."
+        - code_imp: "Minor improvements to crossbreed status effect code."
+  95973:
+    title: "fixes resource duplication bug with material floor tiles"
+    changes:
+      Happyowl93:
+        - bugfix: "fixes material floor duplication"
+  95936:
+    title: "replaces reagent_explosion with dyn_explosion on heretic rift tk interaction"
+    changes:
+      ElGitificador:
+        - bugfix: "fixes a certain explosions message related to influences"
+  96035:
+    title: "Adds \"Event Logging\", or EVLogging, A new debug system that allows us to track individual datums and log events on a timeline"
+    changes:
+      CabinetOnFire:
+        - code_imp: "Implements \"Event Logging\" an improved way for programmers to debug specific datums."
+  96059:
+    title: "Banning from ghostrole mobspawners works again"
+    changes:
+      lelandkemble:
+        - bugfix: "Ghost role mobspawner bans work again"
+  96051:
+    title: "The Syndicate teleporter actually makes you lose blood now"
+    changes:
+      combustor:
+        - bugfix: "The Syndicate Teleporter actually makes you lose blood now"
+  96046:
+    title: "Users of a Gaseous Holoparasite no longer appear to catch on fire repeatedly"
+    changes:
+      lelandkemble:
+        - spellcheck: "Users of a Gaseous holoparasite no longer appear to repeatedly catch fire when they are not."
+  96039:
+    title: "n-spect scammer"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - spellcheck: "nspect scanners no longer claim to be capable of area scans"
+  96065:
+    title: "Fix grenade arming not being logged"
+    changes:
+      TealSeer:
+        - bugfix: "fixed arming grenades not being logged"
+  96044:
+    title: "Junkies get the drug addiction they have in their preferences"
+    changes:
+      lelandkemble:
+        - bugfix: "The Junkie quirk gives you the addiction you ask it for"
+  96047:
+    title: "You can unbuckle people from wheelchairs again"
+    changes:
+      lelandkemble:
+        - bugfix: "You can unbuckle people from wheelchairs again"
+  96006:
+    title: "Fixes Deltastation's Medbay Door Button"
+    changes:
+      Derpguy3:
+        - bugfix: "The door control button in Deltastation's medical desk works again."
+  95897:
+    title: "deathmatch map in space: deep space"
+    changes:
+      carpotoxin:
+        - rscadd: "Adds the Deep Space deathmatch map"
+  95914:
+    title: "You can purchase (lower quality) broadcast cameras as a cargo goodie"
+    changes:
+      MrMelbert:
+        - rscadd: "You can purchase (lower quality) broadcast cameras in cargo for 800cr"
+  95978:
+    title: "You can now print basic wet floor signs at the Protolathe, because you couldn't actually print them."
+    changes:
+      Iamgoofball:
+        - rscadd: "You can now print basic wet floor signs at the Service Protolathe, because you couldn't actually print them for decades."
+  95903:
+    title: "Adds screentips to grilles, moves deconstruction to RMB."
+    changes:
+      ArcaneMusic:
+        - tweak: "Grills now have screentips when using tools on them."
+        - tweak: "In-line with other deconstruction processes, grills now deconstruct on right click."
+  96071:
+    title: "Fixes a merge conflict that broke stat panel"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "Stat panel's \"Toggle Stat Panel\" button now works."
+  96098:
+    title: "Observers can move again"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "People who re-enter their body can now exit again by moving."
+  96058:
+    title: "Changes moon armor knowledge description to be more clear(And not lie)"
+    changes:
+      lelandkemble:
+        - spellcheck: "The Moon path armor knowledge's description has been made more clear"
+  96009:
+    title: "Buffs the good aspects of Spacer by a little bit, so people might actually notice them"
+    changes:
+      MrMelbert:
+        - balance: "Spacer: Reduction to cold damage increased from 20% to 33%"
+        - balance: "Spacer: Reduction to pressure damage increased from 20% to 33%"
+        - balance: "Spacer: Zero gravity drift speed increased from 20% to 25%"
+        - balance: "Spacer: Zero gravity floating speed increased from 10% to 15%"
+        - balance: "Spacer: Move speed penalty on planetary maps reduced from 25% to 15%"
+        - balance: "Spacer: Passive effects now trigger every second, rather than every three seconds"
+        - balance: "Spacer: Disgust healing modifier while in zero gravity increased from 1x to 2x"
+        - balance: "Spacer: Passive stun reduction in zero gravity changed from 3 seconds per 3 seconds to 2 seconds per second"
+        - balance: "Spacer: Passive stamina healing in zero gravity changed from 3 stamina per 3 seconds to 4 stamina per second"
+        - balance: "Spacer: Passive stun reduction in zero gravity now activates after 10 seconds in zero gravity, down from 3 minutes"
+        - balance: "Spacer: Passive stamina healing in zero gravity now activates after 1 minute, down from 3 minutes"
+        - balance: "Spacer: After being in zero gravity for 10 seconds, also reduces duration of knockdown effects by 25%"
+  96003:
+    title: "Bane refactor (now uses damage multipliers)"
+    changes:
+      MrMelbert:
+        - code_imp: "Refactored bane, which is the bonus some items get to damage vs specific mob types. Report any oddities or weird damage numbers you notice."
+        - balance: "Flyswatter damage scales the same across all mob types (if you get a +3 flyswatter you no longer one shot mothpeople)"
+        - balance: "Bonus damage from \"bane\" no longer ignore armor unless the weapon itself does"
+        - tweak: "All bane effects are now agnostic to combat mode, meaning they don't require you be on combat mode to apply the bonus damage."
+        - tweak: "Item with bane effects have an indicator about their effect in their combat label"
+  96087:
+    title: "Fix historian mode sfx"
+    changes:
+      MrMelbert:
+        - bugfix: "sfx that plays when entering historian mode of a trophy case is no longer mute"
+  95931:
+    title: "Makes genetics more public"
+    changes:
+      Aliceee2ch:
+        - map: "Genetics Lab was made less secure and more public on every map, try it out!"
+  95967:
+    title: "Fix holodeck organ and bodyparts behavior"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix holodeck mob organs and body parts not disappearing. Any holodeck mob organs and body parts can also no longer be bioscrambled."
+  96097:
+    title: "Fixes crab market crash"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "Multiple crab17 crashes will now individually affect you and require you to visit each one."
+  96127:
+    title: "Add human limbs to the holodeck medsim organ crate"
+    changes:
+      timothymtorres:
+        - map: "Add human limbs to the holodeck medsim organ crate"
+  96125:
+    title: "Adds `REACTION_TAG_DAMAGING` to Thermite"
+    changes:
+      MrMelbert:
+        - tweak: "Thermite chemical reaction is tagged as \"Damaging\", making it easier to refer to."
+  96123:
+    title: "Plumbing nit picks & Qol"
+    changes:
+      SyncIt21:
+        - tweak: "plumbing assimilator has higher heating coefficient to that of tier 3 chem heater"
+  96111:
+    title: "Stumps no longer give a reattachment moodlet to mobs"
+    changes:
+      SmArtKar:
+        - bugfix: "Stumps no longer give a reattachment moodlet to mobs"
+  96130:
+    title: "Adds text to holoparasite granters to show if they've been used"
+    changes:
+      Grmmis:
+        - tweak: "Guardian granters (holoparasites injectors, dusty shards, etc) now show if they've been used on examine."
+  95766:
+    title: "[Icebox] Half remaps security, deletes the labor shuttle because it made no sense"
+    changes:
+      MrMelbert:
+        - rscadd: "[Icebox] Security saw a minor remapping, with most notably the removal of the labor shuttle and the integration of the labor camp into the bottom floor of the perma-brig."
+  96090:
+    title: "Fixes keybinds menu capitalization"
+    changes:
+      emicchinya:
+        - spellcheck: "Target Left arm, Right arm, Left leg and Cycle head keybinds are now capitalized properly."
+  96079:
+    title: "bluespace launchpad icon fixes, launchpad remote reset button fix, deep fryer icon fix"
+    changes:
+      Hatterhat:
+        - bugfix: "Bluespace launchpads are no longer invisible when deployed."
+        - bugfix: "Briefcase launchpad remotes now have a functioning reset button."
+        - bugfix: "Quantum pads now use their screwdrivered-open state when depowered."
+        - image: "Deep fryers now have a sprite with an open maintenance panel instead of becoming invisible when screwdrivered."
