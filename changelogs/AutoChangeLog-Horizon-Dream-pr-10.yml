@@ -1,0 +1,8 @@
+# PR: horizon-dev-team/Horizon-Dream/10
+delete-after: True
+Horizon:
+  10:
+    title: "TWEAK: Интерфейс чата и прочие мелочи"
+    changes:
+      KOCMODECAHTHUK:
+        - tweak: "Изменен CSS интерфейсов приветствия и загрузки"
