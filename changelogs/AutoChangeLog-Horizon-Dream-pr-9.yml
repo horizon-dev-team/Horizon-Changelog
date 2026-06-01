@@ -1,0 +1,530 @@
+# PR: horizon-dev-team/Horizon-Dream/9
+delete-after: True
+/TG/Station:
+  96142:
+    title: "fixes shoe factory active turfs"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - map: "fixed active turfs on shoe factory ruin"
+  96140:
+    title: "Fixes shaft miner and assistant outfit subtypes using incorrect pda_slot"
+    changes:
+      SmArtKar:
+        - bugfix: "Pre-equipped shaft miners and handyman assistants now start with imprinted PDAs like the rest of the job outfits."
+  96139:
+    title: "Plants no longer have pollen particles when they've died."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Hydroponics trays will no longer produce pollen particles if the plant in the tray has died."
+  96137:
+    title: "Restocking a Vending machine no longer creates 0 credit holochips."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Restocking a vending machine can no longer produce a zero credit holochip."
+  96109:
+    title: "Fixes tentacle rod sharing casing typepath with ling tentacle"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed changeling tentacles not being able to fire"
+  96077:
+    title: "Adds beartraps to janitor closets on wawastation and icebox"
+    changes:
+      Wisemonster:
+        - rscadd: "Added beartraps to the janitor closets of wawastation and icebox"
+  96055:
+    title: "Adjusted aperitivo nutrition drain"
+    changes:
+      RusselNotSCP:
+        - tweak: "Aperitivo Liqueur's hunger inducing effect has been reduced"
+        - tweak: "The Negroni and Spritz cocktails no longer induce hunger and now only reduce overfull-ness"
+  96147:
+    title: "[NO GBP] Fixes shale and siderite biomes not spawning any features or mobs"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed shale and siderite biomes not spawning any features or mobs"
+  95996:
+    title: "Fixes tempbody taking aghosted bodies"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "Mafia players now get sent back to their bodies again post-game."
+        - admin: "Admin players aren't forcefully put back into aghosted bodies after using a temporary body spawner."
+  96086:
+    title: "More cuffed item fixes"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixed issues that arise from picking up two items cuffed to the same person"
+        - bugfix: "Fixed issues that arise from picking up two items cuffed to two different people"
+        - bugfix: "Fixed issues that arise from traveling z-levels while having a cuffed item"
+  96093:
+    title: "Re-attempt at vv editing lobby music"
+    changes:
+      JohnFulpWillard:
+        - admin: "Changing lobby music now updates for people in the lobby."
+  96061:
+    title: "Changes nuclear operative reinforcement to use mid-round pref"
+    changes:
+      Wisemonster:
+        - code_imp: "Nuclear reinforcements will now poll users with the mid-round nuke op pref enabled, rather than the round-start pref."
+  96048:
+    title: "Singularity beacons pull singularities that were spawned after their activation"
+    changes:
+      lelandkemble:
+        - tweak: "Singularity beacon pulls singularities even if they were created after the beacon's activation"
+  96074:
+    title: "Right clicking with a multitool on an abandoned crate no longer puts you at risk"
+    changes:
+      lelandkemble:
+        - bugfix: "right clicking an abandoned crate with a multitool no longer can blow you up"
+  96162:
+    title: "You can only reseal sealable biscuits once"
+    changes:
+      lelandkemble:
+        - bugfix: "Sealable biscuits can only be sealed once"
+  95907:
+    title: "feat: 🅱️ig Manipulatin' Time 2: Electric Boogaloo"
+    changes:
+      mcbalaam:
+        - rscadd: "Big Manipulators now use a single task loop instead of two separate point loops."
+  96152:
+    title: "Fixes The Heretic Green aura being applied when a different head was put onto the Heretic's body."
+    changes:
+      EnterTheJake:
+        - bugfix: "Attaching a different head onto a Aura Heretic's body won't apply the aura."
+  96124:
+    title: "Fixes bots trying to blacklist items already marked for QDEL"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Fixes an issue were bots would try to blacklist qdeleted atoms"
+  96161:
+    title: "The dead can't reach the pedals"
+    changes:
+      lelandkemble:
+        - bugfix: "The dead can't drive"
+  96165:
+    title: "Fixes a runtime every time you backspace out a chat message"
+    changes:
+      lelandkemble:
+        - bugfix: "about a billion runtimes per round have been fixed, & you'll no longer repeat what you said last when you're forced to speak"
+  96172:
+    title: "Committing suicide with a soul shard shards you"
+    changes:
+      Y0SH1M4S73R:
+        - rscadd: "Committing suicide with an empty soul shard seals your soul within it."
+  96104:
+    title: "Adds a safety in case fish suicide fails"
+    changes:
+      SmArtKar:
+        - bugfix: "Added an anti-softlock safety in case fish suicide fails"
+  96103:
+    title: "Fixes bubblegum suicide span, cleans up say spans"
+    changes:
+      SmArtKar:
+        - bugfix: "Bubblegun suicide no longer makes the user yell out HTML"
+        - bugfix: "Beepsky Smash beepskys now use proper text formatting"
+        - code_imp: "Cleaned up say span code in a few places"
+  96101:
+    title: "Crematorium can no longer destroy indestructible objects"
+    changes:
+      SmArtKar:
+        - bugfix: "Crematorium can no longer destroy indestructible objects"
+        - code_imp: "Cleaned up crematorium code"
+  95950:
+    title: "Taking damage from attacks while on synthpax grants temporary immunity to synthpax"
+    changes:
+      Y0SH1M4S73R:
+        - balance: "Taking damage from an attack while dosed with synthpax negates the pacification from the synthpax for an amount of time equal to the damage taken, up to a maximum of 5 seconds."
+  96168:
+    title: "Fixes excess bleed from dismemberment"
+    changes:
+      tontyGH:
+        - bugfix: "Blunt/sharp weapons no longer slice through your coagulants when you are dismembered"
+        - bugfix: "Burn weapons now remember that they cauterize instead of slice when dismembering"
+  96033:
+    title: "Fixes for boulder processing machines"
+    changes:
+      SyncIt21:
+        - bugfix: "opening panel of boulder refinery with screwdriver or un-wrenching it turns of its light"
+        - bugfix: "boulder refinery only takes in booster reagents and excludes others and only outputs waste chemicals as intended"
+        - bugfix: "boulder refinery machines outputs waste reagents without rounding errors in them"
+        - tweak: "removed conveyer sprite from boulder smelter & pixel shifts the refiner so you can see it's plumbing pipes properly"
+        - image: "smelters will now only take in boulders in the direction of its conveyer belt. It's plumbing pipes are perpendicular to its conveyer belt"
+  96159:
+    title: "Reworks bileworms into artillery-like enemies"
+    changes:
+      SmArtKar:
+        - balance: "Bileworms now fire arcing shots instead of cross patterns, and can be stunned by hitting them during the burrow animation. Their health has been slightly buffed to compensate."
+  96108:
+    title: "Fixes certain reaction overheats being always treated as impure"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed certain reaction overheats being always treated as impure"
+  96112:
+    title: "Fixes several ways you could become permanently immobile"
+    changes:
+      lelandkemble:
+        - bugfix: "Several ways you could become permanently immobile, primarily based around lube & other methods of slipping, have been fixed"
+  96107:
+    title: "Fixes materials runtiming whenever thrown by something other than a mob"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed materials runtiming whenever thrown by something other than a mob"
+  96106:
+    title: "Fixes custom pizzas having broken sprites and not preserving their ingredients when sliced"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed custom pizzas having broken sprites and not preserving their ingredients when sliced"
+  96102:
+    title: "Fixes plumbing ducts having weird shadows"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed plumbing ducts having weird shadows"
+  96105:
+    title: "Allows uplinks to be given while the owner is under any form of shapeshifting"
+    changes:
+      SmArtKar:
+        - bugfix: "Being shapeshifted while rolling midround traitor no longer robs you of your uplink"
+  96100:
+    title: "Adds clownops to the ban panel, as well midround clown ops as to missing prefs checks"
+    changes:
+      SmArtKar:
+        - bugfix: "Having only midround clown ops (but not normal clown ops) enabled in antag prefs now displays operative alias/species toggles"
+        - admin: "Added clown ops to the ban panel"
+  96030:
+    title: "State based digi and snout bodyshape"
+    changes:
+      MrMelbert:
+        - code_imp: "Refactored how digitigrade and snouts render, report any oddities with that"
+  96057:
+    title: "[NO GBP] Makes junk food less punishing for virus cures"
+    changes:
+      Higgin:
+        - bugfix: "A single space twinkie no longer cures a virus or makes it harder to get rid of one."
+  96032:
+    title: "Add a \"Prison Block\" holodeck map"
+    changes:
+      timothymtorres:
+        - map: "Added a \"Prison Block\" holodeck simulation, accessible via the disabled safety/emagged menu."
+        - code_imp: "Fixed electric chairs to work, and they now bypass insulation from gloves when executing a mob."
+        - code_imp: "Added holodeck versions of brig lockers and windoors that allow anyone with a station ID card to access them."
+  95857:
+    title: "Interface Science | The Mariana Trench of Feature Content"
+    changes:
+      Time-Green:
+        - rscadd: "Adds Interface Science! There's these strange contraptions in science, who knows what they do? Figure it out, and make them usable!"
+  96121:
+    title: "Fixes cyborg guns not recharging"
+    changes:
+      Wisemonster:
+        - bugfix: "Fixed cyborg's recharging guns not recharging"
+  96036:
+    title: "Camera static fix for camera consoles"
+    changes:
+      Holoo-1:
+        - bugfix: "fixed camera static not being removed for console users when it was observed by AI and console user"
+  96095:
+    title: "New foam reactions for water varients"
+    changes:
+      soulware1:
+        - rscadd: "New reactions for water variants that make foam"
+        - code_imp: "New foam types that either slip or last longer or shorter"
+  95752:
+    title: "Omnitool fix & Engi Omnitool qol"
+    changes:
+      SyncIt21:
+        - tweak: "merged large welding tool tank with engi omnitool for engiborg"
+        - bugfix: "examining the omnitool will reveal details about its internal tool such as multitool buffer, welding fuel left etc"
+  95942:
+    title: "Mirrors can trap dormant revenants"
+    changes:
+      levels0:
+        - rscadd: "you can now trap dormant revenants in mirrors"
+        - rscadd: "haunted mirrors may very rarely appear roundstart"
+  96194:
+    title: "Emissive Security Cameras"
+    changes:
+      TealSeer:
+        - image: "lights on security cameras glow in the dark now"
+  96169:
+    title: "Spacer's drift speed bonus doesn't stack with jetpack speed"
+    changes:
+      MrMelbert:
+        - balance: "Spacer: Bonus to drift speed no longer stacks with jetpack speed - only the greater of the two effects is applied."
+  96133:
+    title: "Adds conversion and deconversion logging to Lunatics"
+    changes:
+      SmArtKar:
+        - admin: "Added conversion and deconversion logging to Lunatics"
+  96088:
+    title: "adds sound feedback for supplexing a rod"
+    changes:
+      ElGitificador:
+        - sound: "added sound feedback to supplexing a rod"
+  96176:
+    title: "Fix an absurdly long timer in the wraith module's start_stealth"
+    changes:
+      EnterTheJake:
+        - bugfix: "Traitor Wraith cloaking module now reactivates after the appropriate amount of time has passed."
+  96191:
+    title: "Fixes inventory items being stuck in ghosts' screens"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed inventory items being stuck in ghosts' screens"
+  96174:
+    title: "Scanned wounds stay scanned when healing"
+    changes:
+      lelandkemble:
+        - tweak: "Scanned wounds stay scanned while being healed"
+  96185:
+    title: "Ghost of Poly possession pulses like it's supposed to"
+    changes:
+      lelandkemble:
+        - bugfix: "Ghost of Poly possession pulses the purple aura like it's supposed to"
+  96209:
+    title: "Fixes the slow tile in Icebox perma"
+    changes:
+      Thunder12345:
+        - bugfix: "The stray slow tile in Icebox perma has been removed."
+  96206:
+    title: "Fix negative bloodloss effects being ignored by determined status"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix negative bloodloss effects being ignored by determined status"
+  96205:
+    title: "fixes the \"your mother\" hallucination for plasmapeople"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - bugfix: "the your mother hallucination for plasmapeople shows the plasmapersons actual mother"
+  96203:
+    title: "Stops internal organs from triggering updates in prefs"
+    changes:
+      vinylspiders:
+        - bugfix: "internal organs should not trigger needless updates in the char preview anymore"
+  96218:
+    title: "Fix admin ghost ai access on request consoles"
+    changes:
+      strandsofivy:
+        - bugfix: "AIs should be able to access request consoles correctly now."
+  96217:
+    title: "[NO GBP] actually uses the sound i intended to use for supplexing a rod"
+    changes:
+      ElGitificador:
+        - sound: "supplexing rods sound fix"
+  96211:
+    title: "Adds a check to stop CQC disarm taking items that should be tethered to something (backtank sprayers etc)"
+    changes:
+      Thunder12345:
+        - bugfix: "CQC can no longer steal backtank misters and other tethered items."
+  96202:
+    title: "TTV Quality Of Life"
+    changes:
+      ArrisFairburne:
+        - tweak: "Added more description text to tank transfer valves so it's clearer what can be done with them"
+        - tweak: "Clicking on a tank with a tank transfer valve will now attach it directly"
+  96150:
+    title: "pAIs can play music again"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "pAIs can use their instruments."
+  96204:
+    title: "Bugsquashing"
+    changes:
+      FlufflesTheDog:
+        - bugfix: "Fix an error when trying to use the cargo app with an id card lacking a job"
+        - bugfix: "Fix sometimes spawning with a scarred eye despite not having the quirk"
+  96128:
+    title: "Mending touch changes"
+    changes:
+      Fghj240:
+        - balance: "mending touch can partially heal limbs"
+        - balance: "mending touch no longer always transfers critical wounds when powered up"
+        - bugfix: "mending touch blood drain properly capped"
+        - code_imp: "removed unnecessary check from mending touch"
+        - spellcheck: "mending touch lose text reworded for clarity and it no longer assumes you only have one hand."
+  95893:
+    title: "Removes the IC tab"
+    changes:
+      JohnFulpWillard:
+        - rscdel: "Deleted the \"IC\" tab of the stat panel."
+        - bugfix: "Lightgeists can't emote or pull as intended."
+        - bugfix: "Blob minions can't pull again."
+        - tweak: "Martial Art users now have an action button for their artstyle-related businesses, rather than it being in the stat panel."
+        - tweak: "You can now right-click the move up/down UI buttons to look in the direction without moving."
+  96156:
+    title: "Enhances LARP by allowing the Captain to dress like Napoleon."
+    changes:
+      theselfish:
+        - rscadd: "The Captain now has a Bicorne, and matching attire..."
+  96219:
+    title: "Removes remaining references to the flagellant robes"
+    changes:
+      1393F:
+        - spellcheck: "Some references to the cult flagellant robes have been removed"
+  96166:
+    title: "feat: Vote panel UI cleanup; auto-close fix"
+    changes:
+      mcbalaam:
+        - tweak: "Vote panel UI got a cleanup"
+        - bugfix: "Vote panel doesn't close for the admin cancelling the vote now"
+  96075:
+    title: "Optimizes grid check event a bit (+minor fixes)"
+    changes:
+      MrMelbert:
+        - code_imp: "The \"power failure\" event should be less laggy."
+        - bugfix: "Fixed APCs reporting an incorrect duration during \"power failure\" events. Previously, the reported duration was half of the expected time. You may see the timer go up to 4 minutes now - however in practice, the duration of the event is unchanged."
+        - bugfix: "Fixed saboteur effect on APCs being 2x the expected duration - very similar to the aforementioned APC issue."
+  96208:
+    title: "Plant nutriment is now beneficial to mobs with the `MOB_PLANT` biotype"
+    changes:
+      timothymtorres:
+        - rscadd: "Podpeople blood can now be restored by E-Z Nutrient, which functions similarly to iron pills for humans."
+        - rscadd: "Plant nutriment (Liquid Earthsquake, Robust Harvest, E-Z Nutrient, Left 4 Zed, Enduro Grow) now heals toxin damage for mobs with the MOB_PLANT biotype."
+  96220:
+    title: "Fix limping not switching legs when using a cane"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix limping not switching legs when using a cane"
+  96188:
+    title: "Janitors have perfect aim throwing things into disposal units"
+    changes:
+      lessthnthree:
+        - rscadd: "Janitors now have perfect aim when throwing things into disposal units"
+  96134:
+    title: "Makes mining mobs prioritize humans over raptors"
+    changes:
+      SmArtKar:
+        - balance: "Mining mobs now prioritize humans over basicmobs, with exception of red and black raptors - those are prioritized over humans instead."
+  95959:
+    title: "Runescape hitsplats (Redux)"
+    changes:
+      FalloutFalcon:
+        - rscadd: "Adds an element for Runescape hitsplats"
+  96233:
+    title: "Gives QM locker a flash"
+    changes:
+      Wisemonster:
+        - rscadd: "Added a flash to the QM's locker"
+  96229:
+    title: "Maximum quality food is \"Divine\" rather than \"Godlike\""
+    changes:
+      lelandkemble:
+        - spellcheck: "Maximum quality food is referred to as \"Divine\" rather than \"Godlike\""
+  96129:
+    title: "Hearts now regenerate blood"
+    changes:
+      timothymtorres:
+        - rscadd: "The heart organ now controls how fast or slow the blood rate is regenerated for a mob. The health of the heart organ also affects the blood rate, so the more damage it takes, the less blood it pumps."
+  96230:
+    title: "Support holoparasites can teleport between station Z levels"
+    changes:
+      lelandkemble:
+        - tweak: "Support holoparasites can teleport things between two station Z-levels"
+        - bugfix: "Support holoparasite teleportation no longer runtimes when attempting to teleport a turf"
+  96254:
+    title: "Mapped in boulder smelter/refinery fixes"
+    changes:
+      Wisemonster:
+        - bugfix: "Starting boulder refineries and smelters should start facing the correct direction."
+  96138:
+    title: "Bitrunning actors no longer take double damage, their real bodies take damage"
+    changes:
+      lelandkemble:
+        - bugfix: "Bitrunners no longer take double damage in-domain, and do take damage to their real bodies"
+  95934:
+    title: "Bitrunning glitches take much longer to escape their simulation if there are remaining active bitrunners"
+    changes:
+      lelandkemble:
+        - balance: "For every living, connected bitrunner remaining in a domain, bitrunning glitches will take five times longer to escape."
+        - bugfix: "You can no longer softlock any virtual domain that uses points by crowbarring the reward turf before the crate spawns."
+  96110:
+    title: "Fixes Gene Stim missing an icon in ling UI"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed Gene Stim missing an icon in ling UI"
+  96243:
+    title: "Adds megacells to debug bluespace rpeds"
+    changes:
+      Wisemonster:
+        - tweak: "Debug bluespace rpeds now come stocked with their respective tier of mega cells"
+  96242:
+    title: "Autolathegoodie"
+    changes:
+      TelevisionStatic:
+        - rscadd: "Adds an autolathe circuit board as one of the purchasable goodies in the cargo market."
+  96135:
+    title: "Diamonds and Bluespace Crystals ore vent rebalance."
+    changes:
+      ArcaneMusic:
+        - balance: "Non-boss ore vents may no longer contain bluespace crystals and diamonds."
+        - balance: "All ore vents now have a flat 7% chance to spawn an artifact boulder."
+        - balance: "There are now 2 new artifact boulder types, which may contain 1-5 sheets worth of bluespace crystals or diamonds respectively. These boulders may have their rare ore boosted via chemical boosting."
+        - balance: "ore distribution in vents have been adjusted to accommodate for bluespace and diamonds being removed from vents accordingly."
+        - spellcheck: "Ore vents now explain the artifact boulder mechanic on examine."
+  96251:
+    title: "Patrol bounties pay money"
+    changes:
+      lelandkemble:
+        - bugfix: "Patrol bounties properly pay those who complete them"
+  96215:
+    title: "Streamlines `Life()` a little"
+    changes:
+      MrMelbert:
+        - code_imp: "Refactored dna injectors (both the ones that change appearance and activate mutations), report any oddities with them like failing to revert your appearance or mutations not applying correctly"
+        - code_imp: "Ever so slightly changed how diseases tick, report any oddities"
+        - code_imp: "Ever so slightly changed how some species mechanics tick, like golems and slimes, report any oddities"
+        - code_imp: "The code behind printing appearance modifying dna injectors from genetics has changed, report any oddities"
+        - code_imp: "Some backend transformation sting code changed slightly, report any oddities"
+        - code_imp: "Zombie \"idle\" groaning is now tied to the tongue rather than the species itself"
+        - admin: "Force-injecting someone with HARS give an admin alert, the same as force-injecting someone with Monkey"
+        - bugfix: "Several methods of copying DNA (including transformation sting) mistakenly copied \"active mutations\", this has been fixed"
+  96221:
+    title: "Makes the casino shuttle honkbot not run away"
+    changes:
+      Thunder12345:
+        - bugfix: "The honkbot on the casino emergency shuttle has been told not to abandon its post."
+  96264:
+    title: "gives the voidwalker nightvision"
+    changes:
+      NiklasNeighbor:
+        - tweak: "gives the voidwalker nightvision. Why wasn't this a thing before??"
+  96291:
+    title: "Fix mutators printed from genetics"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix mutators printed from genetics"
+  96239:
+    title: "xeno queens are no longer slowed by their own tails"
+    changes:
+      Hatterhat:
+        - bugfix: "Xenomorph queens are no longer slowed down by their own giant tails, by virtue of also being giant."
+  95998:
+    title: "Refactors inventory UI to be completely datum and vis_contents-based"
+    changes:
+      SmArtKar:
+        - code_imp: "Refactors inventory UI to be completely datum and vis_contents-based"
+        - bugfix: "Observers should no longer see doubled up inventory UIs"
+  96200:
+    title: "Adds the \"Limper\" quirk"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - rscadd: "Added the limper quirk, which makes you limp."
+  96250:
+    title: "Removes RNG instakill from mech drills entirely"
+    changes:
+      lelandkemble:
+        - balance: "The RNG instant kill via organ removal of the mech drill has been removed, and replaced with a very high wounding chance"
+  96187:
+    title: "refactors teleporter interference"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - bugfix: "storage module of holding now triggers bluespace interference as intended"
+        - code_imp: "teleporter interference checks check an item flag rather than hard type-checking bags of holding"
+  96271:
+    title: "Securiy"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - spellcheck: "Securiy"
+  96284:
+    title: "Renames 2 cameras on MetaStation"
+    changes:
+      Glamyrio:
+        - bugfix: "Renamed 2 cameras on MetaStation; first cam was with wrong name and second one was a badnamed"
