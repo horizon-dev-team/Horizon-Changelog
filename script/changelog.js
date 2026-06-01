@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const REPO_MAP = {
     '/TG/Station': 'tgstation/tgstation',
-    'Horizon': 'horizon-dev-team/Horizon-Dream',
+    'Horizon =][=': 'horizon-dev-team/Horizon-Dream',
   };
 
   const load = async i => {

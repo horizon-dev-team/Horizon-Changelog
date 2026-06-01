@@ -1,6 +1,6 @@
 # PR: horizon-dev-team/Horizon-Dream/10
 delete-after: True
-Horizon:
+Horizon =][=:
   10:
     title: "TWEAK: Интерфейс чата и прочие мелочи"
     changes:
