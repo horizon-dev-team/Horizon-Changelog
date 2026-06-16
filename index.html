@@ -30,9 +30,9 @@
         <h1>Horizon =][=</h1>
         <p class="lead">Changelogs</p>
         <nav class="header-nav">
-          <a href="https://horizon-dev-team.github.io/handbook/" class="btn btn-outline" role="button">Wiki</a>
+          <!-- <a href="https://horizon-dev-team.github.io/handbook/" class="btn btn-outline" role="button">Wiki</a> -->
           <a href="https://github.com/horizon-dev-team/Horizon-Dream" class="btn btn-outline" role="button">GitHub</a>
-          <a href="https://discord.gg/" class="btn btn-outline" role="button">Discord</a>
+          <a href="https://discord.gg/3yMmb4r9A2" class="btn btn-outline" role="button">Discord</a>
         </nav>
       </div>
     </header>
@@ -43,10 +43,19 @@
         <p><strong>Отдельное спасибо:</strong> /tg/station, /vg/station, WhiteDream, TauCeti, BandaStation, GoonStation devs и оригинальным разработчикам SpaceStation.</p>
         <div class="alert alert-danger"><strong>Нашли баг?</strong> Пожалуйста, сообщите о нём на нашем <a href="https://github.com/horizon-dev-team/Horizon-Dream/issues"><strong>трекере</strong></a>. </div>
       </div>
-      <div class="changelog-controls">
-        <button id="prevBtn" class="btn-outline month-nav" disabled>←</button>
-        <select id="monthSelect" class="month-select"></select>
-        <button id="nextBtn" class="btn-outline month-nav" disabled>→</button>
+      <div class="changelog-filter">
+        <div class="changelog-controls month-controls">
+          <button id="prevBtn" class="btn btn-outline month-nav" disabled>←</button>
+          <select id="monthSelect" class="month-select"></select>
+          <button id="nextBtn" class="btn btn-outline month-nav" disabled>→</button>
+        </div>
+        <div class="changelog-controls source-controls">
+          <div class="source-toggle btn-group" role="tablist" aria-label="Фильтр по источнику">
+            <button id="sourceUpstreamBtn" class="btn btn-outline source-toggle-btn" aria-pressed="false">/TG/Station</button>
+            <button id="sourceAllBtn" class="btn btn-outline source-toggle-btn active" aria-pressed="true">Все</button>
+            <button id="sourceHorizonBtn" class="btn btn-outline source-toggle-btn" aria-pressed="false">Horizon =][=</button>
+          </div>
+        </div>
       </div>
       <div id="changelogs"></div>
     </main>

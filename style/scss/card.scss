@@ -1,13 +1,11 @@
 // card.scss - Стили карточек changelog
 
-$bg-card: rgba(0, 0, 0, 0.4);
-$bg-card-hover: rgba(0, 0, 0, 0.5);
-$pr-color: #ab7df8;
+$pr-color: $accent;
 
 .changelog-card {
   display: flex;
-  background: $bg-card;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: $bg-overlay;
+  border: 1px solid $border-light;
   margin-bottom: 1rem;
   overflow: hidden;
   transition: transform $transition-fast, box-shadow $transition-fast;
@@ -30,12 +28,12 @@ $pr-color: #ab7df8;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
-  
+
   a {
     color: #fff;
     text-decoration: none;
     transition: color $transition-fast;
-    
+
     &:hover {
       color: $info;
       text-decoration: underline;
@@ -56,14 +54,14 @@ $pr-color: #ab7df8;
   font-weight: 500;
   text-decoration: none;
   transition: all $transition-fast;
-  
+
   &::before {
     font-family: "Font Awesome 6 Free";
     content: "\f126";
     font-weight: 900;
     font-size: 0.65rem;
   }
-  
+
   &:hover {
     background: $pr-color;
     box-shadow: 0 0 8px rgba($pr-color, 0.6);
@@ -77,24 +75,22 @@ $pr-color: #ab7df8;
   }
 }
 
-$pr-color: #ab7df8;
-
 .card-sidebar {
   width: $sidebar-width;
   background: rgba(0, 0, 0, 0.3);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid $border-light;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  
+
   .pr-number {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
     background: rgba(255, 255, 255, 0.08);
-    color: #ccc;
+    color: $text-muted;
     padding: 0.3rem 0.6rem;
     border-radius: 4px;
     font-size: 0.7rem;
@@ -103,21 +99,21 @@ $pr-color: #ab7df8;
     transition: all 0.15s ease;
     width: 100%;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    
+    border: 1px solid $border-lighter;
+
     &::before {
       font-family: "Font Awesome 6 Free";
       content: "\f126";
       font-weight: 900;
       font-size: 0.65rem;
     }
-    
+
     &:hover {
       background: rgba($pr-color, 0.15);
       border-color: $pr-color;
       color: $pr-color;
       text-decoration: none;
-      
+
       &::before {
         color: $pr-color;
       }
@@ -127,7 +123,7 @@ $pr-color: #ab7df8;
 
 .card-meta {
   font-size: 0.8rem;
-  color: #aaa;
+  color: $text-muted;
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -136,12 +132,12 @@ $pr-color: #ab7df8;
 }
 
 .author {
-  color: #f39c12;
+  color: $author;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  
+
   &::before {
     font-family: "Font Awesome 6 Free";
     content: "\f007";
@@ -152,20 +148,20 @@ $pr-color: #ab7df8;
 
 .sidebar-info {
   font-size: 0.75rem;
-  color: #aaa;
+  color: $text-muted;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  
+
   div {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   i {
     width: 16px;
-    color: #777;
+    color: lighten($text-muted, 10%);
   }
 }
 
@@ -174,20 +170,20 @@ $pr-color: #ab7df8;
   .changelog-card {
     flex-direction: column;
   }
-  
+
   .card-main {
     padding: 0.75rem;
   }
-  
+
   .card-sidebar {
     width: 100%;
     border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid $border-light;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem;
-    
+
     .pr-number {
       width: auto;
       min-width: 70px;
@@ -195,32 +191,32 @@ $pr-color: #ab7df8;
       font-size: 0.7rem;
       margin: 0;
     }
-    
+
     .sidebar-info {
       flex-direction: row;
       gap: 0.75rem;
       width: auto;
-      
+
       div {
         font-size: 0.7rem;
-        
+
         i {
           font-size: 0.65rem;
         }
       }
     }
   }
-  
+
   .card-title {
     font-size: 0.8rem;
     margin-bottom: 0.25rem;
   }
-  
+
   .card-meta {
     font-size: 0.7rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .changelog li {
     font-size: 0.75rem;
     padding: 2px 6px 2px 5px;

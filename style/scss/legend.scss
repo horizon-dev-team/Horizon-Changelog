@@ -5,7 +5,7 @@
   right: 20px;
   bottom: 20px;
   z-index: 200;
-  
+
   @media (max-width: 768px) {
     right: 10px;
     bottom: 10px;
@@ -25,19 +25,19 @@
   align-items: center;
   gap: 0.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  
+
   &::before {
     font-family: "Font Awesome 6 Free";
     content: "\f059";
     font-weight: 900;
     font-size: 0.7rem;
   }
-  
+
   &:hover {
     background: $primary-dark;
     transform: translateY(-1px);
   }
-  
+
   &.active {
     background: darken($primary, 15%);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -52,7 +52,7 @@
   bottom: 60px;
   width: 320px;
   max-height: 70vh;
-  background: rgba(0, 0, 0, 0.95);
+  background: $bg-overlay-dark;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
@@ -62,18 +62,18 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  
+
   @media (max-width: 768px) {
     right: 10px;
     bottom: 50px;
     width: calc(100% - 20px);
     max-width: 320px;
   }
-  
+
   &.show {
     opacity: 1;
   }
-  
+
   &.hide {
     opacity: 0;
   }
@@ -91,12 +91,12 @@
   font-size: 0.75rem;
   transition: all $transition-fast;
   border-radius: 0 6px 6px 0;
-  
+
   &:hover {
     transform: translateX(4px);
     background: rgba(255, 255, 255, 0.05);
   }
-  
+
   // Цвета для типов
   &.bugfix { border-left-color: $bugfix-color; }
   &.rscadd { border-left-color: $rscadd-color; }

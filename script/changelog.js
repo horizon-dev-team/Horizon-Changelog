@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const monthSelect = document.getElementById('monthSelect');
+  const sourceAllBtn = document.getElementById('sourceAllBtn');
+  const sourceUpstreamBtn = document.getElementById('sourceUpstreamBtn');
+  const sourceHorizonBtn = document.getElementById('sourceHorizonBtn');
 
   const fmtDate = d => d.split('-').reverse().join('.');
   const fmtMonth = m => new Date(m.split('-')[0], m.split('-')[1]-1).toLocaleString('ru', { month: 'long', year: 'numeric' });
@@ -51,13 +54,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     'Horizon =][=': 'horizon-dev-team/Horizon-Dream',
   };
 
+  let currentSource = 'all';
+
+  const setSource = s => {
+    currentSource = s;
+    const setBtn = (btn, v) => {
+      if (!btn) return;
+      const active = v === currentSource;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    };
+    setBtn(sourceAllBtn, 'all');
+    setBtn(sourceUpstreamBtn, '/TG/Station');
+    setBtn(sourceHorizonBtn, 'Horizon =][=');
+  };
+
   const load = async i => {
     const month = months[i];
     if (!cache[month]) {
       const res = await fetch(`./changelogs/archive/${month}.json`);
       cache[month] = await res.json();
     }
-    render(cache[month]);
+    let data = cache[month] || [];
+    const sel = currentSource || 'all';
+    if (sel && sel !== 'all') {
+      data = data.filter(item => item && item.source === sel);
+    }
+    render(data);
     idx = i;
     prevBtn.disabled = i === 0;
     nextBtn.disabled = i === months.length - 1;
@@ -66,6 +89,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   months = await (await fetch('./changelogs/months.json')).json();
   months.forEach(m => monthSelect.add(new Option(fmtMonth(m), m)));
+  setSource('all');
+  if (sourceAllBtn) sourceAllBtn.addEventListener('click', () => setSource('all') || load(idx));
+  if (sourceUpstreamBtn) sourceUpstreamBtn.addEventListener('click', () => setSource('/TG/Station') || load(idx));
+  if (sourceHorizonBtn) sourceHorizonBtn.addEventListener('click', () => setSource('Horizon =][=') || load(idx));
 
   prevBtn.onclick = () => load(idx - 1);
   nextBtn.onclick = () => load(idx + 1);

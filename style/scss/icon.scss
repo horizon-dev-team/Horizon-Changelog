@@ -3,11 +3,13 @@
 @import "variables";
 
 // Общие стили для всех типов
+$icon-bg: rgba(51, 51, 51, 0.5);
+
 .fix, .admin, .bugfix, .add, .rscadd, .del, .rscdel,
 .code_imp, .image, .sound, .spellcheck,
 .tweak, .balance, .map, .server, .label-changelog {
-  background-color: rgba(51.25, 51.25, 51.25, 0.5);
-  
+  background-color: $icon-bg;
+
   &::before {
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
@@ -79,7 +81,7 @@
 
 .label-changelog::before {
   content: "\f02e";
-  color: rgb(51.25, 51.25, 51.25);
+  color: darken($bg-card, 5%);
 }
 
 // Цвета бордеров для типов в списке изменений
@@ -98,8 +100,8 @@
   &.server { border-left-color: $server-color !important; }
 }
 
-.fas, 
-.far, 
+.fas,
+.far,
 .fab {
   display: inline-flex;
   align-items: center;

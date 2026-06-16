@@ -1,46 +1,110 @@
 // variables.scss - Цветовая схема и переменные
+// Унифицированная палитра: 15 базовых цветов
 
-// Основные цвета
-$horizon: #404040;
-$primary: #337ab7;
-$primary-dark: #286090;
-$success: #28a745;
-$success-dark: #218838;
-$danger: #dc3545;
-$danger-dark: #c82333;
-$warning: #fcd203;
-$info: #5bc0de;
-
-// Цвета для типов изменений
-$bugfix-color: #99dba1;
-$rscadd-color: #23c358;
-$rscdel-color: #dd3c3c;
-$balance-color: #fcd203;
-$image-color: #54e0e0;
-$map-color: #54e0e0;
-$sound-color: #54e0e0;
-$tweak-color: #23c358;
-$code_imp-color: #708090;
-$spellcheck-color: #fff;
-$admin-color: #bb47d1;
-$server-color: #bb47d1;
-
-// Фоны
-$bg-dark: #141414;
-$bg-darker: #141414;
-$bg-overlay: rgba(0, 0, 0, 0.4);
+// ============================================
+// БАЗОВЫЕ ЦВЕТА (фон, текст, границы)
+// ============================================
+$bg-dark:       #141414;  // Основной фон страницы
+$bg-darker:     #0a0a0a;  // Для градиента фона
+$bg-card:       #1a1a1a;  // Фон карточек, панелей, селектов
+$bg-panel:      #202020;  // Фон контролов (фильтры, панели)
+$bg-overlay:    rgba(0, 0, 0, 0.4);
 $bg-overlay-dark: rgba(0, 0, 0, 0.6);
 
-// Размеры
+$border-color:  #404040;  // Все границы
+$border-light:  rgba(255, 255, 255, 0.1);
+$border-lighter: rgba(255, 255, 255, 0.15);
+$border-bright: rgba(255, 255, 255, 0.3);
+
+$text-primary:  #e0e0e0;  // Основной текст
+$text-muted:    #a0a0a0;  // Вторичный текст
+$text-dark:     #666666;  // Приглушённый текст
+
+// ============================================
+// АКЦЕНТНЫЕ ЦВЕТА (основные)
+// ============================================
+$primary:       #337ab7;  // Синие элементы
+$success:       #28a745;  // Зелёные кнопки, успех
+$success-dark:  #218838;
+$danger:        #dc3545;  // Ошибки, предупреждения
+$danger-dark:   #c82333;
+$warning:       #fcd203;  // Внимание
+$info:          #5bc0de;  // Инфо, ховеры
+
+// Дополнительные цвета
+$accent:        #ab7df8;  // PR-бейджи, фиолетовые элементы
+$author:        #f39c12;  // Имена авторов
+
+// ============================================
+// ЦВЕТА ТИПОВ ИЗМЕНЕНИЙ (Changelog)
+// ДОПОЛНИТЕЛЬНЫЕ ЦВЕТА
+// ============================================
+$bugfix-color:    #99dba1;
+$rscadd-color:    #23c358;
+$rscdel-color:    #dd3c3c;
+$balance-color:   #fcd203;
+$image-color:     #54e0e0;
+$map-color:       #54e0e0;
+$sound-color:     #54e0e0;
+$tweak-color:     #23c358;
+$code_imp-color:  #708090;
+$spellcheck-color: #ffffff;
+$admin-color:     #bb47d1;
+$server-color:    #bb47d1;
+
+$accent:        #ab7df8;  // PR-бейджи, фиолетовые элементы
+$author:        #f39c12;  // Имена авторов
+$active-bg:     #3a5a3a;  // Фон активных кнопок
+
+// Производные от основных (для ховеров и состояний)
+$success-dark:  #218838;
+$danger-dark:   #c82333;
+$primary-dark:  #286090;
+
+// ============================================
+// РАЗМЕРЫ
+// ЦВЕТА ТИПОВ ИЗМЕНЕНИЙ (Changelog)
+// ============================================
 $container-max-width: 1200px;
 $header-max-height: 200px;
 $sidebar-width: 180px;
 $border-radius: 8px;
 $border-radius-sm: 4px;
 
-// Анимации
+$bugfix-color:    #99dba1;
+$rscadd-color:    #23c358;
+$rscdel-color:    #dd3c3c;
+$balance-color:   #fcd203;
+$image-color:     #54e0e0;
+$map-color:       #54e0e0;
+$sound-color:     #54e0e0;
+$tweak-color:     #23c358;
+$code_imp-color:  #708090;
+$spellcheck-color: #ffffff;
+$admin-color:     #bb47d1;
+$server-color:    #bb47d1;
+
+// ============================================
+// АНИМАЦИИ
+// РАЗМЕРЫ
+// ============================================
 $transition-fast: 0.2s;
 $transition-normal: 0.3s;
 
-// Брейкпоинты
+$container-max-width: 1200px;
+$header-max-height: 200px;
+$sidebar-width: 180px;
+$border-radius: 8px;
+$border-radius-sm: 4px;
+
+// ============================================
+// БРЕЙКПОИНТЫ
+// АНИМАЦИИ
+// ============================================
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+
+// ============================================
+// БРЕЙКПОИНТЫ
+// ============================================
 $mobile: 768px;
