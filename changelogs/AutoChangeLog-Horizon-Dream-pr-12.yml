@@ -1,0 +1,686 @@
+# PR: horizon-dev-team/Horizon-Dream/12
+delete-after: True
+/TG/Station:
+  96171:
+    title: "Bitrunners can't leave domains while glitches remain in them"
+    changes:
+      lelandkemble:
+        - balance: "Bitrunners can't back out of domains via the ladder while bitrunning glitches remain in them"
+  96289:
+    title: "Fix Nebula's boulder refinery being spaced"
+    changes:
+      Wisemonster:
+        - bugfix: "Fixed Nebula's boulder refinery being constantly spaced."
+  96056:
+    title: "Adds deep lore to some pistols, and partially rewrites the baton lore. Repaths some items."
+    changes:
+      necromanceranne:
+        - spellcheck: "Adds some additional deep lore to some of the pistols in the game. FInd your favourite and see if I cared to add one."
+        - spellcheck: "Rewrote the lore for contractor batons and stun batons."
+        - code_imp: "Repathed Liberators. This has no bearing on their function."
+        - code_imp: "Rechambers Regal Condors in .45 and 10mm Reaper rounds to .45 Reaper rounds. This has no impact on their function."
+  96293:
+    title: "Assorted Nanopaint-related Fixes"
+    changes:
+      Y0SH1M4S73R:
+        - bugfix: "Non-square paint canvases and Nanopaint projects correctly save to icons."
+        - bugfix: "You can no longer enter empty filenames when saving Nanopaint files."
+        - spellcheck: "User-provided modular computer filenames are now checked against the pda IC filter."
+  96268:
+    title: "Fixes runtime when using mending touch"
+    changes:
+      Iajret:
+        - bugfix: "Mending touch works once again"
+  96265:
+    title: "Fixes spilled flour not containing any flour"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed spilled flour not containing any flour"
+  96195:
+    title: "Cutting an airlock's ID wire prevents ID usage again"
+    changes:
+      MrMelbert:
+        - bugfix: "Cutting an airlock's ID wire prevents ID usage again (instead of changing the door to all access)"
+  96300:
+    title: "it's no longer possible to craft the jaws of recovery out of the jaws of recovery"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - bugfix: "jaws of recovery are blacklisted from crafting the jaws of recovery"
+  96178:
+    title: "Roundstart nuke ops now spawn on an elevator to wait while the base loads in"
+    changes:
+      MrMelbert:
+        - map: "Roundstart nuclear operatives now spawn in the nuke base elevator, rather than in the base itself. This change was done so we could reduce the lag from loading the nuke base during round startup."
+  96186:
+    title: "Reworks lavaland tendrils into minibosses"
+    changes:
+      SmArtKar:
+        - balance: "Lavaland tendrils have been reworked into a full fledged miniboss instead of a simple mob spawner."
+        - balance: "Lavaland mobs minimum spawn separation distance has been lowered from 12 to 7"
+  96258:
+    title: "Softens material requirements for printing custom material objects"
+    changes:
+      SmArtKar:
+        - balance: "You can make toolboxes out of meat and paper again"
+  96263:
+    title: "Cybernetic cat ears can no longer be restyled with flesh reshapers"
+    changes:
+      Fghj240:
+        - bugfix: "Cybernetic cat ears can no longer be restyled with flesh reshapers (because it broke them)"
+  96260:
+    title: "bileworm spewlets spit bile instead of manifesting bullets"
+    changes:
+      Hatterhat:
+        - bugfix: "Bileworm spewlet trophies no longer spit bullets instead of acidic bile."
+  96304:
+    title: "Add security misspelling checks to CI"
+    changes:
+      timothymtorres:
+        - spellcheck: "Add security misspelling checks to CI"
+  96303:
+    title: "Makes so blob_act() can't destroy indestructible items."
+    changes:
+      StrangeWeirdKitten:
+        - bugfix: "Blobs can no longer destroy indestructible items, like the disk."
+  96306:
+    title: "The Alt Jester Suit is Now Grayscaled and Buyable"
+    changes:
+      MacaroniCritter:
+        - tweak: "The alt jester outfit now has grayscale and is buyable"
+  96148:
+    title: "Random recipe logging (and other stuff)"
+    changes:
+      levels0:
+        - bugfix: "random recipes can no longer have upper pH bound above 14"
+  96311:
+    title: "Makes stumps not see through"
+    changes:
+      FalloutFalcon:
+        - bugfix: "Stumps aren't see through"
+  96193:
+    title: "Stasis body bag density fix, body bag grammar tweaks"
+    changes:
+      Hatterhat:
+        - bugfix: "Stasis body bags are no longer dense when closed."
+        - spellcheck: "Fixed a typo relating to the spelling of \"cinched\" in body bags with buckles (prisoner bags, et cetera)."
+  96324:
+    title: "Drake swoop no longer misleadingly claims you fall into lava if it fails to spawn said lava"
+    changes:
+      SmArtKar:
+        - bugfix: "Drake swoop no longer misleadingly claims you fall into lava if it fails to spawn said lava"
+  96321:
+    title: "Material spears do not erroneously drop force_unwielded"
+    changes:
+      lelandkemble:
+        - bugfix: "Material spears no longer partially avoid the force malus from being unwielded"
+  96325:
+    title: "Fixes brimdust overlay on wide mobs"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed brimdust overlay on wide mobs leaking onto other objects"
+  96315:
+    title: "Changes apprentice to use mid-round wizard pref"
+    changes:
+      Wisemonster:
+        - code_imp: "Wizard Apprentices now use the mid-round wizard pref, instead of the round start wizard pref."
+  96274:
+    title: "Speeedy disabling"
+    changes:
+      oguzzzok123:
+        - balance: "Disabler shots is now have 1.6 speed instead of 1.25 sorry mine skill issue"
+  96259:
+    title: "Fix infiniti paper printing from NT Shop app"
+    changes:
+      Frfor17:
+        - bugfix: "fixed NT shop printing infiniti papers, now its linked to computer's(laptop, pda, any) paper storage"
+  96223:
+    title: "Smartfridges become unsealed when broken, & can't be walked through by certain mobs unless broken"
+    changes:
+      lelandkemble:
+        - balance: "Smartfridges no longer block atmos when broken & no longer let creatures pass until broken"
+  96212:
+    title: "fixes two heretic bugs"
+    changes:
+      Arturlang:
+        - bugfix: "moonatics switching bodies (including slimeperson swap) giving you duplicate action buttons"
+        - bugfix: "lock path not having 1 point discounts"
+  96222:
+    title: "Fix for toxins paper discounts not appearing in UI"
+    changes:
+      QuiteLiterallyAnything:
+        - bugfix: "Made discounts from toxins papers show up in research UIs properly."
+        - code_imp: "Refactored research techwebs such that toxins discounts are now stored per techweb node rather than per techweb."
+  96332:
+    title: "Makes tendrils less out for blood, cleans up The Thing's code"
+    changes:
+      SmArtKar:
+        - bugfix: "Tendrils no longer try to attack you when you're out of their reach"
+        - code_imp: "Cleaned up The Thing's aggro code"
+  96337:
+    title: "Toxin bees get toxin"
+    changes:
+      lelandkemble:
+        - bugfix: "Toxin bees get toxin"
+  96236:
+    title: "Botanic trays: the hydroponics without hydro! (soil but better)"
+    changes:
+      MelokG000:
+        - rscadd: "added botanic trays - hydroponic trays with soil instead of water, just fill a tray with any soil and done!"
+        - image: "resprited auto-growth mode and added emissives to it"
+        - image: "resprited hydroponic trays"
+        - rscadd: "added old-designed mode for hydroponic trays - use a screwdriver or a plant analyzer on the circuit!"
+        - image: "added emissives to hydroponic tray indicators"
+  96316:
+    title: "cryoxadone is capable of healing you"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - balance: "instead of the hard requirement for sleeping, cryox's healing power is doubled by being asleep instead"
+        - bugfix: "on default settings a cryo tube filled with cryoxadone can no longer softlock you by outdamaging its own healing potential"
+  96295:
+    title: "Polar bear basic mob conversion"
+    changes:
+      AnturK:
+        - balance: "polar bears are tiny bit faster"
+  96336:
+    title: "Drake tail trophy no longer pushes immovable mobs"
+    changes:
+      SmArtKar:
+        - bugfix: "Drake tail trophy no longer pushes immovable mobs"
+  96276:
+    title: "Handcuffs removes pull verb"
+    changes:
+      JohnFulpWillard:
+        - tweak: "People who are handcuffed/resting/anyone who can't pull people won't be prompted to pull things in the dropdown menu."
+  96151:
+    title: "Implements overlay-based smoothing for lavaland lava and water"
+    changes:
+      SmArtKar:
+        - code_imp: "Implemented overlay-based smoothing for lavaland lava and water"
+  96342:
+    title: "Changes slaughter/laughter demons to use sentient mob pref"
+    changes:
+      Wisemonster:
+        - code_imp: "Slaughter/laughter demons now use the sentient creature pref, instead of the xenomorph pref"
+  96341:
+    title: "Personality can now be re-viewed from the mood hud icon"
+    changes:
+      Ghommie:
+        - tweak: "You can now review your character's personality from the mood message box (by clicking the mood hud element)."
+  96302:
+    title: "Adds a hotkey which cancels your `do_after`s (if possible)"
+    changes:
+      MrMelbert:
+        - tweak: "Adds \"cancel interaction\" keybinding, unbound by default, it cancels (most) interactions you're doing without needing to move or swap items."
+  96266:
+    title: "Catwalk disposal outlet is a disposal outlet"
+    changes:
+      lelandkemble:
+        - map: "Catwalk disposals outputs correctly."
+  96286:
+    title: "Reworks and fixes blood drunk miner megafauna"
+    changes:
+      SmArtKar:
+        - rscadd: "Blood-drunk miner now drops an infernal PKA with an in-built improved rapid repeater modification"
+        - balance: "Blood-drunk miner has been reworked with new attacks and patterns"
+        - bugfix: "Blood-drunk miner's combos are no longer guaranteed to land even if you move away from it"
+  96018:
+    title: "Implements \"Sound Tokens\", a way to have spatial audio. And implements it on looping sounds. (And also some tweaks to fall-off)"
+    changes:
+      CabinetOnFire:
+        - sound: "Changed our falloff to be less intense, as it was punching volume down way too fast."
+        - code_imp: "Implements a system for spatial audio to improve our looping sounds"
+  96226:
+    title: "common sense powercreep for syndicate borgs"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - balance: "Syndicate assault cyborgs can now block attacks with their energy swords"
+        - balance: "Syndicate medical cyborgs now feature atropine in their hypospray to prevent microbomb detonations."
+  96340:
+    title: "Bumps Rust-G to 6.2.0"
+    changes:
+      CabinetOnFire:
+        - code_imp: "Rust-G has been updated to 6.2.0"
+  96026:
+    title: "Replaces lavaland generation (Cellular automata caves) with a more sophisticated cave network system"
+    changes:
+      CabinetOnFire:
+        - code_imp: "Lavaland/Icemoon now uses a smarter algorithm to generate caves, making them more interconnected and making ruins easier to locate."
+        - bugfix: "wishgranter ruin now has /biome_replace subtypes on its floors/walls, ensuring it spawns in correctly (if enabled in config)"
+  96351:
+    title: "Fixes pinpointers when AI shunts"
+    changes:
+      lelandkemble:
+        - bugfix: "Pinpointers stop tracking a shunted ai when that ai is no longer shunted"
+  96363:
+    title: "Fix TGUI spawn panel dir option not working"
+    changes:
+      TealSeer:
+        - bugfix: "fixed TGUI spawn panel direction option not working"
+  96353:
+    title: "Fix moth flight in space"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix moths being able to fly in space"
+  96275:
+    title: "Adds directional coffins"
+    changes:
+      JohnFulpWillard:
+        - image: "Added a directional sprite for coffins."
+  96246:
+    title: "Making 40 parts at Adming RPED, not 10 each, and making it another, non-child, type from tier4 RPED"
+    changes:
+      Frfor17:
+        - tweak: "now Admin RPED has 40 parts each"
+        - code_imp: "now Admin outfit and Debug outfit(what is that) has AdminDebug RPED with 40 parts, and not just tier4 RPED, which is like game thing"
+  96240:
+    title: "Adds Apple Fritters, a classic breakfast staple, to the kitchen roster"
+    changes:
+      Rhials:
+        - rscadd: "Apple Fritters have been added to your local chef's cookbook!"
+  96216:
+    title: "Borg Fix & OmniTool Welder Qol"
+    changes:
+      SyncIt21:
+        - code_imp: "borg attack chain now passes modifiers to its item `attack_self()` proc"
+        - tweak: "omni tool welder now won't turn on automatically when switching to it via radial menu or using inventory button. This stops accidental combustion in hazardous areas"
+        - tweak: "omni tool welder can now be turned on/off via LMB like regular welder & not CTRL+LMB. Use RMB to open radial menu to switch to other tools when using welder"
+  96297:
+    title: "Introduces particle weather, converts rain and ash storms to it"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed an issue where Stop-All-Active-Weather verb would not remove ash storm sounds"
+        - code_imp: "Rain and ash storms have been refactored to use particles rather than overlays"
+  96167:
+    title: "reworks/fixes how we do iframe vs byondstorage"
+    changes:
+      CatoChristopherMrow:
+        - bugfix: "fixed improper chat caching."
+  96375:
+    title: "Makes volcanic pores more visually distinct"
+    changes:
+      SmArtKar:
+        - image: "Made volcanic pores more noticeable"
+  96376:
+    title: "Parthenogenesis no longer makes your material fish have null weights"
+    changes:
+      soulware1:
+        - bugfix: "Parthenogenesis no longer makes your material fish have null weights"
+  96377:
+    title: "Pinpointer tweaks and ventpointer buff."
+    changes:
+      ArcaneMusic:
+        - balance: "The mining ventpointer has been adjusted so that it can now more accurately show the distance to the nearest vent, and will now claim you've arrived if you're within 8 tiles away from a vent, down from 14."
+        - code_imp: "Several backend improvements to the pinpointer functionality and adjustability."
+  96369:
+    title: "Makes playsound respect max_range and makes sound use euclidean distance"
+    changes:
+      CabinetOnFire:
+        - sound: "Sound now makes use of euclidean distance for falloff"
+        - code_imp: "max_range on playsound now ensures the sound is audible up to that range."
+  96379:
+    title: "Fix disease copies not registering relevant disease signals"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixed a bug where diseases wouldn't trigger their regular effects when applied in certain contexts"
+        - bugfix: "Fixed a bug where airborne diseases wouldn't spread via breathing when applied in certain contexts"
+  96347:
+    title: "Move carving block to basic recipes (Allows carving blocks to be made out of any material)"
+    changes:
+      soulware1:
+        - balance: "Carving blocks can be made out of any material now!"
+  96350:
+    title: "feat: A Plastic World (plastic floral decorations)"
+    changes:
+      mcbalaam:
+        - rscadd: "Added fake plastic plants to be used for decoration"
+        - rscadd: "RDD: Rapid Decoration Device is now available for the service department"
+  96384:
+    title: "use the chat spritesheet for byond member ooc icons"
+    changes:
+      Absolucy:
+        - bugfix: "Made the BYOND member OOC icon better aligned to the text."
+  96385:
+    title: "Blood worms are no longer fully immune to space/cold"
+    changes:
+      MrMelbert:
+        - balance: "Blood worms are no longer fully immune to extreme pressures and cold, such as the vacuum of space"
+  96294:
+    title: "Walking Aid Component"
+    changes:
+      timothymtorres:
+        - rscadd: "Pole objects like mops, brooms, staves, scythes, and spears can now be held in a hand to act as walking aids, mitigating limping from fractures and reducing missing-leg slowdowns."
+        - balance: "Walking aids must be held in the hand on the same side as the injured or missing leg to provide support, and lose their effectiveness if actively wielded with two hands."
+        - balance: "Objects with the walking aid reduce limbless slowdown by 40%, while dedicated medical crutches reduce it by 60%."
+        - code_imp: "Refactor cane and crutch code logic into a modular walking aid component"
+  96374:
+    title: "fix: misc Big Manipulator bug fixes"
+    changes:
+      mcbalaam:
+        - bugfix: "Fixed some of the Big Manipulator behavior such as not working in strict mode, putting items inside itself and incorrectly targeting items due to misconfigured filters."
+  96068:
+    title: "Adds TGMC Tactical maps to the game and to Nuclear Operatives!"
+    changes:
+      EnterTheJake:
+        - rscadd: "Tactical Maps have been added to the game!"
+        - rscadd: "Nuclear Operatives implants now grant the ability to open a Minimap, this map will display and show the names of various areas of the station, and the positioning of the Nukeops team,borgs,mechs,Cayenne and the nuke disk in real time!"
+        - rscadd: "Nukie leaders and OW agents can also draw and apply labels to the map."
+        - rscadd: "the \"Recoinassance Platform\" has been added to the Nukie Base, it allows displaying of the Tactical maps while on the Syndicate Base Z level."
+        - map: "The briefing room in the NukeOps base has been remapped to better accomodate the new Holographic table."
+        - map: "Changed the front shutters on the Syndicate Infiltrator to the more fitting Syndicate Shutters."
+  96334:
+    title: "Prettifies RND techweb, adds some more info to designs"
+    changes:
+      SmArtKar:
+        - tweak: "RND Techweb now displays where a design can be printed and how much it'd cost to print"
+  96393:
+    title: "Adds beef space ramen"
+    changes:
+      cacogen:
+        - rscadd: "Adds packets of beef ramen as an uncommon maintenance spawn"
+  96395:
+    title: "All snacks now have the finger food flag now thus can be eaten while moving around."
+    changes:
+      Ghommie:
+        - balance: "You should now be able to walk around while eating about any vending machine snack, no longer just chips and a couple others."
+  96398:
+    title: "Clarifies Sphere modules lava protecction requirement + typo fix"
+    changes:
+      Wisemonster:
+        - spellcheck: "The sphere module now clarifies that the modsuit need to be insulated with bileworm skin in order to wade through lava safely."
+        - spellcheck: "Corrects sphere modules micromissle to micromissles"
+  96388:
+    title: "Fixes and improves tendril animations, makes the fight easier"
+    changes:
+      SmArtKar:
+        - balance: "Tendrils have had their health reduced and attack cooldowns, delays and telegraph durations increased. Damage of some attacks has been slightly increased (by 5) but they can no longer multihit."
+        - bugfix: "Tendril spikes now animate properly"
+        - image: "Tendril shots now have a fancy retraction animation"
+  96397:
+    title: "Buffs baseball bats to do more damage and fit on back'"
+    changes:
+      btcbuster:
+        - balance: "Baseball bats do more damage and fit on the back slot now."
+  96401:
+    title: "Trays are able to correctly unload items onto griddles."
+    changes:
+      georgebothways:
+        - bugfix: "Trays can now unload eight items onto griddles properly."
+  96411:
+    title: "Books now make paper sound when opened"
+    changes:
+      timothymtorres:
+        - sound: "Books now make paper sound when opened"
+  96405:
+    title: "Fix argument order and length confusion issue"
+    changes:
+      optimumtact:
+        - bugfix: "fixed arguments for wound recieve damage"
+  96410:
+    title: "Cursed limb removal fix"
+    changes:
+      MrMelbert:
+        - bugfix: "Losing your limbs via the cursed quirk now gives you limb stumps (so you can get your limbs back afterwards)"
+  96428:
+    title: "Fix TTX healing"
+    changes:
+      cool20141:
+        - bugfix: "fixed TTX healing"
+  96420:
+    title: "Fixes runtime when trying to pull a turf"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when trying to pull a turf"
+  96422:
+    title: "Fixes runtime when trying to upgrade a blob"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed runtime when trying to upgrade a blob, & fixed wasting points upgrading a reflective blob into a reflective blob"
+  96419:
+    title: "Fixes runtime when a corgi would try to open a door"
+    changes:
+      lelandkemble:
+        - bugfix: "Corgis no longer runtime when trying to open doors without an ID"
+  96415:
+    title: "Makes TESTING mineral depth overlay work on larger rocks"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed debug overlays on new biome rocks on lavaland"
+  96413:
+    title: "Add drill sound to surgical drill"
+    changes:
+      timothymtorres:
+        - sound: "Add drill sound to surgical drill"
+  96412:
+    title: "Add keypad sounds to secure safes"
+    changes:
+      timothymtorres:
+        - sound: "Add keypad sounds to secure safes"
+  96414:
+    title: "Add valve sound to portable canisters"
+    changes:
+      timothymtorres:
+        - sound: "Add valve sound to portable canisters"
+  96361:
+    title: "Security camera `attackby` to `item_interaction`"
+    changes:
+      TealSeer:
+        - code_imp: "security camera construction/item interaction has been rewritten, report any weirdness"
+  96429:
+    title: "Fixes changing a monkey's species potentially modifying the name listed on someone's manifest record"
+    changes:
+      Y0SH1M4S73R:
+        - bugfix: "Changing the species of most monkeys, whose names were changed to those of individuals on the manifest, will no longer cause the names on those individuals' records to be changed to the name the monkey ends up with."
+  96417:
+    title: "Fixes diamond and bluespace artifact boulders not containing any diamonds/bluespace crystals"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed diamond and bluespace artifact boulders not containing any diamonds/bluespace crystals"
+  96402:
+    title: "\"Conserved Genetics\" - A trait to prevent cross-pollination instability change in plants with the gene."
+    changes:
+      AtomTheProphet:
+        - rscadd: "Adds \"Conserved Genetics\", a plant trait which prevents the plant from having its instability be altered by cross-pollination."
+  96432:
+    title: "Add sound to light switches"
+    changes:
+      timothymtorres:
+        - sound: "Add on/off sound to light switches in rooms"
+  96404:
+    title: "Fix for material tiles and walls not having material when constructed from last item in the stack"
+    changes:
+      antropod:
+        - bugfix: "fixed material tiles and walls not having material when constructed from last item in the stack"
+  96406:
+    title: "Santa Claus can now hear prayers that mention him or christmas."
+    changes:
+      Ghommie:
+        - admin: "Prayers from players are now boxed (like examine messages and some health readouts for example), making them easier to tell apart from the constant stream of text in your chat tabs."
+        - rscadd: "Santa Claus can now hear prayers that mention him or Christmas. He won't know who's praying unless told, though he can tell if they're naughty."
+  96241:
+    title: "chatbox websocket client!"
+    changes:
+      Absolucy:
+        - rscadd: "Added a websocket client, you can now forward incoming chat messages to an external program, i.e allowing you to change music playlists based on events, or such."
+  96442:
+    title: "capitalizes butterbeans when planted"
+    changes:
+      Hatterhat:
+        - spellcheck: "Butterbean plants are now capitalized properly when planted."
+  96423:
+    title: "Ooze mob QoL + mending globule fix"
+    changes:
+      TymSha:
+        - tweak: "Ooze mobs from cytology now have the same type of HUD as other mobs, allowing them to see their health"
+        - tweak: "The abilities of shoolean grapes now have their cost specified in their description"
+        - bugfix: "The mending globule ability used by shoolean grapes no longer can be cast while there isn't enough nutrition to do so"
+  95899:
+    title: "Basic mulebots. last basic bot refactor"
+    changes:
+      Ben10Omintrix:
+        - code_imp: "mulebots have been refactored. please report any bugs"
+  96450:
+    title: "Fixes broken area overlays for particle weather (and speeds up fadeout animation)"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed broken area overlays for particle weather"
+  96449:
+    title: "Changes tendril regeneration outlinefrom bright green to maroon red"
+    changes:
+      SmArtKar:
+        - image: "Changed tendril regeneration outlinefrom bright green to maroon red"
+  96339:
+    title: "animates beam effects"
+    changes:
+      Arturlang:
+        - rscadd: "beams now animate when moving tile to tile, this is mostly noticeable for constant beam effects"
+        - bugfix: "beam emissives now work"
+  96430:
+    title: "Reorganize shuttles into separate folders"
+    changes:
+      timothymtorres:
+        - code_imp: "Reorganize shuttle maps into separate folders"
+  96383:
+    title: "adds a sound preview button to the emote panel"
+    changes:
+      Absolucy:
+        - tweak: "You can now preview what different emotes sound like via the emote panel."
+  96476:
+    title: "Fixes audio not working if you are inside of something"
+    changes:
+      CabinetOnFire:
+        - bugfix: "You can now hear the outside world when you're inside of something again (e.g. lockers, mechs"
+  96443:
+    title: "[NO GBP]DeIntegrates welder from omnitool & radial menu won't show already selected tool"
+    changes:
+      SyncIt21:
+        - rscdel: "removes the welder from the engiborg omnitool. They are now separate entities again"
+        - tweak: "The omnitool radial menu won't show the same selected tool again reducing clutter"
+  96468:
+    title: "Fixes runtime in pathfinding"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime in pathfinding"
+  96464:
+    title: "Fixes harddels in escape menu"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed harddels in escape menu"
+  96463:
+    title: "Fixes rugs runtiming when cleaning objects"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed rugs runtiming when cleaning objects"
+  96453:
+    title: "First aid station circuitboard in cargo + updates medical crate larp"
+    changes:
+      MrMelbert:
+        - rscadd: "You can now deconstruct first aid stations with a screwdriver and a crowbar."
+        - rscadd: "You can now buy first aid station circuitboards from cargo for 1200 credits."
+        - rscadd: "Most medical supplies ordered from cargo now come in DeForest crates. Sansufentanyl comes in an Interdyne create."
+        - balance: "As they can now be replaced, first aid station armor has been reduced."
+        - balance: "Emergency first aid stations now heal twice as fast but also take twice as long to recharge."
+  96446:
+    title: "Changes basic cocktail ratios for realism and recalculates certain boozepwr levels."
+    changes:
+      carshalash:
+        - tweak: "Made certain cocktails reflect real-world ratios. Including gin fizz, rum and coke, whiskey cola/soda, screwdriver, and both tonic cocktails."
+  96400:
+    title: "You no longer waddle when buckled to something"
+    changes:
+      Ghommie:
+        - bugfix: "You no longer waddle when buckled to something."
+  96320:
+    title: "Use lore time for a couple spots that list NST"
+    changes:
+      remove32:
+        - bugfix: "statpanel uses year offset"
+  96477:
+    title: "Fixes bug where sig_remove_from_blackboard would try to numerically index a regular list"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Fixes bug where sig_remove_from_blackboard would try to numerically index a regular list"
+  96474:
+    title: "Fixes runtime when breaking a moneybot without money"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when breaking a moneybot without money"
+  96470:
+    title: "Fixes gas mask filter runtime"
+    changes:
+      lelandkemble:
+        - bugfix: "\"fixed\" a runtime with gas mask filters"
+  96498:
+    title: "Fixes ambience subsystem removing players permanently"
+    changes:
+      FalloutFalcon:
+        - bugfix: "Clients who sit in the lobby after pregame will no longer have there ambience disabled till they reconnect"
+  96472:
+    title: "Fixes a signal override for Sound Tokens and potentially fixes a harddel when clients logged out while hearing sound tokens"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Fixes a hard-del and signal override with sound tokens"
+  96493:
+    title: "Fixes rotation breaking on one votable map"
+    changes:
+      LemonInTheDark:
+        - bugfix: "End of round mapvotes will now properly default to the only option if only one map is votable."
+  96492:
+    title: "Gizmo sends a message when turning on and off"
+    changes:
+      MrMelbert:
+        - tweak: "Gizmo sends a message when turning on and off"
+  96491:
+    title: "Baby stoats can become adults"
+    changes:
+      Ben10Omintrix:
+        - bugfix: "baby stoats can now become adults"
+        - rscadd: "baby stoats are added to the spawn pool of maints, (the overall chance of running into a stoat whether adult/baby remains the same)"
+  96490:
+    title: "Failing to shoot a gun in melee range while on combat mode gun bashes"
+    changes:
+      MrMelbert:
+        - tweak: "If your gun is empty, and you are on combat mode, and you are adjacent to someone, and you click on them: you will perform a gun bash rather than just dry firing."
+  96473:
+    title: "Fixes runtime when fishing up a dud"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when fishing up no fish"
+  96510:
+    title: "Invests /tg/station Foundation funds into NVIDIA stocks (Adds a particle weather toggle)"
+    changes:
+      SmArtKar:
+        - tweak: "Particle weather can now be disabled in favor of old weather. !!! AMD GPU USERS NEED TO SWITCH TO OLD WEATHER TO FIX THE LAG!!!"
+  96514:
+    title: "Fixes weather on multi-z maps"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed weather on multi-z maps"
+  96502:
+    title: "Fixes recovered crew showing up as uncategorized antags"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed recovered crew showing up as uncategorized antags"
+  95369:
+    title: "TTS 3.0: Blips Rework, Radio TTS, Unknown Languages are Blips now"
+    changes:
+      Iamgoofball:
+        - rscadd: "Added support for Radio TTS. You will now hear players over the radio via the TTS system."
+        - rscadd: "Configure this in Game Options under the Sound tab."
+        - sound: "Re-did blips to be significantly nicer sounding and way better."
+        - sound: "Alien speech you don't understand now comes through as Blips. If you have TTS entirely disabled, you won't hear blips."
+        - sound: "The Tram and Computers now utilize the TTS system. Configs have been added to set a consistent voice."
+        - sound: "TTS audio now utilizes 3D audio; you can now walk away from people saying stupid shit and it gets quieter."
+        - sound: "Blips also now include more customization options, and a dedicated Blips preview button by clicking the leaf icon."
+        - rscdel: "The configuration to disable TTS on whispering has been removed, as it is no longer needed and also interferes with radio TTS functioning properly."
+  96532:
+    title: "Gives gender potion a do_after"
+    changes:
+      Aliceee2ch:
+        - balance: "Gender changing potion has a 5 seconds do_after now."
+  96519:
+    title: "adds a playsoundtoken proc that allows one-shot sound tokens playing, and adds support for it to emotes."
+    changes:
+      CabinetOnFire:
+        - code_imp: "Adds playsoundtoken() which lets you play one shot sound tokens"
+        - tweak: "emotes now have separate cooldowns for forced emotes; letting screams play more often if forced."
+        - sound: "You can now hear screams get louder as you get closer, spooky!"
