@@ -1,0 +1,8 @@
+# PR: horizon-dev-team/Horizon-Dream/18
+delete-after: True
+Horizon =][=:
+  18:
+    title: "GITHUB: Исключение под CI для модульных папок, правильные Линты"
+    changes:
+      KOCMODECAHTHUK:
+        - config: "Настроены проверки, и исключения для папки _Horizon под (CI Linters)"
