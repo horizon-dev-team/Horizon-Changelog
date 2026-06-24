@@ -1,0 +1,8 @@
+# PR: horizon-dev-team/Horizon-Dream/16
+delete-after: True
+Horizon =][=:
+  16:
+    title: "[GLOBAL-REBASE] Refactor: Реорганизация модуля _Horizon"
+    changes:
+      KOCMODECAHTHUK:
+        - code_imp: "Упорядочена структура _Horizon, упрощено подключение модулей, и добавлены подсказки по работе с модулями"
