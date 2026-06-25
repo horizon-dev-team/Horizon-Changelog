@@ -3631,5 +3631,33 @@
         "text": "You can now hear screams get louder as you get closer, spooky!"
       }
     ]
+  },
+  {
+    "date": "2026-06-25",
+    "source": "Horizon =][=",
+    "pr": "18",
+    "title": "GITHUB: Исключение под CI для модульных папок, правильные Линты",
+    "author": "KOCMODECAHTHUK",
+    "changes": [
+      {
+        "type": "config",
+        "class": "server",
+        "text": "Настроены проверки, и исключения для папки _Horizon под (CI Linters)"
+      }
+    ]
+  },
+  {
+    "date": "2026-06-25",
+    "source": "Horizon =][=",
+    "pr": "16",
+    "title": "[GLOBAL-REBASE] Refactor: Реорганизация модуля _Horizon",
+    "author": "KOCMODECAHTHUK",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Упорядочена структура _Horizon, упрощено подключение модулей, и добавлены подсказки по работе с модулями"
+      }
+    ]
   }
 ]
