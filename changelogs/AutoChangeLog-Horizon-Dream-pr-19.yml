@@ -1,0 +1,10 @@
+# PR: horizon-dev-team/Horizon-Dream/19
+delete-after: True
+Horizon =][=:
+  19:
+    title: "ADD: HorizonUI Loader - All Verb Panel & Dark theme VV"
+    changes:
+      KOCMODECAHTHUK:
+        - tweak: "Добавлена панель \"All Verbs\" для детального просмотра свойств"
+        - tweak: "Добавлена тёмная тема для View Variables"
+        - code_imp: "Настроена приоритетная загрузка интерфейсов _HorizonUI"
