@@ -3659,5 +3659,29 @@
         "text": "Упорядочена структура _Horizon, упрощено подключение модулей, и добавлены подсказки по работе с модулями"
       }
     ]
+  },
+  {
+    "date": "2026-06-28",
+    "source": "Horizon =][=",
+    "pr": "19",
+    "title": "ADD: HorizonUI Loader - All Verb Panel & Dark theme VV",
+    "author": "KOCMODECAHTHUK",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Добавлена панель \"All Verbs\" для детального просмотра свойств"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Добавлена тёмная тема для View Variables"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Настроена приоритетная загрузка интерфейсов _HorizonUI"
+      }
+    ]
   }
 ]
