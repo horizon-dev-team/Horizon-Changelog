@@ -1,0 +1,1759 @@
+[
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96535",
+    "title": "Fixes slime feeding runtimes",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed slime feeding runtimes"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96536",
+    "title": "Fixes runtimes from cyborg \"surgery\"",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed a bunch of runtimes caused when you try to perform surgery on cyborgs (which cannot be done in the first place)"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96537",
+    "title": "Fixes wraith cloaking module runtimes",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed wraith cloaking module runtimes"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96487",
+    "title": "Allows materials to be ejected directly from the autolathe",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Materials can now be directly ejected from autolathes rather than needing to be printed."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96533",
+    "title": "Fixes earthcracker not getting spent on mining z levels",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed earthcracker not getting spent on mining z levels"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96444",
+    "title": "Fixes tooltips covering borg modules",
+    "author": "SyncIt21",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Tooltips no longer cover the whole borgs hands held items"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96314",
+    "title": "Add new gizmode",
+    "author": "levels0",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "new gizmode"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "you can now interact with item gizmo wires"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96425",
+    "title": "Head revs get codewords, rev antag info panel",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Adds an antag info panel for revolution"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Codewords can now consist of any station area, and excludes areas not on the current station"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Head Revolutionaries (not their underlings) get codewords"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96387",
+    "title": "Zombie buffs",
+    "author": "Okram0",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Zombies are now stam resistant"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Zombies no longer suffer from mood"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Zombies are now moderately faster"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96542",
+    "title": "Being given a nonfunctional skeleton arm no longer disables both hands",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Being given a nonfunctional skeleton arm no longer disables both hands"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96550",
+    "title": "Fixes non /obj/item/clothing/under clothes applying fresh_laundry mood_event",
+    "author": "Goatto",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes non `/obj/item/clothing/under` items from applying the `fresh_laundry` mood_event"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96556",
+    "title": "fix: allow cameras to take 1x1 photos so they can be used with records",
+    "author": "flleeppyy",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Camera can now take 1x1 photos so new records can be uploaded"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96544",
+    "title": "Adds a heal flag check for hunger, removes healing hunger from legion cores.",
+    "author": "Wisemonster",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Legion cores no longer feed the user."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "The fully_heal proc now checks for the HEAL_ADMIN flag before restoring hunger."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96522",
+    "title": "Fix deep fryers to be refillable",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix deep fryer to be refillable"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96517",
+    "title": "[NO GBP] fixed fish traits added through the fish gene gun not updating some things properly.",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fish traits injected with the fish gene gun should work a little better in some cases."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96500",
+    "title": "Fixed the ninja e-katana not being linked to the recall module.",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed the e-katana not being linked to the recall module automatically when rolling ninja."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96278",
+    "title": "Standarizes some moon outpost 19 fixes and map tweaks.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Moon Outpost 19 away mission now correctly uses the same gray-sand turf when mining rocks."
+      },
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Tweaked some minor object placements and names across Moon Outpost 19."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96552",
+    "title": "Removes a recipe that has meat and eggs in it from mothic cuisine",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Moved a recipe that has meat and eggs in it from mothic cuisine and into martian cuisine."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96505",
+    "title": "Stasis crates",
+    "author": "Aliceee2ch",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Turtles now come in the stasis crates and can no longer grow inside of a cargo shuttle (or, well, untill you open the crate in general). This allows you to ACTUALLY interact with turtles growing feature before they come grown up."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96560",
+    "title": "Fixes runtime with bluespace meteor",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime with bluespace meteors"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96564",
+    "title": "fixes alien welder right hand inhands",
+    "author": "Hatterhat",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Alien welding tools no longer have mixed directions when held in the right hand."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96521",
+    "title": "Fixes some Booze-o-mat item organization",
+    "author": "RusselNotSCP",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Bottles in the booze-o-mat vending machine have been re-alphabetized."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Jester's Grenadine has been moved to the non-alcoholic section of the booze-o-mat."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96538",
+    "title": "Smooths arrow key and search snapping in TGUI list windows",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "TGUI list selectors and Spawn verb now use smooth scrolling with arrow keys"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96559",
+    "title": "Fixes runtime when connecting a tank to a TTV",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed connecting a tank to a TTV the other way around"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96554",
+    "title": "Add immunity checks for atmos traits for simple/basic mobs",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Add immunity checks for atmos traits for simple/basic mobs"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96566",
+    "title": "Removes DNA infuser sprite from gizmo icon pool",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Removed DNA infuser sprite from gizmo icon pool"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96534",
+    "title": "Fixes bioscrambler runtiming when the target is missing bodyparts",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed bioscrambler runtiming when the target is missing bodyparts"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96578",
+    "title": "Makes fire overlay properly mask when using mining sphere MODule",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Made fire overlay properly mask when using mining sphere MODule"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96579",
+    "title": "fixes transforming weapons throwspeed when turned off",
+    "author": "Hatterhat",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Inactive transforming weapons should now use their base throwspeeds properly when turned off."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96581",
+    "title": "Muzzles prevent verbal spellcasting",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Muzzles prevent verbal spellcasting"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96547",
+    "title": "You can now kiss that pizza toilet with the chef kiss skillchip to add \"love\" to its reagents.",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored a couple things around food/recipe complexity (what food buffs depend on). Technically, you can now kiss that pizza toilet, which you crafted (right?), with the chef kiss skillchip enabled to add \"love\" to its reagents."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96515",
+    "title": "All Shoes Can Now Be Worn Under/Above Uniforms",
+    "author": "MacaroniCritter",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Alt + Right Click now toggles shoe layers above or below uniforms."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96583",
+    "title": "Fixes runtime when an exodrone rolls the shrubbery crate from the abandoned cargo ship",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime when an exodrone rolls the shrubbery crate cargo crate chip from the abandoned cargo ship"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96467",
+    "title": "FaxBond app for bonding with your fax (fax message subscription app)",
+    "author": "Iajret",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "added a FaxBond app. Everyone can download it and use it on a fax of their choice to be notified when it receives a message. Heads of staff come with it preinstalled and automatically subscribed to a fax inside their office."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96580",
+    "title": "Fixes runtime when firing off a supply pod via admin tools",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed runtime when firing a supply pod via admin tools"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96548",
+    "title": "You can now fish mob parts and some mobs (brimdemons and legions) out of lava.",
+    "author": "btcbuster",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can now fish mining mob parts and mining mobs out of lava"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96392",
+    "title": "Fixes runtime with portable scrubber",
+    "author": "SyncIt21",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes runtime with portable scrubber"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96465",
+    "title": "Refactors shards to item_interaction, fixes a runtime",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed a runtime when cutting cloth with glass shards"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored glass shards to item_interaction"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96572",
+    "title": "Proofreads all chaplain sects",
+    "author": "QuiteLiterallyAnything",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Proofread most text associated with chaplain sects."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96576",
+    "title": "Stops deploying and retracting modsuits from ALWAYS dropping your suit storage",
+    "author": "CatoChristopherMrow",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "made deploying and undeploying a modsuit no longer ALWAYS drop your suit storage item, instead keeping it if it's valid"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96516",
+    "title": "Fixes floor igniters by refactoring wall button control assemblies",
+    "author": "QuiteLiterallyAnything",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed floor igniters and ensured that they are linkable to constructed buttons."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "All wall-mounted button electronics are no longer arbitrarily alterable with blast doors."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored blast doors controllers into their own subtype of a new abstract controller type."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96562",
+    "title": "Fixes runtime in PAI door hacking",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime when door hacking with a PAI"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96530",
+    "title": "Instances of \"god\" in moodlet descriptions are replaced with the Chaplain's diety for the Chaplain (and their followers)",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Instances of \"god\" in moodlet descriptions are replaced with the Chaplain's deity for the Chaplain (and their followers)"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96592",
+    "title": "Fix pirate boots not having storage",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix pirate boots not having storage"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96590",
+    "title": "Makes chrabs with the territorial trait angry when growing up",
+    "author": "TymSha",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Chrabs with the \"Territorial\" trait will be always hostile when growing up"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96546",
+    "title": "Adds icons to malf module picker UI. Slightly dejanks malf module buying code.",
+    "author": "afonamo",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "malf ai module picker actually has icons to load for the modules"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Malf antag datum is no longer responsible for handling module purchases. You again buy modules through the dedicated module picker button."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96571",
+    "title": "Refactor VIM vehicles into mech",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix VIM not being spaceproof"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactor VIM vehicles into mech"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96582",
+    "title": "Fixes runtime when creating a stack out of a stack with full hands with a stack below you",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime when creating a stack via another stack that's then eaten by another stack when it's created"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96503",
+    "title": "Reduces mech mining drill CD by 90% when drilling turfs",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Mech drills have a 90% reduction in delay when used to drill turfs (1.5 seconds -> 0.15 seconds)"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96557",
+    "title": "Floor decals are no longer rainbow-colored every round during pride week",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "More diverse floor decal colors during pride week so you aren't subjected exclusively to rainbow-hued decals for a week straight (or should I say \"for a week gay\"?)."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed the order of floor decal palettes for a couple holidays."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96305",
+    "title": "Adds a new healing symptom for virology and an immunosupressant chemical",
+    "author": "TymSha",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added a new virus symptom"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "A new chem that prevents viruses from being naturaly cured"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96593",
+    "title": "Standing overlay cleanup",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Reorganized human layering, report any oddities with sprites, such as mislayered equipment."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored cult halos, report any oddities like them not appearing when they should."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored mutation visuals, they're now affected by height! Report any oddities like them disappearing."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored mutation species handling, report any oddities like lizards with hulk."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96504",
+    "title": "Drastically lowers the amount of gibtonite on icebox, fixes incorrect wall typepath",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Drastically reduced the amount of gibtonite spawning on icebox"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed icebox underground spawning significantly less ores than intended"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96501",
+    "title": "Hides projectile lighting from the right click menu",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Projectile lighting is no longer shown in the right click menu"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96604",
+    "title": "[no gbp] Gizmo burgerfix and code improvement",
+    "author": "Time-Green",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Gizmo burgers are no longer burgerless"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96540",
+    "title": "Buffs goliaths and goldgrubs as mounts",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Saddled goliaths now accelerate if you keep moving in the same direction"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Goldgrubs now can move instantly after digging a rock"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96599",
+    "title": "Sets `pressure_affected` to FALSE on Void heretic ascension ambience",
+    "author": "QuiteLiterallyAnything",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The music emitted by ascended Void heretics is no longer affected by pressure (or more likely the lack thereof)."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96614",
+    "title": "Improves tram audio (Replaces jingles and improves looping sound for movement",
+    "author": "CabinetOnFire",
+    "changes": [
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "replaces tram jingles"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "improves tram movement audio"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96606",
+    "title": "Fixes tram duplicate/unlabelled tram announcements, reduces range",
+    "author": "lessthnthree",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Fixed and updated miscellaneous tram announcements"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Softer tram door chime"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Reduced range of tram platform jingle"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Tram platform jingle can be controlled by instrument volume preference"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96605",
+    "title": "Corrects active turfs on the Moon Outpost 19 away mission.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes some atmos differences on Moon Outpost 19 / Khonshu 19"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96585",
+    "title": "Categories with no items are no longer shown on black market uplink and cargo console UIs",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The cargo console UI no longer shows an Outsourced category if it's empty. Same for the black market uplink UI with its Goods, Fenced Goods or Hostage categories."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96619",
+    "title": "You can put the surplus energy sword on your belt slot (nmh larp?)",
+    "author": "sylvia-from-fulp-station",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "you can put the surplus esword onto your belt"
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "updated belt.dmi with worn sprites for the surplus esword"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96622",
+    "title": "Fixes runtime when attempting to use farsight inside something",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime when attempting to use the farsight mutation while inside something"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96621",
+    "title": "Fixes runtime when dropping an IED",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime when dropping an IED"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96620",
+    "title": "chuunicasting notifies when healing is on cooldown",
+    "author": "castawaynont",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "chuuni casting now notifies you when the healing on spellcast is on cooldown"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96616",
+    "title": "Adds <small> to Say html options. Uses ^ as its prefix.",
+    "author": "StrangeWeirdKitten",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added a new <small> html option for Say. Use ^text^ for smaller text."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96615",
+    "title": "Drain the soul away from pigs",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Ported better sprites for pigs from OnyxBay."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96627",
+    "title": "Fixes runtime when a noncarbon yawns",
+    "author": "lelandkemble",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime when a noncarbon yawned"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96626",
+    "title": "Small typo fix for foam scepter",
+    "author": "btcbuster",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Fixed a typo in foam scepter description"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96632",
+    "title": "Fixes runtime in new_player.dm when late joining as an AI",
+    "author": "Odairu",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes runtime when latejoining as AI"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96638",
+    "title": "Fixes issue where if 2 sound tokens would play the same sound, they would keep interupting each other.",
+    "author": "CabinetOnFire",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Sound tokens no longer interupt each other if they have the same sound"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96647",
+    "title": "Fixes pirates being unable to sell mobs",
+    "author": "CabinetOnFire",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can now ransom mobs when pirateering again"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96654",
+    "title": "makes some emote sounds use `'` instead of `\"`",
+    "author": "FalloutFalcon",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Some ethereal emote sounds are properly loaded as part of rcs"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96636",
+    "title": "Adds a visual hint to watcher gaze ability showing if you're going to be affected or not",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Watcher's Gaze ability overlay now flashes yellow if you're safe from being blinded by it"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96640",
+    "title": "Refactor fax machine `attackby` to `item_interaction`",
+    "author": "TealSeer",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "refactored fax machine's `attackby` to `item_interaction`"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96641",
+    "title": "Refactor extinguisher cabinet `attackby` to `item_interaction` and `tool_act`",
+    "author": "TealSeer",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "refactored fire extinguisher cabinet item interaction code"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96655",
+    "title": "Fixes target prioritization not working consistently due to not all mining mobs having ai_retaliate",
+    "author": "CabinetOnFire",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "All mining mobs now remember who hit them, so target prioritization works as intended"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96625",
+    "title": "Fixes inverted screwdriver check in cyborg rechargers",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed cyborg recharger panel unscrewing"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96624",
+    "title": "Fixes eye color overrides not working",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed eye color effects not working"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96613",
+    "title": "Add download sprite option to VV for `/atom`",
+    "author": "TealSeer",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "added download sprite option to view variables dropdown"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96634",
+    "title": "Fixes broken visuals on siderite/shale turfs when dug",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed broken visuals on siderite/shale turfs when dug"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96623",
+    "title": "Fixes radstorms rendering above HUDs and other weather bugs",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Radstorms (and other weather) no longer go over your hud on multi-z maps"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Rain is no longer invisible when you have particle weather disabled"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Changing the particle weather pref no longer permanently breaks some weathers for the round"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96563",
+    "title": "ChemMaster QoL: Reusable Custom Transfer Amounts",
+    "author": "Hatterhat",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "ChemMasters now have on-the-fly custom transfer amount support. Set it with the number input by the eject button. One-time custom transfer amounts remain usable with the horizontal ellipsis button."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96421",
+    "title": "The power of love: Obsessed are slightly stronger about their obsession (+ modernization)",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Obsessions get moderately stronger grabs against their objective targets (this includes their obsession and any other kill/theft targets they may have)."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "While standing near their obsession (for 20 seconds or if they are incapacitated), Obsessions get slightly stronger grabs against anyone, rather than just their objective targets."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "While standing near their obsession (for 20 seconds or if they are incapacitated), Obsessions get slight stamina damage resistance."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Obsession stammering has been reduced in severity a bit, and also becomes less likely the longer you stand around your obsession."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Obsession emotes have been made a bit less obvious, and also become less likely the longer you stand around your obsession."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Taking Psicodine or drinking alcohol will prevent Obsessions from stammering or emoting around their obsession, but also disables their stamina resistance and stronger grabs."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Obsessions get a \"permanent\" mood bonus for killing their obsession (until they are revived)."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Obsessed has been refactored significantly. It will now play a lot nicer with mindswaps. Report any oddities."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Grab strength has been refactored a bit, primarily affects martial arts and drunken brawling. Report any oddities."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96323",
+    "title": "Adds access restrictions to the AI upload console and rebalances the hacked upload boards.",
+    "author": "EnterTheJake",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The AI Upload Console now requires AI Uplaod access for laws to be uploaded (Captain,HoP,RD), emag also works."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The hacked AI upload board can bypass the access requirement and has had its time requirement removed."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "added 2 new overlays for the AI upload console."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96658",
+    "title": "Makes smartfridges smarter (deletes attackby)",
+    "author": "vinylspiders",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed an issue where you could exceed the smartfridge's capacity by using a plant bag"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96660",
+    "title": "[GBP IGNORE] Fixes \" and ' being broken",
+    "author": "StrangeWeirdKitten",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "' and \" works again"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96648",
+    "title": "LET THE DRONES HAVE HEAD ARMOR",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Wearing a hard hat or any helmet as a station drone will actually improve your armor values now!"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96661",
+    "title": "Smelter controllers don't rely on view",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Icebox gulag console doesn't vanish from reality"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96639",
+    "title": "DNA console now shows sequences of held genetic sequence scanners",
+    "author": "CabinetOnFire",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "DNA console now automatically matches genetic data with any held genetic sequence scanner, for more efficient geneticist shenanigans!"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96570",
+    "title": "Height and minor bodypart overlay refactor",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cybernetic reskinning should break less."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Horns and cat ears should be cut off less by height."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Bodypart textures should apply more consistently."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Mutant parts like moth wings, lizard tails, cat eats, etc. have been refactored a tiny bit, report any oddities."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Bodypart textures were refactored a tiny bit, report any oddities."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored the way height works, report anything weird looking things involving that."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96370",
+    "title": "Operation \"WDYM They can teleport on away missions?!\" phase 1: Stuck Inside Indestructible Walls",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Made it a bit harder to get stuck on away missions if you willingly or unwillingly use teleportation techniques. You still definitely can, but usually only on sections of the map that can be reached one way or another, including rock walls that can be mined, just not those that cannot."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Updated the visuals for indestructible rock walls to match the destructible ones."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "RNG teleportation should work marginally better around areas and turfs where teleportation is restricted by skipping them instead of having a chance to fumble because of that."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96678",
+    "title": "Obsession don't obsess with themselves",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Obsession don't obsess with themselves"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96703",
+    "title": "Fix `/datum/component/listen_prayers` not removing action button from UI when component deleted from mob",
+    "author": "timothymtorres",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix `/datum/component/listen_prayers` not removing action button from UI when component deleted from mob"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96681",
+    "title": "Goliath tentacles now detach when the goliath dies",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Goliath tentacles now detach when the goliath dies"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96705",
+    "title": "Adds pride station prefixes on pride week",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up station name generation, report any weird looking auto-generated station names"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Pride holiday now has unique station prefixes"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96698",
+    "title": "Fixes inverted do_after on shiv crafting",
+    "author": "CabinetOnFire",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Crafting shivs no longer inverts the do_after check"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96701",
+    "title": "Fixes chem implant injections not counting as such",
+    "author": "SmArtKar",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed chem implant injections not counting as such"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96665",
+    "title": "Fixes the tiles on the Ex-Interdyne Pirate Ship",
+    "author": "Pumpkinoe",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed some weird turf decals on walls for the Ex-Interdyne Pirate Ship"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96702",
+    "title": "Gives gizmos `UNIQUE_RENAME`",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "You can rename/redesc gizmos with a pen"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96709",
+    "title": "Mutation toxins work on skeletons/plasmamen and the undead",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Mutation toxins now work on plasmamen, skeletons, zombies, spirits, and vampires"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96299",
+    "title": "Adds Jet Boots, a very expensive new toy for cargo.",
+    "author": "ArcaneMusic",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Cargo may now purchase jet boots, boots that enable sustained flight, for 40,000 credits via the imports section."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96633",
+    "title": "Adds bodyshape arg to a lot of missing spots, generalizes 'wear_digi_version', adds female gender shaping to digi sprites",
+    "author": "vinylspiders",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "bodyshape is now accessible in build_worn_overlays() and similar procs."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "lizards now have support female gender shaping for their suits"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96509",
+    "title": "Holidays content: Kitchen has more ingredients on some holidays, more mail items, special bar kegs on St Patrick Day, Beer Day and Talk-Like-a-Pirate Day.",
+    "author": "Ghommie",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The kitchen fridges may have additional ingredients on certain holidays, in particular Atrakor's Might (lizardpeople) and Fleet Day (mothpeople), and Vegan Day."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added a few more holyday-specific mail items."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Replaces the beer keg in the bar backroom with special kegs on St. Patrick's Day, Beer Day and Speak-Like-a-Pirate day. On any other day, there's a chance that the beer keg will be replaced with one containing whiskey or rum, or in rare cases, one of those special kegs."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "resprited the keg as well."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96723",
+    "title": "Fix paramedic power crowbar in medical belt",
+    "author": "lessthnthree",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed jaws of recovery not being able to be stored in the paramedic EMT belt"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96699",
+    "title": "Fixes self-climbing crates",
+    "author": "CabinetOnFire",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes crates not respecting density in all cases and being able to move into other crates or tables"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96714",
+    "title": "Fix emote overlays",
+    "author": "MrMelbert",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix emote overlays sticking"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-01",
+    "source": "/TG/Station",
+    "pr": "96689",
+    "title": "Update heretic.dmm",
+    "author": "Yobrocharlie",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Removed both mounted guns in the heretic gateway per headmin request"
+      }
+    ]
+  }
+]
