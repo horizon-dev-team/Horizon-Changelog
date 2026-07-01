@@ -1,0 +1,592 @@
+# PR: horizon-dev-team/Horizon-Dream/20
+delete-after: True
+/TG/Station:
+  96535:
+    title: "Fixes slime feeding runtimes"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed slime feeding runtimes"
+  96536:
+    title: "Fixes runtimes from cyborg \"surgery\""
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed a bunch of runtimes caused when you try to perform surgery on cyborgs (which cannot be done in the first place)"
+  96537:
+    title: "Fixes wraith cloaking module runtimes"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed wraith cloaking module runtimes"
+  96487:
+    title: "Allows materials to be ejected directly from the autolathe"
+    changes:
+      SmArtKar:
+        - tweak: "Materials can now be directly ejected from autolathes rather than needing to be printed."
+  96533:
+    title: "Fixes earthcracker not getting spent on mining z levels"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed earthcracker not getting spent on mining z levels"
+  96444:
+    title: "Fixes tooltips covering borg modules"
+    changes:
+      SyncIt21:
+        - bugfix: "Tooltips no longer cover the whole borgs hands held items"
+  96314:
+    title: "Add new gizmode"
+    changes:
+      levels0:
+        - rscadd: "new gizmode"
+        - bugfix: "you can now interact with item gizmo wires"
+  96425:
+    title: "Head revs get codewords, rev antag info panel"
+    changes:
+      MrMelbert:
+        - tweak: "Adds an antag info panel for revolution"
+        - tweak: "Codewords can now consist of any station area, and excludes areas not on the current station"
+        - tweak: "Head Revolutionaries (not their underlings) get codewords"
+  96387:
+    title: "Zombie buffs"
+    changes:
+      Okram0:
+        - rscadd: "Zombies are now stam resistant"
+        - rscadd: "Zombies no longer suffer from mood"
+        - balance: "Zombies are now moderately faster"
+  96542:
+    title: "Being given a nonfunctional skeleton arm no longer disables both hands"
+    changes:
+      lelandkemble:
+        - bugfix: "Being given a nonfunctional skeleton arm no longer disables both hands"
+  96550:
+    title: "Fixes non /obj/item/clothing/under clothes applying fresh_laundry mood_event"
+    changes:
+      Goatto:
+        - bugfix: "Fixes non `/obj/item/clothing/under` items from applying the `fresh_laundry` mood_event"
+  96556:
+    title: "fix: allow cameras to take 1x1 photos so they can be used with records"
+    changes:
+      flleeppyy:
+        - bugfix: "Camera can now take 1x1 photos so new records can be uploaded"
+  96544:
+    title: "Adds a heal flag check for hunger, removes healing hunger from legion cores."
+    changes:
+      Wisemonster:
+        - bugfix: "Legion cores no longer feed the user."
+        - code_imp: "The fully_heal proc now checks for the HEAL_ADMIN flag before restoring hunger."
+  96522:
+    title: "Fix deep fryers to be refillable"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix deep fryer to be refillable"
+  96517:
+    title: "[NO GBP] fixed fish traits added through the fish gene gun not updating some things properly."
+    changes:
+      Ghommie:
+        - bugfix: "Fish traits injected with the fish gene gun should work a little better in some cases."
+  96500:
+    title: "Fixed the ninja e-katana not being linked to the recall module."
+    changes:
+      Ghommie:
+        - bugfix: "Fixed the e-katana not being linked to the recall module automatically when rolling ninja."
+  96278:
+    title: "Standarizes some moon outpost 19 fixes and map tweaks."
+    changes:
+      ArcaneMusic:
+        - bugfix: "The Moon Outpost 19 away mission now correctly uses the same gray-sand turf when mining rocks."
+        - map: "Tweaked some minor object placements and names across Moon Outpost 19."
+  96552:
+    title: "Removes a recipe that has meat and eggs in it from mothic cuisine"
+    changes:
+      Ghommie:
+        - bugfix: "Moved a recipe that has meat and eggs in it from mothic cuisine and into martian cuisine."
+  96505:
+    title: "Stasis crates"
+    changes:
+      Aliceee2ch:
+        - bugfix: "Turtles now come in the stasis crates and can no longer grow inside of a cargo shuttle (or, well, untill you open the crate in general). This allows you to ACTUALLY interact with turtles growing feature before they come grown up."
+  96560:
+    title: "Fixes runtime with bluespace meteor"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime with bluespace meteors"
+  96564:
+    title: "fixes alien welder right hand inhands"
+    changes:
+      Hatterhat:
+        - bugfix: "Alien welding tools no longer have mixed directions when held in the right hand."
+  96521:
+    title: "Fixes some Booze-o-mat item organization"
+    changes:
+      RusselNotSCP:
+        - tweak: "Bottles in the booze-o-mat vending machine have been re-alphabetized."
+        - bugfix: "Jester's Grenadine has been moved to the non-alcoholic section of the booze-o-mat."
+  96538:
+    title: "Smooths arrow key and search snapping in TGUI list windows"
+    changes:
+      SmArtKar:
+        - tweak: "TGUI list selectors and Spawn verb now use smooth scrolling with arrow keys"
+  96559:
+    title: "Fixes runtime when connecting a tank to a TTV"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed connecting a tank to a TTV the other way around"
+  96554:
+    title: "Add immunity checks for atmos traits for simple/basic mobs"
+    changes:
+      timothymtorres:
+        - code_imp: "Add immunity checks for atmos traits for simple/basic mobs"
+  96566:
+    title: "Removes DNA infuser sprite from gizmo icon pool"
+    changes:
+      SmArtKar:
+        - bugfix: "Removed DNA infuser sprite from gizmo icon pool"
+  96534:
+    title: "Fixes bioscrambler runtiming when the target is missing bodyparts"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed bioscrambler runtiming when the target is missing bodyparts"
+  96578:
+    title: "Makes fire overlay properly mask when using mining sphere MODule"
+    changes:
+      SmArtKar:
+        - bugfix: "Made fire overlay properly mask when using mining sphere MODule"
+  96579:
+    title: "fixes transforming weapons throwspeed when turned off"
+    changes:
+      Hatterhat:
+        - bugfix: "Inactive transforming weapons should now use their base throwspeeds properly when turned off."
+  96581:
+    title: "Muzzles prevent verbal spellcasting"
+    changes:
+      MrMelbert:
+        - balance: "Muzzles prevent verbal spellcasting"
+  96547:
+    title: "You can now kiss that pizza toilet with the chef kiss skillchip to add \"love\" to its reagents."
+    changes:
+      Ghommie:
+        - code_imp: "Refactored a couple things around food/recipe complexity (what food buffs depend on). Technically, you can now kiss that pizza toilet, which you crafted (right?), with the chef kiss skillchip enabled to add \"love\" to its reagents."
+  96515:
+    title: "All Shoes Can Now Be Worn Under/Above Uniforms"
+    changes:
+      MacaroniCritter:
+        - rscadd: "Alt + Right Click now toggles shoe layers above or below uniforms."
+  96583:
+    title: "Fixes runtime when an exodrone rolls the shrubbery crate from the abandoned cargo ship"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when an exodrone rolls the shrubbery crate cargo crate chip from the abandoned cargo ship"
+  96467:
+    title: "FaxBond app for bonding with your fax (fax message subscription app)"
+    changes:
+      Iajret:
+        - rscadd: "added a FaxBond app. Everyone can download it and use it on a fax of their choice to be notified when it receives a message. Heads of staff come with it preinstalled and automatically subscribed to a fax inside their office."
+  96580:
+    title: "Fixes runtime when firing off a supply pod via admin tools"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed runtime when firing a supply pod via admin tools"
+  96548:
+    title: "You can now fish mob parts and some mobs (brimdemons and legions) out of lava."
+    changes:
+      btcbuster:
+        - rscadd: "You can now fish mining mob parts and mining mobs out of lava"
+  96392:
+    title: "Fixes runtime with portable scrubber"
+    changes:
+      SyncIt21:
+        - bugfix: "fixes runtime with portable scrubber"
+  96465:
+    title: "Refactors shards to item_interaction, fixes a runtime"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed a runtime when cutting cloth with glass shards"
+        - code_imp: "Refactored glass shards to item_interaction"
+  96572:
+    title: "Proofreads all chaplain sects"
+    changes:
+      QuiteLiterallyAnything:
+        - spellcheck: "Proofread most text associated with chaplain sects."
+  96576:
+    title: "Stops deploying and retracting modsuits from ALWAYS dropping your suit storage"
+    changes:
+      CatoChristopherMrow:
+        - tweak: "made deploying and undeploying a modsuit no longer ALWAYS drop your suit storage item, instead keeping it if it's valid"
+  96516:
+    title: "Fixes floor igniters by refactoring wall button control assemblies"
+    changes:
+      QuiteLiterallyAnything:
+        - bugfix: "Fixed floor igniters and ensured that they are linkable to constructed buttons."
+        - bugfix: "All wall-mounted button electronics are no longer arbitrarily alterable with blast doors."
+        - code_imp: "Refactored blast doors controllers into their own subtype of a new abstract controller type."
+  96562:
+    title: "Fixes runtime in PAI door hacking"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when door hacking with a PAI"
+  96530:
+    title: "Instances of \"god\" in moodlet descriptions are replaced with the Chaplain's diety for the Chaplain (and their followers)"
+    changes:
+      MrMelbert:
+        - spellcheck: "Instances of \"god\" in moodlet descriptions are replaced with the Chaplain's deity for the Chaplain (and their followers)"
+  96592:
+    title: "Fix pirate boots not having storage"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix pirate boots not having storage"
+  96590:
+    title: "Makes chrabs with the territorial trait angry when growing up"
+    changes:
+      TymSha:
+        - rscadd: "Chrabs with the \"Territorial\" trait will be always hostile when growing up"
+  96546:
+    title: "Adds icons to malf module picker UI. Slightly dejanks malf module buying code."
+    changes:
+      afonamo:
+        - bugfix: "malf ai module picker actually has icons to load for the modules"
+        - code_imp: "Malf antag datum is no longer responsible for handling module purchases. You again buy modules through the dedicated module picker button."
+  96571:
+    title: "Refactor VIM vehicles into mech"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix VIM not being spaceproof"
+        - code_imp: "Refactor VIM vehicles into mech"
+  96582:
+    title: "Fixes runtime when creating a stack out of a stack with full hands with a stack below you"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when creating a stack via another stack that's then eaten by another stack when it's created"
+  96503:
+    title: "Reduces mech mining drill CD by 90% when drilling turfs"
+    changes:
+      SmArtKar:
+        - balance: "Mech drills have a 90% reduction in delay when used to drill turfs (1.5 seconds -> 0.15 seconds)"
+  96557:
+    title: "Floor decals are no longer rainbow-colored every round during pride week"
+    changes:
+      Ghommie:
+        - tweak: "More diverse floor decal colors during pride week so you aren't subjected exclusively to rainbow-hued decals for a week straight (or should I say \"for a week gay\"?)."
+        - bugfix: "Fixed the order of floor decal palettes for a couple holidays."
+  96305:
+    title: "Adds a new healing symptom for virology and an immunosupressant chemical"
+    changes:
+      TymSha:
+        - rscadd: "Added a new virus symptom"
+        - rscadd: "A new chem that prevents viruses from being naturaly cured"
+  96593:
+    title: "Standing overlay cleanup"
+    changes:
+      MrMelbert:
+        - code_imp: "Reorganized human layering, report any oddities with sprites, such as mislayered equipment."
+        - code_imp: "Refactored cult halos, report any oddities like them not appearing when they should."
+        - code_imp: "Refactored mutation visuals, they're now affected by height! Report any oddities like them disappearing."
+        - code_imp: "Refactored mutation species handling, report any oddities like lizards with hulk."
+  96504:
+    title: "Drastically lowers the amount of gibtonite on icebox, fixes incorrect wall typepath"
+    changes:
+      SmArtKar:
+        - balance: "Drastically reduced the amount of gibtonite spawning on icebox"
+        - bugfix: "Fixed icebox underground spawning significantly less ores than intended"
+  96501:
+    title: "Hides projectile lighting from the right click menu"
+    changes:
+      SmArtKar:
+        - bugfix: "Projectile lighting is no longer shown in the right click menu"
+  96604:
+    title: "[no gbp] Gizmo burgerfix and code improvement"
+    changes:
+      Time-Green:
+        - bugfix: "Gizmo burgers are no longer burgerless"
+  96540:
+    title: "Buffs goliaths and goldgrubs as mounts"
+    changes:
+      SmArtKar:
+        - balance: "Saddled goliaths now accelerate if you keep moving in the same direction"
+        - balance: "Goldgrubs now can move instantly after digging a rock"
+  96599:
+    title: "Sets `pressure_affected` to FALSE on Void heretic ascension ambience"
+    changes:
+      QuiteLiterallyAnything:
+        - bugfix: "The music emitted by ascended Void heretics is no longer affected by pressure (or more likely the lack thereof)."
+  96614:
+    title: "Improves tram audio (Replaces jingles and improves looping sound for movement"
+    changes:
+      CabinetOnFire:
+        - sound: "replaces tram jingles"
+        - sound: "improves tram movement audio"
+  96606:
+    title: "Fixes tram duplicate/unlabelled tram announcements, reduces range"
+    changes:
+      lessthnthree:
+        - spellcheck: "Fixed and updated miscellaneous tram announcements"
+        - sound: "Softer tram door chime"
+        - sound: "Reduced range of tram platform jingle"
+        - sound: "Tram platform jingle can be controlled by instrument volume preference"
+  96605:
+    title: "Corrects active turfs on the Moon Outpost 19 away mission."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Fixes some atmos differences on Moon Outpost 19 / Khonshu 19"
+  96585:
+    title: "Categories with no items are no longer shown on black market uplink and cargo console UIs"
+    changes:
+      Ghommie:
+        - bugfix: "The cargo console UI no longer shows an Outsourced category if it's empty. Same for the black market uplink UI with its Goods, Fenced Goods or Hostage categories."
+  96619:
+    title: "You can put the surplus energy sword on your belt slot (nmh larp?)"
+    changes:
+      sylvia-from-fulp-station:
+        - tweak: "you can put the surplus esword onto your belt"
+        - image: "updated belt.dmi with worn sprites for the surplus esword"
+  96622:
+    title: "Fixes runtime when attempting to use farsight inside something"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when attempting to use the farsight mutation while inside something"
+  96621:
+    title: "Fixes runtime when dropping an IED"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when dropping an IED"
+  96620:
+    title: "chuunicasting notifies when healing is on cooldown"
+    changes:
+      castawaynont:
+        - bugfix: "chuuni casting now notifies you when the healing on spellcast is on cooldown"
+  96616:
+    title: "Adds <small> to Say html options. Uses ^ as its prefix."
+    changes:
+      StrangeWeirdKitten:
+        - rscadd: "Added a new <small> html option for Say. Use ^text^ for smaller text."
+  96615:
+    title: "Drain the soul away from pigs"
+    changes:
+      Ghommie:
+        - image: "Ported better sprites for pigs from OnyxBay."
+  96627:
+    title: "Fixes runtime when a noncarbon yawns"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed a runtime when a noncarbon yawned"
+  96626:
+    title: "Small typo fix for foam scepter"
+    changes:
+      btcbuster:
+        - spellcheck: "Fixed a typo in foam scepter description"
+  96632:
+    title: "Fixes runtime in new_player.dm when late joining as an AI"
+    changes:
+      Odairu:
+        - bugfix: "fixes runtime when latejoining as AI"
+  96638:
+    title: "Fixes issue where if 2 sound tokens would play the same sound, they would keep interupting each other."
+    changes:
+      CabinetOnFire:
+        - bugfix: "Sound tokens no longer interupt each other if they have the same sound"
+  96647:
+    title: "Fixes pirates being unable to sell mobs"
+    changes:
+      CabinetOnFire:
+        - bugfix: "You can now ransom mobs when pirateering again"
+  96654:
+    title: "makes some emote sounds use `'` instead of `\"`"
+    changes:
+      FalloutFalcon:
+        - code_imp: "Some ethereal emote sounds are properly loaded as part of rcs"
+  96636:
+    title: "Adds a visual hint to watcher gaze ability showing if you're going to be affected or not"
+    changes:
+      SmArtKar:
+        - tweak: "Watcher's Gaze ability overlay now flashes yellow if you're safe from being blinded by it"
+  96640:
+    title: "Refactor fax machine `attackby` to `item_interaction`"
+    changes:
+      TealSeer:
+        - code_imp: "refactored fax machine's `attackby` to `item_interaction`"
+  96641:
+    title: "Refactor extinguisher cabinet `attackby` to `item_interaction` and `tool_act`"
+    changes:
+      TealSeer:
+        - code_imp: "refactored fire extinguisher cabinet item interaction code"
+  96655:
+    title: "Fixes target prioritization not working consistently due to not all mining mobs having ai_retaliate"
+    changes:
+      CabinetOnFire:
+        - bugfix: "All mining mobs now remember who hit them, so target prioritization works as intended"
+  96625:
+    title: "Fixes inverted screwdriver check in cyborg rechargers"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed cyborg recharger panel unscrewing"
+  96624:
+    title: "Fixes eye color overrides not working"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed eye color effects not working"
+  96613:
+    title: "Add download sprite option to VV for `/atom`"
+    changes:
+      TealSeer:
+        - admin: "added download sprite option to view variables dropdown"
+  96634:
+    title: "Fixes broken visuals on siderite/shale turfs when dug"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed broken visuals on siderite/shale turfs when dug"
+  96623:
+    title: "Fixes radstorms rendering above HUDs and other weather bugs"
+    changes:
+      SmArtKar:
+        - bugfix: "Radstorms (and other weather) no longer go over your hud on multi-z maps"
+        - bugfix: "Rain is no longer invisible when you have particle weather disabled"
+        - bugfix: "Changing the particle weather pref no longer permanently breaks some weathers for the round"
+  96563:
+    title: "ChemMaster QoL: Reusable Custom Transfer Amounts"
+    changes:
+      Hatterhat:
+        - tweak: "ChemMasters now have on-the-fly custom transfer amount support. Set it with the number input by the eject button. One-time custom transfer amounts remain usable with the horizontal ellipsis button."
+  96421:
+    title: "The power of love: Obsessed are slightly stronger about their obsession (+ modernization)"
+    changes:
+      MrMelbert:
+        - balance: "Obsessions get moderately stronger grabs against their objective targets (this includes their obsession and any other kill/theft targets they may have)."
+        - balance: "While standing near their obsession (for 20 seconds or if they are incapacitated), Obsessions get slightly stronger grabs against anyone, rather than just their objective targets."
+        - balance: "While standing near their obsession (for 20 seconds or if they are incapacitated), Obsessions get slight stamina damage resistance."
+        - balance: "Obsession stammering has been reduced in severity a bit, and also becomes less likely the longer you stand around your obsession."
+        - balance: "Obsession emotes have been made a bit less obvious, and also become less likely the longer you stand around your obsession."
+        - balance: "Taking Psicodine or drinking alcohol will prevent Obsessions from stammering or emoting around their obsession, but also disables their stamina resistance and stronger grabs."
+        - balance: "Obsessions get a \"permanent\" mood bonus for killing their obsession (until they are revived)."
+        - code_imp: "Obsessed has been refactored significantly. It will now play a lot nicer with mindswaps. Report any oddities."
+        - code_imp: "Grab strength has been refactored a bit, primarily affects martial arts and drunken brawling. Report any oddities."
+  96323:
+    title: "Adds access restrictions to the AI upload console and rebalances the hacked upload boards."
+    changes:
+      EnterTheJake:
+        - balance: "The AI Upload Console now requires AI Uplaod access for laws to be uploaded (Captain,HoP,RD), emag also works."
+        - balance: "The hacked AI upload board can bypass the access requirement and has had its time requirement removed."
+        - image: "added 2 new overlays for the AI upload console."
+  96658:
+    title: "Makes smartfridges smarter (deletes attackby)"
+    changes:
+      vinylspiders:
+        - bugfix: "fixed an issue where you could exceed the smartfridge's capacity by using a plant bag"
+  96660:
+    title: "[GBP IGNORE] Fixes \" and ' being broken"
+    changes:
+      StrangeWeirdKitten:
+        - bugfix: "' and \" works again"
+  96648:
+    title: "LET THE DRONES HAVE HEAD ARMOR"
+    changes:
+      Ghommie:
+        - balance: "Wearing a hard hat or any helmet as a station drone will actually improve your armor values now!"
+  96661:
+    title: "Smelter controllers don't rely on view"
+    changes:
+      MrMelbert:
+        - bugfix: "Icebox gulag console doesn't vanish from reality"
+  96639:
+    title: "DNA console now shows sequences of held genetic sequence scanners"
+    changes:
+      CabinetOnFire:
+        - tweak: "DNA console now automatically matches genetic data with any held genetic sequence scanner, for more efficient geneticist shenanigans!"
+  96570:
+    title: "Height and minor bodypart overlay refactor"
+    changes:
+      MrMelbert:
+        - bugfix: "Cybernetic reskinning should break less."
+        - bugfix: "Horns and cat ears should be cut off less by height."
+        - bugfix: "Bodypart textures should apply more consistently."
+        - code_imp: "Mutant parts like moth wings, lizard tails, cat eats, etc. have been refactored a tiny bit, report any oddities."
+        - code_imp: "Bodypart textures were refactored a tiny bit, report any oddities."
+        - code_imp: "Refactored the way height works, report anything weird looking things involving that."
+  96370:
+    title: "Operation \"WDYM They can teleport on away missions?!\" phase 1: Stuck Inside Indestructible Walls"
+    changes:
+      Ghommie:
+        - map: "Made it a bit harder to get stuck on away missions if you willingly or unwillingly use teleportation techniques. You still definitely can, but usually only on sections of the map that can be reached one way or another, including rock walls that can be mined, just not those that cannot."
+        - image: "Updated the visuals for indestructible rock walls to match the destructible ones."
+        - balance: "RNG teleportation should work marginally better around areas and turfs where teleportation is restricted by skipping them instead of having a chance to fumble because of that."
+  96678:
+    title: "Obsession don't obsess with themselves"
+    changes:
+      MrMelbert:
+        - bugfix: "Obsession don't obsess with themselves"
+  96703:
+    title: "Fix `/datum/component/listen_prayers` not removing action button from UI when component deleted from mob"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix `/datum/component/listen_prayers` not removing action button from UI when component deleted from mob"
+  96681:
+    title: "Goliath tentacles now detach when the goliath dies"
+    changes:
+      SmArtKar:
+        - bugfix: "Goliath tentacles now detach when the goliath dies"
+  96705:
+    title: "Adds pride station prefixes on pride week"
+    changes:
+      MrMelbert:
+        - code_imp: "Cleaned up station name generation, report any weird looking auto-generated station names"
+        - rscadd: "Pride holiday now has unique station prefixes"
+  96698:
+    title: "Fixes inverted do_after on shiv crafting"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Crafting shivs no longer inverts the do_after check"
+  96701:
+    title: "Fixes chem implant injections not counting as such"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed chem implant injections not counting as such"
+  96665:
+    title: "Fixes the tiles on the Ex-Interdyne Pirate Ship"
+    changes:
+      Pumpkinoe:
+        - bugfix: "Fixed some weird turf decals on walls for the Ex-Interdyne Pirate Ship"
+  96702:
+    title: "Gives gizmos `UNIQUE_RENAME`"
+    changes:
+      MrMelbert:
+        - tweak: "You can rename/redesc gizmos with a pen"
+  96709:
+    title: "Mutation toxins work on skeletons/plasmamen and the undead"
+    changes:
+      MrMelbert:
+        - balance: "Mutation toxins now work on plasmamen, skeletons, zombies, spirits, and vampires"
+  96299:
+    title: "Adds Jet Boots, a very expensive new toy for cargo."
+    changes:
+      ArcaneMusic:
+        - rscadd: "Cargo may now purchase jet boots, boots that enable sustained flight, for 40,000 credits via the imports section."
+  96633:
+    title: "Adds bodyshape arg to a lot of missing spots, generalizes 'wear_digi_version', adds female gender shaping to digi sprites"
+    changes:
+      vinylspiders:
+        - code_imp: "bodyshape is now accessible in build_worn_overlays() and similar procs."
+        - image: "lizards now have support female gender shaping for their suits"
+  96509:
+    title: "Holidays content: Kitchen has more ingredients on some holidays, more mail items, special bar kegs on St Patrick Day, Beer Day and Talk-Like-a-Pirate Day."
+    changes:
+      Ghommie:
+        - rscadd: "The kitchen fridges may have additional ingredients on certain holidays, in particular Atrakor's Might (lizardpeople) and Fleet Day (mothpeople), and Vegan Day."
+        - rscadd: "Added a few more holyday-specific mail items."
+        - rscadd: "Replaces the beer keg in the bar backroom with special kegs on St. Patrick's Day, Beer Day and Speak-Like-a-Pirate day. On any other day, there's a chance that the beer keg will be replaced with one containing whiskey or rum, or in rare cases, one of those special kegs."
+        - image: "resprited the keg as well."
+  96723:
+    title: "Fix paramedic power crowbar in medical belt"
+    changes:
+      lessthnthree:
+        - bugfix: "Fixed jaws of recovery not being able to be stored in the paramedic EMT belt"
+  96699:
+    title: "Fixes self-climbing crates"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Fixes crates not respecting density in all cases and being able to move into other crates or tables"
+  96714:
+    title: "Fix emote overlays"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix emote overlays sticking"
+  96689:
+    title: "Update heretic.dmm"
+    changes:
+      Yobrocharlie:
+        - rscdel: "Removed both mounted guns in the heretic gateway per headmin request"
