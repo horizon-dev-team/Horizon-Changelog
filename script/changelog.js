@@ -9,6 +9,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const fmtDate = d => d.split('-').reverse().join('.');
   const fmtMonth = m => new Date(m.split('-')[0], m.split('-')[1]-1).toLocaleString('ru', { month: 'long', year: 'numeric' });
+  const esc = (str) => {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  };
 
   let months = [], idx = 0, cache = {};
 
@@ -17,27 +26,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     const byDate = data.reduce((acc, i) => (acc[i.date] = [...(acc[i.date]||[]), i], acc), {});
     for (const [date, items] of Object.entries(byDate).sort((a,b) => a[0] < b[0] ? 1 : -1)) {
       const bySource = items.reduce((acc, i) => (acc[i.source] = [...(acc[i.source]||[]), i], acc), {});
-      let html = `<div class="changelog-date-section"><h2 class="date-header">${fmtDate(date)}</h2>`;
+      let html = `<div class="changelog-date-section"><h2 class="date-header">${esc(fmtDate(date))}</h2>`;
       for (const [src, list] of Object.entries(bySource)) {
-        html += `<div class="source-group"><h3 class="source-header">${src}:</h3>`;
+        html += `<div class="source-group"><h3 class="source-header">${esc(src)}:</h3>`;
         list.forEach(item => {
-          const prNumber = item.pr.split('/').pop();
+          const prNumber = esc(item.pr.split('/').pop());
           const repo = REPO_MAP[src];
           const hasLink = !!repo;
           const prUrl = hasLink ? `https://github.com/${repo}/pull/${prNumber}` : '#';
+          const title = esc(item.title || `PR #${item.pr}`);
+          const author = esc(item.author);
+          const changesHtml = item.changes.map(ch =>
+            `<li class="${esc(ch.class)}">${esc(ch.text)}</li>`
+          ).join('');
+
           html += `<div class="changelog-card">
             <div class="card-main">
               <div class="card-content">
-                <h4 class="card-title">${item.title || `PR #${item.pr}`}</h4>
-                <div class="card-meta">by <span class="author">${item.author}</span></div>
-                <ul class="changelog">${item.changes.map(ch => `<li class="${ch.class}">${ch.text}</li>`).join('')}</ul>
+                <h4 class="card-title">${title}</h4>
+                <div class="card-meta">by <span class="author">${author}</span></div>
+                <ul class="changelog">${changesHtml}</ul>
               </div>
             </div>
             <div class="card-sidebar">
               <a class="pr-number" href="${prUrl}" ${!hasLink ? 'disabled' : ''} target="_blank">#${prNumber}</a>
               <div class="sidebar-info">
-                <div><i class="fas fa-calendar"></i> ${fmtDate(date)}</div>
-                <div><i class="fas fa-code"></i> ${src}</div>
+                <div><i class="fas fa-calendar"></i> ${esc(fmtDate(date))}</div>
+                <div><i class="fas fa-code"></i> ${esc(src)}</div>
               </div>
             </div>
           </div>`;
@@ -57,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let currentSource = 'all';
 
   const setSource = s => {
-    currentSource = s;
+        currentSource = s;
     const setBtn = (btn, v) => {
       if (!btn) return;
       const active = v === currentSource;
