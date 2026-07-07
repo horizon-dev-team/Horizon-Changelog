@@ -1,0 +1,8 @@
+# PR: horizon-dev-team/Horizon-Dream/21
+delete-after: True
+Horizon =][=:
+  21:
+    title: "REFACTOR: Реорганизация структуры интерфейсов Horizon"
+    changes:
+      KOCMODECAHTHUK:
+        - code_imp: "Интерфейсы Horizon перемещены в единую папку для упорядочивания структуры"
