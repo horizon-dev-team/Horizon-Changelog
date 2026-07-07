@@ -1755,5 +1755,19 @@
         "text": "Removed both mounted guns in the heretic gateway per headmin request"
       }
     ]
+  },
+  {
+    "date": "2026-07-07",
+    "source": "Horizon =][=",
+    "pr": "21",
+    "title": "REFACTOR: Реорганизация структуры интерфейсов Horizon",
+    "author": "KOCMODECAHTHUK",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Интерфейсы Horizon перемещены в единую папку для упорядочивания структуры"
+      }
+    ]
   }
 ]
