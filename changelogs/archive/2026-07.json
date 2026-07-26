@@ -4090,5 +4090,19 @@
         "text": "On April Fools, or if you're exceptionally (un)lucky, ripping up a certain poster will reveal a certain other poster underneath"
       }
     ]
+  },
+  {
+    "date": "2026-07-26",
+    "source": "Horizon =][=",
+    "pr": "23",
+    "title": "ADD: Smart Discord Notifications",
+    "author": "KOCMODECAHTHUK",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Добавлен workflow под оповещения в Discord об изменении в Pull Requests"
+      }
+    ]
   }
 ]
