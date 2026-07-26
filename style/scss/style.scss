@@ -1,20 +1,13 @@
-// style.scss - Главный файл стилей
-
-// Импорт переменных
 @import "variables";
-
-// Импорт основных стилей
 @import "main";
-
-// Импорт стилей компонентов
 @import "buttons";
 @import "card";
+@import "markdown";
 @import "icon";
 @import "filter";
 @import "legend";
 @import "footer";
 
-// Дополнительные стили для changelog списка
 .changelog {
   list-style: none;
   padding: 0;
