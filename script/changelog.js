@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           }
           if (repoSlug.includes('tgstation')) repoDisplayName = '/TG/Station';
 
+          const displayDate = item.upstream_date || date;
           const title = esc(item.title || `PR #${item.pr}`);
           const author = esc(item.author);
 
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="card-sidebar">
               <a class="pr-number" href="${prUrl}" ${!hasLink ? 'disabled' : ''} target="_blank">#${prNumber}</a>
               <div class="sidebar-info">
-                <div><i class="fas fa-calendar"></i> ${esc(fmtDate(date))}</div>
+                <div><i class="fas fa-calendar"></i> ${esc(fmtDate(displayDate))}</div>
                 <div><i class="fas fa-code"></i> ${esc(repoDisplayName)}</div>
               </div>
             </div>

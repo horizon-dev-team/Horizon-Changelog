@@ -27,9 +27,9 @@ month_key = today.strftime("%Y-%m")
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
 
-def fetch_pr_body(repo, pr_number):
+def fetch_pr_info(repo, pr_number):
     if not repo or not pr_number:
-        return ""
+        return "", ""
 
     url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}"
     req = urllib.request.Request(url)
@@ -41,10 +41,13 @@ def fetch_pr_body(repo, pr_number):
     try:
         with urllib.request.urlopen(req) as response:
             data = json.loads(response.read().decode('utf-8'))
-            return data.get('body', '') or ''
+            body = data.get('body', '') or ''
+            raw_date = data.get('merged_at') or data.get('created_at') or ''
+            pr_date = raw_date.split('T')[0] if raw_date else ''
+            return body, pr_date
     except Exception as e:
-        print(f"  [WARNING] Не удалось скачать тело PR #{pr_number} из {repo}: {e}")
-        return ""
+        print(f"  [WARNING] Не удалось скачать данные PR #{pr_number} из {repo}: {e}")
+        return "", ""
 
 def extract_body_from_pr(full_body):
     if not full_body:
@@ -98,9 +101,10 @@ def parse_changelog_file(filepath):
             repo = pr_data.get('repo', '')
             body = pr_data.get('body', '')
 
+            upstream_date = ""
             if not body and repo:
-                print(f"  Fetching body for {repo}#{pr_number}...")
-                full_body = fetch_pr_body(repo, pr_number)
+                print(f"  Fetching info for {repo}#{pr_number}...")
+                full_body, upstream_date = fetch_pr_info(repo, pr_number)
                 body = extract_body_from_pr(full_body)
 
             for author, changes in changes_by_author.items():
@@ -125,6 +129,7 @@ def parse_changelog_file(filepath):
 
                 records.append({
                     'date': today_str,
+                    'upstream_date': upstream_date,
                     'source': source,
                     'repo': repo,
                     'pr': str(pr_number),
