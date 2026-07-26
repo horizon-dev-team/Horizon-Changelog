@@ -30,6 +30,8 @@ jobs:
       - name: Compile changelogs
         run: |
           python changelogs/compile_changelogs.py changelogs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate App Token
         id: app-token-generation

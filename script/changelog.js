@@ -41,9 +41,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         html += `<div class="source-group"><h3 class="source-header">${esc(src)}:</h3>`;
         list.forEach(item => {
           const prNumber = esc(item.pr.split('/').pop());
-          const repo = REPO_MAP[src];
-          const hasLink = !!repo;
-          const prUrl = hasLink ? `https://github.com/${repo}/pull/${prNumber}` : '#';
+          let repoSlug = item.repo || REPO_MAP[src] || '';
+          const hasLink = !!repoSlug;
+          const prUrl = hasLink ? `https://github.com/${repoSlug}/pull/${prNumber}` : '#';
+          let repoDisplayName = src; // По умолчанию берем источник (Horizon =][=)
+          if (repoSlug) {
+            const slugParts = repoSlug.split('/');
+            repoDisplayName = slugParts[slugParts.length - 1];
+          }
+          if (repoSlug.includes('tgstation')) repoDisplayName = '/TG/Station';
+
           const title = esc(item.title || `PR #${item.pr}`);
           const author = esc(item.author);
 
@@ -76,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               <a class="pr-number" href="${prUrl}" ${!hasLink ? 'disabled' : ''} target="_blank">#${prNumber}</a>
               <div class="sidebar-info">
                 <div><i class="fas fa-calendar"></i> ${esc(fmtDate(date))}</div>
-                <div><i class="fas fa-code"></i> ${esc(src)}</div>
+                <div><i class="fas fa-code"></i> ${esc(repoDisplayName)}</div>
               </div>
             </div>
           </div>`;
