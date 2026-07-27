@@ -1,8 +1,0 @@
-# PR: horizon-dev-team/Horizon-Dream/1
-delete-after: True
-Horizon =][=:
-  1:
-    title: [GLOBAL-REBASE] No truth, no consequence
-    changes:
-      KOCMODECAHTHUK:
-        - config: "Чистый лист после тестов"

@@ -1,8 +1,0 @@
-# PR: horizon-dev-team/HORIZON-Project-Prototype/106
-delete-after: True
-/TG/Station:
-  95545:
-    title: "Cytology organs can mutate again"
-    changes:
-      Time-Green:
-        - bugfix: "Coroner cytology grown organs can mutate again"

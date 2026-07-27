@@ -1,8 +1,0 @@
-# PR: horizon-dev-team/HORIZON-Project-Prototype/108
-delete-after: True
-/TG/Station:
-  95561:
-    title: "Fixes unpowered field generators yeeting people"
-    changes:
-      SmArtKar:
-        - bugfix: "Fixed unpowered field generators yeeting people"

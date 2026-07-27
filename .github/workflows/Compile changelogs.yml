@@ -14,6 +14,26 @@ jobs:
       contents: write
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.sender.login == 'horizon-dev-sync[bot]' }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Generate App Token
+        id: app-token-generation
+        uses: actions/create-github-app-token@v3.2.0
+        with:
+          client-id: ${{ secrets.APP_CLIENT_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            Horizon-Changelog
+            horizon-scripts
+
+      - name: Download Compile Changelogs - horizon-scripts
+        env:
+          GH_TOKEN: ${{ steps.app-token-generation.outputs.token }}
+        run: |
+          gh api repos/horizon-dev-team/horizon-scripts/contents/Changelog/compile_changelogs.py --jq '.content' | base64 -d > changelogs/compile_changelogs.py
+
       - name: Setup python
         uses: actions/setup-python@v6
         with:
@@ -24,21 +44,11 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pyyaml
 
-      - name: Checkout
-        uses: actions/checkout@v6
-
       - name: Compile changelogs
         run: |
           python changelogs/compile_changelogs.py changelogs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate App Token
-        id: app-token-generation
-        uses: actions/create-github-app-token@v3
-        with:
-          client-id: ${{ secrets.APP_CLIENT_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Commit changes
         run: |
