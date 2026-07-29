@@ -36,6 +36,11 @@ body {
   overflow: hidden;
   background: linear-gradient(135deg, #121212 0%, #16213e 100%);
 }
+@media (max-width: 768px) {
+  .header {
+    min-height: 140px;
+  }
+}
 
 .header-bg {
   position: absolute;
@@ -96,159 +101,6 @@ body {
   margin-top: -14px;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 0;
-  flex: 1;
-}
-@media (max-width: 1240px) {
-  .container {
-    max-width: 95%;
-  }
-}
-@media (max-width: 992px) {
-  .container {
-    padding: 2rem 0;
-  }
-}
-
-.bgimage {
-  position: fixed;
-  top: 10%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  z-index: -1;
-  opacity: 0.2;
-}
-.bgimage img {
-  width: 60vmin;
-}
-
-.info-card {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  backdrop-filter: blur(10px);
-}
-.info-card p {
-  margin-bottom: 1rem;
-}
-.info-card p:last-child {
-  margin-bottom: 0;
-}
-
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  background: linear-gradient(135deg, #141414, #0a0a0a);
-  color: #e0e0e0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Iosevka Aile Web", sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1f;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3a3a44;
-  border-radius: 6px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #5a5a66;
-}
-
-.header {
-  position: relative;
-  min-height: 200px;
-  max-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  background: linear-gradient(135deg, #121212 0%, #16213e 100%);
-}
-
-.header-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.4;
-}
-
-@keyframes animateBackground {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 -960px;
-  }
-}
-.layer1, .layer2, .layer3 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-repeat: repeat;
-  pointer-events: none;
-}
-
-.layer1 {
-  background-image: url("../img/layer1_fancy.png");
-  animation: animateBackground 80s linear infinite;
-}
-
-.layer2 {
-  background-image: url("../img/layer2_fancy.png");
-  animation: animateBackground 40s linear infinite;
-}
-
-.layer3 {
-  background-image: url("../img/layer3_fancy.png");
-  animation: animateBackground 20s linear infinite;
-}
-
-.header-content {
-  position: relative;
-}
-
-.header h1 {
-  font-size: 3.5rem;
-  text-shadow: 0 0 10px rgba(255, 230, 205, 0.8), 0 0 20px rgba(255, 230, 205, 0.4), 0 0 40px rgba(255, 230, 205, 0.2);
-}
-
-.header .lead {
-  color: #666;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
 .header-nav {
   display: flex;
   gap: 0.5rem;
@@ -304,10 +156,51 @@ body {
   backdrop-filter: blur(10px);
 }
 .info-card p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 .info-card p:last-child {
   margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .info-card {
+    font-size: 0.75rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1f;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a44;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a66;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1f;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a44;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a66;
 }
 
 .alert {
@@ -435,7 +328,7 @@ body {
 }
 
 .btn-sm {
-  padding: 0.25rem 0.75rem;
+  padding: 0.1rem 0.3rem;
   font-size: 0.8rem;
   line-height: 1.4;
   border-radius: 3px;
@@ -482,12 +375,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-  }
   .btn-sm {
-    padding: 0.2rem 0.6rem;
     font-size: 0.75rem;
   }
   .changelog-filter {
