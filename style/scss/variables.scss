@@ -15,14 +15,20 @@ $border-light:  rgba(255, 255, 255, 0.1);
 $border-lighter: rgba(255, 255, 255, 0.15);
 $border-bright: rgba(255, 255, 255, 0.3);
 
+$over-radius-N: 0px;
+$over-radius-exS: 1px;
+$over-radius-S: 3px;
+$over-radius-M: 6px;
+
 $text-primary:  #e0e0e0;  // Основной текст
+$text-secondary: #0c0c0c;  // Вторичный текст
 $text-muted:    #a0a0a0;  // Вторичный текст
 $text-dark:     #666666;  // Приглушённый текст
 
 // ============================================
 // АКЦЕНТНЫЕ ЦВЕТА (основные)
 // ============================================
-$primary:       #337ab7;  // Синие элементы
+$primary:       #ccc;
 $success:       #28a745;  // Зелёные кнопки, успех
 $success-dark:  #218838;
 $danger:        #dc3545;  // Ошибки, предупреждения
@@ -58,7 +64,7 @@ $active-bg:     #3a5a3a;  // Фон активных кнопок
 // Производные от основных (для ховеров и состояний)
 $success-dark:  #218838;
 $danger-dark:   #c82333;
-$primary-dark:  #286090;
+$primary-dark:  #ccc;
 
 // ============================================
 // РАЗМЕРЫ
@@ -68,7 +74,7 @@ $container-max-width: 1200px;
 $header-max-height: 200px;
 $sidebar-width: 180px;
 $border-radius: 8px;
-$border-radius-sm: 4px;
+$over-radius-sm: 4px;
 
 $bugfix-color:    #99dba1;
 $rscadd-color:    #23c358;
@@ -94,7 +100,7 @@ $container-max-width: 1200px;
 $header-max-height: 200px;
 $sidebar-width: 180px;
 $border-radius: 8px;
-$border-radius-sm: 4px;
+$over-radius-sm: 4px;
 
 // ============================================
 // БРЕЙКПОИНТЫ

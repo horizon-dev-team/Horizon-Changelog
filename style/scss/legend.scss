@@ -12,7 +12,7 @@
 
 .btn-legend {
   background: $primary;
-  color: #fff;
+  color: $text-secondary;
   border: none;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
@@ -53,8 +53,8 @@
   background: $bg-overlay-dark;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: $over-radius-M;
+  padding: 0.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   overflow-y: auto;
   opacity: 0;
@@ -88,7 +88,7 @@
   border-left: 3px solid;
   font-size: 0.75rem;
   transition: all $transition-fast;
-  border-radius: 0 6px 6px 0;
+  border-radius: $over-radius-exS;
 
   &:hover {
     transform: translateX(4px);

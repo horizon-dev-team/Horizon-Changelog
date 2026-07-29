@@ -81,16 +81,6 @@
 
   .btn {
     border-radius: 0;
-
-    &:first-child {
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
-
-    &:last-child {
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
-    }
   }
 }
 
@@ -116,12 +106,13 @@
   &[aria-pressed="true"] {
     background: $primary-dark;
     border-color: lighten($primary, 15%);
-    color: #ffffff;
+    color: $text-secondary;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 
     &:hover {
       background: lighten($primary-dark, 5%);
       border-color: lighten($primary, 20%);
+      color: $text-secondary;
     }
   }
 
@@ -131,108 +122,10 @@
   }
 }
 
-// Навигационные кнопки (месяцы)
-.month-nav {
-  min-width: 40px;
-  padding: 0.2rem 0.8rem;
-  font-size: 1rem;
-  font-weight: 600;
-  background: $bg-card;
-  border-color: $border-color;
-  color: $text-primary;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  border-radius: 3px;
-
-  &:hover:not(:disabled) {
-    background: $primary-dark;
-    border-color: $primary;
-    color: #ffffff;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-
-  &:active:not(:disabled) {
-    background: darken($primary-dark, 10%);
-    transform: translateY(1px);
-  }
-
-  &:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    filter: grayscale(0.3);
-  }
-}
-
-// Селект месяцев
-.month-select {
-  min-width: 160px;
-  padding: 0.4rem 1.8rem 0.4rem 0.7rem;
-  font-family: "Segoe UI", "Iosevka Aile Web", monospace;
-  font-size: 0.8rem;
-  background: $bg-card;
-  border: 1px solid $border-color;
-  border-radius: 3px;
-  color: $text-primary;
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23337ab7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 14px;
-  transition: all $transition-fast;
-
-  &:hover {
-    background-color: $bg-card;
-    border-color: $primary;
-    color: #ffffff;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: $primary;
-    box-shadow: 0 0 0 3px rgba($primary, 0.2);
-  }
-
-  option {
-    background: $bg-panel;
-    color: $text-primary;
-    padding: 0.5rem;
-  }
-}
-
-// Контейнер фильтров
-.changelog-filter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  margin: 10px auto;
-  max-width: 460px;
-}
-
-.changelog-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 5px 8px;
-  background: $bg-panel;
-  border: 1px solid $border-color;
-  border-radius: 3px;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-    0 2px 4px rgba(0, 0, 0, 0.5);
-
-  &.month-controls {
-    max-width: 360px;
-  }
-
-  &.source-controls {
-    max-width: 300px;
-  }
-}
-
 // Адаптив
 @media (max-width: $mobile) {
+  $paddingMobile: 0.1rem 0.3rem;
+
   .btn {
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
@@ -245,7 +138,7 @@
 
   .changelog-filter {
     max-width: 95%;
-    gap: 6px;
+    gap: 4px;
     margin: 10px auto;
   }
 
@@ -257,35 +150,19 @@
 
   .month-nav {
     min-width: 36px;
-    padding: 0.35rem 0.7rem;
+    padding: $paddingMobile;
     font-size: 0.95rem;
   }
 
   .month-select {
     min-width: 130px;
     font-size: 0.75rem;
-    padding: 0.35rem 1.6rem 0.35rem 0.6rem;
+    padding: 0.3rem
   }
 
   .source-toggle-btn {
     min-width: 70px;
-    padding: 0.35rem 0.5rem;
+    padding: $paddingMobile;
     font-size: 0.75rem;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    width: 100%;
-
-    .btn {
-      width: 100%;
-      margin-left: 0 !important;
-      border-radius: 0 !important;
-
-      &:first-child,
-      &:last-child {
-        border-radius: 0 !important;
-      }
-    }
   }
 }
