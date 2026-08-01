@@ -74,12 +74,52 @@
     }
   }
 
+  figure.md-image {
+    margin: 0.8rem 0;
+    display: block;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: $over-radius-sm;
+      border: 1px solid $border-light;
+      display: block;
+    }
+  }
+
   img {
     max-width: 100%;
     height: auto;
     border-radius: $over-radius-sm;
     border: 1px solid $border-light;
     margin: 0.4rem 0;
+  }
+
+  sup, sub {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup { top: -0.5em; }
+  sub { bottom: -0.25em; }
+
+  details {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    background: $bg-panel;
+    border: 1px solid $border-light;
+    border-radius: $over-radius-sm;
+
+    summary {
+      cursor: pointer;
+      font-weight: 500;
+      color: $text-primary;
+
+      &:hover {
+        color: $info;
+      }
+    }
   }
 
   code {
