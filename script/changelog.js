@@ -39,6 +39,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       for (const [src, list] of Object.entries(bySource)) {
         html += `<div class="source-group"><h3 class="source-header">${esc(src)}:</h3>`;
+
+        list.sort((a, b) => {
+          const dateA = a.upstream_date || a.date;
+          const dateB = b.upstream_date || b.date;
+          if (dateA > dateB) return -1;
+          if (dateA < dateB) return 1;
+          return 0;
+        });
+
         list.forEach(item => {
           const prNumber = esc(item.pr.split('/').pop());
           let repoSlug = item.repo || REPO_MAP[src] || '';
