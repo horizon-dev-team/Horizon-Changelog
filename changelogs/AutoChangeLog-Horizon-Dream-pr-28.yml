@@ -1,0 +1,845 @@
+# PR: horizon-dev-team/Horizon-Dream/28
+/TG/Station:
+  97265:
+    repo: "tgstation/tgstation"
+    title: "Fixes stuff in the experimental cloner (obligatory bald alert)"
+    changes:
+      flleeppyy:
+        - bugfix: "the experimental cloner now actually can make you bald (if you're a human or ethereal)."
+        - bugfix: "the experimental cloner now spits flavor and policy text (if there is any) when spawning"
+  96945:
+    repo: "tgstation/tgstation"
+    title: "Replaces a bunch of is_species() checks for non-roundstart species with less hardcoded alternatives."
+    changes:
+      Ghommie:
+        - balance: "The boulder processing machinery can maim any (incapacitated/dead) mob with the mineral biotype, not just golems."
+        - code_imp: "some quirky interactions with specific (non-roundstart) species have been de-hardcoded. An example: peanut butter gets those with abductor brains high rather than just those with the abductor species. Report any oddity with that (the refactor, not the peanut butter...)."
+  96956:
+    repo: "tgstation/tgstation"
+    title: "More is_species() conversion to less hardcoded checks."
+    changes:
+      Ghommie:
+        - balance: "Bees are now friendly to any plant-like creature for that matter."
+        - balance: "Cats will now also follow laser pointers, not just felinids."
+  97204:
+    repo: "tgstation/tgstation"
+    title: "Refactors blessing into an element/trait combo rather than an object"
+    changes:
+      SmArtKar:
+        - code_imp: "Refactored blessing into an element/trait combo rather than an object"
+  97306:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Felinids are no longer TOO dumb"
+    changes:
+      Ghommie:
+        - bugfix: "Felinids (and nightmares) can once again use more complex objects, unlike monkeys."
+  97290:
+    repo: "tgstation/tgstation"
+    title: "Slightly better bounty list UI"
+    changes:
+      JohnFulpWillard:
+        - spellcheck: "Cargo bounty list printout now has a slightly better UI."
+  97259:
+    repo: "tgstation/tgstation"
+    title: "Goliaths and Tendrils can be punched using your normal punches"
+    changes:
+      necromanceranne:
+        - tweak: "You can punch a goliath to death. This isn't recommended. But if you are committed enough, you are welcome to do so."
+  97205:
+    repo: "tgstation/tgstation"
+    title: "Adds winter coats into loadout. Yes, department too"
+    changes:
+      Aliceee2ch:
+        - tweak: "Winter coats were added into loadout."
+        - spellcheck: "Capitalizes some of the other suits in loadout menu."
+  97297:
+    repo: "tgstation/tgstation"
+    title: "Fix AI Holopads leaking unknown languages via runechat"
+    changes:
+      PapaMichae1:
+        - bugfix: "AI Holopads no longer leak unknown languages in runechat"
+  97198:
+    repo: "tgstation/tgstation"
+    title: "Multiple generic polish updates for the Mulebot."
+    changes:
+      ArcaneMusic:
+        - tweak: "Tweaked the TGUi on the mulebot in order to read the name of the loaded item more easily."
+        - tweak: "The Mulebot now has more visual feedback when items are being loaded onto them."
+        - sound: "Mulebots now have sound effects when loading and unloading."
+  97289:
+    repo: "tgstation/tgstation"
+    title: "Add spawn text overlay for players at roundstart or latejoin"
+    changes:
+      timothymtorres:
+        - rscadd: "Add spawn text overlay when a player spawns. (excludes observers)"
+  97301:
+    repo: "tgstation/tgstation"
+    title: "To far away -> Too far away"
+    changes:
+      MelokG000:
+        - spellcheck: "\"too\" far away"
+  97280:
+    repo: "tgstation/tgstation"
+    title: "Ensure law module updates get put in silicon log as well"
+    changes:
+      MrMelbert:
+        - admin: "Law text is in silicon log again"
+  97288:
+    repo: "tgstation/tgstation"
+    title: "Adds Character and Job Specific chat highlights"
+    changes:
+      PapaMichae1:
+        - rscadd: "You can now make text highlights only apply for specific characters or specific jobs"
+  97268:
+    repo: "tgstation/tgstation"
+    title: "fixes the lobby countdown not starting properly"
+    changes:
+      Phantastic-Swan:
+        - code_imp: "Made it so the round start timer starts precisely at the value specified in configs"
+  97168:
+    repo: "tgstation/tgstation"
+    title: "Fix some personalities getting moodlets for themselves"
+    changes:
+      MrMelbert:
+        - bugfix: "Some personalities like Empathetic or Misanthropic no longer react to their own mood changing"
+  97279:
+    repo: "tgstation/tgstation"
+    title: "[Kilostation] Remaps atmos and some general engineering touchup"
+    changes:
+      MrMelbert:
+        - map: "[Kilo] Remapped Atmospherics entirely"
+        - map: "[Kilo] Touched up Engineering (re-arranged some equipment, tables, piping, decals, signage, etc.)"
+  97300:
+    repo: "tgstation/tgstation"
+    title: "Censors Commendations from the public logs"
+    changes:
+      PapaMichae1:
+        - rscdel: "Removed commendations from public logs. Your admirer is now truly anonymous"
+  97292:
+    repo: "tgstation/tgstation"
+    title: "Bitrunner domain names are no longer hidden by upgrades"
+    changes:
+      MrMelbert:
+        - tweak: "Bitrunner domain names are no longer hidden until you upgrade the server stock parts. Distantly unaffordable domains still have their names hidden."
+  97278:
+    repo: "tgstation/tgstation"
+    title: "Attempt at a small bit of paper sanity"
+    changes:
+      QuiteLiterallyAnything:
+        - bugfix: "Clicking on a piece of paper with a folder no longer forces you to read that paper."
+  97326:
+    repo: "tgstation/tgstation"
+    title: "Makes it so that EMP resistance is only tagged on EMP Resistant clothing."
+    changes:
+      ArcaneMusic:
+        - bugfix: "EMP resistance is only tagged when examined on actually EMP resistant clothing."
+  97258:
+    repo: "tgstation/tgstation"
+    title: "Malf AI hacked APCs take power from their terminals"
+    changes:
+      lelandkemble:
+        - balance: "Malf AI hacked APCs no longer fully drain their own cells, instead draining from the powernet"
+  97319:
+    repo: "tgstation/tgstation"
+    title: "Fixes soaps having same prices"
+    changes:
+      Aliceee2ch:
+        - bugfix: "Soaps have different price in cargo now."
+  97325:
+    repo: "tgstation/tgstation"
+    title: "Regeneration grammar fix"
+    changes:
+      MrMelbert:
+        - spellcheck: "Regeneration chat messages read better"
+  97327:
+    repo: "tgstation/tgstation"
+    title: "Fixes examine on stock blocks that have gone liquid."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Stock blocks now properly show their sale value after they've become liquid, and been examined."
+  96881:
+    repo: "tgstation/tgstation"
+    title: "Emote sounds are no longer hardcoded to species."
+    changes:
+      Ghommie:
+        - sound: "human (vocal) emote sounds are no longer dictated by the species directly, but the tongue of your spaceman. Having a lizard tongue will make you scream, laugh and death-gasp like a lizardperson, even if you are not. This may also give a few species emote sounds that hardly fit their themes... rather than have no sound at all."
+        - rscadd: "included a few preexisting emote sounds to subtypes like the robot voicebox and alien tongues."
+        - rscadd: "Wearing a monkey mask will change the sound of screams to monkey screeches."
+        - rscadd: "Wearing a pair of kitty ears will let you perform cat emotes."
+  97021:
+    repo: "tgstation/tgstation"
+    title: "Lizards/Moths/Ethereals can now be zombies"
+    changes:
+      MrMelbert:
+        - rscadd: "Zombie is no longer a distinct \"species\" (except High-Functioning Zombie on Halloween), meaning Lizards, Moths, and Ethereals can now become Zombies and will keep (some/most of) their identifying features"
+        - rscadd: "Impure Krokodil also no longer changes your species, now just making you a zombie husk with none of the \"upsides\""
+        - rscadd: "Zombies are now husks mechanically, which ultimately shouldn't change much"
+        - rscdel: "Androids and other undead creatures can no longer become zombies from Romerol (previously, only Golems, Skeletons, and Plasmamen were immune to it)"
+        - code_imp: "Refactored butchering, report any weirdness in amount and type of meat gained"
+  96700:
+    repo: "tgstation/tgstation"
+    title: "storage diagnostics + persistence"
+    changes:
+      hry-gh:
+        - tweak: "added chat messages when your chat storage has been reset"
+        - bugfix: "if you've not been playing for awhile and came back, your chat storage may have been reset. this should no longer happen"
+  97296:
+    repo: "tgstation/tgstation"
+    title: "MULEs don't run people over if buckled, pulled, or thrown (i.e., only via their own movement)"
+    changes:
+      MrMelbert:
+        - bugfix: "MULEs don't run people over if buckled, pulled, or thrown"
+  97329:
+    repo: "tgstation/tgstation"
+    title: "Fixes the title of the Disabler SMG goody pack."
+    changes:
+      ArcaneMusic:
+        - spellcheck: "fixed typo on the disabler SMG goody from the console."
+  97331:
+    repo: "tgstation/tgstation"
+    title: "Fix for weapon recharger completion message spam with PDAs"
+    changes:
+      QuiteLiterallyAnything:
+        - tweak: "Microwaves now emphasize that they lack power if PDA charging is attempted with an empty microwave cell."
+        - bugfix: "Rechargers no longer spam the \"finished charging\" message when done charging PDAs."
+  97022:
+    repo: "tgstation/tgstation"
+    title: "Bandaid on human mob biotypes."
+    changes:
+      Ghommie:
+        - bugfix: "Bonus biotypes from dna infusions shouldn't be lost on species change as long as you have enough infused organs."
+  97316:
+    repo: "tgstation/tgstation"
+    title: "Fixes some display issues with medical records"
+    changes:
+      PapaMichae1:
+        - bugfix: "Fixed some issues with medical records display in the PDA app and in paperwork"
+  97035:
+    repo: "tgstation/tgstation"
+    title: "Refactors ethereals to use limb statuses instead of species code"
+    changes:
+      SmArtKar:
+        - code_imp: "Refactored ethereals to use limb statuses instead of species code"
+  97208:
+    repo: "tgstation/tgstation"
+    title: "Stoats are now better at stealing things, and prioritize some important items like nuke disks, IDs and guns. Also refactors targetting behavior priority selection."
+    changes:
+      CabinetOnFire:
+        - rscadd: "Stoats are now better thieves, and know whats funniest to steal"
+        - code_imp: "Targetting behaviors now allow for a priority strategy to determine what the best thing to target is from a list of candidates."
+  97248:
+    repo: "tgstation/tgstation"
+    title: "Tweaks AI stun on core law removal"
+    changes:
+      MrMelbert:
+        - balance: "In addition to being stunned, AIs are blocked from using certain machines like APCs and turrets for a period after their core laws are changed (or if their rack is destroyed or leaves the z-level)."
+  97283:
+    repo: "tgstation/tgstation"
+    title: "Ion law giberish numbers are back"
+    changes:
+      MrMelbert:
+        - tweak: "Ion laws have gibberish numbers again"
+        - rscdel: "AIs can no longer have two laws with the exact same text."
+  97348:
+    repo: "tgstation/tgstation"
+    title: "Private orders are now using component and come inside of their own crate, instead of specific one."
+    changes:
+      Aliceee2ch:
+        - code_imp: "Refactored private orders to use component and spawn respective crates, instead of specific one. This should fix potential issues, e.g where order is tied to custom crate (like stasis crate turtles!!!)"
+  97336:
+    repo: "tgstation/tgstation"
+    title: "Lowers the escape menu sounds"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Lowered the sounds coming from the escape menu."
+  97351:
+    repo: "tgstation/tgstation"
+    title: "Fix VV interpreting non-assoc lists as bitfield lists"
+    changes:
+      TealSeer:
+        - bugfix: "fixed VV panel erroneously displaying certain lists as full of bitfields"
+  96982:
+    repo: "tgstation/tgstation"
+    title: "Add Ark Escape Shuttle"
+    changes:
+      timothymtorres:
+        - rscadd: "Add Ark Escape Shuttle that can be unlocked when the station's DNA vault goal is achieved."
+        - map: "Add Ark Escape Shuttle that can be unlocked when the station's DNA vault goal is achieved."
+  97324:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Fixes robotic ethereal surgery"
+    changes:
+      QuiteLiterallyAnything:
+        - bugfix: "Surgery on robotic ethereal limbs is no longer broken by multitool charge checking."
+  97346:
+    repo: "tgstation/tgstation"
+    title: "Beepsky fixes"
+    changes:
+      PapaMichae1:
+        - bugfix: "Beepsky won't try to arrest everyone ever after having been punched one time"
+        - bugfix: "Beepsky properly assigns threat level again"
+  97334:
+    repo: "tgstation/tgstation"
+    title: "Fixing infinite z move loop"
+    changes:
+      FalloutFalcon:
+        - code_imp: "Fixes infinite loop caused by zmoving while having a looped chain of grabbed mobs"
+  97356:
+    repo: "tgstation/tgstation"
+    title: "X-ray vision lets you look through the floor vertically"
+    changes:
+      MrMelbert:
+        - rscadd: "X-ray vision lets you look vertically through the floor or ceiling on multi-z maps"
+  97253:
+    repo: "tgstation/tgstation"
+    title: "Fixes color matrixed clothing items not showing as colored on_mob"
+    changes:
+      xPokee:
+        - bugfix: "Recoloring clothing items via 'Edit Color as Matrix' will now properly reflect when the clothing item is worn."
+  97342:
+    repo: "tgstation/tgstation"
+    title: "Fix R&D console showing empty elements for unprintable designs"
+    changes:
+      TealSeer:
+        - bugfix: "fixed R&D console showing extraneous fields for unprintable designs"
+  97341:
+    repo: "tgstation/tgstation"
+    title: "fix: correct filter handling on the Big Manipulator"
+    changes:
+      mcbalaam:
+        - bugfix: "Big Manipulator now correctly respects filters"
+  97370:
+    repo: "tgstation/tgstation"
+    title: "Walls now remember what griders were used to make them."
+    changes:
+      YesterdaysPromise:
+        - bugfix: "Walls now remember what kind of grider was used to build them to return to upon deconstruction."
+  97374:
+    repo: "tgstation/tgstation"
+    title: "Give the shifting fragments blob a taste"
+    changes:
+      levels0:
+        - spellcheck: "shifting fragments now tastes like egg yolk"
+  97368:
+    repo: "tgstation/tgstation"
+    title: "Remove lie about reflective blob"
+    changes:
+      levels0:
+        - spellcheck: "removed the lies about reflective blob being weaker than strong blob"
+  97337:
+    repo: "tgstation/tgstation"
+    title: "Fixes unique ai so it does not choose the default lawset when config is set to specified"
+    changes:
+      Odairu:
+        - bugfix: "Unique AI properly removes law weight for default laws on the specified lawset config option"
+  97202:
+    repo: "tgstation/tgstation"
+    title: "Enables the option for an AI to pick the hue of its hologram"
+    changes:
+      Odairu:
+        - rscadd: "AIs can pick the color of their hologram."
+        - bugfix: "holo ray on holograms no longer shows twice"
+  97354:
+    repo: "tgstation/tgstation"
+    title: "Fix pillow smothering"
+    changes:
+      TealSeer:
+        - bugfix: "fixed trying to pillow smother someone in a grab pushing them away instead"
+  97367:
+    repo: "tgstation/tgstation"
+    title: "Fixes moving mob holders more than is necessary"
+    changes:
+      lelandkemble:
+        - bugfix: "Dropping or throwing a bug will no longer say that it uncurled several times"
+  97365:
+    repo: "tgstation/tgstation"
+    title: "Slimepeople blushing works"
+    changes:
+      lelandkemble:
+        - bugfix: "Slimepeople blushing shows an overlay now"
+  97362:
+    repo: "tgstation/tgstation"
+    title: "Fixes two bugs in the lua signal helpers"
+    changes:
+      Seefaaa:
+        - bugfix: "SS13.unregister_signal now actually detaches a signal's callback once its last handler has been removed."
+        - bugfix: "HandlerGroup.register_once now fires only once, instead of on every send of the signal."
+  97375:
+    repo: "tgstation/tgstation"
+    title: "Fixes a 4yr old projectile goof"
+    changes:
+      Tsar-Salat:
+        - bugfix: "manually aimed emitters now fire where you clicked instead of snapping to the direction they face"
+        - bugfix: "fixes a 4 year old projectile code bug that mirrored the angle across the diagonal"
+  97323:
+    repo: "tgstation/tgstation"
+    title: "Fixes lobstrocities doing nothing"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed lobstrocities doing nothing"
+  97376:
+    repo: "tgstation/tgstation"
+    title: "Moves SM healing diode to experimental tools"
+    changes:
+      Wisemonster:
+        - balance: "The electrodistruptive diode disk has been moved from energy manipulation research to experimental tools research"
+  97358:
+    repo: "tgstation/tgstation"
+    title: "Pyrophobia and Pyromania quirks"
+    changes:
+      MrMelbert:
+        - rscadd: "\"Pyromania\", a 6 point positive quirk that gives you resistance to damage from overheating (not direct fire damage) and positive moodlets from nearby flames."
+        - rscadd: "\"Pyrophobia\", a 3 point negative quirk that gives you a phobia triggered by nearby flames (and god forbid you catch on fire yourself)"
+  97277:
+    repo: "tgstation/tgstation"
+    title: "A Plastic World: Lavaland Edition remake"
+    changes:
+      nPocToDark:
+        - rscadd: "Added a lavaland volcano and lavanald fungal colony to Rapid Decoration Device"
+  97343:
+    repo: "tgstation/tgstation"
+    title: "Adjust mob spawn and respawn rates on Lavaland"
+    changes:
+      Jacquerel:
+        - balance: "Mobs spawning on Lavaland should be further spaced apart"
+        - balance: "Lavaland mobs are no longer guaranteed to respawn during a spawn, so the map will refill more gradually"
+  97383:
+    repo: "tgstation/tgstation"
+    title: "Adds mirror for BYOND downloads by CI"
+    changes:
+      FalloutFalcon:
+        - code_imp: "Adds mirror to download byond versions for CLI"
+  97381:
+    repo: "tgstation/tgstation"
+    title: "Optimize /mob/living/carbon/human/check_breath() by ~41%"
+    changes:
+      Metekillot:
+        - code_imp: "Thanks to cutting edge technological advances, check_breath() calculations have been optimized by approximately 41% ( using alist() instead of list() )"
+  97379:
+    repo: "tgstation/tgstation"
+    title: "Removes portable from portable dispenser name"
+    changes:
+      Wisemonster:
+        - spellcheck: "Removed \"portable\" from the portable chem dispenser board (it was just a normal dispensor anyways)"
+  97256:
+    repo: "tgstation/tgstation"
+    title: "Birdboat will stop trying to foie gras themselves off this mortal coil"
+    changes:
+      vinylspiders:
+        - bugfix: "birdboat will no longer try to eat everything in sight at all times, in exchange their range for noticing food has been increased..."
+  97186:
+    repo: "tgstation/tgstation"
+    title: "Rewrites dynamic lighting lumcount to use spatial-grid based requests"
+    changes:
+      SmArtKar:
+        - code_imp: "Rewrote dynamic lighting lumcount to use spatial-grid based requests"
+  96725:
+    repo: "tgstation/tgstation"
+    title: "verb serialization, tgui command bar and admin verb panel (gmod style) (pr 2/3)"
+    changes:
+      hry-gh:
+        - code_imp: "the backend for verbs has been changed ... again, please report any issues on the bug tracker"
+        - tweak: "the command bar is now a bit prettier, and also autocompletes things like typepaths and mob targets (primarily useful for admins)"
+  97393:
+    repo: "tgstation/tgstation"
+    title: "Cargo can rip manifests off of locked crates"
+    changes:
+      PapaMichae1:
+        - bugfix: "You are now able to rip manifests off of all locked cargo crates"
+  97407:
+    repo: "tgstation/tgstation"
+    title: "fixes tgui say (among others) [no gbp]"
+    changes:
+      hry-gh:
+        - bugfix: "fixes tgui say, among other things, not working"
+  97396:
+    repo: "tgstation/tgstation"
+    title: "Fixes chasms, god bless 80 less runtimes per deathmatch train game"
+    changes:
+      Gboster-0:
+        - code_imp: "fixed chasms ignoring lattices on top of them in some scenario's, creating a lot of runtimes"
+  97389:
+    repo: "tgstation/tgstation"
+    title: "Setting a crate's access no longer repeatedy appends the new authority to the description"
+    changes:
+      lelandkemble:
+        - bugfix: "Resetting a crate's access no longer repeatedly appends the new authority to the description"
+  97391:
+    repo: "tgstation/tgstation"
+    title: "The charging relic power properly charges items"
+    changes:
+      lelandkemble:
+        - bugfix: "The relic power that charges items charges items"
+  97332:
+    repo: "tgstation/tgstation"
+    title: "Voltaic heart no longer grants full emp immunity (but is still emp immune)"
+    changes:
+      MrMelbert:
+        - rscdel: "Voltaic heart no longer grants EMP immunity, though is still EMP immune itself."
+        - rscdel: "Voltaic heart no longer deletes itself if you remove it, though it is still otherwise rendered unusable."
+  97402:
+    repo: "tgstation/tgstation"
+    title: "Converts Changelog to tsx"
+    changes:
+      JohnFulpWillard:
+        - code_imp: "Converted Changelog to typescript."
+  97364:
+    repo: "tgstation/tgstation"
+    title: "Fixes core temperature adjusting faster than body temperature"
+    changes:
+      lessthnthree:
+        - bugfix: "Players on Icebox should now take cold damage when naked outside"
+  96820:
+    repo: "tgstation/tgstation"
+    title: "Replace text  circuit component"
+    changes:
+      Ghommie:
+        - rscadd: "Added a replace text circuit component."
+  97335:
+    repo: "tgstation/tgstation"
+    title: "Remove double cost of blob zombie for Distributed Neurons"
+    changes:
+      levels0:
+        - bugfix: "distributed neurons blob zombies no longer cost twice as much as they should"
+  97404:
+    repo: "tgstation/tgstation"
+    title: "Fixes legacy chat"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "Legacy chat's command bar works nicely again."
+  97411:
+    repo: "tgstation/tgstation"
+    title: "Gluon grenades have been broken for so long I don't know if fixing them is even a good idea, but this fixes gluon grenades"
+    changes:
+      lelandkemble:
+        - bugfix: "Gluon frag grenades now output radiation, like they've been trying and failing to do for at least 4 years."
+  97419:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Fixes paper being unreadable and other light-based interactions being broken"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed paper being unreadable and other light-based interactions being broken"
+  97408:
+    repo: "tgstation/tgstation"
+    title: "Fixes construction/deconstruction of tram controls"
+    changes:
+      lessthnthree:
+        - bugfix: "Tram controls now work properly after deconstruction/reconstruction"
+        - bugfix: "Tram control circuitboards now remember their tram ID, change it with a multitool"
+  97401:
+    repo: "tgstation/tgstation"
+    title: "Conveyor belts don't turn you around"
+    changes:
+      lelandkemble:
+        - balance: "Conveyor belts don't rotate you"
+  97309:
+    repo: "tgstation/tgstation"
+    title: "Cleans up the augury subsystem and fixes a gateway rod"
+    changes:
+      QuiteLiterallyAnything:
+        - bugfix: "The academy gateway's immovable rod will no longer constantly show itself to ghosts."
+        - code_imp: "The augury subsystem has been cleaned up."
+  97422:
+    repo: "tgstation/tgstation"
+    title: "Removes AI tracking beacon from Ripley subcategory (you cant beacon Ripley MK-1 anyways)"
+    changes:
+      Aliceee2ch:
+        - bugfix: "Removed AI tracking beacon from Ripley subcategory."
+  97435:
+    repo: "tgstation/tgstation"
+    title: "Use correct in-hand sprites for Runtime (the cat)"
+    changes:
+      PapaMichae1:
+        - bugfix: "Runtime no longer looks calico when held in-hand."
+  97427:
+    repo: "tgstation/tgstation"
+    title: "Updates OverFlayer with new planes and layers"
+    changes:
+      SmArtKar:
+        - bugfix: "OverFlayer should now correctly display weather related planes"
+  97177:
+    repo: "tgstation/tgstation"
+    title: "Adds a unit test for making sure crates and crate subtypes sell for the correct amount."
+    changes:
+      ArcaneMusic:
+        - code_imp: "We now unit test to confirm that crates, and crate subtypes sell for their expected value. Also checks for exports whose export_type is explicitly called out in excluded types."
+        - bugfix: "Coffins and various crate subtypes now sell again. For the first time in 4 years."
+  97361:
+    repo: "tgstation/tgstation"
+    title: "Fixes roundstart timers not working. Whoops."
+    changes:
+      Phantastic-Swan:
+        - bugfix: "Fixes round lobby timers not working at all."
+        - bugfix: "Fixes the lobby time not being precise when joining a freshly started, empty server"
+  97415:
+    repo: "tgstation/tgstation"
+    title: "Shiny bullets"
+    changes:
+      ArrisFairburne:
+        - image: "most ballistics bullets have a flashy look to them, which aids readability"
+  97399:
+    repo: "tgstation/tgstation"
+    title: "Makes Drone Laws and flavortext settable by server config"
+    changes:
+      PapaMichae1:
+        - config: "Maintenance Drone laws and flavortext can be modified by the server config"
+  97406:
+    repo: "tgstation/tgstation"
+    title: "PKA cooldown upgrades now no longer care about what order they're provided in."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Cooldown modkits and AOE modkits now work as intended. Cooldowns make the gun shoot faster, and AOE modkits will make the gun slightly slower, regardless of the order they're installed in."
+  97388:
+    repo: "tgstation/tgstation"
+    title: "Fix black broth recipe"
+    changes:
+      Fabian272:
+        - bugfix: "Black broth no longer requires ice to make."
+  97416:
+    repo: "tgstation/tgstation"
+    title: "Combines Enriched LE and LE (while keeping current behavior), also small botany refactor"
+    changes:
+      MrMelbert:
+        - rscdel: "Deleted \"Enriched Liquid Electricity\". It's now just \"Liquid Electricity\", though it can still be enriched to shock people. Ethereal blood is still un-enriched. Some recipes may still demand enriched Liquid Electricity."
+        - rscadd: "Botany plants producing Liquid Electricity now produce un-enriched Liquid Electricity unless the plant has Electrical Activity."
+        - rscadd: "Jupiter Cups now have Electrical Activity by default, in order to produce enriched Liquid Electricity."
+        - code_imp: "Refactored the way botany plants set up their reagents. Report any oddities, particularly with traits that activate on harvest (like auto-distilling composition), their tastes, or with special reagents (like blood or vitamins)."
+  97418:
+    repo: "tgstation/tgstation"
+    title: "fixes classic hotkeys in input bar, command history [no gbp]"
+    changes:
+      hry-gh:
+        - bugfix: "classic hotkey mode will work when focused on the input bar"
+        - bugfix: "you can navigate recently input commands with ctrl+up/down again"
+        - bugfix: "pressing space in the input autocompletes to the next shared verb name prefix"
+  97437:
+    repo: "tgstation/tgstation"
+    title: "pAI health is now on a health HUD"
+    changes:
+      JohnFulpWillard:
+        - tweak: "pAIs now have a health hud instead of it being tucked away in the stat panel."
+        - bugfix: "Health HUDs exact HP % text now update as you heal/injure."
+  97438:
+    repo: "tgstation/tgstation"
+    title: "Borg materials now updates all materials"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "Borg sheet numbers now updates properly between items sharing the same material type."
+  97439:
+    repo: "tgstation/tgstation"
+    title: "You can use food items in place of organs for organ manipulation"
+    changes:
+      MrMelbert:
+        - rscadd: "You can use food items in place of some organs for \"organ manipulation\"...It won't work, but y'know, you can do it"
+        - tweak: "Organ manipulation will cancel mid operation if it suddenly becomes invalid, rather than allow it to continue"
+  97442:
+    repo: "tgstation/tgstation"
+    title: "Fixes private orders (goodies)"
+    changes:
+      Aliceee2ch:
+        - bugfix: "Fixed private orders (goodies)."
+  97344:
+    repo: "tgstation/tgstation"
+    title: "Misc fixes"
+    changes:
+      Gboster-0:
+        - bugfix: "if a headset starts with a 2nd key in it, it will have that key inside of itself instead of in nullspace (this has no gameplay effect)"
+  97377:
+    repo: "tgstation/tgstation"
+    title: "Adds define check for bloodworms, prevents bloodworms from being hypnod by lazarus injectors"
+    changes:
+      Wisemonster:
+        - bugfix: "Antag Bloodworms can't be hypno'd with lazarus injectors"
+        - code_imp: "Added a IS_BLOODWORM check"
+  97452:
+    repo: "tgstation/tgstation"
+    title: "Borgs can unlock themselves through examine text"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Borgs can now unlock their cover in their self-examine text."
+  97443:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Enter key closes job-highlight popup"
+    changes:
+      PapaMichae1:
+        - bugfix: "The enter key now closes the job text-highlight field"
+  97449:
+    repo: "tgstation/tgstation"
+    title: "Unifies \"Transform into other mob\" procs into one"
+    changes:
+      lelandkemble:
+        - code_imp: "Some primarily admin-only procs that transform a mob into another mob are now all doing the same thing."
+  97453:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Fix spawn text appearing over HUD"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix spawn text appearing over HUD. Move spawn text to the top left of the screen"
+  97451:
+    repo: "tgstation/tgstation"
+    title: "Gizmos pulsed by assemblies give feedback"
+    changes:
+      MrMelbert:
+        - tweak: "Gizmos pulsed by assembies give feedback sounds"
+        - tweak: "Gizmo feedback alerts are shown to all nearby mobs, rather than just the pulser"
+  97459:
+    repo: "tgstation/tgstation"
+    title: "Adds more holopads to Kilostation"
+    changes:
+      lelandkemble:
+        - map: "Added several holopads to Kilostation"
+  97456:
+    repo: "tgstation/tgstation"
+    title: "Removes Xenomorph stat panel entry"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Alien larva's 'Evolve' button now says when it's ready, rather than being in the stat panel."
+  97162:
+    repo: "tgstation/tgstation"
+    title: "Cuffed items in anchored objects now tether you to the object"
+    changes:
+      MrMelbert:
+        - bugfix: "If a cuffed item enters an anchored object like a closet, the cuffee become stuck to the anchored object, rather than the anchored object being stuck to the cuffee."
+        - bugfix: "You can no longer put cuffed objects in any object manually (i.e. by clicking on it). This affects objects like grinders, deep fryers, and soup pots."
+        - tweak: "Cuffed item examine text is now shown in examine, rather than double-examine"
+        - balance: "Any mob can attempt to remove someone's cuffed item, rather than just the cuffee. However it takes double the amount of time for non-cuffees."
+  97350:
+    repo: "tgstation/tgstation"
+    title: "Reduces crusher trophy crafting costs, makes them smaller and holdable by webbings, reduces icewing trophy backstep"
+    changes:
+      SmArtKar:
+        - balance: "Crusher trophies are now small and can be stowed in explorer webbings"
+        - balance: "Crusher trophies are slightly cheaper to craft"
+        - balance: "Icewing trophy backstep distance reduced from 2 to 1 to be less disorienting"
+  97465:
+    repo: "tgstation/tgstation"
+    title: "Fixes wall signs saying you're changing them when someone else does in-hand"
+    changes:
+      siliconOpossum:
+        - bugfix: "Wall signs will no longer say you're changing them when someone else is"
+  97424:
+    repo: "tgstation/tgstation"
+    title: "Dropdown for Medical Records bloodtype field"
+    changes:
+      Aliceee2ch:
+        - tweak: "Medical Records console now uses dropdowns for blood type field instead of manual typing"
+  97473:
+    repo: "tgstation/tgstation"
+    title: "[i ded] revenant vulnerability effects have high processing priority"
+    changes:
+      Y0SH1M4S73R:
+        - bugfix: "revenants should far less frequently be rendered vulnerable for far longer than they should be"
+  97469:
+    repo: "tgstation/tgstation"
+    title: "Fixes hearing radio TTS while unconscious"
+    changes:
+      PapaMichae1:
+        - bugfix: "You no longer hear radio TTS while unconscious"
+  97462:
+    repo: "tgstation/tgstation"
+    title: "Adds an examine hint for vents clogged by the vent clog event telling you to use a plunger"
+    changes:
+      lelandkemble:
+        - tweak: "Added an examine hint on clogged vents that tells you about using a plunger on it"
+  97461:
+    repo: "tgstation/tgstation"
+    title: "Fixes esword duping with general beepsky"
+    changes:
+      lelandkemble:
+        - bugfix: "General Beepsky no longer provides an extra free esword when destroyed"
+  97457:
+    repo: "tgstation/tgstation"
+    title: "Slime HUD (+ sound decrease)"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Decreased the volume of slime footsteps."
+        - tweak: "Slimes now have new HUD entries from the information that was previously in the stat panel."
+  97467:
+    repo: "tgstation/tgstation"
+    title: "Golem foods now provide different nutrients based on the type of ore. Golem hunger buffs."
+    changes:
+      ArcaneMusic:
+        - balance: "Golems now have slightly less aggressive metabolism."
+        - bugfix: "Golem foods now offer different levels of nutrition! Finally!"
+        - balance: "Golems now offer more nutrition from rarer ores."
+        - balance: "Golems now get further additional nutrition from eating processed ore sheets instead of raw ore."
+        - map: "The free golem ship now has shutters to block wildlife from attacking while inside."
+  97223:
+    repo: "tgstation/tgstation"
+    title: "Dear SSresearch, I hate you. (refactors SSresearch)"
+    changes:
+      mrmanlikesbt:
+        - code_imp: "Techweb and design code has been refactored."
+        - bugfix: "Fixed anomaly cores not granting research points in the destructive analyzer."
+  96986:
+    repo: "tgstation/tgstation"
+    title: "Adds a new virus symptom level that requires wittel"
+    changes:
+      Fghj240:
+        - rscadd: "Added a new virus chem, Exotic Agar, that gives you level 9 symptoms"
+        - balance: "Reorganized virus symptoms among 9 levels instead of 8."
+        - balance: "The dizziness virus symptom has higher stats and slightly shorter status effect duration"
+        - balance: "aggressive healing is now cured by spaceacillin like every other healing symptom"
+        - rscadd: "Added a new symptom, Hypertension. Unlike regular hypertension, this one causes blood vessels to violently rupture all across your body."
+        - rscadd: "Added a new symptom, Mutated Regeneration. It heals you."
+        - code_imp: "improved code around suppressing virology symptom fluff text"
+  97486:
+    repo: "tgstation/tgstation"
+    title: "Weakpoints no longer spawn invisible, adjusts the number of weakpoints that spawn naturally."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Weakpoints, and weakpoints spawned by weakpoints being detonated, should no longer be spawning invisible."
+        - balance: "The number of weakpoints that spawn on regular maps has increased from 3 to 5."
+        - balance: "The number of weakpoints that spawn on the \"Structural Weaknesses\" station trait now spawns 6 to 12, instead of 4 to 8 weakpoints."
+  97492:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] fixes mechfabs"
+    changes:
+      mrmanlikesbt:
+        - bugfix: "Fixed exosuit fabricators"
+  97487:
+    repo: "tgstation/tgstation"
+    title: "makes an icon validation proc work again 18 months later, and cleans up the fallout from it"
+    changes:
+      Tsar-Salat:
+        - bugfix: "fixed a screaming icon stacktrace proc designed to scream, not screaming."
+        - bugfix: "stumps continue to not render, as they should, as opposed to not rendering because their rendering was broken"
+  97488:
+    repo: "tgstation/tgstation"
+    title: "Makes ant mob plural as intended"
+    changes:
+      FalloutFalcon:
+        - bugfix: "Ants and shade mobs are plural is seemingly intended"
+  97485:
+    repo: "tgstation/tgstation"
+    title: "Re-adds webmap to esc menu"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "The Escape menu has Webmap URLs again."
+  97475:
+    repo: "tgstation/tgstation"
+    title: "Fix helmets being flammable when armor is not"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix helmets being flammable when armor is not"
+  97458:
+    repo: "tgstation/tgstation"
+    title: "Adds foodtypes to COMSIG_LIVING_EAT_FOOD and refactors flesh heretic's tier 2 passive a lil"
+    changes:
+      RusselNotSCP:
+        - bugfix: "Flesh heretics now benefit from eating the organs of non-meaty victims, such as fish and podpeople."
+  97423:
+    repo: "tgstation/tgstation"
+    title: "Optimizes /datum/gas_mixture/proc/archive() by ~42%"
+    changes:
+      SmArtKar:
+        - code_imp: "Optimized /datum/gas_mixture/proc/archive() by ~42%"
+  97493:
+    repo: "tgstation/tgstation"
+    title: "Glass equalization; All forms of glass can now make tiles, floors, and directional windows. + Runed metal."
+    changes:
+      YesterdaysPromise:
+        - rscadd: "Plastitatnanium glass now makes pod directional windows, regular pod windows, plastitaniumglass windowfilling which shall allow you to make such on a grille, and its own plastitanium glass tiles."
+        - rscadd: "Titanium glass now makes unique directional windows, and its own titanium glass tiles."
+        - rscadd: "Bronze tiles can now be reskinned into bronze glass tiles."
+        - rscadd: "Runed metal can now make directional windows and fulltile windows, and its tiles can be reskinned into runed glass tiles."
