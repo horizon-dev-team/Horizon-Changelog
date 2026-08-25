@@ -5849,5 +5849,1480 @@
         "text": "Runed metal can now make directional windows and fulltile windows, and its tiles can be reskinned into runed glass tiles."
       }
     ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97275",
+    "title": "Saline-Glucose solution loses its blood replacement power over time",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nSaline-Glucose Solution is a complete replacement for blood transfusions in most situations, & in situations where it cannot fully outdo blood transfusion it does more work than blood does.\r\n\r\nSaline-Glucose Solution currently uses 5x its volume as blood throughout its lifetime, causing it to work as 250 units of blood upon a full injection, most of which (~200) is replaced with real blood over the course of its metabolization. This means that for anyone suffering from bloodloss that's taken less than about half of their blood(i.e. almost every single blood loss patient), saline works as the one-stop-shop to bring them back up, permanently. The worst-case-scenario for anyone who hasn't been sucked dry by a worm is having to come back for more saline. Even wormed patients can be half-healed by just saline.\r\n\r\nThe proposed solution:\r\nSaline-Glucose Solution applies a status effect that tracks its blood replacement effectiveness. Over the course of ~3 1/2 minutes after entering the bloodstream, the status effect dwindles down the replacement effect of the reagent from 1:5 to 1:1. This effect then, after the reagent has left the patient's bloodstream, ticks back up for another ~3 1/2 minutes, after which saline will be at full effectiveness again.\r\n\r\nSaline-Glucose Solution's fault(or, rather, its toe-stepping strength) is that it functions as a full replacement for literally half of someone's blood for long enough that they will (mostly) recover on their own before it leaves their system. This solution means that it still serves as a temporary replacement, but will fairly quickly weaken & become just a blood regeneration chemical, at which point it can't be topped up again until the problem's actually solved. \r\n\r\nIt remains good as a blood regeneration chemical, and it remains good as a temporary patch, and it remains good as a permanent fix to minor blood loss. What it loses is a permanent cure to severe blood loss, which it never should have had in the first place. Blood should be the only quick and permanent way to solve severe blood loss.\r\n\r\n## Why It's Good For The Game\r\n\r\nI can't remember the last round I actually needed to use a blood bag that wasn't a blood worm round. Saline is better blood than blood, and the problem isn't _just_ that you get five thousand units of it. \r\nAnd blood is better as a gameplay system than saline. You can poison blood bags, you can steal them, you can get blood donations, you can do many things with blood. None of these things you can do with five clicks at the chem dispenser.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Saline-Glucose Solution's blood replacement effect loses effectiveness over time."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97464",
+    "title": "Returns General Beepsky's guaranteed projectile blocking",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nRemoves the 50% chance for General Beepsky not to block projectiles.\r\n\r\n## Why It's Good For The Game\r\n\r\nIts guaranteed projectile blocking was removed in #95783, adding the 50% chance which was previously not present. This was not documented, and the creator stated they added it believing it was already the case. \r\nAnd it's just not that powerful if you just laser it, certainly not four eswords powerful.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "General Beepsky has regained its 100% projectile block chance"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "96631",
+    "title": "Supports AIs being placed on Lift Platforms",
+    "author": "san7890",
+    "body": "## About The Pull Request\r\n\r\nFixes #96630\r\n\r\nLatejoin AIs will no longer brick on CatwalkStation as Catwalk has a feature where AIs are placed on the lift. This works fine for roundstart AIs, but not for latejoin variants. Just a weird gap in coverage that's nice to have addressed now.\r\n## Why It's Good For The Game\r\n\r\nMakes map features work as intended while still preserving the intent of the code.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Latejoining as an AI on CatwalkStation should now work."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97500",
+    "title": "Fixes description and threshold mismatch in heal.dm",
+    "author": "Momiko",
+    "body": "## About The Pull Request\r\n\r\nIt looks like there is a mismatch between the description strings and the actual threshold values in the code for the heal symptom (**8** vs **9**, and **7** vs **6**), or vice versa. \r\n\r\n`\"Resistance 8\"` vs `if(our_disease.totalResistance() >= 9)`\r\n`\"Stage Speed 7\"` vs `if(our_disease.totalStageSpeed() >= 6)`\r\n\r\nThis PR simply updates the description strings to accurately match the mechanical thresholds (`9` and `6`).\r\n\r\n## Why It's Good For The Game\r\n\r\nPrevents confusion for anyone reading the symptom details. It was probably just a minor oversight while balancing things out.",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Fixed incorrect threshold numbers in the heal symptom descriptions to match their actual stats."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97472",
+    "title": "Function-ifying the stray pod event",
+    "author": "ArrisFairburne",
+    "body": "## About The Pull Request\r\n\r\nDivides the code for the stray pod event into discrete functions (ex. function for making the pod, function for setting a target location, function for sending the pod in, etc.)\r\n\r\n## Why It's Good For The Game\r\n\r\nI think the code looks cleaner when divided by this; instead of having all the nitty-gritty stuff in start(), that proc only has the broad scope steps.\r\n\r\nThis also creates opportunity to reuse this event's code for other purposes (ex. if I wanted to have a variation of the supplypod event that sent in something other than cargo/syndie supply packs).",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Stray cargo pod event now has its code divided up into smaller functions, so it should be easier to create new subtypes of this event"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97511",
+    "title": "Fixes ghosts triggering AI motion-sensitive cameras",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\nTitle\r\nCloses https://github.com/tgstation/tgstation/issues/94481",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ghosts no longer trigger the AI's motion-sensitive camera alerts"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97517",
+    "title": "Fixes destructive analyzer not working",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTitle\r\n\r\n## Why It's Good For The Game\r\n\r\nCloses https://github.com/tgstation/tgstation/issues/97514",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Destructive Analyzer properly unlocks research nodes again"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97512",
+    "title": "Fix biogenerator UI icons being broken",
+    "author": "TealSeer",
+    "body": "## About The Pull Request\r\n\r\nCan't use `path` for the icon it needs to be `asset_id`\r\n\r\n## Why It's Good For The Game\r\n\r\n<img width=\"726\" height=\"568\" alt=\"image\" src=\"https://github.com/user-attachments/assets/44d457c8-5918-42c3-a876-3ebc8e81bc2b\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed icons in the biogenerator UI being broken"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97508",
+    "title": "Ashen Eyes description fix",
+    "author": "Maximal08",
+    "body": "## About The Pull Request\r\nRemoves the focus reference from Ashen Eyes.\r\n## Why It's Good For The Game\r\n\r\nAshen Eyes description no longer states that they are a focus (they are not anymore)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ashen Eyes description no longer states that they are a focus"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97483",
+    "title": "Add \"Death Mimicry\" Quirk",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nAdds a new positive quirk - Death Mimicry (16 points)\r\n\r\n<img width=\"460\" height=\"95\" alt=\"WkBaVlbAav\" src=\"https://github.com/user-attachments/assets/601b94ca-1685-4b03-8c64-24be70371b48\" />\r\n\r\nWhen a player with this quirk uses the death gasp emote, they are granted `TRAIT_FAKEDEATH` and become unconscious for 30 seconds. For the duration, anyone examining the character will see them as deceased.\r\n\r\n## Why It's Good For The Game\r\nWe currently have a shortage of unique positive quirks compared to negative ones, and Death Mimicry adds a fun survival option to the roster.\r\n\r\nFeigning death via deathgasp is a common SS13 tactic, but it almost always fails because taking a quick glance reveals you're still alive. This quirk allows players to pull off the trick for a brief window of time. (If you are actually in crit, involuntary gasps will still give you away) It also adds uncertainty around changeling fake death revivals, as crew can no longer assume a reviving body is a changeling. The steep cost ensures it remains a rare sight on the station rather than something every crewmember takes. It introduces a fun layer of paranoia to combat, as aggressors can easily counter the trick by waiting out the short timer, checking vitals with medical equipment, or simply double-tapping their target.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Add \"Death Mimicry\" positive quirk. Performing a death gasp knocks you unconscious and tricks anyone examining you into believing you've succumbed to your injuries for a short time."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97247",
+    "title": "You can't starve positive viruses and satiety doesn't affect your immune system.",
+    "author": "Fghj240",
+    "body": "## About The Pull Request\r\n\r\nGood viruses go down to stage 1 when you starve but don't go away unless you take spaceacillin. Also, satiety was removed from disease recovery calculations altogether.\r\n\r\nRequired reading: [The Ecology of Game Systems and Virology](https://hackmd.io/@Higgin/HJljdBuNp)\r\n\r\n## Why It's Good For The Game\r\n\r\nThe logic behind behind good viruses going away if you didn't maintain them was that doing so would move the interaction of virologist to host from \"commensalic\" _(one player benefiting another player without getting anything in return)_ to \"mutualistic\" _(two players benefit each other)_. \r\n<img width=\"927\" height=\"192\" alt=\"Screenshot 2026-07-28 182755\" src=\"https://github.com/user-attachments/assets/60e4629a-8be5-4c19-8904-61b977bb8a59\" />\r\nIn my opinion, that change not only failed to accomplish its goal, but also severely nerfed positive virology as an _unintended side effect_. When a host maintains their positive virus by eating food and avoiding junk food, the virologist doesn't benefit at all. Eating isn't a multiplayer interaction to begin with, and while I do think virology should require some effort on the part of the host to counter the fact that it's so easy to get a positive virus half the time you don't even need to do anything, fully curing and subsequently _granting full immunity to_ a positive virus is not the reasonable outcome of eating some junk food or just not paying attention to your hunger for a while. Having the virus temporarily stop healing is a much softer outcome that doesn't put a constant (albeit lenient) time pressure on the host to fill their stomach.\r\n\r\nSecondly, satiety is a very obscure mechanic that simply has no place in deciding if players live or die (unless you're rolling random heart attacks, because nobody cares about dying to a random heart attack). Expecting players to be well fed with high satiety at any specific time (because you can't reasonably predict when a virus outbreak will happen) is only possible with a competent chef, which means all you've done is added a second point of failure to the \"waiting-on-the-other-side-of-a-table-for-someone-else-to-finish-their-minigame-before-I-die\" problem. Also I don't think most players understand how junk food works or how it affects viruses, so it just widens the knowledge check of self curing. This isn't really a problem in actual rounds because most rounds have food in the kitchen and caramel doesn't count as junk food, but it's still worth removing.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "viruses with a positive severity can't be lost by starving"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "satiety has no effect on natural disease recovery"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97515",
+    "title": "Puts a guide explaining Carnivorous Blood in the Carnivorous Blood box",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nPuts a guide explaining how carnivorous blood works in the carnivorous blood kit\r\n\r\n## Why It's Good For The Game\r\n\r\n<img width=\"149\" height=\"34\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b2855d5d-c09b-45c2-a8c8-f27b06032d9b\" />",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Put a guide explaining Carnivorous Blood in the Carnivorous Blood kit"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97519",
+    "title": "Adds (relatively limited) character height preference",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n\r\n<img width=\"468\" height=\"176\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f64852f5-d283-4265-ac9e-bd70509a4ed2\" />\r\n\r\nPlayers can select between Short, Average (Normal), and Tall - the three heights indicated in green\r\nOther heights are included for reference:\r\n\r\n- Settlers are still given Shortest height (second height from the left)\r\n- Spacers are still given the choice between Taller and Tallest heights (second and first from the right)\r\n- Dwarfism is also included for reference (first height from the left)\r\n\r\nSettlers and Spacers don't have access to the preference (they are locked Shortest or Taller/Tallest)\r\n\r\n## Why It's Good For The Game\r\n\r\nIt's a very small detail but I find it adds a lot to the way you see other characters - For instance people will regularly call out Spacers are \"freakin' huge\" and annoy Settlers over being \"tiny as heck\". \r\nQuirks are a fun way of handing out height changes but there's always been a demand for people to have access to alternate heights without the drastic gameplay changes of quirks (and also to less of an extent).",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds height preference, allowing you to pick between \"Short\", \"Average\", or \"Tall\". This doesn't override the height of Settlers or Spacers."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes height resetting to average from dna swapping shenanigans like transformation sting."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97494",
+    "title": "Fixes a Pride ruin bug involving latticed chasms",
+    "author": "QuiteLiterallyAnything",
+    "body": "## About The Pull Request\r\nFixes #97221 \r\n\r\nAs per the linked issue, Pride's Mirror currently causes those standing on lattices to suffer a normal chasm. This (as indicated by putting a `stack_trace()` before [line 193 of 'code/datums/components/chasm.dm'](https://github.com/tgstation/tgstation/blob/870d29dd56c356bdbfb9353c2009ad5312cd02a3/code/datums/components/chasm.dm#L193)) is caused by `ChangeTurf()` leading to a call of `RemoveLattice()` before the new chasm can have its target set to space.\r\n\r\nTo fix this, I have made the space chasms their own type (so that they _always_ lead to space) and added a check for the possibility of `ChangeTurf()` dropping someone.\r\n## Why It's Good For The Game\r\n<details><summary>This fixes a bug. Also:</summary>\r\n\r\n<img width=\"200\" height=\"180\" alt=\"Falling_Down_to_Space\" src=\"https://github.com/user-attachments/assets/c5a4eaf5-f9cc-446e-a35f-15ccced81b51\" />\r\n\r\n</details>",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Pride ruin will no longer cause those standing on latticed chasms to fall down normal chasms."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97506",
+    "title": "Fix sink mop interaction and make pouring in sink available",
+    "author": "thegrb93",
+    "body": "## About The Pull Request\r\nFixed up the code in https://github.com/tgstation/tgstation/pull/97266\r\nFixes mop interaction with sink. Lets right clicking sink drain the mop/beakers/glasses\r\n\r\nI don't know if there are certain reagent containers that shouldn't be pourable aside from lidded beakers, but we can pretend you delidded and relidded the beaker I guess.\r\n## Why It's Good For The Game\r\nPretty sure even ss14 has this feature",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Right clicking sink with beaker in hand drains it"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes mop interaction with sink"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97460",
+    "title": "There are 🪱 in my 🍎 (adds a chance for apples to have a worm)",
+    "author": "MelokG000",
+    "body": "## About The Pull Request\r\nadds a chance for an apple to have a worm inside (dependant on tray's pest level) (skyrockets to 80% if grown on wormy soil)\r\n## Why It's Good For The Game\r\n~~worms like apples~~\r\na way to get worms without lavaland or cargo (also a funny interaction)",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Sometimes there is a worm inside an apple."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97474",
+    "title": "Removes Bloodworm's stat panel entry",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nBloodworm's stat panel entry lists the HP of the worm, how much growth they have, and how much blood they have consumed\r\n\r\nMaturity has been moved to the action button pretty 1:1 to https://github.com/tgstation/tgstation/pull/97456 - However this already had feedback if you tried to use the button anyways so this is just a compliment to that\r\n\r\n<img width=\"737\" height=\"631\" alt=\"image\" src=\"https://github.com/user-attachments/assets/aa2f6f9e-ba8d-4514-bfea-69c588fb91bc\" />\r\n\r\n\r\nThe rest has been moved to a status alert that Bloodworms have listing information when you hover over it. I considered putting it in their antag panel but from discussion, antag panel was something we wished to avoid to not obfuscate the information.\r\n\r\n<img width=\"211\" height=\"189\" alt=\"image\" src=\"https://github.com/user-attachments/assets/e04da68b-21c3-4fc5-ba81-d818bed2efea\" />\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nPrimarily for https://hackmd.io/443_dE5lRWeEAp9bjGcKYw?view\r\nWe're 3 mobs away from being done with stat panel entries and although I've never played blood worm before, I think this is a fine alternative.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Deleted Bloodworm's stat panel entry and instead moved it to their action button & a new screen alert."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97498",
+    "title": "Fixes Dynamic ignoring `min_antag_cap` and `max_antag_cap` for midrounds",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nThe code was explicitly throwing away `min_antag_cap` and `max_antag_cap` for midrounds , but some rulesets (Mass Traitors and Mass Changelings) use them. ~~I'm not sure why they were thrown away at all and someone smarter than me should probably chime in on why this is the case before this is merged.~~\r\n\r\nAlso the config tags for Mass Traitors and Mass Changelings were typoed, that's already been fixed on the real config.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The server should obey the config's `min_antag_cap` and `max_antag_cap` for midround rulesets now."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97480",
+    "title": "Slimepeople can squeeze through grilles and similar",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nSlime people can walk into grilles to attempt to \"squeeze\" through them\r\n\r\nSqueezing through a grille allows you to walk through them as if they weren't there (and you can even walk to contiguous grilles) \r\n\r\nSqueezing into a grille drops all equipment you're wearing that can't also travel through a grille\r\n\r\nYou can only squeeze through grilles if all of your organs and bodyparts are jelly and non-robotic\r\n\r\n## Why It's Good For The Game\r\n\r\nFunny idea for a species mechanic submitted by coding general.\r\n\r\nNot exactly gamebreaking, since you could just as easily break the grille, but it's a little bit of fun",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Slimepeople can squeeze through grilles and similar, allowing them to walk through them (though they can't carry augments or equipment along with them)."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97491",
+    "title": "Fixes two ways that damaging things with DEL_ON_DEATH would runtime",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nApplying brute damage to what could be a basic mob could delete it, so doing that damage should be the last thing affecting that mob in any given proc, when possible. This pr reorders the `table_smash` component & the `saw_bleed` status effect to deal their damages last. These are just the two I'm currently aware of, but I'm not going to validate every call of `adjust_brute_loss()` & `apply_damage()`, so if you're aware of any other places this would happen, please speak up.\r\n\r\n## Why It's Good For The Game\r\n\r\n<img width=\"707\" height=\"92\" alt=\"image\" src=\"https://github.com/user-attachments/assets/19aa3b55-1353-46bb-ae60-83406fbb35ee\" />\r\n\r\n& an inevitable runtime in `table_smash`.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed two ways damaging basic mobs that disappear when they die could cause a runtime error"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97497",
+    "title": "Fixes stacking holodisks & balloon alert when unstacking disks",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nCalls parent in holodisk `item_interaction()`, & doesn't balloon alert right before `qdel(src)`ing.\r\n\r\n## Why It's Good For The Game\r\n\r\nConvenience and runtime",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "you can stack disks on holodisks"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97510",
+    "title": "Abstract type and optional keys for langauges",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nJust some code tweaks/improvments i saw could be made.\r\n\r\n<img width=\"716\" height=\"599\" alt=\"image\" src=\"https://github.com/user-attachments/assets/41832869-f43c-41e1-8629-2cacaab86d5b\" />\r\n\r\n## Why It's Good For The Game\r\nMostly just downstream support tbh but the fact that it was using key to determine if its an abstract type is bad when abstract_type is right there. Some other minor cleanup like just changing that for loop to a typecast as anything loop because we instantly type cast it blindly anyway.\r\nIn theory allows us to unset the key of a language we dont really intend to need a key. (like anything that might force your speech to it or something)",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Adds support for a key of a language to be unset"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97541",
+    "title": "Fixes async blinking forcing an eye shut forever",
+    "author": "tontyGH",
+    "body": "## About The Pull Request\r\n\r\nCloses #97540\r\nFixes #93654\r\n\r\nIt seems like doing 2 `animate(time = 0)` in a row breaks looping animations completely for reasons that I don't quite understand.\r\n\r\n<details>\r\n<summary>Demonstration of fix working</summary>\r\n\r\nhttps://github.com/user-attachments/assets/a141307d-43fe-4701-98ca-92d89ef43d39\r\n\r\n</details>\r\n\r\n## Alien Specimen\r\n\r\n<img width=\"2048\" height=\"1843\" alt=\"image\" src=\"https://github.com/user-attachments/assets/02bd990d-6a96-434e-8b7f-4010b1dc24f4\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Lizards and brain-damaged animals no longer suffer from unintended spontaneous aneurysms"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97466",
+    "title": "Fixes Filterrific bluescreening when creating a color filter",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nEditing a newly created color filter would bluescreen Filterrific as it would not have any matrix values set, which would cause an error as undefined cannot be stringified by our number inputs",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed Filterrific bluescreening when creating a color filter"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97537",
+    "title": "Fixes the Acrobatics skillchip not overheating you like it should",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\n`temperature_over_time` got cleared on its first tick",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Using shady skillchips to flip really fast is dangerous to your body's temperature"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97536",
+    "title": "Fixes mirrors giving you bad luck with each hit, rather only when broken",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nBeen broken for at least a year",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed mirrors giving you bad luck with each hit, rather only when broken"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97539",
+    "title": "Prevents the destruction of clown shoes by loadouts",
+    "author": "QuiteLiterallyAnything",
+    "body": "## About The Pull Request\r\nCloses #90202\r\n\r\nThis PR prevents the destruction of clown shoes by character loadout shoes. To this end, any loadout shoes chosen by clowns start in their backpack instead.\r\n## Why It's Good For The Game\r\nClown shoes are important for clowns.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Clown shoes are no longer destroyed by character loadouts."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97484",
+    "title": "[No GBP] Actually nuke getcomponent from revenant prison stuff for real",
+    "author": "levels0",
+    "body": "## About The Pull Request\r\n#97392 but again and better (I think)\r\n## Why It's Good For The Game\r\nFixing my bad code before making more",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "when ectoplasm residue is dispersed in hand, revenant gets sucked into a mirror at the same range as when thrown"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97523",
+    "title": "Chat Highlight sounds!",
+    "author": "RichardBlonski",
+    "body": "## About The Pull Request\r\n\r\nThis Pull Request expends upon the **Chat Highlight** feature, adding sounds into it!\r\n<img width=\"1154\" height=\"310\" alt=\"image\" src=\"https://github.com/user-attachments/assets/6ba19cb9-571e-4252-aa2c-9df831733724\" />\r\n\r\nThis includes a toggle button, volume slider, and a list of sounds you can pick from.\r\nThis is **off by default.**\r\n\r\n## Why It's Good For The Game\r\nThis is an accessibility feature, which is **very crucial** quality of life feature for any type of text-based roleplay game.\r\nThis will allow for the players which enable it to get a sound when their highlights are triggered, which should help with the mass amounts of text we get in Space Station 13 along with a bit of customization such as volume slider and a couple of sounds to pick from.\r\n\r\nDesign wise, I've decided to make all of it be inside the **Text Highlights** panel for customization reasons, if for some reason you want to have different sounds for different highlight settting groups you can do it - **the top one is always prioritized sound wise**\r\n\r\nWhat about **spamming?** To avoid spamming I've added a hard-coded 3 second cooldown between each sound, this should be enough to tweak the options if the sounds are bothering the user.\r\n\r\nAlso it's very easy to add new sounds into the list by just editing `tgui/packages/tgui-panel/settings/TextHighlight.tsx`\r\n```tsx\r\nconst HIGHLIGHT_SOUND_OPTIONS = [\r\n  { label: 'Beep', value: 'sound/misc/highlight_sounds/Beep.ogg' },\r\n  { label: 'Pillow Hit', value: 'sound/items/pillow/pillow_hit.ogg' },\r\n  { label: 'Coin Flip', value: 'sound/items/coinflip.ogg' },\r\n  { label: 'Pen Click', value: 'sound/items/pen_click.ogg' },\r\n  { label: 'Rattling Keys', value: 'sound/items/rattling_keys.ogg' },\r\n  { label: 'Honk!', value: 'sound/items/bikehorn.ogg' },\r\n];\r\n```\r\nIn addition, this PR uses `/datum/tgui_panel` in `code/modules/tgui_panel/audio.dm` in order to load the custom sound file `sound/misc/highlight_sounds/Beep.ogg`, byond will throw errors towards the client if they try to play a sound which is not mentioned in any `.dm` file.\r\n\r\n## Video/Testing\r\n\r\n\r\nhttps://github.com/user-attachments/assets/1c1f6a4a-48fc-404e-8212-c6f7dfd86099",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Chat Highlight sounds."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "You can now enable chat highlight sounds."
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "added `sound/misc/highlight_sounds/Beep.ogg`"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97543",
+    "title": "Add droplet sound to dropper",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nUses an already existing sound and gives it to the dropper whenever reagents are transferred.\r\n\r\n## Why It's Good For The Game\r\nIt sounds smooth.",
+    "changes": [
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Add droplet sound to dropper"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97547",
+    "title": "Fixes unequipping jet boots while in-flight leaving you in a permanently flying buggy state",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTitle",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Unequipping jet boots while flying now puts you back on the ground instead of bugging you out"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97524",
+    "title": "Puts showers and destructive scanners on more sensible layers",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\nTitle\r\n\r\n## Why It's Good For The Game\r\nBefore:\r\n<img width=\"624\" height=\"415\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b2a2ea22-3180-4859-9092-dd977a39f59e\" />\r\n\r\nAfter:\r\n<img width=\"618\" height=\"411\" alt=\"image\" src=\"https://github.com/user-attachments/assets/e90663b9-6dd8-4c05-8d9c-f8013324783c\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Showers and destructive scanners now render on their proper layers"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97241",
+    "title": "Floors and Walls PR re-take. 77 new floors, 8 new walls.",
+    "author": "YesterdaysPromise",
+    "body": "<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->\r\n<!-- You can view Contributing.MD for a detailed description of the pull request process. -->\r\n\r\n## About The Pull Request\r\n\r\nA re-take on the floor [PR,](https://github.com/tgstation/tgstation/pull/97031) as was requested. Should be much cleaner now. Also made some sprite adjustments and added a couple as a bonus. Might be adding more, depending how long this PR takes to roll out.\r\n\r\nGot all the stuff in one picture for your viewing pleasure, if you consider it so;\r\n<img width=\"1064\" height=\"2592\" alt=\"EVIL\" src=\"https://github.com/user-attachments/assets/f0ddc4c5-b1a3-4806-b8f6-e38fd9f9c56a\" />\r\n<img width=\"590\" height=\"594\" alt=\"uugh\" src=\"https://github.com/user-attachments/assets/c1bceebb-d76a-468a-b36f-ca01387de770\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nReason stays the same, so, I opted to just copy it over.\r\nA lot of it is for mappers. A lot by personal requests of random people. A lot from my twisted mind. I think if you spend an effort to get a rare resource the least you should get from it is some mildly cool and unique floors and walls. Turfs make up the base of the game, after all.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Following floors have recieved tiled variants: silver, gold, diamond, plasma, uranium, bananium."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Silver and gold tiles recieved additional variants representing moon and sun respectively."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Following materials now make unique floors: bones (8 variants), plasteel (6 variants), sandstone (4 variants), bluespace crystal (3 variants), telecrystal (3 variants), adamantium (2 variants), metal hydrogen (2 variants), hauntium (2 variants), runite, myhtril."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Following materials now make unique wallls, including fake walls: bones, adamantine, runite, metal hydrogen, hauntium, mythril."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Following materials now make unique carpets: goliath hide, bear skin, polar bear skin, carp scales, lizard scales, moth fur, human skin."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Sandstone recieved a wall filling making two additional wall types."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Wood tiles recieved light and dark variants for all of their subtypes (8 variants added)."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Meat tiles exist properly now and recieved a fresh variant, matching with variants of bone tiles."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Fake basalt tiles recieved a fake sand, red sand and moon sand variants, all of which you can rake! Using the rake made from wood, already in game."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "\"Recharge floor\" recieved variants to match up with other styles of iron flooring; white, dark and smooth."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Bamboo tiles recieved a variant that's just bamboo, not a mat.."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added neo tiles. Grab 4 iron floor tiles and some  oil, radium and phosphorous from chem to craft them. (4 variants)"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added silver-gold tiles. Grab a sheet of silver and gold each to craft them. (4 variants)"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added ashen forge tiles. Grab a sheet of plastitanium, a plenty of ash and some phosphorous from chem to craft them. (2 variants)"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added stained glass tiles. Grab 40 glass tiles, 20 iron rods, and a crayon (mime's and rainbow excluded) to craft them. (8 types)"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Plastic tiles recieved a 'puzzles' variant for that kitschy kids pen aesthetic you'd expect out of plastic, and have inhands now instead of showing 'missing texture'."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "96373",
+    "title": "Centralizes wing behavior to a single type",
+    "author": "Tsar-Salat",
+    "body": "## About The Pull Request\r\n\r\n\r\n\r\nThis PR removes a level of nesting from ``/obj/item/organ/wings/functional`` and merges the current ``/obj/item/organ/wings`` into it, and simplifies the hierarchy whilst doing so.\r\n\r\nWing flight behavior is no longer based off of typecheck conditionals, instead we use two vars:\r\n### ``flight_level``\r\nto indicate how well the wings can perform(how much they need handholding conditions before working) \r\n1 = Flightless, needs moth conditions to fly w/ atmosphere and zero grav. No action button added.\r\n2 = Airworthy, all current flighty wings. These need air environment to fly. This level and above have a toggle actionbutton\r\n3= Magic, new level that indicates a wing has no air or gravity requirements. You can practically fly anywhere. No wings currently use this state. Likely may have use with future techy wings, or bussing players by changing their flight_level.\r\n\r\n### ``has_open_sprite`` \r\na simple bool variable that prevents snowflaky sprite accessory wings like moth wings from hallucinating that they can ``open_wings()`` if their flight_level is changed. This one isn't elegant and I don't like it, but it saves us a headache.\r\n## Why It's Good For The Game\r\n\r\nI made this PR because TG's current wingcode irritated me while trying to port relevant changes to downstream. My intention here is to alleviate some pain for downstreams and whatever existing wings they have, simply by setting variables.\r\n\r\nCurrently, all of wing behavior is spread across ``/obj/item/organ/wings``, and its two child types ``/obj/item/organ/wings/moth`` and ``/obj/item/organ/wings/functional``.\r\n\r\nThe parent type has only 30 lines of code it, denoting wings that are entirely superficial and aesthetic, and its child type functional is where all the actual flying behavior is. Moth subtype is a bizarre mixture of the two that is only usable in lowgrav but has no open sprites.\r\n\r\nThis is... really dumb. \r\n\r\nWe don't even have any wings that are \"pure aesthetic\" anymore... not even moth wings. All of our regular wings *do* have open sprites and *do* function as flying. \r\nWhen I say it this way, doesn't it feel like ``/obj/item/organ/wings`` is a deprecated parent and we can just dump a nest in favor of moving all behavior to /obj/item/organ/wings/functional, then simplify the pathing to ``/obj/item/organ/wings``? \r\n\r\nI feel like thats reasonable as opposed to running all wing organ code checking off of some convoluted ``istype(ecksdee, /obj/item/organ/wings/functional)`` nonsense.\r\n\r\n---\r\n\r\nThis should make wing handling much easier both on the code side as well as for ingame debugging.\r\n\r\nTheoretically, any of our current wings can be upgraded or downgraded in flight level with the var edit. I've added a update and setter proc for wings that handles the new variable so it shouldn't get messed up even with gameadmin shenanigans.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "refactored wing code significantly. Any wing organ is capable of any level of flight now (as set by a var). Kindly indicate any inexplicable changes to wings should they occur ingame."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97363",
+    "title": "Department Specific Shuttles",
+    "author": "Glamyrio",
+    "body": "## About The Pull Request\r\nNow cap can buy department shuttles, if one of departments has majority of employees. \r\nYeah, every department got their shuttle, that include wibe of department, made by me.\r\nMaybe come up with better names for them.\r\nOptimized BuyingShuttle UI file, so now its looks cleaner. So Department Shuttles slots in communications console looks like that:\r\n\r\n<img width=\"379\" height=\"134\" alt=\"deptshuttle\" src=\"https://github.com/user-attachments/assets/20d213ce-1eb4-4255-8198-3b10debaaef2\" />\r\n\r\n\r\n<details>\r\n  <summary>Shuttles</summary>\r\n\r\n<img width=\"544\" height=\"1056\" alt=\"StrongDMM-2026-08-07 00 51 15\" src=\"https://github.com/user-attachments/assets/9785ac2b-470e-4b95-8c3c-8b6479cd9fbb\" />\r\ncommand shuttle\r\n\r\n\r\n<img width=\"480\" height=\"864\" alt=\"StrongDMM-2026-08-09 20 02 58\" src=\"https://github.com/user-attachments/assets/e1e89437-8e77-44ca-b992-ba33e7365c92\" />\r\nassistant shuttle\r\n\r\n\r\n<img width=\"736\" height=\"736\" alt=\"StrongDMM-2026-08-05 21 05 29\" src=\"https://github.com/user-attachments/assets/08fb40df-a8ea-41cb-8797-572c472cabf4\" /> engineering shuttle\r\n\r\n\r\n<img width=\"448\" height=\"704\" alt=\"StrongDMM-2026-08-10 23 48 32\" src=\"https://github.com/user-attachments/assets/8b67d359-a8e9-4792-a4d7-b81413c138e1\" />\r\nmedical shuttle\r\n\r\n\r\n<img width=\"800\" height=\"864\" alt=\"StrongDMM-2026-08-10 14 34 45\" src=\"https://github.com/user-attachments/assets/fe80e3f7-0fd7-46b7-af87-24509f4cb45f\" /> science shuttle\r\n\r\n\r\n<img width=\"576\" height=\"832\" alt=\"StrongDMM-2026-08-08 16 38 20\" src=\"https://github.com/user-attachments/assets/97dc9bb8-b3ef-418f-95bd-e9d9c63dfa37\" />\r\nsecurity shuttle\r\n\r\n\r\n \r\n<img width=\"480\" height=\"896\" alt=\"StrongDMM-2026-08-04 21 44 47\" src=\"https://github.com/user-attachments/assets/39a022a2-810d-4eb4-870e-bb42f597ab9e\" />\r\nservice shuttle\r\n\r\n\r\n<img width=\"416\" height=\"832\" alt=\"StrongDMM-2026-08-11 20 01 29\" src=\"https://github.com/user-attachments/assets/c9620774-3936-4434-b23a-27b87ea52d67\" />\r\n cargo shuttle (rocket launcher is unloaded tbh, don't even try to load it.)\r\n\r\n \r\n \r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nMore shuttles that can be purchased using unique mechanics is cool. Maybe some of them will be used frequently and some of them no. They has that what doesn't has other shuttle. Yeah i know abt sm shuttle and bar shuttle but them are more specific ones.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Department Specific Shuttles! If you captain and one of departments has most employees, you can buy that in communication console."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Improved the BuyingShuttle UI File."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97522",
+    "title": "In game chem recipe browser now has recursive wiki-like popups",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Left clicking sub-recipes in the recipe browser no longer pins the recipe\r\n- Right clicking sub-recipes in the recipe browser no longer puts text in the search bar\r\n\r\n- Hovering the a sub-recipe shows the sub-recipe in the tooltip\r\n- You can move your mouse over the sub-recipe tooltip to hover over sub-sub-recipes, as far as your hearts content\r\n\r\n<img width=\"611\" height=\"374\" alt=\"image\" src=\"https://github.com/user-attachments/assets/fb259ab7-b4a9-4f38-85cd-9186ea52c99a\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nMore convenient than having to constantly change the search bar",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Chem dispenser: Left clicking sub-recipes in the recipe browser no longer pins the recipe"
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Chem dispenser: Right clicking sub-recipes in the recipe browser no longer puts the recipe in the search bar"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Chem dispenser: Hovering over sub-recipes shows the sub-recipe in the tooltip itself"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Chem dispenser: You can move your mouse over sub-recipe tooltips to view sub-sub-recipes (like how the wiki works)"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Chem dispenser: Sodium Chloride recipe is now shown in the recipe browser. In case you somehow forget it like me, despite the name literally being the recipe to make it"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "96887",
+    "title": "Changes to the Spawner Component and Wave Defense (V2.0)",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\nThis is a remake of #93731, just with some extra cleanup and following the completion of the mob aggression rework. There may still be some work left to be done with mobs fucking off or mismanaging this aggression (I'm looking at you, legions, you cowardly pieces of shit) but with the current work on behavior trees I'm not very concerned.\r\n\r\nSo: to recap the changes from the parent PR (Feel free to read the linked PR above as well for more in-depth look, too):\r\n\r\nThe spawner component works as it did before. However, there are now two modes that the spawner component can operate as: \r\n* Basic spawning, where something is given the component and will keep spawning an mob of X type(s) until the component is removed.\r\n* Wave based spawning, where the spawner will spawn x mobs until they're defeated, after which the spawner will spawn another set of mobs, y number of times in discreet waves.\r\n    * The number of waves are broadcast from the spawner until fully completed.\r\n    * Spawners can now also vary the types of mobs that are spawned in a given wave, so you're not just dealing with an ore vent spawning 7 legions and carpet bombing you to death.\r\n\r\nSpawners can now also set a dedicated temp-visual effect when a new mob is spawned, resulting in there being more visual clarity when something is happening around the spawner.\r\n\r\nAdditionally for this PR, mobs spawned via spawner will have a mild visual effect pointing out that they're relevant to the wave defense, with a small arrow above the mob.\r\n<img width=\"282\" height=\"352\" alt=\"image\" src=\"https://github.com/user-attachments/assets/103e5437-8d64-40b8-81e4-784df70596da\" />\r\n\r\nSpawners no longer spawn mobs in walls, the quantity of waves per ore vent has been adjusted to compensate for the additional mob variety when fighting vents, did some file reorganizing, \r\n\r\n## Why It's Good For The Game\r\n\r\nI'll be a little bit less lazy for this section: Mob wave defense has needed a bit of a second pass ever since it's first iteration and this touches on a number of easy fixes and design tweaks that should improve the activity overall.\r\n\r\n* For starters, no mobs spawning in walls. Probably should have atomized that out the first time but I got swept up in the other adjacent work.\r\n* The time based version of wave defense has this issue where the waves are either easy enough that they add an non-insignificant amount of down time for what should be a rather involved defense activity. By moving to discreet waves of mobs as compared to set intervals of mobs spawning, we can avoid instances where you're halfway done killing wave 1 when wave 2 spawners, overrunning the player very quickly and either leading to a cheap death, or forcing the player(s) to flee and regroup, while still needing to clear twice as many mobs as usual for a single wave, assuming that the drone doesn't live long enough that a third wave can spawn, too.\r\n* Improvements to the clarity of which mobs are important to target by the spawner component can help in situations where prioritizing outside threats to the vent can occur. Was that goliath spawned from the vent? Or did it wander into the battleground because a wall broke open and now there's mixed threats?\r\n* With the new improvements to mob aggression, in addition to the new pipeline for mob behavior trees in the works, the mob behavior tired to mining mobs is a lot more dynamic right now, making the pairing of any two lavaland mobs to be a much more engaging fight than it was sitting at when I made the first revision of this PR.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "The way Lavaland Ore Vents spawn mobs have been completely reworked."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Lavaland ore vents spawn mobs in discrete waves that need to be fully defeated before you can continue."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Lavaland vents now give a small visual indicator of where mobs are spawning before they arrive."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Mobs spawned from ore vents now have a visual indicator above their head to indicate if the mob must be defeated to complete the wave."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Vents now spawn 5/10/15 waves of mobs, consisting of 2 mob types each, while still scaling to the size of the vent for difficulty. The mining point rewards upon wave defense completion has been adjusted accordingly."
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Node drones no longer have progress lights, as the wave progress is now directly shown to the player as they complete waves."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Vent waves no longer spawn mobs straight into walls."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97561",
+    "title": "Fixes door remotes & light replacers in melee + unit tests",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nGives door remotes `NOBLUDGEON`, which is both a no brainer and also fixes not being able to use them in melee. \r\nAdditionally, adds a special exception in `/obj/machinery/light/item_interaction()` to allow light replacers to go to `interact_with_atom()` in melee. \r\nFinally, unit tests for the various functions of both described items.\r\n\r\n## Why It's Good For The Game\r\n\r\nfixes #97533\r\nfixes door remotes in melee",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "door remotes function in melee range"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "light replacers function in melee range"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97555",
+    "title": "Fix Fancy Weather prefrences not being respected",
+    "author": "RichardBlonski",
+    "body": "## About The Pull Request\r\nThis pull request should fix #97518 \r\n\r\nAnd fixes an issue in which the Fancy Weather preferences don't get respected when you change Z-levels or teleport around as a ghost.\r\n\r\nThis PR in short just added one extra check \r\n```dm\r\n\tif(!(src in SSweather.particle_planemasters))\r\n\t\treturn\r\n```\r\nWithin the `z_changed` proc, If the client/player is not in the Fancy weather list (people who have it enabled), then do an early return.\r\n\r\nThis should handle cases such as.. when the round starts, when you join a round, teleporting as a ghost, anything that might trigger a Z-level change.\r\n## Why It's Good For The Game\r\nBug Fix.\r\n\r\n### Screenshots/Videos\r\n<details>\r\n<summary=Click me>\r\n\r\n**Before**\r\n\r\nhttps://github.com/user-attachments/assets/43ad6dd4-1a1e-4565-9d4d-73647e763df1\r\n\r\n\r\n**After**\r\n\r\nhttps://github.com/user-attachments/assets/45d3e306-1715-4a22-8fae-a5f1238afe97\r\n\r\n</details>",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed Fancy Weather preference, not being applied upon Z-Level change."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97553",
+    "title": "Watchers and legions no longer keep facing the target when retreating",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nWatchers, legions, ice demons and basilisks now turn away from their target when retreating similarly to how they behaved pre-BT conversion.\r\n\r\n## Why It's Good For The Game\r\n\r\nThe way retreating is coded makes it functionally impossible to backstab any of aforementioned mobs due to them turning towards you even when not moving, making them (especially legions) significantly more difficult to deal with than intended when using proto-kinetic crushers. This should lower their difficulty back in line with pre-BT versions.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Watchers and legions no longer keep facing the target when retreating, allowing for backstabs"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97214",
+    "title": "Fix for node drone fleeing if theres more than one vent in its line of sight",
+    "author": "Iajret",
+    "body": "## About The Pull Request\r\nIf theres more than one vent in a range of 7 tiles from node drone, it will latch to everyo one of them in sequence and then fly away, failing wave defence before it even started. \r\n\r\nFixed by adding a check for target finding behaviour. Will only look for a target if `BB_CURRENT_HUNTING_TARGET` havent been set.\r\n## Why It's Good For The Game\r\nCan be quite annoying to encounter unwinnable vents.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "if theres more than one vent in line of sight between each other, node drone would not fly away failing wave defence instantly."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97468",
+    "title": "Triples the price of 2-4 random exports every 5 minutes",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nEvery SSeconomy fire (5 minutes) 2-4 random exports get their prices boosted to 3 times the normal amount, then return to normal the next fire as 2-4 new exports are picked.\r\n\r\n## Why It's Good For The Game\r\n\r\nIdea came from Arcane on discord, adds something for cargo players to do to spice their gameplay loop, experimenting with possible high value exports selling them off bit by bit rather than all at once to possibly hit a jackpot and get a bunch of cash by dumping them all while the price is high.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Every 5 minutes 2-4 random cargo exports get tripled in price, lets go gambling!"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97577",
+    "title": "Fixes cable-based robotic limb repairs when not wearing an uniform",
+    "author": "DeltaFire15",
+    "body": "## About The Pull Request\r\nTitle.\r\nCurrently, an istype in the proc that handles cable usage for repairing limbs & sensors using cables returns out early when not wearing a jumpsuit (or something not of that type), despite most of the proc not being affected by said condition. This corrects said check to only block the part of the proc it is supposed to block.\r\n## Why It's Good For The Game\r\nBugs getting fixed tends to be good for the game.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cable-based robotic limb repairs are no longer impossible while not wearing an uniform."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97529",
+    "title": "nukes typepath suggestions being handled by dm [no gbp]",
+    "author": "hry-gh",
+    "body": "## About The Pull Request\r\n\r\nCloses #97528\r\n\r\nthis was egregiously poor code that should have just been clientside to start with but i didnt notice we had this handy asset available\r\n\r\n## Why It's Good For The Game\r\n\r\nfix shitcode",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "typepath suggestions are now filtered on the frontend"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97584",
+    "title": "Ore vents now reset properly on loss",
+    "author": "sqnztb",
+    "body": "## About The Pull Request\r\n\r\nCurrently if you fail a vent tapping, you get stuck in limbo with the vent saying \"protect the node drone!\" even after it's gone and all the mobs are dead. swaps `wave_cooldown` is `COOLDOWN_DECLARE`'d so it needs `COOLDOWN_RESET` to actually zero the var, which is how the boss vent works.\r\n\r\n## Why It's Good For The Game\r\n\r\nbugs bad.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "ore vents now reset properly on losses."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97568",
+    "title": "Magboots prevent falling on shuttle movement",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nHaving `TRAIT_NEGATES_GRAVITY` on shuttle movement is equivalent to being buckled, so you won't fall over\r\n\r\n## Why It's Good For The Game\r\n\r\nThey're magboots, they keep you up",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Magboots (and similar forms of gravity negation) prevent you from falling on shuttle movement"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97479",
+    "title": "Small heretic updates",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Fixes space phase deducting a charge on entrance and edit, now only deducts a charge on exit\r\n- Cosmic recharge is expanded slightly to \"crit targets within a tile of a cosmic field\" (was \"crit targets on a cosmic field\")\r\n- Void recharge changed to \"Recharge spells by standing near freezing foes\", i.e., standing near crewmembers who have a bodytemperature of below -75c (easily achievable with void chill, but also via spacing rooms) (was \"crit targets who are freezing)\r\n\r\n## Why It's Good For The Game\r\n\r\nResponding to some feedback about the heretic changes\r\n- Bugfix\r\n- Critting someone on top of a field isn't the easiest since they block people, but critting someone who was blocked by a field makes sense and feels as fitting\r\n- Changes void to be less reliant on attacking random people",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes space phase deducting a charge on entrance and edit. Now only deducts a charge on exit"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Cosmic spell recharge condition changed to \"crit targets within a tile of a cosmic field\" instead of \"on a cosmic field\""
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Void spell recharge condition changed to \"Stand near freezing enemies\" instead of \"Crit freezing enemies\""
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97562",
+    "title": "De-hardcodes more job/antag related HUDs",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nSo you know how we got ``trim_icon`` (jobs) and ``hud_icon`` (antags) so they can have modular HUDs? Turns out this doesn't mean we've got modular icons, for ``sechud_icon_state`` is hardcoded to 1 file, and the Orbit Menu does not support having different files.\r\n\r\nThis hopes to fix these issues, and along the way I fixed antag icons not working on the Orbit menu\r\n\r\n<img width=\"710\" height=\"623\" alt=\"image\" src=\"https://github.com/user-attachments/assets/e843ec94-1580-426a-bb41-6c8ba78bd0dc\" />\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes antag HUDs not appearing in the orbit menu, makes HUDs more modular as we have already tried doing in the past.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Orbit menu should now show antag HUDs as it was seemingly supposed to from the start, instead of some antags simply showing a rev icon."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "De-hardcoded HUDs for jobs & antags, report any icons missing."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97505",
+    "title": "Fix for toxins research discounts",
+    "author": "QuiteLiterallyAnything",
+    "body": "## About The Pull Request\r\nFixes #97504\r\n\r\nThe bug seems to be caused by a singular missed `text2path()` call.\r\n## Why It's Good For The Game\r\nThis fixes a bug and makes research discounts purchasable again.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Research discounts from toxins can now be purchased again."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97538",
+    "title": "It's good to be the king: Captain gets a discount in all departments",
+    "author": "Metekillot",
+    "body": "## About The Pull Request\r\nThe Captain is treated as a member of every department for the sake of discounts.\r\n\r\nThe additional logic for this is associated to the trim on the current ID, rather than on their bank account's job information. I preferred this, so that acting captains would benefit from the unilateral discounting, and also because it seemed annoying to do it the other way.\r\n\r\n## Why It's Good For The Game\r\nIt lets the Captain get discounts everywhere like a boss.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The Captain is now treated as a member of every department, for the purpose of department-related vendor discounts."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "The logic for determining a discount has been cleaned up a bit."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97526",
+    "title": "the double ended chainsaw spear",
+    "author": "uaioy",
+    "body": "<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->\r\n<!-- You can view Contributing.MD for a detailed description of the pull request process. -->\r\n\r\n## About The Pull Request\r\nadds the double bladed chainsaw sword, it's a high-risk weapon that acts like a bootleg crafteable desword, and ITS AWESOME!!\r\n<img width=\"100\" height=\"103\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f9950aae-6e7a-401e-80e4-4b3a4fd17a2e\" />\r\nfor more details, it's a subtype of a chainsaw that has desword damage, less armor pen, gives slowdown, has a 50/50 of hitting you instead(along with 1 sec stun and 5 sec knockdown), no ranged block, %30 of breaking from any block attempt (including non-damaging ones).\r\nto craft it requires 1 beer, 4 rods, 2 chainsaws, 2 cable coil to craft and 2 sticky tape to craft\r\n\r\nvisual aid (ignore the weapon breaking from the gun that shouldn't happen anymore, also was dealing less damage)\r\n\r\nhttps://github.com/user-attachments/assets/35af6ad5-4eb6-4310-a68c-ba7fb2555d8b\r\n\r\n<!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->\r\n\r\n## Why It's Good For The Game\r\nMakeshift weapons rock and i think the game needs more. The pipegun used to kinda be that one 'dangerous makeshift gun' before, but now it doesn't have a chance to explode and even has higher damage, this weapon should fill that risk-taker role\r\n<!-- Argue for the merits of your changes and how they benefit the game, especially if they are controversial and/or far reaching. If you can't actually explain WHY what you are doing will improve the game, then it probably isn't good for the game in the first place. -->",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The double-ended chainsaw  spear"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97556",
+    "title": "Some species features now appear meshed over when wearing certain equipment (and assorted changes)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Features like moth wings and antenna and lizard tails now have a mesh effect applied when wearing certain equipment, like space suits, modsuits, biosuits, radsuits, firesuits, full body armor... so on\r\n\r\n<img width=\"411\" height=\"269\" alt=\"image\" src=\"https://github.com/user-attachments/assets/e8cb443e-7f29-4edf-882d-1ed54ea28065\" />\r\n\r\n*Some of the colorations have been tweaked since taking this picture.*\r\n\r\nThis does not affect felinid tails or ears, or lizard frills or horns - they are still hidden.\r\n\r\n- Space suits no longer hide lizard tails (as they now receive the mesh effect instead)\r\n\r\n- Bio suits and beekeeper suits now use the mask system when worn by digitigrades (using the existing suit mask effect)\r\n \r\n- Aprons and Overalls now use the mask system when worn by digitigrades (using a slightly altered suit mask effect)\r\n\r\n- Also fixed the names of the various heretic hoods while I was in the area\r\n\r\n## Why It's Good For The Game\r\n\r\nThese large species features like moth wings and lizard tails are a pretty core part of their identity but they've always played weirdly with stuff like space suits\r\n\r\nHistorically we had debate over whether spacesuits and the like should conceal moth wings (\"it should be harder for moths to disguise\", \"moth wings are important to their identity and hiding them is sad\"). At the same time, they did conceal features like lizard tails, which felt a bit inconsistent\r\n\r\nThis solution intends to bridge the gap between the two: Space suits and such will conceal your features *a bit*, but not entirely - maintaining your silhouette while hiding specifics (wing type, tail color) \r\n\r\nIt offers some fun verisimilitude. Having your wings out in space unprotected is obviously not ideal, but covering it in some kind of safety mesh \"makes sense\" in the context of the world.\r\n\r\nThis effect is accomplished very inexpensively: Minimal sprites needed to be added, and no icon operations are necessary. It's just a mask filter, displacement map filter, and outline filter. The only sprites added to support it was generic mesh icons which are reusable, repeated grids.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Spacesuits no longer fully conceal lizard tails"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Species features like wings and tails will appear \"meshed over\" when wearing certain equipment like spacesuits or biosuits."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Biosuits and beepeeker suit sprites now altar when worn by digitigrade mobs."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Aprons and Overall sprites now altar when worn by digitigrade mobs."
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "All heretic armor hoods are consistently known by their name, rather than \"ominous hood\""
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97576",
+    "title": "Navigate admin verb",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nMostly just done to break up the proc for navigate to detach the choice from the actual line draw (since the line draw is a useful feature that was trapped in this and i didnt want to copypasta it)\r\n\r\nAdds a new admin vv topic to demonstrate it.\r\n\r\nhttps://github.com/user-attachments/assets/fa382961-581b-46c6-b33d-60822669bc8c\r\n## Why It's Good For The Game\r\nSomeone ahelping for \"where is this thing\" is pretty common I suspect and being able to help them in a very clear way is useful!",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "breaks up navigate code into a proc for the choice vs the line creation"
+      },
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Admin VV topic to navigate a player to a marked object"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97565",
+    "title": "Donk. Flechette rounds aren't stealthy embeds",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n#89854 and #89972 were merged in quick succession, causing the Flechettes added from the latter to accidentally be categorized as stealthy embeds\r\n\r\n## Why It's Good For The Game\r\n\r\nI'm fairly certain they were NOT balanced about them being stealthy, so, yeah",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Donk. Flechette rounds aren't stealthy embeds and can be hand removed"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97570",
+    "title": "Fixes AI Crew Monitoring tracking breaking on people who set an ID card honorific",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTrying to track someone who set an ID card honorific (the job-specific title thing) from the crew monitoring UI just didn't work.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "AI tracking from the crew monitoring console now works for people who have set an ID card honorific too"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97593",
+    "title": "CSL can actually be taken by humans oops",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nI said it was possible in #96774 and LIED because I forgot to commit that part",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Humans can take CSL"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97567",
+    "title": "Command bar starts on Say & clears on Backspace",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nCommandbar now starts the round on Say mode, and hitting backspace deletes the whole thing but still resets to the mode selected once you do your next command bar action, both of these were how the command bar worked previously so I am bringing back this functionality.\r\n\r\n## Why It's Good For The Game\r\n\r\nBringing back previous functionality that I think worked better, for the new tgui command bar.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Pressing backspace while unfocused now clears your command bar."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The Command bar now starts on Say instead of Command mode."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97405",
+    "title": "Fixes goldgrub breeding parties at ore vents",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nGoldgrubs no longer spawn eggs when eating bluespace crystals unless hand-fed them, rather than doing so even when eating ore off the ground\r\n\r\n## Why It's Good For The Game\r\n\r\nWhile the removal does somewhat impact the sandbox element of the game, current behavior also results in goldgrub digging parties at untapped ore vents, as they crack open boulders and eat (guaranteed) bluespace crystals from them, spawning more goldgrubs which do the same, spawning even more goldgrubs, etc.\r\nWild breeding in general is risky for CPU time, so its probably best to remove this behavior regardless of the issue describing above.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Goldgrub no longer reproduce unless hand fed ores"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97596",
+    "title": "Anchored Items cant be looted with quick inserting from bags",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nAnchored items cant be inserted into bags. Seems like an oversight.\r\n## Why It's Good For The Game\r\nIf we dont allow you to pick it up, why would we let you insert it into a bag.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Anchored Items cant be looted with quick inserting from bags"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97588",
+    "title": "Chat Highlight Sound Additions",
+    "author": "RichardBlonski",
+    "body": "## About The Pull Request\r\n\r\nThis is a follow up for PR #97523\r\nThis Pull Request does the following:\r\n- Makes chat highlight sounds **off** by default.\r\n- Added a check to avoid highlighting radio channel names, like (\"Medical\", \"Engineering\") as putting \"Medi\" or \"Engie\" in your highlights is common.\r\n- Added a check to avoid highlighting self-action messages such as \"You put on your helmet\", most of those messages start with \"You\" so we just check for that.\r\n\r\n## Why It's Good For The Game\r\n\r\nThe Chat Highlights is not intended to be on by default.\r\nIt makes the chat highlight sounds less **spammy**, as you ultimitly want the highlight sounds to happen when someone does an action or tells you something, not when you do an action.\r\n\r\n## Testing\r\n\r\n\r\nhttps://github.com/user-attachments/assets/bd1f5d4a-024d-4fbc-9ee1-35f10053e0c5",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Chat Highlight sounds are off by default now."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Chat Highlights won't trigger on self-actions or radio channel names."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97586",
+    "title": "luxury mining pen: ourple edition",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\r\n\r\nrework of https://github.com/tgstation/tgstation/pull/97585 based on Melbert's ideas.\r\n\r\ninstead of adding a whole new type of pen you can buy, this makes it so like, if you buy a lux pen with a bank account that's linked to a jellyperson, you get the purple lux pen instead.\r\n\r\nthe purple lux pen has a purple sprite, and contains \"diluted regenerative jelly\" instead of omnizine - a subtype of regen jelly that has the same metabolization rate as omnizine, but heals a bit less.\r\nas it is still a regen jelly subtype, it also makes your hair ourple.\r\n\r\nyou do not get a choice in whether you get a purple pen or not.\r\nif you want a normal pen - borrow a non-slime friend's card or give them your points and have them buy it.\r\n\r\n<img width=\"242\" height=\"246\" alt=\"2026-08-19 (1787192203) ~ dreamseeker\" src=\"https://github.com/user-attachments/assets/bb133ebd-1389-4d7c-8471-510f665799f8\" />\r\n\r\nhttps://github.com/user-attachments/assets/ab2e2671-c94a-400a-8fff-aa9a1a8eaf19\r\n\r\n## Why It's Good For The Game\r\n\r\nourple\r\n\r\nalso hopefully this is a decent compromise between \"allowing slime miners to actually get decent healing\" and \"still having species trade-offs\"",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added purple luxury medipens. These are given instead when bought with a jellyperson's bank account. They are jelly-friendly, however heal less than normal luxury pens. They also make you more purple. Sprite by Bieyes."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97578",
+    "title": "Revenant Ability: Mirror Talk (for real this time)",
+    "author": "levels0",
+    "body": "## About The Pull Request\r\nAdds an ability that lets revenants talk through the mirrors they are trapped in\r\n## Why It's Good For The Game\r\nRevenants don't often get trapped in mirrors, and the ability to talk itself doesn't add much in terms of mechanics. Even still, I think this could, at least potentially, lead to some interesting situations and outcomes.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "certain cursed mirrors might now talk"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97574",
+    "title": "Improves OverFlayer previews by allowing to edit preview plane/backdrop color",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"1600\" height=\"840\" alt=\"image\" src=\"https://github.com/user-attachments/assets/960ef743-c52f-458c-a906-007d52397268\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nLets us view and debug emissive appearances and blockers easier",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Improved OverFlayer previews by allowing to edit preview plane/backdrop color"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "96961",
+    "title": "`ismonkey()` calls replaced with trait.",
+    "author": "Ghommie",
+    "body": "## About The Pull Request\r\nReplacing the wide majority of `ismonkey()` checks with trait checks (`TRAIT_LESSER_HUMANOID`+). I've also replaced the `is_simian()` macro with `TRAIT_SIMIAN` and used it in a few places where `ismonkey()` was previously used (namely the monkey bloons reference, gorillas are apes too ooga ooga).\r\n\r\nPerhaps I should add a framework for lesser humanoids for genetics and monkeyize() in general, but I think that's best left for future PRs.\r\n\r\n## Why It's Good For The Game\r\nLess strictly hardcoded stuff. This is also useful if we wind up implementing more lesser humanoid species, so that they don't have to be necessarily a subtype of the monkey species and won't have to inherit quirky monkey (simian) features that doesn't fit their theme as a result.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Other apes, like gorillas, can have fun popping balloons with foam darts as well. They can also perform some monkey emotes now."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97558",
+    "title": "Clears some item/clothing flags",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nRemoved some item and clothing flags, replacing them with alternatives\r\n- `BEING_REMOVED`: replaced with `DOING_INTERACTION(...)`\r\n- `XENOMORPH_HOLDABLE`: unused\r\n- `BLUESPACE_INTERFERENCE`: replaced with `TRAIT_BLUESPACE_INTERFERENCE`\r\n- `ANTI_TINFOIL_MANEUVER`: replaced with `can_throw_equip`\r\n- `GAS_FILTERING`: replaced with `has_filter` var \r\n- `INEDIBLE_CLOTHING`: replaced with `create_moth_snack` overrides\r\n\r\n## Why It's Good For The Game\r\n\r\nWe hit the bit limit on items and were approaching it with clothes",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up code that stops you from removing cuffs while removing cuffs. Report any oddities"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up code involving Bluespace bags interfering with teleports. Report any oddities"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up code that prevents tinfoil hats from being equipped on throw. Report any oddities"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up code that determines if masks should filter toxins out of breathed air. Report any oddities"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up code that prevents moths from eating certain foods. Report any oddities"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97619",
+    "title": "Painting and Trophy manager can be used more then once",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nOld behavoir meant they got qdeled when you close it and never remade.\r\n\r\nAlso makes them non-static.  As per melbert's suggestion.\r\n<img width=\"511\" height=\"562\" alt=\"image\" src=\"https://github.com/user-attachments/assets/1630334a-f215-4ad2-af68-750170747b4a\" />\r\n\r\nAlso did a 1 minute pass to standerdize the syntax across random admin panel creation.\r\n## Why It's Good For The Game\r\nDont qdel a static varible. lol. lmao.",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Painting and Trophy manager no longer permanently deletes itself after the first close"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97503",
+    "title": "Minor performance tweak for mushroom hallucinogen",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nToday it was discussed that mushroom hallucinogen has an exceptionally expensive set of operations within on_mob_metabolize. However, these effects are almost entirely purely visual, regardless of target.\r\n\r\nIn a very minor shortcut to see if it prevents some access processing, I've added an early return to the visual/plane-master side of the proc that ends if the mob in question lacks a client.\r\n\r\nThere is almost, genuinely certainly a more elegant solution to this that involves deepdiving both into the animation procs, as well as the planecube-specific implications of these operations, but for a literal 5 minute coding adventure, this should at least cut down on a tiny bit of it's processing cost when we don't need to, like when caused by a vent overflow on icebox.\r\n\r\n## Why It's Good For The Game\r\n\r\nMinor easy performance savings on multi-z maps, where potentially relevant.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Mushroom hallucinogen does not apply it's drug effect if the target has no client."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97542",
+    "title": "Great big atmos grammar and qol pas",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"1063\" height=\"608\" alt=\"image\" src=\"https://github.com/user-attachments/assets/84815091-a5c7-4453-9757-d034ae6dfbff\" />\r\n\r\n1. Gas Analyzers, when its UI is open, will update the gas data listed constantly (so long as you remain in range of the scanned target).\r\n\r\n2. Gas analyzer and gas chamber UIs both received facelifts. They both now list out all gases and gas reactions, as well as now has additional info like export value. \r\n\r\n3. Some tooltips have been simplified or cleaned up. For example, the tooltip for specific heat explains what a high or low specific heat means, or the tooltip explaining the optimal heat for freon has been dumbed down.\r\n\r\n4. Grammar pass across a lot of atmos stuff. `\\improper`s or de-capitalizing things, consistent capitalization of gas names, name adjustments (`Hypernoblium` -> `Hyper-Noblium`, `Proto Nitrate` -> `Proto-Nitrate`, `Antinoblium` -> `Anti-Noblium`), `turf` -> `tile`, other general rewording.\r\n\r\n5. Refactored `/datum/electrolyzer_reaction` into a subtype of the new base type `/datum/gas_reaction`\r\n\r\n6. Refactored a bit of gas-cargo handling\r\n\r\n7. Gas chamber computers now default to the gas they hold\r\n\r\n8. Blind people can now use the gas analyzer UI \r\n\r\n## Why It's Good For The Game\r\n\r\n1. Reduce the need for atmos techs to spam the gas analyzer on whatever they're working on. Now they can just slap it once and watch the UI tick up (or down)\r\n\r\n2. The UIs provided a lot of information, but literally all of it was hidden from you unless you already knew. Now you can peruse the gases and reactions to your heart's content. \r\n\r\n3. There were many tooltips which were just complete nonsense. For example:\r\n\r\n```\r\nFreon is produced at a rate that scales with the sum of a quadratic exponential and sigmoidal function, with the quadratic exponential peaking at 800 Kelvin, but the sigmoidal function takes dominance at over 5,500K being up to 3 times more efficient.\r\n```\r\nLike. This is supposed to be teaching me? It's not helping!\r\nI tried to simplify it a bit for the layman:\r\n```\r\nFreon is produced at a rate that scales with temperature, peaking first at 800 Kelvin, then peaking again, 3 times higher, at 5,500 Kelvin.\r\n```\r\n\r\n4. Makes reading atmos stuff a bit more pleasant and consistent in general\r\n\r\n5. They copy pasted a lot of their code\r\n\r\n6. Less hardcoded stuff\r\n\r\n7. Tiny detail I thought would be cute\r\n\r\n8. Blind people could use the scan part, just not the UI part. The UI contains tutorial info, so I figured they should have access to both instead of neither.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Upon scanning a target with a gas analyzer, its UI will update constantly as the target's gas mixture changes (so long as you stay in range). No more spam clicking to see the status of your gas canister."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Gas analyzer and gas chamber UIs both received facelifts. Both now list out all available gases and gas reactions, and now contain some additional info like export value."
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "\"Dumbed down\" some atmos tooltips, for lack of a better word."
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Grammar pass on a lot of atmos related content."
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Hyper-noblium renamed to Hyper-Noblium"
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Proto Nitrate renamed to Proto-Nitrate"
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Antinoblium renamed to Anti-Noblium"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored how gas reactions and electrolyzer reactions are setup, report anything weird with them"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored buying and selling gas from cargo a tiny bit, report anything weird with them"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Gas chamber UIs now default to showing information pertaining to whichever gas is held within"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Blind players can access the gas analyzer UI"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97624",
+    "title": "fix a missing wire on Ice Box",
+    "author": "Metekillot",
+    "body": "## About The Pull Request\r\nAdded a missing wire on Ice Box for the education chamber APC.\r\n\r\n## Why It's Good For The Game\r\nThe APC needs power.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed a missing wire in Ice Box education chamber."
+      }
+    ]
+  },
+  {
+    "date": "2026-08-25",
+    "upstream_date": "2026-08-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97601",
+    "title": "Fixes radio encryption keys not being insertable into pAIs",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n`item_interaction` strikes again",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Radio encryption keys can once again be inserted into pAI cards"
+      }
+    ]
   }
 ]
