@@ -133,3 +133,46 @@
     top: 5px;
   }
 }
+
+.search-controls {
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.2rem 0.2rem;
+  font-family: "Segoe UI", "Iosevka Aile Web", monospace;
+  font-size: 0.8rem;
+  background: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  color: $text-primary;
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: darken($text-muted, 15%);
+  }
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.2);
+  }
+}
+
+@media (max-width: $mobile) {
+  .search-input {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.2rem;
+  }
+
+  .search-controls {
+    width: 60%;
+    max-width: 200px;
+  }
+}

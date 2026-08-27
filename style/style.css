@@ -673,12 +673,50 @@ body {
 .pr-body a:hover {
   text-decoration: underline;
 }
+.pr-body figure.md-image {
+  margin: 0.8rem 0;
+  display: block;
+}
+.pr-body figure.md-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+}
 .pr-body img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0.4rem 0;
+}
+.pr-body sup, .pr-body sub {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.pr-body sup {
+  top: -0.5em;
+}
+.pr-body sub {
+  bottom: -0.25em;
+}
+.pr-body details {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background: #202020;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.pr-body details summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+.pr-body details summary:hover {
+  color: #5bc0de;
 }
 .pr-body code {
   background: #202020;
@@ -1009,6 +1047,44 @@ body {
   .changelog-controls,
   .changelog-filter {
     top: 5px;
+  }
+}
+.search-controls {
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.2rem 0.2rem;
+  font-family: "Segoe UI", "Iosevka Aile Web", monospace;
+  font-size: 0.8rem;
+  background: #1a1a1a;
+  border: 1px solid #404040;
+  border-radius: 3px;
+  color: #e0e0e0;
+  transition: all 0.2s;
+}
+.search-input::placeholder {
+  color: rgb(121.75, 121.75, 121.75);
+}
+.search-input:hover {
+  border-color: #ccc;
+}
+.search-input:focus {
+  outline: none;
+  border-color: #ccc;
+  box-shadow: 0 0 0 3px rgba(204, 204, 204, 0.2);
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.2rem;
+  }
+  .search-controls {
+    width: 60%;
+    max-width: 200px;
   }
 }
 .legend-container {

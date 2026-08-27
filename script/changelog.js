@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const sourceAllBtn = document.getElementById('sourceAllBtn');
   const sourceUpstreamBtn = document.getElementById('sourceUpstreamBtn');
   const sourceHorizonBtn = document.getElementById('sourceHorizonBtn');
+  const searchInput = document.getElementById('searchInput');
 
   const fmtDate = d => d.split('-').reverse().join('.');
   const fmtMonth = m => new Date(m.split('-')[0], m.split('-')[1]-1).toLocaleString('ru', { month: 'long', year: 'numeric' });
@@ -28,10 +29,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   let currentSource = 'all';
+  let currentSearch = '';
 
   const render = data => {
     container.innerHTML = '';
-    const byDate = data.reduce((acc, i) => (acc[i.date] = [...(acc[i.date]||[]), i], acc), {});
+    const byDate = data.reduce((acc, i) => {
+      const groupDate = i.upstream_date || i.date;
+      if (!acc[groupDate]) acc[groupDate] = [];
+      acc[groupDate].push(i);
+      return acc;
+    }, {});
 
     for (const [date, items] of Object.entries(byDate).sort((a,b) => a[0] < b[0] ? 1 : -1)) {
       const bySource = items.reduce((acc, i) => (acc[i.source] = [...(acc[i.source]||[]), i], acc), {});
@@ -136,13 +143,55 @@ document.addEventListener('DOMContentLoaded', async () => {
     monthSelect.value = month;
   };
 
+  const applyFilters = async () => {
+    if (currentSearch) {
+      const fetches = months.map(async m => {
+        if (!cache[m]) {
+          try {
+            const res = await fetch(`./changelogs/archive/${m}.json`);
+            cache[m] = await res.json();
+          } catch (e) {
+            console.error("Ошибка загрузки месяца", m, e);
+            return [];
+          }
+        }
+        return cache[m];
+      });
+
+      const allResults = (await Promise.all(fetches)).flat();
+      let filteredData = allResults;
+
+      const sel = currentSource || 'all';
+      if (sel && sel !== 'all') {
+        filteredData = filteredData.filter(item => item && item.source === sel);
+      }
+
+      filteredData = filteredData.filter(item => {
+        const titleMatch = item.title.toLowerCase().includes(currentSearch);
+        const authorMatch = item.author.toLowerCase().includes(currentSearch);
+        const changesMatch = item.changes.some(ch => ch.text.toLowerCase().includes(currentSearch));
+        const bodyMatch = item.body && item.body.toLowerCase().includes(currentSearch);
+        return titleMatch || authorMatch || changesMatch || bodyMatch;
+      });
+
+      render(filteredData);
+
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      monthSelect.disabled = true;
+    } else {
+      monthSelect.disabled = false;
+      load(idx);
+    }
+  };
+
   months = await (await fetch('./changelogs/months.json')).json();
   months.forEach(m => monthSelect.add(new Option(fmtMonth(m), m)));
   setSource('all');
 
-  if (sourceAllBtn) sourceAllBtn.addEventListener('click', () => setSource('all') || load(idx));
-  if (sourceUpstreamBtn) sourceUpstreamBtn.addEventListener('click', () => setSource('/TG/Station') || load(idx));
-  if (sourceHorizonBtn) sourceHorizonBtn.addEventListener('click', () => setSource('Horizon =][=') || load(idx));
+  if (sourceAllBtn) sourceAllBtn.addEventListener('click', () => { setSource('all'); applyFilters(); });
+  if (sourceUpstreamBtn) sourceUpstreamBtn.addEventListener('click', () => { setSource('/TG/Station'); applyFilters(); });
+  if (sourceHorizonBtn) sourceHorizonBtn.addEventListener('click', () => { setSource('Horizon =][='); applyFilters(); });
 
   prevBtn.onclick = () => load(idx - 1);
   nextBtn.onclick = () => load(idx + 1);
@@ -167,9 +216,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const prId = btn.getAttribute('data-pr-id');
         const source = btn.getAttribute('data-pr-source');
         const date = btn.getAttribute('data-pr-date');
-        const month = months[idx];
-        const data = cache[month] || [];
-        const item = data.find(i => String(i.pr) === prId && i.source === source && i.date === date);
+        let item = null;
+        for (const m of months) {
+          if (cache[m]) {
+            item = cache[m].find(i => String(i.pr) === prId && i.source === source && i.date === date);
+            if (item) break;
+          }
+        }
 
         if (item && item.body) {
           bodyDiv.innerHTML = window.parseMarkdown(item.body);
@@ -201,6 +254,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     iframe.allowFullscreen = true;
     mediaBtn.replaceWith(iframe);
   });
+
+  let searchTimeout;
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        currentSearch = e.target.value.toLowerCase().trim();
+        applyFilters();
+      }, 400);
+    });
+  }
 
   if (months.length) load(0);
 });
