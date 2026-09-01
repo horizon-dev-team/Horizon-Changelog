@@ -1,0 +1,616 @@
+[
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97627",
+    "title": "Fixes a typo in diluted jelly description",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nthas->that.",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "fixes a typo in diluted regenerative jelly description"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97642",
+    "title": "Adds a nullcheck for job icons when filling manifest",
+    "author": "Hatterhat",
+    "body": "## About The Pull Request\r\n\r\nAbout what it says on the tin. Closes #97641.\r\n\r\n## Why It's Good For The Game\r\n\r\nAdding an entry to the crew manifest without breaking the manifest is probably a good idea.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Crew manifests should no longer break when adding new entries."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97645",
+    "title": "Fixes face decals appearing wrongly offset on monkeys",
+    "author": "PapaMichae1",
+    "body": "<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->\r\n<!-- You can view Contributing.MD for a detailed description of the pull request process. -->\r\n\r\n## About The Pull Request\r\n\r\nCloses https://github.com/tgstation/tgstation/issues/97640",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Face decals (like pie) now appear on monkeys' faces instead of above it"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97611",
+    "title": "Introduces \"Candela\" mining navigation networks, integrating vents, fultons and mining MODsuits",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nMarker beacons in miner kits have been replaced with brand new \"Candela\" navigation beacons. (Marker beacons themselves are still available for purchase in the mining vendor to be used as decor)\r\n\r\nNavigation beacons can connect to each other and other Candela nodes to form a network, linking with nearby vents and extraction beacons.\r\n\r\n<img width=\"1216\" height=\"1017\" alt=\"dreamseeker_90Fimru9Qm\" src=\"https://github.com/user-attachments/assets/d3c8e5b2-db19-4bab-ba74-7168e11755e6\" />\r\n\r\nMiners spawn with 30 beacons on their person (instead of 10 marker beacons they got before) and can purchase additional beacons in mining vendors. Beacons can be linked to an existing network by clicking on a node with one, and will automatically place new nodes if you are about to break LoS with the closest node or exit its range when held in your hands or pockets, ***or when placed in your explorer rigging*** (any belt or pocket slot storage works). Using the beacon in-hand will manually place a node and link you to it, and right-click in-hand will sever any connections.\r\n\r\nAn active ore vent connected to the network will power it, causing the beacons to glow brighter and prevent mob respawns in a sizeable area around each node, allowing miners to secure their routes from local fauna.\r\nRoundstart ore vent located next to the mining base acts as a \"booster\" instead, increasing all ore vents' outputs within a network by 33%, incentivizing players to set up infrastructure connecting new vents to their base to boost their rates.\r\n\r\n---\r\n\r\nMODsuits can utilize the new Candela spool module (required advanced mining research) to automatically deploy nodes from their inventory, freeing a user's pocket or webbing slot. Additionally, miners can craft a luminetworked MODsuit core using some beacons and a bluespace crystal, which has rather low capacity but will automatically recharge itself when connected to a powered network.\r\n<img width=\"208\" height=\"113\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f555f864-9cde-4dba-bc77-e2b07344ca88\" />\r\n\r\n---\r\n\r\nExtraction fultons and beacons availible to miners (contractor fultons are untouched) have also been integrated into the network - using a fulton while near an active network lets you teleport to any vent within said network as if it was a beacon. Both fultons and beacons also cost noticeably less.\r\nYou still can use fultons to teleport back to the station at any point, without a network requirement.\r\nThis shifts their primary use case from means of getting back to the station from lavaland to a mobility tool, letting miners quickly get back to a vent or their forward base after a storm passes, or escape back to the outpost when caught off guard by one without a capsule.\r\n\r\n## Why It's Good For The Game\r\n\r\nThis gives miners an incentive to set up infrastructure, and means to defend themselves from constantly respawning fauna. In the future, once more content is added, we could possibly make the network connection mandatory for vents and remove bluespace boulder teleportation in favor of proper transportation.\r\nThe changes to fultons should make them more attractive to both new and experienced players, as their current usage as a quick ticket to the station is only useful for corpse retrieval at best, and not worth the points otherwise.\r\n\r\nI'm hoping to add more engineering content to lavaland in the future using this system as well, making more jobs interact with it rather than relegating it to only 3 people in a round.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added \"Candela\" navigation networks and beacons, acting as a way for miners to mark their paths, boost vent outputs and protect their routes from fauna respawns"
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Miners no longer spawn with marker beacons"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Mining fultons can now transport miners to tapped ore vents within nearby Candela networks in addition to extraction beacons, and both cost significantly less points"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Syndicate extraction beacons can only be reached by syndicate fultons"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97544",
+    "title": "Add reworked vending shortage station trait",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nThis reworks:\r\n- #89121\r\n\r\nSo that it only applies to snack, soda, and coffee machines on the station.\r\n\r\n## Why It's Good For The Game\r\nI think a big problem with the original implementation is that it crippled a lot of people's job equipment. This version only affects food/drinks vendors, so people will either have to go to botany, kitchen, order pizza from cargo, or microwave donk pockets. \r\n\r\nIt's a lot less punishing but still meant to be annoying.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Add reworked vending shortage negative station trait. All station snack, soda, and coffee vending machines start empty."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "96996",
+    "title": "Refactors plane masters/parallax to support non eye perspectives",
+    "author": "LemonInTheDark",
+    "body": "## About The Pull Request\r\n\r\nThis is something I've wanted to do since planecube.\r\n\r\nThe goal is to allow popups to display space parallax, and render different z levels properly.\r\n\r\nThe idea is instead of basing everything off the client's eye, plane master groups and parallax should be based off some sort of like, atom perspective that's placed on the map.\r\n\r\nThis is simple in concept and kind of annoying as shit in implementation, which is why this is so long.\r\n\r\n#### Parallax\r\n\r\nParallax is currently half managed by the hud datum, and passed along between the same client. If we're seperating it from the hud, this cannot continue.\r\n\r\nSo, parallax becomes a keyed datum stored on JUST /client that's responsible for its own concerns. We can use signals to hook to movement. This also means we get to remove client_mobs_in_contents (which is also just a duplicate of a recursive contents type) and the cruft attached to the parallax subsystem.\r\n\r\nIt gets a perspective (/atom) var which gets set to either the client's eye or whatever the map view is doing.\r\n\r\nWe need to use a trait with args for the parallax on/off stuff, because we don't want maps to conflict.\r\n\r\nIn the process we pull the remaining parallax config vars off /client and onto the datum itself.\r\n\r\n#### Plane Masters\r\n\r\nThe story is basically the same here, plane master groups get a perspective var, different subtypes use it differently (/main maps to client.eye, /popup sets to the map_view's display atom).\r\n\r\nThere's some extra fiddling in here because we have stuff that expects client.eye to be the perspective var, so that needs to be converted over. Mostly weather code.\r\n\r\nI removed offset tracking from hud code (and thus COMSIG_HUD_OFFSET_CHANGED) because it was redundant now since offset needs to be tracked directly on the plane group.\r\n\r\nAdded a connect_perspective component to help with stuff that works off the perspective atom.\r\n\r\n#### Misc\r\n\r\nI read weather code while working on the plane master stuff here, and got a little upset about how it worked (we have to update every plane master when changing weather). So I changed it to use a holder vis contents (which plane masters \"subscribe\" to based off their z level) and then sticking the particles inside those holders. Mucked about with the code involved a little bit to make this work.\r\n\r\nI may have missed some details, this is an older pr I was working on a few months ago that I'm just now finishing.\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\n\r\nhttps://github.com/user-attachments/assets/f52d0876-9283-4e5e-aaae-23d064da7b25\r\n\r\nhttps://github.com/user-attachments/assets/6f706068-98dd-4e0a-835f-5bf8270d1aab",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Space parallax now works through cameras and other \"external maps\""
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Cameras and friends will no longer be incorrectly culled/shrunk when displaying a z level other then your own."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Fucked with how space parallax/the renderer thinks about \"where\" it is being displayed pretty heavily. Please report any weird visuals!"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97646",
+    "title": "Presawn off subtypes for Guns",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\ncleanup sawnoff and recoil behavoir, the current code meant if you want to varedit or map a sawn off weapon you have to manually set every varible.\r\nThis moves the actual behavoir that SETS sawnoff stuff into a proc called by the try behavoir. That way we can call it as part of initialize \r\n\r\n<img width=\"343\" height=\"216\" alt=\"image\" src=\"https://github.com/user-attachments/assets/84a5fe16-45d2-4c11-bb4f-3bae8d65cbf1\" />\r\n\r\n## Why It's Good For The Game\r\nSawnoffs are kinda weird snow-flaky behavior atm and this makes them a bit better.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "sawnoff recoil is ADDED to existing recoil rather then setting it"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Adds support for pre-sawnoff guns and cleans up sawnoff behavoir"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97625",
+    "title": "Adds two item acts that do things when you act with the item",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nAdds two item acts that do things when you act with the item. No spoilers.\r\n\r\n## Why It's Good For The Game\r\n\r\nCrowdsourced ideas that were very good.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds two item acts - one to portable wind turbines, and one to propeller hats - that does something when you act with the items. No spoilers."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97634",
+    "title": "Fangs: moves various pseudo-fangs to a new fang organ. Makes adjustments to relevant species.",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nCreates a new fang organ that handles the effects of pseudo-fang tongues like cat tongues, vampire tongues, carp tongues and stout tongues. \r\n\r\nAny benefits to unarmed attacks or interactions (or, in the case of vampires, the entire blood sucking ability), is now attached to this fang organ.\r\n\r\nLizardpeople also get fangs.\r\n\r\nVampires and lizardpeople gain a trait called TRAIT_REFINED_BITER, which causes the holder to sometimes bit in place of an unarmed attack, unlike feral biters, who will always bite.\r\n\r\nAdds cybernetic fangs, which are unlocked via the Cybernetics tech node, at the same time as advanced limbs.\r\n\r\n## Why It's Good For The Game\r\n\r\nI got really annoyed by the way fangs and sharp teeth were handled as tongues, so we're separating these out entirely into their own bespoke organ. Also means you can separate out changing your tongue from changing your fangs without any problems.\r\n\r\nI like biting.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Fangs, which now handle the functionality of pseudo-fang tongues. Felinids, lizardpeople, vampires, carp-infused and stout-infused people now have their own fangs."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Vampire fangs now handle all vampire blood-draining effects."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Cybernetic fangs, unlocked via the Cybernetics tech node."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97652",
+    "title": "Regenerate Job Landmarks",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nBased on https://github.com/tgstation/tgstation/pull/94147 using the fix done in https://github.com/tgstation/tgstation/pull/94147 to make sure they are still random.\r\nThere is still some innane high chance bug that as part of the human randomization icons just fail to generate. But I have no clue what causes it still and just rerunning it 1-2 extra times gets a batch that has all the states...\r\n\r\n## Why It's Good For The Game\r\nHaving out of date icons is LAME!",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "landmarks for job icons refreshed with programmatic generation"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97654",
+    "title": "Fixes parallax not drawing",
+    "author": "LemonInTheDark",
+    "body": "## About The Pull Request\r\n\r\nCloses #97653\r\n\r\nI will not be accepting any reviews reccomending the use of isnull in the future.\r\n\r\n(submap is \"\" when we are drawing to the main screen, which passed this check)\r\n## Why It's Good For The Game\r\n\r\nParallax should draw.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Parallax draws as expected again"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97658",
+    "title": "Fix stoat fang typo",
+    "author": "FlufflesTheDog",
+    "body": "## About The Pull Request\r\nSilly little typo, fangs/stout get defined and then fangs/stoat get the initialize override so both exist but neither work properly\r\n## Why It's Good For The Game\r\nMy chompers are not feeling particularly stout today",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Stoat fangs properly exist"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97669",
+    "title": "Fixes biting, nyoops!",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nThis basically prevented biting entirely because of some bad logic on my part. I blame the flu.\r\n\r\n## Why It's Good For The Game\r\n\r\nI broke biting, this fixes it.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Biting now actually works again."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "96649",
+    "title": "Damage procs, physiology and damage_coeff refactor.",
+    "author": "Ghommie",
+    "body": "## About The Pull Request\r\nI've decided that refactoring physiology would be a good thing to do. I didn't like seeing the amount of typechecking that it previously required, and the fact that it was basically just a holder datum and nothing more wasn't particularly great either.\r\n\r\nIt also turns out there was also the damage_coeff list that simple_animal and basic mobs use that fulfilled a similar role, so I had to refactor it as well, meaning everything would have to go straight to `living_defines.dm`...\r\n\r\nAnd that devolved a relatively small refactor into something more radical and a lot of damage procs were reworked a bit as well. **Fun fact: physiology didn't cover adjust_brute/burn/tox/oxy/stamina_loss procs and only apply_damage() before, now it does.**\r\n\r\n## Why It's Good For The Game\r\n\r\nLess typechecking and a more flexible solution for damage as well as other coefficients that can be applied to all mobs. These are mainly backend changes but some of them may be perceived on the front as well. See the **bold** text above.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored the code for damage and types of damage a little (also armor but not as much). Make sure to report any oddity with it."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97661",
+    "title": "Fixes firefighting foam immediately burning away in heat and not doing its effects",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTitle",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Firefighting foam no longer immediately burns away in heat without getting a chance to do its firefighting foam effects"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97660",
+    "title": "Fixes a runtime when powergaming PKA mods",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nWhen powergaming PKA mods for maximum cooldown, you could get it negative. This clamps it at 0.\r\n\r\n## Why It's Good For The Game\r\n\r\n<img width=\"530\" height=\"109\" alt=\"image\" src=\"https://github.com/user-attachments/assets/2bd0a898-f839-4e8a-ac39-5d7c94e82373\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The greed of miners no longer clogs the runtime logs"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97613",
+    "title": "Adds Subtle Gender Indicating Tooltips to Speaker Names in Chat",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nThis is a port of QuiteLiterallyAnything's work from https://github.com/fulpstation/fulpstation/pull/1396 because I think it would be a much better inclusion here than limiting it to just our downstream. I will be *mostly* copy pasting the PR description from there into here.\r\n\r\nI've recently realized that there's no real way to determine someone's gender over the radio in SS13 other than the following: \r\n\r\n1. Examining them and learning their gender before they speak over the radio.\r\n2. Guessing by their name.\r\n\r\nThis isn't ideal since people with ambiguous names are likely to be misgendered over the radio.\r\n\r\n<details><summary> <b>Expand for images of how this all works/looks.</b></summary>\r\n\r\n(Windows' Snipping Tool cut out the cursor, so just imagine that one is hovering over the names in all of these images.)\r\n\r\n![Feminine](https://github.com/user-attachments/assets/825f31d3-4cd1-437e-9d83-e0f8d0d153a7)\r\n![Androgynous](https://github.com/user-attachments/assets/d1ff185e-ef01-4ffa-926d-13f3d98f88b3)\r\n![Masculine](https://github.com/user-attachments/assets/eeecbf40-86e3-4ed4-bd52-2599389ec51e)\r\n![Disguised](https://github.com/user-attachments/assets/344fdcd5-411c-4c0a-a698-68223c08e505)\r\n\r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nThis feature should reduce the frequency of misgendering over our radio system (for people with ambiguous names) in a clean and non-obtrusive way.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added subtle tooltips to speaker names in chat in order to make distinguishing gender over the radio easier."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97665",
+    "title": "Atmos mix tank output starts disabled",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nMix tank outlet vent pump defaults to disabled\r\n\r\n## Why It's Good For The Game\r\n\r\nMix tank does two things\r\n\r\n1. Acts as a collection for unsorted waste gases \r\n(So why would it immediately spit out the unsorted waste gases back into the network?)\r\n\r\nor\r\n\r\n2. Acts as a place to mix things\r\n(So why would you want the mix chamber to default to spitting your mix out before it can mix?)",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Atmos mix tank output starts disabled."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97655",
+    "title": "Makes Pizzeria Meatpizza Slices Relatively Inedible",
+    "author": "san7890",
+    "body": "## About The Pull Request\r\n\r\nFixes #95565\r\n\r\nThis is meant to be shipped for money via cargo, not eaten. Let's just make it absurdly pointless to eat as to not mislead people. I'm adding features to make it utterly unrewarding to try eating it, but someone in-game can still see the funny haha's of the \"pizza\" with the remote taster quirk or something like that (or just try and eat it, but eugh).\r\n\r\n## Why It's Good For The Game\r\n\r\nMore obvious UX as to the pizza being inedible.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The pizza reward from the Bitrunning Pizzeria is now \"edible\", but it is a fool's errand to try and eat it."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97670",
+    "title": "Command bar now stores your last mode",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nIf you're not a command bar user for everything then you tend to want to keep your command bar on one mode. At least, this was able to be done in the past with ``saved-params``. This is bringing back that old behavior by saving the last mode you've swapped to and making it persistent.\r\n\r\n## Why It's Good For The Game\r\n\r\nOld functionality restored to the new command bar.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Command bar's last used mode is now persistent between rounds."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97657",
+    "title": "fix window resize/white flash again part 3",
+    "author": "ZeWaka",
+    "body": "## About The Pull Request\r\n\r\nFixes a brief white/resize flash when a tgui window resumes (SOMEHOW IT RETURNED)\r\n\r\n`resume()` no longer unhides the BYOND window while it is still at its temporary suspended geometry.\r\nInstead, `Window` now waits for `recallWindowGeometry()` to complete before setting `is-visible`, sending the\r\nexisting `visible` message, and emitting `window-geometry-finished`.\r\n\r\nOn goon we have a thing that reuses similar windows to avoid some of this but some mounting changes upstream here made it visible again downstream so I figured I'd port fixes\r\n\r\n## Why It's Good For The Game\r\n\r\nTgui windows resume at their intended position and size without briefly showing a white or resize window flash.\r\n\r\nThe windows video recorder is locked to 30fps or some shit so it's only very very partially visible here, trust me it looks worse (BEFORE FIX):\r\n\r\nhttps://github.com/user-attachments/assets/c0fee06a-757b-40c8-9006-81a2b442d205\r\n\r\nhere's the song i was listening to this time:\r\n[<img width=\"280\" alt=\"image\" src=\"https://github.com/user-attachments/assets/34a918cf-48c9-4557-8590-31e74646bd1d\" />](https://open.spotify.com/track/6uOGwSBWgov7b1JFDQREJe?si=87e2446e4a5a4710)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed more TGUI window resize/white flashing"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97643",
+    "title": "Small pipe rendering fixes",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nFixes multi-z adapters looking like this when connecting to omni-pipes\r\n\r\n<img width=\"81\" height=\"112\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d656de9b-169e-40a7-9182-14e8ee18b337\" />\r\n\r\nFixes airlock pumps disregarding connected pipe color\r\n\r\nMakes layer adapter color selection more consistent\r\n\r\nMakes thermo machines inlet pipe take on pipe color \r\n\r\nCaps leading into floor objects are colored according to input pipe color\r\n\r\nChanged hardcoded color adapter check to a flag",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up atmos color adapter pipe code a tiny bit, report any oddities"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Atmos multi-z pipes rendering weirdly when connecting with omni-pipes"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Atmos airlock pumps disregarding color of connected pipes"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Atmos layer adapter color is more consistent"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Thermo machines input pipe takes on pipe color (visually, mechanically no changes)"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Pipes leading into floor objects take on pipe color (visually, mechanically no changes)"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97680",
+    "title": "Fruit punch fix",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nDidn't update health correctly because it set instead of add. I don't like this API",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fruit punch healing updates correctly"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97678",
+    "title": "Head revolutionaries can set a \"conversion guideline\"",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nIn their antag info UI, headrevs can set a \"conversion guideline\". \r\n\r\nThis guideline is sent to people they convert as a part of their greet, it looks like this (wording not final):\r\n\r\n<img width=\"630\" height=\"119\" alt=\"image\" src=\"https://github.com/user-attachments/assets/32f3dba4-a8ec-4da1-b1c6-28b9ac075c52\" />\r\n\r\nCurrent wording:\r\n```\r\nA directive echoes through your mind...\r\n\r\n[guideline_text]\r\n\r\nThis is a guideline instilled upon you from your (new) leader -\r\nwhile you are expected to follow it where possible, it is not a strict order.\r\nFurther orders from your (new) leader(s) may supersede this.\r\n```\r\n\r\n## Why It's Good For The Game\r\n\r\nRight now if you want to do something gimmicky as a head revolutionary, you really have to take it slow - Find someone alone, flash, shake them awake, explain your plan, repeat...\r\nThis process is makes an already difficult antagonist a ton more difficult for people who want to do something atypical (i.e. not flashing as many people as possible and rushing the heads of staff)\r\n\r\nWith the guideline message, these people who want to do something different now have the ability to give their revs the cliff notes of what they're trying to do, though more complicated plans would still require you tell them in person. For example you could set a guideline like \"Remove security's mindshields and revive them\" to indicate you want to try to kill as few people as possible. \r\n\r\nAt the end of the day I phrased it as a *guideline*, rather than a strict order, to keep revolutionaries from being stuck following some benign order until they all get deconverted or die. I didn't want revolutionaries ordered to \"be pacifists\" to get in trouble for fighting someone in self-defense.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Head revolutionaries can set a \"conversion guideline\" - a short message sent to all people they convert - in their antag ui, to help them bring some order to the revolution. It is, however, ultimately a *guideline*. You're note forced to follow it but are expected to abide by it ."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97674",
+    "title": "Windows hint that they can be reinforced via crowbar",
+    "author": "Fghj240",
+    "body": "## About The Pull Request\r\n\r\nNothing says you can use a crowbar to move a reinforced window from secured to needs to be heated with a welder in order to be deconstructed. Also I fixed a bug I found while testing.\r\n\r\n## Why It's Good For The Game\r\n\r\nIt confused the heck out of me as a new player",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "reinforced windows hint that they can be secured on examine"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "plastitanium windows are in the correct state once constructed"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-08-31",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97682",
+    "title": "Fixes cats becoming afraid of themselves after losing a catfight and thusly trying to run away from themselves",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\nMrrrrp meow",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cats no longer try to run away from themselves after losing a catfight, instead running from the cat they actually lost to"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-09-01",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97690",
+    "title": "Fixes revenants being completely immune to all damage",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nWouldn't it be cool if defining the same proc twice was an error",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Revenants are no longer immune to all damage"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-09-01",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97672",
+    "title": "buff the truestrike",
+    "author": "projectkepler-ru",
+    "body": "## About The Pull Request\r\n20 damage for 35 AP instead of 15 damage for 30 AP. Also increase the bouncing aim range to 4\r\n## Why It's Good For The Game\r\n\r\n15 damage for 30 AP was extremely underwhelming for something that used bluespace crystal and need exotic ammo tech. Even if that isn't necessarily the rarest thing in the world. It seems like a pretty strange commitment to make when you can just shoot at a guy until he dies with the regular ammo  which are not that expensive, plus flare shot (basically the defacto laser .38 anyway) does 20 damage and is pretty epic",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": ".38 Truestrike now does 20 damage and has better AP."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-09-01",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97687",
+    "title": "Removes spear breaking",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nEntirely removes spear breaking mechanics.\r\n\r\n## Why It's Good For The Game\r\n\r\nWasn't really as good a limitation as I thought, and mostly just pissed people off. People don't actually use spears against people as much as you'd think, which is a shame. Hell, people don't even use it for the reach. They should, but I can't make people use it. One for the folk in the know I guess.\r\n\r\nBut as a consequence, this predominantly hurt their functionality when used to break objects. And people more often used them to break objects. (ignore that it has a demolish malice, people do not see the numbers). Which usually has more integrity than a single spear.\r\n\r\nSo generally speaking, giving spears 'pseudo-ammo' was mostly just a colossal pain in the ass for their most common use, and may have also just actively discouraged their use as weapons further.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Spears no longer break from overuse without repair."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-09-01",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97689",
+    "title": "fix orbit menu crashing if a borg's `mind.assigned_role.tgui_icon` is null",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\r\n\r\nif a borg's `mind.assigned_role.tgui_icon` is null, `mind_job_icon` gets passed to ui data as null, and the tgui `<Icon>` freaks out because it was passed null instead of an icon name, and shits itself trying to actually check the icon name.\r\n\r\nso this just makes it so that if there's no `tgui_icon`, it defaults to a question mark. simple as that.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed the existence of borgs sometimes causing the orbit menu to crash."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-09-01",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97677",
+    "title": "Malf AI UI now shows hacked APC count",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nDM was already sending this to tgui but it was never rendered, so this is probably just an oversight\r\n\r\n## Why It's Good For The Game\r\n\r\nYou need 10 APCs to delta and counting to 10 is very hard",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The AI Malfunction UI now shows the number of currently hacked APCs"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-01",
+    "upstream_date": "2026-09-01",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97685",
+    "title": "Fixes a bug where chat wouldn't scroll all the way and you'd have to constantly manually scroll",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nhttps://github.com/tgstation/tgstation/pull/97613 Introduced a bug where the chat wouldn't scroll down all the way, requiring you to manually scroll, specifically on chat messages that wouldn't wrap without the name, but would wrap with the name. So lets use the magic React function to fix this",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Chat should scroll properly on some messages that wrap now."
+      }
+    ]
+  }
+]
