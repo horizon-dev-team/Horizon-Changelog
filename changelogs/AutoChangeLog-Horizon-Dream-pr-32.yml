@@ -1,0 +1,208 @@
+# PR: horizon-dev-team/Horizon-Dream/32
+/TG/Station:
+  97627:
+    repo: "tgstation/tgstation"
+    title: "Fixes a typo in diluted jelly description"
+    changes:
+      vinylspiders:
+        - spellcheck: "fixes a typo in diluted regenerative jelly description"
+  97642:
+    repo: "tgstation/tgstation"
+    title: "Adds a nullcheck for job icons when filling manifest"
+    changes:
+      Hatterhat:
+        - bugfix: "Crew manifests should no longer break when adding new entries."
+  97645:
+    repo: "tgstation/tgstation"
+    title: "Fixes face decals appearing wrongly offset on monkeys"
+    changes:
+      PapaMichae1:
+        - bugfix: "Face decals (like pie) now appear on monkeys' faces instead of above it"
+  97611:
+    repo: "tgstation/tgstation"
+    title: "Introduces \"Candela\" mining navigation networks, integrating vents, fultons and mining MODsuits"
+    changes:
+      SmArtKar:
+        - rscadd: "Added \"Candela\" navigation networks and beacons, acting as a way for miners to mark their paths, boost vent outputs and protect their routes from fauna respawns"
+        - rscdel: "Miners no longer spawn with marker beacons"
+        - balance: "Mining fultons can now transport miners to tapped ore vents within nearby Candela networks in addition to extraction beacons, and both cost significantly less points"
+        - balance: "Syndicate extraction beacons can only be reached by syndicate fultons"
+  97544:
+    repo: "tgstation/tgstation"
+    title: "Add reworked vending shortage station trait"
+    changes:
+      timothymtorres:
+        - rscadd: "Add reworked vending shortage negative station trait. All station snack, soda, and coffee vending machines start empty."
+  96996:
+    repo: "tgstation/tgstation"
+    title: "Refactors plane masters/parallax to support non eye perspectives"
+    changes:
+      LemonInTheDark:
+        - rscadd: "Space parallax now works through cameras and other \"external maps\""
+        - rscadd: "Cameras and friends will no longer be incorrectly culled/shrunk when displaying a z level other then your own."
+        - code_imp: "Fucked with how space parallax/the renderer thinks about \"where\" it is being displayed pretty heavily. Please report any weird visuals!"
+  97646:
+    repo: "tgstation/tgstation"
+    title: "Presawn off subtypes for Guns"
+    changes:
+      FalloutFalcon:
+        - bugfix: "sawnoff recoil is ADDED to existing recoil rather then setting it"
+        - code_imp: "Adds support for pre-sawnoff guns and cleans up sawnoff behavoir"
+  97625:
+    repo: "tgstation/tgstation"
+    title: "Adds two item acts that do things when you act with the item"
+    changes:
+      MrMelbert:
+        - rscadd: "Adds two item acts - one to portable wind turbines, and one to propeller hats - that does something when you act with the items. No spoilers."
+  97634:
+    repo: "tgstation/tgstation"
+    title: "Fangs: moves various pseudo-fangs to a new fang organ. Makes adjustments to relevant species."
+    changes:
+      necromanceranne:
+        - rscadd: "Fangs, which now handle the functionality of pseudo-fang tongues. Felinids, lizardpeople, vampires, carp-infused and stout-infused people now have their own fangs."
+        - code_imp: "Vampire fangs now handle all vampire blood-draining effects."
+        - rscadd: "Cybernetic fangs, unlocked via the Cybernetics tech node."
+  97652:
+    repo: "tgstation/tgstation"
+    title: "Regenerate Job Landmarks"
+    changes:
+      FalloutFalcon:
+        - image: "landmarks for job icons refreshed with programmatic generation"
+  97654:
+    repo: "tgstation/tgstation"
+    title: "Fixes parallax not drawing"
+    changes:
+      LemonInTheDark:
+        - bugfix: "Parallax draws as expected again"
+  97658:
+    repo: "tgstation/tgstation"
+    title: "Fix stoat fang typo"
+    changes:
+      FlufflesTheDog:
+        - bugfix: "Stoat fangs properly exist"
+  97669:
+    repo: "tgstation/tgstation"
+    title: "Fixes biting, nyoops!"
+    changes:
+      necromanceranne:
+        - bugfix: "Biting now actually works again."
+  96649:
+    repo: "tgstation/tgstation"
+    title: "Damage procs, physiology and damage_coeff refactor."
+    changes:
+      Ghommie:
+        - code_imp: "Refactored the code for damage and types of damage a little (also armor but not as much). Make sure to report any oddity with it."
+  97661:
+    repo: "tgstation/tgstation"
+    title: "Fixes firefighting foam immediately burning away in heat and not doing its effects"
+    changes:
+      PapaMichae1:
+        - bugfix: "Firefighting foam no longer immediately burns away in heat without getting a chance to do its firefighting foam effects"
+  97660:
+    repo: "tgstation/tgstation"
+    title: "Fixes a runtime when powergaming PKA mods"
+    changes:
+      lelandkemble:
+        - bugfix: "The greed of miners no longer clogs the runtime logs"
+  97613:
+    repo: "tgstation/tgstation"
+    title: "Adds Subtle Gender Indicating Tooltips to Speaker Names in Chat"
+    changes:
+      JohnFulpWillard:
+        - rscadd: "Added subtle tooltips to speaker names in chat in order to make distinguishing gender over the radio easier."
+  97665:
+    repo: "tgstation/tgstation"
+    title: "Atmos mix tank output starts disabled"
+    changes:
+      MrMelbert:
+        - tweak: "Atmos mix tank output starts disabled."
+  97655:
+    repo: "tgstation/tgstation"
+    title: "Makes Pizzeria Meatpizza Slices Relatively Inedible"
+    changes:
+      san7890:
+        - bugfix: "The pizza reward from the Bitrunning Pizzeria is now \"edible\", but it is a fool's errand to try and eat it."
+  97670:
+    repo: "tgstation/tgstation"
+    title: "Command bar now stores your last mode"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Command bar's last used mode is now persistent between rounds."
+  97657:
+    repo: "tgstation/tgstation"
+    title: "fix window resize/white flash again part 3"
+    changes:
+      ZeWaka:
+        - bugfix: "Fixed more TGUI window resize/white flashing"
+  97643:
+    repo: "tgstation/tgstation"
+    title: "Small pipe rendering fixes"
+    changes:
+      MrMelbert:
+        - code_imp: "Cleaned up atmos color adapter pipe code a tiny bit, report any oddities"
+        - bugfix: "Atmos multi-z pipes rendering weirdly when connecting with omni-pipes"
+        - bugfix: "Atmos airlock pumps disregarding color of connected pipes"
+        - bugfix: "Atmos layer adapter color is more consistent"
+        - tweak: "Thermo machines input pipe takes on pipe color (visually, mechanically no changes)"
+        - tweak: "Pipes leading into floor objects take on pipe color (visually, mechanically no changes)"
+  97680:
+    repo: "tgstation/tgstation"
+    title: "Fruit punch fix"
+    changes:
+      MrMelbert:
+        - bugfix: "Fruit punch healing updates correctly"
+  97678:
+    repo: "tgstation/tgstation"
+    title: "Head revolutionaries can set a \"conversion guideline\""
+    changes:
+      MrMelbert:
+        - rscadd: "Head revolutionaries can set a \"conversion guideline\" - a short message sent to all people they convert - in their antag ui, to help them bring some order to the revolution. It is, however, ultimately a *guideline*. You're note forced to follow it but are expected to abide by it ."
+  97674:
+    repo: "tgstation/tgstation"
+    title: "Windows hint that they can be reinforced via crowbar"
+    changes:
+      Fghj240:
+        - tweak: "reinforced windows hint that they can be secured on examine"
+        - bugfix: "plastitanium windows are in the correct state once constructed"
+  97682:
+    repo: "tgstation/tgstation"
+    title: "Fixes cats becoming afraid of themselves after losing a catfight and thusly trying to run away from themselves"
+    changes:
+      PapaMichae1:
+        - bugfix: "Cats no longer try to run away from themselves after losing a catfight, instead running from the cat they actually lost to"
+  97690:
+    repo: "tgstation/tgstation"
+    title: "Fixes revenants being completely immune to all damage"
+    changes:
+      PapaMichae1:
+        - bugfix: "Revenants are no longer immune to all damage"
+  97672:
+    repo: "tgstation/tgstation"
+    title: "buff the truestrike"
+    changes:
+      projectkepler-ru:
+        - balance: ".38 Truestrike now does 20 damage and has better AP."
+  97687:
+    repo: "tgstation/tgstation"
+    title: "Removes spear breaking"
+    changes:
+      necromanceranne:
+        - balance: "Spears no longer break from overuse without repair."
+  97689:
+    repo: "tgstation/tgstation"
+    title: "fix orbit menu crashing if a borg's `mind.assigned_role.tgui_icon` is null"
+    changes:
+      Absolucy:
+        - bugfix: "Fixed the existence of borgs sometimes causing the orbit menu to crash."
+  97677:
+    repo: "tgstation/tgstation"
+    title: "Malf AI UI now shows hacked APC count"
+    changes:
+      PapaMichae1:
+        - tweak: "The AI Malfunction UI now shows the number of currently hacked APCs"
+  97685:
+    repo: "tgstation/tgstation"
+    title: "Fixes a bug where chat wouldn't scroll all the way and you'd have to constantly manually scroll"
+    changes:
+      PapaMichae1:
+        - bugfix: "Chat should scroll properly on some messages that wrap now."
