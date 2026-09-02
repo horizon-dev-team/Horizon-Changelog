@@ -612,5 +612,22 @@
         "text": "Chat should scroll properly on some messages that wrap now."
       }
     ]
+  },
+  {
+    "date": "2026-09-02",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "38",
+    "title": "FIX: Icons CI-Test",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nДобавляет в CI тесты, проверку на добавленные иконки из `_horizon\\icons\\*`\n",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Исправлено прохождение CI тестов добавленных иконок в папке _horizon\\icons"
+      }
+    ]
   }
 ]
