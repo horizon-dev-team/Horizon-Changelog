@@ -1,0 +1,22 @@
+# PR: horizon-dev-team/Horizon-Dream/37
+Horizon =][=:
+  37:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: Ovelays Oxygen tank, and pressure alert system"
+    body: |
+      ## Описание изменений
+      Добавлена визуальная индикация давления в баллоне (Overlays).
+      Добавлено система визуального и звукового оповещения, при низком давлении (запаса воздуха).
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Визуальная информация - теперь видно остаток газа в баллоне и слышно предупреждение на критических отметках в баллоне. Что порой будет спасать от случайного удушья.
+      
+      ## Демонстрация изменений / Тестирование
+      <img width="456" height="303" alt="25" src="https://github.com/user-attachments/assets/774f86b8-abf5-4752-8092-ff9f7a8fde86" />
+      
+      Оповещение:
+      <img width="276" height="192" alt="image" src="https://github.com/user-attachments/assets/47cc2c66-4750-4ecc-b355-fbf1c57d0345" />
+    changes:
+      KOCMODECAHTHUK:
+        - rscadd: "Система предупреждений у кислородных баллонов"
+        - image: "Добавлены накладываемые иконки на кислородные баллоны"
