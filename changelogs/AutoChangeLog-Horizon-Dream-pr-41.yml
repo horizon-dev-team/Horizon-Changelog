@@ -1,0 +1,13 @@
+# PR: horizon-dev-team/Horizon-Dream/41
+Horizon =][=:
+  41:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: Modular icon cutter, Fix comments parsing"
+    body: |
+      ## Описание изменений
+      В инструмент `Icon Cutter` добавлены пути к модульным иконкам.
+      Исправлен баг с удалением инклюдов в модульных .dme-файлах внутри папки `_horizon` (проблема возникала из-за комментариев в коде).
+    changes:
+      KOCMODECAHTHUK:
+        - code_imp: "Исправлено удаление инклюдов в модульных dme-файлах из-за комментариев."
+        - code_imp: "В инструмент Icon Cutter добавлены пути к модульным иконкам."
