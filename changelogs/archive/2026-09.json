@@ -651,5 +651,27 @@
         "text": "Добавлены накладываемые иконки на кислородные баллоны"
       }
     ]
+  },
+  {
+    "date": "2026-09-03",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "41",
+    "title": "ADD: Modular icon cutter, Fix comments parsing",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nВ инструмент `Icon Cutter` добавлены пути к модульным иконкам.\nИсправлен баг с удалением инклюдов в модульных .dme-файлах внутри папки `_horizon` (проблема возникала из-за комментариев в коде).\n",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Исправлено удаление инклюдов в модульных dme-файлах из-за комментариев."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "В инструмент Icon Cutter добавлены пути к модульным иконкам."
+      }
+    ]
   }
 ]
