@@ -205,5 +205,27 @@
         "text": "Описание защиты брони - половинных значения отображаются Vs вместо VI."
       }
     ]
+  },
+  {
+    "date": "2026-09-07",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "49",
+    "title": "ADD: Build Mode - Build Panel",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nДобавлен новый режим в Build Mode: Build Panel - панель с браузером всех турфов/мобов/объектов/предметов в билде.\nПри выборе предмета создается прозрачный чертеж (призрак) объекта.\n\nУправление работает по аналогии с Adv-Mode:\n- ЛКМ - поставить выбранный объект.\n- ПКМ - очистить выбор.\n- Alt+ЛКМ - скопировать объект в выбор.\n- Alt+ПКМ - удалить объект.\n\nВ Build Panel при активной кнопке pixel доступна точечная установка предметов по пикселям.\n\n## Причина создания ПР / Почему это хорошо для игры\nЭто чертовский важное обновление, тк меня уже бесит что если я что-то должен найти то искать в файлах либо в коде.\nДобавляет удобства и что главное упрощает всю дальнейшую разработку в целом.\n\n## Демонстрация изменений / Тестирование\nBuild Panel:\n<img width=\"676\" height=\"398\" alt=\"dreamseeker_6aymZkdo5T\" src=\"https://github.com/user-attachments/assets/ef5a2c53-faa7-4769-96b9-3b8fd67b72d7\" />\n\nPixel-Shift mode:\n<img width=\"638\" height=\"422\" alt=\"dreamseeker_bkuuOouXM7\" src=\"https://github.com/user-attachments/assets/84acbb07-5fba-45a1-934a-e14a24afc805\" />\n",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "В Build Mode добавлена Build Panel - браузер всех объектов билда с категориями и поиском."
+      },
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Build Panel - Добавлена точечная установка предметов по пикселям (через Shift / кнопку pixel)."
+      }
+    ]
   }
 ]
