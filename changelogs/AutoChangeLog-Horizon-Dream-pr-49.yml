@@ -1,0 +1,32 @@
+# PR: horizon-dev-team/Horizon-Dream/49
+Horizon =][=:
+  49:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: Build Mode - Build Panel"
+    body: |
+      ## Описание изменений
+      Добавлен новый режим в Build Mode: Build Panel - панель с браузером всех турфов/мобов/объектов/предметов в билде.
+      При выборе предмета создается прозрачный чертеж (призрак) объекта.
+      
+      Управление работает по аналогии с Adv-Mode:
+      - ЛКМ - поставить выбранный объект.
+      - ПКМ - очистить выбор.
+      - Alt+ЛКМ - скопировать объект в выбор.
+      - Alt+ПКМ - удалить объект.
+      
+      В Build Panel при активной кнопке pixel доступна точечная установка предметов по пикселям.
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Это чертовский важное обновление, тк меня уже бесит что если я что-то должен найти то искать в файлах либо в коде.
+      Добавляет удобства и что главное упрощает всю дальнейшую разработку в целом.
+      
+      ## Демонстрация изменений / Тестирование
+      Build Panel:
+      <img width="676" height="398" alt="dreamseeker_6aymZkdo5T" src="https://github.com/user-attachments/assets/ef5a2c53-faa7-4769-96b9-3b8fd67b72d7" />
+      
+      Pixel-Shift mode:
+      <img width="638" height="422" alt="dreamseeker_bkuuOouXM7" src="https://github.com/user-attachments/assets/84acbb07-5fba-45a1-934a-e14a24afc805" />
+    changes:
+      KOCMODECAHTHUK:
+        - admin: "В Build Mode добавлена Build Panel - браузер всех объектов билда с категориями и поиском."
+        - admin: "Build Panel - Добавлена точечная установка предметов по пикселям (через Shift / кнопку pixel)."
