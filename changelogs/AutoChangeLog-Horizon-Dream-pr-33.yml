@@ -1,0 +1,24 @@
+# PR: horizon-dev-team/Horizon-Dream/33
+Horizon =][=:
+  33:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: Horizon Theme UI-Overhaul"
+    body: |
+      ## Описание изменений
+      Полная переработка стандартной темы оформления интерфейсов на уникальную (Horizon Theme).
+      - Обновлены стили для: Techweb, меню выбора экипировки, стандартных TG-интерфейсов, чата и админ-панели.
+      - Визуальный стиль компактнее, и чище.
+      - Добавлено переключение в обе стороны между настройками и пресетом персонажа.
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Давно нужно было приобрести собственный стиль, время настало.
+      
+      ## Демонстрация изменений / Тестирование
+      | | |
+      |---|---|
+      | ![image](https://github.com/user-attachments/assets/eaf2f265-f1c6-4742-9646-753ebd83000c) | ![image](https://github.com/user-attachments/assets/79dfa67c-f598-4a13-9386-b10571ae7709) |
+      | ![image](https://github.com/user-attachments/assets/889a2918-36f7-41e4-9ec5-4c1469c38523) | ![image](https://github.com/user-attachments/assets/41f66a26-d26a-4679-a99d-746775f2f8a2) |
+    changes:
+      KOCMODECAHTHUK:
+        - rscadd: "Добавлена уникальная тема оформления интерфейсов (Horizon Theme)"
+        - tweak: "Интерфейсы в целом стали компактнее в новом едином стиле"
