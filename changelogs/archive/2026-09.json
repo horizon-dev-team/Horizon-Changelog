@@ -227,5 +227,27 @@
         "text": "Build Panel - Добавлена точечная установка предметов по пикселям (через Shift / кнопку pixel)."
       }
     ]
+  },
+  {
+    "date": "2026-09-08",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "33",
+    "title": "ADD: Horizon Theme UI-Overhaul",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nПолная переработка стандартной темы оформления интерфейсов на уникальную (Horizon Theme).\n- Обновлены стили для: Techweb, меню выбора экипировки, стандартных TG-интерфейсов, чата и админ-панели.\n- Визуальный стиль компактнее, и чище.\n- Добавлено переключение в обе стороны между настройками и пресетом персонажа.\n\n## Причина создания ПР / Почему это хорошо для игры\nДавно нужно было приобрести собственный стиль, время настало.\n\n## Демонстрация изменений / Тестирование\n| | |\n|---|---|\n| ![image](https://github.com/user-attachments/assets/eaf2f265-f1c6-4742-9646-753ebd83000c) | ![image](https://github.com/user-attachments/assets/79dfa67c-f598-4a13-9386-b10571ae7709) |\n| ![image](https://github.com/user-attachments/assets/889a2918-36f7-41e4-9ec5-4c1469c38523) | ![image](https://github.com/user-attachments/assets/41f66a26-d26a-4679-a99d-746775f2f8a2) |\n",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Добавлена уникальная тема оформления интерфейсов (Horizon Theme)"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Интерфейсы в целом стали компактнее в новом едином стиле"
+      }
+    ]
   }
 ]
