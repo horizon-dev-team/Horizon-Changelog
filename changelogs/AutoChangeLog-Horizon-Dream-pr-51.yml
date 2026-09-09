@@ -1,0 +1,17 @@
+# PR: horizon-dev-team/Horizon-Dream/51
+Horizon =][=:
+  51:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: MC Info-panel"
+    body: |
+      ## Описание изменений
+      Добавляет отладочное меню, которое переключается при нажатии `Shift+F3`
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Быстрая информация без необходимости заглядывать во вкладку MC.
+      
+      ## Демонстрация изменений / Тестирование
+      <img width="742" height="462" alt="dreamseeker_HGJT1pX7jt" src="https://github.com/user-attachments/assets/f9e22ce8-667a-42c6-8e1f-4729aae87ec6" />
+    changes:
+      KOCMODECAHTHUK:
+        - admin: "Добавлена MC панель по статистике на Shift+F3"
