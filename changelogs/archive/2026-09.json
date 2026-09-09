@@ -266,5 +266,22 @@
         "text": "Добавлены направленные атаки в ближнем бою. Теперь можно наносить удар, кликая не точно по цели, а за ней."
       }
     ]
+  },
+  {
+    "date": "2026-09-09",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "51",
+    "title": "ADD: MC Info-panel",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nДобавляет отладочное меню, которое переключается при нажатии `Shift+F3`\n\n## Причина создания ПР / Почему это хорошо для игры\nБыстрая информация без необходимости заглядывать во вкладку MC.\n\n## Демонстрация изменений / Тестирование\n<img width=\"742\" height=\"462\" alt=\"dreamseeker_HGJT1pX7jt\" src=\"https://github.com/user-attachments/assets/f9e22ce8-667a-42c6-8e1f-4729aae87ec6\" />\n",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Добавлена MC панель по статистике на Shift+F3"
+      }
+    ]
   }
 ]
