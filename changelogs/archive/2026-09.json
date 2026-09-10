@@ -283,5 +283,32 @@
         "text": "Добавлена MC панель по статистике на Shift+F3"
       }
     ]
+  },
+  {
+    "date": "2026-09-10",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "36",
+    "title": "ADD: Ballistic impact, Muzzle smoke, Shockwave effects",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nПортирование эффектов стрельбы и попаданий пуль из огнестрела, и эффект взрывной волны с TGMC.\n- https://github.com/tgstation/TerraGov-Marine-Corps/pull/9655\n- https://github.com/tgstation/TerraGov-Marine-Corps/pull/12752\n- https://github.com/tgstation/TerraGov-Marine-Corps/pull/13963\n\n## Причина создания ПР / Почему это хорошо для игры\nБаллистическое оружие теперь издает дым при стрельбе, а пули испускают частицы при попадании в объекты и стены.\nПри попадании по живому карбону, из того испускается эффект попадания пули кровь.\nПри сильных взрывах создается взрывная волна.\n\n## Демонстрация изменений / Тестирование\nhttps://github.com/user-attachments/assets/ac3dea74-9b65-4597-bb58-1d80c8ea8bfe\n\n<details><summary>Gif</summary>\n<p>\n<img width=\"850\" height=\"750\" alt=\"45\" src=\"https://github.com/user-attachments/assets/2e25ed52-224b-471d-842c-6fc8cfb26f83\" />\n<img width=\"850\" height=\"750\" alt=\"2332\" src=\"https://github.com/user-attachments/assets/40a906fa-1863-4eac-9771-9105613ef056\" />\n<img width=\"847\" height=\"642\" alt=\"boom\" src=\"https://github.com/user-attachments/assets/2421d5dd-483e-47ec-86a0-a0d43a1c225c\" />\n</p>\n</details>\n",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Баллистическое оружие теперь выпускает дым при стрельбе"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Cтены оставляют частицы обломков при попадании пуль"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Мощные взрывы создают визуальную взрывную волну"
+      }
+    ]
   }
 ]
