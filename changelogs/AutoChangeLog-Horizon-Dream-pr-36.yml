@@ -1,0 +1,32 @@
+# PR: horizon-dev-team/Horizon-Dream/36
+Horizon =][=:
+  36:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: Ballistic impact, Muzzle smoke, Shockwave effects"
+    body: |
+      ## Описание изменений
+      Портирование эффектов стрельбы и попаданий пуль из огнестрела, и эффект взрывной волны с TGMC.
+      - https://github.com/tgstation/TerraGov-Marine-Corps/pull/9655
+      - https://github.com/tgstation/TerraGov-Marine-Corps/pull/12752
+      - https://github.com/tgstation/TerraGov-Marine-Corps/pull/13963
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Баллистическое оружие теперь издает дым при стрельбе, а пули испускают частицы при попадании в объекты и стены.
+      При попадании по живому карбону, из того испускается эффект попадания пули кровь.
+      При сильных взрывах создается взрывная волна.
+      
+      ## Демонстрация изменений / Тестирование
+      https://github.com/user-attachments/assets/ac3dea74-9b65-4597-bb58-1d80c8ea8bfe
+      
+      <details><summary>Gif</summary>
+      <p>
+      <img width="850" height="750" alt="45" src="https://github.com/user-attachments/assets/2e25ed52-224b-471d-842c-6fc8cfb26f83" />
+      <img width="850" height="750" alt="2332" src="https://github.com/user-attachments/assets/40a906fa-1863-4eac-9771-9105613ef056" />
+      <img width="847" height="642" alt="boom" src="https://github.com/user-attachments/assets/2421d5dd-483e-47ec-86a0-a0d43a1c225c" />
+      </p>
+      </details>
+    changes:
+      KOCMODECAHTHUK:
+        - rscadd: "Баллистическое оружие теперь выпускает дым при стрельбе"
+        - rscadd: "Cтены оставляют частицы обломков при попадании пуль"
+        - rscadd: "Мощные взрывы создают визуальную взрывную волну"
