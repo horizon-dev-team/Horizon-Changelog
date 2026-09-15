@@ -310,5 +310,1189 @@
         "text": "Мощные взрывы создают визуальную взрывную волну"
       }
     ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-02",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97675",
+    "title": "Deathsquad thermal vision moved to their organs",
+    "author": "Fghj240",
+    "body": "## About The Pull Request\r\n\r\nIFF visors block your eyes, and deathsquads wear thermal goggles. This fixes that issue by adding thermal vision to the deathsquad IFF eyes. Also renames EFF visors to IFF visors and removes a code comment saying that eyes blocking glasses was unused, because it isn't anymore. Also removes security scanning from deathsquad eyes since they don't really care about that stuff at all. Instead, they get a helpful little line of text telling them what to do when they see someone that isn't centcom personnel.\r\n\r\n## Why It's Good For The Game\r\n\r\nbugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "moves deathsquad thermal vision to their IFF visors"
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "tactical EFF visors are now called IFF visors."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "deathsquaddies can no longer check security records with their eyes"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-02",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97659",
+    "title": "Modularizes more access stuff (PDAs specifically)",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nAll PDAs now hold what PDA painter can make their PDA type, instead of having 1 list that seemingly wasn't updated to include psychologist. Also makes Assistant PDA paintable instead of the parent type.\r\n\r\n<img width=\"499\" height=\"357\" alt=\"image\" src=\"https://github.com/user-attachments/assets/9205b719-ecb7-4bd9-9af0-a1cb66a0a9f5\" />\r\n\r\n\r\nAlso removes the hardcoded define for Silicon & Bot pathing, instead making them use ``SSid_access.accesses_by_region[REGION_ALL_STATION]`` instead.\r\n\r\n## Why It's Good For The Game\r\n\r\nLess hardcoded stuff around jobs which is something we've always been pushing for.\r\n\r\nIt's also much more clear to paint something \"Assistant PDA\" as the default rather than \"PDA\", I think, since it is the Assistant PDA.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Psychologist PDA is now paintable."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "\"PDA\" in the PDA painter is now called \"Assistant PDA\", which it is."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-02",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97632",
+    "title": "Pillow fight content",
+    "author": "TheBoondock",
+    "body": "## About The Pull Request\r\nAdd 2 new pillow weapons to the arsenal\r\n<img width=\"136\" height=\"142\" alt=\"dreamseeker_SApPw8Mrdz\" src=\"https://github.com/user-attachments/assets/ce9c0164-9485-4a2d-ab4e-4b0a6a1bc540\" />\r\n\r\n1) Pillow lance\r\n- A stamina spear  that deals 12 unwielded and 18 wielded \r\n- When wielded,  by running in the same direction for at least 2 tiles the user will begin charging, which will then give a speed bonus and deal extra damage when ramming into another person (2 extra stam dmg for every tiles traveled) with minimum of 4 extra stam dmg\r\n- Charging consumes 5 stam per tiles and can continue until user is out of stamina\r\n<img width=\"1278\" height=\"1009\" alt=\"dreamseeker_LXxhHFo7n6\" src=\"https://github.com/user-attachments/assets/5f122eff-cc94-41a3-aa92-c8d7a75d6969\" />\r\n\r\n2) Mattress shield\r\n- A bulky shield that has a 20% block chance and deals 10 stamina dmg per hit\r\n- When fortified the shield gains extra 20% block chance and deals 5 extra stam dmg\r\n- Shield is very flimsy and can easily break\r\n<img width=\"109\" height=\"122\" alt=\"dreamseeker_rcr3iDFhtv\" src=\"https://github.com/user-attachments/assets/5da140c8-ae0e-47ac-8530-0dbf7abca08e\" />\r\n\r\n## Why It's Good For The Game\r\nI think its fun to have more stamina focus weapons and trade off gimmick for their abilities. Trade off values isnt final and im willing to tone it down if deemed too much",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added pillow lance and mattress shield"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Pillow lance deals stamina damage and allows user to charge once wielded, to charge simply contiously run in a direction and it consumes stamina the more you run"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Mattress shield deals stamina damage and allows user yto fortify, gaining more  block chance and more stamina damage, the shield breaks easily as it is still a mattress"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can now buy lance and mattress from toy vendor"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Maintenance now have a chance to spawn lance and mattress shield"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-03",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97702",
+    "title": "Revenant cannot emag the emergency shuttle console (imarooned pr)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nRemoves the ability for Malfunction to affect the emergency shuttle's console, thus preventing Revenants from early launching\r\n\r\n## Why It's Good For The Game\r\n\r\nI think Revenants emagging the escape shuttle is...... cringe.\r\n\r\nThere is practically no feasible way to stop them from doing it (they can just sit in space and spam it until it works), and of course there's no un-emagging the emergency shuttle. So all it means is if you have a Revenant in the round and you didn't deal with it by the time the shuttle arrived you have to be right there or you get left behind. \r\n\r\nIt screws over antags: Shuttle is a prime opportunity for opportunism.\r\nIt screws over people who don't afk in departures: Better hope for a shuttle beacon lol\r\nIt kills dramatic tension in narrow escapes: You can be holding down departures against waves of xenos, and then the ghost just wanders in and sends the shuttle and ok I guess that's over no more fun\r\n\r\nAnd to top it all off it's not like it benefits the Revenant in any way, it's not like you gain something from sending the shuttle faster. You maroon everyone who didn't rush to a pod or departures 2 minutes early and that's it.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Revenant can no longer affect emergency shuttle console with Malfunction"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-03",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97701",
+    "title": "Fix DNA console being able to print anomalous mutations, fix DNA console spacing with >8 mutations",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n1. Fix DNA consoles being able to print anomalous mutations\r\n\r\nI think the code to block this was just outright removed with no replacement\r\nThe code to stop saving them still exists but the code to stop printing is just gone\r\n\r\n2. Fix weird spacing when you have >8 mutations\r\n\r\nFixes that weird issue where you the mutation printer goes to 1 wide instead of 2 wide",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix DNA consoles being able to print anomalous mutations"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix weird issue where mutation list in the DNA console would go to 1 wide"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-03",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97697",
+    "title": "Timestop stops slightly more time",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nMobs in stopped time are given stasis (chems don't metabolize, blood doesn't leak, etc).\r\n\r\nAlso syndicate bombs, because why not\r\n\r\n## Why It's Good For The Game\r\n\r\nTech didn't exist when Time Stop was made. Now it does.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Mobs subjected to time stop are now slightly more stopped (chems will no longer metabolize, bleeding will pause, etc)."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Syndicate bombs no longer tick towards detonation when time stopped"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored timestop a teeny bit, primarily its interaction with holoparasites, report any issues next time you jojo larp"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-03",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97705",
+    "title": "Fixes SHIFT+(a number) keybinds not working",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTrying to set e.g. \"SHIFT+2\" as a keybind got stored as \"SHIFT+@\" and thus never worked",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Setting SHIFT+number keybinds now works"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-03",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97710",
+    "title": "Fixes icemoon tiles counting for blob victory",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nCloses https://github.com/tgstation/tgstation/issues/97709",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Icemoon tiles no longer count towards the blob's victory"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-04",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97720",
+    "title": "Makes Candela LoS checks a bit more forgiving",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\nCurrently to make a connection Candela units need to both be able to see eachother via a direct raycast, which is used because view() is a lot more forgiving and gives sight around corners which ended up making the beams render over multiple tiles of walls in a rather ugly pattern.\r\nThis PR changes that to only require one of the nodes to see the other rather than both. Two-way checks were added because can_see is non-deterministic and the output varies based on argument order, A can see B but B may not be able to see A due to tile path tracing changing based on arg order.\r\n\r\nBefore vs now\r\n\r\n<img width=\"241\" height=\"268\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a024b198-90f7-464d-b21b-c1809e527938\" />\r\n\r\n<img width=\"209\" height=\"255\" alt=\"dreamseeker_53KPjccNGv\" src=\"https://github.com/user-attachments/assets/68f2fdd5-5e8d-4b2e-99e4-bea53b03467d\" />\r\n\r\n## Why It's Good For The Game\r\nThis way nodes placed next to a corner will be able to see nodes around said corner without another node being placed right next to it when you try to move around the wall.\r\nShould also fix beacons sometimes having issues linking up around corners despite a connection being drawn.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Made Candela LoS checks a bit more forgiving"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-04",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97719",
+    "title": "Fixes luminetworked MODsuit cores sometimes not charging from the network",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nCloses #97704",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed luminetworked MODsuit cores sometimes not charging from the network"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-04",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97681",
+    "title": "Optimize compare()",
+    "author": "TheBoondock",
+    "body": "## About The Pull Request\r\nCompare the total moles of gas mixtures in compare before itterating through individual gas species to compare their moles. Should be free in terms in cost.\r\n## Why It's Good For The Game\r\nShould cut down on the cost of one of the hottest proc in atmos",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "optimize compare() by adding total moles check"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-06",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97721",
+    "title": "Tails stop wagging when in crit or unconscious, rather than when dead",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nRather than listening for death to auto-stop tail wagging, we listen for falling into crit, dying, or falling unconscious\r\n\r\n## Why It's Good For The Game\r\n\r\nWeird that they wag while knocked out. Unless someone wants to add a dream that make you wag your tail like a dog...",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Tails auto-stop wagging when its owner falls unconscious or into crit, rather than when their owner dies."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-06",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97713",
+    "title": "Fixes mob ai asyncs finishing and still returning suspend.",
+    "author": "Maia-J",
+    "body": "## About The Pull Request\r\n\r\nThey would get stuck in the resist loop forever due to the async usually finishing whilst still in start_async(), which start_async() never checks for.\r\n\r\nEscape captivity mobs are thus not impotent after podding\r\n\r\n## Why It's Good For The Game\r\n\r\nWhen an admeme or anything else spawns a mob via pod drop, the mob will actually have working AI, along some other weird cases.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Pod dropped mobs no longer have broken AI that's stuck trying to resist forever."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-06",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97722",
+    "title": "Modsuit, magboot, and robot limb sfx",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nhttps://github.com/user-attachments/assets/6755bcf6-0a41-4152-be14-f25574b519cb\r\n\r\n- Modsuits now have unique footstep sounds associated, according to how much the suit slows you down.\r\n- Magboots share the footstep sounds added to Modsuits, also based on how much the magboots slow you down.\r\n- Robotic limbs also share the footstep sounds added to Modsuits, using the \"lightest\" sound. \r\n- When punching, kicking, or smashing robotic limbs, the hitsound played is a metallic \"bang\" instead of the default punch sound.\r\n\r\nThe foot step sounds were ported from https://github.com/Aurorastation/Aurora.3/pull/13387 and https://github.com/Aurorastation/Aurora.3/pull/21075 . Unfortunately, while the latter has attribution, the former does not. I did my best. \r\n\r\n## Why It's Good For The Game\r\n\r\nReally adds a sense of weight to these things, rather than just feeling like \"clothing+\" or \"limbs+\".",
+    "changes": [
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Modsuits now have footstep sounds"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Magboots now have footstep sounds"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Robotic limbs now have footstep sounds (only applies when barefoot)"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "When punching, kicking, or smashing someone's robotic limbs, an alternate hitsound is played"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-06",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97723",
+    "title": "Resprites/Soft Reverts \"Floors and Walls PR re-take.\"",
+    "author": "Twaticus",
+    "body": "## About The Pull Request\r\n\r\nMakes changes to #97241 \r\nRemoves walls\r\nRemoves (floors) dark/light wood, bone, plasteel, basalt, hull, ash, sand, neo, void, flow, possibly forgetting something.\r\nResprites (floors) carpets, stained glass, material, brick, puzzle, crystals, bamboo(repurposed wallening bamboo texture).\r\nFixes some icon stuff.\r\nGives stone bricks a tile obj.\r\n\r\n###### Stained glass red/orange/yellow/green/blue/purple/white/black, Carpet bear/polar/moth/goliath/carp/lizard/skin(untouched), Puzzle.\r\n<img width=\"768\" height=\"768\" alt=\"dreamseeker_TPSv0DydDn\" src=\"https://github.com/user-attachments/assets/91762c30-3b9c-48f4-b2b8-08d8c6300572\" />\r\n\r\n###### Stained glass with glow.\r\n<img width=\"769\" height=\"384\" alt=\"dreamseeker_NAKf2nZJ0x\" src=\"https://github.com/user-attachments/assets/e6ee1402-2505-444e-83cd-8b98f2dfcb05\" />\r\n\r\n###### Alt tiles diamond/plasma/uranium/bananium, Telecrystal + alt, Bluespacecrystal + alt, Adamantine + alt, Metal Hydrogen + alt, Hauntium + alt, Runite + alt.\r\n<img width=\"768\" height=\"768\" alt=\"dreamseeker_HaweXzLAAR\" src=\"https://github.com/user-attachments/assets/7eb20c64-2892-4622-8e63-758ec9f02f64\" />\r\n\r\n###### Mythril + alt.\r\n<img width=\"384\" height=\"192\" alt=\"dreamseeker_kzMltFfP3t\" src=\"https://github.com/user-attachments/assets/b7546ad0-0f6d-4095-8a0b-e4b63d9a5e43\" />\r\n\r\n###### Bamboo planks, Sandstone bricks.\r\n<img width=\"384\" height=\"192\" alt=\"dreamseeker_ABtp7lhnvX\" src=\"https://github.com/user-attachments/assets/76789443-4fdb-40ef-bd99-53b2c78c4c55\" />\r\n## Why It's Good For The Game\r\n\r\nThe original full revert was overbearing but i wasn't satisfied with what got merged so i worked on as much as i could. Still don't want the walls sorry.",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "reverts/resprites multiple walls/floors from 'floors and walls pr'"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-06",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97735",
+    "title": "Fix shared particles on floor plane objects",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nNecessary for #97692\r\n\r\nShared particles ran into the same issue as #https://github.com/tgstation/tgstation/pull/88951 with floor plane\r\n\r\nI fixed it by including whether the atom is in the floor plane in the key, then removing `VIS_INHERIT_PLANE` if we are on the floor plane.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes some particle effects being invisible when on floor objects (or the floor itself)"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-06",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97736",
+    "title": "Fix bad gender runtimes",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Trying to set byond gender directly to a record entriy, which is not always a byond gender.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Players with it/its pronouns don't break radio messages"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97734",
+    "title": "Fixes cutting cuffs having backwards logic on items",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\nThe logic here was backwards, Jaws of Life could cut nothing, wirecutters could only cut real handcuffs but not cablecuffs, etc\r\n\r\nAlso fixes a runtime and a raw typepath being shown in the same file",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes inverted logic when cutting a cuffed item."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97729",
+    "title": "Fixes pAI language and navigate buttons not appearing",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTitle",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "pAIs once again have language and navigate buttons on their UI"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97730",
+    "title": "Fixes AI revival",
+    "author": "Odairu",
+    "body": "## About The Pull Request\r\nin #97041 the AI's update_stat() proc lost the portion that brings it out of hard crit, so upon revival the AI is permanently stuck in hard crit, this will no longer be the case\r\n## Why It's Good For The Game\r\nBug fix go brr I love silicons :)\r\ncloses #97545",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "AI are no longer stuck in hard crit forever post-revive"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97731",
+    "title": "Fixes radstorm ending announcement not showing",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTitle",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Announcements when radiation storms end now properly show"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97608",
+    "title": "Non-encoded legacy tgui_text_input mode acctually clamps text",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nFixes #97607\r\n\r\nhttps://github.com/user-attachments/assets/5b1186e9-a2a5-42cd-b45b-ab5629a54def\r\n\r\nText still looks ass, those buttons should prob be allowed to be bigger. but idgaf and this is just trying to fix the underlying oversight in the input code.\r\nAlso makes these static vars on the song subsystem actually used cause we had them and the defines fulfilling the same job. \r\n## Why It's Good For The Game\r\nFix good.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Chem dispenser custom recipes (and maybe a few other spots) now properly clamp text when using `Input: Enable TGUI`"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97650",
+    "title": "Add can_hit.ogg",
+    "author": "Techbot121",
+    "body": "## About The Pull Request\r\nadds a hitsound for /obj/item/trash/can/food so it makes a funny sound when you throw it at people.\r\n\r\npreview:\r\n\r\nhttps://github.com/user-attachments/assets/6821139e-ec0c-42a5-81f4-32c85f17b142\r\n\r\nthis also adds the `TRAIT_CUSTOM_TAP_SOUND` trait and essentially also removes the `NOBLUDGEON` item_flag for cans, so the sound can actually play similarly to the wrapping paper item. \r\nI don't think it should affect gameplay as much, only difference I can think of is that you can't put them into disposal with combat mode on.\r\n\r\nRegarding the sound itself, yes, it's from a video. If that's a problem I can try actually buying a small pringles can and record the sound myself, but I don't think it should cause any copyright issues.\r\n## Why It's Good For The Game\r\nit's funny",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "hitsounds to cans"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "added can_hit.ogg"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97501",
+    "title": "Prison Labor Update: Growing produce and Pressing license plates offer labor points.",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nPrisoners are eating good this month.\r\n\r\nFor starters, the gulag has a new machine installed: the produceporter. The produceporter is basically a teleportation bin, which when fed up to 10 produce items, can be teleported to the station, offering 2 labor points each for every grown food item sent. The destination is determined based on a mapping landmark that I've placed on station, typically on tables nearest the kitchen or hydroponics in order to actually see some use by the average player.\r\n\r\nIn addition, the license plate press now rewards a player with 10 labor points for every license plate they press. The press now plays a sound as well when the plate press is activated. The reason for using 2 points on food and 10 per plate is largely due to the benefit of the grown crops being something you can do in parallel with other activities like mining, while still being enough points that you may not want to completely discount doing them.\r\n\r\nThe prisoner processing computer for the gulag may now accept a held prisoner id when the tgui button is pressed, as opposed to being directly inserted into the machine from the user's hand ahead of time.\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nThis idea was pitched on the discord and spawned #96731 as part of the same discussion, but that PR was more meant to make sure that completing gulag labor assignments wasn't an automatic suicide attempt, and instead a short enough activity that actually benefits the station. Now, by offering some additional incentive to performing gulag labor, players have more ways to assist the station within the confines of the labor camp. Crops give chefs more thing that they can feed the station, license plates are decent exports for cargo, though they still need to be collected by security to receive.\r\n\r\nMuch of the rest was me picking apart small QOL tweaks across the board related to the whole gulag system and trying to make sure that it felt responsive and satisfying to interact with.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added a new machine to the prison labor camp on lavaland: The produceporter. Send grown crops to service staff in exchange for labor points!"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "The license plate press will now grant 10 labor points every time a new plate is pressed."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The labor camp console can now take a prisoner ID straight from your hand."
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Added sfx to the license plate press."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97714",
+    "title": "Grab signal update, pawn_grabbed_by_enemy fix",
+    "author": "Maia-J",
+    "body": "## About The Pull Request\r\n\r\nAdds COMSIG_MOVABLE_CHANGED_GRABBED_STATE for when a change in grab state happens on the object being grabbed. Moves both it and COMSIG_MOVABLE_SET_GRAB_STATE until AFTER the grab state is actually changed. There's no real reason not to do so if you look at the logic.\r\n\r\nMakes pawn_grabbed_by_enemy use the new COMSIG_MOVABLE_CHANGED_GRABBED_STATE signal so that the decorator actually starts returning true when its pawn gets aggro grabbed.\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes some weird buggy behaviour. Tested and proven to work correctly, if the mob has DEFAULT_AI_FLAGS or CAN_ACT_WHILE_GRABBED that is.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Mobs that are aggro grabbed and are meant to escape captivity actually do so."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97740",
+    "title": "Loot panel QoL",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Loot panel objects can be interacted with while lying down\r\n- Loot panel objects can be interacted with at range if you have telekinesis or a weapon with reach\r\n- Blind people have names in the loot panel back once again, though the panel closes more aggressively when moving away.\r\n\r\n## Why It's Good For The Game\r\n\r\nIt's a little annoying that the loot panel doesn't have 1:1 parity with just picking up or clicking on things manually",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Loot panel objects can be interacted with while lying down."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Loot panel objects can be interacted with at range if you have telekinesis or a weapon with reach."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Blind mobs can see names in the loot panel again, but the panel auto-closes when further than two tiles away."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97741",
+    "title": "Fixes obscured checks",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nFixes #97739\r\n\r\nAdds a define for comparing layers while taking special care for topdown layer.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cables are properly obscured by windows or airlocks"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97743",
+    "title": "Operating computers don't show experiments if there's no techwebs at all.",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nSmall PR just for the sake of modularizing research\r\n\r\n## Why It's Good For The Game\r\n\r\nWahoo!",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Operating computers no longer has the Experiments tab if there's no research servers in existence."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97742",
+    "title": "Changes thumb & scratch keys",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nThumbs up emote ``thumb_u`` -> ``thumbsup``\r\nThumbs down emote ``thumb_d`` -> ``thumbsdown``\r\nScratch head emote ``scratch_h`` -> ``scratchhead``\r\n\r\n## Why It's Good For The Game\r\n\r\nI think it's much easier to remember to manually type out if you don't use the Emotes panel this way.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Changed thumbs up/down & scratch head emote when manually typing to thumbsup, thumbsdown & scratchhead"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97698",
+    "title": "Backpack and belt contents can be accessed via the strip menu",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n### Strip Accessibility\r\n\r\n<img width=\"230\" height=\"106\" alt=\"image\" src=\"https://github.com/user-attachments/assets/6e3510f5-5f93-48ee-9419-554837420b63\" />\r\n\r\nSome storage items like backpacks and belts can now have their contents accessed from a button on the strip menu\r\n\r\nPressing the button gives a warning message to the wearer, so pickpocketing will not be easy in the slightest. \r\nIt also takes slightly longer than removing the bag outright, so in any situation where you could access someone's backpack, you could just as easily steal it outright.\r\n\r\n### Nested storage QoL\r\n\r\n<img width=\"607\" height=\"181\" alt=\"image\" src=\"https://github.com/user-attachments/assets/8b13d645-cf29-403e-bbd9-0eebeb45d4e9\" />\r\n\r\nOpening nested storage objects (i.e. a box in a bag) now have an additional hud element on the bar allowing you to go \"up\" a storage level directly\r\n\r\nThis was added in support of strip storage accessibility, as there would be no way to travel \"up\" nested storage without re-doing the do-after. \r\n\r\n## Why It's Good For The Game\r\n\r\n1. Strip accessibility acts as a way to loot or search someone without needing to remove their backpack, take whatever you need, then re-apply the backpack. \r\n\r\nSome common use cases I can imagine for it: \r\n- For antagonists who are trying to act in stealth, heisting a specific object should be a lot easier. Knock out, access backpack, loot and scoot. Conversely for antags who just want the bag, it's faster for them to steal the whole thing.\r\n- If you're in an emergency situation and just need to grab someone's medkit or epi-pen, you can do so without needing to strip and re-equip their backpack.\r\n- Security gains the ability to perform searches without removing a bunch of equipment.\r\n\r\n2. As mentioned prior, moving up nesting storage was added to support strip accessibility, but it also just ended up being a nice little qol for stuff like pill bottles.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can access someone's backpack contents from the strip menu without needing to remove their backpack. It takes slightly longer than stripping the backpack outright, and warns the wearer that you're fumbling around (...if they're conscious)."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Nested storage objects (such as a box in a bag or a pill bottle in a medkit) now get a hud element on their storage bar that takes you up to its parent storage, allowing you to go up and down storage levels without needing to start at square one."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-07",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97696",
+    "title": "Cargo can import pitchforks and torches for \"civil disagreements\"",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nAdds a new wide spectrum crate filled with classic agricultural tools.\r\n\r\nBy that I mean pitchforks and torches.\r\nWeaker than spears but good at causing wounds. Also, good for handing out to the unarmed masses to make them armed masses.\r\n\r\nAlso, functions as a rake, making it a functional gardening tool, technically!\r\n\r\n## Why It's Good For The Game\r\n\r\nFits the theme of other broad spectrum goods of being good at causing trouble, while also being reasonably cheaper than arming with guns in the event of war ops/revs/similar situations where the crew needs to take up arms against some form of threat.\r\n\r\nThis one was more of a fun idea than one that'll reshape the balance of weapons.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "cargo can now buy a \"gardening\" crate on broad spectrum bands filled with pitchforks and torches."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-08",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97746",
+    "title": "fix progress bars still flashing red when completed",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\r\n\r\nthis fixes the issue where a `do_after` (or well, any timed action) would still cause the progress bar to flash red for a moment when completed, because like, technically progress would be 9.5 / 10 when they finished, even though it actually succeeded.\r\n\r\nfix proof:\r\n<img width=\"132\" height=\"190\" alt=\"2026-09-06 (1788749436) ~ dreamseeker\" src=\"https://github.com/user-attachments/assets/07dd14d4-ffdf-4d91-9c57-4274b301f268\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nthe red failure flash whenever it succeeds annoys me",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed progress bars still flashing red when they were completed."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-08",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97744",
+    "title": "fix slimes not properly passing down allies and factions",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\r\n\r\nslimes passing down factions and friends to babies didn't work, because it tried to loop through `get_faction()` and use it as _refs_.\r\n\r\ni've fixed it so where it loops through _allies_ to use as refs to befriend, and then it just adds the parent slime's factions too.\r\n\r\n## Why It's Good For The Game\r\n\r\nbugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Slimes now properly pass down factions and allies to their babies."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-08",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97745",
+    "title": "standardizes some cuff resist code",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nTries and genecize or turn into helpers some of the cuff resist code, meaning straightjackets are caught in more code without having to had any extra behavoir. There was also some weird reduncency in some procs which i cleaned up, such as the old code dropping cuffs twice because humans had to call drop to clear the straightjacket but thats now handled down in carbon!\r\n\r\nI chose to add behavior for freedom implants specifically to maintain there description of being unable to break straitjackets, done by adding a \"strength\" of a time lower then the jacket.\r\n\r\nThere was also instances where we had hardcoded times depsite the fact that both cooldowns are on /obj/item so i made them use them. No behavior changes as far as i could test.\r\n## Why It's Good For The Game\r\nBetter code, or better behavior in the case of making sure things that break restraints also break straitjackets consistantly.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Improves some code which means straightjackets are better caught in cuff resist code"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-08",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97692",
+    "title": "Industrial waste uses shared particles, prevents duplicating waste.",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nSomeone caused a nuclear meltdown on icebox that could crash the server.\r\n\r\nIndustrial waste decals now use a shared particle holder. This doesn't work, which is why I'm opening this drafted, but if it could be made to work properly, could reduce processing load greatly.\r\n\r\nIn the meantime, waste decals have an animated icon_state when burning a hole through the floor instead to match their alpha changes when active.\r\n\r\nTweaked the formula for spew_waste to decrease the range at which it can spread, allowing for to spread more gradually as a result.\r\n\r\n## Why It's Good For The Game\r\n\r\nCloses #97688. \r\nStops industrial waste from being cloned into a station ending event at more than 50 units and a handful of large beakers.\r\nAlso bounds the region that industrial waste can arrive in without more intentional sabotage or accidental failure.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Industrial waste now uses shared particles for processing."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Industrial waste can no longer be duped."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-08",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97717",
+    "title": "Adds tooltips to the language icons in chat",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nUses the tooltips from https://github.com/tgstation/tgstation/pull/97613 for chat language icons too.\r\n\r\n## Why It's Good For The Game\r\n\r\nSometimes the language icon is almost completely obscured by the questionmark icon (if partially understood) and we already have chat tooltips now so why not?",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added tooltips for language icons in chat"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-10",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97761",
+    "title": "Fall cleaning",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nTin, there's a lot of stuff it turns out that is just lying around doing nothing. Duplicate icons, scratchpad icons that have duplicates elsewhere, sound files that nothing uses...etc.\r\n\r\nThis PR just gets rid of those. If there's anything we want to keep for whatever reason let me know, I tried to avoid things that were obviously templates for spriters and what's left is pretty much all just extra fat that can be safely tossed\r\n\r\n## Why It's Good For The Game\r\n\r\nLess unused assets bloating the repo",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "deletes a bunch of unused, unreferenced assets from the game"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-10",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97725",
+    "title": "Adds the cuffable element bomb collars.",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nThe title says it all.\r\n\r\n## Why It's Good For The Game\r\n\r\n:)",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Some collars are now able to be cuffed to your arm."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-10",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97758",
+    "title": "P.L.A.N.K.M.A.N. - The future (or, the past) of power generation - burning wood!",
+    "author": "MelokG000",
+    "body": "## About The Pull Request\r\nadds a PLANKMAN generator that uses WOOD to generate power (4 times less effective than plasma but burns twice as longer and 1.5x more storage)\r\n\r\nsprites by KREKS (see images in comments)\r\n## Why It's Good For The Game\r\n~~icebox has a lot of trees that are not used by people\r\nso one day i had an idea to build a wooden house\r\nbut i realized there is no wood-burning generator~~\r\n\r\nsome emergency power by burning wood + one more wood use + icebox vibes",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "PLANKMAN-type portable generator! You can now burn wood for power!"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-10",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97755",
+    "title": "Fixes JPS hard del, fixes bot pathfinding overlays not showing",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"1673\" height=\"236\" alt=\"image\" src=\"https://github.com/user-attachments/assets/219c8b64-41ee-4013-a4e3-a8d8c10f572e\" />\r\n\r\nThe list containing the callback is still held by the pathfinder so needs to be emptied not merely nulled here.\r\n\r\nAlso during testing found a bug that was not caused by me apparently. \r\n\r\n<details><summary>these are working again</summary>\r\n\r\n<img width=\"781\" height=\"334\" alt=\"image\" src=\"https://github.com/user-attachments/assets/18e75a5b-dc68-43a1-bb30-d08ffcd4bdf8\" />\r\n\r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nLess flaky CI runs",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes bot move path overlays not showing up"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-10",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97357",
+    "title": "Adds a fully functional boombox, with collectable tapes you can play (SPATIAL SOUND EDITION)",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nIt came to me in a dream.\r\n\r\nI was standing alone, in a dusty bar, my mime pin shining on my chest. I was prepared for a long shift ahead of me. Then he approached me. Floppy shoes. Red nose. Cruel, twisted demeanor. **The clown.** But I was not deterred. I whip out my boombox, and snap in a tape with a satisfying pop. If I'm going to have to take down this creature, I'm going to go down kicking.\r\n\r\nKicking it WICKED.\r\n\r\n\r\nThis pull request adds a boombox item, which can be obtained through cargo for 600 credits (or, a singleton contraband purchase through the youtool for 700 credits). The boombox uses a radial menu to interact with tapes, and when a tape is inserted, can be played, ejected, or stopped. There are currently 5 tapes, each playing a different genre of music on them. They may also be obtained in a number of ways:\r\n\r\n* Industrial Crush - Arrives with the boombox ordered standard from cargo.\r\n* Bainmack (Rock) - May be purchased as a goodie from cargo for 200 credits.\r\n* Groovepad (HipHop) - May be purchased as a goodie from cargo for 200 credits.\r\n* Franky's Gonna Boom (Jazz) - Purchasable from the black market between 100 and 500 credits, quantity 1.\r\n* Bubblegum (Pop) - Obtained as a secondary reward from completing the \"Pizza Party\" Virtual Domain.\r\n\r\nThe boombox uses soundloops and spatial audio to work, meaning that anything you play can he listened to by the whole room. It may also be broadcast from your mob if it's being carried. Speaking of being carried, alt-right clicking the boombox will cause it to swap visually between being carried from the handle, and being carried by the shoulder, as we'd all expect.\r\n\r\nFor reference, it's also designed in a way to be quite easy to add new tapes to the game, only needing a new sound datum, and maybe a few more color tape sprites eventually, but nothing's stopping you from adding a 20 TC joke tape and syndicate doombox next.\r\n\r\nhttps://github.com/user-attachments/assets/ddf0d471-9e3e-4169-98aa-3da7cd2b59c1\r\n\r\n## Why It's Good For The Game\r\n\r\nService sees VERY few new crates that are added to their section of cargo, and even beyond that, this is the sort of collectable that can completely change the atmosphere of the environment when it's used. Some people have mentioned using boomboxes for rap battles, others have mentioned carrying a boombox around as you're traitoring it up as an antagonist.\r\n\r\nNot to mention, it adds an interesting reward space if and when new tapes are added in the future, or rare tapes are added to ruins/away missions/reward spaces, as to use the tape you NEED a boombox. If you want a boombox you NEED a tape, and the free tape that comes with the boombox sucks (I can say that, that's the one track I made).\r\n\r\nOne **concern** I will state is I'm not confident on RSC impact with the length of some of these songs. Trimming down and shortening some of the song loops may be an option in cutting that down, but ironically enough, I'm not much of an audio guy beyond the bare basics.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Cargo may now buy a brand new, Nanomusic Boombox! Comes free with 1 demo tape. Two additional disks sold separately (as goodies)."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "A familiar-sounding tape has been added to the game's vendor's premium goods."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "A rare tape has been added to the black market."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "A rare tape has been added as a bitrunning secondary reward."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-12",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97777",
+    "title": "adds pinup posters",
+    "author": "OnlineGirlfriend",
+    "body": "## About The Pull Request\r\n\r\nadds two pinup posters, \"Down the Rabbit Hole\" and \"Bridge Bunny\"\r\nyes they're both bunnies\r\n\r\n<img width=\"212\" height=\"117\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c5b6b13e-0426-4f8f-9168-12be1e081857\" />\r\n\r\nposter on the left is by me\r\nposter on the right (Bridge Bunny) is by **monsterlord59** please clap and spin for her\r\n## Why It's Good For The Game\r\n\r\nmore pinups in the pinup pool\r\nthis should keep the masses calm for awhile",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "pinup posters"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-12",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97695",
+    "title": "Kudzu DLC - New Mutations and Changes (Venus Flytraps Inheritable Effects)",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nSeveral big changes with Kudzu and Venus Fly Traps.\r\n\r\nNew Mutations:\r\n- Slippery - Causes the vines to be slippery (also melee attacking items have a chance to become slippery, causing you to drop them)\r\n- Conductive - Causes the vines to conduct electricity if they are over powered wires (similar to electrified grilles)\r\n- Radioactive - Causes the vines to be radioactive and spread radiation to nearby objects and mobs\r\n\r\nMutations now directly affect the Venus Fly Traps:\r\n- Light - Emit a glow like ethreals\r\n- Transparent- The body is now 50% alpha (partially see-through)\r\n- Toxic - Full immunity to toxin damage, weedkillers, pesticides, etc.\r\n- Explosive - Will explode upon death\r\n- Vine Eating - Doubles the weed heal rate\r\n- Aggressive Spreading - +2 range off weeds before taking damage\r\n- Thorns - Halves melee/object damage but gains a pointy, sharp attack that causes wounds and bleeding\r\n- Hardened - Double health\r\n- Timid - Removes vine tangle ability\r\n- Slippery - Chance to cause melee attacking item to be slippery\r\n- Radioactive - Radiation pulse when attacked\r\n\r\nBase changes to Venus Fly Traps:\r\n- Halved health\r\n- Halved regeneration weed heal rate\r\n- Off weeds start taking immediate damage (0 range)\r\n\r\nWeedkiller/Plant-B-Gone:\r\n- Change the weedkiller grenade to be the actual weedkiller chemical\r\n- Halved the damage that plantbgone chem does to plants and it now has a 50% chance to remove kudzu (vs the 75% of weedkiller)\r\n- Weedkiller/Plant-B-Gone now instakills alien weeds (which technically did already since it was so low health)\r\n\r\nMisc:\r\n- Add examine text blocks to flavour ghost mob spawners\r\n- Add mutation list to flavour text for Venus Fly Traps (so you know what advantages/disadvantages you have)\r\n- Remove redundant heat/cold flags\r\n- Fix `on_hit` code not working which affected thorn mutation from cutting people when attacked and the hardened mutation from providing a 50% damage resistance from sharp weapons \r\n\r\n## Why It's Good For The Game\r\nCurrently, Venus Flytraps exist in an unhealthy balance state. Because their passive regeneration and health pool are so high, standard weapons (like lasers) cannot out-damage them. This forces crew to rely almost entirely on weedkiller gas grenades as an absolute silver bullet. This made adding cool new mutations like Toxin Immunity impossible without making Flytraps completely invincible.\r\n\r\nThis PR resolves this by making Flytraps use a mutation framework. Base stats (HP, regen, weed distance) are reduced by ~50%, making raw Kudzu outbreaks manageable with standard weapons. However, dedicated Botanists who selectively breed and prune traits can still craft an unholy, endgame biological threat.\r\n\r\nAlso, I thought it was silly for the weedkiller grenade to be using the plant-b-gone chemical inside it when there is a weedkiller chem. Upon closer code inspection, the weedkiller/plant-b-gone had no noticeable difference when it comes to fighting Kudzu with the chemical. So I cut the damage/chance in half for plant-b-gone and kept the same stats for weedkiller. (so your normal weedkiller grenade effects is unchanged)",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Add 3 new kudzu mutations - slippery, radioactive, and conductive"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Venus Flytraps will inherit mutations from kudzu that can be beneficial or negative that can affect stats, abilities, etc."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Halved Venus Flytrap health and regen. Venus Flytraps can no longer move off weeds without taking damage unless they have the aggressive spread mutation."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Weedkiller/Plant-B-Gone instakills alien weeds"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Weedkiller grenades now use weedkiller chemical and not Plant-B-Gone"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Halved the damage from Plant-B-Gone vs kudzu and plants"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed hardening kudzu mutation not providing a 50% resistance to sharpened weapons."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed thorn kudzu mutation not retaliating against players who attack it."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Add examine blocks to flavour text for Venus Trap Ghost Spawners that includes their inherited mutations"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-13",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97711",
+    "title": "Adds 4 New Mech Pilot Suits - The Explorer Corps and Royal Guard Uniforms",
+    "author": "KingkumaArt",
+    "body": "## About The Pull Request\r\n\r\n \r\n<img width=\"700\" height=\"460\" alt=\"Mechsuits\" src=\"https://github.com/user-attachments/assets/3ab452b9-d3bd-46c1-bae3-bfc926c61ca5\" />\r\n\r\nThis PR adds 2 mech pilot suits with two variants each, able to be reskinned from the base variant ordered via cargo. All suits are compatable with both male and female body types.\r\n\r\nThe \"Explorer Corps\" Suit was based upon the pre-existing robotics jumpsuit and various ss13 fanart showing it as an eva-style plugsuit, with the alternative variant being made after someone asked if I was spriting a robot from the game signalis.\r\n\r\nThe \"Royal Division\" Suit was based upon the HoS parade coat and Mining Berserker Armor, with the alternative sleeveless version being Based on Kallen Stadtfeld from the anime Code Geass. \r\n\r\nAdditionally, a single-pack of the suits has been added to cargo's goodies list, so roboticists don't have to spend the money for a four-pack when only one is needed.\r\n\r\n<img width=\"444\" height=\"256\" alt=\"Screenshot 2026-09-02 223024\" src=\"https://github.com/user-attachments/assets/a3d4e2eb-6b68-4dcc-b4ed-7630d8bd2ac3\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nAll our current mech pilot suits are Evangelion references - which is a great choice - but I felt some that looked more like existing clothing (or like suits from other mecha anime, in the case of the alt royal division) would be good variety.",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "added 4 new mech pilot suits, purchasable from cargo!"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97776",
+    "title": "Fix blood trail gender",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n\"That's a trail of blood\", not \"that's some trail of blood\"",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Fix blood trail examine: \"That's a trail of blood\" instead of \"that's some trail of blood\""
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97770",
+    "title": "Fixes blood hard dels, part 5",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nThis might actually be the end... I think I've isolated the cause, and it's naturally LAVA. Because ofc it would be.\r\n\r\nFixes https://github.com/tgstation/tgstation/issues/97639\r\nFixes https://github.com/tgstation/tgstation/issues/97700\r\nFixes https://github.com/tgstation/tgstation/issues/97693\r\nFixes https://github.com/tgstation/tgstation/issues/97651\r\nFixes https://github.com/tgstation/tgstation/issues/97686\r\n\r\nSo turf initialization currently calls `Entered()` on everything already on the tile. This means, replacing the floor underneath something therefore is identical functionally to if it had moved onto that floor. This can notify existing listeners again and cause duplicate registrations.\r\n\r\nThis PR aims to separate it into two cases:\r\n1) Actual movement: continues through `Entered()`.\r\n2) Existing occupants: get `initialize_occupant()` when their turf initializes.\r\n\r\nBack to the lava: previously, `ChangeTurf()` saved the signal tables, initialized the replacement, then merged the saved tables back in. If initialization deleted a gib, that merge could restore its registration and keep it referenced. This is what was happening with lava:\r\n\r\n1) A blood/gib decal sits on a turf, listening for atom_entered through `connect_loc`.\r\n2) `ChangeTurf()` saves that turf’s signal tables and starts constructing lava underneath the decal.\r\n3) Lava initialization calls `Entered()` for things already there.\r\n4) That runs `burn_stuff()` -> `do_burn()`. Lava explicitly removes FIRE_PROOF, then calls the decal’s `fire_act()`, which immediately calls `qdel(src)`. Ordinary fire resistance therefore doesn’t protect blood from lava.\r\n5) Blood deletion tries to unregister its turf signals. But those inherited registrations are still sitting in `ChangeTurf()`’s saved tables, unavailable to cleanup on the new turf.\r\n6) Construction finishes, and` ChangeTurf()` merges those saved tables back, including the reference to the deleted blood.\r\n7) That reference prevents garbage collection, eventually causing a hard delete.\r\n\r\nAfter this PR, the replacement now gets those tables _before_ initialization, so cleanup updates the tables that actually survive.\r\n\r\nWith initialization now handled explicitly, the inherited-listener exclusions and special signal-dispatch filtering are no longer needed. \r\n\r\nMaterial tracking also refreshes its subscriptions without rerunning first-entered effects or losing pending landing callbacks.\r\nThe result is easier to follow. Now movement notifications mean something moved, and turf setup has its own clearly named path.\r\n\r\nI tested this locally but you may want to test merge just in case I missed any edge cases.\r\n\r\n## Why It's Good For The Game\r\n\r\nblood magic is ILLEGAL. also\r\n\r\n<details><summary>live footage from within a typical CI run</summary>\r\n\r\n<img width=\"498\" height=\"351\" alt=\"spooky-volcano-2797087484\" src=\"https://github.com/user-attachments/assets/c1a2debc-9b15-4306-964e-eef4e0aec053\" />\r\n\r\n</details>",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "changed the way ChangeTurf() handles signal registration, please report any weird issues with stuff that usually happens on entering certain turfs (elevation, bananium squeaks, lava burning things, etc)"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97773",
+    "title": "Fix stray cargo supply pod runtime",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nThe stray cargo pod would initialize a closet with a null location, then check the air of that location that runtimes. See:\r\n\r\n<img width=\"1063\" height=\"778\" alt=\"Code_iXOTF0uoC0\" src=\"https://github.com/user-attachments/assets/98836dc6-2b4d-4aad-aa96-d722ed581e9b\" />\r\n\r\n## Why It's Good For The Game\r\nCode no crashy.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix cargo stray supply pod runtime"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97768",
+    "title": "Clown op uplink refresh",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nClown op outfit changes:\r\n\r\n- No longer spawns with edagger\r\n- No longer spawns with an ansem pistol\r\n- No longer spawns with clumsy injector\r\n- No longer spawns with a box of clown firing pins\r\n- Now spawns innately clumsy \r\n   - (clumsiness can be removed for 2 tc in the uplink)\r\n- Now spawns with nukie PDA, rather than a pinpointer\r\n- Lube flower now contains superlube, rather than lube\r\n- Toy pistol now spawns with clown firing pin installed, rather than a default firing pin\r\n- Clown mask is now fire proof, pepper proof, and has flash protection \r\n   - (dubbed \"tactical clown mask\")\r\n\r\nClown op item changes:\r\n\r\n- Bananium sword can now slip people lying down, flying, or with no gravity\r\n- Bananium sword now slips longer for clumsy wielders and shorter for non-clumsy wielders\r\n- Bananium shield no longer \"auto-catches\" for non-clumsy wielders (meaning you have to manually turn on throw mode)\r\n- Funny firing pins now check for clumsy or naive, rather than clumsy or clown or clownop\r\n- Toy guns no longer have cosmetic recoil\r\n\r\nItems now in the clown op uplink:\r\n\r\n- Dart pistol\r\n   - (might find something funny with this, like super laughter syringes)\r\n- Microbomb Implant\r\n- Macrobomb Implant\r\n   - (exploding clowns are funny)\r\n- Deathrattle Implant\r\n   - (dead clowns are funny)\r\n- Sentience Potion\r\n   - (cayenne is funny)\r\n- Combat Medkit\r\n   - (for keeping clowns alive. the more expensive surgical kit is still restricted)\r\n- Jaws of Life\r\n   - (door prying can be funny)\r\n- Sleepytime Pajama Bundle\r\n- Broken Chameleon Kit\r\n   - (random costume stuff, seemed fitting for clowns)\r\n\r\nItems removed from the clown op uplink:\r\n\r\n- Elite syndicate MODsuit \r\n   - (clown skin does not apply to the elite mod, normal bloodreds are free in the infiltrator)\r\n- Ultra Hilarious Firing Pin \r\n   - (replaced with box)\r\n- Super Ultra Hilarious Firing Pin \r\n   - (replaced with box)\r\n- Clumsiness Injector \r\n   - (clown ops now spawn clumsy)\r\n\r\nNew items in the clown op uplink:\r\n\r\n- Circus Induction Kit \r\n   - (same as the nukie induction kit, but for clown ops)\r\n- Ultra Hilarious Firing Pins \r\n   - (now comes with 5, same price as the single pin)\r\n- Super Ultra Hilarious Firing Pins \r\n   - (now comes with 5, same price as the single pin)\r\n- Clumsiness Anti-Injector \r\n   - (innate clumsiness can be removed with this, 2tc)\r\n- Fake Macrobomb Implant\r\n\r\n## Why It's Good For The Game\r\n\r\nClown op uplink is pretty sad, so I wanted to give them a refresh with some new tools for high level pranks.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Toy guns no longer have cosmetic recoil effects"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Bananium swords are now slippier, particularly in the hands of clowns"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Bananium shields are now slippier, particularly in the hands of clowns"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Added and removed several items from the clown operative outfit and uplink"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97671",
+    "title": "basic mob explosion changes",
+    "author": "Fghj240",
+    "body": "## About The Pull Request\r\n\r\nThis PR makes basic mobs handle explosion damage with less RNG. It also makes bomb immunity work on nonhumans. Instead of random chance based on bomb armor (literally just prob(bomb_armor)) the game now scales explosion damage down the same way it works on humans (linearly down to 50% damage). This makes bomb armor a little more effective in those mobs. Gibbing now also checks for EXPLODE_GIB_THRESHOLD because it says `ex_act() with EXPLODE_DEVASTATE severity will gib mobs with less than this much bomb armor` and not that it only applies to humans. #61539 was reverted by #78979 but the ex_act being split into 3 smaller functions wasn't undone, so this undoes that too. Finally, the bomb immune trait was only checked for in human_defense and surprisingly nowhere else, so bomb immune simple mobs like the stargazer weren't actually bomb immune. Now they are.\r\n\r\nI should mention that basically no simplemob has armor, but their ex_act supports it so whatever\r\n\r\n## Why It's Good For The Game\r\n\r\nuhhhh",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "simplemob bomb armor grants linearly scaling damage reduction vs bombs instead of a random chance to reduce damage"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "bomb immunity works on simplemobs"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "bomb armor now protects simplemobs from being gibbed by explosions"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "simplemob bomb code is less repetitive"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97782",
+    "title": "Stops holodeck from bricking itself",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"600\" height=\"400\" alt=\"hxq7EqkZr1\" src=\"https://github.com/user-attachments/assets/5fe95dcc-1e44-4eb3-b315-c3de4cc0d0a6\" />\r\n\r\nHolodecks can runtime midway through loading their program, getting stuck forever in an invalid state and bricking themselves.\r\n\r\n## Why It's Good For The Game\r\n\r\nholodeck becoming unusable for the rest of the round is not good for the game",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes an issue that can cause the holodeck to stop functioning for the entire round"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97788",
+    "title": "Fix supermatter spiders not having web immunity trait",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nAdds the `TRAIT_WEB_SURFER` trait to supermatter spiders.\r\n\r\n## Why It's Good For The Game\r\nConsistency.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix supermatter spiders not having web immunity trait"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97748",
+    "title": "Small chat filtering fixes",
+    "author": "sqnztb",
+    "body": "## About The Pull Request\r\n\r\nLocal filter was catching radio and entertainment. #97613 wrapped the latter in a say span, which is what the chat filter uses to detect \"local\" chat. Also fixes a small bug where toggling filters doesn't apply instantly.\r\n\r\n## Why It's Good For The Game\r\n\r\nBugs bad.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "radio and entertainment chatter are no longer filtered out by local chat."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97750",
+    "title": "Mech UI Improvements and minor QOL 2026",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nIt was brought to my attention that the Mech UI is fairly very large, and that the amount of screenspace blocked by the Mech UI was getting in the way of actually making use of most mechs. So, I did some iteration and tweaks to the UI, adding a toggle so that you can trim down the width of the window, hiding and condensing the equipment screen of the mech.\r\n\r\nExtended:\r\n<img width=\"801\" height=\"561\" alt=\"image\" src=\"https://github.com/user-attachments/assets/35f77f8d-501a-478f-9d11-564c6cfc93c9\" />\r\n\r\nMinimized:\r\n<img width=\"400\" height=\"559\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b2f33ff8-e624-41fd-8125-fd9ee26c890a\" />\r\nThis trims the window width from 800 pixels (extended width) down to a clean 400. This hides the text of the modules half the screen and replaces some text with icons to help force it into that space, while still allowing you to swap the equipment selected, though for finer control you'll need to maximize the tab back open to tweak settings.\r\n\r\nAnother mild tweak, I adjusted the text for mechs that have an overclock function, so that the text will show what the overclock % while off, since once it's turned off the overclock % will still iterate downwards if you turn it back on.\r\n\r\nDocumented the code of mecha wreckage which carries the legacy of mech code looking awful and being inconsistent. Also, renamed the AI var(Capital A capital I) to ai_pilot for clarity's sake.\r\n\r\nLastly, while examining a mech, swaps the text span of the mech in it's last 2 damage states to span_warning to match the existing formatting of \"It's falling apart!\" already seen on every other structure in the game.\r\n\r\n## Why It's Good For The Game\r\n\r\n* Cleans up a very cluttered UI by offering an option that makes makes more utilitarian without forcing you to play the game half-blind.\r\n* Improves code documentation quality.\r\n* Brings the mech examine text up to parity with other instances of damage states in-game.\r\n* Allows players to keep track of a variable that they're expected to be able to keep track of but is hidden behind the TGUI.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "All Mechs now have a toggle to trim down the modules pane of the Mech UI."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Mechs will now show their overlock percentage without having it enabled."
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Mechs when examined now format their integrity text the same as when other things are falling apart."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97749",
+    "title": "Coroner LARP: Arm bruise wounds",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nWhile you're determined and try to shove or punch someone, you'll get bruises along your hands from hitting too hard, which shows up in an Autopsy scan. Being alive will slowly tick the bruises away until they disappear, so this will only appear if you die somewhat close to when you actually gain the wound.\r\n\r\n\r\n<img width=\"363\" height=\"110\" alt=\"image\" src=\"https://github.com/user-attachments/assets/685997d5-a7b0-46ee-8d2b-7c5f8ab4fe31\" />\r\n\r\n\r\n<img width=\"381\" height=\"111\" alt=\"image\" src=\"https://github.com/user-attachments/assets/730f71f5-4a88-468e-99dd-17610ac86367\" />\r\n\r\n\r\nThis gives a little bit more insight into the Autopsy report to at least be able to tell if someone's dying moments were spent resisting or fighting.\r\n\r\n## Why It's Good For The Game\r\n\r\nI like the idea of more in-depth investigations and one of the things that interests me is being able to tell whether or not someone went down fighting or defending themselves, which this aims to be.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added bruise wounds to your hands if you attack people in a near-death state. They show up on autopsies."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97726",
+    "title": "Adds unique plantlife for Icebox.",
+    "author": "YesterdaysPromise",
+    "body": "## About The Pull Request\r\n\r\nIcebox feels, and demonstrably, is, more hospitable to plants than Lavaland, so, thought it was rather weird it doesn't have its own wild plants besides frost chili. This PR works on fixing that, plus adds a couple of drinks and dishes using them, so you got a reason to grab them.\r\n\r\nIn addition, Fonarstolbe and Vahrezjias contain unique chemicals; Guidoferrunitian Glycetamine and Berserk Toxin respectively. First gives you bit of damage resistance, the second has an effect similiar to stimulants, while causing brain damage and spasms so you are likely to punch people at random.\r\n\r\n<img width=\"2524\" height=\"2086\" alt=\"caut\" src=\"https://github.com/user-attachments/assets/6e54f9d4-d134-4020-a2aa-f49a68b1ac3a\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nIcebox mining, and, Icebox in general deserve a bit more love, don't they? Brings icebox caves closer to parity with Lavaland.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added Fonarstolbes, Podsneyzkas, Vahrezjias, Inozhakusts, Plasma Flowers, and Drake Beets as Icebox plantlife and botany plants."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added following chemicals: Guidoferrunitian Glycetamine (Found in Fonarstolbes)  and Berserk Toxin (Found in Vahrezjias)"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added Nutrient Bars, Iceberg Soup, Drake Borscht, Wolf Goulash, Snowdrake BBQ, Wendigo Killer Feast, and Ice Breaker to cooking recipes."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added Mouthwash (from fermented Inozhakusts), Strong Mouthwash, Stone Cold Stout, Icy Dorf, Ramp Rager, Ice Grave and Frozen-Sea Lantern drinks."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97790",
+    "title": "Stop Kilo turbine from burning Atmos down",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nFixes #97664",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes Kilo's gas turbine burning Atmos down on use"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "upstream_date": "2026-09-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97795",
+    "title": "Adds icons for the achievements missing them",
+    "author": "Jacquerel",
+    "body": "## About The Pull Request\r\n\r\nAdds icons for the three remaining achievements with no icon, including the notable achievement for whacking yourself with an item.\r\n\r\n`I Was a Teenage Anarchist`\r\n(Be crushed to death by a vending machine)\r\n<img width=\"76\" height=\"76\" alt=\"vs\" src=\"https://github.com/user-attachments/assets/62bc2064-ddf3-409d-8688-6123b041e2d4\" />\r\n\r\n`A Bowl-d New World`\r\n(Be killed by having your head swirled in a toilet)\r\n<img width=\"76\" height=\"76\" alt=\"s\" src=\"https://github.com/user-attachments/assets/1865ac03-4a2e-4d0b-8c3e-8d6bb0b52143\" />\r\n\r\n`How Do I Switch Hands???`\r\n(Hit yourself with any item)\r\n<img width=\"76\" height=\"76\" alt=\"sy\" src=\"https://github.com/user-attachments/assets/b2d8929d-36ff-418b-8956-34dc98e0f37a\" />\r\n\r\n\r\nAdditionally, now that we have no achievements with missing icons, removes the default icon state that bypassed the unit test we already have which complains if you add an achievement with no icon, which was made totally pointless by the fact that we had three achievements with no icon and a default value functionally disabling the test\r\n\r\n## Why It's Good For The Game\r\n\r\nDid we seriously go 6 years happy with this being represented by an empty blue circle?",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Added icons for the achievements \"I Was a Teenage Anarchist\", \"A Bowl-d New World\", and \"How Do I Switch Hands???\""
+      }
+    ]
   }
 ]
