@@ -1,0 +1,387 @@
+# PR: horizon-dev-team/Horizon-Dream/55
+/TG/Station:
+  97675:
+    repo: "tgstation/tgstation"
+    title: "Deathsquad thermal vision moved to their organs"
+    changes:
+      Fghj240:
+        - bugfix: "moves deathsquad thermal vision to their IFF visors"
+        - spellcheck: "tactical EFF visors are now called IFF visors."
+        - tweak: "deathsquaddies can no longer check security records with their eyes"
+  97659:
+    repo: "tgstation/tgstation"
+    title: "Modularizes more access stuff (PDAs specifically)"
+    changes:
+      JohnFulpWillard:
+        - bugfix: "Psychologist PDA is now paintable."
+        - tweak: "\"PDA\" in the PDA painter is now called \"Assistant PDA\", which it is."
+  97632:
+    repo: "tgstation/tgstation"
+    title: "Pillow fight content"
+    changes:
+      TheBoondock:
+        - rscadd: "Added pillow lance and mattress shield"
+        - rscadd: "Pillow lance deals stamina damage and allows user to charge once wielded, to charge simply contiously run in a direction and it consumes stamina the more you run"
+        - rscadd: "Mattress shield deals stamina damage and allows user yto fortify, gaining more  block chance and more stamina damage, the shield breaks easily as it is still a mattress"
+        - rscadd: "You can now buy lance and mattress from toy vendor"
+        - rscadd: "Maintenance now have a chance to spawn lance and mattress shield"
+  97702:
+    repo: "tgstation/tgstation"
+    title: "Revenant cannot emag the emergency shuttle console (imarooned pr)"
+    changes:
+      MrMelbert:
+        - rscdel: "Revenant can no longer affect emergency shuttle console with Malfunction"
+  97701:
+    repo: "tgstation/tgstation"
+    title: "Fix DNA console being able to print anomalous mutations, fix DNA console spacing with >8 mutations"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix DNA consoles being able to print anomalous mutations"
+        - bugfix: "Fix weird issue where mutation list in the DNA console would go to 1 wide"
+  97697:
+    repo: "tgstation/tgstation"
+    title: "Timestop stops slightly more time"
+    changes:
+      MrMelbert:
+        - balance: "Mobs subjected to time stop are now slightly more stopped (chems will no longer metabolize, bleeding will pause, etc)."
+        - balance: "Syndicate bombs no longer tick towards detonation when time stopped"
+        - code_imp: "Refactored timestop a teeny bit, primarily its interaction with holoparasites, report any issues next time you jojo larp"
+  97705:
+    repo: "tgstation/tgstation"
+    title: "Fixes SHIFT+(a number) keybinds not working"
+    changes:
+      PapaMichae1:
+        - bugfix: "Setting SHIFT+number keybinds now works"
+  97710:
+    repo: "tgstation/tgstation"
+    title: "Fixes icemoon tiles counting for blob victory"
+    changes:
+      PapaMichae1:
+        - bugfix: "Icemoon tiles no longer count towards the blob's victory"
+  97720:
+    repo: "tgstation/tgstation"
+    title: "Makes Candela LoS checks a bit more forgiving"
+    changes:
+      SmArtKar:
+        - tweak: "Made Candela LoS checks a bit more forgiving"
+  97719:
+    repo: "tgstation/tgstation"
+    title: "Fixes luminetworked MODsuit cores sometimes not charging from the network"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed luminetworked MODsuit cores sometimes not charging from the network"
+  97681:
+    repo: "tgstation/tgstation"
+    title: "Optimize compare()"
+    changes:
+      TheBoondock:
+        - code_imp: "optimize compare() by adding total moles check"
+  97721:
+    repo: "tgstation/tgstation"
+    title: "Tails stop wagging when in crit or unconscious, rather than when dead"
+    changes:
+      MrMelbert:
+        - tweak: "Tails auto-stop wagging when its owner falls unconscious or into crit, rather than when their owner dies."
+  97713:
+    repo: "tgstation/tgstation"
+    title: "Fixes mob ai asyncs finishing and still returning suspend."
+    changes:
+      Maia-J:
+        - bugfix: "Pod dropped mobs no longer have broken AI that's stuck trying to resist forever."
+  97722:
+    repo: "tgstation/tgstation"
+    title: "Modsuit, magboot, and robot limb sfx"
+    changes:
+      MrMelbert:
+        - sound: "Modsuits now have footstep sounds"
+        - sound: "Magboots now have footstep sounds"
+        - sound: "Robotic limbs now have footstep sounds (only applies when barefoot)"
+        - sound: "When punching, kicking, or smashing someone's robotic limbs, an alternate hitsound is played"
+  97723:
+    repo: "tgstation/tgstation"
+    title: "Resprites/Soft Reverts \"Floors and Walls PR re-take.\""
+    changes:
+      Twaticus:
+        - image: "reverts/resprites multiple walls/floors from 'floors and walls pr'"
+  97735:
+    repo: "tgstation/tgstation"
+    title: "Fix shared particles on floor plane objects"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes some particle effects being invisible when on floor objects (or the floor itself)"
+  97736:
+    repo: "tgstation/tgstation"
+    title: "Fix bad gender runtimes"
+    changes:
+      MrMelbert:
+        - bugfix: "Players with it/its pronouns don't break radio messages"
+  97734:
+    repo: "tgstation/tgstation"
+    title: "Fixes cutting cuffs having backwards logic on items"
+    changes:
+      PapaMichae1:
+        - bugfix: "Fixes inverted logic when cutting a cuffed item."
+  97729:
+    repo: "tgstation/tgstation"
+    title: "Fixes pAI language and navigate buttons not appearing"
+    changes:
+      PapaMichae1:
+        - bugfix: "pAIs once again have language and navigate buttons on their UI"
+  97730:
+    repo: "tgstation/tgstation"
+    title: "Fixes AI revival"
+    changes:
+      Odairu:
+        - bugfix: "AI are no longer stuck in hard crit forever post-revive"
+  97731:
+    repo: "tgstation/tgstation"
+    title: "Fixes radstorm ending announcement not showing"
+    changes:
+      PapaMichae1:
+        - bugfix: "Announcements when radiation storms end now properly show"
+  97608:
+    repo: "tgstation/tgstation"
+    title: "Non-encoded legacy tgui_text_input mode acctually clamps text"
+    changes:
+      FalloutFalcon:
+        - bugfix: "Chem dispenser custom recipes (and maybe a few other spots) now properly clamp text when using `Input: Enable TGUI`"
+  97650:
+    repo: "tgstation/tgstation"
+    title: "Add can_hit.ogg"
+    changes:
+      Techbot121:
+        - rscadd: "hitsounds to cans"
+        - sound: "added can_hit.ogg"
+  97501:
+    repo: "tgstation/tgstation"
+    title: "Prison Labor Update: Growing produce and Pressing license plates offer labor points."
+    changes:
+      ArcaneMusic:
+        - rscadd: "Added a new machine to the prison labor camp on lavaland: The produceporter. Send grown crops to service staff in exchange for labor points!"
+        - rscadd: "The license plate press will now grant 10 labor points every time a new plate is pressed."
+        - tweak: "The labor camp console can now take a prisoner ID straight from your hand."
+        - sound: "Added sfx to the license plate press."
+  97714:
+    repo: "tgstation/tgstation"
+    title: "Grab signal update, pawn_grabbed_by_enemy fix"
+    changes:
+      Maia-J:
+        - bugfix: "Mobs that are aggro grabbed and are meant to escape captivity actually do so."
+  97740:
+    repo: "tgstation/tgstation"
+    title: "Loot panel QoL"
+    changes:
+      MrMelbert:
+        - tweak: "Loot panel objects can be interacted with while lying down."
+        - tweak: "Loot panel objects can be interacted with at range if you have telekinesis or a weapon with reach."
+        - tweak: "Blind mobs can see names in the loot panel again, but the panel auto-closes when further than two tiles away."
+  97741:
+    repo: "tgstation/tgstation"
+    title: "Fixes obscured checks"
+    changes:
+      MrMelbert:
+        - bugfix: "Cables are properly obscured by windows or airlocks"
+  97743:
+    repo: "tgstation/tgstation"
+    title: "Operating computers don't show experiments if there's no techwebs at all."
+    changes:
+      JohnFulpWillard:
+        - rscdel: "Operating computers no longer has the Experiments tab if there's no research servers in existence."
+  97742:
+    repo: "tgstation/tgstation"
+    title: "Changes thumb & scratch keys"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Changed thumbs up/down & scratch head emote when manually typing to thumbsup, thumbsdown & scratchhead"
+  97698:
+    repo: "tgstation/tgstation"
+    title: "Backpack and belt contents can be accessed via the strip menu"
+    changes:
+      MrMelbert:
+        - rscadd: "You can access someone's backpack contents from the strip menu without needing to remove their backpack. It takes slightly longer than stripping the backpack outright, and warns the wearer that you're fumbling around (...if they're conscious)."
+        - rscadd: "Nested storage objects (such as a box in a bag or a pill bottle in a medkit) now get a hud element on their storage bar that takes you up to its parent storage, allowing you to go up and down storage levels without needing to start at square one."
+  97696:
+    repo: "tgstation/tgstation"
+    title: "Cargo can import pitchforks and torches for \"civil disagreements\""
+    changes:
+      ArcaneMusic:
+        - rscadd: "cargo can now buy a \"gardening\" crate on broad spectrum bands filled with pitchforks and torches."
+  97746:
+    repo: "tgstation/tgstation"
+    title: "fix progress bars still flashing red when completed"
+    changes:
+      Absolucy:
+        - bugfix: "Fixed progress bars still flashing red when they were completed."
+  97744:
+    repo: "tgstation/tgstation"
+    title: "fix slimes not properly passing down allies and factions"
+    changes:
+      Absolucy:
+        - bugfix: "Slimes now properly pass down factions and allies to their babies."
+  97745:
+    repo: "tgstation/tgstation"
+    title: "standardizes some cuff resist code"
+    changes:
+      FalloutFalcon:
+        - code_imp: "Improves some code which means straightjackets are better caught in cuff resist code"
+  97692:
+    repo: "tgstation/tgstation"
+    title: "Industrial waste uses shared particles, prevents duplicating waste."
+    changes:
+      ArcaneMusic:
+        - bugfix: "Industrial waste now uses shared particles for processing."
+        - bugfix: "Industrial waste can no longer be duped."
+  97717:
+    repo: "tgstation/tgstation"
+    title: "Adds tooltips to the language icons in chat"
+    changes:
+      PapaMichae1:
+        - rscadd: "Added tooltips for language icons in chat"
+  97761:
+    repo: "tgstation/tgstation"
+    title: "Fall cleaning"
+    changes:
+      vinylspiders:
+        - rscdel: "deletes a bunch of unused, unreferenced assets from the game"
+  97725:
+    repo: "tgstation/tgstation"
+    title: "Adds the cuffable element bomb collars."
+    changes:
+      necromanceranne:
+        - rscadd: "Some collars are now able to be cuffed to your arm."
+  97758:
+    repo: "tgstation/tgstation"
+    title: "P.L.A.N.K.M.A.N. - The future (or, the past) of power generation - burning wood!"
+    changes:
+      MelokG000:
+        - rscadd: "PLANKMAN-type portable generator! You can now burn wood for power!"
+  97755:
+    repo: "tgstation/tgstation"
+    title: "Fixes JPS hard del, fixes bot pathfinding overlays not showing"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes bot move path overlays not showing up"
+  97357:
+    repo: "tgstation/tgstation"
+    title: "Adds a fully functional boombox, with collectable tapes you can play (SPATIAL SOUND EDITION)"
+    changes:
+      ArcaneMusic:
+        - rscadd: "Cargo may now buy a brand new, Nanomusic Boombox! Comes free with 1 demo tape. Two additional disks sold separately (as goodies)."
+        - rscadd: "A familiar-sounding tape has been added to the game's vendor's premium goods."
+        - rscadd: "A rare tape has been added to the black market."
+        - rscadd: "A rare tape has been added as a bitrunning secondary reward."
+  97777:
+    repo: "tgstation/tgstation"
+    title: "adds pinup posters"
+    changes:
+      OnlineGirlfriend:
+        - rscadd: "pinup posters"
+  97695:
+    repo: "tgstation/tgstation"
+    title: "Kudzu DLC - New Mutations and Changes (Venus Flytraps Inheritable Effects)"
+    changes:
+      timothymtorres:
+        - rscadd: "Add 3 new kudzu mutations - slippery, radioactive, and conductive"
+        - rscadd: "Venus Flytraps will inherit mutations from kudzu that can be beneficial or negative that can affect stats, abilities, etc."
+        - balance: "Halved Venus Flytrap health and regen. Venus Flytraps can no longer move off weeds without taking damage unless they have the aggressive spread mutation."
+        - rscadd: "Weedkiller/Plant-B-Gone instakills alien weeds"
+        - rscadd: "Weedkiller grenades now use weedkiller chemical and not Plant-B-Gone"
+        - balance: "Halved the damage from Plant-B-Gone vs kudzu and plants"
+        - bugfix: "Fixed hardening kudzu mutation not providing a 50% resistance to sharpened weapons."
+        - bugfix: "Fixed thorn kudzu mutation not retaliating against players who attack it."
+        - tweak: "Add examine blocks to flavour text for Venus Trap Ghost Spawners that includes their inherited mutations"
+  97711:
+    repo: "tgstation/tgstation"
+    title: "Adds 4 New Mech Pilot Suits - The Explorer Corps and Royal Guard Uniforms"
+    changes:
+      KingkumaArt:
+        - image: "added 4 new mech pilot suits, purchasable from cargo!"
+  97776:
+    repo: "tgstation/tgstation"
+    title: "Fix blood trail gender"
+    changes:
+      MrMelbert:
+        - spellcheck: "Fix blood trail examine: \"That's a trail of blood\" instead of \"that's some trail of blood\""
+  97770:
+    repo: "tgstation/tgstation"
+    title: "Fixes blood hard dels, part 5"
+    changes:
+      vinylspiders:
+        - code_imp: "changed the way ChangeTurf() handles signal registration, please report any weird issues with stuff that usually happens on entering certain turfs (elevation, bananium squeaks, lava burning things, etc)"
+  97773:
+    repo: "tgstation/tgstation"
+    title: "Fix stray cargo supply pod runtime"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix cargo stray supply pod runtime"
+  97768:
+    repo: "tgstation/tgstation"
+    title: "Clown op uplink refresh"
+    changes:
+      MrMelbert:
+        - rscdel: "Toy guns no longer have cosmetic recoil effects"
+        - balance: "Bananium swords are now slippier, particularly in the hands of clowns"
+        - balance: "Bananium shields are now slippier, particularly in the hands of clowns"
+        - balance: "Added and removed several items from the clown operative outfit and uplink"
+  97671:
+    repo: "tgstation/tgstation"
+    title: "basic mob explosion changes"
+    changes:
+      Fghj240:
+        - balance: "simplemob bomb armor grants linearly scaling damage reduction vs bombs instead of a random chance to reduce damage"
+        - bugfix: "bomb immunity works on simplemobs"
+        - bugfix: "bomb armor now protects simplemobs from being gibbed by explosions"
+        - code_imp: "simplemob bomb code is less repetitive"
+  97782:
+    repo: "tgstation/tgstation"
+    title: "Stops holodeck from bricking itself"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes an issue that can cause the holodeck to stop functioning for the entire round"
+  97788:
+    repo: "tgstation/tgstation"
+    title: "Fix supermatter spiders not having web immunity trait"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix supermatter spiders not having web immunity trait"
+  97748:
+    repo: "tgstation/tgstation"
+    title: "Small chat filtering fixes"
+    changes:
+      sqnztb:
+        - bugfix: "radio and entertainment chatter are no longer filtered out by local chat."
+  97750:
+    repo: "tgstation/tgstation"
+    title: "Mech UI Improvements and minor QOL 2026"
+    changes:
+      ArcaneMusic:
+        - tweak: "All Mechs now have a toggle to trim down the modules pane of the Mech UI."
+        - tweak: "Mechs will now show their overlock percentage without having it enabled."
+        - spellcheck: "Mechs when examined now format their integrity text the same as when other things are falling apart."
+  97749:
+    repo: "tgstation/tgstation"
+    title: "Coroner LARP: Arm bruise wounds"
+    changes:
+      JohnFulpWillard:
+        - rscadd: "Added bruise wounds to your hands if you attack people in a near-death state. They show up on autopsies."
+  97726:
+    repo: "tgstation/tgstation"
+    title: "Adds unique plantlife for Icebox."
+    changes:
+      YesterdaysPromise:
+        - rscadd: "Added Fonarstolbes, Podsneyzkas, Vahrezjias, Inozhakusts, Plasma Flowers, and Drake Beets as Icebox plantlife and botany plants."
+        - rscadd: "Added following chemicals: Guidoferrunitian Glycetamine (Found in Fonarstolbes)  and Berserk Toxin (Found in Vahrezjias)"
+        - rscadd: "Added Nutrient Bars, Iceberg Soup, Drake Borscht, Wolf Goulash, Snowdrake BBQ, Wendigo Killer Feast, and Ice Breaker to cooking recipes."
+        - rscadd: "Added Mouthwash (from fermented Inozhakusts), Strong Mouthwash, Stone Cold Stout, Icy Dorf, Ramp Rager, Ice Grave and Frozen-Sea Lantern drinks."
+  97790:
+    repo: "tgstation/tgstation"
+    title: "Stop Kilo turbine from burning Atmos down"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes Kilo's gas turbine burning Atmos down on use"
+  97795:
+    repo: "tgstation/tgstation"
+    title: "Adds icons for the achievements missing them"
+    changes:
+      Jacquerel:
+        - image: "Added icons for the achievements \"I Was a Teenage Anarchist\", \"A Bowl-d New World\", and \"How Do I Switch Hands???\""
