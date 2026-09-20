@@ -1,0 +1,28 @@
+# PR: horizon-dev-team/Horizon-Dream/54
+Horizon =][=:
+  54:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: Props and Overlays"
+    body: |
+      ## Описание изменений
+      Добавлены новые элементы окружения (пропсы).
+      Переработаны оверлеи смесов и сами смесов.
+      Добавлено множество различных респрайтов, и немного декора.
+      Добавлены относительные повернутые вариации настенных объектов
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Разнообразит визуальное окружение карты и улучшает внешний вид механизмов.
+      
+      ## Демонстрация изменений / Тестирование
+      <img width="331" height="134" alt="26" src="https://github.com/user-attachments/assets/bc54876e-240d-4d0e-bf85-e50adf78e1c1" />
+      <img width="478" height="212" alt="28" src="https://github.com/user-attachments/assets/7b42d187-46f8-41b6-881f-6cb1f142088b" />
+      <img width="642" height="273" alt="27" src="https://github.com/user-attachments/assets/47843f9b-752b-49cc-850c-3e64483ebb43" />
+      <img width="330" height="331" alt="455" src="https://github.com/user-attachments/assets/044cfda4-1371-481f-9f77-9dceb8b87265" />
+    changes:
+      KOCMODECAHTHUK:
+        - rscadd: "Добавлены различные объекты окружения."
+        - image: "Добавлены напольные логотипы."
+        - image: "Добавлены вариации направленных настенных объектов"
+        - image: "Добавлено дерево сакуры и партиклы падающих листьев с него."
+        - image: "Добавлены новые оверлеи смесов, переработаны сами смесов."
+        - image: "Добавлены некоторые респрайты настенных объектов"
