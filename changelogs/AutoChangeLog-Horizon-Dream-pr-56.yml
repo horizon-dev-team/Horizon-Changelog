@@ -1,0 +1,201 @@
+# PR: horizon-dev-team/Horizon-Dream/56
+/TG/Station:
+  97662:
+    repo: "tgstation/tgstation"
+    title: "ADD: Adding an operational delay before firing for shrink ray pistol"
+    changes:
+      Voyaker-coder:
+        - rscadd: "Adds a functional firing delay to the Abductor \"Shrink Ray\" pistol"
+  97802:
+    repo: "tgstation/tgstation"
+    title: "Fixes Petbuilder ui"
+    changes:
+      vinylspiders:
+        - bugfix: "the carrier choice dropdown in the bring your pets to work day menu is now visible"
+  97804:
+    repo: "tgstation/tgstation"
+    title: "Fixes goldgrub related flaky runtime"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes a bug that would cause a goldgrub to sometimes spawn a bugged boulder when hitting a boss vent"
+        - bugfix: "boss vents can actually give diamonds and bluespace now like they're supposed to"
+  97800:
+    repo: "tgstation/tgstation"
+    title: "Audits the descriptions of a lot of RND designs"
+    changes:
+      MrMelbert:
+        - tweak: "Many, many, many RND designs (primarily computers and machines) now have more informative descriptions that explain what they do, rather than only stating \"This is a circuitboard.\""
+        - spellcheck: "Examining a PanD.E.M.I.C 2200, Sheet-meister 2000, or the R&D Server Controller now reads as \"That's a [thing]\" rather than \"That's [thing]\"."
+  97799:
+    repo: "tgstation/tgstation"
+    title: "cybernetic cat fangs look differently in the printer"
+    changes:
+      Fghj240:
+        - spellcheck: "cybernetic fangs aren't called advanced in the printer anymore."
+        - bugfix: "cybernetic fangs moved to combat cybernetic organs"
+  97797:
+    repo: "tgstation/tgstation"
+    title: "Escape menu button tooltips no longer render behind the buttons"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes an issue where the tooltips on the escape menu buttons would be render behind the buttons themselves"
+  94017:
+    repo: "tgstation/tgstation"
+    title: "Removes advanced health analyzer from CMO"
+    changes:
+      improvedname:
+        - balance: "Cmo no longer starts with a advanced health analyzer"
+  97636:
+    repo: "tgstation/tgstation"
+    title: "[Icebox] Icebox atmos remap ft. removing the 1 tile hallway of pain and misery (and also some mapping helper stuff)"
+    changes:
+      MrMelbert:
+        - map: "[Icebox] Remapped Atmospherics. The hallway of pain is gone."
+        - map: "[Icebox] Remapped maintenance around Atmos and Science a bit."
+        - image: "Adds long corner trimline decals"
+  97766:
+    repo: "tgstation/tgstation"
+    title: "Makes AI shell's eye lights turn off when not actively pilotted"
+    changes:
+      PapaMichae1:
+        - tweak: "AI shells now appear \"off\" when not being actively piloted."
+  97752:
+    repo: "tgstation/tgstation"
+    title: "Removes \"Disable mood\" config"
+    changes:
+      FalloutFalcon:
+        - config: "Removes \"Disable mood\" config"
+  97796:
+    repo: "tgstation/tgstation"
+    title: "The human skin suit works as a plasmaman outfit"
+    changes:
+      Jacquerel:
+        - rscadd: "Plasmamen wearing a human skin suit won't catch fire. The suit itself is flammable though, so make sure you change while under a shower or something."
+  97793:
+    repo: "tgstation/tgstation"
+    title: "Miasma contains floor diseases"
+    changes:
+      Jacquerel:
+        - rscadd: "Breathing Miasma can get you sick with the same diseases you get from eating dirty food off the floor."
+  97753:
+    repo: "tgstation/tgstation"
+    title: "Dummy mood datum"
+    changes:
+      FalloutFalcon:
+        - code_imp: "Dummies have a blank mood datum"
+  97808:
+    repo: "tgstation/tgstation"
+    title: "Fix bitrunning antagonists escaping from the computer"
+    changes:
+      Jacquerel:
+        - bugfix: "Bitrunning antagonists can once again escape from an emagged server"
+  97000:
+    repo: "tgstation/tgstation"
+    title: "Add portable bluespace scrubber and gas receiver"
+    changes:
+      Redwizz99:
+        - rscadd: "bluspace scrubber and gas receiver machinery"
+        - rscadd: "bluespace scrubber and gas receiver circuits"
+        - rscadd: "adds bluespace scubber and gas receiver to tech node"
+        - rscadd: "sprites for bluespace scrubber and gas receiver"
+        - rscadd: "you can disconnect scrubbers linked to receiver, just use wirecutter"
+  97811:
+    repo: "tgstation/tgstation"
+    title: "Fix missing inhand sprites and reduce icon-test notices"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes fish food missing their lefthand icon, and boxcutter should show its inhand icon now, as well as a whole bunch of other random items that were not linked up with their existing inhand icon states"
+  97728:
+    repo: "tgstation/tgstation"
+    title: "Thaumaturgy Heretic: Crimson Cleave rework (and two other rituals)"
+    changes:
+      MrMelbert:
+        - rscdel: "Heretic: \"Crimson Cleave\" spell removed."
+        - rscadd: "Heretic: Adds \"The Crimson Cleaver\", a tier four knowledge. A weapon that can cleave and lifesteal. Non-heretics are capable of wielding it, at the expense of their sanity and mind..."
+        - rscadd: "Heretic: Adds \"Rhythmic Lodestone\", a tier one knowledge, which lets the heretic track any imbued object with their living heart."
+        - rscadd: "Heretic: Adds \"Blessed Poppy\", a tier one knowledge, which heals wounds and stabilizes mobs. Can be used by non-heretics."
+  97801:
+    repo: "tgstation/tgstation"
+    title: "Balances out the pinup posters with a couple more"
+    changes:
+      vinylspiders:
+        - rscadd: "Adds two new pinup bunny contraband posters"
+  97571:
+    repo: "tgstation/tgstation"
+    title: "[MDB IGNORE] MMI Refactor: Implement Brain Processors"
+    changes:
+      tontyGH:
+        - code_imp: "Man-Machine Interfaces and positronic brains have been rewritten internally. Please report any unexpected behaviour."
+  97831:
+    repo: "tgstation/tgstation"
+    title: "Nerf secure crate armour and integrity"
+    changes:
+      optimumtact:
+        - balance: "Secure crates are now easier to open thanks to budget cuts"
+  97836:
+    repo: "tgstation/tgstation"
+    title: "[MDB Ignore] Relics are now pulsable assemblies"
+    changes:
+      Y0SH1M4S73R:
+        - rscadd: "Relics are now assemblies - they can be attached to wires and connected to other assemblies"
+        - bugfix: "The dimensional shifting relic effect's cooldown now increases as it was intended to"
+  97825:
+    repo: "tgstation/tgstation"
+    title: "Add emissives effects to engineering/atmos equipment"
+    changes:
+      timothymtorres:
+        - code_imp: "Add emissive effects to supermatter shards, gas meters, thermomachines, pipe devices (filters, mixers, pumps, valves, etc.), circulator heat exchange, SMESs, and PACMAN generators. Default SM now emits light even when not active."
+        - image: "Add light masks to supermatter shards, gas meters, thermomachines, pipe devices (filters, mixers, pumps, valves, etc.), circulator heat exchange, SMESs, and PACMAN generators."
+  97844:
+    repo: "tgstation/tgstation"
+    title: "fixes pet carriers doors clipping and not visibly showing when unlocked/locked"
+    changes:
+      Gboster-0:
+        - bugfix: "pet carrier doors no longer clip through gags + pet carriers visual lock indicator is no longer broken (it was for 2-5 years)"
+  97841:
+    repo: "tgstation/tgstation"
+    title: "Fix all directional lighting directly after being removed from a bag"
+    changes:
+      the-orange-cow:
+        - bugfix: "all directional glow effects work after being taken out of a bag"
+  97835:
+    repo: "tgstation/tgstation"
+    title: "Fix two weakref bugs with R&D console"
+    changes:
+      TealSeer:
+        - bugfix: "fixed R&D console not showing the name of who queued a research node"
+        - bugfix: "fixed being unable to dequeue research nodes you queued"
+  97854:
+    repo: "tgstation/tgstation"
+    title: "Fixes wounds not disabling limbs when they should, and disabling them when splinted"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed wounds not disabling limbs when they should, and disabling them when splinted"
+  97807:
+    repo: "tgstation/tgstation"
+    title: "Tweaks some atmos component names, adds information of them to the RPD"
+    changes:
+      MrMelbert:
+        - spellcheck: "\"gas pump\" renamed to \"pressure pump\""
+        - spellcheck: "\"volumetric gas pump\" renamed to \"volume pump\""
+        - spellcheck: "\"pressure valve\" renamed to \"pressure gate\""
+        - spellcheck: "In the pipe dispenser UI only: \"unary vent\" renamed to \"pump vent\"."
+        - tweak: "In the pipe dispenser UI, most components now have a tooltip explaining what they do and how they work."
+  97803:
+    repo: "tgstation/tgstation"
+    title: "Fixes some station trait related runtimes"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes runtime/race condition with quick and slow shuttle station traits not being applied, fixes a roundstart runtime caused by alert levels trying to be changed before the shuttle is created."
+  97846:
+    repo: "tgstation/tgstation"
+    title: "Adds grades to wet stacks and additional examine flavor"
+    changes:
+      desertmote:
+        - rscadd: "You can visually tell how soaked someone is, and the drip VFX doesn't display when you're only marginally wet"
+  97794:
+    repo: "tgstation/tgstation"
+    title: "Fixes the flashing half of flashbangs making your screen go white but otherwise doing nothing mechanically"
+    changes:
+      PapaMichae1:
+        - bugfix: "Flashbangs now require both eye and ear protection to mitigate their effects, not just ear protection"
