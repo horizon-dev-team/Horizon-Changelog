@@ -1494,5 +1494,610 @@
         "text": "Added icons for the achievements \"I Was a Teenage Anarchist\", \"A Bowl-d New World\", and \"How Do I Switch Hands???\""
       }
     ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97662",
+    "title": "ADD: Adding an operational delay before firing for shrink ray pistol",
+    "author": "Voyaker-coder",
+    "body": "## About The Pull Request\r\n\r\nAdds a functional firing delay to the Abductor \"Shrink Ray\" pistol, replacing the non-functional ````firing_delay````.\r\n\r\n## Why It's Good For The Game\r\n\r\nIt makes the Abductor weapon more skill-dependent to fire (which was apparently the intention, given the existence of a non-functional cooldown option) and prevents it from being spammed.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds a functional firing delay to the Abductor \"Shrink Ray\" pistol"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97802",
+    "title": "Fixes Petbuilder ui",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nOne of the dropdowns on this was busted:\r\n\r\n<details><summary>before/after</summary>\r\n\r\n<img width=\"665\" height=\"353\" alt=\"uyJ3oZy2ss\" src=\"https://github.com/user-attachments/assets/858e6ef8-38cc-429e-b909-4d4cc1f2ec52\" />\r\n\r\n<img width=\"496\" height=\"264\" alt=\"image\" src=\"https://github.com/user-attachments/assets/650f9ff8-a918-442d-a3cc-0ba595d0ba04\" />\r\n\r\n</details>\r\n\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes this so you can actually see it",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "the carrier choice dropdown in the bring your pets to work day menu is now visible"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97804",
+    "title": "Fixes goldgrub related flaky runtime",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"1229\" height=\"458\" alt=\"firefox_YBEte11seW\" src=\"https://github.com/user-attachments/assets/401ea495-0eac-4de4-a091-0259a7fafd57\" />\r\n\r\nFixes this annoying thing. \r\n\r\n`pick_weight()` was set up with non-whole numbers which was causing it to pick null a lot of the times. And some materials were not naturally selectable this way (bluespace, diamond)\r\n\r\n## Why It's Good For The Game\r\n\r\nLess flaky ci",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes a bug that would cause a goldgrub to sometimes spawn a bugged boulder when hitting a boss vent"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "boss vents can actually give diamonds and bluespace now like they're supposed to"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97800",
+    "title": "Audits the descriptions of a lot of RND designs",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nBasically goes through RND designs and gives them descriptions that explain what they do, rather than a description that says \"This is a thing.\" \r\n\r\n## Why It's Good For The Game\r\n\r\nWe have a lot of random designs that print random things.\r\n\r\nIf you're looking through the machines in the imprinter, and you see a weird lookin' one and think \"huh, I wonder what that does\", so you hover over the `?` and it says... \"This circuit board makes this machine.\" Wow, cool, could've guessed that.\r\n\r\nNow instead it says \"Makes this machine, which does this.\". A lot more useful.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Many, many, many RND designs (primarily computers and machines) now have more informative descriptions that explain what they do, rather than only stating \"This is a circuitboard.\""
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Examining a PanD.E.M.I.C 2200, Sheet-meister 2000, or the R&D Server Controller now reads as \"That's a [thing]\" rather than \"That's [thing]\"."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97799",
+    "title": "cybernetic cat fangs look differently in the printer",
+    "author": "Fghj240",
+    "body": "## About The Pull Request\r\n\r\nThey aren't called advanced anymore because advanced kind of implies a weaker version. Now they're just \"cybernetic fangs\". Also the printed version doesn't say advanced so I'm not sure why the printer does. Also, they were moved from tier 1 cybernetic organs to combat cybernetic organs because they're for combat.\r\n\r\n## Why It's Good For The Game\r\n\r\nuhhhhhhhh",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "cybernetic fangs aren't called advanced in the printer anymore."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "cybernetic fangs moved to combat cybernetic organs"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97797",
+    "title": "Escape menu button tooltips no longer render behind the buttons",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nThis has been bugging me for some time, what it says on the tin:\r\n\r\n<details><summary>Before</summary>\r\n\r\n<img width=\"301\" height=\"220\" alt=\"dreamseeker_kzqTyu07Mi\" src=\"https://github.com/user-attachments/assets/843139b1-8d8b-4849-96b9-57a277bb0e7e\" />\r\n\r\n</details>\r\n\r\n\r\n<details><summary>After</summary>\r\n\r\n<img width=\"365\" height=\"413\" alt=\"dreamseeker_ox0nqg1VcG\" src=\"https://github.com/user-attachments/assets/88e1cf6b-c302-447e-99f6-609fc078d48e\" />\r\n\r\n</details>\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nTooltips are more helpful when you can read them",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes an issue where the tooltips on the escape menu buttons would be render behind the buttons themselves"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2025-11-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "94017",
+    "title": "Removes advanced health analyzer from CMO",
+    "author": "improvedname",
+    "body": "## About The Pull Request\r\nThis PR removed the health analyzer from cmo roundstart gear\r\n\r\n## Why It's Good For The Game\r\nIts a tech bypass and encourages heads to research stuff to the department can do their work better plus cmo like the ce who lost his tools get alot other QoL tools which give them the edge as a head",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Cmo no longer starts with a advanced health analyzer"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97636",
+    "title": "[Icebox] Icebox atmos remap ft. removing the 1 tile hallway of pain and misery (and also some mapping helper stuff)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Remaps Icebox atmospherics, as well as the surrounding maintenance areas. \r\n\r\n<img width=\"1067\" height=\"799\" alt=\"image\" src=\"https://github.com/user-attachments/assets/e7688fd2-b32b-461b-b3b1-aba66b451007\" />\r\n\r\n<Details>\r\n\r\n<Summary> (basement view here, click me) </Summary>\r\n\r\n<img width=\"677\" height=\"772\" alt=\"image\" src=\"https://github.com/user-attachments/assets/6d9b9a24-5bbc-4e3c-a046-4886ec651259\" />\r\n\r\n</Details>\r\n\r\n- Adds \"abandoned airlock helper (no wall)\" for mappers to have an abandoned airlock without the chance of it being made into a wall\r\n\r\n- \"abandoned airlock helper\" now has a very small chance of replacing it with a false wall\r\n\r\n- Adds long interior corners to trimlines\r\n\r\n- MAPTEST mode disables holiday tile colors\r\n\r\n## Why It's Good For The Game\r\n\r\nLike Kilo, Icebox's atmos does not have particularly good flow, as all the atmos mechanics added were just taped on however possible\r\n\r\nThe one tile hallway of despair sticks out in particular\r\n\r\nThis remap aims to give it flow that matches more modern atmospherics setups",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "[Icebox] Remapped Atmospherics. The hallway of pain is gone."
+      },
+      {
+        "type": "map",
+        "class": "map",
+        "text": "[Icebox] Remapped maintenance around Atmos and Science a bit."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Adds long corner trimline decals"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97766",
+    "title": "Makes AI shell's eye lights turn off when not actively pilotted",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nTurns the cyborg's eye light off if it's an AI shell and not being actively piloted.\r\n\r\n## Why It's Good For The Game\r\n\r\nYou could already tell this information by examining the shell, but this makes whether or not an AI shell is actively being piloted much more immediately readable.\r\n\r\n(For most cyborg types anyway. Some, like the mediborg, barely look different regardless of eye state. Oh well.)",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "AI shells now appear \"off\" when not being actively piloted."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97752",
+    "title": "Removes \"Disable mood\" config",
+    "author": "FalloutFalcon",
+    "body": "<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->\r\n<!-- You can view Contributing.MD for a detailed description of the pull request process. -->\r\n\r\n## About The Pull Request\r\nRemoves the mood config which was not supported ~~in favor of 3 new ones to disable its effects on~~\r\n\r\nAlternative to #94812\r\nThis is technically fixes the reproduction steps listed in #94772 but it doesn't REALLY fix these runtimes because it still exists because of\r\n<img width=\"390\" height=\"70\" alt=\"image\" src=\"https://github.com/user-attachments/assets/940316ed-4c77-484e-903e-8310e16b15af\" />\r\n\r\n\r\n<!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->\r\n\r\n## Why It's Good For The Game\r\nThis config is terrible supported, you get alot of runtime for it as a bunch of code tries to access to mood datum but its not there. its entirely a footgun and there is very little reason to remove mood as a concept imo.\r\n~~I think this address the core root of why someone would actually want to disable it, its effects on the balance of the game with stuff like move-speed.\r\nThis lets us keep all the other shit it does, like conveying useful information to the player like there hunger or mood events from actions they took in game.~~\r\n\r\n<!-- Argue for the merits of your changes and how they benefit the game, especially if they are controversial and/or far reaching. If you can't actually explain WHY what you are doing will improve the game, then it probably isn't good for the game in the first place. -->",
+    "changes": [
+      {
+        "type": "config",
+        "class": "server",
+        "text": "Removes \"Disable mood\" config"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97796",
+    "title": "The human skin suit works as a plasmaman outfit",
+    "author": "Jacquerel",
+    "body": "## About The Pull Request\r\n\r\nSee title.\r\nPlasmamen can walk around wearing a human skin suit without catching fire.\r\nThis is significantly worse than using a normal envirosuit because it's flammable, doesn't put itself out when you're on fire, takes up your suit slot, and makes you look awful. But you can roleplay as a normal human man.\r\n\r\nIncluded in this PR are two refactors that I made when I thought I'd need to make a new envirosuit item and then realised I didn't, but think are still code improvements:\r\n- The human skin suit tricking medical scanners works by trait rather than direct item check\r\n- The clown envirosuit producing lube instead of water copy/pastes less code than it previously did\r\n\r\nThis was a suggestion from Perry on the Manuel discord and I thought it was funny and wouldn't take much effort so I coded it.\r\n\r\n## Why It's Good For The Game\r\n\r\nIt's a little something for Plasmamen who are jealous of the skin that their fellow crewmembers enjoy having.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Plasmamen wearing a human skin suit won't catch fire. The suit itself is flammable though, so make sure you change while under a shower or something."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97793",
+    "title": "Miasma contains floor diseases",
+    "author": "Jacquerel",
+    "body": "## About The Pull Request\r\n\r\nTwo years ago [we removed diseases from Miasma](https://github.com/tgstation/tgstation/pull/83455) with the reasoning that standing in Miasma quickly generated a large number of randomly generated diseases. \r\nIn comments the original PR author said that they had a vague plan in the future to replace this with a miasma-specific disease, however that never actually ended up happening.\r\n\r\nInstead this PR reintroduces disease spread to Miasma, but pulls exclusively from the pool of diseases that you can contract by eating food off the floor. You also won't catch another one if you already have one (because Miasma really does give you diseases fairly quickly).\r\n\r\n## Why It's Good For The Game\r\n\r\nWithout disease spread Miasma really just sort of doesn't do anything.\r\nThe floor food disease pool reintroduces a health impact from breathing stinky germ gas but which has a fairly predictable round impact, so there's now more of an incentive to get rid of Miasma when it presents itself because it doesn't just make people who can smell sad.\r\n\r\nThis basically makes Miasma annoying (as something which primarily enters rounds via Regal Rats fucking around and making things dirty) but not like a round-shifting hazard, which I think is roughly the correct place it should exist.\r\n\r\nAlso I think the floor diseases are kind of funny, maybe we should add a couple more.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Breathing Miasma can get you sick with the same diseases you get from eating dirty food off the floor."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97753",
+    "title": "Dummy mood datum",
+    "author": "FalloutFalcon",
+    "body": "## About The Pull Request\r\nSecond half to fully fix* situations where we runtime because we dont have a datum. (by ensuring that we always have said datum) #94772\r\nfollow up for #97752\r\n## Why It's Good For The Game\r\nRuntime bad! this keeps dummies from having any actual effects or setting of mood, I dont know if we want any more verbose returns then this tho.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Dummies have a blank mood datum"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97808",
+    "title": "Fix bitrunning antagonists escaping from the computer",
+    "author": "Jacquerel",
+    "body": "## About The Pull Request\r\n\r\nProblem: When stepping on the exit tile of an emagged bitrunning domain, a bitrunning antagonist gets a balloon alert reading \"scanning...\" and then nothing happens.\r\n\r\nExpectation: It should trigger a do_after after which they escape into the real world\r\n\r\nCause: The `do_after` is triggered on `entered` for the turf. `moved` for that movement seems to be fired after `entered`. The `do_after` starts and then immediately cancels because it interprets the move that triggered the `do_after` to be a movement that cancels the `do_after`.\r\n\r\nI swear this _did_ work at some point (I might even have played as an escaped bitrunning guy?) but I don't see any blame that shows anyone messing with the order of operations here.\r\n\r\nAnyway my fix to this is uh... also kind of a hack if I'm being honest. But this is a hacking minigame, so that makes it fine?\r\nOur problem here is that all of our behaviour is occurring very slightly too early, I _could_ just register to the `moved` signal and then fire the rest of the proc when we finished our movement (and I guess I can change to that if you like it better)...\r\nbut given that all we _really_ need to do is handle all of that code just a _little_ bit later (within the same frame even) what if I just added an additional really short `do_after` which _didn't_ care about the mob moving and then validate it's still on the right turf at the end?\r\n\r\nThe player already has a `scanning...` popup so it won't seem weird to them. Delightfully devious, Jacquerel.\r\nBut if you think that's too lazy and ugly I can do it some other way. I could probably just `sleep(1)` even.\r\n\r\nAnyway don't trigger a `do_after` from `entered` please.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Bitrunning antagonists can once again escape from an emagged server"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97000",
+    "title": "Add portable bluespace scrubber and gas receiver",
+    "author": "Redwizz99",
+    "body": "## About The Pull Request\r\n\r\nAdds a portable bluespace scrubber that can be linked with the bluespace gas receiver to send all scrubbed gases into the receiver. Also adds suitable machine circuits to RnD/Eng. Machines have to be linked with a multitool to transfer gases. \r\n\r\n<img width=\"944\" height=\"702\" alt=\"promo1\" src=\"https://github.com/user-attachments/assets/b974d41e-c662-496c-8f31-985cb276e128\" />\r\n\r\n<img width=\"1891\" height=\"953\" alt=\"promo3\" src=\"https://github.com/user-attachments/assets/9b3d863e-b61b-499a-9983-137b54ebbb49\" />\r\n\r\nNew sprites for scrubbers\r\n<img width=\"206\" height=\"134\" alt=\"promo4\" src=\"https://github.com/user-attachments/assets/8679cef9-ddf9-45c8-8d1d-1fc4f2f90d4e\" />\r\n\r\n## Why It's Good For The Game\r\n+ Provides more ideas/schemes for atmos set up\r\n+ Makes much easier to mine gas, especially important on long shifts\r\n+ Makes game a bit more logically accurate since we have bluespace tranfer with liquid chemicals but not with gas",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "bluspace scrubber and gas receiver machinery"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "bluespace scrubber and gas receiver circuits"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "adds bluespace scubber and gas receiver to tech node"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "sprites for bluespace scrubber and gas receiver"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "you can disconnect scrubbers linked to receiver, just use wirecutter"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97811",
+    "title": "Fix missing inhand sprites and reduce icon-test notices",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nDoing some cleanup audit of this unit test, adds a missing right-hand fish_feed sprite, fixes a boxcutter var that was silently cancelling its own inhand sprite, removes six duplicate var declarations.\r\n\r\nMakes the test less spammy, it should repeat the same notices less often now.\r\n\r\n## Why It's Good For The Game\r\n\r\n🧹",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes fish food missing their lefthand icon, and boxcutter should show its inhand icon now, as well as a whole bunch of other random items that were not linked up with their existing inhand icon states"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97728",
+    "title": "Thaumaturgy Heretic: Crimson Cleave rework (and two other rituals)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Crimson Cleave spell has been removed wholesale and replaced with a weapon, the Crimson Cleaver\r\n   - A melee weapon of similar strength to their blades, though of course it doesn't gain blade upgrades or interact with blade mechanics.\r\n   - Decent throw force, and also boomerangs back to the thrower.\r\n   - Has a hefty wound bonus, causing plenty of bleeding wounds. \r\n   - Has a cleave attack, similar to the cleaving saw.\r\n   - Steals health, blood, and nutrition from hit targets (on a cooldown). Blocked by antimagic.\r\n   - Non-heretics *can* use all facets of the weapon, though wielding it imparts a curse that can only be abated with blood.\r\n\r\n- Adds a tier one knowledge, \"Rhythmic Lodestone\". Uses a GPS. Adds up to three objects on the ritual circle to your living heart tracking list. \r\n   - Intended usecase of this is to imbue your various relics to not lose track of them.\r\n   - But you can also do something like imbue a sticker or gloves or whatever - then you can give someone the item and use it to track them. \r\n\r\n- Adds a tier one knowledge, \"Blessed Poppy\". Uses a poppy and some gauze. Acts as a consumable healing item.\r\n   - When worn on your head, it will stabilize the wearer out of crit.\r\n   - Can also be applied to a wounded limb to heal all wounds the limb is experiencing over time.\r\n\r\n## Why It's Good For The Game\r\n\r\nThis is a part of the general idea of moving heretic away from \"literally just a wizard\" to a \"thaumaturge occultist\". Moving heretic spells into items adds a ton of potential for balancing and flavor, particularly with the crew interacting with them.\r\n\r\nCrimson Cleave was a good example of this. Originally, it was a fairly boring spell. Literally a point, click, they start dying. Very little interaction.\r\n\r\nBut as an item, the design space opened up a ton:\r\n- It can be disarmed now, so we can afford to make it a little stronger. \r\n- You can see someone wielding it, giving it more impact and making it an option for gimmicks.\r\n- The crew can obtain it, so we can add a bunch of mechanics around non-heretics using it.\r\n\r\nBut I didn't just want to leave the PR at the cleave so I wanted to add a few other minor thaumaturgy stuff. \r\n\r\n- Rhythmic Lodestone was designed for stalking people or keeping your items safe. Useful for gimmicks generally.\r\n- Blessed Poppy was just a small early game option/alternative method of healing. It's also usable by non-heretics, adding gimmick potential there as well.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Heretic: \"Crimson Cleave\" spell removed."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Heretic: Adds \"The Crimson Cleaver\", a tier four knowledge. A weapon that can cleave and lifesteal. Non-heretics are capable of wielding it, at the expense of their sanity and mind..."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Heretic: Adds \"Rhythmic Lodestone\", a tier one knowledge, which lets the heretic track any imbued object with their living heart."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Heretic: Adds \"Blessed Poppy\", a tier one knowledge, which heals wounds and stabilizes mobs. Can be used by non-heretics."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97801",
+    "title": "Balances out the pinup posters with a couple more",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nI saw \r\nhttps://github.com/tgstation/tgstation/pull/97777 and felt inspired and motivated by the lack of swole bunny pin ups.\r\n\r\n<details><summary>Here they are</summary>\r\n\r\n<img width=\"733\" height=\"181\" alt=\"image\" src=\"https://github.com/user-attachments/assets/088eceb0-4636-4ae4-8b06-f5f93278e988\" />\r\n\r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes this injustice",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds two new pinup bunny contraband posters"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97571",
+    "title": "[MDB IGNORE] MMI Refactor: Implement Brain Processors",
+    "author": "tontyGH",
+    "body": "## About The Pull Request\r\n\r\nMMI/Posibrain code sucks ass. This PR aims to make it suck less ass.\r\n\r\nMMIs themselves are no longer the root object for behavior, instead being condensed into a more generic `/obj/item/brain_processor` type which only handles brainmobs. This allows us to split positronic units into their own subtype and save it from having to rub shoulders with braincode. \r\n\r\nPosibrain code was fully refactored, removing a useless global var and streamlining ghost notification/possession process.\r\n\r\nRelevant path changes are as follows:\r\nGeneric: `/obj/item/brain_processor`\r\n`/obj/item/mmi` -> `/obj/item/brain_processor/organic/`\r\n`/obj/item/mmi/posibrain` -> `/obj/item/brain_processor/positronic/`\r\n\r\nBrainmobs no longer apply TRAIT_IMMOBILIZED or TRAIT_HANDS_BLOCKED to themselves, since these effectively do nothing other than disable the \"You can't move while buckled\" text.\r\n\r\nMMIs no longer track their mech, this was effectively unused outside of handling the mouse pointer.\r\n\r\nAs usual, I don't have any secret plans to change mechanics to my liking under people's noses. Anything that does that is likely a regression. A TM for a day or two to catch problems would be ideal ~~to preserve my ego~~.\r\n\r\n## Captured Infiltrator\r\n\r\n<img width=\"771\" height=\"1024\" alt=\"image\" src=\"https://github.com/user-attachments/assets/9e4aa807-77e4-46b1-939d-91875f3115ff\" />",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Man-Machine Interfaces and positronic brains have been rewritten internally. Please report any unexpected behaviour."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97831",
+    "title": "Nerf secure crate armour and integrity",
+    "author": "optimumtact",
+    "body": "## About The Pull Request\r\n\r\nBasically massively nerfs how strong and hard to break open secure crates are\r\n## Why It's Good For The Game\r\n\r\nI think it will be fun actually and will make cargo more cool to play again",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Secure crates are now easier to open thanks to budget cuts"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97836",
+    "title": "[MDB Ignore] Relics are now pulsable assemblies",
+    "author": "Y0SH1M4S73R",
+    "body": "## About The Pull Request\r\n\r\nAs the title says, relics are assemblies that can be attached to wires or added to assembly holders.\r\nAlso fixes the dimensional shift relic effect's cooldown not increasing.\r\n\r\n## Why It's Good For The Game\r\n\r\nMany relics have effects that could be much more useful if they could be used in more ways than just using them in hand. Some example use cases include:\r\n- Automatic corgi production, no cytology needed\r\n- Using a drink dispenser relic for a simple automatic booze factory\r\n- Installing a shield relic in a modsuit circuit module for a ghetto energy shield module\r\n- Using a flashbang relic for crowd control that you won't drop on use\r\n- Using a charging relic on a timer to recharge all your gear\r\n\r\nIn more general terms, this leans into the notion of \"science as the toys department\" headcoders are aiming for by adding more ways circuits can be used for \"toys\".",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Relics are now assemblies - they can be attached to wires and connected to other assemblies"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The dimensional shifting relic effect's cooldown now increases as it was intended to"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97825",
+    "title": "Add emissives effects to engineering/atmos equipment",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nThis adds a bunch of emissive effects to machinery and objects for engineering/atmos:\r\n- The Supermatter (and variants)\r\n- Thermomachines\r\n- SMES\r\n- Pipe devices (filters, mixers, pumps, valves, gates, etc.)\r\n- Gas meters\r\n- PACMEN generators\r\n- Circulator heat exchange\r\n\r\nBy maintainer request, default SM now emits light.\r\n\r\n## Why It's Good For The Game\r\nAtmospherics:\r\n\r\n<img width=\"1338\" height=\"1057\" alt=\"dreamseeker_nKGN2arvb5\" src=\"https://github.com/user-attachments/assets/6db45f27-3f22-4d7e-b8cb-7cad98128de5\" />\r\n\r\nEngineering:\r\n\r\n<img width=\"1338\" height=\"1057\" alt=\"dreamseeker_vzLKkPFKUB\" src=\"https://github.com/user-attachments/assets/c10caf1c-6742-4f31-8a39-fe398537b063\" />\r\n\r\nSupermatter:\r\n\r\n<img width=\"1338\" height=\"1057\" alt=\"dreamseeker_iYCLMQOT8r\" src=\"https://github.com/user-attachments/assets/5ef40605-9d56-4b4d-b03e-1a33f3eff7cf\" />",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Add emissive effects to supermatter shards, gas meters, thermomachines, pipe devices (filters, mixers, pumps, valves, etc.), circulator heat exchange, SMESs, and PACMAN generators. Default SM now emits light even when not active."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Add light masks to supermatter shards, gas meters, thermomachines, pipe devices (filters, mixers, pumps, valves, etc.), circulator heat exchange, SMESs, and PACMAN generators."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97844",
+    "title": "fixes pet carriers doors clipping and not visibly showing when unlocked/locked",
+    "author": "Gboster-0",
+    "body": "## About The Pull Request\r\n\r\n- Fixes the base pet carrier doors clipping through gags\r\n- Fixes the unlocked/locked overlays being broken for 2-5 years, because some PR merged the overlays into the `icon_state`, without actually applying those overlays to the icon states\r\n- Reorganized the pet carrier icons a bit, rip icon2diff bot\r\n\r\nLeft: Before\r\nRight: After\r\n\r\n<img width=\"283\" height=\"171\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c63ebaa0-e1b0-4f97-b59e-f4d84e7c7d9e\" />\r\n\r\n## Why It's Good For The Game\r\n\r\n> Fixes the base pet carrier doors clipping through gags\r\n- Yeah that was a thing, once you see it you wont unsee it\r\n> Fixes the unlocked/locked overlays being broken for 2-5 years, because some PR merged the overlays into the `icon_state`, without actually applying those overlays to the icon states\r\n- Oof ouch my overlays\r\n> Reorganized the pet carrier icons a bit, rip icon2diff bot\r\n- The previous file is a bit of a mess, this probably isn't great practice but eh",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "pet carrier doors no longer clip through gags + pet carriers visual lock indicator is no longer broken (it was for 2-5 years)"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97841",
+    "title": "Fix all directional lighting directly after being removed from a bag",
+    "author": "the-orange-cow",
+    "body": "## About The Pull Request\r\n\r\nFixes the issue where lighting that is supposed to shine in all directions, like a glow, doesn't activate immediatly after being removed from a bag.\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes: https://github.com/tgstation/tgstation/issues/97839",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "all directional glow effects work after being taken out of a bag"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97835",
+    "title": "Fix two weakref bugs with R&D console",
+    "author": "TealSeer",
+    "body": "## About The Pull Request\r\n\r\nFixes the name of whoever added something to the research queue showing up as \"/datum/weakref\" and being unable to dequeue stuff you queued\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes #97551 and fixes #97833",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed R&D console not showing the name of who queued a research node"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed being unable to dequeue research nodes you queued"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97854",
+    "title": "Fixes wounds not disabling limbs when they should, and disabling them when splinted",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\nCloses #97853",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed wounds not disabling limbs when they should, and disabling them when splinted"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97807",
+    "title": "Tweaks some atmos component names, adds information of them to the RPD",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nTweaks the name of some atmos components. No typepaths changed though.\r\n\r\n- gas pump -> pressure pump\r\n- volumetric gas pump -> volume pump\r\n- pressure valve -> pressure gate\r\n- (rpd ui only) unary vent -> pump vent\r\n \r\nAdds component information to the RPD\r\n\r\n- Not done for all components, just ones with intricacies associated.\r\n\r\n<img width=\"530\" height=\"140\" alt=\"image\" src=\"https://github.com/user-attachments/assets/96b186b8-531a-4b93-ab5a-b2d817b73788\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nName changes:\r\n\r\n- These were done primarily for the sake of consistency, to make it slightly easier to learn what each component does.\r\n- All \"valves\" now simply join two networks, \"pumps\" moves gases from one network to another, and \"gates\" are one way valves.\r\n- Gas pumps operate by pressure, thus they are **pressure** pumps; volumetric gas pumps now mirror this name\r\n- Vent pump is primarily because \"unary\" isn't used in other player facing locations (to my knowledge). \r\n\r\nRPD changes:\r\n\r\n- Allows you to see at a glance what each component does. More convenient than placing one, examining it, then removing it.",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "\"gas pump\" renamed to \"pressure pump\""
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "\"volumetric gas pump\" renamed to \"volume pump\""
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "\"pressure valve\" renamed to \"pressure gate\""
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "In the pipe dispenser UI only: \"unary vent\" renamed to \"pump vent\"."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "In the pipe dispenser UI, most components now have a tooltip explaining what they do and how they work."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97803",
+    "title": "Fixes some station trait related runtimes",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"744\" height=\"391\" alt=\"42mLRlrkre\" src=\"https://github.com/user-attachments/assets/08f27263-a7e8-4f47-a9b0-b7132c0f7fb8\" />\r\n\r\nTired of seeing these at roundstarts...all of these shared an assumption that the shuttle will exist after initialization is completed, but that's not always the case.\r\n\r\nRefactors things a bit so that we no longer assume this and do not run into this race condition.\r\n\r\n## Why It's Good For The Game\r\n\r\nRuntime b gone",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes runtime/race condition with quick and slow shuttle station traits not being applied, fixes a roundstart runtime caused by alert levels trying to be changed before the shuttle is created."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97846",
+    "title": "Adds grades to wet stacks and additional examine flavor",
+    "author": "desertmote",
+    "body": "## About The Pull Request\r\n\r\nAdds three grades to wetstacks, damp, dripping and soaked.\r\nThe water drops particle effect only shows up when you're above three wetstacks. In practice this means that when you wash your hands, you don't get the vfx.\r\n\r\n## Why It's Good For The Game\r\n\r\nIts visual clarity, and looks slash feels slightly better.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can visually tell how soaked someone is, and the drip VFX doesn't display when you're only marginally wet"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97794",
+    "title": "Fixes the flashing half of flashbangs making your screen go white but otherwise doing nothing mechanically",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nWith only ear protection, you'd have full protection from flashbangs, although the screen would still go white.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Flashbangs now require both eye and ear protection to mitigate their effects, not just ear protection"
+      }
+    ]
   }
 ]
