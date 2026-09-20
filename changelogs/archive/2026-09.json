@@ -2099,5 +2099,47 @@
         "text": "Flashbangs now require both eye and ear protection to mitigate their effects, not just ear protection"
       }
     ]
+  },
+  {
+    "date": "2026-09-20",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "54",
+    "title": "ADD: Props and Overlays",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nДобавлены новые элементы окружения (пропсы).\nПереработаны оверлеи смесов и сами смесов.\nДобавлено множество различных респрайтов, и немного декора.\nДобавлены относительные повернутые вариации настенных объектов\n\n## Причина создания ПР / Почему это хорошо для игры\nРазнообразит визуальное окружение карты и улучшает внешний вид механизмов.\n\n## Демонстрация изменений / Тестирование\n<img width=\"331\" height=\"134\" alt=\"26\" src=\"https://github.com/user-attachments/assets/bc54876e-240d-4d0e-bf85-e50adf78e1c1\" />\n<img width=\"478\" height=\"212\" alt=\"28\" src=\"https://github.com/user-attachments/assets/7b42d187-46f8-41b6-881f-6cb1f142088b\" />\n<img width=\"642\" height=\"273\" alt=\"27\" src=\"https://github.com/user-attachments/assets/47843f9b-752b-49cc-850c-3e64483ebb43\" />\n<img width=\"330\" height=\"331\" alt=\"455\" src=\"https://github.com/user-attachments/assets/044cfda4-1371-481f-9f77-9dceb8b87265\" />\n",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Добавлены различные объекты окружения."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Добавлены напольные логотипы."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Добавлены вариации направленных настенных объектов"
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Добавлено дерево сакуры и партиклы падающих листьев с него."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Добавлены новые оверлеи смесов, переработаны сами смесов."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Добавлены некоторые респрайты настенных объектов"
+      }
+    ]
   }
 ]
