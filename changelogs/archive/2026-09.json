@@ -2141,5 +2141,27 @@
         "text": "Добавлены некоторые респрайты настенных объектов"
       }
     ]
+  },
+  {
+    "date": "2026-09-22",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "57",
+    "title": "ADD: Pixel Font (Spess Font)",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nДобавляет упущенный шрифт на кириллице.\n\n## Причина создания ПР / Почему это хорошо для игры\nИспользуемых шрифтов более чем 2 как оказалось.\n> Для обычной речи (Grand9K), мелкого текста/эмоций (Spess Font) и крупного текста (Pixellari).\n",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Шрифты эмоций отображаются корректно"
+      },
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Добавлен ещё Spess Font шрифт на кириллице"
+      }
+    ]
   }
 ]
