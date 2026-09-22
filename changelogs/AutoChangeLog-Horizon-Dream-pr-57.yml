@@ -1,0 +1,16 @@
+# PR: horizon-dev-team/Horizon-Dream/57
+Horizon =][=:
+  57:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "ADD: Pixel Font (Spess Font)"
+    body: |
+      ## Описание изменений
+      Добавляет упущенный шрифт на кириллице.
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Используемых шрифтов более чем 2 как оказалось.
+      > Для обычной речи (Grand9K), мелкого текста/эмоций (Spess Font) и крупного текста (Pixellari).
+    changes:
+      KOCMODECAHTHUK:
+        - bugfix: "Шрифты эмоций отображаются корректно"
+        - spellcheck: "Добавлен ещё Spess Font шрифт на кириллице"
