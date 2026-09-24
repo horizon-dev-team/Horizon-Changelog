@@ -1,0 +1,17 @@
+# PR: horizon-dev-team/Horizon-Dream/58
+Horizon =][=:
+  58:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "TWEAK: Pointer fade-out effect"
+    body: |
+      ## Описание изменений
+      Добавлено прозрачное затухание (alpha fade) для указателей (pointers), которые создают космонавты.
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Выглядит достаточно просто, плюс это само по себе напрашивалось изменение.
+      
+      ## Демонстрация изменений / Тестирование
+      https://github.com/user-attachments/assets/555634a6-1079-4a12-98c8-8fab08b987b0
+    changes:
+      KOCMODECAHTHUK:
+        - tweak: "Указатели/поинтеры теперь плавно затухают, становясь прозрачными перед исчезновением."
