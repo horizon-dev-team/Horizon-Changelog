@@ -49,7 +49,26 @@
           <button id="nextBtn" class="btn btn-outline month-nav" disabled>→</button>
         </div>
         <div class="changelog-controls search-controls">
-          <input type="text" id="searchInput" class="search-input" placeholder="Поиск по изменениям...">
+          <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-input" placeholder="Поиск... (Enter - применить)" autocomplete="off" spellcheck="false" aria-label="Поиск по чейнджлогам">
+            <button id="searchClearBtn" class="search-clear" type="button" aria-label="Очистить поиск" style="display:none;">&times;</button>
+            <button id="fuzzyToggleBtn" class="search-fuzzy-btn" type="button" aria-pressed="true" aria-label="Переключить fuzzy-поиск (опечатки и аббревиатуры)" title="Fuzzy-поиск: опечатки до 1-2 символов и аббревиатуры (rvnt→revenant). Нажмите, чтобы переключить в точный режим.">≈</button>
+            <button id="searchHintBtn" class="search-hint-btn" type="button" aria-label="Справка по синтаксису поиска" aria-expanded="false" title="Синтаксис поиска">?</button>
+            <div id="searchHintPopover" class="search-hint-popover" role="dialog" aria-label="Справка поиска" style="display:none;">
+              <div class="search-hint-section">
+                <strong>Поиск по полям:</strong>
+                <code>author:papa</code>, <code>pr:97690</code>, <code>type:bugfix</code>, <code>source:horizon</code>, <code>repo:tgstation</code>, <code>title:fix</code>, <code>body:bluespace</code>
+              </div>
+              <div class="search-hint-section">
+                <strong>Логика:</strong>
+                <code>fix damage</code> - оба слова (AND)<br>
+                <code>fix|repair</code> - любое из (OR)<br>
+                <code>-revenant</code> - исключить<br>
+                <code>"exact phrase"</code> - точная фраза
+              </div>
+            </div>
+          </div>
+          <div id="searchResultCount" class="search-result-count" style="display:none;" aria-live="polite"></div>
         </div>
         <div class="changelog-controls source-controls">
           <div class="source-toggle btn-group" role="tablist" aria-label="Фильтр по источнику">
@@ -91,6 +110,7 @@
     </div>
 
     <script defer src="script/legend.js"></script>
+    <script defer src="script/search.js"></script>
     <script defer src="script/changelog.js"></script>
     <script defer src="script/parseMarkdown.js"></script>
 </body>

@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const sourceUpstreamBtn = document.getElementById('sourceUpstreamBtn');
   const sourceHorizonBtn = document.getElementById('sourceHorizonBtn');
   const searchInput = document.getElementById('searchInput');
+  const searchClearBtn = document.getElementById('searchClearBtn');
+  const fuzzyToggleBtn = document.getElementById('fuzzyToggleBtn');
+  const searchResultCount = document.getElementById('searchResultCount');
+  const searchHintBtn = document.getElementById('searchHintBtn');
+  const searchHintPopover = document.getElementById('searchHintPopover');
+  const FUZZY_STORAGE_KEY = 'horizon-changelog-fuzzy';
 
   const fmtDate = d => d.split('-').reverse().join('.');
   const fmtMonth = m => new Date(m.split('-')[0], m.split('-')[1]-1).toLocaleString('ru', { month: 'long', year: 'numeric' });
@@ -21,7 +27,42 @@ document.addEventListener('DOMContentLoaded', async () => {
       .replace(/'/g, '&#039;');
   };
 
+  // Для подсветки: ё→е, lowercase
+  const norm = (str) => {
+    if (str === null || str === undefined) return '';
+    return String(str).toLowerCase().replace(/ё/g, 'е');
+  };
+
+  const highlight = (str, ranges) => {
+    if (!ranges || ranges.length === 0) return esc(str);
+    const n = norm(str);
+    if (n.length !== str.length) {
+      return esc(str);
+    }
+    const sorted = ranges.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+    const merged = [];
+    for (const r of sorted) {
+      if (merged.length && r[0] <= merged[merged.length - 1][1]) {
+        merged[merged.length - 1][1] = Math.max(merged[merged.length - 1][1], r[1]);
+      } else {
+        merged.push([r[0], r[1]]);
+      }
+    }
+    let html = '';
+    let pos = 0;
+    for (const [s, e] of merged) {
+      if (s > pos) html += esc(str.slice(pos, s));
+      html += '<mark class="search-hit">' + esc(str.slice(s, e)) + '</mark>';
+      pos = e;
+    }
+    if (pos < str.length) html += esc(str.slice(pos));
+    return html;
+  };
+
   let months = [], idx = 0, cache = {};
+  const searchEngine = new window.ChangelogSearch();
+  let searchIndexBuilt = false;
+  let allItemsCache = null;
 
   const REPO_MAP = {
     '/TG/Station': 'tgstation/tgstation',
@@ -31,85 +72,128 @@ document.addEventListener('DOMContentLoaded', async () => {
   let currentSource = 'all';
   let currentSearch = '';
 
-  const render = data => {
+  const render = (data) => {
     container.innerHTML = '';
-    const byDate = data.reduce((acc, i) => {
+    const wrapped = data.map(d => (d && d.item !== undefined ? d : { item: d, matches: {}, score: 0 }));
+    const isSearchMode = wrapped.some(w => w.score > 0);
+
+    if (isSearchMode) {
+      const bySource = wrapped.reduce((acc, w) => {
+        const s = w.item.source || '-';
+        if (!acc[s]) acc[s] = [];
+        acc[s].push(w);
+        return acc;
+      }, {});
+      let html = `<div class="changelog-date-section">
+        <h2 class="date-header">Результаты поиска</h2>`;
+
+      for (const [src, list] of Object.entries(bySource)) {
+        list.sort((a, b) => b.score - a.score);
+        html += `<div class="source-group"><h3 class="source-header">${esc(src)}:</h3>`;
+        list.forEach(({item, matches}) => {
+          html += renderCard(item, matches);
+        });
+        html += `</div>`;
+      }
+      html += `</div>`;
+      container.innerHTML = html;
+      return;
+    }
+
+    // Обычный режим - группировка по дате
+    const byDate = wrapped.reduce((acc, w) => {
+      const i = w.item;
       const groupDate = i.upstream_date || i.date;
       if (!acc[groupDate]) acc[groupDate] = [];
-      acc[groupDate].push(i);
+      acc[groupDate].push(w);
       return acc;
     }, {});
 
     for (const [date, items] of Object.entries(byDate).sort((a,b) => a[0] < b[0] ? 1 : -1)) {
-      const bySource = items.reduce((acc, i) => (acc[i.source] = [...(acc[i.source]||[]), i], acc), {});
+      const bySource = items.reduce((acc, w) => (acc[w.item.source] = [...(acc[w.item.source]||[]), w], acc), {});
       let html = `<div class="changelog-date-section"><h2 class="date-header">${esc(fmtDate(date))}</h2>`;
 
       for (const [src, list] of Object.entries(bySource)) {
         html += `<div class="source-group"><h3 class="source-header">${esc(src)}:</h3>`;
 
         list.sort((a, b) => {
-          const dateA = a.upstream_date || a.date;
-          const dateB = b.upstream_date || b.date;
+          const dateA = a.item.upstream_date || a.item.date;
+          const dateB = b.item.upstream_date || b.item.date;
           if (dateA > dateB) return -1;
           if (dateA < dateB) return 1;
           return 0;
         });
 
-        list.forEach(item => {
-          const prNumber = esc(item.pr.split('/').pop());
-          let repoSlug = item.repo || REPO_MAP[src] || '';
-          const hasLink = !!repoSlug;
-          const prUrl = hasLink ? `https://github.com/${repoSlug}/pull/${prNumber}` : '#';
-          let repoDisplayName = src; // По умолчанию берем источник (Horizon =][=)
-          if (repoSlug) {
-            const slugParts = repoSlug.split('/');
-            repoDisplayName = slugParts[slugParts.length - 1];
-          }
-          if (repoSlug.includes('tgstation')) repoDisplayName = '/TG/Station';
-
-          const displayDate = item.upstream_date || date;
-          const title = esc(item.title || `PR #${item.pr}`);
-          const author = esc(item.author);
-
-          const changesHtml = item.changes.map(ch =>
-            `<li class="${esc(ch.class)}">${esc(ch.text)}</li>`
-          ).join('');
-
-          let bodyHtml = '';
-          if (item.body && item.body.trim() !== '') {
-            bodyHtml = `
-              <button class="btn btn-outline btn-sm pr-body-toggle" data-pr-id="${esc(item.pr)}" data-pr-source="${esc(item.source)}" data-pr-date="${esc(item.date)}" aria-expanded="false">
-                <i class="fas fa-chevron-down"></i> Подробнее
-              </button>
-              <div class="pr-body" style="display: none;"></div>
-            `;
-          }
-
-          html += `<div class="changelog-card">
-            <div class="card-main">
-              <div class="card-content">
-                <h4 class="card-title">${title}</h4>
-                <div class="card-meta">by <span class="author">${author}</span></div>
-
-                ${bodyHtml}
-                <ul class="changelog">${changesHtml}</ul>
-
-              </div>
-            </div>
-            <div class="card-sidebar">
-              <a class="pr-number" href="${prUrl}" ${!hasLink ? 'disabled' : ''} target="_blank">#${prNumber}</a>
-              <div class="sidebar-info">
-                <div><i class="fas fa-calendar"></i> ${esc(fmtDate(displayDate))}</div>
-                <div><i class="fas fa-code"></i> ${esc(repoDisplayName)}</div>
-              </div>
-            </div>
-          </div>`;
+        list.forEach(({item, matches}) => {
+          html += renderCard(item, matches);
         });
         html += `</div>`;
       }
       html += `</div>`;
       container.innerHTML += html;
     }
+  };
+
+  // Рендер одной карточки
+  const renderCard = (item, matches) => {
+    const prNumberRaw = String(item.pr).split('/').pop();
+    const prNumber = esc(prNumberRaw);
+    const src = item.source;
+    let repoSlug = item.repo || REPO_MAP[src] || '';
+    const hasLink = !!repoSlug;
+    const prUrl = hasLink ? `https://github.com/${repoSlug}/pull/${prNumberRaw}` : '#';
+    let repoDisplayName = src;
+    if (repoSlug) {
+      const slugParts = repoSlug.split('/');
+      repoDisplayName = slugParts[slugParts.length - 1];
+    }
+    if (repoSlug.includes('tgstation')) repoDisplayName = '/TG/Station';
+
+    const displayDate = item.upstream_date || item.date;
+    const titleHtml = highlight(item.title || `PR #${item.pr}`, matches.title || []);
+    const authorHtml = highlight(item.author, matches.author || []);
+
+    // changes: подсветка
+    const changesMatchesByIdx = {};
+    if (matches.changes) {
+      for (const cm of matches.changes) {
+        if (!changesMatchesByIdx[cm.idx]) changesMatchesByIdx[cm.idx] = [];
+        changesMatchesByIdx[cm.idx].push(...cm.ranges);
+      }
+    }
+    const changesHtml = item.changes.map((ch, ci) =>
+      `<li class="${esc(ch.class)}">${highlight(ch.text, changesMatchesByIdx[ci] || [])}</li>`
+    ).join('');
+
+    let bodyHtml = '';
+    if (item.body && item.body.trim() !== '') {
+      bodyHtml = `
+        <button class="btn btn-outline btn-sm pr-body-toggle" data-pr-id="${esc(item.pr)}" data-pr-source="${esc(item.source)}" data-pr-date="${esc(item.date)}" aria-expanded="false">
+          <i class="fas fa-chevron-down"></i> Подробнее
+        </button>
+        <div class="pr-body" style="display: none;"></div>
+      `;
+    }
+
+    return `<div class="changelog-card">
+      <div class="card-main">
+        <div class="card-content">
+          <h4 class="card-title">${titleHtml}</h4>
+          <div class="card-meta">by <span class="author">${authorHtml}</span></div>
+
+          ${bodyHtml}
+          <ul class="changelog">${changesHtml}</ul>
+
+        </div>
+      </div>
+      <div class="card-sidebar">
+        <a class="pr-number" href="${prUrl}" ${!hasLink ? 'disabled' : ''} target="_blank">#${prNumber}</a>
+        <div class="sidebar-info">
+          <div><i class="fas fa-calendar"></i> ${esc(fmtDate(displayDate))}</div>
+          <div><i class="fas fa-code"></i> ${esc(repoDisplayName)}</div>
+        </div>
+      </div>
+    </div>`;
   };
 
   const setSource = s => {
@@ -145,6 +229,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const applyFilters = async () => {
     if (currentSearch) {
+      // Подгружаем все месяцы и строим индекс один раз
       const fetches = months.map(async m => {
         if (!cache[m]) {
           try {
@@ -158,29 +243,42 @@ document.addEventListener('DOMContentLoaded', async () => {
         return cache[m];
       });
 
-      const allResults = (await Promise.all(fetches)).flat();
-      let filteredData = allResults;
-
-      const sel = currentSource || 'all';
-      if (sel && sel !== 'all') {
-        filteredData = filteredData.filter(item => item && item.source === sel);
+      if (!searchIndexBuilt) {
+        allItemsCache = (await Promise.all(fetches)).flat();
+        searchEngine.setItems(allItemsCache);
+        searchIndexBuilt = true;
       }
 
-      filteredData = filteredData.filter(item => {
-        const titleMatch = item.title.toLowerCase().includes(currentSearch);
-        const authorMatch = item.author.toLowerCase().includes(currentSearch);
-        const changesMatch = item.changes.some(ch => ch.text.toLowerCase().includes(currentSearch));
-        const bodyMatch = item.body && item.body.toLowerCase().includes(currentSearch);
-        return titleMatch || authorMatch || changesMatch || bodyMatch;
+      let scope = allItemsCache;
+      const sel = currentSource || 'all';
+      if (sel && sel !== 'all') {
+        scope = scope.filter(item => item && item.source === sel);
+      }
+
+      const searchResults = searchEngine.search(currentSearch);
+      const filteredData = searchResults.filter(r => {
+        const item = r.item;
+        if (sel && sel !== 'all' && item.source !== sel) return false;
+        return true;
       });
 
       render(filteredData);
+
+      if (searchResultCount) {
+        const n = filteredData.length;
+        searchResultCount.textContent = n === 0
+          ? 'Ничего не найдено'
+          : `Найдено: ${n}`;
+        searchResultCount.classList.toggle('empty', n === 0);
+        searchResultCount.style.display = '';
+      }
 
       prevBtn.disabled = true;
       nextBtn.disabled = true;
       monthSelect.disabled = true;
     } else {
       monthSelect.disabled = false;
+      if (searchResultCount) searchResultCount.style.display = 'none';
       load(idx);
     }
   };
@@ -255,14 +353,95 @@ document.addEventListener('DOMContentLoaded', async () => {
     mediaBtn.replaceWith(iframe);
   });
 
-  let searchTimeout;
+  const loadFuzzyState = () => {
+    try {
+      const v = localStorage.getItem(FUZZY_STORAGE_KEY);
+      if (v === 'false') return false;
+      if (v === 'true') return true;
+    } catch (e) { /* localStorage недоступен */ }
+    return true;
+  };
+
+  const saveFuzzyState = (enabled) => {
+    try { localStorage.setItem(FUZZY_STORAGE_KEY, enabled ? 'true' : 'false'); } catch (e) {}
+  };
+
+  const updateFuzzyToggleUI = (enabled) => {
+    if (!fuzzyToggleBtn) return;
+    fuzzyToggleBtn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+    fuzzyToggleBtn.classList.toggle('active', enabled);
+    fuzzyToggleBtn.title = enabled
+      ? 'Fuzzy-поиск: опечатки до 1-2 символов и аббревиатуры (rvnt→revenant). Нажмите, чтобы переключить в точный режим.'
+      : 'Точный поиск: только подстрочные совпадения. Нажмите, чтобы включить fuzzy (опечатки, аббревиатуры).';
+  };
+
+  // Инициализация fuzzy-состояния
+  let fuzzyEnabled = loadFuzzyState();
+  searchEngine.setFuzzyEnabled(fuzzyEnabled);
+  updateFuzzyToggleUI(fuzzyEnabled);
+
+  if (fuzzyToggleBtn) {
+    fuzzyToggleBtn.addEventListener('click', () => {
+      fuzzyEnabled = !fuzzyEnabled;
+      searchEngine.setFuzzyEnabled(fuzzyEnabled);
+      saveFuzzyState(fuzzyEnabled);
+      updateFuzzyToggleUI(fuzzyEnabled);
+      if (currentSearch) applyFilters();
+    });
+  }
+
+
+  const updateClearButtonVisibility = () => {
+    if (!searchClearBtn) return;
+    searchClearBtn.style.display = searchInput.value ? '' : 'none';
+  };
+
   if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        currentSearch = e.target.value.toLowerCase().trim();
+    searchInput.addEventListener('input', updateClearButtonVisibility);
+
+    // Кнопка очистки
+    if (searchClearBtn) {
+      searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        updateClearButtonVisibility();
+        if (currentSearch) {
+          currentSearch = '';
+          if (searchResultCount) searchResultCount.style.display = 'none';
+          monthSelect.disabled = false;
+          load(idx);
+        }
+        searchInput.focus();
+      });
+    }
+
+    // Enter - применить запрос. Для очистки есть кнопка ×.
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const q = searchInput.value.trim();
+        if (q === currentSearch) return;
+        currentSearch = q;
+        updateClearButtonVisibility();
         applyFilters();
-      }, 400);
+      }
+    });
+  }
+
+  // Поповер с подсказкой по синтаксису
+  if (searchHintBtn && searchHintPopover) {
+    const toggleHint = (show) => {
+      const shouldShow = show !== undefined ? show : searchHintPopover.style.display !== 'block';
+      searchHintPopover.style.display = shouldShow ? 'block' : 'none';
+      searchHintBtn.setAttribute('aria-expanded', shouldShow ? 'true' : 'false');
+    };
+    searchHintBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleHint();
+    });
+    document.addEventListener('click', (e) => {
+      if (!searchHintPopover.contains(e.target) && e.target !== searchHintBtn) {
+        toggleHint(false);
+      }
     });
   }
 
