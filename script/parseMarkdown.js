@@ -21,7 +21,7 @@ function parseMarkdown(md) {
     { pattern: /```([\s\S]*?)```/g, replace: extract('block') },
     { pattern: /`([^`]+)`/g, replace: extract('inline') },
     { pattern: /(^|[^"'\]\(=])(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/g, replace: '$1<button class="media-link video-link" data-media-url="https://www.youtube.com/embed/$2"><i class="fab fa-youtube"></i> Видео с YouTube</button>' },
-    { pattern: /(^|[^"'\]\(=])(https:\/\/github\.com\/user-attachments\/assets\/[a-f0-9-]+)/g, replace: '$1<a href="$2" target="_blank" class="media-link video-link"><i class="fas fa-play-circle"></i> Перейти на видео GitHub</a>' },
+    { pattern: /(^|[^"'\]\(=])(https:\/\/github\.com\/user-attachments\/assets\/[a-f0-9-]+)/g, replace: '$1<video class="md-video" src="$2" controls preload="metadata"></video>' },
     { pattern: /(^|[^"'\]\(=])(https?:\/\/[^\s)]+\.(?:mp3|wav|ogg))/g, replace: '$1<a href="$2" target="_blank" class="media-link audio-link"><i class="fas fa-music"></i> Открыть аудио</a>' },
     { pattern: /\[([^\]]+\.(?:mp3|wav|ogg))\]\((https?:\/\/[^\s)]+)\)/g, replace: '<a href="$2" target="_blank" class="media-link audio-link"><i class="fas fa-music"></i> $1</a>' },
     { pattern: /!\[([^\]]*)\]\((https?:\/\/[^\s)]+)\)/g, replace: '<figure class="md-image"><img src="$2" alt="$1"></figure>' },
