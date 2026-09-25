@@ -173,14 +173,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       `<li class="${esc(ch.class)}">${highlight(ch.text, changesMatchesByIdx[ci] || [])}</li>`
     ).join('');
 
-    let bodyHtml = '';
+    let expandedHtml = '';
+    let sidebarToggleHtml = '';
     if (item.body && item.body.trim() !== '') {
-      bodyHtml = `
+      expandedHtml = `<div class="pr-body card-expanded" style="display: none;" data-pr-id="${esc(item.pr)}" data-pr-source="${esc(item.source)}" data-pr-date="${esc(item.date)}"></div>`;
+      sidebarToggleHtml = `
         <button class="btn btn-outline btn-sm pr-body-toggle" data-pr-id="${esc(item.pr)}" data-pr-source="${esc(item.source)}" data-pr-date="${esc(item.date)}" aria-expanded="false">
-          <i class="fas fa-chevron-down"></i> Подробнее
-        </button>
-        <div class="pr-body" style="display: none;"></div>
-      `;
+          <i class="fas fa-chevron-down"></i> Развернуть
+        </button>`;
     }
 
     return `<div class="changelog-card">
@@ -188,19 +188,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         <div class="card-content">
           <h4 class="card-title">${titleHtml}</h4>
           <div class="card-meta">by <span class="author">${authorHtml}</span></div>
-
-          ${bodyHtml}
           <ul class="changelog">${changesHtml}</ul>
-
         </div>
       </div>
       <div class="card-sidebar">
         <a class="pr-number" href="${prUrl}" ${!hasLink ? 'disabled' : ''} target="_blank">#${prNumber}</a>
+        ${sidebarToggleHtml}
         <div class="sidebar-info">
           <div><i class="fas fa-calendar"></i> ${esc(fmtDate(displayDate))}</div>
           <div><i class="fas fa-code"></i> ${esc(repoDisplayName)}</div>
         </div>
       </div>
+      ${expandedHtml}
     </div>`;
   };
 
@@ -308,17 +307,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     const btn = e.target.closest('.pr-body-toggle');
     if (!btn) return;
 
-    const bodyDiv = btn.nextElementSibling;
-    if (!bodyDiv || !bodyDiv.classList.contains('pr-body')) return;
+    const card = btn.closest('.changelog-card');
+    if (!card) return;
+    const expandedDiv = card.querySelector('.card-expanded');
+    if (!expandedDiv) return;
 
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
     if (isExpanded) {
-      bodyDiv.style.display = 'none';
+      expandedDiv.style.display = 'none';
       btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = '<i class="fas fa-chevron-down"></i> Подробнее';
+      btn.innerHTML = '<i class="fas fa-chevron-down"></i> Развернуть';
     } else {
-      if (bodyDiv.innerHTML.trim() === '') {
+      if (expandedDiv.innerHTML.trim() === '') {
         const prId = btn.getAttribute('data-pr-id');
         const source = btn.getAttribute('data-pr-source');
         const date = btn.getAttribute('data-pr-date');
@@ -331,11 +332,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         if (item && item.body) {
-          bodyDiv.innerHTML = window.parseMarkdown(item.body, item.repo);
+          expandedDiv.innerHTML = window.parseMarkdown(item.body, item.repo);
         }
       }
 
-      bodyDiv.style.display = 'block';
+      expandedDiv.style.display = 'block';
       btn.setAttribute('aria-expanded', 'true');
       btn.innerHTML = '<i class="fas fa-chevron-up"></i> Свернуть';
     }

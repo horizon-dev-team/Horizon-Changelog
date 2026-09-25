@@ -406,12 +406,23 @@ body {
 }
 .changelog-card {
   display: flex;
+  flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1rem;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   backdrop-filter: blur(5px);
+}
+
+.pr-body.card-expanded {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .card-main {
@@ -511,6 +522,14 @@ body {
 .card-sidebar .pr-number:hover::before {
   color: #ab7df8;
 }
+.card-sidebar .pr-body-toggle {
+  width: 100%;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  text-align: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
 
 .card-meta {
   font-size: 0.8rem;
@@ -574,6 +593,13 @@ body {
     min-width: 70px;
     padding: 0.3rem 0.6rem;
     font-size: 0.7rem;
+    margin: 0;
+  }
+  .card-sidebar .pr-body-toggle {
+    width: auto;
+    min-width: 90px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.65rem;
     margin: 0;
   }
   .card-sidebar .sidebar-info {
