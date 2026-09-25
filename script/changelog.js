@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         if (item && item.body) {
-          bodyDiv.innerHTML = window.parseMarkdown(item.body);
+          bodyDiv.innerHTML = window.parseMarkdown(item.body, item.repo);
         }
       }
 

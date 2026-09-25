@@ -673,6 +673,38 @@ body {
 .pr-body a:hover {
   text-decoration: underline;
 }
+.pr-body a.pr-ref {
+  color: #ab7df8;
+  font-weight: 600;
+  font-family: "Iosevka Aile Web", "Consolas", monospace;
+  font-size: 0.85em;
+}
+.pr-body del {
+  color: #666666;
+  text-decoration: line-through;
+}
+.pr-body hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1rem 0;
+}
+.pr-body kbd {
+  display: inline-block;
+  padding: 1px 5px;
+  font-family: "Iosevka Aile Web", "Consolas", monospace;
+  font-size: 0.8em;
+  color: #e0e0e0;
+  background: #1a1a1a;
+  border: 1px solid #404040;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+}
+.pr-body mark {
+  background: rgba(252, 210, 3, 0.3);
+  color: #e0e0e0;
+  padding: 0 2px;
+  border-radius: 2px;
+}
 .pr-body figure.md-image {
   margin: 0.8rem 0;
   display: block;

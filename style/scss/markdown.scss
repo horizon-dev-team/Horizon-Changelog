@@ -74,6 +74,43 @@
     }
   }
 
+  a.pr-ref {
+    color: $accent;
+    font-weight: 600;
+    font-family: "Iosevka Aile Web", "Consolas", monospace;
+    font-size: 0.85em;
+  }
+
+  del {
+    color: $text-dark;
+    text-decoration: line-through;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $border-light;
+    margin: 1rem 0;
+  }
+
+  kbd {
+    display: inline-block;
+    padding: 1px 5px;
+    font-family: "Iosevka Aile Web", "Consolas", monospace;
+    font-size: 0.8em;
+    color: $text-primary;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+  }
+
+  mark {
+    background: rgba($warning, 0.3);
+    color: $text-primary;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
   figure.md-image {
     margin: 0.8rem 0;
     display: block;
