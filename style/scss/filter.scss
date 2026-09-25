@@ -275,47 +275,31 @@
   top: calc(100% + 4px);
   right: 0;
   z-index: 200;
-  width: 320px;
   max-width: 90vw;
-  background: $bg-panel;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: left;
+  background: rgba(32, 32, 32, 0.75);
   border: 1px solid $border-color;
   border-radius: 4px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
-  padding: 10px 12px;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: $text-primary;
-  text-align: left;
+  backdrop-filter: blur(4px);
 
-  .search-hint-section {
-    margin-bottom: 8px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid $border-light;
+  .search-hint-section + .search-hint-section {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid $border-light;
+  }
 
-    &:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-
-    strong {
-      display: block;
-      margin-bottom: 4px;
-      color: $text-primary;
-      font-weight: 600;
-    }
-
-    code {
-      display: inline-block;
-      padding: 1px 5px;
-      background: $bg-card;
-      border: 1px solid $border-color;
-      border-radius: 2px;
-      font-family: "Iosevka Aile Web", "Consolas", monospace;
-      font-size: 0.72rem;
-      color: $accent;
-      margin: 1px 0;
-    }
+  code {
+    padding: 1px 4px;
+    background: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 2px;
+    font-family: "Iosevka Aile Web", "Consolas", monospace;
+    font-size: 0.72rem;
+    color: $accent;
   }
 }
 
@@ -356,7 +340,6 @@ mark.search-hit {
   }
 
   .search-hint-popover {
-    width: 280px;
     right: -20px;
   }
 }
