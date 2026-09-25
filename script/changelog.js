@@ -77,6 +77,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const wrapped = data.map(d => (d && d.item !== undefined ? d : { item: d, matches: {}, score: 0 }));
     const isSearchMode = wrapped.some(w => w.score > 0);
 
+    const sortedSourceEntries = (obj) => {
+      return Object.entries(obj).sort((a, b) => {
+        if (a[0] === 'Horizon =][=') return -1;
+        if (b[0] === 'Horizon =][=') return 1;
+        return 0;
+      });
+    };
+
     if (isSearchMode) {
       const bySource = wrapped.reduce((acc, w) => {
         const s = w.item.source || '-';
@@ -87,7 +95,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       let html = `<div class="changelog-date-section">
         <h2 class="date-header">Результаты поиска</h2>`;
 
-      for (const [src, list] of Object.entries(bySource)) {
+      for (const [src, list] of sortedSourceEntries(bySource)) {
         list.sort((a, b) => b.score - a.score);
         html += `<div class="source-group"><h3 class="source-header">${esc(src)}:</h3>`;
         list.forEach(({item, matches}) => {
@@ -113,7 +121,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const bySource = items.reduce((acc, w) => (acc[w.item.source] = [...(acc[w.item.source]||[]), w], acc), {});
       let html = `<div class="changelog-date-section"><h2 class="date-header">${esc(fmtDate(date))}</h2>`;
 
-      for (const [src, list] of Object.entries(bySource)) {
+      for (const [src, list] of sortedSourceEntries(bySource)) {
         html += `<div class="source-group"><h3 class="source-header">${esc(src)}:</h3>`;
 
         list.sort((a, b) => {
