@@ -1,0 +1,14 @@
+# PR: horizon-dev-team/Horizon-Dream/59
+Horizon =][=:
+  59:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "TWEAK: Auto-Sort DME"
+    body: |
+      ## Описание изменений
+      Добавляет в вызовы компиляции, авто-сортировку DME-файла по Алфавиту.
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Меня заколебал Linter (CI-тесты)
+    changes:
+      KOCMODECAHTHUK:
+        - code_imp: "Добавляет в вызовы компиляции, авто-сортировку DME-файла по Алфавиту."
