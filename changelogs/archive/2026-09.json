@@ -2236,5 +2236,22 @@
         "text": "Исправление багов сортировки DME файла, авто-замена / -> \\"
       }
     ]
+  },
+  {
+    "date": "2026-09-27",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "61",
+    "title": "TOOLS: Auto-tiles - Wall DMI Icon Cutter",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nДобавляет инструмент для Авто-тайлинга, скрипт который нарезает из простого примера стен в готовый атлас к использованию.\n\n## Причина создания ПР / Почему это хорошо для игры\nМеньше тратить времени на рутину.\n\n## Демонстрация изменений / Тестирование\n<img width=\"519\" height=\"252\" alt=\"image\" src=\"https://github.com/user-attachments/assets/3a12371c-1e83-4528-903c-57dd23b3abe5\" />\n<img width=\"1089\" height=\"458\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a7667b43-15cc-458e-aba1-83f3b7d59f48\" />\n<img width=\"1681\" height=\"730\" alt=\"image\" src=\"https://github.com/user-attachments/assets/9f12a544-7bd3-4b44-8a94-6e90fbc979c2\" />\n",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Добавлен инструмент для работы с Авто-Тайлингом, авто-тайл стенами"
+      }
+    ]
   }
 ]
