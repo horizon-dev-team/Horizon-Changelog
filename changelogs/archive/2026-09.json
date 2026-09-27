@@ -2219,5 +2219,22 @@
         "text": "Меняет комбинацию клавиш на перемещение окон, вместо обычного ALT теперь нужно зажать CTRL+ALT. "
       }
     ]
+  },
+  {
+    "date": "2026-09-27",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "60",
+    "title": "FIX: Sort in Launch Build, and tweak Sort Script",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nИсправляет проблему вызова сортировки скрипта и последующим запуском билда.\nДобавляет смену слешей на обратные, под Linter - автоматический.\n\n## Причина создания ПР / Почему это хорошо для игры\nИсправляет баг созданный в [#59](https://github.com/horizon-dev-team/Horizon-Dream/pull/59)\n\n## Демонстрация изменений / Тестирование\n<img width=\"685\" height=\"85\" alt=\"image\" src=\"https://github.com/user-attachments/assets/03fd34ba-6807-4442-895d-d0deb4640f73\" />\n",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Исправление багов сортировки DME файла, авто-замена / -> \\"
+      }
+    ]
   }
 ]
