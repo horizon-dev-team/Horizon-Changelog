@@ -1,0 +1,18 @@
+# PR: horizon-dev-team/Horizon-Dream/60
+Horizon =][=:
+  60:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "FIX: Sort in Launch Build, and tweak Sort Script"
+    body: |
+      ## Описание изменений
+      Исправляет проблему вызова сортировки скрипта и последующим запуском билда.
+      Добавляет смену слешей на обратные, под Linter - автоматический.
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Исправляет баг созданный в [#59](https://github.com/horizon-dev-team/Horizon-Dream/pull/59)
+      
+      ## Демонстрация изменений / Тестирование
+      <img width="685" height="85" alt="image" src="https://github.com/user-attachments/assets/03fd34ba-6807-4442-895d-d0deb4640f73" />
+    changes:
+      KOCMODECAHTHUK:
+        - code_imp: "Исправление багов сортировки DME файла, авто-замена / -> \\"
