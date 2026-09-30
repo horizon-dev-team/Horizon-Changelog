@@ -3216,5 +3216,281 @@
         "text": "Food crafting menu now informs you of alternate sources of ingredients, such as from the biogenerator"
       }
     ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97972",
+    "title": "The Crab-17 prints money",
+    "author": "Jacquerel",
+    "body": "## About The Pull Request\r\n\r\nInstead of directly transferring funds to your account, the Crab-17 phone now prints out bank notes every 15 seconds based on how much money it has siphoned from other people.\r\nThis makes an audible printing sound but it's only audible from an adjacent tile, still you might want to hide the phone in a locker or crate or something while it goes.\r\nIf you risk putting it in your bag instead, the printed notes will appear in your bag. Don't put it in your pocket unless you want to leave a trail of bank notes behind you.\r\n\r\nIf you destroyed the phone for some reason, the ATM that's draining everyone's accounts will just shit the money onto the floor instead. You could do this on purpose if you want to encourage everyone in that room to start fighting over the money, which would be kind of funny.\r\n\r\nThis doesn't fix the related bug because I didn't fix the issue where the fluff popup on the accounting console lets you scroll and still see anything because I tried to fix it but I don't know how sorry.\r\n\r\n## Why It's Good For The Game\r\n\r\nIt was pointed out that you can really easily tell who used it by looking at the HoP bank account management screen and seeing who is suddenly a millionaire.  \r\nCreating physical cash instead of transferring digital cash bypasses this issue; your account might still be _slightly_ higher than others but you can simply claim that you scanned your card fast or you can just withdraw a much smaller amount from your own credit.\r\n\r\nThis arguably makes it _easier_ to catch out people who used the crab phone because they have to hide a physical device somewhere and there's a bunch of actual cash lying around, but I think the way that it gives you away now is more intuitive than getting caught because of a little-used computer account listing that most people don't remember exists.\r\n\r\nAlso adds a sort of pseudo-version of TTT credit printer gameplay that we don't really otherwise have.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Instead of directly transferring money to your account, the crab-17 phone is now equipped with a printer that disgorges bank notes at regular intervals."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97971",
+    "title": "Speeds up a part say code by 3x-5x",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nByond regex isn't necessarily the fastest thing\r\nWe ran `apply_message_emphasis` like 5-10x per say message, meaning 5-10 regex calls\r\nI simplified this into one regex, meaning 5-10x fewer proc calls. Cautionary testing shows it's like 3x-5x faster. Cool\r\n\r\n<img width=\"574\" height=\"31\" alt=\"image\" src=\"https://github.com/user-attachments/assets/1cfef7a7-df62-4b47-ac1b-14a1264e67aa\" />",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Improved performance of talking a little bit, report anything weird you notice (particularly with emphasis characters)"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97447",
+    "title": "html lobby menu",
+    "author": "hry-gh",
+    "body": "## About The Pull Request\r\n\r\nhtml-ifies the lobby menu so it lives on the client instead of on the server\r\n## Why It's Good For The Game\r\n\r\ni love browsers and this is faster and is a clientside only ui so should live on the client\r\n\r\nhttps://github.com/user-attachments/assets/ce941d6f-ed21-4345-bb0c-39d8735affa2",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "the lobby menu now lives on the client, but should look and function identically"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97960",
+    "title": "Add missing APC to Kilo ordenence and slight tweaks.",
+    "author": "Dmeto",
+    "body": "## About The Pull Request\r\nAdds a APC to ordnance lab and swaps pre-existing one to power burn mix igniter. \r\nConnects Large O2 tanks to mixer setup in toxins storage.\r\nSwaps unlinked gas sensor in middle of toxins storage with gas meter.\r\nMoves 1 gas meter from under a door into the ordnance lab. \r\n\r\n## Why It's Good For The Game\r\nFixes the Burn-mix chamber not igniting after starting the igniter (it wasn’t broken/timer variant it was just unpowered).\r\nAdds missing connection between in storage and replaces open turf devices with correct pipe ones.\r\nMakes stuff always visible  (looks better IMO)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed Kilo Ordnance igniter not igniting."
+      },
+      {
+        "type": "map",
+        "class": "map",
+        "text": "minor changes to Kilo Ordnance pipe devices."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97937",
+    "title": "fixes TGUI bluescreening when a keybind with no default keybind is reset to default",
+    "author": "Phantastic-Swan",
+    "body": "## About The Pull Request\r\n\r\nIf you were to reset the keybinding of something like \"cancel interaction\", which has no default keybinding, this will cause TGUI to crash. This is because in that situation the keybind entry in preferences is set to null, rather than an empty list. This PR fixes that by making the list lazyinit after its reset to default values, so that it always is at least an empty list.\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes TGUI crashing. I don't think it will save anyone who already triggered this bug because the value was already saved, but at least it will prevent others from triggering it as well.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes TGUI crashing when reseting to default a keybind which has no default binding"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97939",
+    "title": "Adds cooking voucher, removes ingredient choice beacon",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Removes the ingredient choice beacon from the chef's roundstart equipment\r\n- Adds the cooking voucher to chef's roundstart equipment\r\n   - Inserting the cooking voucher into the produce order console allows the chef to order 10 ingredients of any choice at no cost\r\n- Adjusts the cap on how many of an item you are allowed to purchase per order:\r\n   - Before\r\n      - Ui showed 50 for > 10 and 10 for <= 10\r\n      - ...In practice it was capped at 20 for every item\r\n   - After\r\n       - `<= 10 (cr/points)` = `50`\r\n       - `<= 25 (cr/points)` = `20`\r\n       - `else (cr/points)` = 10`\r\n       - `Ready-donks` = `4`\r\n       - `Honey` = `2`\r\n       - `Tiziran/Mothic supply boxes` = `2`\r\n\r\n<img width=\"501\" height=\"202\" alt=\"image\" src=\"https://github.com/user-attachments/assets/875285cb-a98a-4591-84a9-a634c5562ff9\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nI really like the ingredient box as a way of jump-starting certain chef gimmicks, but the offering is pretty limiting. \r\n- For one, we've never really updated it with the newer, more exotic or complex recipes. If you wanted to do a Martian gimmick, nothing in here will help you.\r\n- For two, the quantity is barely enough for one meal. For instance, ordering the fruity box gives you enough fruits to make 1 citrus delight and 2/3rds of a fruit salad. Likewise the mexican box gives you 1 single tortilla.\r\n- For three, you often end up with extra ingredients you will never use. I know I often ordered the box of grains just for the honeycomb. \r\n\r\nAs a consequence, lately when I play chef I've just been *throwing away* the choice beacon. It just ends up being clutter since nothing in there will help me. \r\n\r\nI wanted to address this by simply... allowing chefs to pick their specific ingredients. \r\nThis lets the chef get exactly what they need to get the day started with few select dishes. While the station chews through the few dishes you made with that selection, you can concern yourself with supply lines (botany or bounties to buy more stuff).",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Removed the ingredient choice beacon from the chef's roundstart equipment"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds the cooking voucher to the chef's roundstart equipment, redeem it at your produce order console to get 10 free ingredients of your choice"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Tweaked the limit on the number of items you can purchase per (mining/bitrunning/chef) order. Before it was a flat 20, but the UI sometimes lied to you and said it was either 50 or 10. Now it's scaled directly based on how valuable the item is (where cheaper items allow for bulk orders)."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97970",
+    "title": "Fix seclite overlay for SMG disablers",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nSMG disablers did not use the full typepath for its offset effects. There are two `/obj/item/gun/energy/disabler/add_seclight_point()` calls when there should be one for the normal disabler and another one for the SMG. \r\n\r\n## Why It's Good For The Game\r\nCorrect code.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix seclite overlay for SMG disablers"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97699",
+    "title": "Bodypart overlays can have flags assigned to them for rendering effects",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nFixes #97602\r\nFixes #97649\r\n\r\nThe list of overlays generated by `get_limb_icon` are now assoc `overlay = flags`\r\nThe flags set are used by stuff like bodypart textures to determine how they should be affected\r\n\r\nFor example, `LIMB_OVERLAY_TEXTURED` indicates that that overlay can be textured by a bodypart overlay (duh)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Large wings are now fully affected by suit meshes or voidwalker curse"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cream pies no longer get affected by suit meshes or voidwalker curse"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored bodypart rendering ever so slightly to fix some bodypart texture issues, report anything weird like missing overlays"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97978",
+    "title": "Fixes a memory leak in layout.tsx",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nFixes a memory leak that was caused by an unnecessary `useEffect()` Now uses a ref callback instead which cleans up with the node it was given.\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes a memory leak in the tgui layout component"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97985",
+    "title": "Fixes failing to cuff an item permanently decreasing your click cooldown",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nYes, this is stackable and you can get a zero click cooldown",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Failing to cuff an item no longer affects your arm's click cooldown"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97911",
+    "title": "fix NT Museum lighting bug",
+    "author": "mc-oofert",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"883\" height=\"1132\" alt=\"image\" src=\"https://github.com/user-attachments/assets/4b3517f6-79e4-45f9-8af8-05822b56f7e4\" />\r\n\r\nmakes that thing in the museum away mission not happen\r\nalso made the transition between the two looping hallways slightly more seamless by hiding a wall\r\ni guess cordon areas got changed to fullbright or something after the museum was added\r\n\r\n## Why It's Good For The Game\r\nbug bad",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed odd lighting in some hallways in the NT Museum away mission"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97969",
+    "title": "Adds a single pack syringe gun to cargo.",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nWhat is says on the tin.\r\n\r\n## Why It's Good For The Game\r\n\r\nIn the off chance these are lost in some fashion, it seems a little strange they can't be replaced whatsoever. Or additional copies purchased if you really, really want one.\r\n\r\nMed docs can get their very own syringe gun if they so wish, assuming they're willing to fork out the creds. Seems reasonable to me. It's not a frictionless method to get things from cargo, after all.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "You can purchase syringe guns as a single-pack goodie from cargo."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97977",
+    "title": "Medical larp: Visible gauze and slight gauze rework",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"78\" height=\"88\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f0f92967-26d8-4a66-9053-cfe38850d2aa\" />\r\n\r\n- Gauze now has a sprite. The sprite is ported from https://github.com/Aurorastation/Aurora.3/pull/10740 (some modification made). \r\n   - Also applies to tape, but no unique sprite, at least not yet.\r\n- Gauze now plays a rip sound when applied. Very satisfying. Ported from https://github.com/Baystation12/Baystation12/pull/21268 .\r\n   - Sutures now play a snip sound when applied. Also satisfying if I say so myself. \r\n- Gauze can now always be applied to bodyparts, no longer requiring a wound be present. \r\n   - Only applied to Gauze. Tape still requires the bodypart be wounded.\r\n- Gauze can now be removed, either by the wearer or others. \r\n- Gauze no longer deletes itself when used up, or when its corresponding wound heals. \r\n- Gauze now gets dirty as it absorbs blood. You can wash gauze to reuse it, but this has diminishing returns. \r\n- If you sustain a wound to an already gauzed limb, the gauze loses significant absorption power or may outright be destroyed, to prevent pre-gauzing. \r\n\r\n## Why It's Good For The Game\r\n\r\nBetter gauze larp. Might even make it more convenient to use gauze in a few situations (which it sorely needs, gauze is quite useless). For example, this enables using gauze to stop generic bleedstacks, such as those from surgery or even nosebleeds, which is quite funny.",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Gauze now shows up on your sprite"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Gauze now plays a rip sound when applied"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "Sutures now play a snip sound when applied"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Gauze can now ALWAYS be applied to a bodypart, no longer requiring a wound be present. (Note gauze alternatives like duct tape still require a wound be present)."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Gauze can now be removed by hand, both from your own body or from others."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Gauze no longer deletes itself when used up, instead dropping \"used gauze\". Used gauze can be washed to reuse it, but this has diminishing returns."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "If you sustain a wound to an already gauzed limb, the gauze will sustain a significant amount of wear, potentially even destroying it."
+      }
+    ]
   }
 ]
