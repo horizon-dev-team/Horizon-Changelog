@@ -1,0 +1,309 @@
+# PR: horizon-dev-team/Horizon-Dream/63
+/TG/Station:
+  97861:
+    repo: "tgstation/tgstation"
+    title: "Centers Gateway density"
+    changes:
+      Dmeto:
+        - bugfix: "Gateway object collision aligns with itself."
+  97855:
+    repo: "tgstation/tgstation"
+    title: "Holosigns are now vulnerable to EMPs"
+    changes:
+      timothymtorres:
+        - rscadd: "Holosigns are now vulnerable to EMPs"
+  97829:
+    repo: "tgstation/tgstation"
+    title: "Allows wearing of the electric guitar"
+    changes:
+      desertmote:
+        - image: "The electric guitar can now be worn on your back-slot, and has a worn icon state to match"
+  97850:
+    repo: "tgstation/tgstation"
+    title: "Removes the timegates on traitor items that still have it"
+    changes:
+      PapaMichae1:
+        - rscdel: "Removed traitor reputation"
+        - balance: "Powerful traitor items are no longer timegated"
+  97856:
+    repo: "tgstation/tgstation"
+    title: "Makes the normal RPED hold an equivalent amount of parts as the BSRPED."
+    changes:
+      necromanceranne:
+        - tweak: "Rapid part exchange devices now hold significantly more parts, equivalent to their bluespace upgraded version."
+  97757:
+    repo: "tgstation/tgstation"
+    title: "FIX TTS reading messages outside of your clear hearing range"
+    changes:
+      RichardBlonski:
+        - bugfix: "Fixed TTS playing on messages that are out of range to be understood."
+  97871:
+    repo: "tgstation/tgstation"
+    title: "Remove unused lung defines"
+    changes:
+      timothymtorres:
+        - code_imp: "Remove unused lung defines"
+  97878:
+    repo: "tgstation/tgstation"
+    title: "You can sell, not buy, Nitrium"
+    changes:
+      MrMelbert:
+        - bugfix: "You can sell, not buy, Nitrium"
+  97809:
+    repo: "tgstation/tgstation"
+    title: "kilo toxins rework"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - bugfix: "Kilo toxins has a holofan now :D"
+        - map: "kilo toxins is slightly bigger and the kilo cargo warehouse is slightly smaller"
+  97890:
+    repo: "tgstation/tgstation"
+    title: "Adds some achievements"
+    changes:
+      Jacquerel:
+        - rscadd: "You can earn meaningless awards from completing several new tasks"
+  97880:
+    repo: "tgstation/tgstation"
+    title: "Plasmamen organs are consistently considered \"organic and mineral\""
+    changes:
+      MrMelbert:
+        - balance: "All skeleton organs are now considered \"mineral\" organ, stopping most chems from working on them"
+        - balance: "All plasmamen organs are now \"organic + mineral\", allowing most chems to work on them again"
+        - bugfix: "Ensures bodyparts correctly track their parent's dna"
+  97860:
+    repo: "tgstation/tgstation"
+    title: "Fixes potential medibot harddels"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed potential medibot harddels"
+  97889:
+    repo: "tgstation/tgstation"
+    title: "Mail logging, adds mail opened to round-end report."
+    changes:
+      ArcaneMusic:
+        - code_imp: "The round end screen now logs the amount of mail opened by players throughout the shift."
+  97884:
+    repo: "tgstation/tgstation"
+    title: "Fixes instrument volume slider pref not being applied correctly"
+    changes:
+      vinylspiders:
+        - bugfix: "instrument volume slider now works as intended"
+  97895:
+    repo: "tgstation/tgstation"
+    title: "Admins can toggle off events in the event panel"
+    changes:
+      MrMelbert:
+        - admin: "Admins can toggle off events in the event panel"
+  97848:
+    repo: "tgstation/tgstation"
+    title: "Small lizard frills and horns update"
+    changes:
+      desertmote:
+        - rscadd: "Lizard angler horn now has an emissive effect"
+        - image: "Changed lizard frills to have their west and east icon layer above hats"
+  97892:
+    repo: "tgstation/tgstation"
+    title: "Finally fixes cargo order logging for superset."
+    changes:
+      ArcaneMusic:
+        - bugfix: "fixes logging for cargo crates and cargo crate requests by job."
+  97912:
+    repo: "tgstation/tgstation"
+    title: "Fixes the Detomatix traitor item being almost useless"
+    changes:
+      PapaMichae1:
+        - bugfix: "The Detomatix disk now actually sends spoofed messages"
+  97881:
+    repo: "tgstation/tgstation"
+    title: "AI can see emotes"
+    changes:
+      Co0kie-GG:
+        - rscadd: "AI can now see emotes touch cameras"
+  97859:
+    repo: "tgstation/tgstation"
+    title: "Fixes shoes and a bunch of other items not being washable"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed shoes and a bunch of other items not being washable"
+  97909:
+    repo: "tgstation/tgstation"
+    title: "Makes the cyber fangs actually use the correct icon"
+    changes:
+      necromanceranne:
+        - bugfix: "Cybernetic fangs use the correct, metallic icon state."
+  97931:
+    repo: "tgstation/tgstation"
+    title: "Fixes overflayer bluescreen"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes a source of overflayer bluescreens"
+  97927:
+    repo: "tgstation/tgstation"
+    title: "Fix echolocation danger turf markers"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix echolocation danger turf markers"
+  97847:
+    repo: "tgstation/tgstation"
+    title: "Resize all fishing capsule spots to 3x3, various tweaks"
+    changes:
+      Stonetear:
+        - tweak: "Fishing capsules now only need a 3x3 space to deploy.  The actual fishing size is still 3x3."
+  97936:
+    repo: "tgstation/tgstation"
+    title: "Fix a lot of ai controllers from being unable to move entirely, probably"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes a lot of mob AIs (such as vending machines) from being unable to move entirely"
+        - bugfix: "FIxes (maybe) a bug where vending machines project their warning on you forever"
+  97929:
+    repo: "tgstation/tgstation"
+    title: "Fixes a couple runtimes"
+    changes:
+      FlufflesTheDog:
+        - bugfix: "Fixed a bileworm devouring runtime"
+        - bugfix: "Fixed heirophants not doing their final attack on death"
+        - bugfix: "Fixed potential runtime when using plasmacutters as a tool"
+  97934:
+    repo: "tgstation/tgstation"
+    title: "Bumps rust-g to 7.0.0"
+    changes:
+      vinylspiders:
+        - code_imp: "rust-g has been updated to 7.0.0 please report any issues"
+  97915:
+    repo: "tgstation/tgstation"
+    title: "Fixes the Chameleon Scanner not working"
+    changes:
+      PapaMichae1:
+        - bugfix: "The Chameleon Scanner (that comes with a Chameleon Kit) that's supposed to let you copy players' exact outfits now works"
+  97924:
+    repo: "tgstation/tgstation"
+    title: "map/code: Swapping the Cent Captain and Cent Officer accesses"
+    changes:
+      Arceniu:
+        - code_imp: "modified centcom - swapped cent captain's access with cent officer's access at airlocks"
+        - code_imp: "modified centcom - Replaced cent captain's access at centcom security room's windoors to cent general, to match airlock accesses, swapped same access to storage at centcom cargo bay"
+        - code_imp: "swapped cent captain's access with cent officer's access at corpse's trims and ERT commander's trim"
+  97908:
+    repo: "tgstation/tgstation"
+    title: "makes doors not try to screch monkeys"
+    changes:
+      Gboster-0:
+        - bugfix: "fixes monkeys not screeching in agony when crushed by doors, god bless doors"
+  97872:
+    repo: "tgstation/tgstation"
+    title: "Expands MODsuit overslotting to most formitting equipment, such as labcoats, aprons, armor vests, wigs..."
+    changes:
+      MrMelbert:
+        - rscadd: "Expands MODsuit \"overslotting\" to most form fitting equipment, such as labcoats, aprons, armor vests, wigs, etc... - In other words, these items no longer block a deployment and are simply hidden under the suit."
+  97953:
+    repo: "tgstation/tgstation"
+    title: "Fixes AIs being able to see ghosts emoting"
+    changes:
+      PapaMichae1:
+        - bugfix: "AIs can no longer see ghosts emote"
+  97817:
+    repo: "tgstation/tgstation"
+    title: "cowardly raptors now flee when theyre below 50% health"
+    changes:
+      Ben10Omintrix:
+        - balance: "cowardly raptors now flee at 50% health as opposed to fleeing immediately when attacked"
+  97572:
+    repo: "tgstation/tgstation"
+    title: "command bar: exact matches should autofill, no more quotes, etc [no gbp]"
+    changes:
+      hry-gh:
+        - bugfix: "in the command bar, exact matches weren't entering the verb, they now are"
+        - bugfix: "quotes aren't required around arguments in the command bar anymore, letting you use quotes yourself in messages"
+        - bugfix: "removes 100 pick-up verbs from the command bar"
+        - tweak: "added a preference to disable showing autocomplete suggestions as you type (unless you press space)"
+  97955:
+    repo: "tgstation/tgstation"
+    title: "Red & Blue cubes unbuckle before teleporting"
+    changes:
+      lelandkemble:
+        - bugfix: "Red & Blue cubes do not entangle you to your previous mount anymore"
+  97959:
+    repo: "tgstation/tgstation"
+    title: "Stop the CI hallucinations"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes a bug that could cause a number of weighted rng events to not behave as intended"
+  97942:
+    repo: "tgstation/tgstation"
+    title: "Can lean on jukeboxes"
+    changes:
+      MrMelbert:
+        - tweak: "You can lean on jukeboxes"
+  97946:
+    repo: "tgstation/tgstation"
+    title: "Adds sanitization to invalid loadout colors"
+    changes:
+      vinylspiders:
+        - bugfix: "invalid loadout gags colors now get sanitized"
+  97944:
+    repo: "tgstation/tgstation"
+    title: "Fix for looping sound runtime"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes an issue with looping sounds on machines like the oven/deepfryer, please report any strange issues"
+  97950:
+    repo: "tgstation/tgstation"
+    title: "soup pot typo fix 2"
+    changes:
+      btcbuster:
+        - spellcheck: "fixed the description of soup pots"
+  97926:
+    repo: "tgstation/tgstation"
+    title: "Fix singularity runtime with thrown objects"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix singularity runtime with thrown objects"
+  97916:
+    repo: "tgstation/tgstation"
+    title: "Adds a new quirk! Overconfident! You got this!"
+    changes:
+      necromanceranne:
+        - rscadd: "Adds the Overconfident quirk! You got this!"
+  97883:
+    repo: "tgstation/tgstation"
+    title: "Breath code optimization and fixes"
+    changes:
+      timothymtorres:
+        - bugfix: "Fix incorrect scaling for breath code heat messages."
+        - bugfix: "Fix breath temperature skipping damage effects in very rare situations."
+        - code_imp: "Slight refactor of breath code temperature checks to be faster and cleaner."
+  97932:
+    repo: "tgstation/tgstation"
+    title: "Fixes plantanalyzer tsx sins + makes light level reading show again"
+    changes:
+      vinylspiders:
+        - bugfix: "the plantalyzer light level reading will now show accurately again"
+  97673:
+    repo: "tgstation/tgstation"
+    title: "Explosions inflict wounds"
+    changes:
+      Fghj240:
+        - balance: "explosions inflict wounds"
+        - balance: "explosions respect ear protection"
+        - balance: "bomb armor reduces damage of devastating explosions"
+        - balance: "bomb armor can reduce explosive damage by 60% instead of just 50%"
+        - balance: "bomb armor respects locations and doesn't always spread damage equally"
+        - balance: "devastating explosion damage increased from 500 to 600"
+        - balance: "devastating explosion damage split between brute and burn (instead of brute only)"
+        - balance: "devastating explosions deal ear damage and paralysis in case they're survived"
+        - bugfix: "aliens are knocked out by heavy explosions, not light ones"
+  97930:
+    repo: "tgstation/tgstation"
+    title: "Makes the screentip for already welded airlocks say \"Unweld\" instead of \"Weld shut\""
+    changes:
+      PapaMichae1:
+        - spellcheck: "Welded airlocks' tooltips don't suggest you can weld them shut again"
+  97906:
+    repo: "tgstation/tgstation"
+    title: "Crafting menu now has recursive wiki-like tooltips"
+    changes:
+      MrMelbert:
+        - tweak: "When attempting to craft a recipe which has a craftable component, you can hover over said component to see its recipe. If that recipe has a craftable component, you can then hover over that, and so on.... allowing you to view entire recipes without losing your original place in the UI."
+        - tweak: "Food crafting menu no longer has a third tab for \"food type\", you can instead filter by \"food type\" the same way you filter by cuisine or dish type on the left"
+        - tweak: "Food crafting menu now informs you of alternate sources of ingredients, such as from the biogenerator"
