@@ -2292,5 +2292,929 @@
         "text": "Удален старый вариант тултипа, писавший текст слева внизу."
       }
     ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97861",
+    "title": "Centers Gateway density",
+    "author": "Dmeto",
+    "body": "## About The Pull Request\r\nMoves the 3x2 object collision on gateways one turf left.\r\n## Why It's Good For The Game\r\nFixes collision that doesn’t make sense. really evident on maps like Academy.\r\n<img width=\"1818\" height=\"1023\" alt=\"image\" src=\"https://github.com/user-attachments/assets/e2339302-0bac-4caf-a03f-20a9fc6b1f8f\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Gateway object collision aligns with itself."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97855",
+    "title": "Holosigns are now vulnerable to EMPs",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nBuilding upon:\r\n- #93124\r\n\r\nThis makes holographic signs vulnerable to EMP effects.\r\n\r\n## Why It's Good For The Game\r\nConsistency.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Holosigns are now vulnerable to EMPs"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97829",
+    "title": "Allows wearing of the electric guitar",
+    "author": "desertmote",
+    "body": "## About The Pull Request\r\n\r\nAllows wearing of the electric guitar on your back, with a sprite to boot. Also adds a check to make sure you _don't_ play the instrument while you're wearing it.\r\n\r\n## Why It's Good For The Game\r\n\r\nLooks dope as f#ck. Sat on this sprite for like 3 years, my bad. If I was any better, I'd make more of these.\r\n\r\n<img width=\"716\" height=\"265\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b4b9978d-5703-40d1-a9a5-aa3b45e1c1eb\" />",
+    "changes": [
+      {
+        "type": "image",
+        "class": "image",
+        "text": "The electric guitar can now be worn on your back-slot, and has a worn icon state to match"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97850",
+    "title": "Removes the timegates on traitor items that still have it",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nRemoves the timegates on the traitor items that currently have them.\r\nAlso removes the last vestiges of \"reputation\" from progtot, since it's completely meaningless now.\r\n\r\n## Why It's Good For The Game\r\n\r\nThere's a general sentiment that most rounds are too back-heavy, i.e. nothing happens for 60-90 minutes and then every antag acts at once. But even without that, I just think making an antag player wait for 30 minutes until they're allowed to play with their toy is just kind of anti-fun. \r\nTraitor reputation itself is a vestige from the progtot days, with the majority of reputation tiers being meaningless, and it doesn't even make thematic sense that farting around for 30 minutes doing nothing would improve an agent's reputation anyway.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Removed traitor reputation"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Powerful traitor items are no longer timegated"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97856",
+    "title": "Makes the normal RPED hold an equivalent amount of parts as the BSRPED.",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nWhat it says on the tin. The RPED does not gain the long distance part exchanging as the normal version. It also can't hold gigantic components. If...such a thing ever happened.\r\n\r\n## Why It's Good For The Game\r\n\r\nI find the RPED extremely frustrating to deal with to the point that I actively refuse to do part runs until I can get a BSRPED. Of course, that happens to also vastly simply the friction associated with doing part runs on top.\r\n\r\nSo, to encourage people to actually do some of this work before BSRPEDs exist, making the baseline at least tolerable would be good.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Rapid part exchange devices now hold significantly more parts, equivalent to their bluespace upgraded version."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97757",
+    "title": "FIX TTS reading messages outside of your clear hearing range",
+    "author": "RichardBlonski",
+    "body": "## About The Pull Request\r\nThis pull request fixes #97308 ,\r\n**The Issue**\r\nIf someone is speaking in-game next to you but outside of your range, to be clear, you can still hear the TTS of their message.\r\n\r\nThis ensures that any message that isn't fully in hearing range will not be played by TTS.\r\n\r\n(( I have not tested this as I have no idea how to set up TTS, this should in theory still fix the issue. ))\r\n\r\n## Why It's Good For The Game\r\nBug Fix.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed TTS playing on messages that are out of range to be understood."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97871",
+    "title": "Remove unused lung defines",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nRemoves some unused define flags for lung.\r\n\r\n## Why It's Good For The Game\r\nCode cleanup.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Remove unused lung defines"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97878",
+    "title": "You can sell, not buy, Nitrium",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nAccidentally put \"buyable\" and not \"sellable\"",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can sell, not buy, Nitrium"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97809",
+    "title": "kilo toxins rework",
+    "author": "TheRyeGuyWhoWillNowDie",
+    "body": "## About The Pull Request\r\nMakes Kilo toxins a bit larger to have more room to do stuff and adds a holofan.\r\n<img width=\"1138\" height=\"1214\" alt=\"{967704DE-322F-4B27-AFB6-46201CB43A74}\" src=\"https://github.com/user-attachments/assets/97b000c2-08e8-466e-906c-e69477ef74c6\" />\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nMy friend sent me this DMM file and I just added textures and stuff. I also don't play atmos much these days so you'll have to ask her.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Kilo toxins has a holofan now :D"
+      },
+      {
+        "type": "map",
+        "class": "map",
+        "text": "kilo toxins is slightly bigger and the kilo cargo warehouse is slightly smaller"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97890",
+    "title": "Adds some achievements",
+    "author": "Jacquerel",
+    "body": "## About The Pull Request\r\n\r\nThis PR adds 9 new achievements to the game for doing various things I thought were notable or amusing\r\n\r\n<details>\r\n\r\n`All I Got Was This Lousy Achievement`\r\n<img width=\"76\" height=\"76\" alt=\"Souvenir\" src=\"https://github.com/user-attachments/assets/48fc04c1-2764-45eb-bf68-931a5e357285\" />\r\nExit the kidnapping lobby with a souvenir\r\n\r\n`Clever Girl`\r\n<img width=\"76\" height=\"76\" alt=\"clever girl\" src=\"https://github.com/user-attachments/assets/c1f8efd5-3ae7-44ef-afd7-8b9989819786\" />\r\nOpen a door while playing as a dinosaur\r\n\r\n`Good Samaritan`\r\n<img width=\"76\" height=\"76\" alt=\"Good Samaritan\" src=\"https://github.com/user-attachments/assets/bc5a44f4-0195-4f96-b868-478a08c5380e\" />\r\nSave someone who is choking by utilising the Heimlich manoeuvre (hopefully you aren't the person who made them start choking)\r\n\r\n`Low Blow`\r\n<img width=\"76\" height=\"76\" alt=\"Down Low\" src=\"https://github.com/user-attachments/assets/4324f10a-03f6-45a1-89f6-2505423c7ca4\" />\r\nRetract your high five and humiliate your fellow man.\r\n\r\n`Prepare for Unforeseen Consequences`\r\n<img width=\"76\" height=\"76\" alt=\"ultimate storage\" src=\"https://github.com/user-attachments/assets/6d368581-9ecd-43c9-b3f8-7282a7ecc35f\" />\r\nPut a bag of holding inside another bag of holding.\r\n\r\n`Red Pill`\r\n<img width=\"76\" height=\"76\" alt=\"red pill\" src=\"https://github.com/user-attachments/assets/1c893245-0dd4-44ad-a241-cebe9bc983d2\" />\r\nEscape from the virtual world as a bitrunning agent.\r\n\r\n`Rise of Kong`\r\n<img width=\"76\" height=\"76\" alt=\"kong\" src=\"https://github.com/user-attachments/assets/2e8600d0-9fda-4caf-b88c-ea3ec388cc85\" />\r\nAs a gorilla, celebrate your dominance after climbing to a high place while holding a woman.\r\n\r\n`Spicy Handshake`\r\n<img width=\"76\" height=\"76\" alt=\"spicy handshake\" src=\"https://github.com/user-attachments/assets/75f8716d-06f0-4d28-93d7-531ef155fd26\" />\r\nAs a spellcaster, deliver a high-five with extra effects.\r\n\r\n`You Can't Park Here`\r\n<img width=\"76\" height=\"76\" alt=\"No Parking\" src=\"https://github.com/user-attachments/assets/f79e898d-2f73-4b1a-a1ca-8a3cf01f3c15\" />\r\nWhile inside a vehicle, have a shuttle land on top of you.\r\n\r\nI'll be honest I also had ideas for like 20 more (with stronger themes even instead of being random bullshit) but I don't want to draw 20 more images right now \r\n\r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nSome games use achievement systems as box-ticking exercises\r\nOthers use them to give their players interesting challenges to fulfil\r\nA further school of thought is that you can use them to direct players to new or niche activities that the developers want them to explore\r\n\r\nHere at /tg/station we have a proud tradition of using Achievements to award players primarly for wasting their own time chasing events which are totally outside of their control, dying in various ways, [doing things we actively don't want them to do](https://github.com/tgstation/tgstation/pull/81780), re-enacting media references, making yourself look stupid... and as box-ticking exercises (I'm looking at you Mining and Heretics)\r\n\r\nI would like to think that some of these exist as \"directing players towards interesting interactions they might not know about\" but will firmly admit that a lot of them are just things I think are funny in ways that fit one or more of the above criteria\r\n\r\nPlus it gives the small handful of people we have who are competing to complete more achievements than anyone else more material to work with",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can earn meaningless awards from completing several new tasks"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97880",
+    "title": "Plasmamen organs are consistently considered \"organic and mineral\"",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n1. All skeleton organs are now mineral\r\n2. All plasmamen organs are now organic + mineral\r\n3. Applies virgin organ flag in init, rather than by default, to ensure all subtypes get the flag no matter what\r\n4. Applies virgin bodypart flag in it, rather than by default, to ensure all subtypes get the flag no matter what\r\n5. Fix bodypart checking for organ flag\r\n\r\nCloses #95987\r\n\r\n## Why It's Good For The Game\r\n\r\nSome organs were organic, some were mineral, and ultimately as a consequence you could have medication affect plasmamen in one place but not in another (because some would check \"hey is your stomach organic\" and the other would check \"hey is your liver organic\")\r\n\r\nWhat this means is plasmamen are (once again) affected by an overwhelming majority of medicines and poisons.\r\nThis doesn't affect diseases (inorganic biology is still required to infect plasmamen).\r\n\r\n\"Why?? Isn't it more interesting that Plasmamen can't consume most reagents?\" I... would agree yes, but we're *really* not built for it. Plasmamen aren't even *meant* to be tox immune, nor incapable of metabolizing most chems. It was just a big unintended side effect of multiple refactor PRs. \r\n\r\nIf we want to pursue Plasmamen partial chem resistance (because it *is* a pretty fun idea) we'd need to approach it more deliberately (for example maybe syriniver doesn't work but ammoniated mercury does?) \r\n\r\n\"Then why are you leaving skeletons with mineral organs\" They have `TRAIT_TOXIMMUNE`",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "All skeleton organs are now considered \"mineral\" organ, stopping most chems from working on them"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "All plasmamen organs are now \"organic + mineral\", allowing most chems to work on them again"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ensures bodyparts correctly track their parent's dna"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97860",
+    "title": "Fixes potential medibot harddels",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nMedibots were hanging onto their analyzer and medkit references, which while not an issue right now (as they lose all references and get GCd) became a problem in #97786",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed potential medibot harddels"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97889",
+    "title": "Mail logging, adds mail opened to round-end report.",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nMail now logs to the blackbox for every letter opened.\r\nThe number of mail that players have opened in a given shift is also logged on the round-end screen.\r\n\r\n## Why It's Good For The Game\r\n\r\nFun stats! Feel a sense of accomplishment for delivering mail throughout the shift.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "The round end screen now logs the amount of mail opened by players throughout the shift."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97884",
+    "title": "Fixes instrument volume slider pref not being applied correctly",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nVolume slider was all-or-nothing, not really respecting the slider part at all.\r\n\r\nAlso fixes this runtime: \r\n\r\n<img width=\"1123\" height=\"826\" alt=\"firefox_fBJNKcQUit\" src=\"https://github.com/user-attachments/assets/6ec44ec7-2282-4ea8-b631-1db42f2dce02\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "instrument volume slider now works as intended"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97895",
+    "title": "Admins can toggle off events in the event panel",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nNext to every event in the events panel, there is now a checkbox that admins can click to prevent that event from triggering randomly. \r\n\r\n## Why It's Good For The Game\r\n\r\nRequest",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Admins can toggle off events in the event panel"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97848",
+    "title": "Small lizard frills and horns update",
+    "author": "desertmote",
+    "body": "## About The Pull Request\r\n\r\nAdds a variable for assigning emissives to a sprite accessory's layer.\r\nAdds the `FRONT` layer to horns and frills. This way frills can layer slightly better, their most protruding sides layering above headwear. It also allows the angler horn to have its emissive effect on exclusively the lamp. \r\n\r\n<img width=\"278\" height=\"278\" alt=\"1789666027\" src=\"https://github.com/user-attachments/assets/8f345dbb-93ef-4f71-bb4a-82147b6d185b\" />\r\n\r\n<img width=\"239\" height=\"239\" alt=\"1789670148\" src=\"https://github.com/user-attachments/assets/518ce07d-8343-44ee-9044-a9af23e16292\" />\r\nbefore: \r\n<img width=\"82\" height=\"82\" alt=\"image\" src=\"https://github.com/user-attachments/assets/590aa1a3-ce29-4556-b487-3319faa523a6\" />\r\n\r\n\r\nI'm a little disappointed with how I had to set up `generate_lizard_side_shot()`, but `bodypart_overlay`'s `layers` list is protected, so I can't just call it to see what layers are valid. I decided to use `icon_exists()` instead...\r\n\r\n## Why It's Good For The Game\r\n\r\nLets actually use these layers to make things look good. Frills layering below hats and hair (not that lizzes can have hair, but) on east/west was not good.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Lizard angler horn now has an emissive effect"
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Changed lizard frills to have their west and east icon layer above hats"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97892",
+    "title": "Finally fixes cargo order logging for superset.",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nA long long while ago I tweaked cargo order logging so that I could add a second field to the superset so we could track both what cargo crates are being ordered, in addition to what jobs were requesting these things.\r\n\r\nDidn't work and broke the logging, because superset is hardcoded to only take 2 arguments on nested tally, and MB did mention they'd look into it, but after following up a few weeks ago we learned having it check for an additional field would be more trouble than it's worth, so I'm just going to add an additional logging entry instead. As I probably should have done in the first place. Oops.\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes logging for superset for both the normal cargo crate ordering stats, as well as the additional metric of what crates folks are ordering/requesting by rank.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes logging for cargo crates and cargo crate requests by job."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97912",
+    "title": "Fixes the Detomatix traitor item being almost useless",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nThe spoofed message never showed up, so the PDA would only explode if the person happened to open the PDA by happenstance within the window of it being sent",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Detomatix disk now actually sends spoofed messages"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97881",
+    "title": "AI can see emotes",
+    "author": "Co0kie-GG",
+    "body": "## About The Pull Request\r\n\r\nAllows station AI to see emotions through their eyes (Including multicam)\r\n\r\n## Why It's Good For The Game\r\n\r\nI think it's logical that an AI should see visual emotions through cameras. This should significantly improve immersiveness.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "AI can now see emotes touch cameras"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97859",
+    "title": "Fixes shoes and a bunch of other items not being washable",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\n#91259 accidentally added a check that would prevent color washing from going through if any component has responded to the signal.\r\n\r\nCloses #97791",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed shoes and a bunch of other items not being washable"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97909",
+    "title": "Makes the cyber fangs actually use the correct icon",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nWhat it says on the tin.\r\n\r\n## Why It's Good For The Game\r\n\r\nI stuffed up",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cybernetic fangs use the correct, metallic icon state."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97931",
+    "title": "Fixes overflayer bluescreen",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"388\" height=\"289\" alt=\"image\" src=\"https://github.com/user-attachments/assets/ef46a632-144c-4d62-96c7-ca36b0c80db0\" />\r\n\r\nFound a bluescreen, not sure how this happened exactly, probably related to multiz map stuff. Fixes it + adds some debugging info\r\n\r\n<details><summary>now the offending overlays will look something like this instead of refusing to provide any info</summary>\r\n\r\n<img width=\"813\" height=\"391\" alt=\"Photos_GUuMP6qLd1\" src=\"https://github.com/user-attachments/assets/55240ddf-d45f-4ea1-a2d4-4593b727cb74\" />\r\n\r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nMakes sure this ui always works especially if things are messed up",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes a source of overflayer bluescreens"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97927",
+    "title": "Fix echolocation danger turf markers",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nNot sure why this broke, probably some random rendering change?\r\n\r\nThis also doesn't 100% fix it, space turfs render...weirdly, which I'm not sure why. But chasms work fine (despite being on the same layer and plane, and being the same icon)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix echolocation danger turf markers"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97847",
+    "title": "Resize all fishing capsule spots to 3x3, various tweaks",
+    "author": "Stonetear",
+    "body": "## About The Pull Request\r\n\r\nDealing with 5x5 fishing spots is a mega pain in the butt.  You have to basically destroy the station's disposals, power net, and vents to get it to fit.  This PR resizes all fishing capsule turfs to be 3x3.\r\n\r\n* Resizes all normal fishing capsule spots to be 3x3.  Previously, the normal ones were 5x5, which was very annoying.\r\n* Adds a new inverted corner siding decal.  Presumably the mapper who made these couldn't get the little chair spot to look right, and so put the siding on the outside, making the map 5x5 when the fishing spot is only 3x3.\r\n* Resizes the hacked Lava fishing map to 3x3, adds a signpost to help clue that the lava cave from a hacked fishing capsule.\r\n* Resizes the hacked plasma fishing map to 3x3, fixes the atmos to station atmos, adds a signpost, and gives it a snowy outline.\r\n* Adds two signposts with various sprites.\r\n* Adds sand to the deep water map.\r\n* Ice fishing spot is unchanged because I assume this was done for balance reasons: not wanting assistants to be able to make 3x3 ice spots in hallways.\r\n\r\n<img width=\"706\" height=\"685\" alt=\"Annotation 2026-09-17 125932\" src=\"https://github.com/user-attachments/assets/76e56436-4206-44f1-8809-20745c63557d\" />\r\n\r\nI accidentally put the deep water spot over the Tirizan fishing spot in this screenshot.\r\n\r\n<details>\r\n  <summary>The new siding decal</summary>\r\n<img width=\"221\" height=\"224\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7412d61c-f383-43b3-91cd-742cc0e36341\" />\r\n\r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nDoesn't really touch balance, makes these items less clumsy to use, and gives a little flavor.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Fishing capsules now only need a 3x3 space to deploy.  The actual fishing size is still 3x3."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97936",
+    "title": "Fix a lot of ai controllers from being unable to move entirely, probably",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n`/datum/ai_movement/dumb` couldn't start due to an inverted condition, meaning anything that uses it couldn't move\r\n\r\nAlso adds additional logic to vending machine tilt to fix ghost targeting, hopefully\r\n\r\nFixes #97935",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes a lot of mob AIs (such as vending machines) from being unable to move entirely"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "FIxes (maybe) a bug where vending machines project their warning on you forever"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97929",
+    "title": "Fixes a couple runtimes",
+    "author": "FlufflesTheDog",
+    "body": "## About The Pull Request\r\nSquash some bug. Briefly:\r\n- Heirophants call heirophant_burst when they die, but it was being invoked as a datum proc rather than a global proc\r\n- Plasmacutter tool_use was passing a single argument to ..(), which removed the implicit passing of the rest of the arguments\r\n- Bileworms' /datum/bt_node/decorator/mob_stat_at_least was set to a stat of \"UNCONSCIOUS,\" which isn't a valid stat.\r\n## Why It's Good For The Game\r\nsquish bug before bug squish you!",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed a bileworm devouring runtime"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed heirophants not doing their final attack on death"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed potential runtime when using plasmacutters as a tool"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97934",
+    "title": "Bumps rust-g to 7.0.0",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\n<img width=\"1017\" height=\"213\" alt=\"firefox_MptrkNKqRf\" src=\"https://github.com/user-attachments/assets/4d2a56a0-52ad-4e93-930c-f7ad3c3b6bd5\" />\r\n\r\nThere's apparently a bug that can mangle saves currently, which is fixed in 7.0.0\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes good",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "rust-g has been updated to 7.0.0 please report any issues"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97915",
+    "title": "Fixes the Chameleon Scanner not working",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nNo, not the one that turns you into an item. This is the one in the Chameleon Kit that's supposed to let you click someone to copy their exact outfit",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Chameleon Scanner (that comes with a Chameleon Kit) that's supposed to let you copy players' exact outfits now works"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97924",
+    "title": "map/code: Swapping the Cent Captain and Cent Officer accesses",
+    "author": "Arceniu",
+    "body": "## About The Pull Request\r\n\r\nSwapping the /obj/effect/mapping_helpers/airlock/access/all/admin/captain with /obj/effect/mapping_helpers/airlock/access/all/admin/officer at airlocks.\r\nAlso changes granted access to ERT/Deathsquad commanders so they now have cent officers access but not cent captains, also changes the ERT leader closet access to cent officer so he still can open it.\r\nAlso changes the access of corpses so they also now have cent officer's access instead of cent captain's one.\r\nAnd replaces cent captain access at windoors with access that should be in places if using logic.\r\n\r\n## Why It's Good For The Game\r\n\r\nI think Cent_Officer's access should be lower than cent captain's access, since why officers literally have access of captain but not access of officer? now it done.\r\nNow access to some windoors seems more right - centcom cargo office(room which seems to be intended for centcom cargotech) now have also storage access at windoor instead of captain one(imagine cargo tech need to call his officer to just pick the paper from someone at other side).\r\n<img width=\"1036\" height=\"468\" alt=\"image\" src=\"https://github.com/user-attachments/assets/5ffebc27-00b8-4f82-bb2d-622b5986ab5d\" />\r\n\r\nSame with security checkpoints rooms, since rooms are locked to cent general, windoors also uses cent general access\r\n<img width=\"1127\" height=\"510\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7d735c3f-f829-49db-8a5d-578fc27a230c\" />\r\n\r\n<img width=\"1169\" height=\"670\" alt=\"image\" src=\"https://github.com/user-attachments/assets/b277cee0-e15f-4e37-a2de-025e5b307c09\" />",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "modified centcom - swapped cent captain's access with cent officer's access at airlocks"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "modified centcom - Replaced cent captain's access at centcom security room's windoors to cent general, to match airlock accesses, swapped same access to storage at centcom cargo bay"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "swapped cent captain's access with cent officer's access at corpse's trims and ERT commander's trim"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97908",
+    "title": "makes doors not try to screch monkeys",
+    "author": "Gboster-0",
+    "body": "## About The Pull Request\r\n\r\n- Fixes doors trying to make monkeys screch when they should screech\r\n- Also replaces `get_turf(src)` with `checked_turf` because its supposed to be like dat\r\n\r\n## Why It's Good For The Game\r\n\r\n> Fixes doors trying to make monkeys screch when they should screech\r\n- Monkeys would just not make any emotes because it was invalid, makes them being crushed a bit less depressing\r\n> Also replaces `get_turf(src)` with `checked_turf` because its supposed to be like dat\r\n- Yeah its supposed to be like this, tested and doesn't seem to break anything\r\n\r\n<img width=\"1600\" height=\"856\" alt=\"image\" src=\"https://github.com/user-attachments/assets/070b9c53-7e48-4fb4-8b85-0fb118a7ad68\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes monkeys not screeching in agony when crushed by doors, god bless doors"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97872",
+    "title": "Expands MODsuit overslotting to most formitting equipment, such as labcoats, aprons, armor vests, wigs...",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nReplaced the code that checks if a MOD equipment piece can overslot an item with an item flag on the item itself\r\n\r\nAll gloves and shoes have it by default because all gloves and shoes could already be overslot\r\n\r\nThis flag has also been added to a lot items I identify as \"formfitting\", including but not limited to:\r\n\r\n- Beanies\r\n- Bandanas\r\n- Labcoats\r\n- Jackets (but not winter coats!)\r\n- Surgical caps\r\n- Soft caps\r\n- Armor vests (but not riot armor, or any of the captain's or hos's armors!)\r\n- Wigs\r\n- Kitty Ears\r\n- Tinfoil hats\r\n\r\n## Why It's Good For The Game\r\n\r\nIt's pretty annoying to have to drop a bunch of largely cosmetic items like labcoats or soft caps to activate your MODsuit.\r\nInitially this was *just* going to be cosmetic items but I expanded it to a few items with utility like armor vests that \"made sense\" to me.\r\n\r\nUltimately this seeks to make it a bit less clunky to get in between the active and inactive MODsuit stage.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Expands MODsuit \"overslotting\" to most form fitting equipment, such as labcoats, aprons, armor vests, wigs, etc... - In other words, these items no longer block a deployment and are simply hidden under the suit."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97953",
+    "title": "Fixes AIs being able to see ghosts emoting",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nCloses https://github.com/tgstation/tgstation/issues/97951",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "AIs can no longer see ghosts emote"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97817",
+    "title": "cowardly raptors now flee when theyre below 50% health",
+    "author": "Ben10Omintrix",
+    "body": "## About The Pull Request\r\ncowardly raptors only flee when their health hits the 50% threshold\r\n\r\n## Why It's Good For The Game\r\ncowardly raptors would flee immediately when hit, i think this makes them a bit useless for combat purposes. This makes them a bit more viable for combat while still not being at all ideal (for reference, ordinary raptors flee at 25% health)",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "cowardly raptors now flee at 50% health as opposed to fleeing immediately when attacked"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97572",
+    "title": "command bar: exact matches should autofill, no more quotes, etc [no gbp]",
+    "author": "hry-gh",
+    "body": "fixes #97478\r\nfixes #97560\r\nfixes #97563\r\n\r\n## About The Pull Request\r\na few fixes and tweaks to the command bar\r\n\r\n## Why It's Good For The Game\r\nsome better byond parity",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "in the command bar, exact matches weren't entering the verb, they now are"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "quotes aren't required around arguments in the command bar anymore, letting you use quotes yourself in messages"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "removes 100 pick-up verbs from the command bar"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "added a preference to disable showing autocomplete suggestions as you type (unless you press space)"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97955",
+    "title": "Red & Blue cubes unbuckle before teleporting",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\r\n\r\nUnbuckles the user of red/blue cubes before teleporting them. The teleporting is already several checkless `forceMove()`s so this will not cause freedom where it shouldn't.\r\n\r\n## Why It's Good For The Game\r\n\r\nfixes #97923",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Red & Blue cubes do not entangle you to your previous mount anymore"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97959",
+    "title": "Stop the CI hallucinations",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nThe hallucination `pick_weight()` was being fed decimal weights even though it only supports whole numbers. Sometimes that made it return null and runtime.\r\n\r\nFix is to multiply all the weights by ten when the pool is built so they're whole numbers.\r\n\r\nThis was similar to another issue I fixed recently, so I added CI warnings to prevent this from happening in the future.\r\n\r\n```\r\n[13:58:49] Runtime in code/__HELPERS/hallucinations.dm,45: cause_hallucination was given a non-hallucination type. (Got: null)\r\nproc name:  cause hallucination (/mob/living/proc/_cause_hallucination)\r\nsrc: Hound of Tindalos (/mob/living/basic/mining/legion/houndoftindalos)\r\nsrc.loc: the white floor (186,65,5) (/turf/open/floor/white)\r\ncall stack:\r\nHound of Tindalos (/mob/living/basic/mining/legion/houndoftindalos):  cause hallucination(/list (/list))\r\n/datum/status_effect/hallucina... (/datum/status_effect/hallucination): tick(2)\r\n/datum/status_effect/hallucina... (/datum/status_effect/hallucination): process(1)\r\nProcessing (/datum/controller/subsystem/processing): fire(0)\r\nProcessing (/datum/controller/subsystem/processing): ignite(0)\r\nMaster (/datum/controller/master): RunQueue()\r\nMaster (/datum/controller/master): Loop(4)\r\nMaster (/datum/controller/master): StartProcessing(0)\r\n```\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes a bug that could cause a number of weighted rng events to not behave as intended"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97942",
+    "title": "Can lean on jukeboxes",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nYou can lean on jukeboxes\r\n\r\n## Why It's Good For The Game\r\n\r\nFonzie",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "You can lean on jukeboxes"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97946",
+    "title": "Adds sanitization to invalid loadout colors",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nTin, a savefile can have items that got changed in it and these currently just runtime.\r\nSo let's actually sanitize them and give them a fallback so they don't just keep getting the bad color and runtiming\r\n\r\n`/datum/controller/subsystem/processing/greyscale\r\nIconForge error: IconForge error: Decoding hex color '#ddceb' failed: Odd number of digits\r\n`\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes a bug",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "invalid loadout gags colors now get sanitized"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97944",
+    "title": "Fix for looping sound runtime",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nfixes this:\r\n```\r\naddtimer called with a callback assigned to a qdeleted object. In the future such timers will not be supported and may refuse to run or run with a 0 wait\r\n    /datum/sound_token\r\n    update_sound()\r\n    /datum/looping_sound/oven\r\n    play()\r\n    /datum/looping_sound/oven\r\n    on_start()\r\n    /datum/looping_sound/oven\r\n    start()\r\n    /obj/machinery/oven/range\r\n    update_baking_audio()\r\n    /obj/machinery/oven/range\r\n    attack_hand()\r\n    /mob/living/carbon/human\r\n    resolve_unarmed_attack()\r\n    /mob/living/carbon/human\r\n    UnarmedAttack()\r\n    /mob/living/carbon/human\r\n    UnarmedAttack()\r\n    /mob/living/carbon/human\r\n    ClickOn()\r\n    /obj/machinery/oven/range\r\n    Click()\r\n    /client\r\n    Click()\r\n```\r\n\r\nBasically the issue is just, a self-deleted `sound_token_instance` getting reused. e.g.:\r\n\r\nThe machine turns off. `stop()` deletes the loop's token and then plays the end sound. A new self-deleting token is created and saved as `sound_token_instance`. The end sound finishes, and the token deletes itself, but now the loop still holds the reference.\r\n\r\nThe machine turns on again. `play(`) sees a non-null `sound_token_instance` and calls `update_sound()` on the deleted token. That token still has `delete_on_end set`, so `update_sound()` calls `addtimer` on a deleted datum. \r\n\r\n## Why It's Good For The Game\r\n\r\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes an issue with looping sounds on machines like the oven/deepfryer, please report any strange issues"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97950",
+    "title": "soup pot typo fix 2",
+    "author": "btcbuster",
+    "body": "## About The Pull Request\r\n\r\nActually fixes the soup pot description error instead of trying to add half baked armor to the game (oops)\r\n\r\n## Why It's Good For The Game\r\n\r\nDescription errors on items are bad, they should describe the item.",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "fixed the description of soup pots"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97926",
+    "title": "Fix singularity runtime with thrown objects",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nThere are a bunch of spammed runtimes when a singularity pulls in objects. Most of these are due to the singularity already consuming the object and deleting it, however the object still gets thrown. So the solution is to add a `QDELTED` check\r\n\r\n## Why It's Good For The Game\r\nBetter code.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix singularity runtime with thrown objects"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97916",
+    "title": "Adds a new quirk! Overconfident! You got this!",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nAdds the Overconfident quirk! You're so confident in your own abilities, you get points back for it! How nice!\r\n\r\n...negative quirk, what do you mean?\r\n\r\n## Why It's Good For The Game\r\n\r\n:)",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds the Overconfident quirk! You got this!"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97883",
+    "title": "Breath code optimization and fixes",
+    "author": "timothymtorres",
+    "body": "## About The Pull Request\r\nThis fixes two bugs in the breath code dealing with temperatures.\r\n\r\nThe first bug is in the Cold damage block, the `breath_effect_prob` scales up correctly as it gets colder:\r\n- Cold Level 1 (< 260K): 25\r\n- Cold Level 2 (< 200K): 50\r\n- Cold Level 3 (< 120K): 100\r\n\r\nBut in the Heat damage block, the `heat_message_prob` does the exact opposite:\r\n- Heat Level 1 (> 360K): 100 (Highest!)\r\n- Heat Level 2 (> 400K): 50\r\n- Heat Level 3 (> 1000K): 25 (Lowest!)\r\n\r\nThe second bug is in the comparison operators for this code:\r\n```dm\r\nif(breath_temperature > heat_level_1_threshold && breath_temperature < heat_level_2_threshold)\r\nif(breath_temperature > heat_level_2_threshold && breath_temperature < heat_level_3_threshold)\r\n```\r\nhas a gap due to only using `>` or `<` which means that if the breath temperature lands on exactly the threshold (e.g. exactly 400K for heat_level_2_threshold) it will skip both checks. \r\n\r\nFor optimizations, a simple early return at the start saves going through a bunch of loops and checks. Replaced several single `if` loops with an `else if` statement that should skip ahead. Also slightly refactored the code to be cleaner when comparing temperature.\r\n\r\n## Why It's Good For The Game\r\nFaster and bug-free code.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix incorrect scaling for breath code heat messages."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix breath temperature skipping damage effects in very rare situations."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Slight refactor of breath code temperature checks to be faster and cleaner."
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97932",
+    "title": "Fixes plantanalyzer tsx sins + makes light level reading show again",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nFixes a couple of ui code sins I came across... in the process I also discovered that light is nonfunctional now.\r\n\r\nFixes that too, it got broken with #97186 looks like\r\n\r\nAlso fixes an unrelated issue where drags can still get blocked by the padding of the occupations menu thingy despite it fading properly and appearing to be out of the way.\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfixes yay\r\n\r\n<details><summary>it works</summary>\r\n\r\n<img width=\"475\" height=\"625\" alt=\"wy7G0KsPpX\" src=\"https://github.com/user-attachments/assets/d64d5f55-3917-4b76-a7c2-6e0b346bfcd8\" />\r\n\r\n_sidenote being an ethereal mushroom farmer must be rough_\r\n\r\n</details>",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "the plantalyzer light level reading will now show accurately again"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97673",
+    "title": "Explosions inflict wounds",
+    "author": "Fghj240",
+    "body": "## About The Pull Request\r\n\r\nExplosions inflict wounds, and bomb damage is based on each limb's armor instead of averaging it around.\n\r\nOne possible issue with this is that you only end up with 120 brute and 120 burn + however much brute you get from being slammed into a wall after a devastating explosion, which means in most scenarios you can just get compact defibbed and then sprayed to full health if you died in a bomb proof modsuit unless you got a fracture.\r\n\r\nYou actually do need to wear bomb hoods after this PR or you're going to get your skull cracked by a heavy/devast blast. Previously you could get away with it. That or bad RNG would get your leg blown off, which doesn't make much sense considering it's your head that lacks protection.\r\n\r\n## Why It's Good For The Game\r\n\r\nIt's cool.\r\n#69136 seemingly erroneously caused deafness from ear damage to provide immunity to further ear damage from explosions.\r\nI dunno why aliens would be knocked out by a light explosion but not heavy ones, I think that was a bug.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "explosions inflict wounds"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "explosions respect ear protection"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "bomb armor reduces damage of devastating explosions"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "bomb armor can reduce explosive damage by 60% instead of just 50%"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "bomb armor respects locations and doesn't always spread damage equally"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "devastating explosion damage increased from 500 to 600"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "devastating explosion damage split between brute and burn (instead of brute only)"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "devastating explosions deal ear damage and paralysis in case they're survived"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "aliens are knocked out by heavy explosions, not light ones"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97930",
+    "title": "Makes the screentip for already welded airlocks say \"Unweld\" instead of \"Weld shut\"",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\nTitle\r\n\r\n## Why It's Good For The Game\r\n\r\nWhocares oneliner but I notice this stuff and am bothered by it",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Welded airlocks' tooltips don't suggest you can weld them shut again"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "upstream_date": "2026-09-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97906",
+    "title": "Crafting menu now has recursive wiki-like tooltips",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nHovering over an ingredient in the craft menu that can itself be crafted opens up a tooltip showing that item's crafting recipe (and even allowing you to \"make\" it directly)\r\n\r\nYou can go as deep as you need\r\n\r\n<img width=\"338\" height=\"500\" alt=\"image\" src=\"https://github.com/user-attachments/assets/652bf222-0a02-4ed3-947b-da1bd1f7f68d\" />\r\n\r\n\r\nAdditionally, the \"type\" subtype on the food crafting menu has been removed, and you can instead select as many types as you want in the main food filter \r\n\r\n<img width=\"683\" height=\"472\" alt=\"image\" src=\"https://github.com/user-attachments/assets/15a5cdb5-15eb-4ea5-a071-ecdc53298e42\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nMakes it significantly less of a chore to navigate the more complicated recipes",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "When attempting to craft a recipe which has a craftable component, you can hover over said component to see its recipe. If that recipe has a craftable component, you can then hover over that, and so on.... allowing you to view entire recipes without losing your original place in the UI."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Food crafting menu no longer has a third tab for \"food type\", you can instead filter by \"food type\" the same way you filter by cuisine or dish type on the left"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Food crafting menu now informs you of alternate sources of ingredients, such as from the biogenerator"
+      }
+    ]
   }
 ]
