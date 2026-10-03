@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-10-03",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "53",
+    "title": "ADD: Reworked Debug Outfit & Tools",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nПереработан дебаг-аутфит (переименован в \"Nullspace Tech\") для удобного тестирования.\nДобавлены новые спрайты для дебаг-мода и предметов, и переработаны некоторые другие.\n\nПереработаны дебаг-худы:\n- Механика просмотра темноты заменена на ПНВ (вместо среза темноты).\n- Позволяет вкл/выкл ПНВ\n- Позволяет вкл/выкл вид HUD\n\nДобавлены новые инструменты:\n- Дебаг блюспейс-пояс (увеличенная вместимость, содержит улучшенные инструменты).\n- Тактический кислородный баллон (баллон + слот под оружие).\n- Тактический зарядник (переносной зарядник на спину).\n- Медицинская груша (проведение СЛР без необходимости дышать самому).\n- Улучшенный мед-анализатор сканирует на расстояние 3 клеток.\n\nИзменено наполнение дебаг-аутфита.\n\n## Причина создания ПР / Почему это хорошо для игры\nОбновляет и расширяет инструменты для разработки и тестирования, делая процесс проверки механик быстрее и удобнее.\n\n## Демонстрация изменений / Тестирование\n<img width=\"961\" height=\"411\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7ea785cd-7fe0-421d-9c2d-257955789555\" />\n<img width=\"1011\" height=\"673\" alt=\"image\" src=\"https://github.com/user-attachments/assets/01226608-95b7-4b7b-ba7b-ec60cd8165e3\" />\n<img width=\"535\" height=\"255\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0f0c7f1e-f76c-42dc-8e67-147f35482275\" />\n<img width=\"283\" height=\"295\" alt=\"image\" src=\"https://github.com/user-attachments/assets/dbc4b5c4-0e5b-4a5a-903e-f210a3d7798d\" />\n<img width=\"184\" height=\"226\" alt=\"image\" src=\"https://github.com/user-attachments/assets/9958ed86-d872-4a1b-bb88-fd3e89b299df\" />\n\nhttps://github.com/user-attachments/assets/b594c4a6-2273-4d6a-9cd4-bc1210d7c1b2\n\nhttps://github.com/user-attachments/assets/c19e7b6c-d90d-4677-a2ab-227b8be08dc7\n\nhttps://github.com/user-attachments/assets/cf62ea19-a4b6-48c2-b60b-d6bb20a4aa64\n\nhttps://github.com/user-attachments/assets/4125abfb-330c-418b-8eff-3e5e724cb524\n\nhttps://github.com/user-attachments/assets/235c9d85-5241-4876-98b9-d84b5fb4ac04\n",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Добавлены новые инструменты - блюспейс-пояс, тактический баллон, переносной зарядник и медицинская груша."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Плазменному резак переработан в инструмент разбора кораблей, получил возможность разбирать некоторые стены и объекты."
+      },
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Переработан дебаг-аутфит \"Nullspace Tech\" и обновлено его наполнение."
+      },
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Дебаг-худ обновлен - просмотр темноты заменен на ПНВ, добавлены переключатели ПНВ и видимости HUD."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Добавлены спрайты для дебаг-модов и новых инструментов."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Респрайт некоторых инструменты на другие (Сварка, Кусачки, Шуруповёрт, Мультитул, Лом, Плазменный резак)."
+      }
+    ]
+  }
+]
