@@ -18,7 +18,7 @@ $pr-color: $accent;
   border: none;
   border-top: 1px solid $border-light;
   border-radius: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: hsla(0, 0%, 0%, 0.25);
 }
 
 .card-main {
@@ -39,7 +39,7 @@ $pr-color: $accent;
   gap: 0.5rem;
 
   a {
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     text-decoration: none;
     transition: color $transition-fast;
 
@@ -56,7 +56,7 @@ $pr-color: $accent;
   align-items: center;
   gap: 0.4rem;
   background: darken($pr-color, 10%);
-  color: #fff;
+  color: hsl(0, 0%, 100%);
   padding: 0.2rem 0.6rem;
   border-radius: 20px;
   font-size: 0.7rem;
@@ -74,7 +74,7 @@ $pr-color: $accent;
   &:hover {
     background: $pr-color;
     box-shadow: 0 0 8px rgba($pr-color, 0.6);
-    color: #fff;
+    color: hsl(0, 0%, 100%);
   }
 
   &[disabled],
@@ -86,7 +86,7 @@ $pr-color: $accent;
 
 .card-sidebar {
   width: $sidebar-width;
-  background: rgba(0, 0, 0, 0.3);
+  background: hsla(0, 0%, 0%, 0.3);
   border-left: 1px solid $border-light;
   padding: 1rem;
   display: flex;
@@ -97,7 +97,7 @@ $pr-color: $accent;
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    background: rgba(255, 255, 255, 0.08);
+    background: hsla(0, 0%, 100%, 0.08);
     color: $text-muted;
     padding: 0.3rem 0.6rem;
     border-radius: 4px;

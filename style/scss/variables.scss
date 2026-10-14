@@ -1,101 +1,95 @@
-// Унифицированная палитра: 15 базовых цветов
+// Унифицированная палитра в HSL.
+// HSL удобнее для манипуляций: можно делать lighten/darken/saturate
+// через hsl(h, s%, l%) напрямую, без магических hex-значений.
 
 // ============================================
 // БАЗОВЫЕ ЦВЕТА (фон, текст, границы)
 // ============================================
-$bg-dark:       #141414;  // Основной фон страницы
-$bg-darker:     #0a0a0a;  // Для градиента фона
-$bg-card:       #1a1a1a;  // Фон карточек, панелей, селектов
-$bg-panel:      #202020;  // Фон контролов (фильтры, панели)
-$bg-overlay:    rgba(0, 0, 0, 0.4);
-$bg-overlay-dark: rgba(0, 0, 0, 0.6);
+// Все фоны — ахроматические (saturation 0%), различаются только по lightness.
+$bg-dark:        hsl(0, 0%, 8%);    // #141414 - основной фон страницы
+$bg-darker:      hsl(0, 0%, 4%);    // #0a0a0a - для градиента фона
+$bg-card:        hsl(0, 0%, 10%);   // #1a1a1a - фон карточек, панелей, селектов
+$bg-panel:       hsl(0, 0%, 13%);   // #202020 - фон контролов (фильтры, панели)
+$bg-overlay:     hsla(0, 0%, 0%, 0.4);
+$bg-overlay-dark: hsla(0, 0%, 0%, 0.6);
 
-$border-color:  #404040;  // Все границы
-$border-light:  rgba(255, 255, 255, 0.1);
-$border-lighter: rgba(255, 255, 255, 0.15);
-$border-bright: rgba(255, 255, 255, 0.3);
+$border-color:   hsl(0, 0%, 25%);   // #404040 - все границы
+$border-light:   hsla(0, 0%, 100%, 0.1);
+$border-lighter: hsla(0, 0%, 100%, 0.15);
+$border-bright:  hsla(0, 0%, 100%, 0.3);
 
-$over-radius-N: 0px;
+$over-radius-N:  0px;
 $over-radius-exS: 1px;
-$over-radius-S: 3px;
-$over-radius-M: 6px;
+$over-radius-S:  3px;
+$over-radius-M:  6px;
 
-$text-primary:  #e0e0e0;  // Основной текст
-$text-secondary: #0c0c0c;  // Вторичный текст
-$text-muted:    #a0a0a0;  // Вторичный текст
-$text-dark:     #666666;  // Приглушённый текст
+// Текст — тоже ахроматический, различается по lightness.
+$text-primary:   hsl(0, 0%, 88%);   // #e0e0e0 - основной текст
+$text-secondary: hsl(0, 0%, 5%);    // #0c0c0c - вторичный текст (на светлом фоне)
+$text-muted:     hsl(0, 0%, 63%);   // #a0a0a0 - приглушённый текст
+$text-dark:      hsl(0, 0%, 40%);   // #666666 - очень приглушённый текст
 
 // ============================================
 // АКЦЕНТНЫЕ ЦВЕТА (основные)
 // ============================================
-$primary:       #ccc;
-$success:       #28a745;  // Зелёные кнопки, успех
-$success-dark:  #218838;
-$danger:        #dc3545;  // Ошибки, предупреждения
-$danger-dark:   #c82333;
-$warning:       #fcd203;  // Внимание
-$info:          #5bc0de;  // Инфо, ховеры
+$primary:        hsl(0, 0%, 80%);   // #ccc - основной акцентный (ахроматический)
 
-// Дополнительные цвета
-$accent:        #ab7df8;  // PR-бейджи, фиолетовые элементы
-$author:        #f39c12;  // Имена авторов
+// Success — зелёный, hue 142°
+$success:        hsl(142, 63%, 40%);   // #28a745 - зелёные кнопки, успех
+$success-dark:   hsl(142, 63%, 35%);  // #218838 - hover/active для success
+
+// Danger — красный, hue 354°
+$danger:         hsl(354, 70%, 54%);  // #dc3545 - ошибки, предупреждения
+$danger-dark:    hsl(354, 70%, 48%);  // #c82333 - hover/active для danger
+
+// Warning — жёлтый, hue 47°
+$warning:        hsl(47, 98%, 50%);   // #fcd203 - внимание
+
+// Info — голубой, hue 195°
+$info:           hsl(195, 64%, 61%);  // #5bc0de - инфо, ховеры
 
 // ============================================
-// ЦВЕТА ТИПОВ ИЗМЕНЕНИЙ (Changelog)
+// АКЦЕНТЫ ИЗ ИГРОВОЙ ЦВЕТОВОЙ СХЕМЫ
+// Перенесены из BYOND-интерфейса для визуальной связи с игрой.
+// ============================================
+// --color-good: hsl(77, 62%, 39%) — горчично-зелёный "good" из игры.
+$game-good:     hsl(77, 62%, 39%);   // ≈ #a19c2f
+
+// --progress-bar-fill: hsl(40, 52%, 50%) — янтарный/тёмный оранжевый из игры.
+$game-amber:    hsl(40, 52%, 50%);   // ≈ #c2821f
+
+// --color-label: hsl(from #ccc h 0 57.5%) — приглушённый primary из игры.
+$game-label:    hsl(0, 0%, 57.5%);   // ≈ #929292 (saturation 0 — серый)
+
+// ============================================
 // ДОПОЛНИТЕЛЬНЫЕ ЦВЕТА
 // ============================================
-$bugfix-color:    #99dba1;
-$rscadd-color:    #23c358;
-$rscdel-color:    #dd3c3c;
-$balance-color:   #fcd203;
-$image-color:     #54e0e0;
-$map-color:       #54e0e0;
-$sound-color:     #54e0e0;
-$tweak-color:     #23c358;
-$code_imp-color:  #708090;
-$spellcheck-color: #ffffff;
-$admin-color:     #bb47d1;
-$server-color:    #bb47d1;
-
-$accent:        #ab7df8;  // PR-бейджи, фиолетовые элементы
-$author:        #f39c12;  // Имена авторов
-$active-bg:     #3a5a3a;  // Фон активных кнопок
+$accent:        hsl(263, 90%, 73%);  // #ab7df8 - PR-бейджи, фиолетовые элементы
+$author:        hsl(33, 91%, 51%);   // #f39c12 - имена авторов
+$active-bg:     hsl(120, 22%, 29%);  // #3a5a3a - фон активных кнопок
 
 // Производные от основных (для ховеров и состояний)
-$success-dark:  #218838;
-$danger-dark:   #c82333;
-$primary-dark:  #ccc;
+$primary-dark:  $primary;  // ахроматический, hover не меняет цвет
 
 // ============================================
-// РАЗМЕРЫ
 // ЦВЕТА ТИПОВ ИЗМЕНЕНИЙ (Changelog)
 // ============================================
-$container-max-width: 1200px;
-$header-max-height: 200px;
-$sidebar-width: 180px;
-$border-radius: 8px;
-$over-radius-sm: 4px;
-
-$bugfix-color:    #99dba1;
-$rscadd-color:    #23c358;
-$rscdel-color:    #dd3c3c;
-$balance-color:   #fcd203;
-$image-color:     #54e0e0;
-$map-color:       #54e0e0;
-$sound-color:     #54e0e0;
-$tweak-color:     #23c358;
-$code_imp-color:  #708090;
-$spellcheck-color: #ffffff;
-$admin-color:     #bb47d1;
-$server-color:    #bb47d1;
+$bugfix-color:     hsl(132, 47%, 73%);   // #99dba1 - мягкий зелёный
+$rscadd-color:     hsl(137, 70%, 45%);   // #23c358 - яркий зелёный
+$rscdel-color:     hsl(0, 70%, 55%);     // #dd3c3c - красный
+$balance-color:    hsl(47, 98%, 50%);    // #fcd203 - жёлтый (как warning)
+$image-color:      hsl(180, 71%, 60%);   // #54e0e0 - бирюзовый
+$map-color:        hsl(180, 71%, 60%);   // #54e0e0 - бирюзовый (как image)
+$sound-color:      hsl(180, 71%, 60%);   // #54e0e0 - бирюзовый (как image)
+$tweak-color:      hsl(137, 70%, 45%);   // #23c358 - зелёный (как rscadd)
+$code_imp-color:   hsl(210, 14%, 50%);   // #708090 - серо-синий
+$spellcheck-color: hsl(0, 0%, 100%);     // #ffffff - белый
+$admin-color:      hsl(292, 56%, 55%);   // #bb47d1 - фиолетовый
+$server-color:     hsl(292, 56%, 55%);   // #bb47d1 - фиолетовый (как admin)
 
 // ============================================
-// АНИМАЦИИ
 // РАЗМЕРЫ
 // ============================================
-$transition-fast: 0.2s;
-$transition-normal: 0.3s;
-
 $container-max-width: 1200px;
 $header-max-height: 200px;
 $sidebar-width: 180px;
@@ -103,7 +97,6 @@ $border-radius: 8px;
 $over-radius-sm: 4px;
 
 // ============================================
-// БРЕЙКПОИНТЫ
 // АНИМАЦИИ
 // ============================================
 $transition-fast: 0.2s;

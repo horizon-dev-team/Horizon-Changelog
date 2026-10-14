@@ -20,6 +20,13 @@
   border: 0;
 }
 
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-display: swap;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2') format('woff2');
+}
+
 html, body {
   height: 100%;
   overflow-x: hidden;
@@ -49,7 +56,7 @@ body {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #121212 0%, #16213e 100%);
+  background: linear-gradient(135deg, hsl(0, 0%, 7%) 0%, hsl(225, 47%, 16%) 100%);
 
   @media (max-width: $mobile) {
     min-height: 140px;
@@ -103,7 +110,7 @@ body {
 
 .header h1 {
   font-size: 3.5rem;
-  text-shadow: 0 0 10px rgba(255, 230, 205, 0.8), 0 0 20px rgba(255, 230, 205, 0.4), 0 0 40px rgba(255, 230, 205, 0.2);
+  text-shadow: 0 0 10px hsla(40, 100%, 93%, 0.8), 0 0 20px hsla(40, 100%, 93%, 0.4), 0 0 40px hsla(40, 100%, 93%, 0.2);
 }
 
 .header .lead {
@@ -121,11 +128,11 @@ body {
 
   .btn-outline {
     padding: 0.2rem 1em;
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: hsla(0, 0%, 100%, 0.3);
 
     &:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.5);
+      background: hsla(0, 0%, 100%, 0.1);
+      border-color: hsla(0, 0%, 100%, 0.5);
     }
   }
 }
@@ -137,6 +144,7 @@ body {
   margin: 0 auto;
   padding: 2rem 0;
   flex: 1;
+  min-height: 60vh;
 
   @media (max-width: 1240px) {
     max-width: 95%;
@@ -145,6 +153,10 @@ body {
   @media (max-width: 992px) {
     padding: 2rem 0;
   }
+}
+
+#changelogs:empty {
+  min-height: 400px;
 }
 
 // BG Image
@@ -166,7 +178,7 @@ body {
 
 .info-card {
   background: $bg-overlay;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
   padding: 1.5rem;
   backdrop-filter: blur(10px);
 
@@ -190,16 +202,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1f;
+  background: hsl(240, 9%, 11%);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3a3a44;
+  background: hsl(240, 8%, 25%);
   border-radius: 6px;
 
   &:hover {
-    background: #5a5a66;
+    background: hsl(240, 6%, 38%);
   }
 }
 
@@ -210,16 +222,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1f;
+  background: hsl(240, 9%, 11%);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3a3a44;
+  background: hsl(240, 8%, 25%);
   border-radius: 6px;
 
   &:hover {
-    background: #5a5a66;
+    background: hsl(240, 6%, 38%);
   }
 }
 
