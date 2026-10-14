@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://horizon-dev-team.github.io/Horizon-Changelog/sitemap.xml
