@@ -8,6 +8,18 @@
   scrollbar-color: lighten($border-color, 10%) $bg-card;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html, body {
   height: 100%;
   overflow-x: hidden;
@@ -67,20 +79,21 @@ body {
   left: 0;
   background-repeat: repeat;
   pointer-events: none;
+  will-change: transform;
 }
 
 .layer1 {
-  background-image: url("../img/layer1_fancy.png");
+  background-image: url("../img/layer1_fancy.webp");
   animation: animateBackground 80s linear infinite;
 }
 
 .layer2 {
-  background-image: url("../img/layer2_fancy.png");
+  background-image: url("../img/layer2_fancy.webp");
   animation: animateBackground 40s linear infinite;
 }
 
 .layer3 {
-  background-image: url("../img/layer3_fancy.png");
+  background-image: url("../img/layer3_fancy.webp");
   animation: animateBackground 20s linear infinite;
 }
 

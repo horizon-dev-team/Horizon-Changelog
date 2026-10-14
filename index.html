@@ -8,7 +8,7 @@
 
   <!-- Primary Meta Tags -->
   <meta name="title" content="Horizon =][= Changelogs — список изменений билда SS13">
-  <meta name="description" content="Актуальный чейнджлог Horizon =][= — сборки Space Station 13 на базе /tg/station. История обновлений, новых фич, багфиксов и баланс-правок. Поиск по авторам, типам изменений и ключевым словам.">
+  <meta name="description" content="Актуальный чейнджлог Horizon =][= — сборки SS13 на базе /tg/station. История обновлений, фич, багфиксов и баланс-правок с поиском по авторам и типам.">
   <meta name="keywords" content="Horizon, SS13, Space Station 13, чейнджлог, changelog, /tg/station, tgstation, BYOND, билд, обновления, изменения, bugfix, rscadd, баланс">
   <meta name="author" content="Horizon-Dev-Team">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -18,24 +18,28 @@
   <meta name="apple-mobile-web-app-title" content="Horizon changelogs">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="google-site-verification" content="Had5OgDMWatBJFiDw2bO-ZkC4I30CIm_JTLJOgBjpj8" />
   <link rel="canonical" href="https://horizon-dev-team.github.io/Horizon-Changelog/">
-
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://horizon-dev-team.github.io/Horizon-Changelog/">
   <meta property="og:title" content="Horizon =][= Changelogs — список изменений билда SS13">
-  <meta property="og:description" content="Актуальный чейнджлог Horizon =][= — сборки Space Station 13 на базе /tg/station. История обновлений, новых фич, багфиксов и баланс-правок.">
+  <meta property="og:description" content="Актуальный чейнджлог Horizon =][= — сборки SS13 на базе /tg/station. История обновлений, фич и багфиксов с поиском.">
   <meta property="og:site_name" content="Horizon =][= Changelogs">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:image" content="https://horizon-dev-team.github.io/Horizon-Changelog/img/bg-logo.svg">
+  <meta property="og:image" content="https://horizon-dev-team.github.io/Horizon-Changelog/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Horizon =][= Changelogs — лого и название">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Horizon =][= Changelogs — список изменений билда SS13">
-  <meta name="twitter:description" content="Актуальный чейнджлог Horizon =][= — сборки Space Station 13 на базе /tg/station. История обновлений, новых фич, багфиксов и баланс-правок.">
-  <meta name="twitter:image" content="https://horizon-dev-team.github.io/Horizon-Changelog/img/bg-logo.svg">
+  <meta name="twitter:description" content="Актуальный чейнджлог Horizon =][= — сборки SS13 на базе /tg/station. История обновлений, фич и багфиксов с поиском.">
+  <meta name="twitter:image" content="https://horizon-dev-team.github.io/Horizon-Changelog/img/og-image.png">
 
+  <!-- Structured Data: WebSite schema с Search action -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,10 +59,15 @@
   }
   </script>
 
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="preload" as="image" href="img/layer1_fancy.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="img/layer2_fancy.webp">
+  <link rel="preload" as="image" href="img/layer3_fancy.webp">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"></noscript>
   <link rel="stylesheet" href="style/style.css">
-<meta name="google-site-verification" content="Had5OgDMWatBJFiDw2bO-ZkC4I30CIm_JTLJOgBjpj8" />
 </head>
 <body>
   <div class="app">
@@ -87,9 +96,10 @@
       </div>
       <div class="changelog-filter">
         <div class="changelog-controls month-controls">
-          <button id="prevBtn" class="btn btn-outline month-nav" disabled>←</button>
-          <select id="monthSelect" class="month-select"></select>
-          <button id="nextBtn" class="btn btn-outline month-nav" disabled>→</button>
+          <label for="monthSelect" class="sr-only">Месяц</label>
+          <button id="prevBtn" class="btn btn-outline month-nav" disabled aria-label="Предыдущий месяц">←</button>
+          <select id="monthSelect" class="month-select" aria-label="Выбор месяца"></select>
+          <button id="nextBtn" class="btn btn-outline month-nav" disabled aria-label="Следующий месяц">→</button>
         </div>
         <div class="changelog-controls search-controls">
           <div class="search-wrapper">
@@ -114,11 +124,12 @@
           <div id="searchResultCount" class="search-result-count" style="display:none;" aria-live="polite"></div>
         </div>
         <div class="changelog-controls source-controls">
-          <div class="source-toggle btn-group" role="tablist" aria-label="Фильтр по источнику">
-            <button id="sourceUpstreamBtn" class="btn btn-outline source-toggle-btn" aria-pressed="false">/TG/Station</button>
-            <button id="sourceAllBtn" class="btn btn-outline source-toggle-btn active" aria-pressed="true">Все</button>
-            <button id="sourceHorizonBtn" class="btn btn-outline source-toggle-btn" aria-pressed="false">Horizon =][=</button>
-          </div>
+          <fieldset class="source-toggle btn-group" aria-label="Фильтр по источнику">
+            <legend class="sr-only">Источник изменений</legend>
+            <button id="sourceUpstreamBtn" class="btn btn-outline source-toggle-btn" role="radio" aria-checked="false">/TG/Station</button>
+            <button id="sourceAllBtn" class="btn btn-outline source-toggle-btn active" role="radio" aria-checked="true">Все</button>
+            <button id="sourceHorizonBtn" class="btn btn-outline source-toggle-btn" role="radio" aria-checked="false">Horizon =][=</button>
+          </fieldset>
         </div>
       </div>
       <div id="changelogs"></div>
@@ -152,9 +163,9 @@
       </div>
     </div>
 
-    <script defer src="script/legend.js"></script>
-    <script defer src="script/search.js"></script>
-    <script defer src="script/changelog.js"></script>
-    <script defer src="script/parseMarkdown.js"></script>
+    <script defer src="script/legend.min.js"></script>
+    <script defer src="script/search.min.js"></script>
+    <script defer src="script/changelog.min.js"></script>
+    <script defer src="script/parseMarkdown.min.js"></script>
 </body>
 </html>

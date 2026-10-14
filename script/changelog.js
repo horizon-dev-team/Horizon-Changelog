@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (!btn) return;
       const active = v === currentSource;
       btn.classList.toggle('active', active);
-      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      btn.setAttribute('aria-checked', active ? 'true' : 'false');
     };
     setBtn(sourceAllBtn, 'all');
     setBtn(sourceUpstreamBtn, '/TG/Station');
