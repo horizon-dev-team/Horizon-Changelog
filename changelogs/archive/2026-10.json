@@ -1740,5 +1740,2260 @@
         "text": "За рамками 15x15 некликабельная область - Теперь позволяет кликать в полноэкранном режиме"
       }
     ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98155",
+    "title": "tgui commandbar sends status to the server [no gbp]",
+    "author": "hry-gh",
+    "body": "## About The Pull Request\n\nsends the currently selected verb to the server to determine if we're doing typing indicators\n\n## Why It's Good For The Game\n\nmore typing indicators for commandbar users",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "when typing in the command bar, thinking/typing indicators will be reflected in game again"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98194",
+    "title": "Removes skeleton keys",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\n\nWhat it says on the tin. Tendril crates can simply be opened to obtain the loot within.\n\n## Why It's Good For The Game (I'm Going To Rant)\n\nWe changed how tendrils work entirely to instead function as mini-bosses. This is enough friction to no longer need to worry about people focusing down tendrils to the exclusion of mining. This is also for the sake of consistency with other boss fauna.\n\nAnyway, time for a rant because I went and re-read the PR that added keys, so I now need to vent:\n\n[It didn't work.](https://github.com/tgstation/tgstation/pull/56267#issuecomment-765691326) People definitely still went and rushed tendrils after this change because it assumed that the people rushing those tendrils were not mining at all. They were. They absolutely were.\n\nYou need to actually mine towards the location of those tendrils in order to get their loot. And, typically, there is enough ore between wherever you started and wherever you intended to go to handily get a key for your chests without putting in terribly much effort at all. The same could be said of boss rushers, but people could almost certainly no-hit many of the bosses during that period with ease, so I'm not even sure they even had to resupply. And, granted, once those miners did kill the boss mobs, they usually just fucked off from lavaland for good, which is what really put a stop to ore recovery then and there.\n\nThis PR in retrospect feels like a whole bunch of folk misunderstanding the fundamental problem with mining (the actual mining part had very minimal incentives and the gameplay people are engaging in can be perfected such that they no longer need to engage in ore recovery at all to progress through that content regularly) and simply assumed that kicking the shins of its most approachable layman content was enough to put those miners in their place. Completely ignoring the fact that the solution they have come up with doesn't even remotely hinder the actual people engaging in that content OR the people who may have actually been the problem elements in the first place. Rather, it just kind of put a child safety cap on mining loot so assistants with a pickaxe can't just come down and steal a bunch of it for themselves. Which is nice I guess but not at all what the PR set out to accomplish. And I think the tendrils now eating you for being so presumptuous about getting their loot is a lot more interesting a disincentivization.\n\nAnyway, mining is a whole lot more cohesive in the modern era, you do get generally equal rewards for engaging in all parts of the content and boss rushing is not nearly as desirable as it was previously to the exclusion of everything else due to the possibility of missing out on further progression that ISN'T boss loot, so this shit is a fucking relic and doing nothing anymore. Let's put it to rest.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Removes skeleton keys. Tendril chests can simply be opened like any other megafauna loot."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98091",
+    "title": "Fix some two handed weapons (spears, axes) not updating inhand icon state",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n#97811 defined a bunch of icon states for two handed items\r\n\r\nThis broke a bunch of two handed weapons that relied on it being unset / using icon_state\r\n\r\nI changed the two handed component to handle inhand icon state",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes two handed weapons not updated when wielded"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98101",
+    "title": "Blocks gibtonite from containing ore",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nCloses #98092",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Gibtonite tiles can no longer contain ore in them"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98144",
+    "title": "Fix health analyzer runtime",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\n```\nruntime error: list index out of bounds\nproc name:    TraitRemove (/proc/___TraitRemove)\n  usr: (src)\n  src: null\n  call stack:\n   TraitRemove(Analyzer healthy (/mob/living/carbon/human/consistent), 3000, \"analyzer_trait\")\n/datum/callback (/datum/callback): InvokeAsync()\nTimer (/datum/controller/subsystem/timer): fire(0)\nTimer (/datum/controller/subsystem/timer): ignite(0)\nMaster (/datum/controller/master): RunQueue()\nMaster (/datum/controller/master): Loop(4)\nMaster (/datum/controller/master): StartProcessing(0)\n```\nFixes the health analyzer passing its cooldown duration as the trait to remove, causing a runtime and leaving patients marked as recently treated after the five-minute cooldown.\n\nPasses the correct trait instead.\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "you can once again get a medical bounty report from the same patient after waiting five minutes."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98195",
+    "title": "Removes some... questionable language from a few ashwalker things",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\n\nWhat it says on the tin. Also removes the mood penalty from seeing someone get blown up by the tendril, which just... doesn't seem like it would come up and is a bit presumptive.\n\n## Why It's Good For The Game\n\nWell the moodlet kind of just seems like an unnecessarily punishing effect for what could trigger off, iunno, a cow being torn up by the tendril.\n\nWe should probably leave the imperalism to the players to act out if they wanna do that, not...this.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "You no longer suffer from a mood malice from seeing the ashwalker tendril eat things if you're not an ashwalker yourself."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98159",
+    "title": "Fix strange reagent mail delivery when Ian dies",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nThis should be the reagent container not the reagent datum\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "strange reagent now gets properly set in the HoP's mail delivery goodies if the conditions meet"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98169",
+    "title": "Rapid Formatting Device",
+    "author": "NanoCats",
+    "body": "## About The Pull Request\r\n\r\nMakes the names of the \"rapid device\" family consistent.\r\n\r\nThey now follow the same lowercase name plus acronym format, like `rapid tiling device (RTD)`, instead of using several slightly different, mildly irritating conventions.\r\n\r\n- Removes the hyphens from the RCD, ARCD, RTD, and RDD names.\r\n- Adds acronyms to the RLD, mini RLD, RWD, RPD, and RCL names.\r\n- Makes the RLD lowercase, consistent with the other devices.\r\n- Changes \"light\" to \"lighting\" on the mini RLD, matching the full-size RLD.\r\n- Adds `(RWD)` to the RWD lathe design.\r\n- Adjusts the Rapid Service Fabricator to match the convention.\r\n- Adjusts the name of the Plumbing Constructor to also match.\r\n\r\nAbsolutely no player facing behavior will change, just a spelling/grammar patch.\r\n\r\n## Why It's Good For The Game\r\n\r\nThese are very clearly a family of related tools, but their names were using several different formatting conventions for no particular discernible reason. It was annoying me so I've made it consistent.\r\n\r\nThe inconsistency also caused a small search nuisance. Lathe search only checks the design name, so searching `RWD` would not find the Rapid Wiring Device. ALSO IT USED TO BE CALLED THE RAPID CABLE LAYER SO I OCCASIONALLY FORGET AND CAN'T FIND IT AHFEAHGFIKADCJAF. Anyway.\r\n\r\nThe RLD was also capitalized unlike the rest of the family.",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Standardized the names and acronyms of the rapid device family."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98200",
+    "title": ",",
+    "author": "Fikou",
+    "body": "## About The Pull Request\n\nadds ,\n\n## Why It's Good For The Game\n\n,",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": ","
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98186",
+    "title": "Surplus items get uplink datum data if possible",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nRight now surplus crate readout just gets the name of the loot, which sometimes is concealed, like \"Box\". \nThis gets the corresponding uplink datum for data if possible, falling back to object name on a failure.\n\n## Why It's Good For The Game\n\n`Surplus item: Box` `Surplus item: Box` is not very userful",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Surplus items get uplink datum data if possible in roundend report (meaning it'll report \"Surplus item: stealth implant\" rather than \"Surplus item: box\")."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98181",
+    "title": "The Head of Security, Head of Personnel, and Engineering Security Officers no longer have air alarm access",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n#85881 made air alarms operate on \"engineering\" access which meant that more than *just* Station Engineers gained access to air alarms\r\n\r\nThis PR adds `ACCESS_ATMOS_EQUIP` which air alarms and a few other things (atmos lockers) now use\r\n\r\nAtmos Technicians and Station Engineers (and the Chief Engineer, of course) have `ACCESS_ATMOS_EQUIP`\r\nEngineering Security Officers get `ACCESS_ATMOS_EQUIP` for lowpop\r\n\r\n- [x] I tested this pr\r\n\r\n## Why It's Good For The Game\r\n\r\nBasically I think it's kinda cringe that the Head of Security or Engi Sec have air alarm access. The original intent behind expanding the access was to allow Station Engineers easier repair, other roles don't need it.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Added a new access, \"Atmospherics Equipment\", which controls access to Air Alarms, as well as atmospherics equipment lockers and supply packs. In the future this access may extend to some map areas (such as atmos gas storage)."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Atmospheric Technician, Station Engineer, and the Chief Engineer all have \"Atmospherics Equipment\" access by default."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Head of Security and Head of Personnel do not have \"Atmospherics Equipment\", and thus cannot access air alarms by default anymore."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Engineering Security Officers is only given \"Atmospherics Equipment\" access on skeleton crews, and thus cannot access air alarms on higher pop shifts."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98178",
+    "title": "Fixes muzzled text leaking when you use an exclamation mark",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\nCloses https://github.com/tgstation/tgstation/issues/98147\n\n## Why It's Good For The Game\n\nMMMMMF MMMF! MMF MMMMMMF MMF MF!",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Words no longer escape your muzzled mouth if you use an internal exclamation mark"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98201",
+    "title": "Post-Cerulean spellchecks",
+    "author": "Neocloudy",
+    "body": "## About The Pull Request\r\nFixed or tweaked grammar in new Cerulean content:\r\n\r\n- Hydro vaporizer's description and examine text\r\n- The deadbeat musician's flavor text. I don't know what else to call it\r\n- The armored leather jacket\r\n- The black pearl necklace\r\n- Abyss fish tail\r\n- Some of the Cerulean perks in the species menu\r\n\r\n## Why It's Good For The Game\r\nI love opinionated grammar and formatting changes.",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "Fixed or tweaked spelling/grammar in new Cerulean content, including the hydro vaporizer, the deadbeat musician, the armored leather jacket, the black pearl necklace, the translucent fish tail, and some of the Cerulean perks (in the species menu)."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98182",
+    "title": "Dropping a muffling item no longer unmuffles someone still wearing one",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nTin. There could be multiple items that use this element, and different sources should not affect one another (don't ask how I found this).\n\n## Why It's Good For The Game\n\nFixes an oversight.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "multiple sources of muffled speech now respect one another"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98143",
+    "title": "Fix sound tokens not resolving SFX keys for emote overrides",
+    "author": "PetyaFX",
+    "body": "<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->\r\n<!-- You can view Contributing.MD for a detailed description of the pull request process. -->\r\n\r\n## About The Pull Request\r\n\r\n<!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->\r\nCloses #98142\r\n`/datum/sound_token/proc/update_sound()` now resolves soundin through `get_sfx()`, matching `playsound()` and `playsound_local()`\r\n\r\nThat's it\r\n\r\n## Why It's Good For The Game\r\n\r\n<!-- Argue for the merits of your changes and how they benefit the game, especially if they are controversial and/or far reaching. If you can't actually explain WHY what you are doing will improve the game, then it probably isn't good for the game in the first place. -->\r\nMonkey screams are audible again. Also fixes any other SFX_* key reaching",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed SFX-keyed sounds being silent through sound tokens."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98165",
+    "title": "Fix orbiter runtimes",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nFixes `Cannot read null._listen_lookup in end_orbit()` and` Cannot read null.orbiters` among other orbit-related issues. Mostly related to transferring orbits missing signals, and some odd edge cases\r\n\r\n```\r\nruntime error: Cannot read null._listen_lookup\r\nproc name: end orbit (/datum/component/orbiter/proc/end_orbit)\r\n  usr: null\r\n  src: /datum/component/orbiter (/datum/component/orbiter)\r\n  call stack:\r\n/datum/component/orbiter (/datum/component/orbiter): end orbit(the pocket crowbar (/obj/item/crowbar), 0)\r\n/datum/component/orbiter (/datum/component/orbiter): orbiter move react(the pocket crowbar (/obj/item/crowbar), space (140,126,8) (/turf/open/space/basic), 4, 1, null, 0)\r\nthe pocket crowbar (/obj/item/crowbar):  SendSignal(\"movable_moved\", /list (/list))\r\nthe pocket crowbar (/obj/item/crowbar): Moved(space (140,126,8) (/turf/open/space/basic), 4, 1, null, 0)\r\nthe pocket crowbar (/obj/item/crowbar): abstract move(space (141,126,8) (/turf/open/space/basic))\r\n/datum/component/orbiter (/datum/component/orbiter): move react(the pocket crowbar (/obj/item/crowbar), null, null, null)\r\n/datum/component/orbiter (/datum/component/orbiter): PostTransfer(the pocket crowbar (/obj/item/crowbar))\r\nthe pocket crowbar (/obj/item/crowbar): TakeComponent(/datum/component/orbiter (/datum/component/orbiter))\r\nthe pocket crowbar (/obj/item/crowbar): transfer observers to(the pocket crowbar (/obj/item/crowbar))\r\n/datum/unit_test/orbiter_trans... (/datum/unit_test/orbiter_transfer): run case(\"movable_fresh_far\", 1, 0, 0, 0, null)\r\n/datum/unit_test/orbiter_trans... (/datum/unit_test/orbiter_transfer): Run()\r\nRunUnitTest(/datum/unit_test/orbiter_trans... (/datum/unit_test/orbiter_transfer), /list (/list))\r\nRunUnitTests()\r\n/datum/callback (/datum/callback): InvokeAsync()\r\n```\r\n\r\n```\r\nruntime error: Cannot read null.orbiters\r\nproc name: Destroy (/datum/component/orbiter/Destroy)\r\n  usr: null\r\n  src: /datum/component/orbiter (/datum/component/orbiter)\r\n  call stack:\r\n/datum/component/orbiter (/datum/component/orbiter): Destroy(0)\r\nqdel(/datum/component/orbiter (/datum/component/orbiter), 0)\r\nthe pocket crowbar (/obj/item/crowbar):  AddComponent(/list (/list), null)\r\nthe pocket crowbar (/obj/item/crowbar): TakeComponent(/datum/component/orbiter (/datum/component/orbiter))\r\nthe pocket crowbar (/obj/item/crowbar): transfer observers to(the pocket crowbar (/obj/item/crowbar))\r\n/datum/unit_test/orbiter_trans... (/datum/unit_test/orbiter_transfer): run case(\"movable_merge_same\", 2, 1, 1, 0, null)\r\n/datum/unit_test/orbiter_trans... (/datum/unit_test/orbiter_transfer): Run()\r\nRunUnitTest(/datum/unit_test/orbiter_trans... (/datum/unit_test/orbiter_transfer), /list (/list))\r\nRunUnitTests()\r\n/datum/callback (/datum/callback): InvokeAsync()\r\n```\r\n\r\n```\r\nruntime error: mob_update_sight overridden. Use override = TRUE to suppress this warning.\r\nTarget: Carson Sheets (/mob/living/carbon/human) Existing Proc: update_user_sight New Proc: update_user_sight%//%[\"code/datums/signals.dm\",43]%//%\r\nproc name:  stack trace (/proc/_stack_trace)\r\n  usr: (src)\r\n  src: null\r\n  call stack:\r\n stack trace(\"mob_update_sight overridden. U...\", \"code/datums/signals.dm\", 43)\r\nthe friendly wisp (/obj/effect/wisp): RegisterSignal(Carson Sheets (/mob/living/carbon/human), \"mob_update_sight\", \"update_user_sight\", 0)\r\nthe friendly wisp (/obj/effect/wisp): orbit(Carson Sheets (/mob/living/carbon/human), 20, 0, 20, 36, 0, null)\r\n/datum/unit_test/wisp_public_l... (/datum/unit_test/wisp_public_lifecycle): public orbit(the friendly wisp (/obj/effect/wisp), Carson Sheets (/mob/living/carbon/human), \"refresh_1\", 20, 0, 20, 36, 0)\r\n/datum/unit_test/wisp_public_l... (/datum/unit_test/wisp_public_lifecycle): run refresh(0)\r\n/datum/unit_test/wisp_public_l... (/datum/unit_test/wisp_public_lifecycle): Run()\r\nRunUnitTest(/datum/unit_test/wisp_public_l... (/datum/unit_test/wisp_public_lifecycle), /list (/list))\r\nRunUnitTests()\r\n/datum/callback (/datum/callback): InvokeAsync()\r\n```\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "ghosts can stop orbiting by moving away after their orbit is transferred to another target."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98214",
+    "title": "Fixes the escape menu player list leaking stealthed admins",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\n\nTitle",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The escape menu players list no longer reveals stealthed admins"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98213",
+    "title": "Fixes wibbly filters race condition+runtime",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nFixes this:\n\n```\nruntime error: invalid object type 0:0\nproc name: remove wibbly filters (/proc/remove_wibbly_filters)\n  usr: (src)\n  src: null\n  call stack:\nremove wibbly filters(the bar seating (/obj/structure/holosign/robot_seat/bar), 2.5)\n/datum/callback (/datum/callback): InvokeAsync()\nTimer (/datum/controller/subsystem/timer): fire(0)\nTimer (/datum/controller/subsystem/timer): ignite(0)\nMaster (/datum/controller/master): RunQueue()\nMaster (/datum/controller/master): Loop(4)\nMaster (/datum/controller/master): StartProcessing(0)\n```\n\nWalking through a hologram right as its last glitch ends starts a new glitch before the old one's cleanup runs. \nThe cleanup removed the filters by name so it ate the new glitch's filters, then the new glitch's fade tried to animate one that wasn't there, runtimed and quit halfway, leaving the rest stuck wobbling until the next glitch.\n\nThe cleanup now only removes the filters that actually faded, skipping any that got replaced since, and the fade skips filters that aren't there. the hologram component also won't fade a glitch that a newer one already replaced. \n\n`get_filter_data` gets a `copy_data` arg so the helper can keep the real filter data instead of a copy.\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "holograms can no longer get stuck wobbling when you walk back through them just as their last glitch is fading"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98207",
+    "title": "[NO GBP] Fixes copying blast door controller IDs + unit test",
+    "author": "lelandkemble",
+    "body": "## About The Pull Request\n\nI'm going to be reaping what I've sown for the rest of my life\n\n## Why It's Good For The Game\n\nfixes #98206",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed being unable to copy blast door controller ids"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98170",
+    "title": "[NO GBP] Makes MOD stealth module less strict about part requirements",
+    "author": "desertmote",
+    "body": "## About The Pull Request\r\n\r\nGloves OR shoes, instead of gloves AND shoes. The other required parts of this module have similar OR requirements instead of AND.\r\nFixes the oversight https://github.com/tgstation/tgstation/issues/98164.\r\n\r\n## Why It's Good For The Game\r\n\r\nCeruleans are supposed to be able to use this, too. Its already a challenge enough to play one in itself, let alone as antag role.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Makes MOD stealth module less strict about part requirements"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ceruleans can activate MOD stealth modules"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98163",
+    "title": "Fix inherited pricetag account lists",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nFixes this\n\n```\nruntime error: undefined proc or verb /list/adjust money().\nproc name: on parent sold (/datum/component/pricetag/proc/on_parent_sold)\n```\n\nPricetag inheritance stored the entire incoming account list as a payee, causing export to fail before paying the handler and correcting cargo’s report.\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "handling tips for single-contributor bounty cubes now reach the scanner's bank account, and cargo receives the correct remaining value."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98160",
+    "title": "Fix stack lathe division by zero runtime",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\n```\nruntime error: Division by zero\nproc name: simple transfer materials (/datum/design/proc/simple_transfer_materials)\n```\n\nStacks initialize their materials before merging. Autolathes/protolathes transferred one design’s materials again afterward, causing division by zero after full merges and incorrect material contents after batching or partial merges.\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "stacks printed by autolathes and protolathes keep the correct material contents when printed in batches or merged with existing stacks."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98103",
+    "title": "Fixes Candela nodes not working from mining webbings",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\nMoved() fires off before dropped comsig, which caused them to think that they were completely dropped rather than moved into a storage item.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed Candela nodes not working from mining webbings"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98070",
+    "title": "Tooltips can now update",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nWhen an action button has their name update while you hover over it, the name of it will update accordingly.\r\n\r\n\r\nhttps://github.com/user-attachments/assets/35f8be51-9382-42ea-a493-81aba97f076e\r\n\r\n\r\nI also added a help verb name to Wrestling because WHY DOESN'T IT HAVE ONE WTF and I wanted to use it for the demo.\r\n\r\n## Why It's Good For The Game\r\n\r\nTooltips currently don't update at all and it's a little sad. Maybe this could be useful for like status effects that want to list how much time is left on them?",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Action buttons with dynamic names (such as martial art swapping) now updates their names without requiring you to unhover/rehover your mouse over it."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98179",
+    "title": "Skip empty cylinder slots during ballistic crafting",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\n```\nruntime error: Cannot execute null.forceMove().\nproc name: on craft completion (/obj/item/gun/ballistic/on_craft_completion)\n  usr: null\n  src: the .357 revolver (/obj/item/gun/ballistic/revolver)\n  src.loc: the floor (11,14,4) (/turf/open/indestructible)\n  call stack:\nthe .357 revolver (/obj/item/gun/ballistic/revolver): on craft completion(/list (/list), null, null)\n/datum/unit_test/ballistic_cra... (/datum/unit_test/ballistic_crafting/empty_cylinder): Run()\nRunUnitTest(/datum/unit_test/ballistic_cra... (/datum/unit_test/ballistic_crafting/empty_cylinder), /list (/list))\nRunUnitTests()\n/datum/callback (/datum/callback): InvokeAsync()\n```\n\nFixes this\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "revolver crafting now transfers ammunition correctly past empty cylinder slots."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98191",
+    "title": "Build mode copy fixes",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nFixes build mode copy mangling humans\n\nHuman duplicates now go through the more robust `make_full_human_copy`\nCarbon copies do nothing special because xenos should just be able to tank it\n\nAlso made the vars use nameof",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Build mode copy on humans no longer mangles the source terribly"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98063",
+    "title": "[MDB Ignore] Remove holopay stand and vend-a-tray, add tip jars",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nRemoves the holopay stand completely \r\nRemoves the vend-a-tray completely\r\n\r\nIn the place of the kitchen vend-a-trays, there are now simple tip jars, which you can put coins and cash into. \r\nYou can also build tip jars with glass sheets (even plasmaglass sheets).\r\n\r\n<img width=\"158\" height=\"145\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0234cbc6-a3a4-4a83-a93b-bfb80aacbbcf\" />\r\n\r\n## Why It's Good For The Game\r\n\r\n- Why remove the holopay stand?\r\n\r\nThe holopay stand is a neat little thing but it over-complicates an otherwise simple action. As a consequence it is barely used. \r\nFor people setting up face-to-face shops, it's significantly easier to exchange money by hand instead of making people swipe their card on the scanner. \r\nFor people setting up remote shops, there exists another method of remote pay - nt pay - that is easier for both parties to understand. \r\n\r\nAnd, personally, I think the holopay stand is just out of place for the setting. It follows the trend of \"well if we stick `holo-` to something we don't need to explain how it works\" that feels a little immersion breaking. Perhaps there could exist a version of it where it gets summoned from a holopad, but as it stands I think the pay app has better verisimilitude. \r\n\r\n- Why remove the vend-a-tray?\r\n\r\nThe vend-a-tray is, again, a nifty little thing that calls back to diner food displays, but it has some issues on its own. \r\nFor one, no one uses it[1][2]. I could count the amount of times I saw food in one of those things over the last year on one hand.\r\nFor two, even if the chef uses it, the crew doesn't, for a number of reasons[3][4].\r\nAs a consequence, the vend-a-tray ends up being just a waste of counter space. \r\n\r\n[1] *Chefs generally don't like to require payment for food. Their job is to feed people and requiring payment means less people get fed which means you aren't doing your job.*\r\n\r\n[2] *You can only put one item on it. If you want to sell multiple food items, you either need to make more trays or you need to babysit it.*\r\n\r\n[3] *No one likes to pay for food or drink. People are perfectly willing to tip the chef or bartender, but when you start charging, people would rather just not eat, because the downsides to not eating aren't very severe.* \r\n\r\n[4] *There's not many food items worth paying for, outside of roleplay. Food buffs aren't particularly fleshed out for a number of reasons, so putting \"good food\" for a price doesn't mean much if you're also offering \"decent food\" for free. And to circle back to the 'outside of roleplay' point, if you are roleplaying, you could just as easily exchange money by hand instead of automating it.*\r\n\r\n- The bigger point\r\n\r\nI'm kind of against automated shop fronts and remote money transfer.\r\nBeing an interaction driven roleplaying game, face-to-face exchange of money *should be* the primary way of bartering. \r\nReplacing it with automation removes potential interactions. You can't haggle or try to pickpocket or intimidate a paystand. \r\nI'm not a fan of remote pay for a similar reason, but I think having one method of wireless transfer for the sandbox is alright.\r\nAnd as for custom vendors, I'm also vaguely OK with it due to the overall importance of vendors to the economy (also you can tip them over or whatever and that's funny). \r\n\r\nThat's why I went with adding a tip jar in the place of trays - Simpler than the holopay stand (with better verisimilitude), and more potential for interaction than a vend-a-tray.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Removed the ability for id cards to project a pay stand"
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Removed the vend-a-tray entirely"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can construct tip jars with glass or plasmaglass (though not with their reinforced variants). Tip jars accept many tiny methods of gratuity, such as coins, cash, holochips, IOUs, or... a cigarette, sure."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Adds tip jars to the kitchen in the bar, where the vend-a-trays once sat."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98010",
+    "title": "Right clicking doors now factors in crowbar power",
+    "author": "Fghj240",
+    "body": "## About The Pull Request\r\n\r\nCurrently if you take jaws of life and right click on a powered door it would tell you that the airlock motors resist your efforts to open it. That's because the right click code ignores the crowbar's force and just tries to open the door with the power of a regular crowbar.\r\n\r\nSpecifically, crowbar_act_secondary grabs the crowbar's force and then calls try_to_crowbar_secondary, which does NOT take force as an argument and then calls try_to_crowbar (as if you left clicked with the crowbar instead of right clicking) but with force = FALSE. This PR makes try_to_crowbar_secondary take force into account. It also creates a new proc to check crowbar force that's ran by both crowbar_act and crowbar_act_secondary to avoid repeated code.\r\n\r\n## Why It's Good For The Game\r\n\r\nbugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "right clicking a powered door with powered crowbars no longer fails to open it"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98212",
+    "title": "NT Shopping Network no longer resends the whole cargo catalogue every second while it's open",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nNT Shopping Network rebuilt and resent the whole cargo catalogue on every ui update, every second it was open. That's ~180kb a tick with a quartermaster's id (~320kb emagged) and about 5ms of server time per open app, per tick.\r\n\r\nThis PR makes the catalogue use static data now, like on the cargo console.\r\n\r\nIt only gets sent again when something that can change it does: your id's access (RETA included), emag, silicon access, a special pack getting unlocked, or the cargo price modifier. Checking that is a ~10µs string compare per tick.\r\n\r\nBenched, difference is:\r\nPer open app per tick: 5.2ms -> 0.05ms\r\n182kb -> 0.9kb sent in data\r\n\r\nFor emagged: \r\n8.4ms -> 0.05ms, 322kb -> 0.9kb).\r\n\r\n## Why It's Good For The Game\r\n\r\nStops this ui from dosing players.\r\n\r\nEDIT:\r\n\r\nNow also uses /datum/asset/json\r\n\r\nOpening a cargo window is now 4 to 9 times faster on the server and sends about 50 times less data",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "NT Shopping Network  no longer resends the whole cargo catalogue every second while it's open"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98216",
+    "title": "runechat for broadcasters",
+    "author": "headband0536",
+    "body": "## About The Pull Request\n\nSometimes I (like other players, I'm sure) would miss something being broadcast on TV simply because the text only goes to the main chat. Runechat should fix this\n\nhttps://github.com/user-attachments/assets/11045e51-6719-4fe0-a6be-991d9e76df5c\n\n## Why It's Good For The Game\n\nmore attention to TV broadcasts!",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "runechat for broadcasters"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97789",
+    "title": "Give Mothpeople 4 arms (Mothperson Rework)",
+    "author": "tontyGH",
+    "body": "## About The Pull Request\r\n\r\nMothpeople get 2 extra arms which are an innate part of their chest (replacing the chest removes the extra arms, implanting the chest gives you them). The hands are fully articulate, so they can do anything that your lower set of arms can do.\r\n\r\nIt was a conscious decision to make the extra arms tied directly to the chest and not be a special organ, I foresaw people implanting these on much stronger chests (like human/cyborg) and nullifying the downside. This could change in the future, but right now I'm pretty confident.\r\n\r\nNotably, these extra arms aren't tied to any body zones, meaning you cannot directly interact with them in any way. Since you can't target them, you cannot damage, wound, dismember, operate on, augment or replace these arms. However, disabling the chest (via severe chest fracture) will also disable the limbs.\r\n\r\n<details>\r\n<summary>Balance concerns:</summary>\r\n\r\n### Handcuffing?\r\nYou only need one pair of handcuffs to fully cuff moths. Because of how handcuffing works, you will simply always be able to handcuff a mothperson, even if both their main arms are missing. This is not a concern.\r\n\r\n### Stripping?\r\n\r\n<details>\r\n<summary>The strip menu was overhauled to accomodate the possibility of multiple hands.</summary>\r\n\r\n<img width=\"426\" height=\"387\" alt=\"image\" src=\"https://github.com/user-attachments/assets/4d8e92f9-465f-4cdc-b89f-56d188898ef7\" />\r\n\r\n</details>\r\n\r\nYou won't see the extra hands if the target doesn't have them, so there won't be any redundant info.\r\n\r\n### Dual-wielding?\r\n\r\nDual-wielding is handled correctly, and you will put the other item in your offhand. You can freely swap to your other free hands, but the offhand will be unavailable.\r\n\r\nBeing able to dual-wield multiple weapons is not as strong as it initially seems because of click delay. Having two axes does not increase DPS in the same way that having two butchers knives won't work.\r\n\r\n### Akimbo?\r\n\r\n<details>\r\n<summary>I mean, you can try.</summary>\r\n\r\nhttps://github.com/user-attachments/assets/dd2f42e0-b9b3-47a7-aff2-5606fa2f8dc5\r\n\r\n</details>\r\n\r\n</details>\r\n\r\nThis is much easier to control intentionally with the Left/Right hand keybinds, since they let you cycle between sets.\r\n\r\n## Why It's Good For The Game\r\n\r\nCould be interesting. Mothpeople are somewhat of a boring species right now since they're basically just humans with wings. \r\n\r\nI can't actually say with confidence how this will play out, so I'm putting few limitations on the upper arms so we can see what's strong and then work from there. I don't think it'd be great to make this immediately useless.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Mothpeople now have 2 extra arms in their chest, giving them 4 total arms"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Mothpeople are now generally a bit more fragile"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Akimbo used the wrong gun when determining spread penalty"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Akimbo penalty did not include the gun that was firing"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Akimbo penalty now has multiplicative scaling (double PKA was adjusted to consider this)"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Catching items now considers all empty hands and not just your active offhand"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Blocking now only works if the blocking item is in your active set of hands"
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Wizard's 4-arms perk and the deathmatch modifier had to be removed for technical reasons. Sorry."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98145",
+    "title": "Spreads departmental secoffs across departments",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nManual revert of https://github.com/tgstation/tgstation/pull/57685. Instead of clumping up security officers, try to spread them across departments, respecting preference where possible.\r\n\r\n## Why It's Good For The Game\r\n\r\nThe buddying of secoffs feels like it was designed in an era where each round had 6 secoffs, but is currently running where we have much fewer.\r\n\r\nThe algorithm tried to buddy up secoffs while also ensuring that no officer was assigned to a department alone. This had the unfortunate consequence of 2-3 roundstart secoffs always being assigned to the same department. This read as a bug to a lot of players (including me); it feels **really weird** that the median round just has the entire security force all inside the same department.\r\n\r\nThe goal of the PR was to encourage security players to buddy up, but I really don't think that's that big of a deal? When I roll sec, I spend much more time in the brig, in the common areas, or crawling through maints hunting a criminal than loitering in my department anyway, although of course ymmv.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Departmental security officers are now spread evenly across departments."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98220",
+    "title": "ore vents loaded after roundstart actually have ores",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nFixes this:\n\n```\nruntime error: Attempted to fetch material ref with invalid key\nproc name: get material (/datum/controller/subsystem/materials/proc/get_material)\n  src: Materials (/datum/controller/subsystem/materials)\n  call stack:\nMaterials (/datum/controller/subsystem/materials): get material(null)\nMaterials (/datum/controller/subsystem/materials): get material set cache(/list (/list), 1)\nthe boulder (/obj/item/boulder): apply material effects(/list (/list))\n```\n\nRandom ore vents leave their minerals to `SSore_generation`s startup distribution whenever they're maploaded, but anything maploaded after that (ruins or templates loaded later) never got minerals at all, so the boulders that came out of them had a null material. Vents on a z-level without a mining epicenter got a size but no minerals either, and they got dropped from possible_vents too, so ventpointers couldn't find them.\n\nThere's now a flag for when the startup distribution has actually happened (it's set before the rock edge pass, since that can sleep). Vents loaded after it roll their minerals like any other runtime vent, and the epicenter-less ones roll theirs too and stay in possible_vents. anchored vents get their sizes and the mineral budget the same as before.\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "ore vents loaded in after roundstart, or on a level without a mining epicenter, now actually have ores and show up on ventpointers"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97980",
+    "title": "Removes most gun kits, gun tech unlocks gun orders in gun cargo",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nMost gun crafting kits have been removed. (The horizon and sks kits are the only ones left over.) \r\n\r\nWhen RND research gun techs, it unlocks the guns for order in cargo as \"gun requisition\". (This is flavored as the station discovering the blue prints, and uploading it to central command, allowing actual weapons manufacturers to make and ship them out to the station.)\r\n\r\n- The guns come without firing pins. \r\n- You can order them in crates of 1 or 3.\r\n- Security can departmental order them (but only in crates of 3). \r\n\r\n<img width=\"783\" height=\"452\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7926d4b1-b5af-4121-9565-b252d63d38bd\" />\r\n\r\nHellfire laser gun kits can no longer be ordered from cargo, but you can now straight up order a hellfire laser gun.\r\nThis requires contraband access (*not* emag, multitool).\r\n\r\n## Why It's Good For The Game\r\n\r\nSee #97311 for Anne's stance\r\n\r\nSome points\r\n- Crafting guns is a bit of a chore and not very fun. \r\n- You often end up having to buy a laser gun from cargo, anyways (especially as the alt laser guns cannot be used).\r\n- Throwing away a laser gun (can kill people) for something like an ion gun (only kills some people) or a temperature gun (doesn't kill anyone at all) is not something most people like to do.\r\n- Cargo getting more guns to order will probably result in shenanigans. Which might be fun.\r\n- Sci can do shenanigans like buy a Tesla Cannon crate to make a Tesla Cannon behind sec's back. Which might be fun.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Most gun crafting kits have been removed. The Horizon and SKS still require one to build."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Weapon research tech nodes now allows the station to requisition unlocked weapons from Cargo (Advanced Energy Gun, X-ray gun, ion carbine, etc.). Security can departmental order them in bulk. Requisitions come without firing pins."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can now purchase a hellfire laser gun directly from Cargo, though it requires the contraband wire be cut."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98217",
+    "title": "Fixes tank runtime, and a bonus",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\n```\r\n[2026-09-25 17:58:52.755] RUNTIME: runtime error: The high-capacity water tank taking damage while having <= 0 integrity\r\n - proc name: take damage (/atom/proc/take_damage)\r\n -   source file: code/game/atom/atom_defense.dm,23\r\n -   usr: 0\r\n -   src: the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high)\r\n -   src.loc: the asteroid sand (133,82,2) (/turf/open/misc/asteroid/airless)\r\n -   call stack:\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): take damage(0, \"brute\", \"melee\", 1, 1, 0)\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): take damage(0, \"brute\", \"melee\", 1, 1)\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): hitby(the poster - Safety: Internals (/obj/item/sign), null, 0, null, /datum/thrownthing (/datum/thrownthing))\r\n - the poster - Safety: Internals (/obj/item/sign): throw impact(the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high), /datum/thrownthing (/datum/thrownthing))\r\n - the poster - Safety: Internals (/obj/item/sign): throw impact(the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high), /datum/thrownthing (/datum/thrownthing))\r\n - /datum/thrownthing (/datum/thrownthing): finalize(1, the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high))\r\n - the poster - Safety: Internals (/obj/item/sign): Bump(the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high))\r\n - the asteroid sand (133,82,2) (/turf/open/misc/asteroid/airless): Enter(the poster - Safety: Internals (/obj/item/sign))\r\n - the poster - Safety: Internals (/obj/item/sign): Move(the asteroid sand (133,82,2) (/turf/open/misc/asteroid/airless), 2, 0, 1)\r\n - the poster - Safety: Internals (/obj/item/sign): Move(the asteroid sand (133,82,2) (/turf/open/misc/asteroid/airless), 2, 0, 1)\r\n - ...\r\n - chem splash(the floor (133,83,2) (/turf/open/floor/iron), /datum/reagents (/datum/reagents), 102, /list (/list), 0, 1, 1)\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): boom()\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): atom deconstruct(0)\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): handle deconstruct(0)\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): deconstruct(0)\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): take damage(179, \"brute\", \"bomb\", 0, null, 0)\r\n - the high-capacity water tank (/obj/structure/reagent_dispensers/watertank/high): ex act(2, null)\r\n - Explosions (/datum/controller/subsystem/explosions): ignite(0)\r\n - Master (/datum/controller/master): Loop(4)\r\n - Master (/datum/controller/master): StartProcessing(0)\r\n -\r\n ```\r\n\r\nFixes this, if an explosion destroys the tank another impact is triggered when it releases its contents before it finishes its destruction.\r\n\r\nAlso fixed swapping a cooler's jug, which passed the old jug in as throw_away and deleted whatever was left in the cooler instead of putting it back in the old jug.\r\n\r\nAlso fixes an unrelated a morgue runtime: lost crew corpse generation deletes organs while they're still attached, and a cerulean tail being deleted still did its whole tear-off routine, flinging itself while it was being deleted (\"Qdeleted thing being thrown around\"). It skips that now when it's being deleted, and the corpse damage stops picking the same organ or limb twice.\r\n\r\n## Why It's Good For The Game\r\n\r\nCleaner logs",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fuel tanks with other reagents mixed in no longer sometimes fail to explode around plasma"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "swapping a water cooler's jug now hands you the old jug with whatever was left in the cooler"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98176",
+    "title": "Refactors arm cyberimplants",
+    "author": "tontyGH",
+    "body": "## About The Pull Request\n\n`/obj/item/organ/cyberimp/arm` and `/obj/item/organ/cyberimp/arm/toolkit` were rewritten to use `bodypart_insert/remove` instead of the weird signal-hooking hand thing it was using before.\n\nWhile initializing, `/obj/item/organ/cyberimp/arm/toolkit` now calls a `get_init_items` proc to reduce wasted memory.\nWhile initializing, subtypes can use `/proc/prepare_init_item` to modify items.\nFixed many potential sore spots in how Extend/Retract was managing items.\n\n## The Fool\n\n<img width=\"272\" height=\"336\" alt=\"image\" src=\"https://github.com/user-attachments/assets/88a8257b-d5f1-4d4d-93d1-77f13632d18b\" />",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cybernetic arm implants got refactored. Report weird behaviour on the GitHub."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98231",
+    "title": "removes legacy `.sav` formats which haven't been used in nearly a decade",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\n\ngets rid of the old legacy `.sav` migration stuff for Runtime, Poly, Ian, and Pun Pun... which has been migrating to `.json` for almost a decade now:\n<img width=\"922\" height=\"106\" alt=\"2026-10-16 (1792164038) ~ Code\" src=\"https://github.com/user-attachments/assets/23386242-868e-4d15-a621-aeff1ec30934\" />\n\nalso fixed pun pun loading `relic_mask` from `relic_hat` instead\n\n`new /savefile` sleeps, which is causing dreamchecker warnings (even tho in reality it's never gonna asleep), and is just unused code now anyways\n\n## Why It's Good For The Game\n\nreduced dreamchecker warnings that annoy me",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Pun Pun should now properly get roundstart masks sometime"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98087",
+    "title": "Add more pillow weapon sources",
+    "author": "TheBoondock",
+    "body": "## About The Pull Request\r\nAdd a crate for pillow weapons and suit\r\nAdd pillow catergory to games vendor that i forgot last time\r\n## Why It's Good For The Game\r\nI thought the donk soft vendor was mapped in but turns out it was the game vendor.\r\n\r\nSince the lance and mattress shield are uncraftable i want there to be a consistent source of them.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added a pillow supplies crate and category to the games vendor"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97521",
+    "title": "[MERGE ME] Adds 29 AI VOX lines (for jellypeople, ceruleans, and some missing station areas and jobs)",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\nI wanted to add some more VOX lines. There are new jellypeople, you can't say the \"worm\" half of \"blood worm\", and a handful of jobs and station areas aren't sayable. I got the weird program to generate these lines working in a VM.\r\n\r\nThis doesn't build in one big list, because of a cursed macro bug that has now been reported to BYOND. So we're building this list in 2 chunks.\r\n\r\n## Why It's Good For The Game\r\n\r\nAI Vox is fun and they should be able to say things",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added new AI VOX lines, including \"jellyperson\", \"cerulean\", \"worm\", and some station areas and jobs"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98156",
+    "title": "Reworks misfing to be based on chamber pressure, .38/.357 are interchangable, junk rounds are shotgun shells again",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nCompletely reworks how misfiring rounds works. To accomplish this, we've removed alternative calibers entirely, since misfiring was only reason to retain these mechanics. ~~Except one instance where I'm kind of a bit suspicious about.~~\r\n\r\n### Malfunctions\r\n\r\nGuns and ammo now have chamber pressure mechanics. \r\n\r\nAmmunition is assigned a pressure value; Low, Medium or Extreme. This is in ascending order from left to right in power.\r\n\r\nGuns have a pressure threshold: Low, Medium or Extreme.\r\n\r\nIf the pressure of the ammo exceeds the threshold of the gun, the gun begins to degrade in performance. \r\n\r\nDegradation leads to the possibility of malfunction: \r\n\r\n- Misfire (hurting you) if the ammo that is being fired is over pressure. \r\n- If the ammunition is at the expected pressure for the gun, it can instead fail to fire a round if it would roll a malfunction.\r\n\r\n### .357 and .38 are interchangeable rounds\r\n\r\nIn real life, .38 is the same size as .357, so these rounds can usually be safely fired from guns chambered for the latter. This is not the same in the reverse, as guns rated for .38 Special are not necessarily able to handle the pressure of the full power .357.\r\n\r\nWe now simulate this interaction more intuitively than before. Previously, you had to wrench the gun to use the alternative caliber. Now, you just need to load it into any compatible gun.\r\n\r\nThis definitely will only go well.\r\n\r\nTo make this, like, moderately saner, there have been some balance changes;\r\n\r\n- .38 revolvers now have a max misfire probability of 50%. Firing one .357 will hit this max. (Remember, you only roll for misfires on subsequent shots)\r\n- .357 bullets now have a base damage of 40. However, .357 revolvers you can obtain in the game have a damage multiplier of x1.5, bringing it back up to 60 force. \r\n- .38 speedloaders and .357 speedloaders cannot fit the other kind of round.\r\n- BR-38 magazines can fit .357. The BR-38 increases the damage to 48 because it has an inherent damage buff.\r\n- However, firing .357 once from a BR-38 causes it to immediately start malfunctioning at max degradation. Good luck stringing multiple shots together.\r\n\r\n### Junk Rounds are shotgun shells again\r\n\r\nWith the new pressure mechanics, we can let junk rounds be fired from shotguns again, and pipeguns fire shotgun shells again.\r\n\r\nWe do this by making junk rounds have extreme pressure. (We also applied this to old buckshot)\r\n\r\nRiot shotguns, compact combat shotguns and double-barreled shotguns are rated for medium pressure.\r\n\r\nPipeguns, pipe pistols, combat shotguns and bulldog shotguns are rated for extreme pressure.\r\n\r\nTo keep pipeguns from experiencing the same damage nonsense as combat shotguns did when they got a damage buff, pipegun damage multiplier went down from x1.75 to x1.6. This doesn't really affect junk rounds too terribly much, but does mean you can't one-shot someone into stamina crit with rubber shot.\r\n\r\n### Gun Integrity Loss from Ammo\r\n\r\nThis sucks so I took it out.\r\n\r\n## Why It's Good For The Game\r\n\r\nI've wanted to futz with these mechanics more for a bit, and I've wanted to marry .38 and .357 for a fairly long time. The way we handled this before just kind of blew chunks. Hopefully this is a bit more elegant and user friendly.\r\n\r\nPipeguns/pipe pistols fitting shotgun shells isn't that impactful for most shell types, as the majority don't do as much damage as a junk round already does. The exception is rubbershot because we overtuned it on purpose. People were kind of upset to lose junk rounds in shotguns, so...here they are again. Kinda. You might just misfire shotgun into yourself for using them though.\r\n\r\nIntegrity loss from shooting guns isn't super duper clear and I prefer the degradation mechanics instead.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Misfiring has been completely reworked."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": ".38 and .357 are interchangeable in all compatible guns without needing to wrench the gun. Just load it in! Nothing bad could possibly happen."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Junk rounds are once again shotgun rounds, and pipeguns/pipe pistols now fit shotgun shells again."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Guns now have pressure mechanics to handle misfiring. Check you gun carefully to determine its pressure rating."
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Old buckshot no longer breaks your gun. Literally. As in it no longer damages the gun directly and makes it vanish suddenly. Old buckshot will still fuck up your gun because someone loaded in too much powder."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98236",
+    "title": "Fixes crafted spears being invisible on your back",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nSsince #98091 the two handed component handles the spear's icon state and skips its update_icon_state, which was the only thing setting worn_icon_state for custom tips. every crafted spear counts as a custom tip (plain glass isn't one of the named tips), so they all looked for `spearblank0` on the back, which back.dmi doesn't have, and turned invisible.\n\nthis sets the worn state where the tip gets picked and copies it over to the explosive lance, and drops the dead override.\n\n## Why It's Good For The Game\n\nFixes bug",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "crafted spears and explosive lances no longer turn invisible when worn on your back"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98238",
+    "title": "Fixes moth chest-arm names, and losing hands oversight",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nFixes two bugs with moths' chest arms from #97789:\n\n1:  `change_number_of_hands()` dropped one hand too many when shrinking. Going from 4 hands to 2 (a moth changing species, losing its chest, etc.) also dropped whatever was in hand 2.\n\nIt also left the active hand on a hand that no longer exists, so you couldn't use your hands until you swapped. It now only drops the hands being removed, and moves the active hand to the remaining hand on the same side.\n\n2: The chest arms set their name before calling the parent `Initialize()`, which renames limbs after their body zone. The chest arms have none, so both came out as \"moth\". They're now named after the parent runs, and the right one is no longer called \"left chest-arm\".\n\n\n## Why It's Good For The Game\n\nBugs",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "losing a moth's chest arms no longer drops what's in your right hand, and your active hand moves to a hand you still have"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "moth chest-arms are named what you'd expect now instead of just \"moth\""
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98243",
+    "title": "Fixes cyborg see_invisible not being restored on revive",
+    "author": "tontyGH",
+    "body": "## About The Pull Request\n\n`/mob/living/proc/restore_initial_sight` forgot to reset `see_invisible` on revive. This almost didn't matter, except for the fact that this codepath is also used by silicons and simplemobs, which means that since they don't have eyes their `see_invisible` was never corrected. This fixes that.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Cyborgs are now properly severed from the paranormal plane when revived"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98241",
+    "title": "Splits /mob/proc/equip_to_slot in two",
+    "author": "tontyGH",
+    "body": "## About The Pull Request\r\n\r\n`/mob/proc/equip_to_slot` was split between itself and a new proc, `/mob/proc/handle_set_item_in_slot` which handles the actual action of putting an item in a slot. This was done to remove the handful of copy/paste code that existed between all the dextrous mobs so that behavior is now consistent across all of them.\r\n\r\nAdditionally, the behaviour for slot assignment was cleaned up. Because we implicitly assume that a mob's state is valid when calling this proc, the early returns were all removed. Any bugs that crop up from this are due to misuse of `/mob/proc/equip_to_slot`, not due to the proc being logically incorrect. (though I did audit the codebase for places where this could cause bugs and fixed them)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Changing your bible to insuls should make the received insuls no longer disappear sometimes"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98187",
+    "title": "Hardens prosthetic quirks against atypical species types",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nFixes #98185\r\n\r\n- Prosthetic Limb checks that you actually have the limb that is being replaced. If you lack the limb, a random valid limb is selected isntead.\r\n- Transhumanist also checks that you actually have the limb or organ that is being replaced. \r\n- Prosthetic Organ doesn't allow you to replace your lungs with a prosthetic set if your species does not breathe oxygen. It also won't give you organs that you don't have.\r\n- Quadruple Amputee doesn't replace limbs you don't have. Still replaces as many as possible.\r\n\r\n## Why It's Good For The Game\r\n\r\nPrevents weird setups.\r\nThe more behavior we put on organs and bodyparts the more we'll probably have to expand this. \r\n(In fact, we should probably unit test the application of these quirks to all roundstart species...)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Prosthetic Limb quirk cannot replace limbs that you don't have"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Transhumanist cannot replace limbs nor organs that you don't have"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Prosthetic organ cannot replace organs that you don't have"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Prosthetic organ will not give lungs to species that don't breathe oxygen"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Quadruple Amputee won't give you limbs that you don't have"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98221",
+    "title": "Fixes paper bug + runtime",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\n```\nruntime error: mob_unequipped_item overridden. Use override = TRUE to suppress this warning.\n - Target: John Doe (/mob/living/carbon/human) Existing Proc: viewer_writing_state_change New Proc: viewer_writing_state_change\n - proc name:  stack trace (/proc/_stack_trace)\n -   source file: code/__HELPERS/stack_trace.dm,4\n -   usr: John Doe (/mob/living/carbon/human)\n -   src: null\n -   usr.loc: the floor (118,88,3) (/turf/open/floor/iron)\n -   call stack:\n -  stack trace(\"mob_unequipped_item overridden...\", \"code/datums/signals.dm\", 43)\n - the requisition form - 00:47:0... (/obj/item/paper/requisition): RegisterSignal(John Doe (/mob/living/carbon/human), \"mob_unequipped_item\", \"viewer_writing_state_change\", 0)\n - the requisition form - 00:47:0... (/obj/item/paper/requisition): RegisterSignals(John Doe (/mob/living/carbon/human), /list (/list), \"viewer_writing_state_change\", 0)\n - the requisition form - 00:47:0... (/obj/item/paper/requisition): ui interact(John Doe (/mob/living/carbon/human), null)\n - the requisition form - 00:47:0... (/obj/item/paper/requisition): add writer(John Doe (/mob/living/carbon/human), /list (/list), 1)\n - the requisition form - 00:47:0... (/obj/item/paper/requisition): viewer writing state change(John Doe (/mob/living/carbon/human), the GRANTED rubber stamp (/obj/item/stamp/granted), 8192)\n - John Doe (/mob/living/carbon/human):  SendSignal(\"mob_equipped_item\", /list (/list))\n - the GRANTED rubber stamp (/obj/item/stamp/granted): equipped(John Doe (/mob/living/carbon/human), 8192, 0)\n - the GRANTED rubber stamp (/obj/item/stamp/granted): on equipped(John Doe (/mob/living/carbon/human), 8192, 0)\n - John Doe (/mob/living/carbon/human): has equipped(the GRANTED rubber stamp (/obj/item/stamp/granted), 8192, 0)\n - ...\n - John Doe (/mob/living/carbon/human): put in hand(the GRANTED rubber stamp (/obj/item/stamp/granted), 1, 0, 0, 0)\n - John Doe (/mob/living/carbon/human): put in active hand(the GRANTED rubber stamp (/obj/item/stamp/granted), 0, 0, 0)\n - the GRANTED rubber stamp (/obj/item/stamp/granted): attempt pickup(John Doe (/mob/living/carbon/human), 0)\n - the GRANTED rubber stamp (/obj/item/stamp/granted): attack hand(John Doe (/mob/living/carbon/human), /list (/list))\n - John Doe (/mob/living/carbon/human): resolve unarmed attack(the GRANTED rubber stamp (/obj/item/stamp/granted), /list (/list))\n - John Doe (/mob/living/carbon/human): UnarmedAttack(the GRANTED rubber stamp (/obj/item/stamp/granted), 1, /list (/list))\n - John Doe (/mob/living/carbon/human): UnarmedAttack(the GRANTED rubber stamp (/obj/item/stamp/granted), 1, /list (/list))\n - John Doe (/mob/living/carbon/human): ClickOn(the GRANTED rubber stamp (/obj/item/stamp/granted), \"icon-x=18;icon-y=15;left=1;but...\")\n - somekey (/client): Click(the GRANTED rubber stamp (/obj/item/stamp/granted), null, \"map_screen.map\", \"icon-x=18;icon-y=15;left=1;but...\")\n ```\n\nPaper registers equip/unequip/swap-hands signals on whoever's reading it and only drops them in ui_close. \n\nTgui only calls ui_close for UIs that actually got a window, so when the open failed (say you already had the max number of windows open) the paper stayed hooked into you. \nPicking up a pen or stamp later re-ran ui_interact, re-registered everything (that runtime) and popped the paper open out of nowhere.\n\nThe same leftovers happened when the UI moved to your ghost or another body, since ui_close then runs for the new mob instead of the one the paper was listening to.\n\nThe signals now only get registered once the window has actually opened, a failed open cleans up the writer entry, and the paper lets go of a viewer when they log out of that mob.\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "papers no longer pop open on their own when you pick up a pen or stamp after an earlier attempt to read them failed, or after you ghosted while reading"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98110",
+    "title": "Headslugs and xeno larvae can crawl under doors.",
+    "author": "NoHaxJustPi",
+    "body": "## About The Pull Request\r\n\r\nGives changeling headslugs and alien larvae the same doorcrawling that blood worms have. (Same timing as hatchling worms: 3 seconds to crawl under a door, and the default 1s to crawl out.)\r\nAlso, the `slide_under_doors` component accepts any living instead of basic mobs, since there seemed to be no code reason it couldn't.\r\n\r\n## Why It's Good For The Game\r\n\r\nUsing a mechanic in more than one place encourages players to use it, and I think it makes sense for these mobs (which can ventcrawl anyways) to slide under doors too.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Headslugs and alien larvae can doorcrawl."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98133",
+    "title": "Tram atmos/partial engi remap (\"OG Box atmos must be purged\" edition)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nClick the triangle for pictures.\r\n\r\n<Details>\r\n<Summary>\r\nRemaps Tram atmos entirely\r\n</Summary>\r\n\r\n<img width=\"1020\" height=\"970\" alt=\"image\" src=\"https://github.com/user-attachments/assets/cd2fb4cf-47b8-4236-b033-4fd2eae83315\" />\r\n\r\n</Details>\r\n\r\nIt's got a few unique features like having an accessible mix chamber and some pre-filled HFR piping. The latter I might expand to more maps to make the machine more approachable to newer players. \r\n\r\n<Details>\r\n<Summary>\r\nEngineering main also received some partial remapping\r\n</Summary>\r\n\r\n<img width=\"654\" height=\"900\" alt=\"image\" src=\"https://github.com/user-attachments/assets/20eb21ed-aa83-4701-9bc4-66ff9afcca71\" />\r\n\r\n</Details>\r\n\r\n<Details>\r\n<Summary>\r\nAs well as the hallway outside, featuring a new construction area for general projects\r\n</Summary>\r\n\r\n<img width=\"887\" height=\"462\" alt=\"image\" src=\"https://github.com/user-attachments/assets/c8c3e925-9d09-4886-af4b-f92ddcbc5a0b\" />\r\n\r\n</Details>\r\n\r\nThis was my test of the new mapping program, so review carefully for anything weird. \r\n\r\n## Why It's Good For The Game\r\n\r\nLike Icebox, Tram atmos was  just a stapled together version of the original Box atmos which is absolutely not very functional for modern atmos play\r\n\r\nThe new version gives a bit more room to play with and removes the cramped hallway. I wanted to give them a little more room, but unfortunately the modular maint cuts into the area a bit.",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Tram: Remapped Atmospherics entirely, a bit of Engineering, and a bit of the hallway outside"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98239",
+    "title": "Rat spit uses digust more",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nRather than call `vomit` directly, rat spit causes greater amounts of disgust which causes vomitting\n\nAlso non-carbons can gain the rat faction now, theoretically. (In practice this only affects adminbus).\n\n## Why It's Good For The Game\n\nMore sandboxy (you can offset it with anti-disgust reagents, like Ondasteron)\nBetter feedback (you get the screen alert that you're going to vomit soon)",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Rat spit no longer causes vomitting directly, instead now causing more direct disgust."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98211",
+    "title": "Adds two common core religions to chaplain special religions + fix default bible name",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n1. Adds two religions (well, one religion and one ideology) to the chaplain's special religions list - Sitalesse and Sumalism\n\n2. Adds Sitalesse to the random religion list\n\n3. Fixes default bible name \n\n## Why It's Good For The Game\n\nMore small common core integration is cool and fun",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Using Sitalesse or Sumalism as your chaplain religion now gives your bible a unique description"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes default bible name producing \"The holy book of default bible name\" instead of \"The holy book of [my diety]\""
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98249",
+    "title": "Removes Icebox prison window firelocks that consistently false alarm",
+    "author": "NanoCats",
+    "body": "## About The Pull Request\nThis PR removes 14 firelocks from Icebox's permabrig which have an easily reproducible false alarm issue.\n\nIcebox prison has 14 firelocks which are in a position that makes them false alarm/nuisance alarm constantly if basically anything happens near them. \n\nFirelocks check the air on all four tiles around them, they don't care if it's actually outside they're checking. These ones sit on windows whose outer side is open icemoon. Icemoon air is 180K, which is under the firelock cold trigger, so from the firelock's point of view the tile outside is a permanent cold hazard. It doesn't fire constantly because the outdoor tiles are usually asleep atmospherically. The moment something wakes them up out there, they process once, the firelock sees 180K, and the whole window run slams shut and puts the room on fire alarm. The air alarm will say it's fine, you won't die, but engineering will get a nagging notification and the prisoners will be bothered by fire alarm noises that will never go away, which is how I found it. I've been an engineer on icebox and the only real solution is to dismantle those firelocks outright. \n\nThese are the only firelocks on the map I know of which border outdoor tiles. The rest of Icebox's exterior glass doesn't have them anyways.  Also removed is a firelock under a window between the mess hall and balcony over the plasma lake. If anyone goes out for a smoke, they'll trigger that firelock because of the same issue. \n\n## Why It's Good For The Game\nIf you're a prisoner, warden or engineer on Icebox, you can be faced with a firelock that goes off for no real reason and consequently lose your mind trying to identify why this room has a mysterious permanent firelock. \nTheir placement facing an exterior edge of the station was already atypical, and Melbert seemed Ok with axing them. \n\n<img width=\"948\" height=\"347\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a007934f-4a7c-4896-ae5a-9634dbdc7800\" />\n\n\n## Proof Of Testing\nBefore: \n<img width=\"1644\" height=\"976\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f50ac917-62af-4bba-9c05-0f5e8cc40fc0\" />\n*I discovered this issue downstream, but we take our maps from TG, where it can also happen. \n\nAfter:\n<img width=\"1668\" height=\"1233\" alt=\"image\" src=\"https://github.com/user-attachments/assets/89be196e-d52e-46fa-abce-179107abed16\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Icebox prison rec room and mess hall no longer trigger a fire alarm when there's no atmospheric problem"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98247",
+    "title": "Fix heart eater perk not reducing incoming damage",
+    "author": "TealSeer",
+    "body": "## About The Pull Request\r\n\r\nThis perk is supposed to increase your damage resistance by 10% every time you eat a heart but the variable on `/datum/species` that it modifies is never actually used anywhere. Removes the latter and changes the component to properly apply damage resistance\r\n\r\n## Why It's Good For The Game\r\n\r\nHalf the perk doesn't work",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed wizard's heart eater perk not actually increasing damage resistance"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98253",
+    "title": "Ceruleans no longer flop in zero-g",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\n\nCloses #98250",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ceruleans no longer flop in zero-g"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98111",
+    "title": "Fixes mood runtime, take 2",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nRedo of https://github.com/tgstation/tgstation/pull/97132\r\n\r\nIf something in a turf's `Entered`/`Exited` moves you again mid-move (openspace falls, step trigger teleporters, or VV teleporting someone onto either), the interrupted move still sent its area Entered afterwards, after the new move had already left that area. mood ended up listening to an area you weren't in and coming back gave the runtime. `RESOLVE_ACTIVE_MOVEMENT` already finished the interrupted move's `Moved()`, it just never finished its area entry.\r\n\r\nNow:\r\n\r\n-the exit can never be left pending behind a turf callback;\r\n-the entry is part of resolving the move, so the order is guaranteed: exit A, enter B, exit B, enter C. On master you get exit A, exit B, enter C, enter B.\r\n\r\nNothing in mood or the signal code changes, and there's no measurable cost (benchmarked against master, within 1%).\r\n\r\nAlso fixes the admin jump to/teleport which is a separate issue, related to use of `abstract_move()`\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes a bug",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed mood sometimes sticking to the room you just fell or got teleported out of."
+      },
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "jumping somewhere in your own body, or with Jump To Ghost, no longer leaves your mood stuck on the area you jumped out of."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98230",
+    "title": "Fix eigenstasium spirits vanishing and making nearby things jump a tile",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nEigenstasium taken with stabilizing agent leaves a fading spirit behind. Walking through it made it vanish on the spot, and after that every step on its tile made the stuff around it get drawn a tile off for a moment.\r\n\r\n<details><summary>shown here</summary>\r\n\r\n<img width=\"462\" height=\"525\" alt=\"Discord_zXbwP3Y7aD\" src=\"https://github.com/user-attachments/assets/9c52b256-2a19-4876-a574-40530deff251\" />\r\n\r\n</details>\r\n\r\nTwo bugs:\r\n- the hologram glitch's fade animated the wibbly filters with a plain `animate()`, which supersedes every other animation on the atom, so it cut off the spirit's `fade_into_nothing()` and the client snapped it to its final alpha of 0. the wibbly animations are tagged now so they only end each other (the zero-duration stop too, `animate(filter)` was doing the same thing)\r\n- the spirit copies the whole mob appearance, so it kept the mob's `KEEP_TOGETHER` and stayed on the game plane even though its layer gets bumped to `FLY_LAYER`. an invisible `KEEP_TOGETHER` thing with filters on the game plane makes byond draw some of the other stuff on that plane a tile off. it goes on the above game plane now, same as holopad holograms\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Eigenstasium spirits no longer vanish the moment someone walks through them"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "walking through an Eigenstasium spirit no longer curses the area to look pixel shifted and weird for five minutes"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98260",
+    "title": "Fixes capitalization botching BYOND's text macros",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\n\nOur capitalize() just uppertexted the first symbol, which would break BYOND text macros when done on \\proper or \\improper strings, or strings with preceding whitespaces. Fixed this by using a non-global version of the macro used by full_capitalize.\n\nCloses #98202\nLikely closes some other issues but I wasn't able to find any other yet",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed some MODsuit modules having broken names in action bar"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-21",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98242",
+    "title": "crew silicons get stunned from one flash again (syndie borgs  remain the same)",
+    "author": "uaioy",
+    "body": "## About The Pull Request\r\nsilicons now only need to be flashed 1 time to get stunned unless they are a syndicate model\r\n\r\n## Why It's Good For The Game\r\nsilicons are already immune to a lot of things and can simply walk away from most scenarios without serious consequences, this is worse when very often they can also just walk away from one of the 2 things that can counter them.\r\nalso, a normal person trying to flash a borg without flash protection is at a greater disadvantage than the borg cause the knockdown guarantees the second one, unlike the borg who keeps their speed.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "silicons take 1 flash to be stunned again (syndie borgs unchanged)"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98270",
+    "title": "Stops techweb ui from lag switching some players",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nTurns out this UI has the same thing going on as https://github.com/tgstation/tgstation/pull/98212.\r\nIt's getting the same treatment...shuffles the data around, but doesn't change anything:\r\n\r\n- node and design data is a `/datum/asset/json` now, built once and cached by the client\r\n- experiment descriptions are static data, only resent when they actually change (new experiment, relinking, an admin edit)\r\n- points, node states and experiment progress are the only ui_data being sent now, sent as compact id rows instead of objects\r\n- cargo's catalogue loader has been moved into a shared helper so both use the same one\r\n\r\nNothing changes visually, it's this is just all data transport backend.\r\n\r\nEvery update (once a second while open):\r\n- fresh techweb: 46kb -> 2.3kb, 1.04ms -> 0.31ms\r\n- late round (most nodes researched): 94kb -> 4.7kb, 1.88ms -> 0.41ms\r\n\r\nOpening the window:\r\n- fresh techweb: 322kb -> 6kb, 11.8ms -> 0.45ms\r\n- late round: 370kb -> 18kb, 12.8ms -> 0.75ms\r\n\r\nPlus the 140kb catalogue, which each client downloads once and caches.\r\n\r\n<details><summary> still works same as always </summary>\r\n\r\n<img width=\"971\" height=\"777\" alt=\"dreamseeker_WTxT8bJlwQ\" src=\"https://github.com/user-attachments/assets/87890347-2b1d-4954-af82-e5094e3cad8f\" />\r\n\r\n</details>\r\n\r\n## Why It's Good For The Game\r\n\r\nLess lag/way less data being sent to players using R&D ui",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "(performance) the R&D console no longer resends the whole techweb every second while connected to it"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98267",
+    "title": "Fix ghost poll follow link doing nothing",
+    "author": "13spacemen",
+    "body": "## About The Pull Request\n\nThe `(F)` follow link in the \"X Poll: ckey was selected.\" announcement did nothing when clicked.\n\n`announce_chosen()` runs before the poll returns, so the link was built from the chosen candidate's observer. The caller then moves the candidate's key into their new mob, and the old observer deletes itself in `/mob/dead/observer/Logout()`. By the time anyone clicks, `locate()` on the link returns null.\n\nThis PR points the link at the chosen client instead. The observer `follow` Topic handler now resolves a client to its current mob when the link is clicked, so the link follows the player into whatever body they were given.\n\nIf the client has disconnected, `locate()` returns null and the existing `istype` check fails, so nothing happens, same as before.\n\n## Why It's Good For The Game\n\nGhosts can follow the person who won a ghost role poll straight from the announcement, which is what the link was meant to do.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The follow link in ghost poll \"was selected\" announcements now follows the chosen player instead of doing nothing."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98276",
+    "title": "Fixes an obscure(d) gender bug",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nFixes a logic inversion; the check in human `get_visible_gender()` was `obscured_slots & (HIDEFACE|HIDEJUMPSUIT) == (HIDEFACE|HIDEJUMPSUIT)`. so this is equivalent to `obscured_slots & TRUE`. Parens are needed here because Byond ....\r\n\r\nAlso fixes one more oversight where nondimorphic species were getting gender shaping in their underwear which is the whole point of that var, so they -dont- do that\r\n\r\n## Why It's Good For The Game\r\n\r\nMakes the code match the intent",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "wearing a space suit or bio suit without a helmet no longer hides your gender, and being fully covered (like a bomb suit and hood or a sealed modsuit) now does"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "plasmamen, ethereals and shadowpeople/any other nondimorphic gendered species no longer get the female cut on their underwear"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98278",
+    "title": "Fixes changeling transformation stings not properly reverting",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\n\nTitle",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Changeling transformation stings properly wear off after 8 minutes"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98277",
+    "title": "Fix operator precedence in the disposal body bag check",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nSAME ISSUE AS https://github.com/tgstation/tgstation/pull/98276\r\n\r\nwe love byond...\r\n\r\nthe way this was, you couldn't put a body bag in a disposal bin while buckled to a chair (or anything else holding you in place), even sitting up with your hands free. which isn't really a big issue but why not fix it while we are at it, this should be consistent with everything else and match the intent\r\n\r\nAnother one: `enqueue()` had `queue_node_flags & (SS_TICKER|SS_BACKGROUND) == SS_TICKER`, which is always false since SS_TICKER isn't 1. So ever since #64500 the ticker branch never runs and queued tickers get sorted like normal subsystems...ugh I hate it here. The dead branch still kept background tickers out, so the atmos bug was fixed in spite of that. \r\n\r\nThis fix-for-a-fix keeps that: background tickers still fail the check and restores the intent. It changes nothing when nothing carries over between ticks.\r\n\r\n## Why It's Good For The Game\r\n\r\nSmall oversight",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "you can put body bags into disposal bins while buckled to a chair or otherwise held in place"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98255",
+    "title": "Gives stethoscopes a 2 second do_after",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nStethoscopes now have a 2 second do_after, along with a message to the target before, giving them a chance to duck away or whatever.\r\n\r\n## Why It's Good For The Game\r\n\r\nThis is intended to be a gentle nerf to blood worm hunters; it seems that lately security has tended to eschew the hemoparasite testers entirely and just run around stethoscoping everyone. This feels a little sad and lame, but blood worms not having hearts is kind of a cool interaction, so killing it outright feels bad too. \r\n\r\nAt least now they won't be able to instantly stethoscope people as they pass them in the hallway.\r\n\r\nIt also definitely feels like the type of action that you shouldn't be able to do instantly.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Using a stethoscope now takes 2 seconds"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98262",
+    "title": "Fixes particle weather not rendering",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\r\n\r\n#96996 rewrote particle handler code without actually hooking up the created holders to players' planes, meaning that every time weather starts on a new Z level players either need to move to a different Z-stack and back or toggle the pref to fix it.\r\n\r\nCloses #98192\r\nCloses #97614",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed particle weather not rendering"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98281",
+    "title": "Stethoscopes don't reveal blood worms",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\n\nThe blood worm stethoscope thing was a convergence of two interactions. \n\nWorms' `TRAIT_NOBREATH` made them appear to not breathe, this PR makes them fake it for the stethoscope interaction. \n\n\nWorm host hearts actually were normal on the stethoscope, the issue there was that reviving a host didn't actually restart the host's heart. I'm calling this half a BUG. \n\n## Why It's Good For The Game\n\nSee https://github.com/tgstation/tgstation/pull/98255. It's unfortunate that hemoparasite testing kits are outmatched by an autolathe item and everyone in the comments there wanted it nixed.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Blood worms fake breathing when checked with a stethoscope"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Blood worms restart their host's heart when they revive it"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98222",
+    "title": "Breathing, injecting, or drinking metalgen applies it to your lungs, liver, or stomach",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n- Inhaling or breathing metalgen applies the metalgen to your lungs\n\n- Drinking metalgen applies the metalgen to your stomach\n\n- Injecting or applying a patch of metalgen applies it to your liver\n\nIn practice, this doesn't do much - gold lungs function identically to non-gold lungs, and plasma livers will, shockingly, not kill you for smoking.\nI think uranium organs might occasionally irradiate you, but so would everything else uranium metalgen touches.\n\n## Why It's Good For The Game\n\nIt makes sense right? Also it's funny.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Breathing, injecting, or drinking metalgen applies it to your lungs, liver, or stomach"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98274",
+    "title": "Gives Atmospheric Technicians the knowledge of air alarm and fire alarm wires",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nTin. #89587 added air alarm wires to the engineer chip. Atmos techs should be able to read those, probably. EDIT: Lets them know air and fire alarms, engineers can also know fire alarms.\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes a probable oversight",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "atmos techs now start with an Atmospherics skillchip that lets them know air alarm and fire alarm wires"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "the Engineering skillchip now also lets you know fire alarm wires"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98264",
+    "title": "Light fixtures layer underneath leaning mobs",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nLeaning on a wall will shift wall mounts on said wall to slightly below mob layer\n\n## Why It's Good For The Game\n\nPrevents wall mounts from covering mobs when leaning against the wall, looks cleaner.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Wall mounted objects that layer above players will now layer beneath players if a player is leaning against it."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2024-07-08",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "83859",
+    "title": "Demon bloodcrawl balance",
+    "author": "Xackii",
+    "body": "## About The Pull Request\r\n\r\nDemon now takes damage when located in bloodcrawl(every 20 seconds take 5% of max demon hp).\r\n    When demon first appears, it does not take damage while in Jaunt. He also doesn't take damage while he's eating someone.\r\nDemon now can't eat simple animals/basic mobs and etc. Only carbon human being.\r\n\r\n## Why It's Good For The Game\r\n\r\nMakes demons less immortal.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Demon: bloodcrawl now deal damage when you using it."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Demon: demon can eat only carbon human beings."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98287",
+    "title": "Fix for Ambient Buzz Sounds Not Playing in Areas with Requires_Power Set to False",
+    "author": "R0bro",
+    "body": "## About The Pull Request\nDuring some testing I was scratching my head at why an area wasn't playing it's looping sound. Some digging; in the refresh_looping_ambience proc, the if statement that disables ambient buzzes from playing in an area if an apc is unpowered/nonexistent doesn't properly check if requires_power is set to false. Simple fix really.\n\n## Why It's Good For The Game\nWith this fix, Centcom is no longer near totally silent. Finally you get to hear _sound/ambience/general/shipambience.ogg_!",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed ambient sound loops not playing in powered areas that have no apc."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98295",
+    "title": "Fixes recursive_jsonify runtiming on empty data lists",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\n`log_manifest()` logs the joining player's mind, and the mind's `serialize_list()` includes its `memories` list. Only humans whose job has a paycheck department spawn with a memory (their bank account), so cyborgs and AIs join with an empty one.\n\n`recursive_jsonify()` treated any empty list as a failed serialization, so it stack traced and dropped the key. An empty list is valid data, so the check now only applies to a datum whose serialization comes out empty.\n\n## Why It's Good For The Game\n\none less runtime every time a borg or AI joins.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed a runtime when a cyborg or AI joined the round"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98307",
+    "title": "Fix crew manifest command chevron and security records FA icons",
+    "author": "Phantastic-Swan",
+    "body": "## About The Pull Request\n\nThe crew manifest accessible from the main menu (?) didn't display the chevron icon next to command members, and the security records console didn't display the FA icons of the job of the listed individual. This PR fixes that.\n\n## Why It's Good For The Game\n\nFixes bugs.\n\n<img width=\"254\" height=\"101\" alt=\"image\" src=\"https://github.com/user-attachments/assets/4e62ae83-50f9-4456-ade6-5380300e67a4\" /><br>\n\n<img width=\"349\" height=\"192\" alt=\"image\" src=\"https://github.com/user-attachments/assets/cfe5a01c-d54e-42ff-82b5-21a0344123ac\" />",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes crew manifest not showing the command chevron"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes security records console not displaying job icons"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97947",
+    "title": "Adds rich cargo stock, a stock based cargo soup.",
+    "author": "ArcaneMusic",
+    "body": "## About The Pull Request\r\n\r\nAdds a new soup recipe, rich cargo stock.\r\n\r\nThis recipe requires a liquid stock block (AKA, it's price is no longer locked in), a cooked steak, alongside milk, salt, and pepper.\r\n\r\nDynamically, the value of the stock block used as an ingredient will produce extra vitamins based on the value of the stock block at the time of cooking.\r\n<img width=\"88\" height=\"74\" alt=\"image\" src=\"https://github.com/user-attachments/assets/ba00d9b1-d24e-44e0-a314-13eaa4c0aa96\" />\r\n\r\n## Why It's Good For The Game\r\n\r\nThis was a fun idea I got from Dalmationer on Discord, and then I forgot about, and now I'm here.\r\n\r\nAlso adds a little bit of modularity for ingredients in crafting soup recipes, for modular cooking against specific requirements.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Chefs may now craft a new soup, Rich Cargo Stock! Remember to wait for the stock block to turn liquid."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98266",
+    "title": "Adds status effect related emotes",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- `*stammer` / `*stutter`, which apply 10-240 seconds of stammering. Default is 10 seconds.\r\n- `*slur`, which applies 10-120 seconds of slurring. Default is 10 seconds.\r\n- `*jitter`, which applies 5-30 seconds of jittering. Default is 5 seconds.\r\n\r\nThe emotes have no displayed message to surrounding players, they just apply the effect. If you don't have it already.\r\n\r\nYou can set the duration of the effects by supplying a number: `*jitter 30` to jitter for 30 seconds.\r\nThey are all capped, so you can't just `*jitter 9999999`. \r\n\r\n## Why It's Good For The Game\r\n\r\nSometimes you're doing a bit and you think \"man. It'd be really funny if I was stammering right now, but I can't bother to type it out manually.\" These emotes exist to facilitate those kind of bits (without needing you go out of your way to get drunk or take the social anxiety quirk or whatever).\r\n\r\nOr who knows, you could even use them to try to fake an ailment or effect to try to get away with something? That's sandbox roleplay potential!",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Adds *stammer / *stutter and *slur emotes, which causes your next few messages to be stuttered (as if hurt) or slurred (as if drunk). You can optionally type *[emote] [number] to determine how long you want the effect to last in seconds (it's capped, don't try it)."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Adds *jitter, which causes you to start jittering (where your sprite starts to twitch back and forth). You can optionally type *jitter [number] to determine how long you want the jitter to last in seconds (it's capped, don't try it)."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98244",
+    "title": "Tweaks hijack, changeling, and spy objectives",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Traitor, Heretic*, Blood Brother, Spy, and Changeling can no longer hijack without EITHER having an objective to hijack OR without setting a custom objective. \r\n   - *Heretic gains innate ability to hijack upon ascension\r\n\r\n- The chance of getting a hijack objective as traitor or blood brother increased from 10% to 12%\r\n\r\n- The chance of getting a hijack objective as a spy increased from 90% * 3% to 90% * 8%\r\n\r\n- Changelings now have a 4% chance to be assigned hijack\r\n\r\n- Touched up spies objectives to be less generally nonsensical.\r\n\r\n## Why It's Good For The Game\r\n\r\nI noticed something recently when observing a round that some antag players will just mindlessly pursue hijack instead of doing their other objectives. While it's *fine* to pursue a hijack, and of course it's fine to ignore your objectives, it often happens at the expense of the antag players *actually doing compelling antagging during the round*. They will instead spend their entire round preparing to hijack, hoping that another antag will call the shuttle. \r\n\r\nSo my thought process is that if solo antags can no longer innately hijack - instead have to opt into hijacking by setting a custom objective \"I want to hijack this round\" - solo antags in general won't mindlessly pursue \"might as well hijack again this round\" and instead will antagonize the round in other ways.",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Traitor, Blood Brother, Spy, and Changeling can no longer hijack the emergency shuttle unless they either have an objective to hijack, or they set custom objective."
+      },
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Heretic can no longer hijack unless they ascend, or set a custom objective."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "The chance of rolling hijack for Traitor, Blood Brother, and Spy have gone up slightly."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Changelings can now rarely roll hijack."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Spies objectives have been touched up in general, making less nonsensical combinations."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98215",
+    "title": "fix of virtual typing indicator",
+    "author": "headband0536",
+    "body": "## About The Pull Request\n\nWhen broadcasting from the captain’s camera, the typing indicator doesn’t show up on the screens. But sometimes it does. I fixed it\n\nhttps://github.com/user-attachments/assets/f6451e08-0db1-4350-9d48-404ab6e03568\n\n## Why It's Good For The Game\n\nThis is definitely a bug",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed virtual typing indicator"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98306",
+    "title": "Removes some hidden floor lights from Meta",
+    "author": "Thunder12345",
+    "body": "## About The Pull Request\n\nReplaced the floor lights hidden behind chairs in Meta's command hallway with regular lights.\n\n## Why It's Good For The Game\n\nJanitors really love when they can see the broken light fixtures to repair them, it's very confusing if they have to look behind all the chairs.",
+    "changes": [
+      {
+        "type": "map",
+        "class": "map",
+        "text": "Metastation: Some floor lights that were hidden behind chairs have been moved to the wall."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98290",
+    "title": "Fixes Hot Potatoes saying they won't attach to non-sapients and crit mobs but attaching to them anyway",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\nTitle",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can no longer pawn off your hot potato on a monkey or a crit person"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98180",
+    "title": "Radiation shields store collected tritium internally, outputting via pipe",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nRadiation shields (from the Radiation Nebula station trait) collects the tritium generated internally. To harvest the tritium, they have a pipe that you can connect as you would connect any atmospherics machine. \r\n\r\nShields can store roughly ~500 mols of tritium before it hits the pressure limit and excess tritium generated is spit into the surrounding air. At 1 mol every 2 seconds it means you have just about 16 minutes to set up an output collection system before it becomes a problem. \r\n\r\nEmergency radiation shields now also generate tritium, though their internal capacity is much smaller (~160 mols). Meaning emergency generators will start spilling tritium 5 minutes into their 10 minute self destruct cycle. \r\n\r\n- [x] I tested this PR\r\n\r\n## Why It's Good For The Game\r\n\r\n~~Requiring the crew set up a big collection room with scrubbers is a lot of extra work, especially as Engineers don't have access to air alarms and thus can't actually set up scrubbers.~~ Ok we gave them scrubber access but it's still a lot of extra work\r\n\r\nDirecting it to a pipe will make setup a lot easier, but not completely foolproof, as you have ensure you don't go over the pressure limit. However, it also means it can be setup without air alarm access - the output can be pumped into a canister or something.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Radiation shields store collected tritium internally, which can be removed via an attached pipe. Note the internal storage is not infinite, and has a pressure limit - surpassing it will cause the tritium to leak into the air."
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Emergency radiation shields now also generate tritium over time (which is also stored internally)"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98293",
+    "title": "Fix tgui prompts with sequential prompts bugging out if you click/enter too fast",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nWhen DM closes a tgui window and opens the next UI in the same pooled window, the suspend and the next update can both reach the page before React renders. \r\n\r\nThis causes the next window to never open for the client.\r\n\r\nCan easily be reproduced if you open a window that opens a second window of the same interface, like the Jump To Coordinate ui for example, Submit an option within ~67 ms of opening that closes the window.\r\nWatch the next window never open, so it looks like it's being canceled out to the user. A frustrating experience if it happens later in the sequence, like on the last coord.\r\n\r\nThe fix is to render the suspended state synchronously in `suspend()` with `flushSync`, so the next update always mounts a fresh interface.\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes an annoying bug",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixes an issue where tgui inputs that open another of the same interface (such as Jump To Coordinate) tgui input would just cancel and close if you select an option too quickly."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98197",
+    "title": "Vagueposts about potential roundstart manifest in pregame lobby",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nEssentially the pregame lobby will give a vague estimation for what kind of jobs you might see based on all readied up players\n\nIt does not offer a perfect readout, instead offering potential ranges based on what jobs people have assigned to high, medium, or low\n\n<img width=\"336\" height=\"155\" alt=\"image\" src=\"https://github.com/user-attachments/assets/dd2de5be-bd81-4e29-9158-103c6a69a0e0\" />\n\nFigure A: One person readied up with captain on high, engineer and atmos tech on medium\n\n<img width=\"281\" height=\"425\" alt=\"image\" src=\"https://github.com/user-attachments/assets/87bf8763-ebfc-4591-81ab-ce19a7ea1f09\" />\n\n\nFigure B: What it might look like with 26 players readied up, each with upwards of 12-20 jobs selected\n(The average player probably does not have 12-20 jobs selected so I expect this to be a bit less sporadic than shown)\n\n## Why It's Good For The Game\n\nProblem statement: Roundstart latejoiners cause less antags to spawn than what is expected for the population band\n\nWhy do they roundstart latejoin? Maybe 50% do it to avoid being an antag target, and maybe 50% do it to fill an unstaffed department\n\nPotential solution: Show a vague estimation of what the roundstart manifest looks like to remove the latter 50%'s reason for latejoining\n\nThis is being approached in such a way to avoid potential issues with metagaming. Rather than say \"X is readying up for captain, Y is readying up for head of security\" (which would be painfully obvious if the round starts and there is no captain or head of security), it indicates \"one or two people mayyy have captain selected, so there mayyy be a captain\".",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Pre-game lobby shows a rough estimate of what the crew manifest may look like"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98310",
+    "title": "fix big manipulators trying to interact with underfloor pipes",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\n\nmakes it so big manipulators won't try to interact with underfloor pipes and such, which could cause very confusing issues",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed big manipulators trying to interact with underfloor pipes."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98269",
+    "title": "(MERGE READY) Bug Fix: Heterochromia Selection & Spawn Fix",
+    "author": "MysteryMan21333",
+    "body": "## About The Pull Request\n\nFixs Heterochromia not having its own customization wheel.\n\nFixs Heterochromia not applying when spawning in as a character.\n\n## Why It's Good For The Game\n\n## Proof Of Testing\n\n// Quirks menu\n<img width=\"1100\" height=\"784\" alt=\"Screenshot 2026-10-21 034330\" src=\"https://github.com/user-attachments/assets/69c44238-2fba-4695-a57b-fa6ea49e7b9b\" />\n<img width=\"1094\" height=\"785\" alt=\"Screenshot 2026-10-21 034339\" src=\"https://github.com/user-attachments/assets/298f0cb5-2206-456a-9634-633c6ede90ba\" />\n\n## \n\n// Adjustment of color\n<img width=\"516\" height=\"116\" alt=\"Screenshot 2026-10-21 034349\" src=\"https://github.com/user-attachments/assets/eae28dad-05ab-4c9f-8073-3a79bb68e76b\" />\n<img width=\"520\" height=\"124\" alt=\"Screenshot 2026-10-21 034403\" src=\"https://github.com/user-attachments/assets/318725a1-2618-4687-8e7e-e0bdf5584b16\" />\n\n## \n\n// Character Menu & Spawn\n<img width=\"269\" height=\"536\" alt=\"Screenshot 2026-10-21 042606\" src=\"https://github.com/user-attachments/assets/8aea69de-5e54-456b-90c9-4ca29e99ef68\" />\n<img width=\"82\" height=\"78\" alt=\"Screenshot 2026-10-21 042629\" src=\"https://github.com/user-attachments/assets/07f0cfaa-4b91-4873-b397-374b87aecb37\" />\n\n## \n\n</details>\n\n## AI Disclosure\n\nAssesment and Diagonsis of issue, took neccessary steps as recommended.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixs the Heterochromia Quirk, allows adjustment of color and now spawns in properly."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98296",
+    "title": "Sound tokens follow whoever is carrying them and resume at the right spot",
+    "author": "AitorLogedo",
+    "body": "## About The Pull Request\n\nTwo fixes for sound tokens, both easy to hear with the boombox.\n\nSound tokens only listened to their source moving, so if you're holding the boombox (or a chainsaw, tesla cannon, reverse bear trap...) and walk around, the token never notices. Change z-levels with it and you get removed as a listener and never added back, so it goes silent and stays behind on the old z-level. Now the token uses a movement_detector, so it follows whoever is carrying it.\n\n`calculate_offset()` works in deciseconds (REALTIMEOFDAY and the sound length) but `sound.offset` is in seconds, so walking back into range of a long sound sent it 10x too far. Coming back to a boombox 19 seconds into a 78 second song asked for second 190, past the end, so you heard nothing. Same with the grav gen hum. Now it gets divided into seconds.\n\n## Why It's Good For The Game\n\nCarrying a boombox around and going up the stairs shouldn't leave the music downstairs, and coming back to one shouldn't leave you in silence.\n\n## Testing\n\nMultiz debug map, boombox with the hiphop tape:\n- Carried it between all 3 z-levels, the music comes with you now. Before it stayed on the first z-level.\n- Left it playing, went up a z-level and came back, it keeps going from where it should. Logged the offsets: before it sent 88/190/421 seconds after 8.8/19/42 seconds of playing, now it sends the real time.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Boomboxes, chainsaws and other looping sounds follow whoever is carrying them, and long sounds pick up where they should when you walk back into range instead of going silent."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98288",
+    "title": "Junkdrawer of misc fixes",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nFixes a few misc things I've been encountering and extends the mob damage unit test to cover some extra cases. They're kinda all in a similar wheelhouse.\r\n\r\n- blood-drunk was multiplying pressure damage by 10 when it wore off instead of undoing its stamina resistance, looks like a copy paste error\r\n- the zombie stun handler was missing the signal source argument, so it runtimed instead of applying the stun cap\r\n- pressure damage was applying brute resistance before calling the damage proc, which applied it again\r\n- interrupting a gnome's burrow removed armor it had never received, making it weaker each time\r\n- roach hearts only apply their knockdown penalty to humans, but removing one was undoing it on nonhumans too\r\n- healing burn, toxin or oxygen damage on animals changed their brute damage but passed a difference of zero to the parent proc, so health didn't update\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfixes good",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "blood-drunk no longer leaves permanent stamina resistance and increased pressure damage after wearing off"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "zombie stun resistance works again"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "brute resistance and weakness are no longer applied twice to pressure damage"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "interrupting a garden gnome's burrowing no longer permanently increases the damage it takes"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "removing a roach heart from a nonhuman no longer grants free knockdown resistance"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "healing animals now updates their health immediately"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "brute and burn resistances and weaknesses now apply in full to damage spread across the whole body, such as pressure damage"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98286",
+    "title": "Fixes a loadout atom skin oversight",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nThis was first off..double checking the same thing due to copypasta. \r\n\r\nSecond a bug: `get_reskin_options()` uses `new_name || preview_name` as the selection value, which is then saved in preferences. However, this code was only comparing it against `preview_name`. \r\n\r\nAs a result when a skin’s new_name differs from its `preview_name`, the saved selection never matches and the skin isn’t applied. It needs to do the same `new_name || preview_check` name\r\n\r\n## Why It's Good For The Game\r\n\r\nBugfix",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed loadout styles that change an item's name failing to apply when you spawn."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98040",
+    "title": "Feast of owls heretics don't lose blade break, slight tweaks to aura",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n- Feast of Owls heretics don't lose blade break, nor gain unlimited blades, after a certain knowledge threshold\r\n\r\n- Losing blade break no longer removes cloak of shadow (this was unintended after I moved it off of being innate)\r\n\r\n- Heretic armor no longer hides aura\r\n\r\n- Lock heretic changed slightly from \"never gets aura\" to \"never gets aura, unless wearing robes\"\r\n\r\n## Why It's Good For The Game\r\n\r\n- Initially, I thought the mechanic of losing the blade break was tied to your aura. And it kinda is, except Feast of Owls heretics don't show an aura, but still lose blade breaking. This isn't very intuitive to me, nor do I think Feast of Owls heretics need unlimited blades, so this felt like a sensible change to me.\r\n\r\n- Robes hiding your aura meant Feast of Owls not having an aura was pointless. As there was no differentiating a Feast of Owls heretic who just has armor as a part of their gimmick vs a heretic who was rushing towards ascension, you would treat them as the same regardless.\r\n\r\n- Lock not having an aura also compounds on this problem. If the aura is supposed to be the definitive \"you are valid\" vs \"you are roleplayer\" indicator, having a path that doesn't get any aura makes it unreliable, and forces people to treat them the same regardless. However I didn't want to completely throw it out, so I changed it so the aura will show up if you're wearing your armor, because you're not being very stealthy in your armor anyways. \r\n\r\nBasically now you can associate aura with blade breaking (no aura = that heretic can blade break) which is useful",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Feast of Owls heretics don't lose blade break, nor gain unlimited blades, after a certain knowledge threshold"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Heretic armor no longer hides aura."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Lock Heretics have changed slightly - you do gain an aura now, but it ONLY reveals itself while wearing your robes, and doesn't glow in the dark."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Losing blade break no longer removes cloak of shadow (since it's no longer an innate spell)"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98302",
+    "title": "Fix getting deafened during TTS permanently muting all game sounds",
+    "author": "sohpeach",
+    "body": "## About The Pull Request\n\nFixes at least one cause of #95456. I didn't really see a cleaner way to ensure this field is set without messing with all the playesound functions.\n\nTTS lines are played through `/datum/threed_sound`. It's passed a channel, but never applies the channel to the sound. The channel is eventually applied once `playsound_local` is called, which `play_tts` calls for each listener first, but it returns early for deaf mobs. Mobs that are already deaf when something is said aren't TTS listeners at all, but listeners can go deaf in between a message being sent and TTS being played (due to a bomb going off, for example). If everyone who heard the line is deaf by the time it plays, the sound keeps channel 0.\n\n`threed_sound` resends the sound whenever the listener or the speaker moves. While the listener is deaf it is sent with `SOUND_MUTE|SOUND_UPDATE`, and on channel 0 that mutes every sound on the client. If the TTS line ends before the listener can hear again, the unmute is never sent, and the game stays silent until the window is closed and reopened. As the issue says, reconnecting doesn't help.\n\n`threed_sound` now sets its channel on the sound when it's created.\n\n## Why It's Good For The Game\n\nBeing deaf bad.\n\n## Testing\n\nSetup:\n- I don't have a TTS server, so I ran a small stand-in on localhost and pointed `TTS_HTTP_URL` at it. It returns one voice from `/tts-voices`, and answers every `/tts*` request with an ogg after a 1.5 second delay, with `audio-length: 4`.\n- DreamSeeker controlled a human in a hallway. An NPC human with a TTS voice stood on the next tile. My admin ghost was moved to another z-level, so the client's mob was the only one who heard the line.\n- I recorded only DreamSeeker's audio with OBS and measured when each sound started.\n\nIt's hard to distribute this testing setup.\n\nEach run was scripted using Lua:\n1. Four beeps (`playsound_local`) to the client's mob (one per second).\n2. The NPC says a line.\n3. Half a second later, the client's mob takes ear damage (`adjust_temporary_deafness(8 SECONDS)`), before the TTS audio has come back.\n4. The line plays while the mob is deaf. The NPC steps back and forth every half second for 10 seconds, which covers the whole line.\n5. The 4 second line ends, then the mob's hearing comes back on its own a few seconds later.\n6. Eight more beeps, then one on the admin channel (1023) and one on a fixed channel (900).\n\nThe server logs confirmed that events happened in this order.\n\nResults:\n- On master, none of the beeps after hearing returned were heard, in 3 out of 3 runs, and the client stayed silent until DreamSeeker was restarted. In a control run with the NPC standing still, all of them were heard.\n- With this change, all of them were heard in 3 out of 3 runs.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Being deafened while a TTS line is about to play no longer mutes all game sounds until you reopen the game."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98299",
+    "title": "Fix charges and transit tubes going instant late in a round",
+    "author": "sohpeach",
+    "body": "## About The Pull Request\n\nI thought this might fix #97900, but if that issue starts after 1 hour rather than 2.67 hours I don't really see how this could be the problem.\n\nSSmovement files move loops into buckets keyed by `\"[time]\"`. Turning a number into text keeps 6 significant digits, so once `world.time` reaches 100000 (2 hours 47 minutes after the world started, lobby and init included) different times start sharing a key: `100001.5`, `100002` and `100002.5` all become `\"100002\"`.\n\nWhen a loop is processed and requeued for its next step, its new time can then map to the bucket that is still being processed. It gets added to that bucket's list and runs again in the same tick, and again, until its timeout runs out. That happens to loops with a delay of 0.5 or 1 deciseconds, so mob charges (0.5) cover their whole distance in one tick and transit tube pods (1 per straight tube) cross a whole line of tubes in one tick. Other loops can land in a bucket for a slightly earlier time and step up to a decisecond early.\n\nThe keys now use `num2text(time, 12)`, which keeps every digit a move loop time can have. `queue_loop()` and `smash_bucket()` also build the key once instead of two or three times.\n\nAdded a unit test that queues loops for 100001.5, 100002 and 100002.5 and checks they end up in separate buckets. It fails on master and passes with this change.\n\n### Videos\n\n| | Master | This PR |\n|---|---|---|\n| Round start | https://github.com/user-attachments/assets/6be4602d-ed9d-4710-83ee-6e35d386d256 | https://github.com/user-attachments/assets/97808d2a-0c88-453f-9370-a157383a95c0  |\n| With the offset | https://github.com/user-attachments/assets/65325bcc-fbda-4b0a-b968-760f97d03dfa | https://github.com/user-attachments/assets/cd827eb4-2bf7-47cb-9557-30d1949a7e50 |\n\n## Why It's Good For The Game\n\nLess bug.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Mob charges and transit tubes no longer become instant when a round has been going for a few hours."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98272",
+    "title": "\"Lumen Mendax\", reworks the Ash Heretic lantern.",
+    "author": "EnterTheJake",
+    "body": "## About The Pull Request\r\n\r\nReworks the Ash Heretic burning lantern into the Lumen Mendax. The lantern feeds on the mob’s fire stacks, and once fully charged, it can unleash a blast that blinds nearby mobs and makes them hallucinate that every mob around them is on fire. It also spawns a few hallucinations of burning mobs.\r\n\r\nif at least one mob is effected, the Path recharge mechanic is triggered\r\n\r\nThe blinding effect can be mitigated with eye protection while the hallucination is blocked by anti magic.\r\n\r\nThe spell can only be cast when the lantern is wielded by the Heretic.\r\n\r\nIt also received a new sprite to better match with the Ash robes.\r\n\r\nSprites by @orcacora\r\n\r\nhttps://github.com/user-attachments/assets/839a34ea-db1d-4b03-9da3-bb8276e714af\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\n\r\nThe burning lantern is currently a bit boring: its sprite is a generic lantern with a bland green palette, and its passive effect isn’t terribly exciting.\r\n\r\nIt also has no real synergy with the rest of the path. After a brief discussion with Melbert, we agreed that since the Empowerment mechanic tied to the Ash robes was removed, it would be better for the lantern to feed on the flames instead.\r\n\r\nOn top of that, it adds one  of the first Heretic spells  that can be mitigated by more than just anti-magic. Better eye protection partially shields you from the blinding (maxed-out protection negates it entirely) but does nothing against the hallucinations. Anti-magic works the other way around: it prevents the hallucinations, but not the blinding.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Burning lantern has been reworked into the Lumen Mendax"
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Lumen Mendax consumes firestacks on the Heretic to gain power, at max charges it can unleash a blast that blinds heathens and makes them hallucinate, while triggering the Ash recharge mechanic."
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "New sprite for the Lumen Mendax"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98316",
+    "title": "Fixes parrying someone else's projectile using the boost multipliers",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\n`attempt_parry()` sets the projectile's firer to the parrier and then checks `source.firer == user` to pick the multipliers, so it _always_ picked the boost ones. Don't think that was the intent.\n\nNow, parrying someone else's projectile uses `parry_speed_mult` and `parry_damage_mult` like it was meant to, and boosting your own shot still uses the boost ones.\n\nThis does mean parried shots (watcher beams, colossus bolts, herald shots, etc) now get 1.15x damage and 1.25x speed instead of 1.5x and 1.6x, which is what the component's defaults say they should be.\n\n## Why It's Good For The Game\n\nThe parry multipliers have never actually been used since #84973",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "parrying someone else's projectile now uses the parry multipliers instead of the self-boost ones, so parried shots hit a bit softer than before"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98318",
+    "title": "Fixes new tgui windows closing themselves while they load on people with slow PCs or connections",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\n`process()` closes any UI that hasn't initialized within `TGUI_PING_TIMEOUT` (4 seconds) of `open()`. That makes sense for a pooled window answering a ping, but a window that has to create its browser also has to load the whole bundle first, and that counts against the same 4 seconds. On a slow first load you get `Zombie window detected, closing.` on a window that was just about to work.\n\nSets a more generous deadline once in `open()`: **60 seconds** when the window still has to start its browser, the usual `TGUI_PING_TIMEOUT` when it's a pooled window getting a ping. `process()` only compares against it, so it's one subtraction less than before, no performance difference.\n\nHeld a new window's page load for 6 seconds:\n- before: closed as a zombie 4.15s after initialize\n- after: stays open, ready at 6.7s\n\nBenched `process()` the same way, 30 paired runs of 10k sweeps, difference is within noise:\n- 1 UI: 13.87ms -> 13.82ms\n- 9 UIs: 111.34ms -> 111.02ms\n\n## Why It's Good For The Game\n\nUIs closing on people with slow PCs or connections",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "tgui windows that take more than 4 seconds to load the first time no longer close themselves"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-27",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98226",
+    "title": "Borg eyes glow",
+    "author": "Co0kie-GG",
+    "body": "## About The Pull Request\r\n\r\nAdds emmisive to Borg eyes! It also adds a button to robotact to switch eye activity. Fixes the loss of eyes when moving between z-levels.\r\n\r\n## Why It's Good For The Game\r\n\r\nMore beauty and immersiveness\r\n\r\n## Media\r\n<img width=\"453\" height=\"205\" alt=\"image\" src=\"https://github.com/user-attachments/assets/62f59f84-4e21-48c0-aae3-e18661d2185a\" />\r\n<img width=\"284\" height=\"210\" alt=\"image\" src=\"https://github.com/user-attachments/assets/39e51c77-cd22-4a25-be3d-74f5265096b4\" />",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Added the glow of Borg eyes and the ability to turn them off"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Borg eyes are displayed correctly when switching between z-levels."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98205",
+    "title": "Modular Plaques +Loadout item",
+    "author": "JohnFulpWillard",
+    "body": "## About The Pull Request\r\n\r\nPlaques now have a written and unwritten icon except for special ones (atmos & syndicate)\r\nAtmos plaque now appears as the atmos plaque\r\nPlastic plaques are now plaques\r\nAdds plaques to loadout\r\nMade plaques be out of their proper materials (silver out of silver, kiddie out of plastic)\r\nYou no longer need a fountain pen specifically to engrave a plaque\r\n\r\n## Why It's Good For The Game\r\n\r\nYou can now put up a plaque of you having a PhD in your office. Let's LARP!",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Plaques are now more customizable, and in the loadout menu."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-28",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98257",
+    "title": "Adds a flash to the captain's locker",
+    "author": "ATH1909",
+    "body": "## About The Pull Request\r\n\r\nThe captain's locker now contains a flash in addition to its other contents.\r\n\r\n## Why It's Good For The Game\r\n\r\nAll of the other heads of staff get a flash in their starting locker (or starting outfit, in the case of the HoS), but the captain doesn't, for some reason. This mildly triggered my OCD.\r\n\r\nThis shouldn't have any major balance ramifications because the bridge usually has a flash in it anyway.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Added a flash to the captain's locker for consistency with the other heads of staff."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98330",
+    "title": "Fix regular input for disabled `Input: Enable TGUI`",
+    "author": "FeudeyTF",
+    "body": "## About The Pull Request\r\n\r\nFixes #97605\r\n\r\nWhen the setting `Input: Enable TGUI` disabled and the TGUI form is called for text input, the regular text input appears with the `max_length = 0`. For TGUI input, this means an infinite number of characters, for regular input 0. Because of this, the entered text will simply disappear. Now, the default value of this parameter in such case is `MAX_MESSAGE_LEN` (1024).\r\n\r\nAdditionally, a thinking indicator has been added for the say, me and whisper verbs.\r\n\r\n<img width=\"600\" height=\"259\" alt=\"2026-10-27-195345_hyprshot\" src=\"https://github.com/user-attachments/assets/e9bb3d89-40f3-40c2-b2d3-28bd3e180a05\" />\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes are cool, I guess.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed 'Input: Enable TGUI' option for text inputs"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98351",
+    "title": "Fixes overflayer plane decoding issue",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nFixes OverFlayer's fallback plane decoding after #98263 converted the plane lookup tables to numeric-keyed alists.\n\nThe fallback still converted candidate plane numbers to strings, so its lookups no longer matched. \n\nThis made OverFlayer display only `UNREGISTERED <number>` instead of the decoded base plane and offset.\n\nKeeps the candidate numeric so the existing lookups work with the converted tables.\n\n## Why It's Good For The Game\n\nBugfix",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "overflayer once again shows the base plane and offset for unregistered planes it can decode."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98303",
+    "title": "Fix embed self removal message",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nWrong arg",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix chat message when removing embedded objects from yourself"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98291",
+    "title": "Makes Different Colored Loadout Items Into Skins",
+    "author": "MacaroniCritter",
+    "body": "## About The Pull Request\nThis PR turns all of the duplicated caps, fedoras, and cowboy boots in the loadout items into isolated reskins.\n<img width=\"757\" height=\"657\" alt=\"image\" src=\"https://github.com/user-attachments/assets/8a6bd303-2e13-430a-a12c-916c6dba2ed7\" />\n<img width=\"492\" height=\"282\" alt=\"image\" src=\"https://github.com/user-attachments/assets/d915aa4a-6b57-48b9-a7cc-ed9bfa12c724\" />\n\n## Why It's Good For The Game\nThis drastically simplifies the loadout menu. It sets a precedent that eases the visual experience.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "The loadout menu now relies on skins to select different colors of the fedora, cowboy boots, and soft cap"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98334",
+    "title": "Fix headrev codewords",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nA copypaste error overrides the existing words.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes head revolutionary not getting codewords"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98335",
+    "title": "Fix ceruleans bricking shoes they pick up (+ small rendering cleanup)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n```dm\n/obj/item/clothing/shoes/proc/oh_what_a_neat_hat(mob/living/carbon/user, up_or_down)\n\tif(user && !(user?.bodyshape & BODYSHAPE_CERULEAN))\n\t\treturn\n\tif(up_or_down)\n\t\tslot_flags |= ITEM_SLOT_HEAD\n\t\tdetach_clothing_traits(clothing_traits)\n\telse\n\t\tslot_flags = initial(slot_flags)\n\t\tworn_y_offset = initial(worn_y_offset)\n```\nThis proc removes clothing traits, and never re-adds them.\nSo any time a cerulean picked up a pair of shoes with clothing traits, the shoes would be permanently bricked.\n\nI fixed this by refactoring the shoe logic a bit: `give_clothing_traits` now exists for clothing items. Shoes now check that the wearer is not a cerulean before giving clothing traits.\n\nHowever in testing I broke shoe rendering somehow. Or maybe it was already broken. Regardless, I fixed it by changing a tiny bit of item rendering.\n\n`build_worn_icons` `isinhands` now passes held index, rather than `TRUE`. `get_worn_offsets` uses this to determine offsets.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ceruleans picking up special shoes (like noslips) no longer permanently breaks the shoes"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up clothing rendering very slightly, particularly relating to inhand sprites, report anything weird with it"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up Cerulean shoe code, report anything weird with it"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98332",
+    "title": "Fix some forms of zombification being incurable",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nThe signal for removing zombification on removal of the tumor was only hooked when the tumor was created by zombification. Gaining the tumor from direct means (like Romerol) would result in irreversible zombification as a consequence.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix some forms of zombification being uncurable"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98337",
+    "title": "Fix Crimson Cleaver Curse being droppable in late stages",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nThis one speaks for itself lol",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix Crimson Cleaver Curse being droppable in late stages"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98341",
+    "title": "Fixes potential manifest not updating when someone unreadies",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\r\n\r\nUnreadying (or disconnecting in the lobby) dropped you from `SSticker.ready_jobs` but never recalculated the potential manifest from #98197, so the numbers only ever went up until someone else readied or changed their jobs. Now it recalculates when someone who was counted unreadies. Job pref changes call this for unready players too, so it only recalculates if you were actually in there.\r\n\r\nalso a small optimization\r\n\r\n## Why It's Good For The Game\r\n\r\nThe lobby estimate should match who's actually readied up.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "the potential manifest in the pre-game lobby updates when someone unreadies."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-29",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98331",
+    "title": "Fix airborne disease spread being broken for 2 years",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nAirborne disease spread was inverted - you only spread diseases if you were masked up, rather than if you weren't masked up.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes airborne disease spread. Sneezing, coughing, and breathing will now spread diseases if you are UNMASKED, rather than if you are masked."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98349",
+    "title": "Fixes basic night vision doing nothing",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\n\nCloses https://github.com/tgstation/tgstation/issues/98343",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Basic night vision (like from the genetics mutation) works again"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98353",
+    "title": "Speeeds up the crafting menu by 40-80% (probably) by building crafting recipe data as an asset",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nBasically, builds all the crafting recipe data once, rather than every time you open the UI. \r\n\r\n```\r\nBefore\r\n/datum/component/personal_crafting/ui_static_data     0.081   0.168    0.166    0.020       7\r\nAfter\r\n/datum/component/personal_crafting/ui_static_data     0.011   0.019    0.020    0.001       7\r\n```",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "The crafting menu is a decent bit faster now, but report anything weird with it"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98344",
+    "title": "Unsecured welders say so on examine and tell you to screw the tank shut",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nScrewdrivering a welder unsecures its fuel tank (the first step of a flamethrower), but nothing on the welder tells you that afterwards. \n\nIt looks the same, examine doesn't mention it, and trying to light it just says \"unsecured!\". the only hint is one chat line at the moment you screw it, which is easy to miss when you clicked it with a screwdriver by accident.\n\nExamining an unsecured welder now says its fuel tank is open and can be screwed shut, and the balloon when you try to light it says to screw the tank shut first.\n\n## Why It's Good For The Game\n\nFix an oversight/source of confusion",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "examining an unsecured welder now tells you its fuel tank is open and can be screwed shut, and trying to light one tells you to screw the tank shut first."
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98323",
+    "title": "Fixes an edge-case where BT decorators would not correctly abort during their first tick",
+    "author": "CabinetOnFire",
+    "body": "## About The Pull Request\r\n\r\n@FalloutFalcon pointed out an edge-case where BT decorators would not correctly abort its children even though it would evaluate to false. sophie was nice enough to sic claude on it for a repro which let me find the problem:\r\n\r\nDecorator aborts used `active_execution_index` to gather which branch we were in. (The last leaf to return BT_RUNNING), which could be stale. Now I track the actively ticking \r\n\r\nInstead I now track the currently ticked index separate from the last ran one and prefer to use that.\r\n\r\n## Why It's Good For The Game\r\n\r\nfix good",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes edge-case where AI could get stuck in behaviors (due to decorators not aborting correctly)"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98339",
+    "title": "Fixes some doafter issues",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nFixes #97231 by replacing `cog_icon = null` with a new flag, `HIDE_INTERACTION`. \r\n\r\nFixes an issue where the bar will flash red or look finished in inappropriate locations based on do after modifiers. Notable primarily from the mood interaction speed modifiers.\r\n\r\nFixes ninja draining power directly from a cell only working if they interrupt the doafter. \r\n\r\nMakes cancel interaction use the new datumized do afters because it's cleaner.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Stealthy actions (like spy stealing's cog icon) are hidden again"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "(Should) fix issues where progress bars flash red or flash complete at inappropriate times"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes ninja draining power directly from a cell only working if they fail to drain power"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Cleaned up cancel interactions hotkey to be less jank, report anything weird"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98340",
+    "title": "Fixes cameras breaking if they try to look through a glass at the bottom zlevel",
+    "author": "vinylspiders",
+    "body": "## About The Pull Request\n\nCamera coverage no longer breaks when looking down through glass at the bottom of a multilevel area.\n\nIf glass was at the bottom z level being looked at, it'd cause a runtime from this. This results in the visibility update runtiming and aborting.\n\n```\n[00:18:07] Runtime in code/game/machinery/camera/camera.dm,440: Cannot read null.x\n  proc name: can see (/obj/machinery/camera/proc/can_see)\n  src: the security camera (/obj/machinery/camera)\n  src.loc: the floor (166,21,6) (/turf/open/floor/iron)\n  call stack:\n  the security camera (/obj/machinery/camera): can see()\n  /datum/unit_test/camera_multiz... (/datum/unit_test/camera_multiz_visibility): Run()\n  RunUnitTest(/datum/unit_test/camera_multiz... (/datum/unit_test/camera_multiz_visibility), /list (/list))\n  RunUnitTests()\n  /datum/callback (/datum/callback): InvokeAsync()\n```\n\n## Why It's Good For The Game\n\nFixes a spammy runtime and bug",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "camera coverage no longer breaks when looking down through glass at the bottom of a multilevel area"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98336",
+    "title": "Fix traitors not getting hijack objectives for 3 years",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nThe hijack objective was instantiated, but never added to the objectives list.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Traitors can actually get hijack objectives"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98333",
+    "title": "Fix latejoin revolution never gaining new headrevs",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n`can_be_headrev()` checks `is_antag()` to avoid making things like changeling headrevs.\nHowever, this also prevents revolutionaries (who are antags) from being promoted into headrevs, as `is_antag()` passes.\n\nI fixed this by adding an optional blacklist to `is_antag()`, which `can_be_headrev()` passes the rev antag type into.\n\nFixes #91947",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix latejoin revolution never gaining new headrevs"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98338",
+    "title": "Fix changeling darkness/void adaptation *buffing* chem regen, instead of nerfing it",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n`chem_recharge_slowdown` is a tally of how much slowdown is reduced, but both of these abilities treated it as an inverse, reducing slowdown instead of adding slowdown. As a result these two would buff changelings when active, rather than nerfing them.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix changeling void adaptation and darkness adaptation speeding up chemical regen, rather than slowing it down"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "upstream_date": "2026-10-30",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98256",
+    "title": "Energy Projectiles: Pulse/Shotgun Pulse, X-Ray and Smoothbore Disabler",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\n\nPulse beams and x-ray laser beams are now subtypes of lasers, not beams.\n\nPulse projectiles have 50 AP (they're clearly anti-materiel) and have an increased flight speed. \n\nShotgun pulse slugs have 40 damage instead of 30, and AP of 30, so less than the rifle version, but close enough. The intention here is to treat them like they have a standard equivalent; in this case, scatter laser is considered the equivalent, so we take the damage of scatter laser and reduce by -5 to then give them some kind of bonus effect. Which is AP.\n\nOn the topic of AP lasers, x-ray has had a damage bump because it is also functionally existing in this same space, but at 15 damage it is not quite doing enough to be meaningfully impactful unless shooting into extreme amounts of armor. We've pushed that up to 20 so it is sitting in that -5 sweet spot.\n\nSmoothbore disablers no longer have an inaccuracy penalty, and have a damage bonus of x1.5 and speed bonus of x2. That puts them at 45 damage a shot. As they're weak to armor and need to be recharged each shot, it seems a bit unnecessary to also make them RNG shoot a wall. And I think it needs more oomph behind them to justify their usage while functionally being disablers only usable against soft targets. They also fly twice as fast too. Their prime version has a damage multiplier of x2.\n\n## Why It's Good For The Game\n\nThese are some weapons that have felt a bit strange to me with time and could stand to get a revisit. \n\nPulse slugs aren't very desirable because of various negatives they bring (they punch holes in the walls, which is toted as a positive, but for crew largely a negative unless exploited to get into a defensive position), they don't do much more damage than comparable alternative projectiles (They were outperformed by fucking rubbershot a lot of the time), and their construction makes them a bit annoying to make. \n\nActual pulse is fine, but mostly is as potent as it is less for the projectile and more for the spammability of the projectile from the gun housing it, and the fact it removes cover very rapidly. I think them being actually horrifying to fight as anyone sells it a bit more that Nanotrasen isn't fucking around if you're being shot by this. You get a taste of it with the slugs with their lowered stats.\n\nX-ray lasers just needed a bit more damage. [As explained here ](https://github.com/tgstation/tgstation/pull/97933), AP rounds generally have -5 the standard damage and that seems to be a sweetspot that makes them more useful to use even against soft targets, even if not ideal. Unless you were wallbanging someone, x-ray was flat not a good idea against all but the most heavily armored targets. At 20 force, there is a reason to still use it against even soft targets.\n\nSmoothbores feel a bit weird next to the musket, its sister weapon. Both of them are for soft targets, but I think the last buff that muskets got put them head and shoulders above the smoothbore, even as a disabling weapon. I do really like the suggestion that their best use is fire and drop to pull out another smoothbore, but I think it is hampered by their low damage comparative to their vulnerability to armor, as well as their inaccuracy penalty that forces them to be used point blank or threaten to miss. \n\nComparable weapons, the aforementioned musket and pipe pistol, at least bring either consistent damage for cheap reloads that encouraged a hit and run approach, or loads of upfront damage but a much lengthier reload process, making it better for assassinations or unloading a whole lot of pain into someone as an opener. Smoothbores just struggled to carve out any presence here. So there wasn't much reason to have one on you compared to alternatives. \n\nAt 45 damage after multiplication, the gun now actually can slow a soft humanoid target enough to give distance if necessary. Great for how cheap it is, and also leaves no lasting harm so also good for nonlethal takedowns. Has a reason to be paired with other weapons to finish off a target, such as a stun prod.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Pulse projectiles now have high armor penetration. They also move extremely quickly."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Pulse slugs do 40 damage and have an AP of 30."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "X-ray lasers now do 20 damage instead of 15."
+      },
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Smoothbore disablers no longer are inaccurate, and do 45 damage and move twice as fast. They still struggle to harm anything with armor."
+      }
+    ]
   }
 ]
