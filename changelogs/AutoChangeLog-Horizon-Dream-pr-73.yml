@@ -1,0 +1,752 @@
+# PR: horizon-dev-team/Horizon-Dream/73
+/TG/Station:
+  98155:
+    repo: "tgstation/tgstation"
+    title: "tgui commandbar sends status to the server [no gbp]"
+    changes:
+      hry-gh:
+        - bugfix: "when typing in the command bar, thinking/typing indicators will be reflected in game again"
+  98194:
+    repo: "tgstation/tgstation"
+    title: "Removes skeleton keys"
+    changes:
+      necromanceranne:
+        - balance: "Removes skeleton keys. Tendril chests can simply be opened like any other megafauna loot."
+  98091:
+    repo: "tgstation/tgstation"
+    title: "Fix some two handed weapons (spears, axes) not updating inhand icon state"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes two handed weapons not updated when wielded"
+  98101:
+    repo: "tgstation/tgstation"
+    title: "Blocks gibtonite from containing ore"
+    changes:
+      SmArtKar:
+        - bugfix: "Gibtonite tiles can no longer contain ore in them"
+  98144:
+    repo: "tgstation/tgstation"
+    title: "Fix health analyzer runtime"
+    changes:
+      vinylspiders:
+        - bugfix: "you can once again get a medical bounty report from the same patient after waiting five minutes."
+  98195:
+    repo: "tgstation/tgstation"
+    title: "Removes some... questionable language from a few ashwalker things"
+    changes:
+      necromanceranne:
+        - tweak: "You no longer suffer from a mood malice from seeing the ashwalker tendril eat things if you're not an ashwalker yourself."
+  98159:
+    repo: "tgstation/tgstation"
+    title: "Fix strange reagent mail delivery when Ian dies"
+    changes:
+      vinylspiders:
+        - bugfix: "strange reagent now gets properly set in the HoP's mail delivery goodies if the conditions meet"
+  98169:
+    repo: "tgstation/tgstation"
+    title: "Rapid Formatting Device"
+    changes:
+      NanoCats:
+        - spellcheck: "Standardized the names and acronyms of the rapid device family."
+  98200:
+    repo: "tgstation/tgstation"
+    title: ","
+    changes:
+      Fikou:
+        - spellcheck: ","
+  98186:
+    repo: "tgstation/tgstation"
+    title: "Surplus items get uplink datum data if possible"
+    changes:
+      MrMelbert:
+        - bugfix: "Surplus items get uplink datum data if possible in roundend report (meaning it'll report \"Surplus item: stealth implant\" rather than \"Surplus item: box\")."
+  98181:
+    repo: "tgstation/tgstation"
+    title: "The Head of Security, Head of Personnel, and Engineering Security Officers no longer have air alarm access"
+    changes:
+      MrMelbert:
+        - balance: "Added a new access, \"Atmospherics Equipment\", which controls access to Air Alarms, as well as atmospherics equipment lockers and supply packs. In the future this access may extend to some map areas (such as atmos gas storage)."
+        - balance: "Atmospheric Technician, Station Engineer, and the Chief Engineer all have \"Atmospherics Equipment\" access by default."
+        - balance: "Head of Security and Head of Personnel do not have \"Atmospherics Equipment\", and thus cannot access air alarms by default anymore."
+        - balance: "Engineering Security Officers is only given \"Atmospherics Equipment\" access on skeleton crews, and thus cannot access air alarms on higher pop shifts."
+  98178:
+    repo: "tgstation/tgstation"
+    title: "Fixes muzzled text leaking when you use an exclamation mark"
+    changes:
+      PapaMichae1:
+        - bugfix: "Words no longer escape your muzzled mouth if you use an internal exclamation mark"
+  98201:
+    repo: "tgstation/tgstation"
+    title: "Post-Cerulean spellchecks"
+    changes:
+      Neocloudy:
+        - spellcheck: "Fixed or tweaked spelling/grammar in new Cerulean content, including the hydro vaporizer, the deadbeat musician, the armored leather jacket, the black pearl necklace, the translucent fish tail, and some of the Cerulean perks (in the species menu)."
+  98182:
+    repo: "tgstation/tgstation"
+    title: "Dropping a muffling item no longer unmuffles someone still wearing one"
+    changes:
+      vinylspiders:
+        - bugfix: "multiple sources of muffled speech now respect one another"
+  98143:
+    repo: "tgstation/tgstation"
+    title: "Fix sound tokens not resolving SFX keys for emote overrides"
+    changes:
+      PetyaFX:
+        - bugfix: "Fixed SFX-keyed sounds being silent through sound tokens."
+  98165:
+    repo: "tgstation/tgstation"
+    title: "Fix orbiter runtimes"
+    changes:
+      vinylspiders:
+        - bugfix: "ghosts can stop orbiting by moving away after their orbit is transferred to another target."
+  98214:
+    repo: "tgstation/tgstation"
+    title: "Fixes the escape menu player list leaking stealthed admins"
+    changes:
+      PapaMichae1:
+        - bugfix: "The escape menu players list no longer reveals stealthed admins"
+  98213:
+    repo: "tgstation/tgstation"
+    title: "Fixes wibbly filters race condition+runtime"
+    changes:
+      vinylspiders:
+        - bugfix: "holograms can no longer get stuck wobbling when you walk back through them just as their last glitch is fading"
+  98207:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Fixes copying blast door controller IDs + unit test"
+    changes:
+      lelandkemble:
+        - bugfix: "fixed being unable to copy blast door controller ids"
+  98170:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Makes MOD stealth module less strict about part requirements"
+    changes:
+      desertmote:
+        - balance: "Makes MOD stealth module less strict about part requirements"
+        - bugfix: "Ceruleans can activate MOD stealth modules"
+  98163:
+    repo: "tgstation/tgstation"
+    title: "Fix inherited pricetag account lists"
+    changes:
+      vinylspiders:
+        - bugfix: "handling tips for single-contributor bounty cubes now reach the scanner's bank account, and cargo receives the correct remaining value."
+  98160:
+    repo: "tgstation/tgstation"
+    title: "Fix stack lathe division by zero runtime"
+    changes:
+      vinylspiders:
+        - bugfix: "stacks printed by autolathes and protolathes keep the correct material contents when printed in batches or merged with existing stacks."
+  98103:
+    repo: "tgstation/tgstation"
+    title: "Fixes Candela nodes not working from mining webbings"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed Candela nodes not working from mining webbings"
+  98070:
+    repo: "tgstation/tgstation"
+    title: "Tooltips can now update"
+    changes:
+      JohnFulpWillard:
+        - tweak: "Action buttons with dynamic names (such as martial art swapping) now updates their names without requiring you to unhover/rehover your mouse over it."
+  98179:
+    repo: "tgstation/tgstation"
+    title: "Skip empty cylinder slots during ballistic crafting"
+    changes:
+      vinylspiders:
+        - bugfix: "revolver crafting now transfers ammunition correctly past empty cylinder slots."
+  98191:
+    repo: "tgstation/tgstation"
+    title: "Build mode copy fixes"
+    changes:
+      MrMelbert:
+        - bugfix: "Build mode copy on humans no longer mangles the source terribly"
+  98063:
+    repo: "tgstation/tgstation"
+    title: "[MDB Ignore] Remove holopay stand and vend-a-tray, add tip jars"
+    changes:
+      MrMelbert:
+        - rscdel: "Removed the ability for id cards to project a pay stand"
+        - rscdel: "Removed the vend-a-tray entirely"
+        - rscadd: "You can construct tip jars with glass or plasmaglass (though not with their reinforced variants). Tip jars accept many tiny methods of gratuity, such as coins, cash, holochips, IOUs, or... a cigarette, sure."
+        - rscadd: "Adds tip jars to the kitchen in the bar, where the vend-a-trays once sat."
+  98010:
+    repo: "tgstation/tgstation"
+    title: "Right clicking doors now factors in crowbar power"
+    changes:
+      Fghj240:
+        - bugfix: "right clicking a powered door with powered crowbars no longer fails to open it"
+  98212:
+    repo: "tgstation/tgstation"
+    title: "NT Shopping Network no longer resends the whole cargo catalogue every second while it's open"
+    changes:
+      vinylspiders:
+        - code_imp: "NT Shopping Network  no longer resends the whole cargo catalogue every second while it's open"
+  98216:
+    repo: "tgstation/tgstation"
+    title: "runechat for broadcasters"
+    changes:
+      headband0536:
+        - tweak: "runechat for broadcasters"
+  97789:
+    repo: "tgstation/tgstation"
+    title: "Give Mothpeople 4 arms (Mothperson Rework)"
+    changes:
+      tontyGH:
+        - rscadd: "Mothpeople now have 2 extra arms in their chest, giving them 4 total arms"
+        - balance: "Mothpeople are now generally a bit more fragile"
+        - bugfix: "Akimbo used the wrong gun when determining spread penalty"
+        - bugfix: "Akimbo penalty did not include the gun that was firing"
+        - balance: "Akimbo penalty now has multiplicative scaling (double PKA was adjusted to consider this)"
+        - bugfix: "Catching items now considers all empty hands and not just your active offhand"
+        - balance: "Blocking now only works if the blocking item is in your active set of hands"
+        - rscdel: "Wizard's 4-arms perk and the deathmatch modifier had to be removed for technical reasons. Sorry."
+  98145:
+    repo: "tgstation/tgstation"
+    title: "Spreads departmental secoffs across departments"
+    changes:
+      PapaMichae1:
+        - balance: "Departmental security officers are now spread evenly across departments."
+  98220:
+    repo: "tgstation/tgstation"
+    title: "ore vents loaded after roundstart actually have ores"
+    changes:
+      vinylspiders:
+        - bugfix: "ore vents loaded in after roundstart, or on a level without a mining epicenter, now actually have ores and show up on ventpointers"
+  97980:
+    repo: "tgstation/tgstation"
+    title: "Removes most gun kits, gun tech unlocks gun orders in gun cargo"
+    changes:
+      MrMelbert:
+        - rscdel: "Most gun crafting kits have been removed. The Horizon and SKS still require one to build."
+        - rscadd: "Weapon research tech nodes now allows the station to requisition unlocked weapons from Cargo (Advanced Energy Gun, X-ray gun, ion carbine, etc.). Security can departmental order them in bulk. Requisitions come without firing pins."
+        - rscadd: "You can now purchase a hellfire laser gun directly from Cargo, though it requires the contraband wire be cut."
+  98217:
+    repo: "tgstation/tgstation"
+    title: "Fixes tank runtime, and a bonus"
+    changes:
+      vinylspiders:
+        - bugfix: "fuel tanks with other reagents mixed in no longer sometimes fail to explode around plasma"
+        - bugfix: "swapping a water cooler's jug now hands you the old jug with whatever was left in the cooler"
+  98176:
+    repo: "tgstation/tgstation"
+    title: "Refactors arm cyberimplants"
+    changes:
+      tontyGH:
+        - code_imp: "Cybernetic arm implants got refactored. Report weird behaviour on the GitHub."
+  98231:
+    repo: "tgstation/tgstation"
+    title: "removes legacy `.sav` formats which haven't been used in nearly a decade"
+    changes:
+      Absolucy:
+        - bugfix: "Pun Pun should now properly get roundstart masks sometime"
+  98087:
+    repo: "tgstation/tgstation"
+    title: "Add more pillow weapon sources"
+    changes:
+      TheBoondock:
+        - rscadd: "Added a pillow supplies crate and category to the games vendor"
+  97521:
+    repo: "tgstation/tgstation"
+    title: "[MERGE ME] Adds 29 AI VOX lines (for jellypeople, ceruleans, and some missing station areas and jobs)"
+    changes:
+      PapaMichae1:
+        - rscadd: "Added new AI VOX lines, including \"jellyperson\", \"cerulean\", \"worm\", and some station areas and jobs"
+  98156:
+    repo: "tgstation/tgstation"
+    title: "Reworks misfing to be based on chamber pressure, .38/.357 are interchangable, junk rounds are shotgun shells again"
+    changes:
+      necromanceranne:
+        - balance: "Misfiring has been completely reworked."
+        - balance: ".38 and .357 are interchangeable in all compatible guns without needing to wrench the gun. Just load it in! Nothing bad could possibly happen."
+        - balance: "Junk rounds are once again shotgun rounds, and pipeguns/pipe pistols now fit shotgun shells again."
+        - balance: "Guns now have pressure mechanics to handle misfiring. Check you gun carefully to determine its pressure rating."
+        - rscdel: "Old buckshot no longer breaks your gun. Literally. As in it no longer damages the gun directly and makes it vanish suddenly. Old buckshot will still fuck up your gun because someone loaded in too much powder."
+  98236:
+    repo: "tgstation/tgstation"
+    title: "Fixes crafted spears being invisible on your back"
+    changes:
+      vinylspiders:
+        - bugfix: "crafted spears and explosive lances no longer turn invisible when worn on your back"
+  98238:
+    repo: "tgstation/tgstation"
+    title: "Fixes moth chest-arm names, and losing hands oversight"
+    changes:
+      vinylspiders:
+        - bugfix: "losing a moth's chest arms no longer drops what's in your right hand, and your active hand moves to a hand you still have"
+        - bugfix: "moth chest-arms are named what you'd expect now instead of just \"moth\""
+  98243:
+    repo: "tgstation/tgstation"
+    title: "Fixes cyborg see_invisible not being restored on revive"
+    changes:
+      tontyGH:
+        - bugfix: "Cyborgs are now properly severed from the paranormal plane when revived"
+  98241:
+    repo: "tgstation/tgstation"
+    title: "Splits /mob/proc/equip_to_slot in two"
+    changes:
+      tontyGH:
+        - bugfix: "Changing your bible to insuls should make the received insuls no longer disappear sometimes"
+  98187:
+    repo: "tgstation/tgstation"
+    title: "Hardens prosthetic quirks against atypical species types"
+    changes:
+      MrMelbert:
+        - bugfix: "Prosthetic Limb quirk cannot replace limbs that you don't have"
+        - bugfix: "Transhumanist cannot replace limbs nor organs that you don't have"
+        - bugfix: "Prosthetic organ cannot replace organs that you don't have"
+        - bugfix: "Prosthetic organ will not give lungs to species that don't breathe oxygen"
+        - bugfix: "Quadruple Amputee won't give you limbs that you don't have"
+  98221:
+    repo: "tgstation/tgstation"
+    title: "Fixes paper bug + runtime"
+    changes:
+      vinylspiders:
+        - bugfix: "papers no longer pop open on their own when you pick up a pen or stamp after an earlier attempt to read them failed, or after you ghosted while reading"
+  98110:
+    repo: "tgstation/tgstation"
+    title: "Headslugs and xeno larvae can crawl under doors."
+    changes:
+      NoHaxJustPi:
+        - rscadd: "Headslugs and alien larvae can doorcrawl."
+  98133:
+    repo: "tgstation/tgstation"
+    title: "Tram atmos/partial engi remap (\"OG Box atmos must be purged\" edition)"
+    changes:
+      MrMelbert:
+        - map: "Tram: Remapped Atmospherics entirely, a bit of Engineering, and a bit of the hallway outside"
+  98239:
+    repo: "tgstation/tgstation"
+    title: "Rat spit uses digust more"
+    changes:
+      MrMelbert:
+        - tweak: "Rat spit no longer causes vomitting directly, instead now causing more direct disgust."
+  98211:
+    repo: "tgstation/tgstation"
+    title: "Adds two common core religions to chaplain special religions + fix default bible name"
+    changes:
+      MrMelbert:
+        - tweak: "Using Sitalesse or Sumalism as your chaplain religion now gives your bible a unique description"
+        - bugfix: "Fixes default bible name producing \"The holy book of default bible name\" instead of \"The holy book of [my diety]\""
+  98249:
+    repo: "tgstation/tgstation"
+    title: "Removes Icebox prison window firelocks that consistently false alarm"
+    changes:
+      NanoCats:
+        - bugfix: "The Icebox prison rec room and mess hall no longer trigger a fire alarm when there's no atmospheric problem"
+  98247:
+    repo: "tgstation/tgstation"
+    title: "Fix heart eater perk not reducing incoming damage"
+    changes:
+      TealSeer:
+        - bugfix: "fixed wizard's heart eater perk not actually increasing damage resistance"
+  98253:
+    repo: "tgstation/tgstation"
+    title: "Ceruleans no longer flop in zero-g"
+    changes:
+      SmArtKar:
+        - bugfix: "Ceruleans no longer flop in zero-g"
+  98111:
+    repo: "tgstation/tgstation"
+    title: "Fixes mood runtime, take 2"
+    changes:
+      vinylspiders:
+        - bugfix: "fixed mood sometimes sticking to the room you just fell or got teleported out of."
+        - admin: "jumping somewhere in your own body, or with Jump To Ghost, no longer leaves your mood stuck on the area you jumped out of."
+  98230:
+    repo: "tgstation/tgstation"
+    title: "Fix eigenstasium spirits vanishing and making nearby things jump a tile"
+    changes:
+      vinylspiders:
+        - bugfix: "Eigenstasium spirits no longer vanish the moment someone walks through them"
+        - bugfix: "walking through an Eigenstasium spirit no longer curses the area to look pixel shifted and weird for five minutes"
+  98260:
+    repo: "tgstation/tgstation"
+    title: "Fixes capitalization botching BYOND's text macros"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed some MODsuit modules having broken names in action bar"
+  98242:
+    repo: "tgstation/tgstation"
+    title: "crew silicons get stunned from one flash again (syndie borgs  remain the same)"
+    changes:
+      uaioy:
+        - balance: "silicons take 1 flash to be stunned again (syndie borgs unchanged)"
+  98270:
+    repo: "tgstation/tgstation"
+    title: "Stops techweb ui from lag switching some players"
+    changes:
+      vinylspiders:
+        - code_imp: "(performance) the R&D console no longer resends the whole techweb every second while connected to it"
+  98267:
+    repo: "tgstation/tgstation"
+    title: "Fix ghost poll follow link doing nothing"
+    changes:
+      13spacemen:
+        - bugfix: "The follow link in ghost poll \"was selected\" announcements now follows the chosen player instead of doing nothing."
+  98276:
+    repo: "tgstation/tgstation"
+    title: "Fixes an obscure(d) gender bug"
+    changes:
+      vinylspiders:
+        - bugfix: "wearing a space suit or bio suit without a helmet no longer hides your gender, and being fully covered (like a bomb suit and hood or a sealed modsuit) now does"
+        - bugfix: "plasmamen, ethereals and shadowpeople/any other nondimorphic gendered species no longer get the female cut on their underwear"
+  98278:
+    repo: "tgstation/tgstation"
+    title: "Fixes changeling transformation stings not properly reverting"
+    changes:
+      PapaMichae1:
+        - bugfix: "Changeling transformation stings properly wear off after 8 minutes"
+  98277:
+    repo: "tgstation/tgstation"
+    title: "Fix operator precedence in the disposal body bag check"
+    changes:
+      vinylspiders:
+        - bugfix: "you can put body bags into disposal bins while buckled to a chair or otherwise held in place"
+  98255:
+    repo: "tgstation/tgstation"
+    title: "Gives stethoscopes a 2 second do_after"
+    changes:
+      PapaMichae1:
+        - balance: "Using a stethoscope now takes 2 seconds"
+  98262:
+    repo: "tgstation/tgstation"
+    title: "Fixes particle weather not rendering"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed particle weather not rendering"
+  98281:
+    repo: "tgstation/tgstation"
+    title: "Stethoscopes don't reveal blood worms"
+    changes:
+      PapaMichae1:
+        - balance: "Blood worms fake breathing when checked with a stethoscope"
+        - bugfix: "Blood worms restart their host's heart when they revive it"
+  98222:
+    repo: "tgstation/tgstation"
+    title: "Breathing, injecting, or drinking metalgen applies it to your lungs, liver, or stomach"
+    changes:
+      MrMelbert:
+        - rscadd: "Breathing, injecting, or drinking metalgen applies it to your lungs, liver, or stomach"
+  98274:
+    repo: "tgstation/tgstation"
+    title: "Gives Atmospheric Technicians the knowledge of air alarm and fire alarm wires"
+    changes:
+      vinylspiders:
+        - tweak: "atmos techs now start with an Atmospherics skillchip that lets them know air alarm and fire alarm wires"
+        - tweak: "the Engineering skillchip now also lets you know fire alarm wires"
+  98264:
+    repo: "tgstation/tgstation"
+    title: "Light fixtures layer underneath leaning mobs"
+    changes:
+      MrMelbert:
+        - bugfix: "Wall mounted objects that layer above players will now layer beneath players if a player is leaning against it."
+  83859:
+    repo: "tgstation/tgstation"
+    title: "Demon bloodcrawl balance"
+    changes:
+      Xackii:
+        - balance: "Demon: bloodcrawl now deal damage when you using it."
+        - balance: "Demon: demon can eat only carbon human beings."
+  98287:
+    repo: "tgstation/tgstation"
+    title: "Fix for Ambient Buzz Sounds Not Playing in Areas with Requires_Power Set to False"
+    changes:
+      R0bro:
+        - bugfix: "Fixed ambient sound loops not playing in powered areas that have no apc."
+  98295:
+    repo: "tgstation/tgstation"
+    title: "Fixes recursive_jsonify runtiming on empty data lists"
+    changes:
+      vinylspiders:
+        - bugfix: "fixed a runtime when a cyborg or AI joined the round"
+  98307:
+    repo: "tgstation/tgstation"
+    title: "Fix crew manifest command chevron and security records FA icons"
+    changes:
+      Phantastic-Swan:
+        - bugfix: "fixes crew manifest not showing the command chevron"
+        - bugfix: "fixes security records console not displaying job icons"
+  97947:
+    repo: "tgstation/tgstation"
+    title: "Adds rich cargo stock, a stock based cargo soup."
+    changes:
+      ArcaneMusic:
+        - rscadd: "Chefs may now craft a new soup, Rich Cargo Stock! Remember to wait for the stock block to turn liquid."
+  98266:
+    repo: "tgstation/tgstation"
+    title: "Adds status effect related emotes"
+    changes:
+      MrMelbert:
+        - tweak: "Adds *stammer / *stutter and *slur emotes, which causes your next few messages to be stuttered (as if hurt) or slurred (as if drunk). You can optionally type *[emote] [number] to determine how long you want the effect to last in seconds (it's capped, don't try it)."
+        - tweak: "Adds *jitter, which causes you to start jittering (where your sprite starts to twitch back and forth). You can optionally type *jitter [number] to determine how long you want the jitter to last in seconds (it's capped, don't try it)."
+  98244:
+    repo: "tgstation/tgstation"
+    title: "Tweaks hijack, changeling, and spy objectives"
+    changes:
+      MrMelbert:
+        - rscdel: "Traitor, Blood Brother, Spy, and Changeling can no longer hijack the emergency shuttle unless they either have an objective to hijack, or they set custom objective."
+        - rscdel: "Heretic can no longer hijack unless they ascend, or set a custom objective."
+        - balance: "The chance of rolling hijack for Traitor, Blood Brother, and Spy have gone up slightly."
+        - balance: "Changelings can now rarely roll hijack."
+        - tweak: "Spies objectives have been touched up in general, making less nonsensical combinations."
+  98215:
+    repo: "tgstation/tgstation"
+    title: "fix of virtual typing indicator"
+    changes:
+      headband0536:
+        - bugfix: "fixed virtual typing indicator"
+  98306:
+    repo: "tgstation/tgstation"
+    title: "Removes some hidden floor lights from Meta"
+    changes:
+      Thunder12345:
+        - map: "Metastation: Some floor lights that were hidden behind chairs have been moved to the wall."
+  98290:
+    repo: "tgstation/tgstation"
+    title: "Fixes Hot Potatoes saying they won't attach to non-sapients and crit mobs but attaching to them anyway"
+    changes:
+      PapaMichae1:
+        - bugfix: "You can no longer pawn off your hot potato on a monkey or a crit person"
+  98180:
+    repo: "tgstation/tgstation"
+    title: "Radiation shields store collected tritium internally, outputting via pipe"
+    changes:
+      MrMelbert:
+        - tweak: "Radiation shields store collected tritium internally, which can be removed via an attached pipe. Note the internal storage is not infinite, and has a pressure limit - surpassing it will cause the tritium to leak into the air."
+        - tweak: "Emergency radiation shields now also generate tritium over time (which is also stored internally)"
+  98293:
+    repo: "tgstation/tgstation"
+    title: "Fix tgui prompts with sequential prompts bugging out if you click/enter too fast"
+    changes:
+      vinylspiders:
+        - bugfix: "fixes an issue where tgui inputs that open another of the same interface (such as Jump To Coordinate) tgui input would just cancel and close if you select an option too quickly."
+  98197:
+    repo: "tgstation/tgstation"
+    title: "Vagueposts about potential roundstart manifest in pregame lobby"
+    changes:
+      MrMelbert:
+        - rscadd: "Pre-game lobby shows a rough estimate of what the crew manifest may look like"
+  98310:
+    repo: "tgstation/tgstation"
+    title: "fix big manipulators trying to interact with underfloor pipes"
+    changes:
+      Absolucy:
+        - bugfix: "Fixed big manipulators trying to interact with underfloor pipes."
+  98269:
+    repo: "tgstation/tgstation"
+    title: "(MERGE READY) Bug Fix: Heterochromia Selection & Spawn Fix"
+    changes:
+      MysteryMan21333:
+        - bugfix: "Fixs the Heterochromia Quirk, allows adjustment of color and now spawns in properly."
+  98296:
+    repo: "tgstation/tgstation"
+    title: "Sound tokens follow whoever is carrying them and resume at the right spot"
+    changes:
+      AitorLogedo:
+        - bugfix: "Boomboxes, chainsaws and other looping sounds follow whoever is carrying them, and long sounds pick up where they should when you walk back into range instead of going silent."
+  98288:
+    repo: "tgstation/tgstation"
+    title: "Junkdrawer of misc fixes"
+    changes:
+      vinylspiders:
+        - bugfix: "blood-drunk no longer leaves permanent stamina resistance and increased pressure damage after wearing off"
+        - bugfix: "zombie stun resistance works again"
+        - bugfix: "brute resistance and weakness are no longer applied twice to pressure damage"
+        - bugfix: "interrupting a garden gnome's burrowing no longer permanently increases the damage it takes"
+        - bugfix: "removing a roach heart from a nonhuman no longer grants free knockdown resistance"
+        - bugfix: "healing animals now updates their health immediately"
+        - bugfix: "brute and burn resistances and weaknesses now apply in full to damage spread across the whole body, such as pressure damage"
+  98286:
+    repo: "tgstation/tgstation"
+    title: "Fixes a loadout atom skin oversight"
+    changes:
+      vinylspiders:
+        - bugfix: "fixed loadout styles that change an item's name failing to apply when you spawn."
+  98040:
+    repo: "tgstation/tgstation"
+    title: "Feast of owls heretics don't lose blade break, slight tweaks to aura"
+    changes:
+      MrMelbert:
+        - balance: "Feast of Owls heretics don't lose blade break, nor gain unlimited blades, after a certain knowledge threshold"
+        - balance: "Heretic armor no longer hides aura."
+        - balance: "Lock Heretics have changed slightly - you do gain an aura now, but it ONLY reveals itself while wearing your robes, and doesn't glow in the dark."
+        - bugfix: "Losing blade break no longer removes cloak of shadow (since it's no longer an innate spell)"
+  98302:
+    repo: "tgstation/tgstation"
+    title: "Fix getting deafened during TTS permanently muting all game sounds"
+    changes:
+      sohpeach:
+        - bugfix: "Being deafened while a TTS line is about to play no longer mutes all game sounds until you reopen the game."
+  98299:
+    repo: "tgstation/tgstation"
+    title: "Fix charges and transit tubes going instant late in a round"
+    changes:
+      sohpeach:
+        - bugfix: "Mob charges and transit tubes no longer become instant when a round has been going for a few hours."
+  98272:
+    repo: "tgstation/tgstation"
+    title: "\"Lumen Mendax\", reworks the Ash Heretic lantern."
+    changes:
+      EnterTheJake:
+        - balance: "Burning lantern has been reworked into the Lumen Mendax"
+        - balance: "Lumen Mendax consumes firestacks on the Heretic to gain power, at max charges it can unleash a blast that blinds heathens and makes them hallucinate, while triggering the Ash recharge mechanic."
+        - image: "New sprite for the Lumen Mendax"
+  98316:
+    repo: "tgstation/tgstation"
+    title: "Fixes parrying someone else's projectile using the boost multipliers"
+    changes:
+      vinylspiders:
+        - bugfix: "parrying someone else's projectile now uses the parry multipliers instead of the self-boost ones, so parried shots hit a bit softer than before"
+  98318:
+    repo: "tgstation/tgstation"
+    title: "Fixes new tgui windows closing themselves while they load on people with slow PCs or connections"
+    changes:
+      vinylspiders:
+        - bugfix: "tgui windows that take more than 4 seconds to load the first time no longer close themselves"
+  98226:
+    repo: "tgstation/tgstation"
+    title: "Borg eyes glow"
+    changes:
+      Co0kie-GG:
+        - rscadd: "Added the glow of Borg eyes and the ability to turn them off"
+        - bugfix: "Borg eyes are displayed correctly when switching between z-levels."
+  98205:
+    repo: "tgstation/tgstation"
+    title: "Modular Plaques +Loadout item"
+    changes:
+      JohnFulpWillard:
+        - rscadd: "Plaques are now more customizable, and in the loadout menu."
+  98257:
+    repo: "tgstation/tgstation"
+    title: "Adds a flash to the captain's locker"
+    changes:
+      ATH1909:
+        - balance: "Added a flash to the captain's locker for consistency with the other heads of staff."
+  98330:
+    repo: "tgstation/tgstation"
+    title: "Fix regular input for disabled `Input: Enable TGUI`"
+    changes:
+      FeudeyTF:
+        - bugfix: "fixed 'Input: Enable TGUI' option for text inputs"
+  98351:
+    repo: "tgstation/tgstation"
+    title: "Fixes overflayer plane decoding issue"
+    changes:
+      vinylspiders:
+        - admin: "overflayer once again shows the base plane and offset for unregistered planes it can decode."
+  98303:
+    repo: "tgstation/tgstation"
+    title: "Fix embed self removal message"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix chat message when removing embedded objects from yourself"
+  98291:
+    repo: "tgstation/tgstation"
+    title: "Makes Different Colored Loadout Items Into Skins"
+    changes:
+      MacaroniCritter:
+        - tweak: "The loadout menu now relies on skins to select different colors of the fedora, cowboy boots, and soft cap"
+  98334:
+    repo: "tgstation/tgstation"
+    title: "Fix headrev codewords"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes head revolutionary not getting codewords"
+  98335:
+    repo: "tgstation/tgstation"
+    title: "Fix ceruleans bricking shoes they pick up (+ small rendering cleanup)"
+    changes:
+      MrMelbert:
+        - bugfix: "Ceruleans picking up special shoes (like noslips) no longer permanently breaks the shoes"
+        - code_imp: "Cleaned up clothing rendering very slightly, particularly relating to inhand sprites, report anything weird with it"
+        - code_imp: "Cleaned up Cerulean shoe code, report anything weird with it"
+  98332:
+    repo: "tgstation/tgstation"
+    title: "Fix some forms of zombification being incurable"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix some forms of zombification being uncurable"
+  98337:
+    repo: "tgstation/tgstation"
+    title: "Fix Crimson Cleaver Curse being droppable in late stages"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix Crimson Cleaver Curse being droppable in late stages"
+  98341:
+    repo: "tgstation/tgstation"
+    title: "Fixes potential manifest not updating when someone unreadies"
+    changes:
+      vinylspiders:
+        - bugfix: "the potential manifest in the pre-game lobby updates when someone unreadies."
+  98331:
+    repo: "tgstation/tgstation"
+    title: "Fix airborne disease spread being broken for 2 years"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes airborne disease spread. Sneezing, coughing, and breathing will now spread diseases if you are UNMASKED, rather than if you are masked."
+  98349:
+    repo: "tgstation/tgstation"
+    title: "Fixes basic night vision doing nothing"
+    changes:
+      PapaMichae1:
+        - bugfix: "Basic night vision (like from the genetics mutation) works again"
+  98353:
+    repo: "tgstation/tgstation"
+    title: "Speeeds up the crafting menu by 40-80% (probably) by building crafting recipe data as an asset"
+    changes:
+      MrMelbert:
+        - code_imp: "The crafting menu is a decent bit faster now, but report anything weird with it"
+  98344:
+    repo: "tgstation/tgstation"
+    title: "Unsecured welders say so on examine and tell you to screw the tank shut"
+    changes:
+      vinylspiders:
+        - tweak: "examining an unsecured welder now tells you its fuel tank is open and can be screwed shut, and trying to light one tells you to screw the tank shut first."
+  98323:
+    repo: "tgstation/tgstation"
+    title: "Fixes an edge-case where BT decorators would not correctly abort during their first tick"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Fixes edge-case where AI could get stuck in behaviors (due to decorators not aborting correctly)"
+  98339:
+    repo: "tgstation/tgstation"
+    title: "Fixes some doafter issues"
+    changes:
+      MrMelbert:
+        - bugfix: "Stealthy actions (like spy stealing's cog icon) are hidden again"
+        - bugfix: "(Should) fix issues where progress bars flash red or flash complete at inappropriate times"
+        - bugfix: "Fixes ninja draining power directly from a cell only working if they fail to drain power"
+        - code_imp: "Cleaned up cancel interactions hotkey to be less jank, report anything weird"
+  98340:
+    repo: "tgstation/tgstation"
+    title: "Fixes cameras breaking if they try to look through a glass at the bottom zlevel"
+    changes:
+      vinylspiders:
+        - bugfix: "camera coverage no longer breaks when looking down through glass at the bottom of a multilevel area"
+  98336:
+    repo: "tgstation/tgstation"
+    title: "Fix traitors not getting hijack objectives for 3 years"
+    changes:
+      MrMelbert:
+        - bugfix: "Traitors can actually get hijack objectives"
+  98333:
+    repo: "tgstation/tgstation"
+    title: "Fix latejoin revolution never gaining new headrevs"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix latejoin revolution never gaining new headrevs"
+  98338:
+    repo: "tgstation/tgstation"
+    title: "Fix changeling darkness/void adaptation *buffing* chem regen, instead of nerfing it"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix changeling void adaptation and darkness adaptation speeding up chemical regen, rather than slowing it down"
+  98256:
+    repo: "tgstation/tgstation"
+    title: "Energy Projectiles: Pulse/Shotgun Pulse, X-Ray and Smoothbore Disabler"
+    changes:
+      necromanceranne:
+        - balance: "Pulse projectiles now have high armor penetration. They also move extremely quickly."
+        - balance: "Pulse slugs do 40 damage and have an AP of 30."
+        - balance: "X-ray lasers now do 20 damage instead of 15."
+        - balance: "Smoothbore disablers no longer are inaccurate, and do 45 damage and move twice as fast. They still struggle to harm anything with armor."
