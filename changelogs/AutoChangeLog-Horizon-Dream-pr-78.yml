@@ -1,0 +1,363 @@
+# PR: horizon-dev-team/Horizon-Dream/78
+/TG/Station:
+  98289:
+    repo: "tgstation/tgstation"
+    title: "Using the `Create Black Market Item` verb now lets you sell a marked object."
+    changes:
+      ArcaneMusic:
+        - admin: "Admins may now use the \"create black market item\" verb to sell a marked object on the black market."
+  98371:
+    repo: "tgstation/tgstation"
+    title: "Fix (most) cut ai wire helper not doing anything"
+    changes:
+      MrMelbert:
+        - bugfix: "Pirate, syndicate, and whiteship shuttles - among some other places - now properly spawn with their AI interaction wires cut on their APCs and Airlocks, preventing the AI and Cyborgs for messing with them unless mended."
+  98380:
+    repo: "tgstation/tgstation"
+    title: "Fixes it being impossible to give items with g"
+    changes:
+      PapaMichae1:
+        - bugfix: "You can once again give items with the keybind"
+  98362:
+    repo: "tgstation/tgstation"
+    title: "Fix riot armor using brown mesh"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix riot armor using brown mesh (now black, matching the armor)"
+  98368:
+    repo: "tgstation/tgstation"
+    title: "Fixes most form of smoke not imparting negative effects"
+    changes:
+      MrMelbert:
+        - bugfix: "Smoke from things like smoke grenades or the chaplain's smoke spell once again have a negative effect when exposed to it (coughing, minor oxygen damage, dropping items)"
+  98372:
+    repo: "tgstation/tgstation"
+    title: "Batch Fix Of Dullahan Issues"
+    changes:
+      san7890:
+        - bugfix: "Halloweeners rejoice, some ancient Dullahan bugs have been patched. This includes their speech, how they interact as a changeling, and how they percieve the world."
+  98377:
+    repo: "tgstation/tgstation"
+    title: "Fix modsuit deploy"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix modsuit deploy canceling from movement"
+  98389:
+    repo: "tgstation/tgstation"
+    title: "Fixes sleeping proc in lobstrocity charge"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed a sleeping proc in lobstrocity charge"
+  98322:
+    repo: "tgstation/tgstation"
+    title: "Fix gas amounts when deconstructing/merging pressure tanks"
+    changes:
+      sohpeach:
+        - bugfix: "Pressure tanks now keep the correct amount of gas when deconstructed or merged into groups"
+  98384:
+    repo: "tgstation/tgstation"
+    title: "Adds air alarm pinpointing to gas analyzer"
+    changes:
+      cacogen:
+        - rscadd: "Added the ability to alt right-click the gas analyzer to get it to point to the nearest air alarm in the current area."
+        - tweak: "Added on mouseover hotkey hints to the multitool and the gas analyzer"
+  98374:
+    repo: "tgstation/tgstation"
+    title: "Fixes some camera network shenanigans"
+    changes:
+      MrMelbert:
+        - bugfix: "An EMP hitting a camera no longer permanently detaches it from all networks (just temporarily)"
+        - bugfix: "AIs using \"Jump to Network\" no longer permanently detaches cameras from some networks"
+        - tweak: "Updated \"Jump to Network\" slightly, showing more networks that may be useful to you."
+  98370:
+    repo: "tgstation/tgstation"
+    title: "Fix faux nightshift lighting lasting forever"
+    changes:
+      MrMelbert:
+        - bugfix: "Night lighting actually goes away when it ends"
+  98345:
+    repo: "tgstation/tgstation"
+    title: "The lightening: minor fix for lighting overlay hard deletes"
+    changes:
+      vinylspiders:
+        - bugfix: "switched off lights no longer count as light for shadow walking and other darkness checks, and lights that move around count where they actually are"
+  98385:
+    repo: "tgstation/tgstation"
+    title: "Vendors accept returned items over their product cap again"
+    changes:
+      MrMelbert:
+        - tweak: "Vendors accept returned items over their product cap again"
+  98383:
+    repo: "tgstation/tgstation"
+    title: "Adds hotkeys to portable air scrubber and portable air pump"
+    changes:
+      cacogen:
+        - tweak: "Adds hotkeys to the portable air scrubber and portable air pump. These allow you to toggle them on/off, remove their holding tanks and in the case of the air pump maximise its output pressure."
+  98031:
+    repo: "tgstation/tgstation"
+    title: "Changes rat infusion into mouse infusion"
+    changes:
+      desertmote:
+        - rscadd: "Changes the rat infusion into a mouse infusion, updating its appearance flavor and adding two visual organs"
+        - image: "Adds mouse ears and a mouse tail sprite, the latter can wag"
+        - code_imp: "Inner-ear rendering for cat ears uses a list for layer rendering instead of one specific layer"
+  98403:
+    repo: "tgstation/tgstation"
+    title: "[MDB Ignore] Saves an unknown amount of time by not making all food items report when someone steps over them solely for chip bags"
+    changes:
+      MrMelbert:
+        - code_imp: "Cleaned up chip bag pop code - report anything weird with that extremely niche thing I guess"
+  98399:
+    repo: "tgstation/tgstation"
+    title: "Adds a balloon warning when ventcrawling into pipes that arn't room temperature."
+    changes:
+      moocowswag:
+        - tweak: "Ventcrawling critters will now be able to tell if the vent they are entering is uncomfortable temperature."
+  98400:
+    repo: "tgstation/tgstation"
+    title: "Gives blood worm hatchlings `SEE_MOBS` while ventcrawling"
+    changes:
+      PapaMichae1:
+        - balance: "Blood worm hatchlings can see mobs while ventcrawling"
+  98189:
+    repo: "tgstation/tgstation"
+    title: "Lets you hit naval cannon shells and 40mm grenade shells with a claw hammer to detonate them"
+    changes:
+      CabinetOnFire:
+        - rscadd: "You can now use a claw hammer to detonate 40mm and naval cannon shells. You can also do this to someone holding one by targeting their mouth on non-combat mode."
+  98369:
+    repo: "tgstation/tgstation"
+    title: "Makes pride pins name after their skin"
+    changes:
+      cacogen:
+        - tweak: "Pride pins are now named after their skin instead of just generic \"pride pin\""
+  98022:
+    repo: "tgstation/tgstation"
+    title: "Make tirizene prevent stamina regen"
+    changes:
+      thegrb93:
+        - balance: "Tirizene prevents stamina regen"
+  98395:
+    repo: "tgstation/tgstation"
+    title: "Adds The Fundamental Viewcheck to Telekinetic Users"
+    changes:
+      san7890:
+        - balance: "Telekinetic users can no longer open up a UI on a given object, allow it to exit their site, and be able to edit it unceasingly."
+  98390:
+    repo: "tgstation/tgstation"
+    title: "Fixes a harddel in goliath tentacle code"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixed a harddel in goliath tentacle code"
+  97033:
+    repo: "tgstation/tgstation"
+    title: "Wounds for robotic limbs (ported from bubberstation and recoded)"
+    changes:
+      Fghj240:
+        - rscadd: "Added burn and blunt wounds for robotic bodyparts"
+        - rscadd: "Added a new reagent, a coolant for robotic burns."
+        - map: "Added chilled coolant spray (for robotic burn wounds) to robotics"
+        - code_imp: "removed magic strings from bone repair surgery required states text"
+  98402:
+    repo: "tgstation/tgstation"
+    title: "Speeds up vent processing by like 15% maybe"
+    changes:
+      MrMelbert:
+        - code_imp: "Vents should perform better, note any issues with vents (especially when overclocked)"
+  98415:
+    repo: "tgstation/tgstation"
+    title: "File manager now reads canvas/photo type path from global list"
+    changes:
+      sohpeach:
+        - bugfix: "ntos file manager can no longer be used to print carp plushies (and similar things)"
+  98405:
+    repo: "tgstation/tgstation"
+    title: "Speeds up heat pipes by like 10%ish maybe by not checking for buckled mobs every process tick"
+    changes:
+      MrMelbert:
+        - code_imp: "Cleaned up code for mobs being burned while tied to heat exhange pipes. Report anything weird if it doesn't work the next time you get the opportunity to try it in like 8 months"
+  98434:
+    repo: "tgstation/tgstation"
+    title: "[s] Datum instantiation in lua scripts respects admin proc call protection"
+    changes:
+      Y0SH1M4S73R:
+        - admin: "datum instantiation from lua scripts can no longer be used to bypass admin proc call protections"
+  98419:
+    repo: "tgstation/tgstation"
+    title: "Fixes duplicate EMP define"
+    changes:
+      PapaMichae1:
+        - bugfix: "EMP protection works more robustly"
+  98301:
+    repo: "tgstation/tgstation"
+    title: "3 positive quirks / some minor quirk changes"
+    changes:
+      MrMelbert:
+        - balance: "\"Throwing Arm\" quirk cost reduced (7 -> 5)"
+        - balance: "Reduced chance of obtaining several quirk's related mail items moderately, with the exception of the Gamer quirk (which is now twice as likely, intead)"
+        - rscadd: "Added quirk \"Eccentric Correspondent\", which adds more randomness to your mail item pool"
+        - rscadd: "Added quirk \"Well Connected\", which offers discounts on cargo or black market orders."
+        - rscadd: "Added quirk \"Shock Reflex\", which reduces the chance of being shocked when failing hacks or the like."
+        - rscdel: "Removed organ transport box from mail pool of Prosthetic Organ and Tin Man quirks"
+  98352:
+    repo: "tgstation/tgstation"
+    title: "The sledgehammer, telescreens beware"
+    changes:
+      headband0536:
+        - rscadd: "Throwable sledgehammer"
+        - rscadd: "Telescreens and status displays are now breakable"
+        - image: "Sledgehammer sprites by Simpleton"
+  98437:
+    repo: "tgstation/tgstation"
+    title: "Fixes organic limbs getting robotic wounds"
+    changes:
+      The-Tyrant:
+        - bugfix: "Organic limbs can no longer get T1 robotic blunt wounds (loosened screws)"
+  98435:
+    repo: "tgstation/tgstation"
+    title: "Fixes upgraded limb grower printing"
+    changes:
+      Maia-J:
+        - bugfix: "Limb growers no longer prevent printing when they have been upgraded and have enough reagents if they wouldn't have had enough reagents were they not upgraded."
+  98439:
+    repo: "tgstation/tgstation"
+    title: "Fix missing ooc button"
+    changes:
+      thegrb93:
+        - bugfix: "ooc chat button missing from ooc tab"
+  98431:
+    repo: "tgstation/tgstation"
+    title: "Fixes changeling transformation and experimental cloners not copying TTS pitch"
+    changes:
+      PapaMichae1:
+        - bugfix: "Changeling transformations and experimental cloners now properly copy the TTS pitch of the target"
+  98446:
+    repo: "tgstation/tgstation"
+    title: "Telekinesis Viewcheck Amendment: `sight` variable and other relevant things"
+    changes:
+      san7890:
+        - bugfix: "Telekinetic users should be able to use UIs even when inside machinery, as long as their client is expected to be able to have it in their sight (in one way or another)."
+  98441:
+    repo: "tgstation/tgstation"
+    title: "Doubles the speed of `update_held_items` theoretically"
+    changes:
+      MrMelbert:
+        - code_imp: "Cleaned up code for updating your hand UI slots, report anything weird with that"
+        - code_imp: "Cleaned up code for updating your sprite with your held items, report anything weird with that"
+  98442:
+    repo: "tgstation/tgstation"
+    title: "Saves maybe 5% (very generous) on living move by short circuiting reachable check"
+    changes:
+      MrMelbert:
+        - code_imp: "Cleaned up code pertaining to closing storage items you can't reach, report if you are able to reach things you probably shouldn't be able to"
+  98447:
+    repo: "tgstation/tgstation"
+    title: "Fixes MULEbot auto-return not being toggleable"
+    changes:
+      PapaMichae1:
+        - bugfix: "MULEbots' autoreturn toggle now works"
+  98361:
+    repo: "tgstation/tgstation"
+    title: "Supermatter healing emitter beams have diminishing returns, but are (immediately) stronger"
+    changes:
+      MrMelbert:
+        - balance: "Electrodisruptive emitter beams heal the SM considerably more per hit, but begin to experience diminishing returns after a number of hits, resetting after not being hit with a healing emitter for some time."
+  98298:
+    repo: "tgstation/tgstation"
+    title: "Large painting frame craft recipe"
+    changes:
+      thegrb93:
+        - bugfix: "Missing large painting frame craft recipe added"
+  98422:
+    repo: "tgstation/tgstation"
+    title: "Mutated regen bugfix"
+    changes:
+      Fghj240:
+        - bugfix: "fixed mutated regeneration threshold text"
+        - spellcheck: "mutated regeneration fluff text changes to \"quickly\" instead of \"slowly\" if you stack it high enough"
+  98445:
+    repo: "tgstation/tgstation"
+    title: "Cargo Dumpsters now spawn morgue corpses instead of fully intact human ones. Decreases cost to compete with recovered corpse."
+    changes:
+      btcbuster:
+        - rscadd: "Putrid dumpsters that spawn corpses now spawn morgue corpses instead of an intact human corpse, leading to other species and damage on the corpses. Cost decreased."
+  98242:
+    repo: "tgstation/tgstation"
+    title: "crew silicons get stunned from one flash again (syndie borgs  remain the same)"
+    changes:
+      uaioy:
+        - balance: "silicons take 1 flash to be stunned again (syndie borgs unchanged)"
+  98128:
+    repo: "tgstation/tgstation"
+    title: "Tweals dynamic midround chances"
+    changes:
+      MrMelbert:
+        - bugfix: "Dynamic has a significantly higher chance of spawning antags if there are no antags alive"
+        - bugfix: "Dynamic no longer counts dead people as alive for the purpose of antag spawn chance"
+        - tweak: "Dynamic math changed slightly. Fewer antags are spawned if a significant amount of the crew is dead, and observers who were never part of the crew no longer reduce the chance of spawning antags."
+        - tweak: "Dynamic rulesets that a require ghosts cannot be picked if there are no ghosts. This means midround rulesets like Traitors / Mass Traitors will be significantly more common when there are no observers."
+  98425:
+    repo: "tgstation/tgstation"
+    title: "Kitchen soundpack part 2"
+    changes:
+      grungussuss:
+        - sound: "added new handling sfx to bowls, fruits, vegetables, rags, griddles."
+  98440:
+    repo: "tgstation/tgstation"
+    title: "Knock works on safes and briefcases"
+    changes:
+      MrMelbert:
+        - balance: "The Knock spell will open safes and briefcases"
+  98456:
+    repo: "tgstation/tgstation"
+    title: "Fixes the sec locker in the Kilostation Sci Sec outpost being an engineering sec locker instead of a sci sec locker"
+    changes:
+      PapaMichae1:
+        - bugfix: "The Kilostation Sci Security outpost now has a security science locker"
+  98354:
+    repo: "tgstation/tgstation"
+    title: "Removes excess filters from all SM setups, standardizes them a bit well"
+    changes:
+      MrMelbert:
+        - map: "Removed excess waste filters from the Supermatter Engine across all maps"
+        - map: "Standardizes waste output of the Supermatter Engine across all maps"
+  98461:
+    repo: "tgstation/tgstation"
+    title: "Fix crawl sounds being played while fireman carrying"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix crawl/drag sounds being played while fireman carrying"
+  98452:
+    repo: "tgstation/tgstation"
+    title: "Fix unlinked stacking machines"
+    changes:
+      FalloutFalcon:
+        - bugfix: "Stacking machines not linked to a silo works"
+  98449:
+    repo: "tgstation/tgstation"
+    title: "Don't recreate every overlay for every clock, every second (half of `mutable_appearance` time)"
+    changes:
+      MrMelbert:
+        - bugfix: "Digital clocks should report more accurate times in the hours position (before, it mirrored one of the minute's times)"
+        - code_imp: "Cleaned up digital clock code a bit, report if they seem to be reporting weird numbers"
+  98235:
+    repo: "tgstation/tgstation"
+    title: "[READY] Nutimov: Selfish edition"
+    changes:
+      Pumpkinoe:
+        - balance: "Nutimov is slightly more dangerous to use now, if you don't treat the AI right"
+  98430:
+    repo: "tgstation/tgstation"
+    title: "Nerfs monke AI"
+    changes:
+      CabinetOnFire:
+        - balance: "Monkeys are less tough to fight"
+        - bugfix: "Monkeys stop throwing things through (solid) windows"
+        - bugfix: "fixes inversion that made tamed monkeys steal shit instead of untamed ones"
+  98465:
+    repo: "tgstation/tgstation"
+    title: "Fixes a bug in gibber examine text"
+    changes:
+      Fghj240:
+        - spellcheck: "corrected gibber meat production examine text"
+        - code_imp: "improved gibber code formatting"
