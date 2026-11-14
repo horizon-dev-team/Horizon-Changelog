@@ -1,0 +1,13 @@
+# PR: horizon-dev-team/Horizon-Dream/76
+Horizon =][=:
+  76:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "FIX: OOC prefix outline and Remove Byond Member"
+    body: |
+      ## Описание изменений
+      Удаляет настройки и иконку Byond Member отображаемую в чате
+      Правит двойную обводку префикса сообщения в чате OOC
+    changes:
+      KOCMODECAHTHUK:
+        - rscdel: "Настройки Byond Member, и иконка в чате"
+        - bugfix: "Двойная обводка префикса OOC в чате"
