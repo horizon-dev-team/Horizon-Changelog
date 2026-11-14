@@ -57,5 +57,27 @@
         "text": "Более корректные полоски иконки холода и частей тела"
       }
     ]
+  },
+  {
+    "date": "2026-11-14",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "76",
+    "title": "FIX: OOC prefix outline and Remove Byond Member",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nУдаляет настройки и иконку Byond Member отображаемую в чате\nПравит двойную обводку префикса сообщения в чате OOC\n",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "Настройки Byond Member, и иконка в чате"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Двойная обводка префикса OOC в чате"
+      }
+    ]
   }
 ]
