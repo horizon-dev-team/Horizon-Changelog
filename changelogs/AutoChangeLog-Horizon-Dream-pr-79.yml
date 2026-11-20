@@ -1,0 +1,20 @@
+# PR: horizon-dev-team/Horizon-Dream/79
+Horizon =][=:
+  79:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "TWEAK: New theme Sunset, and add alpha HUD"
+    body: |
+      ## Описание изменений
+      Добавляет новую красную тему в главное меню, и в HUD игрока.
+      Правит текущие темы HUD игрока, добавляя в них прозрачность. 
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Новая тема от @lolkenator3k, и мои правки прозрачности текущих тем.
+      
+      ## Демонстрация изменений / Тестирование
+      <img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/63d363da-e61a-496e-add8-9b1e73be954c" />
+      <img width="2538" height="420" alt="image" src="https://github.com/user-attachments/assets/a9012a94-1364-42a7-9d1c-d69ee31819be" />
+    changes:
+      lolkenator3k, KOCMODECAHTHUK:
+        - rscadd: "Тема Sunset - меню и HUD"
+        - image: "Новые HUD, правки текущих добавлена прозрачность HUD"
