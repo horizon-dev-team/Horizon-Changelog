@@ -1243,5 +1243,27 @@
         "text": "Определения стен и минералов перенесены в _horizon, добавлен SMOOTH_CONNECTOR"
       }
     ]
+  },
+  {
+    "date": "2026-11-20",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "79",
+    "title": "TWEAK: New theme Sunset, and add alpha HUD",
+    "author": "lolkenator3k, KOCMODECAHTHUK",
+    "body": "## Описание изменений\nДобавляет новую красную тему в главное меню, и в HUD игрока.\nПравит текущие темы HUD игрока, добавляя в них прозрачность. \n\n## Причина создания ПР / Почему это хорошо для игры\nНовая тема от @lolkenator3k, и мои правки прозрачности текущих тем.\n\n## Демонстрация изменений / Тестирование\n<img width=\"2560\" height=\"1440\" alt=\"image\" src=\"https://github.com/user-attachments/assets/63d363da-e61a-496e-add8-9b1e73be954c\" />\n<img width=\"2538\" height=\"420\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a9012a94-1364-42a7-9d1c-d69ee31819be\" />\n",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Тема Sunset - меню и HUD"
+      },
+      {
+        "type": "image",
+        "class": "image",
+        "text": "Новые HUD, правки текущих добавлена прозрачность HUD"
+      }
+    ]
   }
 ]
