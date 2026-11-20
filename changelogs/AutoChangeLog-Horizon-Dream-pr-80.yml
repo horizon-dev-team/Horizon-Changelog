@@ -1,0 +1,19 @@
+# PR: horizon-dev-team/Horizon-Dream/80
+Horizon =][=:
+  80:
+    repo: "horizon-dev-team/Horizon-Dream"
+    title: "TWEAK: Mental and Health Status better view"
+    body: |
+      ## Описание изменений
+      Улучшает читаемость показателей здоровья и ментального статуса, сортирую все в них в более читаемою таблицу.
+      Добавляет индикацию цвета полученного урона в здоровье.
+      
+      ## Причина создания ПР / Почему это хорошо для игры
+      Упрощение и так не интуитивного интерфейса всегда к лучшему.
+      
+      ## Демонстрация изменений / Тестирование
+      <img width="320" height="163" alt="image" src="https://github.com/user-attachments/assets/5d83ba77-e274-4945-88ff-45a33bafefe9" />
+      <img width="400" height="133" alt="image" src="https://github.com/user-attachments/assets/d503c963-b470-4d63-9569-5e7e238a5f26" />
+    changes:
+      KOCMODECAHTHUK:
+        - tweak: "Информация в статусах здоровья и ментальном, при клике теперь показывается в более удобном виде."
