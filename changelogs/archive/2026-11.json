@@ -1329,5 +1329,1171 @@
         "text": "Обновлено сообщение при самоосмотре состояния."
       }
     ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98460",
+    "title": "Fix stamcrit / stamregen",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nFixes #98457\n\nSee issue for more info but the TL;DR is it was accidentally changed from \"reset if you take stamina damage, even if you're at stamina cap\" to \"reset if you take stamina damage, but not if you're at stamina cap\"",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Stamina damage is properly refreshed by taking more stamina damage - in other words. if you baton someone who is in stamcrit. it properly extends stamcrit."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98463",
+    "title": "Fix any item passing ID access through it",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nThe code to make wallets and such work, `equip_to_item_loc`, didn't really check at all what item the ID card was placed in\nAs a consequence, you could put an ID card in anything and hold it, and it'd work. Like you could even put an ID card inside a damn cake. \n\nI fixed it by adding a trait that says \"hey, let access through us it's chill\". added it to wallets and modular computers (don't know if anything off the top of my head needs it?). I also added it to cake because it made me laugh when I was typing this out",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes a bug where you could magically gain an ID card's accesses if the ID card was placed within literally anything (briefcases, backpacks, whatever) being held. A few items have kept this properly (obviously, wallets and PDAs... but a few other special items might have kept it too...)"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98464",
+    "title": "You can turn while buckled again",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nThis isn't as clean, but it's soul, so it's a compromise",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can turn while buckled again"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-14",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98432",
+    "title": "Insulated dead bodies cool down instead of staying hot forever",
+    "author": "AitorLogedo",
+    "body": "## About The Pull Request\n\nDead humans wearing anything that insulates against cold (sec gear, winter coats, etc) never cool down after burning.\n\n#78508 reported corpses never cooling down and #78572 fixed it in `/mob/living/carbon/handle_environment`, but humans override `handle_environment` without calling the parent and use the species temperature code instead, so that fix only ever worked for monkeys, aliens and other carbons. A naked human corpse still cools down on its own through the skin code, which is probably why it looked fixed.\n\nWith insulation it gets stuck: every tick the room takes some heat from the skin, then the core gives it right back because core to skin transfer is multiplied by `(1 + thermal_protection)` and capped at the difference. A dead core doesn't stabilize, so it never goes down and the body stays hot forever, taking heat damage the whole time until it husks.\n\nNow dead humans cool their skin and core towards the room temperature the same way #78572 does for other carbons, without insulation. Living mobs aren't touched.\n\n## Why It's Good For The Game\n\nA corpse in a vest shouldn't stay at 800K for 15 minutes and husk itself while medbay is trying to fix it.\n\n## Testing\n\nUnit test that burns humans with 2 fire stacks, ticks the fire and Life() by hand and resets the room air every tick:\n\n| | before | after |\n|---|---|---|\n| dead, security outfit, time under 340K after the fire is out | never, 831K after 15 minutes | 84 seconds |\n| dead, winter coat | never, 426K after 15 minutes | 78 seconds |\n| dead, naked | 74 seconds | 38 seconds |\n| dead security officer burned with 2 stacks, real damage | 600 burn, husked | 168 burn, not husked |\n| alive, any outfit | 46 to 94 seconds | same |",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Dead bodies wearing insulating clothes cool down after burning instead of staying hot and husking."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98469",
+    "title": "A plethora of faction fixes",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n- Deletes `faction_check`. Renamed `FAST_FACTION_CHECK` to `FACTION_CHECK`. \n   - Proc form was unused. \n\n- Fixes faction check always failing for exact matches. \n   - Exact checking required an ally check, which almost never passed, as most mobs are only allied to themselves. \n   - Now, allies *always* pass faction checks, even exact faction checks. \n   - Fixes #98360\n\n- Fixes monkey clearing factions\n   - Rather than always inherit the monkey cube's factions (which are often `null`), only inherit faction if set.\n\n- Fixes blood spiders having neutral faction\n   - Intended to be hostile to everyone.\n   \n- Fixes meteor heart having neutral faction\n   - Intended to be hostile to everyone.\n   \n- Fixes stabilized pink extract messing with faction instead of allies\n   - Should rely on allies alone.\n   \n- Fixes stickmen not inheriting the caster's factions and allies\n   - All the code did was remove neutral faction, which they already didn't have, so it'd immediately betray the caster.\n\n- Fixes toilet bong using faction instead of ally \n   - Remanent of pre-refactor\n   \n- Fixes vine immunity passing checked factions incorrectly\n   - Just missed a list definition\n   \n- Removes redundant ally additions from ringleader and greytide\n   - These just inherited faction/ally as a part of illusion setup, so they didn't need manual ally handling",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Drone chat works again."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Monkeys spawned from cubes no longer attack other monkeys."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "NPC flesh spiders attack randomly."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The meteor heart uses its abilities correctly."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Stabilized pink extracts correctly pacify nearby mobs."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Stickmen summoned from the paper mache robes don't attack the caster."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Rats spawned from toilet bongs are friendly as expected."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Killer tomatos and seedlings are immune to kudzu."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98468",
+    "title": "Fix tombstone shuttle unlock condition",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n`severity` is a string, so this comparison was not accomplishing what it was intending to accomplish\nThere's no severity level higher than biohazard, anyways. So no reason for this not to be `==`",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Tombstone emergency shuttle is properly only unlocked when a bubonic plague sweeps the station, rather than on any cold or flu"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98466",
+    "title": "Fixes \"Launch Turf Ordered\" and \"Launch Random Turf\" Supply Pod modes not working",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\nIgnore the lighting objects that each turf has so we actually find the occupied turf(s)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Supply Pod \"Launch Turf Ordered\" and \"Launch Random Turf\" modes now work again"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97312",
+    "title": "Implements baking navigational data into turf, and uses this for a DLL-based A* implementation (With Multi-Z support)",
+    "author": "CabinetOnFire",
+    "body": "## About The Pull Request\r\n\r\nPathfinding has always been a difficult thing to deal with in our game. In particular when it has to take in account things like directional windows (which makes traditional 1/0 checks less feasible), and conditional blockers (things with passability, doors with access, etc).\r\n\r\nTo combat this, this PR has two major changes:\r\n\r\nFirst of all, there is now a \"navmap\" subsystem, and each turf stores its passability on it (as much as it can) It keeps track of the following:\r\n\r\n- Whether its nav data is baked.\r\n- Whether the turf is simulated or unsimulated space.\r\n- Ground and flying passability for each horizontal direction.\r\n- Direct vertical passability for flying movers.\r\n- Which outgoing edges have conditional blockers.\r\n- The conditional blockers associated with each outgoing edge.\r\n\r\nConditional blockers are stored once and evaluated only when a path actually needs them. This avoids repeatedly scanning every atom on a turf during pathfinding. Mobs are never baked into the navmap; they remain live movement-time obstructions.\r\n\r\nThe navmap is maintained by SSnavmap. Dirty turfs and their relevant neighbors are queued for asynchronous rebaking. Changes to vertical neighbors also invalidate dependent openspace edges, so fallability changes do not leave stale navigation data behind.\r\n\r\nAutomatic dirtying is enabled for the station and mining z-levels. Other levels can be baked lazily or explicitly prebaked. Individual updates are sent to the native cache as needed, while full z-level prebakes are published in bulk.\r\n\r\nhttps://github.com/user-attachments/assets/eeddb38a-f0b6-4dfc-9834-711e16e76167\r\n\r\n\r\nSecondly, by default we now use a rust-g DLL (with a dm backup) to run through this pathfinding.\r\n\r\nThe native cache receives:\r\n- Packed turf passability data.\r\n- Bulk z-level updates.\r\n- Z-level topology and layer information.\r\n- Registered cross-z navigation links.\r\n- \r\nThe native A* implementation avoids BYOND calls for unconditional edges and only calls back into DM for conditional blockers or mover-dependent link checks. Native jobs can run synchronously or in resumable slices of roughly 5 ms.\r\n\r\nThere is also a native-compatible DM A* fallback. It is used automatically when the DLL is unavailable and can be forced for debugging. The fallback uses the same packed navmap data, live conditional checks, diagonal corner rules, simulated-turf handling, path limits, and movement costs as the native implementation.\r\n\r\nBoth implementations support:\r\n- Ground and flying movement.\r\n- Diagonal handling.\r\n- Maximum search distance.\r\n- Minimum target distance.\r\n- Avoided turfs.\r\n- Maximum total path cost.\r\n- Start-tile skipping.\r\n- Conditional pass flags and access checks.\r\n\r\nessentially the same as JPS (path cost is new tho)\r\n\r\nRepo for the DLL: https://github.com/CabinetOnFire/navmap-pathfinder\r\n\r\nI'll also give some more in-depth performance numbers once I can set up some test cases. but the difference is huge.\r\n\r\n<img width=\"512\" height=\"30\" alt=\"image\" src=\"https://github.com/user-attachments/assets/ab0aa517-e1c3-4778-87d9-0bed90750f63\" />\r\n\r\n**Multi-Z**\r\n\r\nalso added support for Multi-z pathfinding. To do this there is also a concept known as z-level topology, which tracks whether z-levels are connected.\r\n\r\nflying movers can use direct vertical edges when both turfs allow the appropriate zPassIn/zPassOut transition. Ground movers can use registered navigation links such as ladders and stairs\r\n\r\nNavigation links essentially are abstract connections between two turfs with a set of instructions how to move between those turfs. e.g. ladders will say \"I move you from this turf to the turf above, if you want to do it you need to interact with the ladder\"\r\n\r\nNavigation links have:\r\n- Source and destination turfs.\r\n- A traversal cost.\r\n- Live eligibility checks.\r\n- Native and DM fallback support.\r\n- Actual traversal callbacks, so pathfinding uses the same ladder or stair behavior as normal gameplay.\r\n\r\nUnreachable z-level groups are rejected before starting an expensive search\r\n\r\nSome additional fixes/changes\r\n - Navmap pathfinding can repath due to changing target now\r\n - Bots now respond more reliably to summons\r\n - Bot paths can now go further than 25 tiles\r\n\r\n## Why It's Good For The Game\r\n\r\nwe use a looot of server time on pathfinding, and we only really used it for bots. This should lower that by quite a bit.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Pathfinding now makes use of a more optimized rust-g A* algorithm"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Bots now should reliably be summonable"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98392",
+    "title": "Just kinda bumps up projectile priority to see what happens",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nFrom 25 to 90",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Projectiles should freeze less (more processing time has been allocated to them - so if something else starts to freeze feel free to file a report)"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98448",
+    "title": "Admin Internet music surpresses ambience",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nWhen a client is playing admin internet music, don't play ambience for it. \r\n\r\nAdds a pref toggle for this behavior\r\n\r\n## Why It's Good For The Game\r\n\r\nPicture this: you're a nuke op, assaulting the station in space, fighting security. The admin is playing a banger track, it's a very theatrical moment. And then suddenly title2.ogg starts playing over it. Your ears bleed. The moment is totally ruined.",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Ambient game tracks will no longer play over admin web music"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98471",
+    "title": "Fix voice never being set to records",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nIt just didn't pass it or set it",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Voice is properly passed to crew records"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98401",
+    "title": "You can forcibly put people's hands on hot griddles and stoves",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nMuch like you can dunk an aggressively grabbed mob's head into a deep fryer, you can now also force a mob you have aggressively grabbed to put their hand on an lit stove or hot griddle. It burns them.\n\n## Why It's Good For The Game\n\nA logical expansion to kitchen-appliance-fu in my eyes",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "If you have someone aggressively grabbed, you can click on a lit stove or hot griddle to place their hand onto it."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98407",
+    "title": "Optimize pressure damage calculation by only updating when equipment or bodyparts change (70% of our `get_bodypart` calls)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nCurrently ever life tick, we run `calculate_affecting_pressure` to see the effective pressure a mob is experiencing at that very moment\r\n\r\nThis proc checks worn equpiment to see if it protects from pressure damage. It also checks if the mob is missing limbs (as missing limbs don't need protection)\r\n\r\nUnsurprisingly checking all limbs and all equipment every life tick is a little wasteful. In fact this is responsible for like 70% of our remaining `get_bodypart` calls on its own\r\n\r\n<img width=\"610\" height=\"63\" alt=\"image\" src=\"https://github.com/user-attachments/assets/cd1ca2e2-0209-458e-bf52-c7dda8c3b05c\" />\r\n\r\nI made it state based. Adding and removing bodyparts adds or removes relevant flags, and equipping and unequipping items does as well (this is handled the same place obscuring is handled, since they're very very similar.) \r\n\r\nOnly other change I had to do was adding a proc for enabling / disabling item coverage, so we could react to it and update. That way if your firesuit is ripped it stops protecting you, or whatever.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Changed the code that determines if you're protected from pressure damage or not, report anything weird with your ghetto spacesuit setups (like if they suddenly stop working)"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-15",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98470",
+    "title": "Fix entering mob metabolism without a liver",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n`compute_metabolization`, despite the name, was impure and also handled *starting* metabolism.\nSo when we moved it to before the liverless check, we accidentally enabled chems to start metabolism -> return due to failing liver, which is quite bad.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can no longer start to metabolize chems without a liver"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98462",
+    "title": "Fix phisologies of 0 being treated as 1",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n0 = falsy moment. If only we had `??` (coming soon)",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes several mobs taking damage from damage types they are intended to be immune to"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98467",
+    "title": "fix(tgui): keep the chat panel websocket relay alive across forced reconnects",
+    "author": "scolastico",
+    "body": "## About The Pull Request\r\n\r\nIts basically just one fix for a small mistake: When a websocket connection is closed by the \"force reconnect\" button the tgui instantly writes the new connection to a variable, even tho a few ticks later because of that close the old connection's close event fires, causing the tgui to misinterpret it and close the new connection instead of just ignoring that close event.\r\n\r\nRelates to https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/pull/1395\r\n\r\n## Why It's Good For The Game\r\n\r\nFixes a bug.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Pressing \"Force Reconnect\" in the chat panel's websocket settings no longer breaks the websock"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98473",
+    "title": "Fixes some illusion issues",
+    "author": "Maia-J",
+    "body": "## About The Pull Request\n\nMirage grenades now spawn a mirage properly again. Illusions made by the greytide spear attack the externally set target. The new AI tree had to be made for this as otherwise they could sometimes retarget.\n\ncloses #96913\n\n## Why It's Good For The Game\n\nFixes bugs. Also, I swear mirages used to run around like mad and now they just stand there... out of scope for this but can anyone confirm this?",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Grey Tide spear illusions attack their target again."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Mirage grenades spawn mirages again."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98475",
+    "title": "You no longer lose ore when smelting it.",
+    "author": "btcbuster",
+    "body": "## About The Pull Request\n\nYou no longer lose ore by smelting it.\n\n## Why It's Good For The Game\n\nLets ashwalkers actually smelt the ore they mine with their welder, allows for cool atmospherics smelteries.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "You no longer lose ore when smelting it."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98483",
+    "title": "Fixes a runtime where missing wallet tries to run when there's no closets",
+    "author": "Xander3359",
+    "body": "## About The Pull Request\nFixes a runtime where missing wallet tries to run when there's no closets\n\n## Why It's Good For The Game\nThis runtime has personally offended me, thus, I squish da bug.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixed misplaced wallet runtiming on maps with no closets"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98404",
+    "title": "Tweaks bluespace interference slightly to make it less laggy",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\nInstead of bluespace interference simply appying `precision = rand(1, 100) * amount`, thus running `get_valid_teleport_turfs(range = 100)`, and *thus* checking upwards of 10,000 turfs for validity...\r\n\r\nWe instead just do some math to select a random turf within a `rand(1, 100) * amount` turf radius. If the random turf if valid, we go there. \r\n\r\nIn practice, nothing should have changed.",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Tweaked bluespace interference code slightly to make it less laggy, report any weird teleports you experience"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98480",
+    "title": "Fixes remainder of mech power issues",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nI realize #95540 only fixed weapons, not anything else\n\nThis means \n- Reticence, Gygax, Odysseus, Clarke, and Phazon were all using 10x less power than intended to walk\n- Several pieces of equipment (sleeper, syringe gun, beam gun, wormhole generator, teleporter, repair droid, punch face, paddy clamp) all used 10x less power than intended in use\n\nI also made the durand shield drain a bit more readable. No balance changes in this PR.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "The Reticence, Gygax, Clarke, Phazon, and Odysseus all mistakenly drained 10x less power to move than intended; this has been fixed"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Some mecha equipment (Mounted sleeper, syringe gun, beam gun, wormhole generator, teleporter, repair droid, punch-face, and paddy clamp) mistakenly drained 10x less power on usage than intended; this has been fixed"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98477",
+    "title": "Adds fox tails/ears as roundstart customization options for felinids",
+    "author": "Ben10Omintrix",
+    "body": "## About The Pull Request\r\n\r\nFox tail and ears are now roundstart cosmetic felinid options.  awesome fox tail sprites by @Imaginos16 . by the by im no expert in specie or organ code so id love some feedback on what im doing here. \r\n<img width=\"434\" height=\"434\" alt=\"image\" src=\"https://github.com/user-attachments/assets/8cea487c-fa41-4e1c-9b7e-19c68df80571\" />\r\n\r\n\r\n## Why It's Good For The Game\r\n\r\nAdds more felinid customization variety. I think fox features are distinct enough from our current selection (their big floof tails and large expressive ears) to justify them a spot on the list. Moths and lizards have an expansive roster of customization options, i think we could add onto felinids a bit to match them. i dont think theres any harm in expanding player choice and I believe fox features match the felinid aesthetic very well",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "fox tails and ears are now available as customization options for felinids."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "adds fox tails to fox infusion"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-16",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98486",
+    "title": "Fixes mulebots not making use of multi-z pathfinding",
+    "author": "CabinetOnFire",
+    "body": "## About The Pull Request\nI didnt pass the args right and didnt use em right",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "mulebots now use stairs and ladders wow"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98408",
+    "title": "Cyborgs indicate the selected tool instead of hiding it in omnitools",
+    "author": "thegrb93",
+    "body": "## About The Pull Request\nSurgical drapes have null tool_behavior, so the omni_tool's initial null tool_behavior prevents surgical drapes from showing up. Removing this behavior also makes it easier to memorize where the tools' positions are.\n\n## Why It's Good For The Game\nHelps confused medical borgs perform surgery again",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix cyborg medical omni-tool from not having drapes at first."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-17",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98136",
+    "title": "Slightly smarter troopers",
+    "author": "ArrisFairburne",
+    "body": "## About The Pull Request\r\n\r\nTweaks ai_behavior/basic_ranged_attack/perform() to now check a \"can shoot method\"; this can be set to three types of behavior.\r\n- Always shoot, which doesn't bother checking for clear LOS to the target\r\n- Can see, which uses can_see() to determine if the target is shootable (previous behavior, and default)\r\n- LOS check, which uses los_check() and projectile flags to determine if there is an obstacle in the way\r\n\r\nThis also reorganizes trooper AI behavior to check if targets can be shot, before trying to destroy obstacles.\r\n\r\n## Why It's Good For The Game\r\n\r\nMakes our CPU controlled opponents smarter and slightly-less cheesable by obstructions; they now shoot past tables and glass if their bullets can pass through.\r\n\r\n<img width=\"334\" height=\"146\" alt=\"GIF 08-Oct-26 8-13-23 PM\" src=\"https://github.com/user-attachments/assets/6a6e5222-6a87-475a-bacf-2cb2fc38e440\" />",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Improved ranged trooper AI to ignore destroying objects they can shoot through"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-18",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98495",
+    "title": "Makes lizardpeople buff.",
+    "author": "necromanceranne",
+    "body": "## About The Pull Request\r\n\r\nMakes lizardpeople stronger. Makes them better at punching. Makes them appear stronger when scrutinized for fitness power.\r\n\r\n## Why It's Good For The Game\r\n\r\n<img width=\"389\" height=\"53\" alt=\"Screenshot 2026-11-17 232012\" src=\"https://github.com/user-attachments/assets/ce8eeb81-091d-442d-b279-6bc62dff1c5a\" />\r\n\r\nYou heard the man. Buff lizards.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Lizardpeople are now so strong. They could bend steel. You could grate cheese on those abdominals. It will get caught in their scales though, which means they might get scalerot, so please don't actually do that. Just admire them from a comfortable, although perhaps uncomfortable for the subject of admiration, distance."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98342",
+    "title": "Removes CatwalkStation",
+    "author": "san7890",
+    "body": "## About The Pull Request\r\n\r\nRemoves Catwalk Station from the game.\r\n\r\n## Why It's Good For The Game\r\n\r\nThere are a few metrics that stick out in my mind that need to be elaborated on:\r\n\r\n---\r\n\r\n### Codebase\r\n\r\nThe last catwalk-specific fix (related to CI) was in #97886 (25b1dbc26bdb8eeddf64ee3c3d1ee44a9f6a94f7) - End of September 2026\r\nThe last concrete actual map specific to catwalk fix was in #97281 (0992ec02722bbb855ff38172315c16c28f4d2b61) - End of July 2026\r\nThe last actual mapped feature for catwalk was in #94741 (2fb903b55e28fecd119c10bdaed6edcb058d5be0) - End of January 2026\r\nIn fact, most of the features (from what I can tell), were a work of labor from @loganuk. The most recent feature feature I can find that was not done by this mapper was in #91650 (8fee5623b9c733e9e45a4f2d713a4ea129991d80) - June-July 2025\r\n\r\nOn a precursory view, a majority of updates to Catwalk have been \"Mega Map Reworks\", or major changes to all maps in relation to a new mapping norm or the encoding of a feature.\r\n\r\nIn order to understand just how low frequency these are, I welcome you to look at the PRs labelled with the [Map Edit Tag](https://github.com/tgstation/tgstation/pulls?q=is%3Apr+state%3Aclosed+label%3A%22Map+Edit%22). Pretty much everything (except Nebula) has had several PRs minor tweaks/fixes or revamps from several different mappers with a more dense frequency over a much more recent timespan. I understand this to be signal that no more than a few people are actively interested in working on this map.\r\n\r\n---\r\n\r\n### Adminbase\r\n\r\nI can not speak for the current opinions of the headmins or wider admin base, and a poll might be worth conducting if you really want the answer here. They are welcome to opine, as always.\r\n\r\nThis is the current settings, from [the config found here](https://github.com/tgstation-operations/server-config/blob/main/maps.txt):\r\n\r\n```txt\r\nmap catwalkstation\r\n\tminplayers 25\r\n\tvotable\r\n\tfeedbacklink https://forums.tgstation13.org/viewtopic.php?p=745280\r\nendmap\r\n```\r\n\r\nI will give a very recent anecdote in my position of this capacity for the time being:\r\n\r\nOn Manuel, where a vote of Catwalk went through, and I could see the readied player count fall to about 30% of online players (about 15 of 50) with 2 minutes to go until the round started, a far cry from the typical 50-60% you would expect on that server in recent weeks. Since I was strongly worried about a sudden precipitous drop in population on Manuel, I suspended the start and changed it to a different map (based on a vote). This was concurred on by another admin online at the time in the capacity that admins have the authority to make the game fun, and then it got me thinking about my other official capacities. I sustained pop, but the thought continued to linger in my mind. That's ultimately what led to this being proposed.\r\n\r\n---\r\n\r\n### Playerbase\r\n\r\nThere have not been any recent polls assessing player popularity of maps conducted, but I believe that there not an overwhelming outpouring of support for this map for several reasons. A poll might be worth conducting if a definitive answer is desired here, but I do not know if this is necessary at the moment.\r\n\r\nHere are some stats that I've sourced from https://scrubbier.papamichael.dev/stats . I am only counting Manuel as that can be reasonably interpreted as being the most consistently active server over the last 90 day span:\r\n\r\nIn the last 90 days, Catwalk Station has been ran on 2% of all low-pop rounds (88% of Overall Manuel Shifts; <25 pop).\r\n\r\n<img width=\"427\" height=\"251\" alt=\"image\" src=\"https://github.com/user-attachments/assets/79816d58-c415-4b95-b05b-a81bfe6cb34c\" />\r\n\r\n[link](https://scrubbier.papamichael.dev/stats?server=manuel&window=90&pop=lo)\r\n\r\nIn the last 90 days, Catwalk Station has been ran on **0%** of all high-pop rounds (12% of Overall Manuel Shifts; >= 25 pop)\r\n<img width=\"423\" height=\"195\" alt=\"image\" src=\"https://github.com/user-attachments/assets/bd73e867-4b1c-46fe-bc29-514fff74d0fe\" />\r\n[link](https://scrubbier.papamichael.dev/stats?server=manuel&window=90&pop=hi)\r\n\r\nThe second finding is especially interesting when you realize that _Catwalk is designed to be ran at a minimum of 25 players per the config_! I believe this as a strong signal that people (or whatever the map vote weighting is doing) on a previous higher population shift is causing Catwalk to pass on higher population shifts, and then the very next round has a high precipitous downfall in players. \r\n\r\nThis isn't entirely founded, but is plausible based on my own personal experience. It's a very disturbing trend for people to vote for a map with a chunk of the server leaving in protest to dip it below the voting point. It's not present in any other map, as Nebula (minpop 35) seems to have a decent share of being voted in highpop and retaining it's share in highpop instead of instantly cratering in the same pattern Catwalk appears to be following.\r\n\r\nI do not like the pattern of having a \"poison\" map in the rotation in this manner. The reaction is also a reasonable demonstration of general sentiment (why play a game if you aren't having fun?). I do not see any way to resolve this beyond the measure proposed in this PR.\r\n\r\n## In Summary\r\n\r\nBased on these metrics, I do not think it is fair to:\r\n\r\nA) Contributors to be responsible for mapping in their features into this map with how little it gets played.\r\nB) Server operators and administrators to have to put up with this map cratering population during any active seeding sessions (as changing it in configuration would be a unilateral death sentence for this map anyways, and they are too polite to the maptainers and desires of this repository to do that).\r\nC) Players to have to be subject to this map being ran in an adverse manner as it appears to be completely subversive to any principle of _voluntas populi_.\r\n\r\nI suppose another question might be \"what map will replace Catwalk?\". The truthful answer is, I don't think we need more than 6 maps, especially looking at the above statistics. We can bring back Pubby or something but this shouldn't be a prerequisite for removing this map. I don't think there is much alternative that satisfies all three concerned parties.\r\n\r\n_Stats accurate to the time the PR was published._",
+    "changes": [
+      {
+        "type": "rscdel",
+        "class": "rscdel",
+        "text": "CatwalkStation has been removed from the game."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98409",
+    "title": "Blacklists ai from jumping to machines, fixes air alarm stuff, allows silicons to cycle modes on air alarms.",
+    "author": "moocowswag",
+    "body": "## About The Pull Request\r\nFirst, AI can no longer double click machines to jump to them, allowing uninterrupted hotkey combos on machines like close bolting or shocking.\r\n\r\nhttps://github.com/user-attachments/assets/fe9bc32f-1747-408d-87f2-8eb90d8ed249\r\n\r\n\r\n\r\nSecond, Silicons can now hotkey cycle through modes on air alarms.\r\nShift click cycles: filtering > contaminated > refill > draught > filtering\r\nCtrl click sets mode to off \r\nAlt click cycles: cycle > siphon > panic siphon > cycle\r\n\r\n\r\n\r\n\r\nhttps://github.com/user-attachments/assets/cc6783a6-f27f-4ed7-bba5-9e9d525594b8\r\n\r\n\r\n\r\n\r\nThis models airlocks, \r\nShift click opens and closes airlocks > Shift click just makes air alarm do normal things\r\n(later modes in the shift cycle vary based on distro but with normal air they are benign)\r\n\r\nCtrl click disables use of airlock > Ctrl click turns off vents and scrubbers\r\n\r\nAlt click to human harm with airlocks > Alt click to human harm with scrubbers\r\n\r\nSo for example, round start most air alarms are set to filtering, 1 shift click on them sets to contaminated.\r\n\r\nGot hacked and want to kill everyone quickly? alt click x3 to set to panic siphon \r\n\r\nWant to do targeted plasmaflood without human harm? go around ctrl clicking for 3 minutes and you can do it!\r\n\r\nAlso i fixed air alarm ai wires and screwdriver context tips being inverted\r\n## Why It's Good For The Game\r\nThe doubleclick thing is really annoying and disruptive for ai....so this just makes it not happen when you are clicking on something that you are likely trying to interact with.\r\n\r\nThe air alarm cycling helps eliminate a major code/policy issue....round start atmos techs are prohibited from disconnecting plasma from distro because it theoretically \"screwed over\" malf ais....but there was never a real purpose for plasma to be connected to distro in the first place... so maybe by eliminating some of the pain of controlling air alarms. Asimov ais will be able to live out their scifi-fantasy of performing controlled sterilization...and this might become a normal job expression?",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Ai's will no longer be punished for having high apm"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Silicons can now rapidly cycle modes on air alarms"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Air alarm ai wires are no longer inverted"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Air alarm screwdriver context is no longer inverted"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98494",
+    "title": "fixes lighting breaking after unshapeshifting on an upper z-level",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\n\nif a mob changes z-level while nobody's logged into it, its plane masters get rebuilt with no client. `build_planes_offset()` reads the multiz performance pref off `our_mob?.client`, gets `null` instead of the default `-1`, and treats that as \"render 0 levels\", so every plane that isn't on your exact floor gets marked outside bounds\nfs\n\n## Why It's Good For The Game\n\nlighting not being broken after turning back from a shapeshift is good actually",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "fixed lighting and night vision breaking after turning back from a shapeshift (or getting put into a body) on an upper z-level, until you changed z-levels"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-19",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98489",
+    "title": "Shoving someone burning into someone not burning spreads fire",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nShoving someone who is on fire (considerably) into someone not burning spreads the fire.\n\n## Why It's Good For The Game\n\nBumping spreads fire, so shoving should too",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Shoving someone who is on fire into someone who is not spreads fire now."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98493",
+    "title": "Doubles the potency of synthflesh",
+    "author": "TheRyeGuyWhoWillNowDie",
+    "body": "## About The Pull Request\n\nDoubles the healing of synthflesh from (base purity) 1.25 brute/burn per unit to 2.5 brute/burn per unit. Tox damage remains proportional (i.e it's also doubled), also doesn't change unhusking threshold. \n\n## Why It's Good For The Game\n\nLong ago, Synthflesh was THE medical healing chem. Back then, you could put chems in fire extinguishers too so you could fill a fire extinguisher with synthflesh and spray it onto people to basically aheal them. Many many years have passed since then and synthflesh has been gutted over and over. Fermichem made it extremely tedious to make and impurity massively reduced its healing potential, and cobbychem added tox damage to it as 'recoil' and also massively reduced its raw healing. These days, synthflesh is used for the sole and exclusive purpose of being that stuff you buy from the med-vendor to dehusk people and it's been that way for more than five years.\n\nDoubling the potency of synthflesh makes it much, much more efficient for its 'intended' healing purpose, that being a fast-track to avoid having to do surgery on people just barely above the 180 damage revival threshold. Not in the sense of making it an overpowered general healer (as tox damage remains proportional, and 1u of real medicines heal 10x as much as 1u of synthflesh) but simply in reducing the amount you have to use per patient. Due to mechanics like bio armor on jumpsuits reducing synthflesh's healing potential even more, people with as little as 240 damage take north of 100 units of 100% pure synthflesh to get to under 180 damage, making a bluespace beaker of the stuff only good for as little as two uses. Doubling the healing potential might still not even be good enough for it to be worth making, but it's a start and will hopefully encourage people to make this stuff again.",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Doubled the potency of synthflesh"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-20",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98498",
+    "title": "Presure typo fix",
+    "author": "btcbuster",
+    "body": "## About The Pull Request\n\nOne of the ice box plants had a typo in it.\n\n## Why It's Good For The Game\n\nTypo bad",
+    "changes": [
+      {
+        "type": "spellcheck",
+        "class": "spellcheck",
+        "text": "fixed a typo on an icebox plant"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98531",
+    "title": "Makes pyrophobia and pyromania incompatible",
+    "author": "btcbuster",
+    "body": "## About The Pull Request\r\n\r\nMakes it so you can't take pyromania and pyrophobia at the same time.\r\n\r\n## Why It's Good For The Game\r\n\r\nSeems like an oversight, doesn't make much sense for someone who LOVES fire to be so afraid of it they get a heart attack.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Can't take pyrophobia and pyromania at once now."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98491",
+    "title": "Fixes AI shells not being eligible for Malf AI",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\nCloses https://github.com/tgstation/tgstation/issues/98487",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "AIs can now malfunction when piloting a shell"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98521",
+    "title": "Fix darkness",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nIt seems like this code was accidentally changed from updating the turf's luminosity to the light's luminosity which breaks some checks for darkness (such as examining and visible message).",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You can no longer examine things obscured by darkness (unless you have night vision)"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "You no longer see messages of people obscured by darkness (unless you have night vision)"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98519",
+    "title": "Exosuit drills start disabled instead of enabled",
+    "author": "Kurgis",
+    "body": "## About The Pull Request\n\nWhen exosuit drills are installed they don't behave appropriately as if they were enabled, requiring you to disable and re-enable the drill. A better alternative fix would tie in the missing enable functions to it on installation, but I think it'd be better to just have the player use the existing action panel anyways when they want to drill.\n\n## Why It's Good For The Game\n\nSaves tedium of constantly telling other players to disable and re-enable the drill whenever they get an exosuit.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Exosuit drills no longer need to disabled and re-enabled again to properly use their on_click functions... because now they just start disabled."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98501",
+    "title": "Fixes species-changed ceruleans losing a third of their blood and moving super fast",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nLast night a cerulean character got a nukie roll and spawned as a human dying of blood loss and moving super fast.\r\n\r\nCloses https://github.com/tgstation/tgstation/issues/98076\r\nCloses https://github.com/tgstation/tgstation/issues/98069",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ceruleans species-changed into humans no longer lose a third of their blood nor zoom around super fast"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-22",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98538",
+    "title": "Fixes hacker names not filtering out some invalid symbols",
+    "author": "SmArtKar",
+    "body": "## About The Pull Request\n\nReplaces IC-filter sanitization for hacker aliases for proper one. You can still use some symbols and numbers like AIs do.\n\n## Why It's Good For The Game\n\nMaybe ***don't*** let players set their name to arbitrary unicode symbols?",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes hacker names not filtering out some invalid symbols"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98497",
+    "title": "Fix a bunch of tgui chat and music player bugs",
+    "author": "Absolucy",
+    "body": "## About The Pull Request\n\n- chat no longer stays blank for new players or slow storage\n- chat scrolling is more reliable: a resize observer keeps it pinned, and new messages scroll right away instead of on a timeout\n- corrupted or unreadable saved chat data no longer breaks chat on every join, and chat now tells you when loading or saving goes wrong\n- settings has a new \"Storage\" row that shows which backend your chat settings use\n- highlights now work with accents and punctuation (`José`, `hey?`), and \"Exact\" uses real word boundaries instead of `\\b`\n- highlights that mix `/regex/` entries with plain words now actually match the plain words\n- the highlight list no longer reorders itself after you edit an entry\n- chat tooltips starting with a number no longer get cut down to just the number\n- the music player no longer shows a garbage upload date, artist or album when yt-dlp has no value for it\n- admin music works for players with no saved chat settings (volume used to be unset)\n- `start` on `play_music` is now actually respected by the music player\n\n<img width=\"375\" height=\"121\" alt=\"image\" src=\"https://github.com/user-attachments/assets/bee6e7bb-a9eb-4406-8db8-49ac5a76fbd1\" />\n\n## Why It's Good For The Game\n\nchat going blank, not scrolling, or losing your settings is a bad time, and highlights silently ignoring accents or plain words is confusing.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "chat no longer randomly stops autoscrolling when a big message (like an examine) or a burst of messages comes in"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Hopefully fixed most chat scrolling issues in general, tbh."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "chat no longer stays blank for new players, or when chat settings are slow to load"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "chat no longer breaks on every join if your saved chat data got corrupted"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "chat now tells you whenever something goes wrong with loading or saving your chat data"
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "You can now see which storage backend your chat settings use."
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "chat tooltips starting with a number no longer get cut down to just the number"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "the music player no longer shows a garbage upload date when there isn't one"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "new players with no saved chat settings can hear admin music again"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "chat highlights now work for terms with punctuation or accents"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "\"Exact\" chat highlights now work with accented letters and terms ending in punctuation"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "chat highlights that mix /regex/ entries with plain words now match the plain words too"
+      },
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "the chat highlight list no longer reorders itself after you delete the default highlight"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98429",
+    "title": "Refactors pet commands to improve their communication and useability",
+    "author": "CabinetOnFire",
+    "body": "fixes #98355 \n\n## About The Pull Request\n\nThis PR re-works pet commands with the following major changes:\n\n- Adds more feedback for when pet commands are acknowledged by the AI\n- Pointed targets are now consumed by commands; You can point at a target before or after the command is given.\n- Idle pets no longer attack the owners allies (for crew this is other crew, but regal rat's rats do attack crew for example)\n- Does some general clean up to improve command flow and clean-up\n- Obeys commands now handles listening for the commands (made more sense to me)\n\nAlso fixed an issue where regal rats' rats would not attack nearby targets when idle (It had a rogue parallel node with no children)\n\n## Why It's Good For The Game\n\nmore responsive",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Pets no longer get stuck in attack mode"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Pet commands should be more clearly communicated now"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98532",
+    "title": "There might be a branch of los check that doesn't clean up the los checker object",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nIt seems like there's a branch of `los_check` which doesn't clean up the dummy object which causes problems\n\nIt seems like #98430 revealed the issue, no idea why\n\nI added the qdel to the only return I saw that didn't do it\n\nThen, to make this error more obvious in the future, I changed it from a generic obj to a subtype",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix random loose \"obj\"s"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98526",
+    "title": "Fix all projectiles being treated as non-lethal attacks",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nTitle is slightly clickbait. This doesn't affect pacifism, gotcha.\n\nByond operator precedence killed this, treating it as `(a | (x == y)) ? b : c`, not `a | (x == y ? b : c)`. The former always resolves as `b`, so all projectiles (including thrown) were treated as non-lethal / stamina attacks.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Some mechanics that differentiated being hit with a lethal vs non-lethal ranged attack now properly differentiates again. For example, bots will spark when shot now."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-23",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98527",
+    "title": "Ethereals can't revive from changling husks (for real)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nLong ago in a galaxy far far away, #68184 made it so Ethereals can't revive from changeling drains \n\n...But it never did! Because it checked that the heart was husked rather than the Ethereal, which it obviously never is.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Ethereals can't revive from changling husks"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98412",
+    "title": "Fixes Job Config TOML Comments + Bonus Extra Fix",
+    "author": "san7890",
+    "body": "## About The Pull Request\r\n\r\nFixes #74074\r\n\r\nThree years ago, I made a system that used JSON, and then I ported it over to TOML on request without understanding really how TOML worked. This means that the key mismatch system I employed made absolutely zero sense and was not intuitive. Whenever I asked for help on resolving this, people would say that I would probably need to fix it on the rust-g side, and every time I opened up rust-g it made my head hurt. However, other people told me to do exactly this (but although they did still mention rust-g for some reason), so I finally did that. I just hated the idea of having to work with Rust since it always makes my head pound, so it was surprising to look again and find out that this was always possible in DM in the first place.\r\n\r\n## Why It's Good For The Game\r\n\r\nEasier for admins to edit config relating to job positions/age/human authority/etc.\r\n\r\nThis does not test any loading code. There is no need to port over \"legacy\" as my flawed system was still useful as key mismatches would get dropped. I ran a test import/export thing and it works good. This does not touch the loading code at all, so that will work on every single server running the TOML version of job config. This will only apply on a regeneration, which can be easily down automagically via the `Generate Job Configuration` verb in the `Server` tab of the stat panel (please please please use this do not do this manually i spent so long 3-4 years ago making sure this would be as easy as possible).\r\n\r\nI also stumbled upon another bug, where changing the overflow role in the middle of a game would cause it to restore to CODEBASE defaults, not the config defaults. This has been patched by a nifty cache system that I first devised to  address some issues with generation of the config (detective was `-1` because of this exact issue and i noticed that in a generation run), and now it just works all nifty like",
+    "changes": [
+      {
+        "type": "config",
+        "class": "server",
+        "text": "The TOML Job Configuration system should now be a lot easier to edit. You will have to regenerate the job configuration (downloading the file from the server via the `Generate Job Configuration` verb of the `Server` tab of the stat panel), download that file from FTP prompt you get from BYOND, and then re-upload it to the server to take effect on later rounds, but it does indeed feel a lot easier to edit. This measure is completely optional though."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98520",
+    "title": "Fix random events causing human hard deletes",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nThese two random events keep a running list of every human that is eligible to be targeted by the event, but it only updates the event if it's \"theoretically\" runnable - i.e. it's under the max occurrences and over the min player thresholds\n\nSo the second time we run heart attack, anyone left in the list is stuck there forever until they hard delete",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Updated code for heart attack and disease outbreak events, report anything weird with it"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98524",
+    "title": "Fix snip cable helper persisting after init",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nSelf evident fix here. I'm surprised these are even visible? They could just be invisible and no one would care.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fix mystical snip cable X on Tramstation"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98552",
+    "title": "Trace amounts of blood loss no longer causes infinite hyperdeath to moon heretics",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nMoon heretics lose brain damage down to a threshold based on blood volume instead of taking oxygen damage. \nBasically mirroring the existing blood loss mechanics 1:1. \n\n## Why It's Good For The Game\n\nRight now, if you hit the first blood threshold that you start taking small amounts of oxygen damage, you just die.\n(This is because blood loss causes oxygen damage every tick until you have a certain amount of oxygen damage total. Moon heretics never accrue this oxygen damage because it translates to brain damage, thus you end up taking brain damage every tick, and it never stops unlike real blood loss damage.)\n\nI highly doubt this is intended / an oversight, but I'm tagging it a balance pr anyways",
+    "changes": [
+      {
+        "type": "balance",
+        "class": "balance",
+        "text": "Trace amounts of blood loss no longer causes infinite hyperdeath to moon heretics"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98546",
+    "title": "Fix cooked goliath steak not having an additional 2% chance of doing something to red raptors breeding idk",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n`string_list` doesn't support assoc lists.\nWhile these two had different values, it pulled the same list from the string list cache, meaning the cooked steak here insteasd pulled the raw meat's stats.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Fixes a niche issue where cooked goliath steak doesn't contribute to red raptor breeding(?) more than raw goliath meat"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98533",
+    "title": "Starfury Armory airlock fix",
+    "author": "DeliciousPlushie",
+    "body": "## About The Pull Request\n\nThe Syndicate Battlecruiser's Armory airlocks, can't unlock by pressing buttons on the wall, caused of lacking id_tag.\nThis pr fixs that.\n\n## Why It's Good For The Game\n\nIt fixs a bug.",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Syndicate Battlecruiser Captain can unlock Starfury Armory airlocks normally with pressing buttons."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-24",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98523",
+    "title": "Fix blade and cosmic recharge methods",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nBackwards arguments meant these always failed",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Blade and Cosmic heretic can recharge their spells properly"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98488",
+    "title": "Revamp handheld gene scanner output (revived)",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\nRevives #94963\n\nWe added hardening to tgui chat components, so now we can get away with it without breaking things.. I think.\n\n<img width=\"528\" height=\"261\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0a4f2de7-d1d1-4476-818a-1c27abe95df6\" />\n\n## Why It's Good For The Game\n\nLooks better",
+    "changes": [
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Revamps handheld gene scanner output"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98557",
+    "title": "Fixes a broken VV admin shortcut that apparently exists",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\r\n\r\nAdmins can now control+alt+click an atom to open the VV menu for it.\r\nI was thinking that opening VV is a common enough action to warrant a keyboard shortcut. I discovered that this already existed, but was clobbered by a duplicate proc definition. So, I put it on a new shortcut\r\n\r\nI'll admit I'm a bit flummoxed by this. Did this ever work? It feels like the kind of thing that would have admins crashing out the second it broke.\r\n\r\n## Why It's Good For The Game\r\n\r\nVV is an extraordinarily common action",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Admins can Control+Alt+Click an atom to open VV on it"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98554",
+    "title": "Removes goofiest sanitization proc",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\n\n`reject_bad_chattext`, used in the ntos chatroom app, literally only rejects the first 32 ascii characters, everything else is completely legal \n\nReplaces it with `reject_bad_name` for setting username and chatroom title, and sanitize for chatroom messages",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "NTOS Chatroom checks names and messages more thoroughly"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98511",
+    "title": "Lets admins select next round station traits in the postround",
+    "author": "PapaMichae1",
+    "body": "## About The Pull Request\n\nWhat it says on the tin. I'm not sure why this check is even there, afict there's no technical reason it needs to be\n\n## Why It's Bad For The Game\n\nI wanted to make the game more Fun but was unable",
+    "changes": [
+      {
+        "type": "admin",
+        "class": "admin",
+        "text": "Admins can set the next round's station traits in the postround"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-25",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98426",
+    "title": "[IDB IGNORE] digitigrade code refactor",
+    "author": "Ghommie",
+    "body": "## About The Pull Request\nThis is a redo of #97025, which was left to rot because it was at the bottom of the pile. A bit of an unjust treatment but I wasn't around to remind anyone about it (or do much of my duty as a maint, last year of my degree program and all...). So here I'm making another PR for it.\n\nThis basically refactors the digitigrade code so that we don't have to include snowflake conditions in the code for dna, species and prefs.\n\n(The original plan was to have an external element to handle it (bad idea), but as Melbert pointed out, that would only shift the problem)\n\n## Why It's Good For The Game\nI believe the current component to be flawed and primarily not self-contained if it cannot function without the aforementioned conditional code present in the code for species and prefs!\n\nAlso required for the skeleton refactor, if I even get it done before the year's over at this point!",
+    "changes": [
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Refactored digitigrade legs code a bit. Report any outstanding issue that wasn't previously there."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "97987",
+    "title": "Makes radiation a bit deadlier",
+    "author": "MrMelbert",
+    "body": "## About The Pull Request\r\n\r\n1. Adds a form of limited radiation spreading.\r\n\r\n- Individuals irradiated from a powerful primary source (such as the Supermatter) will spread their radiation to nearby mobs.\r\n   - This is visually denoted by the glow around spreaders being slightly brighter. \r\n   - It can also be detected via geiger counter. \r\n   - Standing underneath a shower prevents spreaders from spreading radiation.\r\n- However, individuals irradiated from secondary sources (such as someone irradiated from the Supermatter) or from minor primary sources (like chemicals or uranium) will not spread their radiation.\r\n\r\n2. Being irradiated for a moderate amount of time will irradiate your internal organs.\r\n\r\n- Irradiated organs take organ damage over time and cause additional tox damage.\r\n   - These organs will have special text in the health analyzer pointing them out.\r\n   - This is also separate from \"standard\" radiation, i.e. you can have irradiated organs but not be glowing green. \r\n- Non-organic organs will not have radiation spread to them.\r\n   - Currently, if you get some irradiated cyber lungs and put them in a normal human, there is no effect at all. This might change though. \r\n- If an organ is irradiated while \"in world\" and placed into a mob, it would have the same negative effects.\r\n- Radiation healing chemicals such as Pentetic Acid will heal organ damage caused by irradiation. \r\n   - Additionally, upon fully healing an irradiated organ, the chem un-irradiates the organ.\r\n\r\n3. Plasmamen, Androids, and similarly immune mobs can be irradiated again - though are still immune to its effects.\r\n\r\n- This allows Plasmamen to spread radiation intentionally via the spread mechanic above like back in the day.\r\n- Showers and other methods of direct decontamination are the only way to clean these species of radiation (tox chems won't work). \r\n   - Slimepeople are similarly reliant on showers instead of antirad chems. \r\n\r\n4. Standing underneath a shower *very slowly* reverses irradiation, rather than only pausing it. \r\n\r\n5. Radioactive chems will now irradiate organs. (Breathing uranium irradiates the lungs, eating uranium irradiates the stomach, injecting uranium irradiates the liver.)\r\n\r\n5. Misc. Changes\r\n\r\n- Seiver numbers have been tweaked, reducing the radiation tox healing per tick from 45(!!) to 10. \r\n- Space cleaner now deals tox tamage per tick, though a minor amount. It can also rarely clean your organs squeaky clean.\r\n\r\n<img width=\"416\" height=\"245\" alt=\"image\" src=\"https://github.com/user-attachments/assets/71f9fac6-ec92-4931-9dd6-a0cc95db1403\" />\r\n\r\n*Pictured: advanced health analyzer showing organ irradiation status.*\r\n\r\n## Why It's Good For The Game\r\n\r\nEver since radiation's changes years ago many have commented that radiation is now a pretty lackluster threat, and I echo some of these thoughts. So I wanted to address some of it while keeping it in line with the original design document proposed all those years ago. \r\n\r\n- Irradiated organs makes persistent radiation more of a hazard and encourages use of specialty anti-rad medical over any generic toxins healer. Treatment is still intuitive: Heal toxloss, fix organs. Even if a newer player if confused how to fix radioactive organs, they can always outright replace them.\r\n\r\n- Limited radiation spreading encourages quarantining and wearing proper protective equipment. Medbay will occasionally need to procure rad suits to deal with big problems, but failing to get a radsuit doesn't result in a death spiral.",
+    "changes": [
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Individuals irradiated from a powerful primary source (such as the Supermatter) will spread radiation around them. This is denoted by their radiation glow being brighter than normal. Importantly, this will not cascade further, meaning any individual irradiated from them will NOT spread it further."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Plasmamen, Androids, and other radiation immune species can be irradiated once again, though are still immune to the effects. Only methods of direct decontamination (like showering) will clear it."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Slimepeople can now properly be affected by radiation. Like Plasmamen, it can only be cleared via direct decontamination."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Showers will now heal irradiation very slowly in addition to pausing the negative effects."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Untreated irradiation will eventually spread to your internal organs, causing organ damage and further complications. While it can spread to robotic organs, this has no effect (for now). And yes, inserting an irradiated organ into an otherwise clean patient will cause the radiation to spread to the body over time."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Anti-rad medication such as Pentetic Acid now reverses organ damage caused by irradiation (and eventually clears irradiated organs entirely) - so long as the affected organ hasn't failed entirely."
+      },
+      {
+        "type": "rscadd",
+        "class": "rscadd",
+        "text": "Radioactive chemicals like Uranium can now directly irradiate organs - for example, breathing radioactive smoke may irradiate your lungs."
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Radiation has seen a few changes if you couldn't tell. Report any issues like mobs experiencing negative effects from irradiation when they otherwise shouldn't be."
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98500",
+    "title": "*sawing noises*",
+    "author": "ArrisFairburne",
+    "body": "## About The Pull Request\r\n\r\nGun sawing now plays sounds when you saw it. This uses play_tool_operating_sound() if you begin sawing, and play_tool_sound() if you try sawing but it's cut short because you shot yourself. \r\n\r\nThis also gives usesound and operating_sound noises to various saw items in the game: chainsaws get chainsaw noises, circular saw gets its expected operation saw noises, and the bonesaw gets slash.ogg (I couldn't find an appropriate \"sawing material manually\" noise in our sounds folder)\r\n\r\nThis also adds sparks to the sawing action once you finish cutting open the gun because Melbert said it was fine if I included this.\r\n\r\n## Why It's Good For The Game\r\n\r\nMore appropriate sound effects. I couldn't help but notice that shotgun sawing was always unusually quiet whenever I did this ingame.",
+    "changes": [
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "sawable guns now make appropriate sawing noises when they are sawn-off"
+      },
+      {
+        "type": "sound",
+        "class": "sound",
+        "text": "gave appropriate usesound and operating sounds to various saw items in the game"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "upstream_date": "2026-11-26",
+    "source": "/TG/Station",
+    "repo": "tgstation/tgstation",
+    "pr": "98571",
+    "title": "[NO GBP] Fixes get_configurable_jobs() storing stale jobs if jobs are reset",
+    "author": "tontyGH",
+    "body": "## About The Pull Request\n\nCaching this makes sense, but doing it in this way causes the game to preserve invalid job datums when they get reset for dynamic purposes. Just getting rid of the caching is the easiest fix.\n\n## Awesome fish from Google Images\n\n<img width=\"2560\" height=\"1707\" alt=\"image\" src=\"https://github.com/user-attachments/assets/cd86c9fe-83d7-494d-a8be-de3efabd659b\" />",
+    "changes": [
+      {
+        "type": "config",
+        "class": "server",
+        "text": "Fixed a bug that caused jobs to fallback to the default config at roundstart"
+      }
+    ]
   }
 ]
