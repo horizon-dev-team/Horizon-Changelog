@@ -1,0 +1,386 @@
+# PR: horizon-dev-team/Horizon-Dream/84
+/TG/Station:
+  98460:
+    repo: "tgstation/tgstation"
+    title: "Fix stamcrit / stamregen"
+    changes:
+      MrMelbert:
+        - bugfix: "Stamina damage is properly refreshed by taking more stamina damage - in other words. if you baton someone who is in stamcrit. it properly extends stamcrit."
+  98463:
+    repo: "tgstation/tgstation"
+    title: "Fix any item passing ID access through it"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes a bug where you could magically gain an ID card's accesses if the ID card was placed within literally anything (briefcases, backpacks, whatever) being held. A few items have kept this properly (obviously, wallets and PDAs... but a few other special items might have kept it too...)"
+  98464:
+    repo: "tgstation/tgstation"
+    title: "You can turn while buckled again"
+    changes:
+      MrMelbert:
+        - bugfix: "You can turn while buckled again"
+  98432:
+    repo: "tgstation/tgstation"
+    title: "Insulated dead bodies cool down instead of staying hot forever"
+    changes:
+      AitorLogedo:
+        - bugfix: "Dead bodies wearing insulating clothes cool down after burning instead of staying hot and husking."
+  98469:
+    repo: "tgstation/tgstation"
+    title: "A plethora of faction fixes"
+    changes:
+      MrMelbert:
+        - bugfix: "Drone chat works again."
+        - bugfix: "Monkeys spawned from cubes no longer attack other monkeys."
+        - bugfix: "NPC flesh spiders attack randomly."
+        - bugfix: "The meteor heart uses its abilities correctly."
+        - bugfix: "Stabilized pink extracts correctly pacify nearby mobs."
+        - bugfix: "Stickmen summoned from the paper mache robes don't attack the caster."
+        - bugfix: "Rats spawned from toilet bongs are friendly as expected."
+        - bugfix: "Killer tomatos and seedlings are immune to kudzu."
+  98468:
+    repo: "tgstation/tgstation"
+    title: "Fix tombstone shuttle unlock condition"
+    changes:
+      MrMelbert:
+        - bugfix: "Tombstone emergency shuttle is properly only unlocked when a bubonic plague sweeps the station, rather than on any cold or flu"
+  98466:
+    repo: "tgstation/tgstation"
+    title: "Fixes \"Launch Turf Ordered\" and \"Launch Random Turf\" Supply Pod modes not working"
+    changes:
+      PapaMichae1:
+        - bugfix: "Supply Pod \"Launch Turf Ordered\" and \"Launch Random Turf\" modes now work again"
+  97312:
+    repo: "tgstation/tgstation"
+    title: "Implements baking navigational data into turf, and uses this for a DLL-based A* implementation (With Multi-Z support)"
+    changes:
+      CabinetOnFire:
+        - code_imp: "Pathfinding now makes use of a more optimized rust-g A* algorithm"
+        - bugfix: "Bots now should reliably be summonable"
+  98392:
+    repo: "tgstation/tgstation"
+    title: "Just kinda bumps up projectile priority to see what happens"
+    changes:
+      MrMelbert:
+        - tweak: "Projectiles should freeze less (more processing time has been allocated to them - so if something else starts to freeze feel free to file a report)"
+  98448:
+    repo: "tgstation/tgstation"
+    title: "Admin Internet music surpresses ambience"
+    changes:
+      PapaMichae1:
+        - tweak: "Ambient game tracks will no longer play over admin web music"
+  98471:
+    repo: "tgstation/tgstation"
+    title: "Fix voice never being set to records"
+    changes:
+      MrMelbert:
+        - bugfix: "Voice is properly passed to crew records"
+  98401:
+    repo: "tgstation/tgstation"
+    title: "You can forcibly put people's hands on hot griddles and stoves"
+    changes:
+      MrMelbert:
+        - rscadd: "If you have someone aggressively grabbed, you can click on a lit stove or hot griddle to place their hand onto it."
+  98407:
+    repo: "tgstation/tgstation"
+    title: "Optimize pressure damage calculation by only updating when equipment or bodyparts change (70% of our `get_bodypart` calls)"
+    changes:
+      MrMelbert:
+        - code_imp: "Changed the code that determines if you're protected from pressure damage or not, report anything weird with your ghetto spacesuit setups (like if they suddenly stop working)"
+  98470:
+    repo: "tgstation/tgstation"
+    title: "Fix entering mob metabolism without a liver"
+    changes:
+      MrMelbert:
+        - bugfix: "You can no longer start to metabolize chems without a liver"
+  98462:
+    repo: "tgstation/tgstation"
+    title: "Fix phisologies of 0 being treated as 1"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes several mobs taking damage from damage types they are intended to be immune to"
+  98467:
+    repo: "tgstation/tgstation"
+    title: "fix(tgui): keep the chat panel websocket relay alive across forced reconnects"
+    changes:
+      scolastico:
+        - bugfix: "Pressing \"Force Reconnect\" in the chat panel's websocket settings no longer breaks the websock"
+  98473:
+    repo: "tgstation/tgstation"
+    title: "Fixes some illusion issues"
+    changes:
+      Maia-J:
+        - bugfix: "The Grey Tide spear illusions attack their target again."
+        - bugfix: "Mirage grenades spawn mirages again."
+  98475:
+    repo: "tgstation/tgstation"
+    title: "You no longer lose ore when smelting it."
+    changes:
+      btcbuster:
+        - balance: "You no longer lose ore when smelting it."
+  98483:
+    repo: "tgstation/tgstation"
+    title: "Fixes a runtime where missing wallet tries to run when there's no closets"
+    changes:
+      Xander3359:
+        - bugfix: "Fixed misplaced wallet runtiming on maps with no closets"
+  98404:
+    repo: "tgstation/tgstation"
+    title: "Tweaks bluespace interference slightly to make it less laggy"
+    changes:
+      MrMelbert:
+        - code_imp: "Tweaked bluespace interference code slightly to make it less laggy, report any weird teleports you experience"
+  98480:
+    repo: "tgstation/tgstation"
+    title: "Fixes remainder of mech power issues"
+    changes:
+      MrMelbert:
+        - bugfix: "The Reticence, Gygax, Clarke, Phazon, and Odysseus all mistakenly drained 10x less power to move than intended; this has been fixed"
+        - bugfix: "Some mecha equipment (Mounted sleeper, syringe gun, beam gun, wormhole generator, teleporter, repair droid, punch-face, and paddy clamp) mistakenly drained 10x less power on usage than intended; this has been fixed"
+  98477:
+    repo: "tgstation/tgstation"
+    title: "Adds fox tails/ears as roundstart customization options for felinids"
+    changes:
+      Ben10Omintrix:
+        - rscadd: "fox tails and ears are now available as customization options for felinids."
+        - rscadd: "adds fox tails to fox infusion"
+  98486:
+    repo: "tgstation/tgstation"
+    title: "Fixes mulebots not making use of multi-z pathfinding"
+    changes:
+      CabinetOnFire:
+        - bugfix: "mulebots now use stairs and ladders wow"
+  98408:
+    repo: "tgstation/tgstation"
+    title: "Cyborgs indicate the selected tool instead of hiding it in omnitools"
+    changes:
+      thegrb93:
+        - bugfix: "Fix cyborg medical omni-tool from not having drapes at first."
+  98136:
+    repo: "tgstation/tgstation"
+    title: "Slightly smarter troopers"
+    changes:
+      ArrisFairburne:
+        - code_imp: "Improved ranged trooper AI to ignore destroying objects they can shoot through"
+  98495:
+    repo: "tgstation/tgstation"
+    title: "Makes lizardpeople buff."
+    changes:
+      necromanceranne:
+        - balance: "Lizardpeople are now so strong. They could bend steel. You could grate cheese on those abdominals. It will get caught in their scales though, which means they might get scalerot, so please don't actually do that. Just admire them from a comfortable, although perhaps uncomfortable for the subject of admiration, distance."
+  98342:
+    repo: "tgstation/tgstation"
+    title: "Removes CatwalkStation"
+    changes:
+      san7890:
+        - rscdel: "CatwalkStation has been removed from the game."
+  98409:
+    repo: "tgstation/tgstation"
+    title: "Blacklists ai from jumping to machines, fixes air alarm stuff, allows silicons to cycle modes on air alarms."
+    changes:
+      moocowswag:
+        - tweak: "Ai's will no longer be punished for having high apm"
+        - tweak: "Silicons can now rapidly cycle modes on air alarms"
+        - bugfix: "Air alarm ai wires are no longer inverted"
+        - bugfix: "Air alarm screwdriver context is no longer inverted"
+  98494:
+    repo: "tgstation/tgstation"
+    title: "fixes lighting breaking after unshapeshifting on an upper z-level"
+    changes:
+      Absolucy:
+        - bugfix: "fixed lighting and night vision breaking after turning back from a shapeshift (or getting put into a body) on an upper z-level, until you changed z-levels"
+  98489:
+    repo: "tgstation/tgstation"
+    title: "Shoving someone burning into someone not burning spreads fire"
+    changes:
+      MrMelbert:
+        - rscadd: "Shoving someone who is on fire into someone who is not spreads fire now."
+  98493:
+    repo: "tgstation/tgstation"
+    title: "Doubles the potency of synthflesh"
+    changes:
+      TheRyeGuyWhoWillNowDie:
+        - balance: "Doubled the potency of synthflesh"
+  98498:
+    repo: "tgstation/tgstation"
+    title: "Presure typo fix"
+    changes:
+      btcbuster:
+        - spellcheck: "fixed a typo on an icebox plant"
+  98531:
+    repo: "tgstation/tgstation"
+    title: "Makes pyrophobia and pyromania incompatible"
+    changes:
+      btcbuster:
+        - bugfix: "Can't take pyrophobia and pyromania at once now."
+  98491:
+    repo: "tgstation/tgstation"
+    title: "Fixes AI shells not being eligible for Malf AI"
+    changes:
+      PapaMichae1:
+        - bugfix: "AIs can now malfunction when piloting a shell"
+  98521:
+    repo: "tgstation/tgstation"
+    title: "Fix darkness"
+    changes:
+      MrMelbert:
+        - bugfix: "You can no longer examine things obscured by darkness (unless you have night vision)"
+        - bugfix: "You no longer see messages of people obscured by darkness (unless you have night vision)"
+  98519:
+    repo: "tgstation/tgstation"
+    title: "Exosuit drills start disabled instead of enabled"
+    changes:
+      Kurgis:
+        - bugfix: "Exosuit drills no longer need to disabled and re-enabled again to properly use their on_click functions... because now they just start disabled."
+  98501:
+    repo: "tgstation/tgstation"
+    title: "Fixes species-changed ceruleans losing a third of their blood and moving super fast"
+    changes:
+      PapaMichae1:
+        - bugfix: "Ceruleans species-changed into humans no longer lose a third of their blood nor zoom around super fast"
+  98538:
+    repo: "tgstation/tgstation"
+    title: "Fixes hacker names not filtering out some invalid symbols"
+    changes:
+      SmArtKar:
+        - bugfix: "Fixes hacker names not filtering out some invalid symbols"
+  98497:
+    repo: "tgstation/tgstation"
+    title: "Fix a bunch of tgui chat and music player bugs"
+    changes:
+      Absolucy:
+        - bugfix: "chat no longer randomly stops autoscrolling when a big message (like an examine) or a burst of messages comes in"
+        - bugfix: "Hopefully fixed most chat scrolling issues in general, tbh."
+        - bugfix: "chat no longer stays blank for new players, or when chat settings are slow to load"
+        - bugfix: "chat no longer breaks on every join if your saved chat data got corrupted"
+        - tweak: "chat now tells you whenever something goes wrong with loading or saving your chat data"
+        - rscadd: "You can now see which storage backend your chat settings use."
+        - bugfix: "chat tooltips starting with a number no longer get cut down to just the number"
+        - bugfix: "the music player no longer shows a garbage upload date when there isn't one"
+        - bugfix: "new players with no saved chat settings can hear admin music again"
+        - bugfix: "chat highlights now work for terms with punctuation or accents"
+        - bugfix: "\"Exact\" chat highlights now work with accented letters and terms ending in punctuation"
+        - bugfix: "chat highlights that mix /regex/ entries with plain words now match the plain words too"
+        - bugfix: "the chat highlight list no longer reorders itself after you delete the default highlight"
+  98429:
+    repo: "tgstation/tgstation"
+    title: "Refactors pet commands to improve their communication and useability"
+    changes:
+      CabinetOnFire:
+        - bugfix: "Pets no longer get stuck in attack mode"
+        - tweak: "Pet commands should be more clearly communicated now"
+  98532:
+    repo: "tgstation/tgstation"
+    title: "There might be a branch of los check that doesn't clean up the los checker object"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix random loose \"obj\"s"
+  98526:
+    repo: "tgstation/tgstation"
+    title: "Fix all projectiles being treated as non-lethal attacks"
+    changes:
+      MrMelbert:
+        - bugfix: "Some mechanics that differentiated being hit with a lethal vs non-lethal ranged attack now properly differentiates again. For example, bots will spark when shot now."
+  98527:
+    repo: "tgstation/tgstation"
+    title: "Ethereals can't revive from changling husks (for real)"
+    changes:
+      MrMelbert:
+        - bugfix: "Ethereals can't revive from changling husks"
+  98412:
+    repo: "tgstation/tgstation"
+    title: "Fixes Job Config TOML Comments + Bonus Extra Fix"
+    changes:
+      san7890:
+        - config: "The TOML Job Configuration system should now be a lot easier to edit. You will have to regenerate the job configuration (downloading the file from the server via the `Generate Job Configuration` verb of the `Server` tab of the stat panel), download that file from FTP prompt you get from BYOND, and then re-upload it to the server to take effect on later rounds, but it does indeed feel a lot easier to edit. This measure is completely optional though."
+  98520:
+    repo: "tgstation/tgstation"
+    title: "Fix random events causing human hard deletes"
+    changes:
+      MrMelbert:
+        - code_imp: "Updated code for heart attack and disease outbreak events, report anything weird with it"
+  98524:
+    repo: "tgstation/tgstation"
+    title: "Fix snip cable helper persisting after init"
+    changes:
+      MrMelbert:
+        - bugfix: "Fix mystical snip cable X on Tramstation"
+  98552:
+    repo: "tgstation/tgstation"
+    title: "Trace amounts of blood loss no longer causes infinite hyperdeath to moon heretics"
+    changes:
+      MrMelbert:
+        - balance: "Trace amounts of blood loss no longer causes infinite hyperdeath to moon heretics"
+  98546:
+    repo: "tgstation/tgstation"
+    title: "Fix cooked goliath steak not having an additional 2% chance of doing something to red raptors breeding idk"
+    changes:
+      MrMelbert:
+        - bugfix: "Fixes a niche issue where cooked goliath steak doesn't contribute to red raptor breeding(?) more than raw goliath meat"
+  98533:
+    repo: "tgstation/tgstation"
+    title: "Starfury Armory airlock fix"
+    changes:
+      DeliciousPlushie:
+        - bugfix: "Syndicate Battlecruiser Captain can unlock Starfury Armory airlocks normally with pressing buttons."
+  98523:
+    repo: "tgstation/tgstation"
+    title: "Fix blade and cosmic recharge methods"
+    changes:
+      MrMelbert:
+        - bugfix: "Blade and Cosmic heretic can recharge their spells properly"
+  98488:
+    repo: "tgstation/tgstation"
+    title: "Revamp handheld gene scanner output (revived)"
+    changes:
+      MrMelbert:
+        - tweak: "Revamps handheld gene scanner output"
+  98557:
+    repo: "tgstation/tgstation"
+    title: "Fixes a broken VV admin shortcut that apparently exists"
+    changes:
+      PapaMichae1:
+        - admin: "Admins can Control+Alt+Click an atom to open VV on it"
+  98554:
+    repo: "tgstation/tgstation"
+    title: "Removes goofiest sanitization proc"
+    changes:
+      MrMelbert:
+        - bugfix: "NTOS Chatroom checks names and messages more thoroughly"
+  98511:
+    repo: "tgstation/tgstation"
+    title: "Lets admins select next round station traits in the postround"
+    changes:
+      PapaMichae1:
+        - admin: "Admins can set the next round's station traits in the postround"
+  98426:
+    repo: "tgstation/tgstation"
+    title: "[IDB IGNORE] digitigrade code refactor"
+    changes:
+      Ghommie:
+        - code_imp: "Refactored digitigrade legs code a bit. Report any outstanding issue that wasn't previously there."
+  97987:
+    repo: "tgstation/tgstation"
+    title: "Makes radiation a bit deadlier"
+    changes:
+      MrMelbert:
+        - rscadd: "Individuals irradiated from a powerful primary source (such as the Supermatter) will spread radiation around them. This is denoted by their radiation glow being brighter than normal. Importantly, this will not cascade further, meaning any individual irradiated from them will NOT spread it further."
+        - rscadd: "Plasmamen, Androids, and other radiation immune species can be irradiated once again, though are still immune to the effects. Only methods of direct decontamination (like showering) will clear it."
+        - rscadd: "Slimepeople can now properly be affected by radiation. Like Plasmamen, it can only be cleared via direct decontamination."
+        - rscadd: "Showers will now heal irradiation very slowly in addition to pausing the negative effects."
+        - rscadd: "Untreated irradiation will eventually spread to your internal organs, causing organ damage and further complications. While it can spread to robotic organs, this has no effect (for now). And yes, inserting an irradiated organ into an otherwise clean patient will cause the radiation to spread to the body over time."
+        - rscadd: "Anti-rad medication such as Pentetic Acid now reverses organ damage caused by irradiation (and eventually clears irradiated organs entirely) - so long as the affected organ hasn't failed entirely."
+        - rscadd: "Radioactive chemicals like Uranium can now directly irradiate organs - for example, breathing radioactive smoke may irradiate your lungs."
+        - code_imp: "Radiation has seen a few changes if you couldn't tell. Report any issues like mobs experiencing negative effects from irradiation when they otherwise shouldn't be."
+  98500:
+    repo: "tgstation/tgstation"
+    title: "*sawing noises*"
+    changes:
+      ArrisFairburne:
+        - sound: "sawable guns now make appropriate sawing noises when they are sawn-off"
+        - sound: "gave appropriate usesound and operating sounds to various saw items in the game"
+  98571:
+    repo: "tgstation/tgstation"
+    title: "[NO GBP] Fixes get_configurable_jobs() storing stale jobs if jobs are reset"
+    changes:
+      tontyGH:
+        - config: "Fixed a bug that caused jobs to fallback to the default config at roundstart"
