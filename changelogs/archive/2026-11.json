@@ -2495,5 +2495,32 @@
         "text": "Fixed a bug that caused jobs to fallback to the default config at roundstart"
       }
     ]
+  },
+  {
+    "date": "2026-11-27",
+    "upstream_date": "",
+    "source": "Horizon =][=",
+    "repo": "horizon-dev-team/Horizon-Dream",
+    "pr": "85",
+    "title": "TWEAK: NewTooltip - Deterministic size and placement",
+    "author": "KOCMODECAHTHUK",
+    "body": "## Описание изменений\nПереписан тултип (`code/modules/tooltip/tooltip.dm` и `tooltip.html`). \n\n- Тултип привязывается к самому предмету, а не к точке, где курсор вошёл в него. Положение больше не зависит от стороны наведения.\n- Размер считается в скрытом блоке после загрузки всех иконок.\n- Убраны jQuery на странице и неиспользуемая гибкость (выравнивание, смещения, ручной размер).\n\n## Причина создания ПР / Почему это хорошо для игры\nМеня очень сильно раздражало что тултип жил своей жизнью, и каждый раз показывал окно по разному. \nТеперь же поведение более предсказуемо.\n",
+    "changes": [
+      {
+        "type": "bugfix",
+        "class": "bugfix",
+        "text": "Тултипы больше не меняют размер и положение при повторном наведении на один и тот же предмет"
+      },
+      {
+        "type": "tweak",
+        "class": "tweak",
+        "text": "Тултип привязан к предмету, а не к курсору, и не выходит за края экрана"
+      },
+      {
+        "type": "code_imp",
+        "class": "code_imp",
+        "text": "Переписан модуль тултипов tooltip.dm, tooltip.html и убран jQuery"
+      }
+    ]
   }
 ]
